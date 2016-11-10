@@ -1,0 +1,180 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	width: 100%;
+	height: 100%;
+	white-space: nowrap;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+p, td {
+	font-size: 13px;
+	line-height: 1.4;
+	margin: 2ex 0;
+	padding: 0;
+}
+
+td {
+	vertical-align: top;
+}
+
+ul {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+h1, #options td {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.wide, #options {
+	width: 100%;
+}
+
+table.center {
+	margin: 0 auto;
+}
+
+.high, #loading, #main, #answers, #lines {
+	height: 100%;
+}
+
+#loading td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#main {
+	display: none;
+}
+
+#options td {
+	background-color: lightgray;
+	border: 5px solid white;
+}
+
+#options a {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+#map {
+	position: absolute;
+	transform-origin: top left;
+}
+
+#map div {
+	line-height: 0;
+}
+
+#map div:first-of-type img {
+	transform: scaleY(-1);
+}
+
+img.map {
+	background: url("images/rigging.png") no-repeat;
+	background-size: contain;
+}
+
+#overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	Zbackground-color: rgba(0, 255, 0, 0.1);
+}
+
+img.point {
+	position: absolute;
+	background: url("images/sprite.png") no-repeat;
+	filter: brightness(0);
+}
+
+img.point:hover, img.point.on {
+	filter: none;
+}
+
+img.pin {
+	width: 32px;
+	height: 32px;
+	background-position: 7px -80px;
+}
+
+img.cleat {
+	width: 56px;
+	height: 23px;
+	background-position: -8px -128px;
+}
+
+img.vcleat {
+	width: 209px;
+	height: 126px;
+	background-position: -138px -94px;
+}
+
+img.scleat {
+	width: 126px;
+	height: 70px;
+	background-position: -1px -160px;
+}
+
+img.fist {
+	width: 65px;
+	height: 60px;
+	background-position: -65px -96px;
+}
+
+img.knot {
+	width: 119px;
+	height: 54px;
+	background-position: -5px -11px;
+}
+
+img.vang {
+	width: 60px;
+	height: 93px;
+	background-position: -152px -1px;
+}
+
+a.pin, .line a {
+	cursor: pointer;
+}
+
+a.pin {
+	font-weight: bold;
+}
+
+a:hover, a.pin.on, .line.on a {
+	color: red;
+}
+
+#masts {
+	Zdisplay: none;
+}
+
+.deck, .mast {
+	padding: 0 2em;
+}
+
+#answers {
+	border-top: 2px solid black;
+}
+
+hr {
+	border: 1px solid black;
+}
+
+#footer hr {
+	margin: 1em 0.5em 0;
+}
+
+#footer p {
+	margin: 0 0.5em 0.3em;
+}
