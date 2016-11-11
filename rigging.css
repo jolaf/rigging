@@ -71,20 +71,20 @@ table.center {
 	text-decoration: none;
 }
 
-#map {
+#scheme {
 	position: absolute;
 	transform-origin: top left;
 }
 
-#map div {
+#scheme div {
 	line-height: 0;
 }
 
-#map div:first-of-type img {
+#scheme div:first-of-type img {
 	transform: scaleY(-1);
 }
 
-img.map {
+img.scheme {
 	background: url("images/rigging.png") no-repeat;
 	background-size: contain;
 }

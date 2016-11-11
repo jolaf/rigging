@@ -94,7 +94,7 @@ Pin.prototype.createElement = function () {
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.pins.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
-    this.icon.css({ left: this.x, top: MAP_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
+    this.icon.css({ left: this.x, top: SCHEME_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
     var transform = (this.y <= -20) ? 'scaleY(-1)' : '';
     if (this.rotation) {
         transform += (transform ? ' ': '') + 'rotate(' + this.rotation + 'deg)';
@@ -466,9 +466,9 @@ Mast.placeElements = function (location) {
 };
 
 function onResize() {
-    var scale = $(window).width() / MAP_WIDTH;
-    onResize.placeholder.css({ height: Math.floor(2 * MAP_HEIGHT * scale) });
-    onResize.map.css({ transform: 'scale(' + scale + ')'});
+    var scale = $(window).width() / SCHEME_WIDTH;
+    onResize.placeholder.css({ height: Math.floor(2 * SCHEME_HEIGHT * scale) });
+    onResize.scheme.css({ transform: 'scale(' + scale + ')'});
 }
 
 function setStatus(status) {
@@ -476,9 +476,10 @@ function setStatus(status) {
 }
 
 function setMode(mode) {
-    mode = mode.trim() || 'demo';
+    location.href = '#' + mode;
+    mode = mode.trim().toLowerCase() || 'demo';
     console.log('#mode', mode);
-    $('#' + mode).find('input').click();
+    $('#' + mode + 'Mode').find('input').click();
     $('.mode').hide();
     $('.' + mode).show();
     switch(mode) {
@@ -507,22 +508,22 @@ function main() {
     Deck.placeElements('#decks');
     Mast.placeElements('#masts');
     Pin.placeElements('#overlay');
-    // Setup map
-    $('img.map').css({ width: MAP_WIDTH, height: MAP_HEIGHT });
-    $('#overlay').css({ width: MAP_WIDTH, height: 2 * MAP_HEIGHT });
-    onResize.map = $('#map');
+    // Setup scheme
+    $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
+    $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
+    onResize.scheme = $('#scheme');
     onResize.placeholder = $('#placeholder');
-    var toggleMap = $('#toggleMap');
-    var mapBlock = $('#mapBlock');
-    toggleMap.prop('checked', true);
-    toggleMap.change(function (_event) { mapBlock.toggle(); });
+    var toggleScheme = $('#toggleScheme');
+    var schemeBlock = $('#schemeBlock');
+    toggleScheme.prop('checked', true);
+    toggleScheme.change(function (_event) { schemeBlock.toggle(); });
     // Setup modes
     var options = $('#options'); // ToDo: Split 'mode' and 'options', add Masts and Decks
     options.find('input').click(function (event) { event.stopPropagation(); });
     options.find('td').click(function (_event) {
         var input = $(this).find('input');
         if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
-            setMode(this.id);
+            setMode(this.id.slice(0, -4));
         } else {
             input.click();
         }

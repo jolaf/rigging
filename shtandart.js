@@ -1,7 +1,7 @@
 /* jshint elision: true */
 
-var MAP_WIDTH = 4064;
-var MAP_HEIGHT = 670;
+var SCHEME_WIDTH = 4064;
+var SCHEME_HEIGHT = 670;
 
 // Full name options
 var GRAMMAR = undefined; // jshint ignore:line
