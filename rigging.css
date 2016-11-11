@@ -178,3 +178,7 @@ hr {
 #footer p {
 	margin: 0 0.5em 0.3em;
 }
+
+#footer img {
+	vertical-align: bottom;
+}

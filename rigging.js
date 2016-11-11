@@ -476,6 +476,23 @@ function setStatus(status) {
 }
 
 function setMode(mode) {
+    mode = mode.trim() || 'demo';
+    console.log('#mode', mode);
+    $('#' + mode).find('input').click();
+    $('.mode').hide();
+    $('.' + mode).show();
+    switch(mode) {
+    case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
+        break;
+    case 'where':
+        break;
+    case 'which':
+        break;
+    case 'info':
+        break;
+    default:
+        assert(false, "Unexpected mode: " + mode);
+    }
 }
 
 function main() {
@@ -502,7 +519,14 @@ function main() {
     // Setup modes
     var options = $('#options'); // ToDo: Split 'mode' and 'options', add Masts and Decks
     options.find('input').click(function (event) { event.stopPropagation(); });
-    options.find('td').click(function (_event) { $(this).find('input').click(); });
+    options.find('td').click(function (_event) {
+        var input = $(this).find('input');
+        if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
+            setMode(this.id);
+        } else {
+            input.click();
+        }
+    });
     // Set initial mode from URL fragment
     setMode(window.location.hash.slice(1));
     // Bind resize handler
