@@ -58,12 +58,17 @@ table.center {
 #options td {
 	background-color: lightgray;
 	border: 5px solid white;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+#options td:hover {
+	color: red;
+	cursor: pointer;
 }
 
 #options a {
 	text-decoration: none;
-	font-weight: bold;
-	font-size: 120%;
 }
 
 #map {
@@ -88,7 +93,6 @@ img.map {
 	position: absolute;
 	top: 0;
 	left: 0;
-	Zbackground-color: rgba(0, 255, 0, 0.1);
 }
 
 img.point {
@@ -102,8 +106,8 @@ img.point:hover, img.point.on {
 }
 
 img.pin {
-	width: 32px;
-	height: 32px;
+	width: 48px;
+	height: 48px;
 	background-position: 7px -80px;
 }
 
@@ -153,10 +157,6 @@ a.pin {
 
 a:hover, a.pin.on, .line.on a {
 	color: red;
-}
-
-#masts {
-	Zdisplay: none;
 }
 
 .deck, .mast {

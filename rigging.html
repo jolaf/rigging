@@ -29,13 +29,14 @@
   <tr id="main">
     <td>
       <table class="wide">
-        <tr><td><table id="options"><tr>
-          <td onclick="selectMode(WHERE)"><a href="#">Где верёвка?</a></td>
-          <td onclick="selectMode(WHAT)"><a href="#">Какая верёвка?</a></td>
-          <td onclick="selectMode(WHAT)"><a href="#">Картинка</a></td>
-          <td><a href="#">Описание</a></td>
-        </tr></table></td></tr>
-        <tr>
+        <tr><td><form><table id="options"><tr>
+          <td id="demo"><input name="mode" type="radio">Просмотр</td>
+          <td id="whereRope"><input name="mode" type="radio">Где снасть?</td>
+          <td id="whichRope"><input name="mode" type="radio">Какая снасть?</td>
+          <td id="info"><input name="mode" type="radio">Описание</td>
+          <td><input id="toggleMap" type="checkbox">Схема</td>
+        </tr></table></form></td></tr>
+        <tr id="mapBlock">
           <td>
             <div id="map">
               <div><img class="map" alt="" src="images/blank.gif"></div>

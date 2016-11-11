@@ -1,5 +1,3 @@
-/* jshint elision: true */
-
 function assert(condition, message) {
     if (!condition) {
         message = message || "Assertion failed";
@@ -66,7 +64,6 @@ function russianGenetive(str) { // Родительный падеж сущес�
 }
 
 function Pin(deck, rail, index, x, y, type, rotation) {
-    //console.log('#Pin', deck, rail, index, x, y, type, rotation);
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -84,7 +81,6 @@ Pin.pins = [];
 Pin.icons = [];
 
 Pin.prototype.attachLine = function (line) {
-    //console.log('#PA', this.description, ':', line.name);
     assert(line);
     assert(!this.line, "Line already attached to " + this.description);
     this.line = line;
@@ -127,7 +123,6 @@ Pin.placeElements = function (location) {
 
 function Rail(deck, name, assym, x0, y0, stepX, stepY, nPins, type, rotation) {
        // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...])
-    //console.log('#Rail', deck, name, x0, y0, stepX, stepY, nPins, type, rotation);
     assert(deck);
     this.deck = deck;
     assert(name, "No rail name");
@@ -283,7 +278,6 @@ Deck.placeElements = function (location) {
 };
 
 function Line(mastName, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
-    //console.log('#Deck', mastName, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName);
     this.assym = assym || false;
     this.pins = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
     this.mast = Mast.getMast(mastName);
@@ -337,9 +331,7 @@ Line.prototype.toString = function () {
 
 Line.prototype.createElement = function() {
     this.element = $('<li class="line"><a>' + (this.pluralName || this.name) + '</a></li>');
-    this.element.on('mouseenter mouseleave', this, function (event) {
-        event.data.mouseHandler();
-    });
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
     return this.element;
 };
 
@@ -413,9 +405,7 @@ Mast.masts = [];
 
 Mast.getMast = function (mastName) {
     mastName = $.trim(mastName || '').toLowerCase();
-    var masts = $.grep(Mast.masts, function(mast, _index) {
-            return mastName === mast.name;
-        });
+    var masts = $.grep(Mast.masts, function(mast, _index) { return mastName === mast.name; });
     var mast;
     if (masts.length) { // == 1
         mast = masts[0];
@@ -429,9 +419,7 @@ Mast.getMast = function (mastName) {
 Mast.prototype.attachLine = function (sailName, line) {
     assert(line);
     var sail = new Sail(sailName, this);
-    var sails = $.grep(this.sails, function(checkSail, _index) {
-            return sail.name === checkSail.name;
-        });
+    var sails = $.grep(this.sails, function(checkSail, _index) { return sail.name === checkSail.name; });
     if (sails.length) { // == 1
         sail = sails[0];
     } else {
@@ -477,56 +465,53 @@ Mast.placeElements = function (location) {
     });
 };
 
-function setStatus(status) {
-    status += '...';
-    //console.log(status);
-    $('#status').text(status);
-}
-
-function selectMode(mode) {
-}
-
-function construct() {
-    Deck.construct();
-    Line.construct();
-}
-
-function createElements() {
-    Deck.createElements();
-    Mast.createElements();
-}
-
-function placeElements() {
-    Deck.placeElements('#decks');
-    Mast.placeElements('#masts');
-    $('img.map').css({ width: MAP_WIDTH, height: MAP_HEIGHT });
-    $('#overlay').css({ width: MAP_WIDTH, height: 2 * MAP_HEIGHT });
-    Pin.placeElements('#overlay');
-}
-
 function onResize() {
-    //console.log('#resize');
     var scale = $(window).width() / MAP_WIDTH;
-    onResize.placeholder.css({ height: Math.round(2 * MAP_HEIGHT * scale) });
+    onResize.placeholder.css({ height: Math.floor(2 * MAP_HEIGHT * scale) });
     onResize.map.css({ transform: 'scale(' + scale + ')'});
 }
 
-function setupMap() {
-    onResize.map = $('#map');
-    onResize.placeholder = $('#placeholder');
+function setStatus(status) {
+    $('#status').text(status);
+}
+
+function setMode(mode) {
 }
 
 function main() {
     setStatus('Идёт загрузка страницы, подождите...');
-    selectMode(window.location.hash.slice(1));
-    construct();
-    createElements();
-    setupMap();
-    placeElements();
+    // Create data structures from constant data
+    Deck.construct();
+    Line.construct();
+    // Create elements for data structures
+    Deck.createElements();
+    Mast.createElements();
+    // Put generated elements to DOM
+    Deck.placeElements('#decks');
+    Mast.placeElements('#masts');
+    Pin.placeElements('#overlay');
+    // Setup map
+    $('img.map').css({ width: MAP_WIDTH, height: MAP_HEIGHT });
+    $('#overlay').css({ width: MAP_WIDTH, height: 2 * MAP_HEIGHT });
+    onResize.map = $('#map');
+    onResize.placeholder = $('#placeholder');
+    var toggleMap = $('#toggleMap');
+    var mapBlock = $('#mapBlock');
+    toggleMap.prop('checked', true);
+    toggleMap.change(function (_event) { mapBlock.toggle(); });
+    // Setup modes
+    var options = $('#options'); // ToDo: Split 'mode' and 'options', add Masts and Decks
+    options.find('input').click(function (event) { event.stopPropagation(); });
+    options.find('td').click(function (_event) { $(this).find('input').click(); });
+    // Set initial mode from URL fragment
+    setMode(window.location.hash.slice(1));
+    // Bind resize handler
     $(window).resize(onResize);
+    // Everything ready, start!
     setStatus('Готово!');
     $('#loading').hide();
     $('#main').show();
+    // Trigger resize to adjust the elements to the window size
     $(window).resize();
 }
 
