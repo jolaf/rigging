@@ -478,7 +478,6 @@ function setStatus(status) {
 function setMode(mode) {
     location.href = '#' + mode;
     mode = mode.trim().toLowerCase() || 'demo';
-    $('#' + mode + 'Mode input').click();
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
     switch(mode) {
@@ -522,14 +521,25 @@ function main() {
     // Setup menu
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
-    $('.selector input').click(function (event) { event.stopPropagation(); });
     $('.selector').click(function (event) {
         var selector = $(this);
         var input = selector.find('input');
+        if (this === event.target) {
+            input.click();
+            return;
+        }
         if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
             setMode(this.id.slice(0, -4));
         } else {
-            input.click();
+            if (input.attr('name') === 'deck') {
+                var deck = selector[0].id.slice(4);
+                if (deck == 'All') {
+                    $('#selectDecks .selector').slice(1).click(); // ToDo: Not toggle, but set to checked
+                } else {                                          // ToDo: Make sure at least one deck is accessible
+                    $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
+                }
+            } else if (input.attr('name') === 'mast') {
+            }
         }
     });
     $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
