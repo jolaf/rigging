@@ -449,13 +449,13 @@ Mast.createElements = function () {
     });
 };
 
-Mast.placeElements = function (location) {
-    var element = $(location);
+Mast.placeElements = function (linesLocation, fullLinesLocation) {
+    var fullLinesElement = $(fullLinesLocation);
     var td;
     $.each(Mast.masts, function(index, mast) {
         if ($.inArray(index, [1, Mast.masts.length - 1, Mast.masts.length - 2]) < 0) {
             td = $('<td>');
-            element.append(td);
+            fullLinesElement.append(td);
         }
         if (index == 1) {
             td.prepend(mast.element);
@@ -478,21 +478,24 @@ function setStatus(status) {
 function setMode(mode) {
     location.href = '#' + mode;
     mode = mode.trim().toLowerCase() || 'demo';
-    console.log('#mode', mode);
-    $('#' + mode + 'Mode').find('input').click();
-    $('.mode').hide();
-    $('.' + mode).show();
+    $('#' + mode + 'Mode input').click();
+    setMode.modeDependent.hide();
+    $('.usedInMode' + mode.capitalize()).show();
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
+        setMode.schemeBlock.show();
         break;
     case 'where':
+        setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
     case 'which':
+        setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
     case 'info':
+        setMode.schemeBlock.hide();
         break;
     default:
-        assert(false, "Unexpected mode: " + mode);
+        setMode('demo');
     }
 }
 
@@ -506,7 +509,7 @@ function main() {
     Mast.createElements();
     // Put generated elements to DOM
     Deck.placeElements('#decks');
-    Mast.placeElements('#masts');
+    Mast.placeElements('#lines', '#fullLines');
     Pin.placeElements('#overlay');
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
@@ -517,10 +520,11 @@ function main() {
     var schemeBlock = $('#schemeBlock');
     toggleScheme.prop('checked', true);
     toggleScheme.change(function (_event) { schemeBlock.toggle(); });
-    // Setup modes
-    var options = $('#options'); // ToDo: Split 'mode' and 'options', add Masts and Decks
-    options.find('input').click(function (event) { event.stopPropagation(); });
-    options.find('td').click(function (_event) {
+    // Setup menu
+    setMode.modeDependent = $('.modeDependent');
+    setMode.schemeBlock = schemeBlock;
+    $('.selector input').click(function (event) { event.stopPropagation(); });
+    $('.selector').click(function (event) {
         var input = $(this).find('input');
         if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
             setMode(this.id.slice(0, -4));
@@ -528,6 +532,7 @@ function main() {
             input.click();
         }
     });
+    $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
     // Set initial mode from URL fragment
     setMode(window.location.hash.slice(1));
     // Bind resize handler

@@ -12,8 +12,8 @@
   <meta name="theme-color" content="#ffffff">
   <link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" type="image/png" href="images/apple-touch-icon.png">
-  <link rel='manifest' type="application/json" href="images/manifest.json">
-  <link rel='mask-icon' type="image/svg+xml" href="images/safari-pinned-tab.svg" color='#5bbad5'>
+  <link rel="manifest" type="application/json" href="images/manifest.json">
+  <link rel="mask-icon" type="image/svg+xml" href="images/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="stylesheet" type="text/css" href="rigging.css">
   <script type="text/javascript" src="jquery-3.1.1.slim.min.js"></script>
 </head>
@@ -23,36 +23,71 @@
     <h1>Тренажёр бегучего такелажа: Фрегат «Штандарт»</h1>
   </td></tr>
   <tr id="loading"><td id="status">
-    <p>Для функционирования этой страницы требуется поддержка <a href="https://ru.wikipedia.org/wiki/JavaScript">JavaScript</a> в браузере.</p>
-    <p>Пожалуйста, включите поддержку JavaScript и перезагрузите страницу.</p>
+    <noscript>
+      <p>Для функционирования этой страницы требуется поддержка <a href="https://ru.wikipedia.org/wiki/JavaScript">JavaScript</a> в браузере.</p>
+      <p>Пожалуйста, включите поддержку JavaScript и перезагрузите страницу.</p>
+    </noscript>
+    <script type="text/javascript">
+      document.write('<p>Ошибка в JavaScript.</p>\n<p>Попробуйте перезагрузить страницу.</p>'); // jshint ignore:line
+    </script>
   </td></tr>
   <tr id="main">
     <td>
       <table class="wide">
         <tr><td><form><table id="options"><tr>
-          <td id="demoMode"><input name="mode" type="radio">Просмотр</td>
-          <td id="whereMode"><input name="mode" type="radio">Где снасть?</td>
-          <td id="whichMode"><input name="mode" type="radio">Какая снасть?</td>
-          <td id="infoMode"><input name="mode" type="radio">Описание</td>
-          <td><input id="toggleScheme" type="checkbox">Схема</td>
+          <td id="demoMode" class="selector"><input name="mode" type="radio">Просмотр</td>
+          <td id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</td>
+          <td id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</td>
+          <td id="infoMode" class="selector"><input name="mode" type="radio">Описание</td>
+          <td id="selectDecks" class="modeDependent usedInModeWhich">Палубы:
+            <span class="selector"><input name="deck" type="checkbox" checked>Все</span>
+            <span class="selector"><input name="deck" type="checkbox" checked>Бак</span>
+            <span class="selector"><input name="deck" type="checkbox" checked>Главная</span>
+            <span class="selector"><input name="deck" type="checkbox" checked>ПолуЮт</span>
+          </td>
+          <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты:
+            <span class="selector"><input name="mast" type="checkbox" checked>Все</span>
+            <span class="selector"><input name="mast" type="checkbox" checked>Фок</span>
+            <span class="selector"><input name="mast" type="checkbox" checked>Грот</span>
+            <span class="selector"><input name="mast" type="checkbox" checked>Бизань</span>
+          </td>
+          <td class="selector modeDependent usedInModeWhere usedInModeWhich">
+            <input id="toggleScheme" type="checkbox">Схема
+          </td>
         </tr></table></form></td></tr>
-        <tr id="schemeBlock">
-          <td>
-            <div id="scheme">
-              <div><img class="scheme" alt="" src="images/blank.gif"></div>
-              <div><img class="scheme" alt="" src="images/blank.gif"></div>
-              <div id="overlay"></div>
-            </div>
-            <div id="placeholder"></div>
-            <hr>
+        <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+          <div id="scheme">
+            <div><img class="scheme" alt="" src="images/blank.gif"></div>
+            <div><img class="scheme" alt="" src="images/blank.gif"></div>
+            <div id="overlay"></div>
+          </div>
+          <div id="placeholder"></div>
+          <hr>
+        </td></tr>
+        <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
+          <table class="center"><tr><td id="question">
+          </td></tr></table>
+        </td></tr>
+        <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
+          <table class="center"><tr><td id="statistics">
+          </td></tr></table>
+        </td></tr>
+        <tr class="modeDependent usedInModeWhere"><td>
+          <table class="center"><tr id="decks">
+          </tr></table>
+        </td></tr>
+        <tr class="modeDependent usedInModeWhere"><td>
+          <table class="center"><tr id="lines">
+          </tr></table>
+        </td></tr>
+        <tr class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+          <table class="center"><tr id="fullLines">
+          </tr></table>
+        </td></tr>
+        <tr class="modeDependent usedInModeInfo">
+          <td id="info">
           </td>
         </tr>
-        <tr id="description"><td>
-        </td></tr>
-        <tr><td><table class="center"><tr id="decks">
-        </tr></table></td></tr>
-        <tr><td><table class="center"><tr id="masts">
-        </tr></table></td></tr>
       </table>
     </td>
   </tr>

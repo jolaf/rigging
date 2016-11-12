@@ -62,7 +62,15 @@ table.center {
 	font-size: 120%;
 }
 
-#options td:hover {
+span.selector {
+	margin-left: 0.5em;
+}
+
+.selector input {
+	margin-right: 0.3em;
+}
+
+#options .selector:hover {
 	color: red;
 	cursor: pointer;
 }
