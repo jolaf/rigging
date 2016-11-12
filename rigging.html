@@ -40,19 +40,19 @@
           <td id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</td>
           <td id="infoMode" class="selector"><input name="mode" type="radio">Описание</td>
           <td id="selectDecks" class="modeDependent usedInModeWhich">Палубы:
-            <span class="selector"><input name="deck" type="checkbox" checked>Все</span>
-            <span class="selector"><input name="deck" type="checkbox" checked>Бак</span>
-            <span class="selector"><input name="deck" type="checkbox" checked>Главная</span>
-            <span class="selector"><input name="deck" type="checkbox" checked>ПолуЮт</span>
+            <span id="maskAll" class="selector"><input name="deck" type="checkbox" checked>Все</span>
+            <span id="maskStern" class="selector"><input name="deck" type="checkbox" checked>ПолуЮт</span>
+            <span id="maskMain" class="selector"><input name="deck" type="checkbox" checked>Главная</span>
+            <span id="maskFore" class="selector"><input name="deck" type="checkbox" checked>Бак</span>
           </td>
           <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты:
             <span class="selector"><input name="mast" type="checkbox" checked>Все</span>
-            <span class="selector"><input name="mast" type="checkbox" checked>Фок</span>
-            <span class="selector"><input name="mast" type="checkbox" checked>Грот</span>
             <span class="selector"><input name="mast" type="checkbox" checked>Бизань</span>
+            <span class="selector"><input name="mast" type="checkbox" checked>Грот</span>
+            <span class="selector"><input name="mast" type="checkbox" checked>Фок</span>
           </td>
           <td class="selector modeDependent usedInModeWhere usedInModeWhich">
-            <input id="toggleScheme" type="checkbox">Схема
+            <input id="toggleScheme" type="checkbox" checked>Схема
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
@@ -60,6 +60,9 @@
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div id="overlay"></div>
+            <div id="shadowFore" class="mask"></div>
+            <div id="shadowMain" class="mask"></div>
+            <div id="shadowStern" class="mask"></div>
           </div>
           <div id="placeholder"></div>
           <hr>

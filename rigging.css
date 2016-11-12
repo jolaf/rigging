@@ -103,6 +103,29 @@ img.scheme {
 	left: 0;
 }
 
+.mask {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.75);
+	top: 0;
+	height: 100%;
+	display: none;
+}
+
+#shadowFore {
+	left: 72.5%;
+	width: 27.5%;
+}
+
+#shadowMain {
+	left: 39.2%;
+	width: 33.3%;
+}
+
+#shadowStern {
+	left: 0;
+	width: 39.2%;
+}
+
 img.point {
 	position: absolute;
 	background: url("images/sprite.png") no-repeat;

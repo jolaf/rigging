@@ -518,14 +518,14 @@ function main() {
     onResize.placeholder = $('#placeholder');
     var toggleScheme = $('#toggleScheme');
     var schemeBlock = $('#schemeBlock');
-    toggleScheme.prop('checked', true);
     toggleScheme.change(function (_event) { schemeBlock.toggle(); });
     // Setup menu
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
     $('.selector input').click(function (event) { event.stopPropagation(); });
     $('.selector').click(function (event) {
-        var input = $(this).find('input');
+        var selector = $(this);
+        var input = selector.find('input');
         if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
             setMode(this.id.slice(0, -4));
         } else {
