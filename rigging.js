@@ -498,6 +498,19 @@ function setMode(mode) {
     }
 }
 
+function resetDecks() {
+    $('.mask').hide();
+    $('#selectDecks input').prop('checked', true);
+    $('#selectDecks input').prop('disabled', false);
+    $('#selectDecks :first-child input').prop('disabled', true);
+}
+
+function resetMasts() {
+    $('#selectMasts input').prop('checked', true);
+    $('#selectMasts input').prop('disabled', false);
+    $('#selectMasts :first-child input').prop('disabled', true);
+}
+
 function main() {
     setStatus('Идёт загрузка страницы, подождите...');
     // Create data structures from constant data
@@ -521,6 +534,8 @@ function main() {
     // Setup menu
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
+    resetDecks();
+    resetMasts();
     $('.selector').click(function (event) {
         var selector = $(this);
         var input = selector.find('input');
@@ -528,17 +543,55 @@ function main() {
             input.click();
             return;
         }
+        var checked;
         if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
             setMode(this.id.slice(0, -4));
         } else {
             if (input.attr('name') === 'deck') {
                 var deck = selector[0].id.slice(4);
                 if (deck == 'All') {
-                    $('#selectDecks .selector').slice(1).click(); // ToDo: Not toggle, but set to checked
-                } else {                                          // ToDo: Make sure at least one deck is accessible
+                    resetDecks();
+                } else {
                     $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
+                    checked = $('#selectDecks input:checked');
+                    switch (checked.length) {
+                        case 2:
+                            checked.prop('disabled', true);
+                            $('#selectDecks :first-child input').prop('disabled', false);
+                            break;
+                        case 3:
+                            $('#selectDecks input').prop('disabled', false);
+                            break;
+                        case 4:
+                            $('#selectDecks input').prop('disabled', false); // ToDo: Have special id for All element
+                            $('#selectDecks :first-child input').prop('disabled', true);
+                            break;
+                        default:
+                            assert(false, "Checkbox misconfiguration: " + checked.length);
+                    }
                 }
             } else if (input.attr('name') === 'mast') {
+                var mast = selector[0].id.slice(4);
+                if (mast == 'All') {
+                    resetMasts();
+                } else {
+                    checked = $('#selectMasts input:checked');
+                    switch (checked.length) {
+                        case 2:
+                            checked.prop('disabled', true);
+                            $('#selectMasts :first-child input').prop('disabled', false);
+                            break;
+                        case 3:
+                            $('#selectMasts input').prop('disabled', false);
+                            break;
+                        case 4:
+                            $('#selectMasts input').prop('disabled', false); // ToDo: Have special id for All element
+                            $('#selectMasts :first-child input').prop('disabled', true);
+                            break;
+                        default:
+                            assert(false, "Checkbox misconfiguration: " + checked.length);
+                    }
+                }
             }
         }
     });
