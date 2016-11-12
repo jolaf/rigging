@@ -1,9 +1,11 @@
 #!/usr/bin/python
 from base64 import b64encode
 from re import sub as reSub
+from zipfile import ZipFile
 
 SOURCE = 'rigging.html'
 TARGET = 'shtandart.html'
+ZIP = 'shtandart.zip'
 
 def loadFile(match, pattern, fileNamePos, base64 = False):
     print match.groups()
@@ -31,5 +33,7 @@ def main():
         data = reSub(pattern, replace, data)
     with open(TARGET, 'wb') as f:
         f.write(data)
+    with ZipFile(ZIP, 'w') as f:
+        f.write(TARGET)
 
 main()
