@@ -309,11 +309,95 @@ hr {
           <table class="center"><tr id="decks">
           </tr></table>
         </td></tr>
-        <tr class="modeDependent usedInModeWhere"><td>
+        <tr class="modeDependent usedInModeWhich"><td>
           <table class="center"><tr id="lines">
+            <td class="deck"><div>
+              <h2>Парусные снасти</h2>
+              <h3>Управление рангоутом</h3>
+              <ul>
+                <li class="line"><a>Брас</a></li>
+                <li class="line"><a>Бухта браса</a></li>
+                <li class="line"><a>Топенант</a></li>
+                <li class="line"><a>Дирик-фал</a></li>
+                <li class="line"><a>Галс-таль</a></li>
+                <li class="line"><a>Эренс-бакштаг</a></li>
+              </ul>
+            </div></td>
+            <td class="deck"><div>
+              <h3>Управление парусами</h3>
+              <ul>
+                <li class="line"><a>Шкот</a></li>
+                <li class="line"><a>Бухта шкота</a></li>
+                <li class="line"><a>Галс</a></li>
+                <li class="line"><a>Булинь</a></li>
+                <li class="line"><a>Нирал</a></li>
+                <li class="line"><a>Фал</a></li>
+              </ul>
+              <h3>Уборка парусов</h3>
+              <ul>
+                <li class="line"><a>Гитов</a></li>
+                <li class="line"><a>Бык-гордень</a></li>
+                <li class="line"><a>Нок-гордень</a></li>
+              </ul>
+            </div></td>
+            <td class="deck"><div>
+              <h2>Паруса</h2>
+              <h3>Бушприт</h3>
+              <ul>
+                <li class="line"><a>Блинд</a></li>
+              </ul>
+              <h3>Фок</h3>
+              <ul>
+                <li class="line"><a>Фок</a></li>
+                <li class="line"><a>Фор-марсель</a></li>
+                <li class="line"><a>Фор-брамсель</a></li>
+              </ul>
+            </div></td>
+            <td class="deck"><div>
+              <h3>Грот</h3>
+              <ul>
+                <li class="line"><a>Грот</a></li>
+                <li class="line"><a>Грот-марсель</a></li>
+                <li class="line"><a>Грот-брамсель</a></li>
+                <li class="line"><a>Стаксель</a></li>
+              </ul>
+              <h3>Бизань</h2>
+              <ul>
+                <li class="line"><a>Бизань</a></li>
+                <li class="line"><a>Крюйс-марсель</a></li>
+                <li class="line"><a>Бегин-рей</a></li>
+                <li class="line"><a>Апсель</a></li>
+              </ul>
+            </div></td>
+            <td class="deck"><div>
+              <h2>Прочие снасти</h2>
+              <h3>Талёвы</h3>
+              <ul>
+                <li class="line"><a>Гротовая</a></li>
+                <li class="line"><a>Оттяжка гротовой</a></li>
+                <li class="line"><a>Штаговая</a></li>
+                <li class="line"><a>Нагель для работы</a></li>
+                <li class="line"><a>Якорная</a></li>
+              </ul>
+            </div></td>
+            <td class="deck"><div>
+              <h3>Флаг-фалы</h3>
+              <ul>
+                <li class="line"><a>Фока</a></li>
+                <li class="line"><a>Грота</a></li>
+                <li class="line"><a>Бизани</a></li>
+                <li class="line"><a>Рю</a></li>
+                <li class="line"><a>Флагштока</a></li>
+              </ul>
+              <h3>Прочее</h3>
+              <ul>
+                <li class="line"><a>Швартов</a></li>
+                <li class="line"><a>Носовой шлюпки</a></li>
+              </ul>
+            </div></td>
           </tr></table>
         </td></tr>
-        <tr class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr class="modeDependent"><td> <!-- usedInModeDemo usedInModeWhere usedInModeWhich -->
           <table class="center"><tr id="fullLines">
           </tr></table>
         </td></tr>
@@ -947,7 +1031,12 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     if (this.assym) {
         this.pluralName = undefined;
     }
+    if ($.inArray(Line.types, this.name) < 0) {
+        Line.types.push(this.name);
+    }
 }
+
+Line.types = [];
 
 Line.prototype.toString = function () {
     return 'Line("' + this.mast.name + '", "' + this.sail.name + '", "' + this.name + '")';
@@ -1074,6 +1163,7 @@ Mast.createElements = function () {
 };
 
 Mast.placeElements = function (linesLocation, fullLinesLocation) {
+    var linesElement = $(linesLocation);
     var fullLinesElement = $(fullLinesLocation);
     var td;
     $.each(Mast.masts, function(index, mast) {
