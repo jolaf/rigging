@@ -178,7 +178,7 @@ img.vang {
 	background-position: -152px -1px;
 }
 
-a.pin, .line a {
+a.pin, .line {
 	cursor: pointer;
 }
 
@@ -186,7 +186,7 @@ a.pin {
 	font-weight: bold;
 }
 
-a:hover, a.pin.on, .line.on a {
+a:hover, a.pin.on, .line.on, .line:hover {
 	color: red;
 }
 
@@ -194,8 +194,9 @@ a:hover, a.pin.on, .line.on a {
 	padding: 0 2em;
 }
 
-#answers {
-	border-top: 2px solid black;
+#question {
+	text-align: center;
+	border-bottom: 2px solid black;
 }
 
 #info {

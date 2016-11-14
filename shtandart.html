@@ -195,7 +195,7 @@ img.vang {
 	background-position: -152px -1px;
 }
 
-a.pin, .line a {
+a.pin, .line {
 	cursor: pointer;
 }
 
@@ -203,7 +203,7 @@ a.pin {
 	font-weight: bold;
 }
 
-a:hover, a.pin.on, .line.on a {
+a:hover, a.pin.on, .line.on, .line:hover {
 	color: red;
 }
 
@@ -211,8 +211,9 @@ a:hover, a.pin.on, .line.on a {
 	padding: 0 2em;
 }
 
-#answers {
-	border-top: 2px solid black;
+#question {
+	text-align: center;
+	border-bottom: 2px solid black;
 }
 
 #info {
@@ -299,109 +300,111 @@ hr {
         </td></tr>
         <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
           <table class="center"><tr><td id="question">
-          </td></tr></table>
+          </td></tr>
+        </table>
         </td></tr>
         <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
           <table class="center"><tr><td id="statistics">
           </td></tr></table>
         </td></tr>
-        <tr class="modeDependent usedInModeWhere"><td>
+        <tr class="high modeDependent usedInModeWhere"><td>
           <table class="center"><tr id="decks">
           </tr></table>
         </td></tr>
-        <tr class="modeDependent usedInModeWhich"><td>
+        <tr class="high modeDependent usedInModeDemo usedInModeWhich"><td>
           <table class="center"><tr id="lines">
-            <td class="deck"><div>
+            <td class="deck sailLines"><div>
               <h2>Парусные снасти</h2>
               <h3>Управление рангоутом</h3>
               <ul>
-                <li class="line"><a>Брас</a></li>
-                <li class="line"><a>Бухта браса</a></li>
-                <li class="line"><a>Топенант</a></li>
-                <li class="line"><a>Дирик-фал</a></li>
-                <li class="line"><a>Галс-таль</a></li>
-                <li class="line"><a>Эренс-бакштаг</a></li>
+                <li class="line">Брас</li>
+                <li class="line">Бухта браса</li>
+                <li class="line">Топенант</li>
+                <br>
+                <li class="line">Дирик-фал</li>
+                <li class="line">Галс-таль</li>
+                <li class="line">Эренс-бакштаг</li>
               </ul>
             </div></td>
             <td class="deck"><div>
               <h3>Управление парусами</h3>
               <ul>
-                <li class="line"><a>Шкот</a></li>
-                <li class="line"><a>Бухта шкота</a></li>
-                <li class="line"><a>Галс</a></li>
-                <li class="line"><a>Булинь</a></li>
-                <li class="line"><a>Нирал</a></li>
-                <li class="line"><a>Фал</a></li>
+                <li class="line">Шкот</li>
+                <li class="line">Бухта шкота</li>
+                <li class="line">Галс</li>
+                <li class="line">Булинь</li>
+                <li class="line">Нирал</li>
+                <li class="line">Фал</li>
               </ul>
               <h3>Уборка парусов</h3>
               <ul>
-                <li class="line"><a>Гитов</a></li>
-                <li class="line"><a>Бык-гордень</a></li>
-                <li class="line"><a>Нок-гордень</a></li>
+                <li class="line">Гитов</li>
+                <li class="line">Бык-гордень</li>
+                <li class="line">Нок-гордень</li>
               </ul>
             </div></td>
-            <td class="deck"><div>
+            <td class="deck sails"><div>
               <h2>Паруса</h2>
               <h3>Бушприт</h3>
               <ul>
-                <li class="line"><a>Блинд</a></li>
+                <li class="line">Блинд</li>
               </ul>
               <h3>Фок</h3>
               <ul>
-                <li class="line"><a>Фок</a></li>
-                <li class="line"><a>Фор-марсель</a></li>
-                <li class="line"><a>Фор-брамсель</a></li>
+                <li class="line">Фок</li>
+                <li class="line">Фор-марсель</li>
+                <li class="line">Фор-брамсель</li>
               </ul>
             </div></td>
             <td class="deck"><div>
               <h3>Грот</h3>
               <ul>
-                <li class="line"><a>Грот</a></li>
-                <li class="line"><a>Грот-марсель</a></li>
-                <li class="line"><a>Грот-брамсель</a></li>
-                <li class="line"><a>Стаксель</a></li>
+                <li class="line">Грот</li>
+                <li class="line">Грот-марсель</li>
+                <li class="line">Грот-брамсель</li>
+                <li class="line">Стаксель</li>
               </ul>
               <h3>Бизань</h2>
               <ul>
-                <li class="line"><a>Бизань</a></li>
-                <li class="line"><a>Крюйс-марсель</a></li>
-                <li class="line"><a>Бегин-рей</a></li>
-                <li class="line"><a>Апсель</a></li>
+                <li class="line">Бизань</li>
+                <li class="line">Крюйс-марсель</li>
+                <li class="line">Бегин-рей</li>
+                <li class="line">Апсель</li>
               </ul>
             </div></td>
-            <td class="deck"><div>
+            <td class="deck nonSailLines"><div>
               <h2>Прочие снасти</h2>
               <h3>Талёвы</h3>
               <ul>
-                <li class="line"><a>Гротовая</a></li>
-                <li class="line"><a>Оттяжка гротовой</a></li>
-                <li class="line"><a>Штаговая</a></li>
-                <li class="line"><a>Нагель для работы</a></li>
-                <li class="line"><a>Якорная</a></li>
+                <li class="line">Гротовая</li>
+                <li class="line">Оттяжка гротовой</li>
+                <li class="line">Штаговая</li>
+                <li class="line">Нагель для работы</li>
+                <li class="line">Якорная</li>
               </ul>
             </div></td>
             <td class="deck"><div>
               <h3>Флаг-фалы</h3>
               <ul>
-                <li class="line"><a>Фока</a></li>
-                <li class="line"><a>Грота</a></li>
-                <li class="line"><a>Бизани</a></li>
-                <li class="line"><a>Рю</a></li>
-                <li class="line"><a>Флагштока</a></li>
+                <li class="line">Фока</li>
+                <li class="line">Грота</li>
+                <li class="line">Бизани</li>
+                <li class="line">Рю</li>
+                <li class="line">Флагштока</li>
               </ul>
               <h3>Прочее</h3>
               <ul>
-                <li class="line"><a>Швартов</a></li>
-                <li class="line"><a>Носовой шлюпки</a></li>
+                <li class="line">Швартов</li>
+                <li class="line">Носовой шлюпки</li>
               </ul>
             </div></td>
           </tr></table>
         </td></tr>
-        <tr class="modeDependent"><td> <!-- usedInModeDemo usedInModeWhere usedInModeWhich -->
+        <tr class="high modeDependent"><td> <!-- usedInModeDemo usedInModeWhere usedInModeWhich -->
           <table class="center"><tr id="fullLines">
           </tr></table>
         </td></tr>
-        <tr class="modeDependent usedInModeInfo">
+        <tr class="high modeDependent usedInModeInfo">
           <td id="info">
             <h1>Описание</h1>
             <p>
@@ -433,7 +436,7 @@ var SCHEME_WIDTH = 4064;
 var SCHEME_HEIGHT = 670;
 
 // Full name options
-var GRAMMAR = undefined; // jshint ignore:line
+var GRAMMAR = null;
 var DETAIL_LINE = 'DETAIL_LINE';
 var LINE_DETAIL = 'LINE_DETAIL';
 
@@ -555,7 +558,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    3492, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3434,  85,     ,,, CLEAT, 75],
     ]],
-    [MAIN_DECK, 'На главной', [
+    [MAIN_DECK, 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
         [BULWARK,            ,          2267, 440, [[,, VCLEAT], [260, 46, SCLEAT], [430, -20, VCLEAT, -5]]],
         [SIDE_RAIL,          ,          1578, 500,   53,       7, 6],
@@ -568,7 +571,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте, юте', [
+    [STERN_DECK, 'На полуюте и юте', [
         [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
         [ABOVE_RIGHT_LADDER, STARBOARD, 1474, 425,      ,,,  KNOT],
         [BULWARK,            ,           710, 480, [[,, SCLEAT, -45], [300, 10, SCLEAT, 90], [380, 10, SCLEAT, 90], [490, -23, VCLEAT]]],
@@ -733,6 +736,10 @@ String.prototype.reEnd = function(suffix, cut) {
     return this.slice(0, cut === 0 ? 0 : -(cut || suffix.length)) + suffix;
 };
 
+Array.prototype.random = function() {
+    return this[Math.floor(Math.random() * this.length)];
+};
+
 function russianPlural(str) { // Множественное число существительного
     if (str.endsWith('а')) {
         return str.reEnd('ы');
@@ -781,11 +788,13 @@ function Pin(deck, rail, index, x, y, type, rotation) {
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.description = this.deck.name.split(' ')[0].trimAll() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number);
+    this.description = this.deck.title.capitalize() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number); // ToDo: Check Rail length to be sure we can skip 1
     this.line = null;
+    Pin.pins.push(this);
 }
 
 Pin.pins = [];
+Pin.elements = [];
 Pin.icons = [];
 
 Pin.prototype.attachLine = function (line) {
@@ -800,7 +809,7 @@ Pin.prototype.toString = function () {
 
 Pin.prototype.createElement = function () {
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
-    Pin.pins.push(this.element);
+    Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">'); // ToDo: FREE is not necessary, it must be a line
     this.icon.css({ left: this.x, top: SCHEME_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
     var transform = (this.y <= -20) ? 'scaleY(-1)' : '';
@@ -1031,19 +1040,14 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     if (this.assym) {
         this.pluralName = undefined;
     }
-    if ($.inArray(Line.types, this.name) < 0) {
-        Line.types.push(this.name);
-    }
 }
-
-Line.types = [];
 
 Line.prototype.toString = function () {
     return 'Line("' + this.mast.name + '", "' + this.sail.name + '", "' + this.name + '")';
 };
 
 Line.prototype.createElement = function() {
-    this.element = $('<li class="line"><a>' + (this.pluralName || this.name) + '</a></li>');
+    this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
     this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
     return this.element;
 };
@@ -1163,7 +1167,6 @@ Mast.createElements = function () {
 };
 
 Mast.placeElements = function (linesLocation, fullLinesLocation) {
-    var linesElement = $(linesLocation);
     var fullLinesElement = $(fullLinesLocation);
     var td;
     $.each(Mast.masts, function(index, mast) {
@@ -1209,7 +1212,9 @@ function setMode(mode) {
         break;
     default:
         setMode('demo');
+        return;
     }
+    Questionary.askQuestion(mode);
 }
 
 function resetDecks() {
@@ -1224,6 +1229,30 @@ function resetMasts() {
     $('#selectMasts input').prop('disabled', false);
     $('#selectMasts :first-child input').prop('disabled', true);
 }
+
+function Questionary() {
+    // Static container
+}
+
+Questionary.mode = null;
+
+Questionary.askQuestion = function(mode) {
+    if (mode) {
+        Questionary.mode = mode;
+    }
+    switch(mode) {
+    case 'where':
+        Questionary.answer = Line.lines.random();
+        $('#question').html('Укажите на схеме или в списке точку крепления этой снасти.<h2>' + Questionary.answer.name + '?</h2>');
+        break;
+    case 'which':
+        Questionary.answer = Pin.pins.random();
+        $('#question').html('Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.<h2>' + Questionary.answer.description +'?</h2>');
+        break;
+    default:
+        return;
+    }
+};
 
 function main() {
     setStatus('Идёт загрузка страницы, подождите...');
@@ -1310,6 +1339,16 @@ function main() {
         }
     });
     $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
+    // Setup questionnary
+    $('.nonSailLines .line').click(function (event) {
+
+    });
+    $('.sailLines .line').click(function (event) {
+
+    });
+    $('.sails .line').click(function (event) {
+
+    });
     // Set initial mode from URL fragment
     setMode(window.location.hash.slice(1));
     // Bind resize handler

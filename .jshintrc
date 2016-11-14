@@ -7,14 +7,22 @@
   // Details: https://github.com/victorporof/Sublime-JSHint#using-your-own-jshintrc-options
   // Example: https://github.com/jshint/jshint/blob/master/examples/.jshintrc
   // Documentation: http://www.jshint.com/docs/options/
+  "bitwise": true,
   "browser": true,
   "camelcase": false,
+  "curly": true,
   "elision": true,
+  "eqeqeq": true,
   "esnext": false,
+  "esversion": 5,
+  "forin": true,
+  "freeze": true,
+  "futurehostile": true,
   "immed": true,
   "jquery": true,
   "latedef": true,
   "newcap": true,
   "quotmark": "single",
   "strict": true,
+  "under": true,
 }

@@ -4,7 +4,7 @@ var SCHEME_WIDTH = 4064;
 var SCHEME_HEIGHT = 670;
 
 // Full name options
-var GRAMMAR = undefined; // jshint ignore:line
+var GRAMMAR = null;
 var DETAIL_LINE = 'DETAIL_LINE';
 var LINE_DETAIL = 'LINE_DETAIL';
 
@@ -126,7 +126,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    3492, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3434,  85,     ,,, CLEAT, 75],
     ]],
-    [MAIN_DECK, 'На главной', [
+    [MAIN_DECK, 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
         [BULWARK,            ,          2267, 440, [[,, VCLEAT], [260, 46, SCLEAT], [430, -20, VCLEAT, -5]]],
         [SIDE_RAIL,          ,          1578, 500,   53,       7, 6],
@@ -139,7 +139,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте, юте', [
+    [STERN_DECK, 'На полуюте и юте', [
         [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
         [ABOVE_RIGHT_LADDER, STARBOARD, 1474, 425,      ,,,  KNOT],
         [BULWARK,            ,           710, 480, [[,, SCLEAT, -45], [300, 10, SCLEAT, 90], [380, 10, SCLEAT, 90], [490, -23, VCLEAT]]],

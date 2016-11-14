@@ -25,6 +25,10 @@ String.prototype.reEnd = function(suffix, cut) {
     return this.slice(0, cut === 0 ? 0 : -(cut || suffix.length)) + suffix;
 };
 
+Array.prototype.random = function() {
+    return this[Math.floor(Math.random() * this.length)];
+};
+
 function russianPlural(str) { // Множественное число существительного
     if (str.endsWith('а')) {
         return str.reEnd('ы');
@@ -73,11 +77,13 @@ function Pin(deck, rail, index, x, y, type, rotation) {
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.description = this.deck.name.split(' ')[0].trimAll() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number);
+    this.description = this.deck.title.capitalize() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number); // ToDo: Check Rail length to be sure we can skip 1
     this.line = null;
+    Pin.pins.push(this);
 }
 
 Pin.pins = [];
+Pin.elements = [];
 Pin.icons = [];
 
 Pin.prototype.attachLine = function (line) {
@@ -92,7 +98,7 @@ Pin.prototype.toString = function () {
 
 Pin.prototype.createElement = function () {
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
-    Pin.pins.push(this.element);
+    Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
     this.icon.css({ left: this.x, top: SCHEME_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
     var transform = (this.y <= -20) ? 'scaleY(-1)' : '';
@@ -330,7 +336,7 @@ Line.prototype.toString = function () {
 };
 
 Line.prototype.createElement = function() {
-    this.element = $('<li class="line"><a>' + (this.pluralName || this.name) + '</a></li>');
+    this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
     this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
     return this.element;
 };
@@ -495,7 +501,9 @@ function setMode(mode) {
         break;
     default:
         setMode('demo');
+        return;
     }
+    Questionary.askQuestion(mode);
 }
 
 function resetDecks() {
@@ -510,6 +518,30 @@ function resetMasts() {
     $('#selectMasts input').prop('disabled', false);
     $('#selectMasts :first-child input').prop('disabled', true);
 }
+
+function Questionary() {
+    // Static container
+}
+
+Questionary.mode = null;
+
+Questionary.askQuestion = function(mode) {
+    if (mode) {
+        Questionary.mode = mode;
+    }
+    switch(mode) {
+    case 'where':
+        Questionary.answer = Line.lines.random();
+        $('#question').html('Укажите на схеме или в списке точку крепления этой снасти.<h2>' + Questionary.answer.name + '?</h2>');
+        break;
+    case 'which':
+        Questionary.answer = Pin.pins.random();
+        $('#question').html('Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.<h2>' + Questionary.answer.description +'?</h2>');
+        break;
+    default:
+        return;
+    }
+};
 
 function main() {
     setStatus('Идёт загрузка страницы, подождите...');
@@ -596,6 +628,16 @@ function main() {
         }
     });
     $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
+    // Setup questionnary
+    $('.nonSailLines .line').click(function (event) {
+
+    });
+    $('.sailLines .line').click(function (event) {
+
+    });
+    $('.sails .line').click(function (event) {
+
+    });
     // Set initial mode from URL fragment
     setMode(window.location.hash.slice(1));
     // Bind resize handler
