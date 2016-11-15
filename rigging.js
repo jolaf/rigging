@@ -67,7 +67,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Pin(deck, rail, index, x, y, type, rotation) {
+function Pin(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add side (for assymetric lines)
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -477,13 +477,14 @@ function onResize() {
     onResize.scheme.css({ transform: 'scale(' + scale + ')'});
 }
 
-function setStatus(status) {
-    $('#status').text(status);
-}
-
 function setMode(mode) {
     location.href = '#' + mode;
     mode = mode.trim().toLowerCase() || 'demo';
+    var input = $('#' + mode + 'Mode input');
+    if (input.prop('checked')) {
+        return;
+    }
+    input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
     switch(mode) {
@@ -544,7 +545,6 @@ Questionary.askQuestion = function(mode) {
 };
 
 function main() {
-    setStatus('Идёт загрузка страницы, подождите...');
     // Create data structures from constant data
     Deck.construct();
     Line.construct();
@@ -643,7 +643,6 @@ function main() {
     // Bind resize handler
     $(window).resize(onResize);
     // Everything ready, start!
-    setStatus('Готово!');
     $('#loading').hide();
     $('#main').show();
     // Trigger resize to adjust the elements to the window size

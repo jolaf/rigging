@@ -79,6 +79,10 @@ span.selector {
 	text-decoration: none;
 }
 
+#schemeBlock {
+	border-bottom: 2px solid black;
+}
+
 #scheme {
 	position: absolute;
 	transform-origin: top left;
@@ -212,16 +216,12 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	border: 1px solid black;
 }
 
-hr {
-	border: 1px solid black;
-}
-
-#footer hr {
-	margin: 1em 0.5em 0;
+#footer {
+	border-top: 2px solid black;
 }
 
 #footer p {
-	margin: 0 0.5em 0.3em;
+	margin: 0.3em;
 }
 
 .icon {
