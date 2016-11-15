@@ -77,7 +77,6 @@ function Pin(deck, rail, index, x, y, type, rotation) {
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.description = this.deck.title.capitalize() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number); // ToDo: Check Rail length to be sure we can skip 1
     this.line = null;
     Pin.pins.push(this);
 }
@@ -97,6 +96,7 @@ Pin.prototype.toString = function () {
 };
 
 Pin.prototype.createElement = function () {
+    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
@@ -532,11 +532,11 @@ Questionary.askQuestion = function(mode) {
     switch(mode) {
     case 'where':
         Questionary.answer = Line.lines.random();
-        $('#question').html('Укажите на схеме или в списке точку крепления этой снасти.<h2>' + Questionary.answer.name + '?</h2>');
+        $('#questionWhere').html(Questionary.answer.name + '?');
         break;
     case 'which':
         Questionary.answer = Pin.pins.random();
-        $('#question').html('Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.<h2>' + Questionary.answer.description +'?</h2>');
+        $('#questionWhich').html(Questionary.answer.description +'?');
         break;
     default:
         return;

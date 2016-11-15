@@ -211,8 +211,9 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	padding: 0 2em;
 }
 
-#question {
+#questionWhere, #questionWhich {
 	text-align: center;
+	padding-bottom: 1em;
 	border-bottom: 2px solid black;
 }
 
@@ -298,8 +299,21 @@ hr {
           <div id="placeholder"></div>
           <hr>
         </td></tr>
-        <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
-          <table class="center"><tr><td id="question">
+        <tr class="modeDependent usedInModeWhere"><td>
+          <table class="center"><tr><td>
+            <p>
+              Укажите на схеме или в списке точку крепления этой снасти.
+            </p>
+            <h2 id="questionWhere"></h2>
+          </td></tr>
+        </table>
+        </td></tr>
+        <tr class="modeDependent usedInModeWhich"><td>
+          <table class="center"><tr><td>
+            <p id="questionText">
+              Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.
+            </p>
+            <h2 id="questionWhich"></h2>
           </td></tr>
         </table>
         </td></tr>
@@ -788,7 +802,6 @@ function Pin(deck, rail, index, x, y, type, rotation) {
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.description = this.deck.title.capitalize() + '/' + this.rail.name + (this.number == 1 ? '' : '/' + this.number); // ToDo: Check Rail length to be sure we can skip 1
     this.line = null;
     Pin.pins.push(this);
 }
@@ -808,6 +821,7 @@ Pin.prototype.toString = function () {
 };
 
 Pin.prototype.createElement = function () {
+    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">'); // ToDo: FREE is not necessary, it must be a line
@@ -1243,11 +1257,11 @@ Questionary.askQuestion = function(mode) {
     switch(mode) {
     case 'where':
         Questionary.answer = Line.lines.random();
-        $('#question').html('Укажите на схеме или в списке точку крепления этой снасти.<h2>' + Questionary.answer.name + '?</h2>');
+        $('#questionWhere').html(Questionary.answer.name + '?');
         break;
     case 'which':
         Questionary.answer = Pin.pins.random();
-        $('#question').html('Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.<h2>' + Questionary.answer.description +'?</h2>');
+        $('#questionWhich').html(Questionary.answer.description +'?');
         break;
     default:
         return;

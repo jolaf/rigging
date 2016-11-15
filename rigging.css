@@ -194,8 +194,9 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	padding: 0 2em;
 }
 
-#question {
+#questionWhere, #questionWhich {
 	text-align: center;
+	padding-bottom: 1em;
 	border-bottom: 2px solid black;
 }
 
