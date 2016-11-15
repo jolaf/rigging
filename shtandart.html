@@ -218,6 +218,14 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	border-bottom: 2px solid black;
 }
 
+.rightAnswer {
+	border: 1px solid green;
+}
+
+.wrongAnswer {
+	border: 1px solid red;
+}
+
 #info {
 	text-align: center;
 	vertical-align: middle;
@@ -733,19 +741,19 @@ function applyNew(f, args) {
     return new (f.bind.apply(f, [null].concat(args)))();
 }
 
-String.prototype.trimAll = function() {
+String.prototype.trimAll = function () {
     return this.replace(/^[\s,]+|[\s,]+$/gm, '');
 };
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 };
 
-String.prototype.reEnd = function(suffix, cut) {
+String.prototype.reEnd = function (suffix, cut) {
     return this.slice(0, cut === 0 ? 0 : -(cut || suffix.length)) + suffix;
 };
 
-Array.prototype.random = function() {
+Array.prototype.random = function () {
     return this[Math.floor(Math.random() * this.length)];
 };
 
@@ -831,18 +839,19 @@ Pin.prototype.createElement = function () {
     this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
         (event.data.line || event.data).mouseHandler(); // ToDo: Each pin MUST have a line
     });
+    this.element.add(this.icon).on('click', this, Questionary.answerQuestion);
     Pin.icons.push(this.icon);
     return this.element;
 };
 
-Pin.prototype.mouseHandler = function() {
+Pin.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
     this.icon.toggleClass('on');
 };
 
 Pin.placeElements = function (location) {
     var element = $(location);
-    $.each(Pin.icons, function(_index, icon) {
+    $.each(Pin.icons, function (_index, icon) {
         element.append(icon);
     });
 };
@@ -860,20 +869,20 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPins, type, rotation) {
     y0 = y0 || 0;
     var args;
     if (Array.isArray(stepX)) { // stepX = pins = [[x, y, type = CLEAT, rotation = 0], ...]
-        args = $.map(stepX, function(args, index) {
+        args = $.map(stepX, function (args, index) {
             return [[index, x0 + (args[0] || 0), y0 + (args[1] || 0), args[2] || CLEAT, args[3] || 0]]; // $.map flattens arrays
         });
     } else { // stepX, stepY, nPins, type = PIN, rotation
-        args = $.map(Array(nPins || 1), function(_undefined, index) {
+        args = $.map(Array(nPins || 1), function (_undefined, index) {
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
     var prefix = [deck, this];
-    this.pins = $.map(args, function(args, _index) {
+    this.pins = $.map(args, function (args, _index) {
         return applyNew(Pin, prefix.concat(args));
     });
     if (!this.assym) {
-        this.portPins = $.map(args, function(args, _index) {
+        this.portPins = $.map(args, function (args, _index) {
             args[2] *= -1;
             return applyNew(Pin, prefix.concat(args));
         });
@@ -917,7 +926,7 @@ Rail.prototype.toString = function () {
 Rail.prototype.createElement = function () {
     var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="pins"></span></li>');
     var pins = $('span.pins', element);
-    $.each(this.portPins.reverse().concat(this.pins), function(_index, pin) {
+    $.each(this.portPins.reverse().concat(this.pins), function (_index, pin) {
         pins.append(pin.createElement()).append(' ');
     });
     this.element = element;
@@ -935,7 +944,7 @@ function Deck(name, title, rails) {
     this.title = title.toLowerCase();
     var uniqueRails = [];
     deck = this;
-    this.rails = $.map(rails, function(railArgs, _index) {
+    this.rails = $.map(rails, function (railArgs, _index) {
         var rail = applyNew(Rail, [deck,].concat(railArgs));
         assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + deck.name + '/' + rail.name);
         uniqueRails.push(rail.name);
@@ -947,7 +956,7 @@ function Deck(name, title, rails) {
 Deck.prototype.attachLine = function (railName, number, line) {
     assert(line);
     this.lines.push(line);
-    var rails = $.grep(this.rails, function(rail, _index) {
+    var rails = $.grep(this.rails, function (rail, _index) {
         return railName === rail.name;
     });
     assert(rails.length == 1, "Unknown rail: " + railName);
@@ -961,7 +970,7 @@ Deck.prototype.toString = function () {
 Deck.prototype.createElement = function () {
     var element =  $('<td class="deck"><h2>' + this.title.capitalize() + '</h2><ul></ul></td>');
     var ul = $('ul', element);
-    $.each(this.rails, function(_index, rail) {
+    $.each(this.rails, function (_index, rail) {
         ul.append(rail.createElement());
     });
     this.element = element;
@@ -970,7 +979,7 @@ Deck.prototype.createElement = function () {
 
 Deck.construct = function () {
     var uniqueNames = [];
-    Deck.decks = $.map(DECKS, function(deckArgs, _index) {
+    Deck.decks = $.map(DECKS, function (deckArgs, _index) {
         var deck = applyNew(Deck, deckArgs);
         assert($.inArray(uniqueNames, deck.name) < 0, "Duplicate deck name: " + deck.name);
         uniqueNames.push(deck.name);
@@ -983,7 +992,7 @@ Deck.getDeck = function (deckName) {
     deckName = $.trim(deckName);
     assert(deckName, "No deck");
     deckName = deckName.toLowerCase();
-    decks = $.grep(Deck.decks, function(deck, _index) {
+    decks = $.grep(Deck.decks, function (deck, _index) {
         return deckName === deck.name;
     });
     assert(decks.length == 1, "Unknown deck: " + deckName);
@@ -991,14 +1000,14 @@ Deck.getDeck = function (deckName) {
 };
 
 Deck.createElements = function () {
-    $.each(Deck.decks, function(_index, deck) {
+    $.each(Deck.decks, function (_index, deck) {
         deck.createElement();
     });
 };
 
 Deck.placeElements = function (location) {
     var element = $(location);
-    $.each(Deck.decks, function(_index, deck) {
+    $.each(Deck.decks, function (_index, deck) {
         element.append(deck.element);
     });
 };
@@ -1055,15 +1064,15 @@ Line.prototype.toString = function () {
     return 'Line("' + this.mast.name + '", "' + this.sail.name + '", "' + this.name + '")';
 };
 
-Line.prototype.createElement = function() {
+Line.prototype.createElement = function () {
     this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
     this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
     return this.element;
 };
 
-Line.prototype.mouseHandler = function() {
+Line.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
-    $.each(this.pins, function(_index, pin) {
+    $.each(this.pins, function (_index, pin) {
         pin.mouseHandler();
     });
 };
@@ -1071,11 +1080,11 @@ Line.prototype.mouseHandler = function() {
 Line.construct = function () {
     var uniqueNames = [];
     Line.lines = [];
-    $.each(LINES, function(_index, args) {
+    $.each(LINES, function (_index, args) {
         var mastName = args[0];
-        $.each(args[1], function(_index, args) {
+        $.each(args[1], function (_index, args) {
             var prefix = [mastName, args[0]];
-            $.each(args[1], function(_index, args) {
+            $.each(args[1], function (_index, args) {
                 var line = applyNew(Line, prefix.concat(args));
                 assert($.inArray(uniqueNames, line.name) < 0, "Duplicate line name: " + line.name);
                 uniqueNames.push(line.name);
@@ -1111,7 +1120,7 @@ Sail.prototype.createElement = function () {
         element.prepend($('<h3>' + name + '</h3>'));
     }
     var ul = $('ul', element);
-    $.each(this.lines, function(_index, line) {
+    $.each(this.lines, function (_index, line) {
         ul.append(line.createElement());
     });
     this.element = element;
@@ -1131,7 +1140,7 @@ Mast.masts = [];
 
 Mast.getMast = function (mastName) {
     mastName = $.trim(mastName || '').toLowerCase();
-    var masts = $.grep(Mast.masts, function(mast, _index) { return mastName === mast.name; });
+    var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
     var mast;
     if (masts.length) { // == 1
         mast = masts[0];
@@ -1145,7 +1154,7 @@ Mast.getMast = function (mastName) {
 Mast.prototype.attachLine = function (sailName, line) {
     assert(line);
     var sail = new Sail(sailName, this);
-    var sails = $.grep(this.sails, function(checkSail, _index) { return sail.name === checkSail.name; });
+    var sails = $.grep(this.sails, function (checkSail, _index) { return sail.name === checkSail.name; });
     if (sails.length) { // == 1
         sail = sails[0];
     } else {
@@ -1162,7 +1171,7 @@ Mast.prototype.toString = function () {
 
 Mast.prototype.createElement = function () {
     var element =  $('<div class="mast"><h2>' + (this.name ? this.name.capitalize() : 'Прочие снасти') + '</h2></div>');
-    $.each(this.sails, function(_index, sail) {
+    $.each(this.sails, function (_index, sail) {
         element.append(sail.createElement());
     });
     this.element = element;
@@ -1170,7 +1179,7 @@ Mast.prototype.createElement = function () {
 };
 
 Mast.createElements = function () {
-    $.each(Mast.masts, function(_index, mast) {
+    $.each(Mast.masts, function (_index, mast) {
         mast.createElement();
     });
 };
@@ -1178,7 +1187,7 @@ Mast.createElements = function () {
 Mast.placeElements = function (linesLocation, fullLinesLocation) {
     var fullLinesElement = $(fullLinesLocation);
     var td;
-    $.each(Mast.masts, function(index, mast) {
+    $.each(Mast.masts, function (index, mast) {
         if ($.inArray(index, [1, Mast.masts.length - 1, Mast.masts.length - 2]) < 0) {
             td = $('<td>');
             fullLinesElement.append(td);
@@ -1246,19 +1255,7 @@ function Questionary() {
 
 Questionary.mode = null;
 
-Questionary.setup = function() {
-    $('.nonSailLines .line').click(function (event) {
-
-    });
-    $('.sailLines .line').click(function (event) {
-
-    });
-    $('.sails .line').click(function (event) {
-
-    });
-};
-
-Questionary.askQuestion = function(mode) {
+Questionary.askQuestion = function (mode) {
     if (mode) {
         Questionary.mode = mode;
     }
@@ -1271,6 +1268,15 @@ Questionary.askQuestion = function(mode) {
         Questionary.answer = Pin.pins.random();
         $('#questionWhich').html(Questionary.answer.description +' ?');
         break;
+    }
+};
+
+Questionary.answerQuestion = function (event) {
+    assert(this === event.target);
+    var element = $(this);
+    var pin = event.data;
+    if (pin) {
+        pin.element.add(pin.icon).toggleClass(pin.line === Questionary.answer ? 'rightAnswer' : 'wrongAnswer');
     }
 };
 
@@ -1360,9 +1366,9 @@ function main() {
             }
         }
     });
-    $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('.selector').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
-    Questionary.setup();
+    $('.line').click(Questionary.answerQuestion);
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();

@@ -201,6 +201,14 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	border-bottom: 2px solid black;
 }
 
+.rightAnswer {
+	border: 1px solid green;
+}
+
+.wrongAnswer {
+	border: 1px solid red;
+}
+
 #info {
 	text-align: center;
 	vertical-align: middle;
