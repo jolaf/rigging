@@ -286,7 +286,7 @@ Deck.createElements = function () {
 Deck.placeElements = function (location) {
     var element = $(location);
     $.each(Deck.decks, function (_index, deck) {
-        element.append(deck.element);
+        element.prepend(deck.element);
     });
 };
 
@@ -468,7 +468,7 @@ Mast.placeElements = function (linesLocation, fullLinesLocation) {
     $.each(Mast.masts, function (index, mast) {
         if ($.inArray(index, [1, Mast.masts.length - 1, Mast.masts.length - 2]) < 0) {
             td = $('<td>');
-            fullLinesElement.append(td);
+            fullLinesElement.prepend(td);
         }
         if (index == 1) {
             td.prepend(mast.element);

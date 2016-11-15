@@ -5,3 +5,5 @@ Make all pins connected
 Rename 'pin' class to 'icon'
 Add actual deck and mast filters
 Add graphical representation to mast filters
+Improve styling of hover over scheme and text
+Check names of stern decks lines to sound reasonably
