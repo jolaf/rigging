@@ -133,11 +133,19 @@ img.scheme {
 img.point {
 	position: absolute;
 	background: url("images/sprite.png") no-repeat;
-	filter: brightness(0);
+	filter: brightness(0); /* black */
 }
 
-img.point:hover, img.point.on {
-	filter: none;
+.point.active:hover, .point.active.on, .point.wrongAnswer {
+	filter: none; /* red */
+}
+
+.point.wrongAnswer {
+    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red);
+}
+
+.point.rightAnswer {
+    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green);
 }
 
 img.pin {
@@ -182,13 +190,27 @@ img.vang {
 	background-position: -152px -1px;
 }
 
-a.pin, .line {
-	cursor: pointer;
+.pin, .line {
 	font-weight: bold;
 }
 
-a:hover, a.pin.on, .line.on, .line:hover {
+.active {
+	cursor: pointer;
+}
+
+.pin.active:hover, .pin.active.on {
 	color: red;
+
+}
+
+.pin.wrongAnswer {
+	color: red;
+	text-shadow: 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red, 0 0 1em red;
+}
+
+.pin.rightAnswer {
+	color: green;
+	text-shadow: 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 0.1em white, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green, 0 0 1em green;
 }
 
 .deck, .mast {
@@ -199,14 +221,6 @@ a:hover, a.pin.on, .line.on, .line:hover {
 	text-align: center;
 	padding-bottom: 1em;
 	border-bottom: 2px solid black;
-}
-
-.rightAnswer {
-	border: 1px solid green;
-}
-
-.wrongAnswer {
-	border: 1px solid red;
 }
 
 #info {

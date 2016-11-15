@@ -198,8 +198,14 @@ Rail.prototype.toString = function () {
 Rail.prototype.createElement = function () {
     var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="pins"></span></li>');
     var pins = $('span.pins', element);
-    $.each(this.portPins.reverse().concat(this.pins), function (_index, pin) {
+    $.each(this.portPins.reverse(), function (_index, pin) {
         pins.append(pin.createElement()).append(' ');
+    });
+    if (this.portPins.length) {
+        pins.append('&nbsp;');
+    }
+    $.each(this.pins, function (_index, pin) {
+        pins.append(' ').append(pin.createElement());
     });
     this.element = element;
     return this.element;
@@ -493,8 +499,6 @@ function setMode(mode) {
         setMode.schemeBlock.show();
         break;
     case 'where':
-        setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
-        break;
     case 'which':
         setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
@@ -526,29 +530,56 @@ function Questionary() {
 }
 
 Questionary.mode = null;
+Questionary.correctAnswer = null;
+Questionary.status = null;
+var ASKED = 'ASKED';
+var ANSwERED = 'ANSwERED';
 
 Questionary.askQuestion = function (mode) {
     if (mode) {
         Questionary.mode = mode;
     }
-    switch(mode) {
+    switch(Questionary.mode) {
     case 'where':
-        Questionary.answer = Line.lines.random();
-        $('#questionWhere').html(Questionary.answer.name + ' ?');
+        Questionary.correctAnswer = Line.lines.random();
+        $('#questionWhere').html(Questionary.correctAnswer.name + ' ?');
+        $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        Questionary.status = ASKED;
         break;
     case 'which':
-        Questionary.answer = Pin.pins.random();
-        $('#questionWhich').html(Questionary.answer.description +' ?');
+        Questionary.correctAnswer = Pin.pins.random();
+        $('#questionWhich').html(Questionary.correctAnswer.description +' ?');
+        $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        Questionary.status = ASKED;
         break;
+    default:
+        Questionary.status = null;
     }
 };
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
+    if (Questionary.status !== ASKED) {
+        return;
+    }
+    $('.pin, .point').removeClass('active');
     var element = $(this);
     var pin = event.data;
     if (pin) {
-        pin.element.add(pin.icon).toggleClass(pin.line === Questionary.answer ? 'rightAnswer' : 'wrongAnswer');
+        $.each(Questionary.correctAnswer.pins, function (_index, pin) {
+            pin.element.add(pin.icon).addClass('rightAnswer');
+        });
+        if (pin.line !== Questionary.correctAnswer) {
+            pin.element.add(pin.icon).addClass('wrongAnswer');
+        }
+    }
+    Questionary.status = ANSwERED;
+    event.stopPropagation(); // Avoid triggering nextQuestion()
+};
+
+Questionary.nextQuestion = function (event) {
+    if (Questionary.status === ANSwERED) {
+        Questionary.askQuestion();
     }
 };
 
@@ -638,9 +669,10 @@ function main() {
             }
         }
     });
-    $('.selector').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('.line').click(Questionary.answerQuestion);
+    $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();
