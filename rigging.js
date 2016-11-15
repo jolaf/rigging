@@ -526,6 +526,18 @@ function Questionary() {
 
 Questionary.mode = null;
 
+Questionary.setup = function() {
+    $('.nonSailLines .line').click(function (event) {
+
+    });
+    $('.sailLines .line').click(function (event) {
+
+    });
+    $('.sails .line').click(function (event) {
+
+    });
+};
+
 Questionary.askQuestion = function(mode) {
     if (mode) {
         Questionary.mode = mode;
@@ -533,14 +545,12 @@ Questionary.askQuestion = function(mode) {
     switch(mode) {
     case 'where':
         Questionary.answer = Line.lines.random();
-        $('#questionWhere').html(Questionary.answer.name + '?');
+        $('#questionWhere').html(Questionary.answer.name + ' ?');
         break;
     case 'which':
         Questionary.answer = Pin.pins.random();
-        $('#questionWhich').html(Questionary.answer.description +'?');
+        $('#questionWhich').html(Questionary.answer.description +' ?');
         break;
-    default:
-        return;
     }
 };
 
@@ -566,6 +576,9 @@ function main() {
     // Setup menu
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
+    $('input[name=mode]').prop('checked', false);
+    $('#toggleScheme').prop('checked', true);
+    $('#toggleColor').prop('checked', true);
     resetDecks();
     resetMasts();
     $('.selector').click(function (event) {
@@ -628,25 +641,13 @@ function main() {
         }
     });
     $('.selector').mousedown(function(event) { event.preventDefault(); }); // Avoid selection by double-click
-    // Setup questionnary
-    $('.nonSailLines .line').click(function (event) {
-
-    });
-    $('.sailLines .line').click(function (event) {
-
-    });
-    $('.sails .line').click(function (event) {
-
-    });
-    // Set initial mode from URL fragment
+    // Finishing setup
+    Questionary.setup();
     setMode(window.location.hash.slice(1));
-    // Bind resize handler
-    $(window).resize(onResize);
-    // Everything ready, start!
+    onResize();
     $('#loading').hide();
     $('#main').show();
-    // Trigger resize to adjust the elements to the window size
-    $(window).resize();
+    $(window).resize(onResize);
 }
 
 $(document).ready(main);

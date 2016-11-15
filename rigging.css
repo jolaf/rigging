@@ -184,9 +184,6 @@ img.vang {
 
 a.pin, .line {
 	cursor: pointer;
-}
-
-a.pin {
 	font-weight: bold;
 }
 
