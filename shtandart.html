@@ -98,6 +98,7 @@ span.selector {
 
 #schemeBlock {
 	border-bottom: 2px solid black;
+	user-select: none;
 }
 
 #scheme {
@@ -158,11 +159,11 @@ img.point {
 }
 
 .point.wrongAnswer {
-    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red) drop-shadow(0px 0px 20px red);
+    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .point.rightAnswer {
-    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green) drop-shadow(0px 0px 20px green);
+    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 img.pin {
@@ -257,7 +258,7 @@ img.vang {
 }
 
 #footer p {
-	margin: 0.3em;
+	margin: 0.1em 0.3em 0.3em;
 }
 
 .icon {
@@ -842,15 +843,12 @@ Pin.prototype.createElement = function () {
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">'); // ToDo: FREE is not necessary, it must be a line
-    this.icon.css({ left: this.x, top: SCHEME_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
-    var transform = (this.y <= -20) ? 'scaleY(-1)' : '';
-    if (this.rotation) {
-        transform += (transform ? ' ': '') + 'rotate(' + this.rotation + 'deg)';
-    }
-    if (transform) {
-        this.icon.css({ transform: transform });
-    }
-    this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
+    this.icon.css({
+        left: this.x,
+        top: this.y, // Must be adjusted for height when visible, here it only works in Firefox
+        transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
+    });
+     this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
         (event.data.line || event.data).mouseHandler(); // ToDo: Each pin MUST have a line
     });
     this.element.add(this.icon).on('click', this, Questionary.answerQuestion);
@@ -867,6 +865,9 @@ Pin.placeElements = function (location) {
     var element = $(location);
     $.each(Pin.icons, function (_index, icon) {
         element.append(icon);
+        icon.css({
+            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))),
+        });
     });
 };
 
@@ -1028,7 +1029,7 @@ Deck.createElements = function () {
 Deck.placeElements = function (location) {
     var element = $(location);
     $.each(Deck.decks, function (_index, deck) {
-        element.append(deck.element);
+        element.prepend(deck.element);
     });
 };
 
@@ -1210,7 +1211,7 @@ Mast.placeElements = function (linesLocation, fullLinesLocation) {
     $.each(Mast.masts, function (index, mast) {
         if ($.inArray(index, [1, Mast.masts.length - 1, Mast.masts.length - 2]) < 0) {
             td = $('<td>');
-            fullLinesElement.append(td);
+            fullLinesElement.prepend(td);
         }
         if (index == 1) {
             td.prepend(mast.element);
@@ -1321,7 +1322,6 @@ Questionary.answerQuestion = function (event) {
 
 Questionary.nextQuestion = function (event) {
     if (Questionary.status === ANSwERED) {
-
         Questionary.askQuestion();
     }
 };

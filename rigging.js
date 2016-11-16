@@ -100,15 +100,12 @@ Pin.prototype.createElement = function () {
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
-    this.icon.css({ left: this.x, top: SCHEME_HEIGHT + this.y - (this.y > -20 ? 0 : parseInt(this.icon.css('height'))) });
-    var transform = (this.y <= -20) ? 'scaleY(-1)' : '';
-    if (this.rotation) {
-        transform += (transform ? ' ': '') + 'rotate(' + this.rotation + 'deg)';
-    }
-    if (transform) {
-        this.icon.css({ transform: transform });
-    }
-    this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
+    this.icon.css({
+        left: this.x,
+        top: this.y, // Must be adjusted for height when visible, here it only works in Firefox
+        transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
+    });
+     this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
         (event.data.line || event.data).mouseHandler(); // ToDo: Each pin MUST have a line
     });
     this.element.add(this.icon).on('click', this, Questionary.answerQuestion);
@@ -125,6 +122,9 @@ Pin.placeElements = function (location) {
     var element = $(location);
     $.each(Pin.icons, function (_index, icon) {
         element.append(icon);
+        icon.css({
+            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))),
+        });
     });
 };
 

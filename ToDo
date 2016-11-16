@@ -7,3 +7,5 @@ Add actual deck and mast filters
 Add graphical representation to mast filters
 Improve styling of hover over scheme and text
 Check names of stern decks lines to sound reasonably
+Move sailLines generation from HTML to JS code
+Create whichLine questionnary mode
