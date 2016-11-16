@@ -80,7 +80,6 @@ span.selector {
 }
 
 #schemeBlock {
-	border-bottom: 2px solid black;
 	user-select: none;
 }
 
@@ -209,10 +208,14 @@ a.pin.rightAnswer {
 	padding: 0 2em;
 }
 
-#questionWhere, #questionWhich {
+.questionBlock {
+	border-top: 2px solid black;
 	text-align: center;
 	padding-bottom: 1em;
-	border-bottom: 2px solid black;
+}
+
+.choiceBlock {
+	border-top: 2px solid black;
 }
 
 #info {

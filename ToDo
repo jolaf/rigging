@@ -2,7 +2,9 @@ Minimize collection sizes by targeting higher elements with CSS
 Store all selections in variables
 Add color codes to clewlines etc
 Make all pins connected
-Rename 'pin' class to 'icon'
+Make sure multiple connection points, like mooring points, work ok
+Remove title tooltips for questionary modes
+Rename 'pin' class to 'point' or 'icon'
 Add actual deck and mast filters
 Add graphical representation to mast filters
 Improve styling of hover over scheme and text
@@ -12,3 +14,5 @@ Create whichLine questionnary mode
 Put cleats etc. above pins to be visible over glow
 Check and fix Chrome visual issues
 Check other browsers
+Resolve problem with multiple ropes to one point
+Cleanup CSS
