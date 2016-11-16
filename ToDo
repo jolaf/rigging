@@ -9,3 +9,6 @@ Improve styling of hover over scheme and text
 Check names of stern decks lines to sound reasonably
 Move sailLines generation from HTML to JS code
 Create whichLine questionnary mode
+Put cleats etc. above pins to be visible over glow
+Check and fix Chrome visual issues
+Check other browsers
