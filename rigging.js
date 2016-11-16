@@ -494,6 +494,9 @@ function setMode(mode) {
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
+    $('#answer').hide();
+    $('#statistics').hide();
+    Questionary.statAll = Questionary.statCorrect = 0;
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
         setMode.schemeBlock.show();
@@ -532,6 +535,8 @@ function Questionary() {
 Questionary.mode = null;
 Questionary.correctAnswer = null;
 Questionary.status = null;
+Questionary.statAll = 0;
+Questionary.statCorrect = 0;
 var ASKED = 'ASKED';
 var ANSwERED = 'ANSwERED';
 
@@ -544,12 +549,14 @@ Questionary.askQuestion = function (mode) {
         Questionary.correctAnswer = Line.lines.random();
         $('#question').text(Questionary.correctAnswer.name + ' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('#answer').empty();
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
         $('#question').text(Questionary.correctAnswer.description +' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('#answer').empty();
         Questionary.status = ASKED;
         break;
     default:
@@ -565,14 +572,20 @@ Questionary.answerQuestion = function (event) {
     $('.pin, .point').removeClass('active');
     var element = $(this);
     var pin = event.data;
-    if (pin) {
-        $.each(Questionary.correctAnswer.pins, function (_index, pin) {
-            pin.element.add(pin.icon).addClass('rightAnswer');
-        });
-        if (pin.line !== Questionary.correctAnswer) {
-            pin.element.add(pin.icon).addClass('wrongAnswer');
-        }
+    $.each(Questionary.correctAnswer.pins, function (_index, pin) {
+        pin.element.add(pin.icon).addClass('rightAnswer');
+    });
+    Questionary.statAll += 1;
+    if (pin.line === Questionary.correctAnswer) {
+        Questionary.statCorrect += 1;
+        $('#answer').addClass('rightAnswer').text('Правильно!').show();
+    } else {
+        pin.element.add(pin.icon).addClass('wrongAnswer').show();
+        $('#answer').removeClass('rightAnswer').show();
+        $('#answer').html('Неправильно! Это &ndash; ' + pin.line.name.toLowerCase() + '.');
     }
+    $('#statistics').html('' + Questionary.statCorrect + ' из ' + Questionary.statAll + ', ' + Math.round(Questionary.statCorrect / Questionary.statAll * 100) + '%');
+    $('#statistics').show();
     Questionary.status = ANSwERED;
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
@@ -671,7 +684,6 @@ function main() {
     });
     $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
-    $('.line').click(Questionary.answerQuestion);
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
     onResize();

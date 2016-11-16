@@ -16,3 +16,4 @@ Check and fix Chrome visual issues
 Check other browsers
 Resolve problem with multiple ropes to one point
 Cleanup CSS
+It main table cannot be avoided, at least use divs instead of rows
