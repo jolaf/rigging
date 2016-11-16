@@ -97,7 +97,12 @@ span.selector {
 }
 
 #schemeBlock {
-	user-select: none;
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
 }
 
 #scheme {
@@ -203,6 +208,10 @@ img.vang {
 	background-position: -152px -1px;
 }
 
+#schemeBorderFix * {
+	line-height: 0.1;
+}
+
 .pin, .line {
 	font-weight: bold;
 }
@@ -226,9 +235,17 @@ a.pin.rightAnswer {
 }
 
 .questionBlock {
-	border-top: 2px solid black;
 	text-align: center;
 	padding-bottom: 1em;
+}
+
+.questionBlock {
+	border-top: 2px solid black;
+}
+
+#question {
+	text-align: center;
+	margin-top: 0;
 }
 
 .choiceBlock {
@@ -312,23 +329,17 @@ a.pin.rightAnswer {
           </div>
           <div id="placeholder"></div>
         </td></tr>
-        <tr class="questionBlock modeDependent usedInModeWhere"><td>
-          <table class="center"><tr><td>
-            <p>
-              Укажите на схеме или в списке точку крепления этой снасти.
-            </p>
-            <h2 id="questionWhere"></h2>
-          </td></tr>
-        </table>
+        <tr id="schemeBorderFix" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+          &nbsp;
         </td></tr>
-        <tr class="questionBlock modeDependent usedInModeWhich"><td>
-          <table class="center"><tr><td>
-            <p id="questionText">
-              Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.
-            </p>
-            <h2 id="questionWhich"></h2>
-          </td></tr>
-        </table>
+        <tr class="questionBlock modeDependent usedInModeWhere"><td><p>
+          Укажите на схеме или в списке точку крепления этой снасти.
+        </p></td></tr>
+        <tr class="questionBlock modeDependent usedInModeWhich"><td><div><p>
+          Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.
+        </p></div></td></tr>
+        <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
+          <h2 id="question"></h2>
         </td></tr>
         <tr class="modeDependent usedInModeWhere usedInModeWhich"><td>
           <table class="center"><tr><td id="statistics">
@@ -347,7 +358,7 @@ a.pin.rightAnswer {
                 <li class="line">Брас</li>
                 <li class="line">Бухта браса</li>
                 <li class="line">Топенант</li>
-                <br>
+                <li></li>
                 <li class="line">Дирик-фал</li>
                 <li class="line">Галс-таль</li>
                 <li class="line">Эренс-бакштаг</li>
@@ -391,7 +402,7 @@ a.pin.rightAnswer {
                 <li class="line">Грот-брамсель</li>
                 <li class="line">Стаксель</li>
               </ul>
-              <h3>Бизань</h2>
+              <h3>Бизань</h3>
               <ul>
                 <li class="line">Бизань</li>
                 <li class="line">Крюйс-марсель</li>
@@ -1279,13 +1290,13 @@ Questionary.askQuestion = function (mode) {
     switch(Questionary.mode) {
     case 'where':
         Questionary.correctAnswer = Line.lines.random();
-        $('#questionWhere').html(Questionary.correctAnswer.name + ' ?');
+        $('#question').text(Questionary.correctAnswer.name + ' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
-        $('#questionWhich').html(Questionary.correctAnswer.description +' ?');
+        $('#question').text(Questionary.correctAnswer.description +' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         Questionary.status = ASKED;
         break;

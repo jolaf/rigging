@@ -542,13 +542,13 @@ Questionary.askQuestion = function (mode) {
     switch(Questionary.mode) {
     case 'where':
         Questionary.correctAnswer = Line.lines.random();
-        $('#questionWhere').html(Questionary.correctAnswer.name + ' ?');
+        $('#question').text(Questionary.correctAnswer.name + ' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
-        $('#questionWhich').html(Questionary.correctAnswer.description +' ?');
+        $('#question').text(Questionary.correctAnswer.description +' ?');
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         Questionary.status = ASKED;
         break;
