@@ -494,8 +494,7 @@ function setMode(mode) {
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
-    $('#answer').hide();
-    $('#statistics').hide();
+    $('#rightAnswer, #wrongAnswer, #statistics').hide();
     Questionary.statAll = Questionary.statCorrect = 0;
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
@@ -538,7 +537,7 @@ Questionary.status = null;
 Questionary.statAll = 0;
 Questionary.statCorrect = 0;
 var ASKED = 'ASKED';
-var ANSwERED = 'ANSwERED';
+var ANSWERED = 'ANSWERED';
 
 Questionary.askQuestion = function (mode) {
     if (mode) {
@@ -547,16 +546,16 @@ Questionary.askQuestion = function (mode) {
     switch(Questionary.mode) {
     case 'where':
         Questionary.correctAnswer = Line.lines.random();
-        $('#question').text(Questionary.correctAnswer.name + ' ?');
+        $('#question').text(Questionary.correctAnswer.name);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#answer').empty();
+        $('#rightAnswer, #wrongAnswer').hide();
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
-        $('#question').text(Questionary.correctAnswer.description +' ?');
+        $('#question').text(Questionary.correctAnswer.description);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#answer').empty();
+        $('#rightAnswer, #wrongAnswer').hide();
         Questionary.status = ASKED;
         break;
     default:
@@ -578,20 +577,24 @@ Questionary.answerQuestion = function (event) {
     Questionary.statAll += 1;
     if (pin.line === Questionary.correctAnswer) {
         Questionary.statCorrect += 1;
-        $('#answer').addClass('rightAnswer').text('Правильно!').show();
+        $('#rightAnswer').show();
+        $('#wrongAnswer').hide();
     } else {
         pin.element.add(pin.icon).addClass('wrongAnswer').show();
-        $('#answer').removeClass('rightAnswer').show();
-        $('#answer').html('Неправильно! Это &ndash; ' + pin.line.name.toLowerCase() + '.');
+        $('#rightAnswerText').text(pin.line.name);
+        $('#wrongAnswer').show();
+        $('#rightAnswer').hide();
     }
-    $('#statistics').html('' + Questionary.statCorrect + ' из ' + Questionary.statAll + ', ' + Math.round(Questionary.statCorrect / Questionary.statAll * 100) + '%');
+    $('#statCorrect').text(Questionary.statCorrect);
+    $('#statAll').text(Questionary.statAll);
+    $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
     $('#statistics').show();
-    Questionary.status = ANSwERED;
+    Questionary.status = ANSWERED;
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
 
 Questionary.nextQuestion = function (event) {
-    if (Questionary.status === ANSwERED) {
+    if (Questionary.status === ANSWERED) {
         Questionary.askQuestion();
     }
 };
