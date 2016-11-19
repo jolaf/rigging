@@ -540,7 +540,7 @@ function menuHandler(event) {
         return;
     }
     var checked;
-    if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options - NOPE
+    if (input.attr('name') === 'mode') {
         setMode(this.id.slice(0, -4)); // jshint ignore:line
     } else {
         if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
@@ -549,18 +549,15 @@ function menuHandler(event) {
                 resetDecks();
             } else {
                 $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectDecks input:checked');
+                checked = $('#selectDecks :not(#deckAll) input:checked');
                 switch (checked.length) {
-                    case 2:
+                    case 1:
                         checked.prop('disabled', true);
-                        $('#selectDecks :first-child input').prop('disabled', false);
                         break;
+                    case 2:
                     case 3:
                         $('#selectDecks input').prop('disabled', false);
-                        break;
-                    case 4:
-                        $('#selectDecks input').prop('disabled', false); // ToDo: Have special id for All element
-                        $('#selectDecks :first-child input').prop('disabled', true);
+                        $('#deckAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
                         break;
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
@@ -571,18 +568,15 @@ function menuHandler(event) {
             if (mast == 'All') {
                 resetMasts();
             } else {
-                checked = $('#selectMasts input:checked');
+                checked = $('#selectMasts :not(#mastAll) input:checked');
                 switch (checked.length) {
-                    case 2:
+                    case 1:
                         checked.prop('disabled', true);
-                        $('#selectMasts :first-child input').prop('disabled', false);
                         break;
+                    case 2:
                     case 3:
                         $('#selectMasts input').prop('disabled', false);
-                        break;
-                    case 4:
-                        $('#selectMasts input').prop('disabled', false); // ToDo: Have special id for All element
-                        $('#selectMasts :first-child input').prop('disabled', true);
+                        $('#mastAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
                         break;
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
