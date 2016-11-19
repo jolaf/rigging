@@ -495,8 +495,7 @@ function setMode(mode) {
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
-    $('#rightAnswer, #wrongAnswer, #nextQuestion, #statistics').hide();
-    Questionary.statAll = Questionary.statCorrect = 0;
+    $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
         setMode.schemeBlock.show();
@@ -528,6 +527,66 @@ function resetMasts() {
     $('#selectMasts :first-child input').prop('disabled', true);
 }
 
+function menuHandler(event) {
+    var selector = $(this);
+    var input = selector.find('input');
+    if (this === event.target) {
+        input.click();
+        return;
+    }
+    var checked;
+    if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
+        setMode(this.id.slice(0, -4));
+    } else {
+        if (input.attr('name') === 'deck') {
+            var deck = selector[0].id.slice(4);
+            if (deck == 'All') {
+                resetDecks();
+            } else {
+                $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
+                checked = $('#selectDecks input:checked');
+                switch (checked.length) {
+                    case 2:
+                        checked.prop('disabled', true);
+                        $('#selectDecks :first-child input').prop('disabled', false);
+                        break;
+                    case 3:
+                        $('#selectDecks input').prop('disabled', false);
+                        break;
+                    case 4:
+                        $('#selectDecks input').prop('disabled', false); // ToDo: Have special id for All element
+                        $('#selectDecks :first-child input').prop('disabled', true);
+                        break;
+                    default:
+                        assert(false, "Checkbox misconfiguration: " + checked.length);
+                }
+            }
+        } else if (input.attr('name') === 'mast') {
+            var mast = selector[0].id.slice(4);
+            if (mast == 'All') {
+                resetMasts();
+            } else {
+                checked = $('#selectMasts input:checked');
+                switch (checked.length) {
+                    case 2:
+                        checked.prop('disabled', true);
+                        $('#selectMasts :first-child input').prop('disabled', false);
+                        break;
+                    case 3:
+                        $('#selectMasts input').prop('disabled', false);
+                        break;
+                    case 4:
+                        $('#selectMasts input').prop('disabled', false); // ToDo: Have special id for All element
+                        $('#selectMasts :first-child input').prop('disabled', true);
+                        break;
+                    default:
+                        assert(false, "Checkbox misconfiguration: " + checked.length);
+                }
+            }
+        }
+    }
+}
+
 function Questionary() {
     // Static container
 }
@@ -543,20 +602,21 @@ var ANSWERED = 'ANSWERED';
 Questionary.askQuestion = function (mode) {
     if (mode) {
         Questionary.mode = mode;
+        Questionary.reset();
     }
     switch(Questionary.mode) {
     case 'where': // ToDo: Make constant
         Questionary.correctAnswer = Line.lines.random();
         $('#question').text(Questionary.correctAnswer.name);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
         $('#question').text(Questionary.correctAnswer.description);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = ASKED;
         break;
     default:
@@ -575,9 +635,8 @@ Questionary.answerQuestion = function (event) {
     $.each(Questionary.correctAnswer.pins, function (_index, pin) {
         pin.element.add(pin.icon).addClass('rightAnswer');
     });
-    Questionary.statAll += 1;
-    if (pin.line === Questionary.correctAnswer) {
-        Questionary.statCorrect += 1;
+    var isCorrect = pin.line === Questionary.correctAnswer;
+    if (isCorrect) {
         $('#rightAnswer').show();
         $('#wrongAnswer').hide();
     } else {
@@ -586,18 +645,33 @@ Questionary.answerQuestion = function (event) {
         $('#wrongAnswer').show();
         $('#rightAnswer').hide();
     }
+    Questionary.updateStatistics(isCorrect);
+    $('#nextQuestionNote').show();
+    Questionary.status = ANSWERED;
+    event.stopPropagation(); // Avoid triggering nextQuestion()
+};
+
+Questionary.updateStatistics = function (isCorrect) {
+    Questionary.statAll += 1;
+    Questionary.statCorrect += isCorrect ? 1 : 0;
     $('#statCorrect').text(Questionary.statCorrect);
     $('#statAll').text(Questionary.statAll);
     $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
-    $('#nextQuestion, #statistics').show();
-    Questionary.status = ANSWERED;
-    event.stopPropagation(); // Avoid triggering nextQuestion()
+    $('#statistics').show();
 };
 
 Questionary.nextQuestion = function (event) {
     if (Questionary.status === ANSWERED) {
         Questionary.askQuestion();
+    } else if (Questionary.status === ASKED && $(event.target).is('#nextQuestionButton')) {
+        Questionary.updateStatistics();
+        Questionary.askQuestion();
     }
+};
+
+Questionary.reset = function (event) {
+    Questionary.statAll = Questionary.statCorrect = 0;
+    $('#statistics').hide();
 };
 
 function main() {
@@ -627,66 +701,9 @@ function main() {
     $('#toggleColor').prop('checked', true);
     resetDecks();
     resetMasts();
-    $('.selector').click(function (event) {
-        var selector = $(this);
-        var input = selector.find('input');
-        if (this === event.target) {
-            input.click();
-            return;
-        }
-        var checked;
-        if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
-            setMode(this.id.slice(0, -4));
-        } else {
-            if (input.attr('name') === 'deck') {
-                var deck = selector[0].id.slice(4);
-                if (deck == 'All') {
-                    resetDecks();
-                } else {
-                    $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                    checked = $('#selectDecks input:checked');
-                    switch (checked.length) {
-                        case 2:
-                            checked.prop('disabled', true);
-                            $('#selectDecks :first-child input').prop('disabled', false);
-                            break;
-                        case 3:
-                            $('#selectDecks input').prop('disabled', false);
-                            break;
-                        case 4:
-                            $('#selectDecks input').prop('disabled', false); // ToDo: Have special id for All element
-                            $('#selectDecks :first-child input').prop('disabled', true);
-                            break;
-                        default:
-                            assert(false, "Checkbox misconfiguration: " + checked.length);
-                    }
-                }
-            } else if (input.attr('name') === 'mast') {
-                var mast = selector[0].id.slice(4);
-                if (mast == 'All') {
-                    resetMasts();
-                } else {
-                    checked = $('#selectMasts input:checked');
-                    switch (checked.length) {
-                        case 2:
-                            checked.prop('disabled', true);
-                            $('#selectMasts :first-child input').prop('disabled', false);
-                            break;
-                        case 3:
-                            $('#selectMasts input').prop('disabled', false);
-                            break;
-                        case 4:
-                            $('#selectMasts input').prop('disabled', false); // ToDo: Have special id for All element
-                            $('#selectMasts :first-child input').prop('disabled', true);
-                            break;
-                        default:
-                            assert(false, "Checkbox misconfiguration: " + checked.length);
-                    }
-                }
-            }
-        }
-    });
-    $('body').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('.selector').click(menuHandler);
+    $('#resetButton').click(Questionary.reset);
+    $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
