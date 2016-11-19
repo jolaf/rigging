@@ -128,7 +128,7 @@ Pin.placeElements = function (location) {
     $.each(Pin.icons, function (_index, icon) {
         element.append(icon);
         icon.css({
-            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))),
+            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
     });
 };
@@ -415,7 +415,7 @@ function Mast(name) {
     //assert(name, "No mast name");
     name = $.trim(name);
     //assert(name, "No mast name");
-    this.name = name.toLowerCase();
+    this.name = name;
     this.sails = [];
     this.lines = [];
 }
@@ -423,7 +423,7 @@ function Mast(name) {
 Mast.masts = [];
 
 Mast.getMast = function (mastName) {
-    mastName = $.trim(mastName || '').toLowerCase();
+    mastName = $.trim(mastName || '');
     var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
     var mast;
     if (masts.length) { // == 1
@@ -609,16 +609,33 @@ Questionary.askQuestion = function (mode) {
         Questionary.mode = mode;
         Questionary.reset();
     }
+    var checkbox;
     switch(Questionary.mode) {
     case setMode.WHERE:
-        Questionary.correctAnswer = Line.lines.random().name;
+        var line;
+        while (true) {
+            line = Line.lines.random();
+            checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
+            if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
+                break;
+            }
+        }
+        Questionary.correctAnswer = line.name;
         $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
         break;
     case setMode.WHICH:
-        Questionary.correctAnswer = Pin.pins.random().description;
+        var pin;
+        while (true) {
+            pin = Pin.pins.random();
+            checkbox = $('#selectDecks :contains("' + pin.deck.name + '") input');
+            if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && pin.description != Questionary.correctAnswer) {
+                break;
+            }
+        }
+        Questionary.correctAnswer = pin.description;
         $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
