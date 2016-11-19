@@ -491,8 +491,8 @@ function onResize() {
 }
 
 function setMode(mode) {
-    location.href = '#' + mode;
     mode = mode.trim().toLowerCase() || 'demo';
+    location.href = '#' + mode;
     var input = $('#' + mode + 'Mode input');
     if (input.prop('checked')) {
         return;
@@ -590,13 +590,16 @@ function Questionary() {
     // Static container
 }
 
+Questionary.ASKED = 'ASKED';
+Questionary.ANSWERED = 'ANSWERED';
+Questionary.WHERE = 'where';
+Questionary.WHICH = 'which';
+
 Questionary.mode = null;
 Questionary.correctAnswer = null;
 Questionary.status = null;
 Questionary.statAll = 0;
 Questionary.statCorrect = 0;
-var ASKED = 'ASKED';
-var ANSWERED = 'ANSWERED';
 
 Questionary.askQuestion = function (mode) {
     if (mode) {
@@ -604,19 +607,19 @@ Questionary.askQuestion = function (mode) {
         Questionary.reset();
     }
     switch(Questionary.mode) {
-    case 'where': // ToDo: Make constant
-        Questionary.correctAnswer = Line.lines.random();
-        $('#question').text(Questionary.correctAnswer.name);
+    case Questionary.WHERE:
+        Questionary.correctAnswer = Line.lines.random().name;
+        $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = ASKED;
+        Questionary.status = Questionary.ASKED;
         break;
-    case 'which':
-        Questionary.correctAnswer = Pin.pins.random();
-        $('#question').text(Questionary.correctAnswer.description);
+    case Questionary.WHICH:
+        Questionary.correctAnswer = Pin.pins.random().description;
+        $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = ASKED;
+        Questionary.status = Questionary.ASKED;
         break;
     default:
         Questionary.status = null;
@@ -625,16 +628,18 @@ Questionary.askQuestion = function (mode) {
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
-    if (Questionary.status !== ASKED) {
+    if (Questionary.status !== Questionary.ASKED) {
         return;
     }
     $('.pin, .point').removeClass('active');
     var element = $(this);
     var pin = event.data;
-    $.each(Questionary.correctAnswer.pins, function (_index, pin) {
-        pin.element.add(pin.icon).addClass('rightAnswer');
+    $.each(Pin.pins, function (_index, pin) {
+        if (pin.line.name == Questionary.correctAnswer) {
+            pin.element.add(pin.icon).addClass('rightAnswer');
+        }
     });
-    var isCorrect = pin.line === Questionary.correctAnswer;
+    var isCorrect = pin.line.name === Questionary.correctAnswer;
     if (isCorrect) {
         $('#rightAnswer').show();
         $('#wrongAnswer').hide();
@@ -646,7 +651,7 @@ Questionary.answerQuestion = function (event) {
     }
     Questionary.updateStatistics(isCorrect);
     $('#nextQuestionNote').show();
-    Questionary.status = ANSWERED;
+    Questionary.status = Questionary.ANSWERED;
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
 
@@ -660,9 +665,9 @@ Questionary.updateStatistics = function (isCorrect) {
 };
 
 Questionary.nextQuestion = function (event) {
-    if (Questionary.status === ANSWERED) {
+    if (Questionary.status === Questionary.ANSWERED) {
         Questionary.askQuestion();
-    } else if (Questionary.status === ASKED && $(event.target).is('#nextQuestionButton')) {
+    } else if (Questionary.status === Questionary.ASKED && $(event.target).is('#nextQuestionButton')) {
         Questionary.updateStatistics();
         Questionary.askQuestion();
     }
