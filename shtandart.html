@@ -245,6 +245,19 @@ a.pin.rightAnswer {
 	margin-top: 0;
 }
 
+#rightAnswer {
+	color: green;
+	font-weight: bold;
+}
+
+#wrongAnswer {
+	font-weight: bold;
+}
+
+#wrongAnswer span:first-child {
+	color: red;
+}
+
 .choiceBlock {
 	border-top: 2px solid black;
 }
@@ -330,20 +343,21 @@ a.pin.rightAnswer {
           &nbsp;
         </td></tr>
         <tr class="questionBlock modeDependent usedInModeWhere usedInModeWhich"><td>
-          <div class="modeDependent usedInModeWhere">
-            Укажите на схеме или в списке точку крепления этой снасти.
-          </div>
-          <div class="modeDependent usedInModeWhich">
-            Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке.
-          </div>
+          <div class="modeDependent usedInModeWhere"><p>
+            Укажите на схеме сверху или в списке ниже точку крепления этой снасти:
+          </p></div>
+          <div class="modeDependent usedInModeWhich"><p>
+            Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке:
+          </p></div>
           <h2><span id="question"></span> ?</h2>
-          <p>
+          <h3>
             &nbsp;
             <span id="rightAnswer">Правильно!</span>
-            <span id="wrongAnswer">Неправильно! Это &ndash; <span id="rightAnswerText"></span>.</span>
+            <span id="wrongAnswer"><span>Неправильно!</span> Это &ndash; <span id="rightAnswerText"></span>.</span>
             &nbsp;
-          </p>
-          <p id="statistics">Правильных ответов <span id="statCorrect"></span> из <span id="statAll"></span>, то есть <span id="statPercent"></span>%</p>
+          </h3>
+          <p>&nbsp;<span id="nextQuestion">Кликните в произвольное место, чтобы перейти к следующему вопросу.</span>&nbsp;</p>
+          <p>&nbsp;<span id="statistics">Правильных ответов <span id="statCorrect"></span> из <span id="statAll"></span>, то есть <span id="statPercent"></span>%</span></p>
         </td></tr>
         <tr class="choiceBlock high modeDependent usedInModeWhere"><td>
           <table class="center"><tr id="decks">
@@ -844,10 +858,11 @@ Pin.prototype.toString = function () {
 };
 
 Pin.prototype.createElement = function () {
+    var title = this.line ? this.line.name : FREE;
     this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
-    this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
+    this.element = $('<a class="pin" title="' + title + '">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">'); // ToDo: FREE is not necessary, it must be a line
+    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + title + '" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">'); // ToDo: FREE is not necessary, it must be a line
     this.icon.css({
         left: this.x,
         top: this.y, // Must be adjusted for height when visible, here it only works in Firefox
@@ -1107,9 +1122,9 @@ Line.construct = function () {
     var uniqueNames = [];
     Line.lines = [];
     $.each(LINES, function (_index, args) {
-        var mastName = args[0];
+        var prefix = [args[0], ''];
         $.each(args[1], function (_index, args) {
-            var prefix = [mastName, args[0]];
+            prefix[1] = args[0];
             $.each(args[1], function (_index, args) {
                 var line = applyNew(Line, prefix.concat(args));
                 assert($.inArray(uniqueNames, line.name) < 0, "Duplicate line name: " + line.name);
@@ -1242,7 +1257,7 @@ function setMode(mode) {
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
-    $('#rightAnswer, #wrongAnswer, #statistics').hide();
+    $('#rightAnswer, #wrongAnswer, #nextQuestion, #statistics').hide();
     Questionary.statAll = Questionary.statCorrect = 0;
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
@@ -1292,18 +1307,18 @@ Questionary.askQuestion = function (mode) {
         Questionary.mode = mode;
     }
     switch(Questionary.mode) {
-    case 'where':
+    case 'where': // ToDo: Make constant
         Questionary.correctAnswer = Line.lines.random();
         $('#question').text(Questionary.correctAnswer.name);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
         $('#question').text(Questionary.correctAnswer.description);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
         Questionary.status = ASKED;
         break;
     default:
@@ -1336,7 +1351,7 @@ Questionary.answerQuestion = function (event) {
     $('#statCorrect').text(Questionary.statCorrect);
     $('#statAll').text(Questionary.statAll);
     $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
-    $('#statistics').show();
+    $('#nextQuestion, #statistics').show();
     Questionary.status = ANSWERED;
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
@@ -1433,7 +1448,7 @@ function main() {
             }
         }
     });
-    $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('body').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));

@@ -96,13 +96,14 @@ Pin.prototype.toString = function () {
 };
 
 Pin.prototype.createElement = function () {
+    var title = this.line ? this.line.name : FREE;
     this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
-    this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
+    this.element = $('<a class="pin" title="' + title + '">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + (this.line ? this.line.name : FREE) + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
+    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + title + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
     this.icon.css({
         left: this.x,
-        top: this.y, // Must be adjusted for height when visible, here it only works in Firefox
+        top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
      this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
@@ -359,9 +360,9 @@ Line.construct = function () {
     var uniqueNames = [];
     Line.lines = [];
     $.each(LINES, function (_index, args) {
-        var mastName = args[0];
+        var prefix = [args[0], ''];
         $.each(args[1], function (_index, args) {
-            var prefix = [mastName, args[0]];
+            prefix[1] = args[0];
             $.each(args[1], function (_index, args) {
                 var line = applyNew(Line, prefix.concat(args));
                 assert($.inArray(uniqueNames, line.name) < 0, "Duplicate line name: " + line.name);
@@ -494,7 +495,7 @@ function setMode(mode) {
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
-    $('#rightAnswer, #wrongAnswer, #statistics').hide();
+    $('#rightAnswer, #wrongAnswer, #nextQuestion, #statistics').hide();
     Questionary.statAll = Questionary.statCorrect = 0;
     switch(mode) {
     case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
@@ -544,18 +545,18 @@ Questionary.askQuestion = function (mode) {
         Questionary.mode = mode;
     }
     switch(Questionary.mode) {
-    case 'where':
+    case 'where': // ToDo: Make constant
         Questionary.correctAnswer = Line.lines.random();
         $('#question').text(Questionary.correctAnswer.name);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
         Questionary.status = ASKED;
         break;
     case 'which':
         Questionary.correctAnswer = Pin.pins.random();
         $('#question').text(Questionary.correctAnswer.description);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
-        $('#rightAnswer, #wrongAnswer').hide();
+        $('#rightAnswer, #wrongAnswer, #nextQuestion').hide();
         Questionary.status = ASKED;
         break;
     default:
@@ -588,7 +589,7 @@ Questionary.answerQuestion = function (event) {
     $('#statCorrect').text(Questionary.statCorrect);
     $('#statAll').text(Questionary.statAll);
     $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
-    $('#statistics').show();
+    $('#nextQuestion, #statistics').show();
     Questionary.status = ANSWERED;
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
@@ -685,7 +686,7 @@ function main() {
             }
         }
     });
-    $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('body').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));

@@ -3,7 +3,6 @@ Store all selections in variables
 Add color codes to clewlines etc
 Make all pins connected
 Make sure multiple connection points, like mooring points, work ok
-Remove title tooltips for questionary modes
 Rename 'pin' class to 'point' or 'icon'
 Add actual deck and mast filters
 Add graphical representation to mast filters
@@ -17,3 +16,6 @@ Check other browsers
 Resolve problem with multiple ropes to one point
 Cleanup CSS
 It main table cannot be avoided, at least use divs instead of rows
+Add checkbox for tooltips
+Add checkbox for showing correct answers
+Employ SVG scheme, try to remove the data table, extract all from SVG

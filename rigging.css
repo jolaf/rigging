@@ -228,6 +228,19 @@ a.pin.rightAnswer {
 	margin-top: 0;
 }
 
+#rightAnswer {
+	color: green;
+	font-weight: bold;
+}
+
+#wrongAnswer {
+	font-weight: bold;
+}
+
+#wrongAnswer span:first-child {
+	color: red;
+}
+
 .choiceBlock {
 	border-top: 2px solid black;
 }
