@@ -1,12 +1,9 @@
 Minimize collection sizes by targeting higher elements with CSS
 Store all selections in variables
 Add color codes to clewlines etc
-Make all pins connected
-Make sure multiple connection points, like mooring points, work ok
 Rename 'pin' class to 'point' or 'icon'
 Add actual deck and mast filters
 Add graphical representation to mast filters
-Improve styling of hover over scheme and text
 Check names of stern decks lines to sound reasonably
 Move sailLines generation from HTML to JS code
 Create whichLine questionnary mode

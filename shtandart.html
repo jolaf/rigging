@@ -1283,22 +1283,27 @@ function setMode(mode) {
     $('.usedInMode' + mode.capitalize()).show();
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
-    case 'demo': // ToDo: Maybe adjust handlers, maybe ifs in them is enough
+    case setMode.DEMO:
         setMode.schemeBlock.show();
         break;
-    case 'where':
-    case 'which':
+    case setMode.WHERE:
+    case setMode.WHICH:
         setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
-    case 'info':
+    case setMode.INFO:
         setMode.schemeBlock.hide();
         break;
     default:
-        setMode('demo');
+        setMode(setMode.DEMO);
         return;
     }
     Questionary.askQuestion(mode);
 }
+
+setMode.DEMO = 'demo';
+setMode.WHERE = 'where';
+setMode.WHICH = 'which';
+setMode.INFO = 'info';
 
 function resetDecks() {
     $('.mask').hide();
@@ -1373,8 +1378,6 @@ function Questionary() {
 
 Questionary.ASKED = 'ASKED';
 Questionary.ANSWERED = 'ANSWERED';
-Questionary.WHERE = 'where';
-Questionary.WHICH = 'which';
 
 Questionary.mode = null;
 Questionary.correctAnswer = null;
@@ -1388,14 +1391,14 @@ Questionary.askQuestion = function (mode) {
         Questionary.reset();
     }
     switch(Questionary.mode) {
-    case Questionary.WHERE:
+    case setMode.WHERE:
         Questionary.correctAnswer = Line.lines.random().name;
         $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
         break;
-    case Questionary.WHICH:
+    case setMode.WHICH:
         Questionary.correctAnswer = Pin.pins.random().description;
         $('#question').text(Questionary.correctAnswer);
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
