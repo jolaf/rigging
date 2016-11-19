@@ -1,7 +1,7 @@
 function assert(condition, message) {
     if (!condition) {
         message = message || "Assertion failed";
-        //alert(message);
+        alert(message);
         if (typeof Error !== "undefined") {
             throw new Error(message);
         }
@@ -96,18 +96,18 @@ Pin.prototype.toString = function () {
 };
 
 Pin.prototype.createElement = function () {
-    var title = this.line ? this.line.name : FREE;
     this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
-    this.element = $('<a class="pin" title="' + title + '">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
+    assert(this.line, "No line for point " + this.description);
+    this.element = $('<a class="pin" title="' + this.line.name + '">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     Pin.elements.push(this.element);
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + title + '" src="images/blank.gif">'); // ToDo: FREE is not necessary, it must be a line
+    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" title="' + this.line.name + '" src="images/blank.gif">');
     this.icon.css({
         left: this.x,
         top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
      this.element.add(this.icon).on('mouseenter mouseleave', this, function (event) {
-        (event.data.line || event.data).mouseHandler(); // ToDo: Each pin MUST have a line
+        event.data.line.mouseHandler();
     });
     this.element.add(this.icon).on('click', this, Questionary.answerQuestion);
     Pin.icons.push(this.icon);

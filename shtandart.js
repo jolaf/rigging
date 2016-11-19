@@ -109,7 +109,7 @@ var ABOVE_RIGHT_LADDER = 'над трапом правого борта';
 var POOP_BULWARK = 'на юте, на фальшборту';
 var POOP_FLAGSTAFF = 'на юте, на флагштоке';
 
-var FREE = 'свободно';
+var FREE = 'свободный нагель';
 
 var DECKS = [
   // Deck        Title
@@ -271,8 +271,11 @@ var LINES = [
         [, [
             [FORE_DECK,  SIDE_RAIL,        -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
             [MAIN_DECK,  BULWARK,           2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
+            [STERN_DECK, BULWARK,           2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
+            [STERN_DECK, BULWARK,           3, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,      1, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,      2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
+            [STERN_DECK, SHROUDS_RAIL,      3, FREE,            ,                    STARBOARD, DETAIL_LINE],
         ]],
     ]],
 ];
