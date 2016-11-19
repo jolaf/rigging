@@ -1,7 +1,11 @@
+/* jshint strict: global */
+/*globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL */
+"use strict";
+
 function assert(condition, message) {
     if (!condition) {
         message = message || "Assertion failed";
-        alert(message);
+        alert(message); // jshint ignore:line
         if (typeof Error !== "undefined") {
             throw new Error(message);
         }
@@ -222,7 +226,7 @@ function Deck(name, title, rails) {
     assert(title, "No deck title");
     this.title = title.toLowerCase();
     var uniqueRails = [];
-    deck = this;
+    var deck = this;
     this.rails = $.map(rails, function (railArgs, _index) {
         var rail = applyNew(Rail, [deck,].concat(railArgs));
         assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + deck.name + '/' + rail.name);
@@ -271,7 +275,7 @@ Deck.getDeck = function (deckName) {
     deckName = $.trim(deckName);
     assert(deckName, "No deck");
     deckName = deckName.toLowerCase();
-    decks = $.grep(Deck.decks, function (deck, _index) {
+    var decks = $.grep(Deck.decks, function (deck, _index) {
         return deckName === deck.name;
     });
     assert(decks.length == 1, "Unknown deck: " + deckName);
@@ -302,6 +306,7 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     this.lineName = lineName.toLowerCase();
     this.detail = $.trim(detail || '').toLowerCase();
     fullName = $.trim(fullName || '');
+    var fullNameWords, pluralWords;
     switch (fullName) {
         case DETAIL_LINE:
             fullNameWords = this.detail ? [this.detail, this.lineName] : [this.lineName,];
@@ -528,17 +533,17 @@ function resetMasts() {
 }
 
 function menuHandler(event) {
-    var selector = $(this);
+    var selector = $(this); // jshint ignore:line
     var input = selector.find('input');
-    if (this === event.target) {
+    if (this === event.target) { // jshint ignore:line
         input.click();
         return;
     }
     var checked;
-    if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options
-        setMode(this.id.slice(0, -4));
+    if (input.attr('name') === 'mode') { // ToDo: Use seperate handlers? for modes and other options - NOPE
+        setMode(this.id.slice(0, -4)); // jshint ignore:line
     } else {
-        if (input.attr('name') === 'deck') {
+        if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
             var deck = selector[0].id.slice(4);
             if (deck == 'All') {
                 resetDecks();

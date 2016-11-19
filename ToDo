@@ -19,3 +19,4 @@ It main table cannot be avoided, at least use divs instead of rows
 Add checkbox for tooltips
 Add checkbox for showing correct answers
 Employ SVG scheme, try to remove the data table, extract all from SVG
+Use singular even for double ropes like fore course sail downhaulers
