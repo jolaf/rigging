@@ -80,7 +80,7 @@ table.center {
 }
 
 #options td {
-	background-color: lightgray;
+	background-color: gray;
 	border: 5px solid white;
 	font-weight: bold;
 	font-size: 120%;
@@ -95,7 +95,7 @@ span.selector {
 }
 
 #options .selector:hover {
-	color: red;
+	color: #fc0;
 	cursor: pointer;
 }
 
@@ -165,7 +165,11 @@ img.point {
 	filter: brightness(0); /* black */
 }
 
-.point.active:hover, .point.active.on, .point.wrongAnswer {
+.point.active:hover, .point.active.on {
+    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.point.wrongAnswer {
     filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
@@ -227,7 +231,12 @@ img.vang {
 	cursor: pointer;
 }
 
-a.pin.active:hover, a.pin.active.on, a.pin.wrongAnswer {
+a.pin.active:hover, a.pin.active.on {
+	color: white;
+	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
+}
+
+a.pin.wrongAnswer {
 	color: white;
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }

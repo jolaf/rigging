@@ -17,3 +17,4 @@ Add checkbox for showing correct answers
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Use singular even for double ropes like fore course sail downhaulers
 Replace $.each() with .each() wherever possible
+Change current question when changing masts/decks
