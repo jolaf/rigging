@@ -1,5 +1,5 @@
 /* jshint strict: global */
-/*globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL */
+/* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
 "use strict";
 
 function assert(condition, message) {
@@ -16,10 +16,6 @@ function assert(condition, message) {
 function applyNew(f, args) {
     return new (f.bind.apply(f, [null].concat(args)))();
 }
-
-String.prototype.trimAll = function () {
-    return this.replace(/^[\s,]+|[\s,]+$/gm, '');
-};
 
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
@@ -87,6 +83,13 @@ function Pin(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add sid
 
 Pin.pins = [];
 
+Pin.marks = {};
+Pin.marks[    CLEWLINE ] = 'clewline';
+Pin.marks[    BUNTLINE ] = 'buntline';
+Pin.marks[CLEWBUNTLINES] = 'clewbuntlines';
+Pin.marks[   LEECHLINE ] = 'leechline';
+Pin.marks[     BOWLINE ] = 'bowline';
+
 Pin.prototype.attachLine = function (line) {
     assert(line);
     assert(!this.line, "Line already attached to " + this.description);
@@ -132,6 +135,7 @@ Pin.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
+        icon.addClass(Pin.marks[this.line.lineName]);
     });
 };
 
@@ -153,9 +157,7 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPins, type, rotation) {
     assert(deck);
     this.deck = deck;
     assert(name, "No rail name");
-    name = $.trim(name);
-    assert(name, "No rail name");
-    this.name = name.toLowerCase();
+    this.name = name;
     this.assym = assym || false;
     x0 = x0 || 0;
     y0 = y0 || 0;
@@ -233,13 +235,9 @@ Rail.prototype.createElement = function () {
 
 function Deck(name, title, rails) {
     assert(name, "No deck name");
-    name = $.trim(name);
-    assert(name, "No deck name");
-    this.name = name.toLowerCase();
+    this.name = name;
     assert(title, "No deck title");
-    title = $.trim(title);
-    assert(title, "No deck title");
-    this.title = title.toLowerCase();
+    this.title = title;
     var uniqueRails = [];
     var deck = this;
     this.rails = $.map(rails, function (railArgs, _index) {
@@ -287,9 +285,6 @@ Deck.construct = function () {
 
 Deck.getDeck = function (deckName) {
     assert(deckName, "No deck");
-    deckName = $.trim(deckName);
-    assert(deckName, "No deck");
-    deckName = deckName.toLowerCase();
     var decks = $.grep(Deck.decks, function (deck, _index) {
         return deckName === deck.name;
     });
@@ -316,11 +311,9 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     this.mast = Mast.getMast(mastName);
     this.sail = this.mast.attachLine(sailName, this);
     assert(lineName, "No line");
-    lineName = $.trim(lineName);
-    assert(lineName, "No line");
-    this.lineName = lineName.toLowerCase();
-    this.detail = $.trim(detail || '').toLowerCase();
-    fullName = $.trim(fullName || '');
+    this.lineName = lineName;
+    this.detail = detail || '';
+    fullName = fullName || '';
     var fullNameWords, pluralWords;
     switch (fullName) {
         case DETAIL_LINE:
@@ -341,7 +334,7 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
             pluralWords = fullNameWords = fullName.split(' ');
     }
     assert(fullNameWords, "Empty fullNameWords");
-    pluralName = $.trim(pluralName || '');
+    pluralName = pluralName || '';
     switch (pluralName) {
         case SINGULAR:
         case PLURAL:
@@ -394,10 +387,7 @@ Line.construct = function () {
 };
 
 function Sail(name, mast) {
-    //assert(name, "No sail name");
-    name = $.trim(name);
-    //assert(name, "No sail name");
-    this.name = name.toLowerCase();
+    this.name = name;
     assert(mast);
     this.mast = mast;
     this.lines = [];
@@ -427,9 +417,6 @@ Sail.prototype.createElement = function () {
 };
 
 function Mast(name) {
-    //assert(name, "No mast name");
-    name = $.trim(name);
-    //assert(name, "No mast name");
     this.name = name;
     this.sails = [];
     this.lines = [];
@@ -438,7 +425,7 @@ function Mast(name) {
 Mast.masts = [];
 
 Mast.getMast = function (mastName) {
-    mastName = $.trim(mastName || '');
+    mastName = mastName || '';
     var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
     var mast;
     if (masts.length) { // == 1
@@ -640,6 +627,7 @@ Questionary.askQuestion = function (mode) {
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
+        Pin.tooltips(false);
         break;
     case setMode.WHICH:
         var pin;
@@ -655,9 +643,11 @@ Questionary.askQuestion = function (mode) {
         $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
+        Pin.tooltips(true);
         break;
     default:
         Questionary.status = null;
+        Pin.tooltips(true);
     }
 };
 
@@ -687,6 +677,7 @@ Questionary.answerQuestion = function (event) {
     Questionary.updateStatistics(isCorrect);
     $('#nextQuestionNote').show();
     Questionary.status = Questionary.ANSWERED;
+    Pin.tooltips(true);
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
 
@@ -735,7 +726,7 @@ function main() {
     setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
     $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
-    $('#toggleColor').prop('checked', true);
+    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay').toggleClass('colored'); }).change();
     $('#toggleTooltips').prop('checked', false).change(function (_event) { Pin.tooltips(this.checked); }).change();
     resetDecks();
     resetMasts();
