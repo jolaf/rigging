@@ -86,8 +86,6 @@ function Pin(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add sid
 }
 
 Pin.pins = [];
-Pin.elements = [];
-Pin.icons = [];
 
 Pin.prototype.attachLine = function (line) {
     assert(line);
@@ -103,7 +101,6 @@ Pin.prototype.createElement = function () {
     this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
-    Pin.elements.push(this.element);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
         left: this.x,
@@ -119,7 +116,6 @@ Pin.prototype.createElement = function () {
         event.data.line.mouseHandler();
     });
     this.elements.on('click', this, Questionary.answerQuestion);
-    Pin.icons.push(this.icon);
     return this.element;
 };
 
@@ -130,18 +126,18 @@ Pin.prototype.mouseHandler = function () {
 
 Pin.placeElements = function (location) {
     var element = $(location);
-    $.each(Pin.icons, function (_index, icon) {
+    $.each(Pin.pins, function (_index, pin) {
+        var icon = pin.icon;
         element.append(icon);
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
     });
-    Pin.tooltips(true);
 };
 
 Pin.tooltips = function (enable) {
     $.each(Pin.pins, function (_index, pin) {
-        $.each(pin.elements, function (_index, pin) {
+        pin.elements.each(function (_index, pin) {
             pin = $(pin);
             if (enable) {
                 pin.attr('title', pin.data('title'));
@@ -740,7 +736,7 @@ function main() {
     $('input[name=mode]').prop('checked', false);
     $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
     $('#toggleColor').prop('checked', true);
-    $('#toggleTooltips').prop('checked', true).change(function (_event) { Pin.tooltips(this.checked); });
+    $('#toggleTooltips').prop('checked', false).change(function (_event) { Pin.tooltips(this.checked); }).change();
     resetDecks();
     resetMasts();
     $('.selector').click(menuHandler);
