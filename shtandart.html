@@ -52,13 +52,13 @@ button {
 	margin: 0 0.5em;
 }
 
-h1, #options td {
+h1 {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
 
-.wide, #options {
+.wide, #controls {
 	width: 100%;
 }
 
@@ -79,11 +79,32 @@ table.center {
 	display: none;
 }
 
-#options td {
+#controls td {
 	background-color: gray;
 	border: 5px solid white;
 	font-weight: bold;
 	font-size: 120%;
+	padding: 0.3em 0.4em;
+}
+
+#controls span {
+	margin: 0.5em 0;
+}
+
+#modes {
+	width: 47%;
+}
+
+#selectMasts, #selectDecks {
+	width: 36%;
+}
+
+#options {
+	width: 17%;
+}
+
+#selectFill {
+	width: 53%;
 }
 
 span.selector {
@@ -94,13 +115,9 @@ span.selector {
 	margin-right: 0.3em;
 }
 
-#options .selector:hover {
+#controls .selector:hover {
 	color: #fc0;
 	cursor: pointer;
-}
-
-#options a {
-	text-decoration: none;
 }
 
 #schemeBlock {
@@ -419,11 +436,13 @@ img.vang {
   <tr id="main">
     <td>
       <table class="wide high">
-        <tr><td><form><table id="options"><tr>
-          <td id="demoMode" class="selector"><input name="mode" type="radio">Просмотр</td>
-          <td id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</td>
-          <td id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</td>
-          <td id="infoMode" class="selector"><input name="mode" type="radio">Описание</td>
+        <tr><td><form><table id="controls"><tr>
+          <td id="modes">
+            <span id="infoMode" class="selector"><input name="mode" type="radio">Описание</span>
+            <span id="demoMode" class="selector"><input name="mode" type="radio">Просмотр</span>
+            <span id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</span>
+            <span id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</span>
+          </td>
           <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты:
             <span id="mastAll" class="selector"><input name="mast" type="checkbox">Все</span>
             <span class="selector"><input name="mast" type="checkbox">Бизань</span>
@@ -436,10 +455,11 @@ img.vang {
             <span id="deckMain" class="selector"><input name="deck" type="checkbox">Главная</span>
             <span id="deckFore" class="selector"><input name="deck" type="checkbox">Бак</span>
           </td>
-          <td class="modeDependent usedInModeWhere usedInModeWhich">
-            <span class="selector"><input id="toggleScheme" type="checkbox">Схема</span>
+          <td id="selectFill" class="modeDependent usedInModeInfo usedInModeDemo">
+          </td>
+          <td id="options" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich">
             <span class="selector"><input id="toggleMarks" type="checkbox">Марки</span>
-            <!-- span class="selector"><input id="toggleTooltips" type="checkbox">Подсказки</span -->
+            <span class="selector modeDependent usedInModeWhere usedInModeWhich"><input id="toggleScheme" type="checkbox">Схема</span>
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
@@ -1383,7 +1403,7 @@ function onResize() {
 }
 
 function setMode(mode) {
-    mode = mode.trim().toLowerCase() || 'demo';
+    mode = mode.trim().toLowerCase() || 'info';
     if (mode === setMode.mode) {
         return;
     }
@@ -1395,6 +1415,9 @@ function setMode(mode) {
     $('.usedInMode' + mode.capitalize()).show();
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
+    case setMode.INFO:
+        setMode.schemeBlock.hide();
+        break;
     case setMode.DEMO:
         setMode.schemeBlock.show();
         break;
@@ -1402,20 +1425,17 @@ function setMode(mode) {
     case setMode.WHICH:
         setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
-    case setMode.INFO:
-        setMode.schemeBlock.hide();
-        break;
     default:
-        setMode(setMode.DEMO);
+        setMode(setMode.INFO);
         return;
     }
     Questionary.askQuestion(mode);
 }
 
+setMode.INFO = 'info';
 setMode.DEMO = 'demo';
 setMode.WHERE = 'where';
 setMode.WHICH = 'which';
-setMode.INFO = 'info';
 
 setMode.mode = null;
 

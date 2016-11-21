@@ -35,13 +35,13 @@ button {
 	margin: 0 0.5em;
 }
 
-h1, #options td {
+h1 {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
 
-.wide, #options {
+.wide, #controls {
 	width: 100%;
 }
 
@@ -62,11 +62,32 @@ table.center {
 	display: none;
 }
 
-#options td {
+#controls td {
 	background-color: gray;
 	border: 5px solid white;
 	font-weight: bold;
 	font-size: 120%;
+	padding: 0.3em 0.4em;
+}
+
+#controls span {
+	margin: 0.5em 0;
+}
+
+#modes {
+	width: 47%;
+}
+
+#selectMasts, #selectDecks {
+	width: 36%;
+}
+
+#options {
+	width: 17%;
+}
+
+#selectFill {
+	width: 53%;
 }
 
 span.selector {
@@ -77,13 +98,9 @@ span.selector {
 	margin-right: 0.3em;
 }
 
-#options .selector:hover {
+#controls .selector:hover {
 	color: #fc0;
 	cursor: pointer;
-}
-
-#options a {
-	text-decoration: none;
 }
 
 #schemeBlock {

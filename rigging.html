@@ -34,11 +34,13 @@
   <tr id="main">
     <td>
       <table class="wide high">
-        <tr><td><form><table id="options"><tr>
-          <td id="demoMode" class="selector"><input name="mode" type="radio">Просмотр</td>
-          <td id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</td>
-          <td id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</td>
-          <td id="infoMode" class="selector"><input name="mode" type="radio">Описание</td>
+        <tr><td><form><table id="controls"><tr>
+          <td id="modes">
+            <span id="infoMode" class="selector"><input name="mode" type="radio">Описание</span>
+            <span id="demoMode" class="selector"><input name="mode" type="radio">Просмотр</span>
+            <span id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</span>
+            <span id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</span>
+          </td>
           <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты:
             <span id="mastAll" class="selector"><input name="mast" type="checkbox">Все</span>
             <span class="selector"><input name="mast" type="checkbox">Бизань</span>
@@ -51,10 +53,11 @@
             <span id="deckMain" class="selector"><input name="deck" type="checkbox">Главная</span>
             <span id="deckFore" class="selector"><input name="deck" type="checkbox">Бак</span>
           </td>
-          <td class="modeDependent usedInModeWhere usedInModeWhich">
-            <span class="selector"><input id="toggleScheme" type="checkbox">Схема</span>
+          <td id="selectFill" class="modeDependent usedInModeInfo usedInModeDemo">
+          </td>
+          <td id="options" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich">
             <span class="selector"><input id="toggleMarks" type="checkbox">Марки</span>
-            <!-- span class="selector"><input id="toggleTooltips" type="checkbox">Подсказки</span -->
+            <span class="selector modeDependent usedInModeWhere usedInModeWhich"><input id="toggleScheme" type="checkbox">Схема</span>
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>

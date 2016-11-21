@@ -494,7 +494,7 @@ function onResize() {
 }
 
 function setMode(mode) {
-    mode = mode.trim().toLowerCase() || 'demo';
+    mode = mode.trim().toLowerCase() || 'info';
     if (mode === setMode.mode) {
         return;
     }
@@ -506,6 +506,9 @@ function setMode(mode) {
     $('.usedInMode' + mode.capitalize()).show();
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
+    case setMode.INFO:
+        setMode.schemeBlock.hide();
+        break;
     case setMode.DEMO:
         setMode.schemeBlock.show();
         break;
@@ -513,20 +516,17 @@ function setMode(mode) {
     case setMode.WHICH:
         setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
         break;
-    case setMode.INFO:
-        setMode.schemeBlock.hide();
-        break;
     default:
-        setMode(setMode.DEMO);
+        setMode(setMode.INFO);
         return;
     }
     Questionary.askQuestion(mode);
 }
 
+setMode.INFO = 'info';
 setMode.DEMO = 'demo';
 setMode.WHERE = 'where';
 setMode.WHICH = 'which';
-setMode.INFO = 'info';
 
 setMode.mode = null;
 
