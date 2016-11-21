@@ -165,7 +165,7 @@ img.point {
 	filter: brightness(0) /* black */ blur(0.5px);
 }
 
-.point.active:hover, .point.active.on, .point.question {
+.highlight .point:hover, .highlight .point.on, .point.question {
     filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -181,7 +181,7 @@ img.point {
 	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px);
 }
 
-.colored .clewline.point.active:hover, .colored .clewline.point.active.on, .colored .clewline.point.question {
+.colored.highlight .clewline.point:hover, .colored.highlight .clewline.point.on, .colored .clewline.point.question {
     filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -197,7 +197,7 @@ img.point {
 	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px);
 }
 
-.colored .buntline.point.active:hover, .colored .buntline.point.active.on, .colored .buntline.point.question {
+.colored.highlight .buntline.point:hover, .colored.highlight .buntline.point.on, .colored .buntline.point.question {
     filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -213,7 +213,7 @@ img.point {
 	filter: hue-rotate(78deg) brightness(250%) /* yellow green */  blur(0.5px);
 }
 
-.colored .clewbuntlines.point.active:hover, .colored .clewbuntlines.point.active.on, .colored .clewbuntlines.point.question {
+.colored.highlight .clewbuntlines.point:hover, .colored.highlight .clewbuntlines.point.on, .colored .clewbuntlines.point.question {
     filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -229,7 +229,7 @@ img.point {
 	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px);
 }
 
-.colored .leechline.point.active:hover, .colored .leechline.point.active.on, .colored .leechline.point.question {
+.colored.highlight .leechline.point:hover, .colored.highlight .leechline.point.on, .colored .leechline.point.question {
     filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -245,7 +245,7 @@ img.point {
 	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px);
 }
 
-.colored .bowline.point.active:hover, .colored .bowline.point.active.on, .colored .bowline.point.question {
+.colored.highlight .bowline.point:hover, .colored.highlight .bowline.point.on, .colored .bowline.point.question {
     filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -307,11 +307,11 @@ img.vang {
 	font-weight: bold;
 }
 
-.point, .pointNumber, .line {
+.pointer .point, .pointNumber, .line {
 	cursor: pointer;
 }
 
-.pointNumber.active:hover, .pointNumber.active.on, .line.active:hover, .line.active.on {
+.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .line.on {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
@@ -1024,10 +1024,7 @@ Point.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        var markClass = Point.marks[this.line.lineName];
-        if (markClass) {
-            point.elements.addClass('mark ' + markClass);
-        }
+        point.elements.addClass(Point.marks[this.line.lineName]);
     });
 };
 
@@ -1520,7 +1517,9 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = line.name;
         $('#question').text(Questionary.correctAnswer);
-        $('.point, .pointNumber').addClass('active').removeClass('question rightAnswer wrongAnswer');
+        $('#overlay').addClass('highlight pointer');
+        $('#decks').addClass('highlight');
+        $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
         Point.tooltips(false);
@@ -1536,9 +1535,9 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = point.description;
         $('#question').text(Questionary.correctAnswer);
+        $('#overlay').removeClass('highlight pointer');
+        $('#lines').addClass('highlight');
         $('.point, .line').removeClass('question rightAnswer wrongAnswer');
-        $('.point').removeClass('active');
-        $('.line').addClass('active');
         point.icon.addClass('question');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
@@ -1557,7 +1556,7 @@ Questionary.answerQuestion = function (event) {
          event.data && Questionary.mode == setMode.WHICH) {
         return;
     }
-    $('.point, .pointNumber').removeClass('active');
+    $('#overlay, #decks').removeClass('highlight');
     var element = $(this);
     var point = event.data;
     $.each(Point.points, function (_index, point) {

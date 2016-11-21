@@ -135,10 +135,7 @@ Point.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        var markClass = Point.marks[this.line.lineName];
-        if (markClass) {
-            point.elements.addClass('mark ' + markClass);
-        }
+        point.elements.addClass(Point.marks[this.line.lineName]);
     });
 };
 
@@ -631,7 +628,9 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = line.name;
         $('#question').text(Questionary.correctAnswer);
-        $('.point, .pointNumber').addClass('active').removeClass('question rightAnswer wrongAnswer');
+        $('#overlay').addClass('highlight pointer');
+        $('#decks').addClass('highlight');
+        $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
         Point.tooltips(false);
@@ -647,9 +646,9 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = point.description;
         $('#question').text(Questionary.correctAnswer);
+        $('#overlay').removeClass('highlight pointer');
+        $('#lines').addClass('highlight');
         $('.point, .line').removeClass('question rightAnswer wrongAnswer');
-        $('.point').removeClass('active');
-        $('.line').addClass('active');
         point.icon.addClass('question');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
@@ -668,7 +667,7 @@ Questionary.answerQuestion = function (event) {
          event.data && Questionary.mode == setMode.WHICH) {
         return;
     }
-    $('.point, .pointNumber').removeClass('active');
+    $('#overlay, #decks').removeClass('highlight');
     var element = $(this);
     var point = event.data;
     $.each(Point.points, function (_index, point) {

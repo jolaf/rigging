@@ -1,16 +1,15 @@
 Fix Which questionary on stern deck
-Remove pointer cursor on points in Which mode
 Check names of stern decks lines to sound reasonably
 Make Which mode work
 
 Resolve problem with multiple ropes to one point
 
-Add graphical representation to mast filters
-It main table cannot be avoided, at least use divs instead of rows
-Reorganize menu
-Remove Demo mode?
+Create Demo mode
 
-Minimize collection sizes by targeting higher elements with CSS (.active)
+Add graphical representation to mast filters
+Move from tables to flex boxes
+Reorganize menu
+
 Store all possible selections in variables
 Cleanup CSS
 Cleanup main()
