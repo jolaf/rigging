@@ -170,7 +170,7 @@ var LINES = [
             [MAIN_DECK,  BULWARK,           1, SHEET],
             [FORE_DECK,  FRONT_RAIL,       -1, TACK],
             [FORE_DECK,  FRONT_RAIL,        2, BOWLINE],
-            [FORE_DECK,  AT_MAST_FRONT,      , DOWNHAULER,      ,                    CENTER,    ,                             PLURAL],
+            [FORE_DECK,  AT_MAST_FRONT,      , DOWNHAULER,      ,                    CENTER],
             [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
             [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,        -2, CLEWLINE],
