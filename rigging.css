@@ -145,43 +145,99 @@ img.scheme {
 img.point {
 	position: absolute;
 	background: url("images/sprite.png") no-repeat; /* red */
-	filter: brightness(0); /* black */
-}
-
-.colored .mark {
-	color: red;
-}
-
-.colored .clewline {
-	filter: hue-rotate(60deg) brightness(220%); /* yellow */
-}
-
-.colored .buntline {
-	filter: hue-rotate(120deg) brightness(110%); /* dark green */
-}
-
-.colored .clewbuntlines {
-	filter: hue-rotate(78deg) brightness(250%); /* yellow/green */
-}
-
-.colored .leechline {
-	filter: hue-rotate(-30deg) brightness(70%); /* dark red */
-}
-
-.colored .bowline {
-	filter: hue-rotate(-120deg) brightness(100%); /* dark blue */
+	filter: brightness(0) /* black */ blur(0.5px);
 }
 
 .point.active:hover, .point.active.on, .point.question {
-    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .point.wrongAnswer {
-    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .point.rightAnswer {
-    filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+}
+
+.colored .clewline.point {
+	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px);
+}
+
+.colored .clewline.point.active:hover, .colored .clewline.point.active.on, .colored .clewline.point.question {
+    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.colored .clewline.point.wrongAnswer {
+    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+}
+
+.colored .clewline.point.rightAnswer {
+    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+}
+
+.colored .buntline.point {
+	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px);
+}
+
+.colored .buntline.point.active:hover, .colored .buntline.point.active.on, .colored .buntline.point.question {
+    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.colored .buntline.point.wrongAnswer {
+    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+}
+
+.colored .buntline.point.rightAnswer {
+    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+}
+
+.colored .clewbuntlines.point {
+	filter: hue-rotate(78deg) brightness(250%) /* yellow green */  blur(0.5px);
+}
+
+.colored .clewbuntlines.point.active:hover, .colored .clewbuntlines.point.active.on, .colored .clewbuntlines.point.question {
+    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.colored .clewbuntlines.point.wrongAnswer {
+    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+}
+
+.colored .clewbuntlines.point.rightAnswer {
+    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+}
+
+.colored .leechline.point {
+	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px);
+}
+
+.colored .leechline.point.active:hover, .colored .leechline.point.active.on, .colored .leechline.point.question {
+    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.colored .leechline.point.wrongAnswer {
+    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+}
+
+.colored .leechline.point.rightAnswer {
+    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+}
+
+.colored .bowline.point {
+	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px);
+}
+
+.colored .bowline.point.active:hover, .colored .bowline.point.active.on, .colored .bowline.point.question {
+    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+}
+
+.colored .bowline.point.wrongAnswer {
+    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+}
+
+.colored .bowline.point.rightAnswer {
+    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 img.pin {
@@ -239,18 +295,35 @@ img.vang {
 }
 
 .pointNumber.active:hover, .pointNumber.active.on, .line.active:hover, .line.active.on {
-	color: white;
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
 .pointNumber.wrongAnswer, .line.wrongAnswer {
-	color: white;
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }
 
 .pointNumber.rightAnswer, .line.rightAnswer {
-	color: white;
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
+}
+
+.colored .clewline.pointNumber {
+	color: #eb7d01; /* dark yellow */
+}
+
+.colored .buntline.pointNumber {
+	color: #017c01; /* dark green */
+}
+
+.colored .clewbuntlines.pointNumber {
+	color: #6cc100; /* yellow green */
+}
+
+.colored .leechline.pointNumber {
+	color: #b3014b; /* dark red */
+}
+
+.colored .bowline.pointNumber {
+	color: #0031ff; /* dark blue */
 }
 
 .deck, .mast {

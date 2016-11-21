@@ -1,10 +1,9 @@
-Fix which questionary on stern deck
+Fix Which questionary on stern deck
 Remove pointer cursor on points in Which mode
 Check names of stern decks lines to sound reasonably
 Make Which mode work
 
 Resolve problem with multiple ropes to one point
-Retain pin color when highlighting
 
 Add graphical representation to mast filters
 It main table cannot be avoided, at least use divs instead of rows
