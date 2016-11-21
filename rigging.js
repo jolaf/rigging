@@ -628,7 +628,7 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = line.name;
         $('#question').text(Questionary.correctAnswer);
-        $('.point, .pointNumber').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('.point, .pointNumber').addClass('active').removeClass('question rightAnswer wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
         Point.tooltips(false);
@@ -644,10 +644,13 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = point.description;
         $('#question').text(Questionary.correctAnswer);
-        $('.point, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('.point, .line').removeClass('question rightAnswer wrongAnswer');
+        $('.point').removeClass('active');
+        $('.line').addClass('active');
+        point.icon.addClass('question');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
-        Point.tooltips(true);
+        Point.tooltips(false);
         break;
     default:
         Questionary.status = null;
@@ -657,7 +660,9 @@ Questionary.askQuestion = function (mode) {
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
-    if (Questionary.status !== Questionary.ASKED) {
+    if (Questionary.status !== Questionary.ASKED ||
+        !event.data && Questionary.mode == setMode.WHERE ||
+         event.data && Questionary.mode == setMode.WHICH) {
         return;
     }
     $('.point, .pointNumber').removeClass('active');
@@ -738,6 +743,7 @@ function main() {
     $('#resetButton').click(Questionary.reset);
     $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
+    $('.line').click(Questionary.answerQuestion);
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
     onResize();

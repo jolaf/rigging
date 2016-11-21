@@ -172,7 +172,7 @@ img.point {
 	filter: hue-rotate(-120deg) brightness(100%); /* dark blue */
 }
 
-.point.active:hover, .point.active.on {
+.point.active:hover, .point.active.on, .point.question {
     filter: brightness(0) /* black */ invert(100%) /* white */ blur(1px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -234,21 +234,21 @@ img.vang {
 	font-weight: bold;
 }
 
-.point, .pointNumber {
+.point, .pointNumber, .line {
 	cursor: pointer;
 }
 
-.pointNumber.active:hover, .pointNumber.active.on {
+.pointNumber.active:hover, .pointNumber.active.on, .line.active:hover, .line.active.on {
 	color: white;
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
-.pointNumber.wrongAnswer {
+.pointNumber.wrongAnswer, .line.wrongAnswer {
 	color: white;
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }
 
-.pointNumber.rightAnswer {
+.pointNumber.rightAnswer, .line.rightAnswer {
 	color: white;
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 }

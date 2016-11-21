@@ -1,13 +1,20 @@
-Resolve problem with multiple ropes to one point
-Create whichLine questionnary mode
-Add actual deck filters
-Add graphical representation to mast filters
+Fix which questionary on stern deck
+Remove pointer cursor on points in Which mode
 Check names of stern decks lines to sound reasonably
-It main table cannot be avoided, at least use divs instead of rows
+Make Which mode work
 
-Minimize collection sizes by targeting higher elements with CSS
+Resolve problem with multiple ropes to one point
+Retain pin color when highlighting
+
+Add graphical representation to mast filters
+It main table cannot be avoided, at least use divs instead of rows
+Reorganize menu
+Remove Demo mode?
+
+Minimize collection sizes by targeting higher elements with CSS (.active)
 Store all possible selections in variables
 Cleanup CSS
+Cleanup main()
 
 Change current question when changing masts/decks
 
