@@ -67,7 +67,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Pin(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add side (for assymetric lines)
+function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add side (for assymetric lines)
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -78,39 +78,39 @@ function Pin(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add sid
     this.type = type || CLEAT;
     this.rotation = rotation;
     this.line = null;
-    Pin.pins.push(this);
+    Point.points.push(this);
 }
 
-Pin.pins = [];
+Point.points = [];
 
-Pin.marks = {};
-Pin.marks[    CLEWLINE ] = 'clewline';
-Pin.marks[    BUNTLINE ] = 'buntline';
-Pin.marks[CLEWBUNTLINES] = 'clewbuntlines';
-Pin.marks[   LEECHLINE ] = 'leechline';
-Pin.marks[     BOWLINE ] = 'bowline';
+Point.marks = {};
+Point.marks[    CLEWLINE ] = 'clewline';
+Point.marks[    BUNTLINE ] = 'buntline';
+Point.marks[CLEWBUNTLINES] = 'clewbuntlines';
+Point.marks[   LEECHLINE ] = 'leechline';
+Point.marks[     BOWLINE ] = 'bowline';
 
-Pin.prototype.attachLine = function (line) {
+Point.prototype.attachLine = function (line) {
     assert(line);
     assert(!this.line, "Line already attached to " + this.description);
     this.line = line;
 };
 
-Pin.prototype.toString = function () {
-    return 'Pin("' + this.deck.name + '", "' + this.rail.name + '", ' + this.number + ', ' + this.x + ', ' + this.y + ', "' + this.type + '", ' + this.rotation + ', ' + (this.line ? this.line.fullName : 'null') + ')';
+Point.prototype.toString = function () {
+    return 'Point("' + this.deck.name + '", "' + this.rail.name + '", ' + this.number + ', ' + this.x + ', ' + this.y + ', "' + this.type + '", ' + this.rotation + ', ' + (this.line ? this.line.fullName : 'null') + ')';
 };
 
-Pin.prototype.createElement = function () {
-    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.pins.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
+Point.prototype.createElement = function () {
+    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
     assert(this.line, "No line for point " + this.description);
-    this.element = $('<a class="pin">' + (this.rail.pins.length == 1 ? 'I' : this.number) + '</a>');
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
         left: this.x,
         top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.elements = this.element.add(this.icon);
+    this.element = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    this.elements = this.icon.add(this.element);
     var name = this.line.name;
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
@@ -122,40 +122,40 @@ Pin.prototype.createElement = function () {
     return this.element;
 };
 
-Pin.prototype.mouseHandler = function () {
+Point.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
     this.icon.toggleClass('on');
 };
 
-Pin.placeElements = function (location) {
+Point.placeElements = function (location) {
     location = $(location);
-    $.each(Pin.pins, function (_index, pin) {
-        var icon = pin.icon;
+    $.each(Point.points, function (_index, point) {
+        var icon = point.icon;
         location.append(icon);
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        var markClass = Pin.marks[this.line.lineName];
+        var markClass = Point.marks[this.line.lineName];
         if (markClass) {
-            pin.elements.addClass('mark ' + markClass);
+            point.elements.addClass('mark ' + markClass);
         }
     });
 };
 
-Pin.tooltips = function (enable) {
-    $.each(Pin.pins, function (_index, pin) {
-        pin.elements.each(function (_index, pin) {
-            pin = $(pin);
+Point.tooltips = function (enable) {
+    $.each(Point.points, function (_index, point) {
+        point.elements.each(function (_index, point) {
+            point = $(point);
             if (enable) {
-                pin.attr('title', pin.data('title'));
+                point.attr('title', point.data('title'));
             } else {
-                pin.removeAttr('title');
+                point.removeAttr('title');
             }
         });
     });
 };
 
-function Rail(deck, name, assym, x0, y0, stepX, stepY, nPins, type, rotation) {
+function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation) {
        // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...])
     assert(deck);
     this.deck = deck;
@@ -165,26 +165,26 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPins, type, rotation) {
     x0 = x0 || 0;
     y0 = y0 || 0;
     var args;
-    if (Array.isArray(stepX)) { // stepX = pins = [[x, y, type = CLEAT, rotation = 0], ...]
+    if (Array.isArray(stepX)) { // stepX = points = [[x, y, type = CLEAT, rotation = 0], ...]
         args = $.map(stepX, function (args, index) {
             return [[index, x0 + (args[0] || 0), y0 + (args[1] || 0), args[2] || CLEAT, args[3] || 0]]; // $.map flattens arrays
         });
-    } else { // stepX, stepY, nPins, type = PIN, rotation
-        args = $.map(Array(nPins || 1), function (_undefined, index) {
+    } else { // stepX, stepY, nPoints, type = PIN, rotation
+        args = $.map(Array(nPoints || 1), function (_undefined, index) {
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
     var prefix = [deck, this];
-    this.pins = $.map(args, function (args, _index) {
-        return applyNew(Pin, prefix.concat(args));
+    this.points = $.map(args, function (args, _index) {
+        return applyNew(Point, prefix.concat(args));
     });
     if (!this.assym) {
-        this.portPins = $.map(args, function (args, _index) {
+        this.portPoints = $.map(args, function (args, _index) {
             args[2] *= -1;
-            return applyNew(Pin, prefix.concat(args));
+            return applyNew(Point, prefix.concat(args));
         });
     } else {
-        this.portPins = [];
+        this.portPoints = [];
     }
     this.lines = [];
 }
@@ -194,22 +194,22 @@ Rail.prototype.attachLine = function (number, line) {
     if (!number) {
         number = 1;
     } else if (number < 0) {
-        number += this.portPins.length + 1;
+        number += this.portPoints.length + 1;
     }
     assert (this.assym ? line.assym == this.assym : (!line.assym || line.assym == PORT || line.assym == STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
-    var pin;
+    var point;
     var ret = [];
     if (this.assym || line.assym != PORT) {
-        pin = this.pins[number - 1];
-        assert(pin);
-        pin.attachLine(line);
-        ret.push(pin);
+        point = this.points[number - 1];
+        assert(point);
+        point.attachLine(line);
+        ret.push(point);
     }
     if (!this.assym && (!line.assym || line.assym == PORT)) {
-        pin = this.portPins[number - 1];
-        assert(pin);
-        pin.attachLine(line);
-        ret.push(pin);
+        point = this.portPoints[number - 1];
+        assert(point);
+        point.attachLine(line);
+        ret.push(point);
     }
     this.lines.push(line);
     line.number = number;
@@ -217,20 +217,20 @@ Rail.prototype.attachLine = function (number, line) {
 };
 
 Rail.prototype.toString = function () {
-    return 'Rail("' + this.deck.name + '", "' + this.name + '", ' + this.pins.length + ', ' + this.lines.length + ')';
+    return 'Rail("' + this.deck.name + '", "' + this.name + '", ' + this.points.length + ', ' + this.lines.length + ')';
 };
 
 Rail.prototype.createElement = function () {
-    var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="pins"></span></li>');
-    var pins = $('span.pins', element);
-    $.each(this.portPins.reverse(), function (_index, pin) {
-        pins.append(pin.createElement()).append(' ');
+    var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
+    var points = $('span.points', element);
+    $.each(this.portPoints.reverse(), function (_index, point) {
+        points.append(point.createElement()).append(' ');
     });
-    if (this.portPins.length) {
-        pins.append('&nbsp;');
+    if (this.portPoints.length) {
+        points.append('&nbsp;');
     }
-    $.each(this.pins, function (_index, pin) {
-        pins.append(' ').append(pin.createElement());
+    $.each(this.points, function (_index, point) {
+        points.append(' ').append(point.createElement());
     });
     this.element = element;
     return this.element;
@@ -310,7 +310,7 @@ Deck.placeElements = function (location) {
 
 function Line(mastName, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
     this.assym = assym || false;
-    this.pins = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
+    this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
     this.mast = Mast.getMast(mastName);
     this.sail = this.mast.attachLine(sailName, this);
     assert(lineName, "No line");
@@ -367,8 +367,8 @@ Line.prototype.createElement = function () {
 
 Line.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
-    $.each(this.pins, function (_index, pin) {
-        pin.mouseHandler();
+    $.each(this.points, function (_index, point) {
+        point.mouseHandler();
     });
 };
 
@@ -628,30 +628,30 @@ Questionary.askQuestion = function (mode) {
         }
         Questionary.correctAnswer = line.name;
         $('#question').text(Questionary.correctAnswer);
-        $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('.point, .pointNumber').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
-        Pin.tooltips(false);
+        Point.tooltips(false);
         break;
     case setMode.WHICH:
-        var pin;
+        var point;
         while (true) {
-            pin = Pin.pins.random();
-            checkbox = $('#selectDecks :contains("' + pin.deck.name + '") input');
-            if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && pin.description != Questionary.correctAnswer) {
+            point = Point.points.random();
+            checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
+            if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
                 break;
             }
         }
-        Questionary.correctAnswer = pin.description;
+        Questionary.correctAnswer = point.description;
         $('#question').text(Questionary.correctAnswer);
-        $('.pin, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
+        $('.point, .point').addClass('active').removeClass('rightAnswer').removeClass('wrongAnswer');
         $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
         Questionary.status = Questionary.ASKED;
-        Pin.tooltips(true);
+        Point.tooltips(true);
         break;
     default:
         Questionary.status = null;
-        Pin.tooltips(true);
+        Point.tooltips(true);
     }
 };
 
@@ -660,28 +660,28 @@ Questionary.answerQuestion = function (event) {
     if (Questionary.status !== Questionary.ASKED) {
         return;
     }
-    $('.pin, .point').removeClass('active');
+    $('.point, .pointNumber').removeClass('active');
     var element = $(this);
-    var pin = event.data;
-    $.each(Pin.pins, function (_index, pin) {
-        if (pin.line.name == Questionary.correctAnswer) {
-            pin.element.add(pin.icon).addClass('rightAnswer');
+    var point = event.data;
+    $.each(Point.points, function (_index, point) {
+        if (point.line.name == Questionary.correctAnswer) {
+            point.element.add(point.icon).addClass('rightAnswer');
         }
     });
-    var isCorrect = pin.line.name === Questionary.correctAnswer;
+    var isCorrect = point.line.name === Questionary.correctAnswer;
     if (isCorrect) {
         $('#rightAnswer').show();
         $('#wrongAnswer').hide();
     } else {
-        pin.element.add(pin.icon).addClass('wrongAnswer').show();
-        $('#rightAnswerText').text(pin.line.name);
+        point.element.add(point.icon).addClass('wrongAnswer').show();
+        $('#rightAnswerText').text(point.line.name);
         $('#wrongAnswer').show();
         $('#rightAnswer').hide();
     }
     Questionary.updateStatistics(isCorrect);
     $('#nextQuestionNote').show();
     Questionary.status = Questionary.ANSWERED;
-    Pin.tooltips(true);
+    Point.tooltips(true);
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
 
@@ -718,7 +718,7 @@ function main() {
     // Put generated elements to DOM
     Deck.placeElements('#decks');
     Mast.placeElements('#lines', '#fullLines');
-    Pin.placeElements('#overlay');
+    Point.placeElements('#overlay');
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
     $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
@@ -731,12 +731,12 @@ function main() {
     $('input[name=mode]').prop('checked', false);
     $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
     $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay, #decks').toggleClass('colored'); }).change();
-    $('#toggleTooltips').prop('checked', false).change(function (_event) { Pin.tooltips(this.checked); }).change();
+    $('#toggleTooltips').prop('checked', false).change(function (_event) { Point.tooltips(this.checked); }).change();
     resetDecks();
     resetMasts();
     $('.selector').click(menuHandler);
     $('#resetButton').click(Questionary.reset);
-    $('.selector, .pin').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));

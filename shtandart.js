@@ -154,7 +154,7 @@ var DECKS = [
 ];
 
 var LINES = [
-  // Mast/Sail/Deck      Rail            Pin#  Line             Detail               Assym      Full Name                     Plural
+  // Mast/Sail/Deck      Rail          Point#  Line             Detail               Assym      Full Name                     Plural
     [BOWSPRIT, [
         [SPRIT_SAIL, [
             [FORE_DECK,  FRONT_RAIL,        4, BRACE],

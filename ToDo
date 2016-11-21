@@ -1,17 +1,19 @@
-Minimize collection sizes by targeting higher elements with CSS
-Store all selections in variables
-Rename 'pin' class to 'point' or 'icon'
-Add actual deck and mast filters
+Resolve problem with multiple ropes to one point
+Create whichLine questionnary mode
+Add actual deck filters
 Add graphical representation to mast filters
 Check names of stern decks lines to sound reasonably
+It main table cannot be avoided, at least use divs instead of rows
+
+Minimize collection sizes by targeting higher elements with CSS
+Store all possible selections in variables
+Cleanup CSS
+
+Change current question when changing masts/decks
+
+Employ SVG scheme, try to remove the data table, extract all from SVG
 Move sailLines generation from HTML to JS code
-Create whichLine questionnary mode
-Put cleats etc. above pins to be visible over glow
+
 Check and fix Chrome visual issues
 Check other browsers
-Resolve problem with multiple ropes to one point
-Cleanup CSS
-It main table cannot be avoided, at least use divs instead of rows
-Employ SVG scheme, try to remove the data table, extract all from SVG
-Change current question when changing masts/decks
 Optimize for mobile usage (remove hover?)
