@@ -128,14 +128,14 @@ Pin.prototype.mouseHandler = function () {
 };
 
 Pin.placeElements = function (location) {
-    var element = $(location);
+    location = $(location);
     $.each(Pin.pins, function (_index, pin) {
         var icon = pin.icon;
-        element.append(icon);
+        location.append(icon);
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        icon.addClass(Pin.marks[this.line.lineName]);
+        pin.elements.addClass(Pin.marks[this.line.lineName]);
     });
 };
 
@@ -726,7 +726,7 @@ function main() {
     setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
     $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
-    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay').toggleClass('colored'); }).change();
+    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay, #decks').toggleClass('colored'); }).change();
     $('#toggleTooltips').prop('checked', false).change(function (_event) { Pin.tooltips(this.checked); }).change();
     resetDecks();
     resetMasts();

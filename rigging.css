@@ -144,27 +144,32 @@ img.scheme {
 
 img.point {
 	position: absolute;
-	background: url("images/sprite.png") no-repeat;
+	background: url("images/sprite.png") no-repeat; /* red */
 	filter: brightness(0); /* black */
 }
 
 .colored .clewline {
+	color: red;
 	filter: hue-rotate(60deg) brightness(300%); /* yellow */
 }
 
 .colored .buntline {
+	color: red;
 	filter: hue-rotate(120deg) brightness(110%); /* dark green */
 }
 
 .colored .clewbuntlines {
+	color: red;
 	filter: hue-rotate(78deg) brightness(250%); /* yellow/green */
 }
 
 .colored .leechline {
+	color: red;
 	filter: hue-rotate(-30deg) brightness(70%); /* dark red */
 }
 
 .colored .bowline {
+	color: red;
 	filter: hue-rotate(-120deg) brightness(100%); /* dark blue */
 }
 

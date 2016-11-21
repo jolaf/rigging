@@ -1,6 +1,5 @@
 Minimize collection sizes by targeting higher elements with CSS
 Store all selections in variables
-Add color codes to pin numbers
 Rename 'pin' class to 'point' or 'icon'
 Add actual deck and mast filters
 Add graphical representation to mast filters
@@ -17,3 +16,4 @@ Add checkbox for showing correct answers
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Use singular even for double ropes like fore course sail downhaulers
 Change current question when changing masts/decks
+Reverse pin numbers on across-deck rails
