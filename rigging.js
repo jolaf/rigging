@@ -498,11 +498,12 @@ function onResize() {
 
 function setMode(mode) {
     mode = mode.trim().toLowerCase() || 'demo';
-    location.href = '#' + mode;
-    var input = $('#' + mode + 'Mode input');
-    if (input.prop('checked')) {
+    if (mode === setMode.mode) {
         return;
     }
+    setMode.mode = mode;
+    location.href = '#' + mode;
+    var input = $('#' + mode + 'Mode input');
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
@@ -529,6 +530,8 @@ setMode.DEMO = 'demo';
 setMode.WHERE = 'where';
 setMode.WHICH = 'which';
 setMode.INFO = 'info';
+
+setMode.mode = null;
 
 function resetDecks() {
     $('.mask').hide();
