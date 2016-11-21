@@ -117,14 +117,14 @@ var DECKS = [
   // Deck        Title
     [FORE_DECK, 'На баке', [
       // Rail                Assym        X0   Y0 stepX    stepY  N  Type=PIN Rotation
-        [FRONT_RAIL,         ,          3800, 322,     ,     -75, 5],
+        [FRONT_RAIL,         ,          3800,  22,     ,      75, 5],
         [BEHIND_FRONT,       ,          3836, 101,     ,,, CLEAT, 90],
-        [BACK_RAIL,          ,          2979, 269,     ,     -75, 3],
+        [BACK_RAIL,          ,          2979, 119,     ,      75, 3],
         [SIDE_RAIL,          ,          3124, 399,   74,        , 8],
         [SHROUDS_RAIL,       ,          3247, 457,   63,        , 5],
         [FRONT_FISTS,        ,          3573, 115,     ,,,  FIST],
         [BACK_PILLARS,       ,          3255, 146,     ,,, CLEAT],
-        [BEHIND_MAST_RAIL,   ,          3224, 197, [[,, PIN], [, -119, PIN], [, -174, PIN]]],
+        [BEHIND_MAST_RAIL,   ,          3224,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
         [AT_MAST_FRONT,      CENTER,    3492, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3434,  85,     ,,, CLEAT, 75],
     ]],
@@ -136,7 +136,7 @@ var DECKS = [
         [FRONT_PILLARS,      ,          2170, 324,     ,,, CLEAT],
         [ON_DECK_FRONT,      ,          2130, 272,     ,,, CLEAT],
         [BACK_FISTS,         ,          1604, 304,     ,,,  FIST],
-        [BEHIND_MAST_RAIL,   ,          1613, 212,     ,     -93, 3],
+        [BEHIND_MAST_RAIL,   ,          1613,  26,     ,      93, 3],
         [SIDE_MAST_RAIL,     ,          1692, 312,   69,        , 6],
         [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
@@ -157,7 +157,7 @@ var LINES = [
   // Mast/Sail/Deck      Rail            Pin#  Line             Detail               Assym      Full Name                     Plural
     [BOWSPRIT, [
         [SPRIT_SAIL, [
-            [FORE_DECK,  FRONT_RAIL,        2, BRACE],
+            [FORE_DECK,  FRONT_RAIL,        4, BRACE],
             [FORE_DECK,  FRONT_RAIL,        3, LIFT],
             [FORE_DECK,  SIDE_RAIL,        -1, SHEET],
             [FORE_DECK,  BEHIND_FRONT,       , CLEWBUNTLINES],
@@ -165,11 +165,11 @@ var LINES = [
     ]],
     [FORE_MAST, [
         [FORE_SAIL, [
-            [FORE_DECK,  BACK_RAIL,         3, BRACE],
-            [FORE_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
+            [FORE_DECK,  BACK_RAIL,         1, BRACE],
+            [FORE_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
             [MAIN_DECK,  BULWARK,           1, SHEET],
-            [FORE_DECK,  FRONT_RAIL,        1, TACK],
-            [FORE_DECK,  FRONT_RAIL,       -2, BOWLINE],
+            [FORE_DECK,  FRONT_RAIL,       -1, TACK],
+            [FORE_DECK,  FRONT_RAIL,        2, BOWLINE],
             [FORE_DECK,  AT_MAST_FRONT,      , DOWNHAULER,      ,                    CENTER,    ,                             PLURAL],
             [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
             [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
@@ -180,14 +180,14 @@ var LINES = [
             [FORE_DECK,  BEHIND_MAST_RAIL,  2, LIFT],
             [FORE_DECK,  FRONT_FISTS,        , SHEET],
             [FORE_DECK,  AT_MAST_SIDE,       , SHEET,           COIL],
-            [FORE_DECK,  FRONT_RAIL,       -1, BOWLINE],
+            [FORE_DECK,  FRONT_RAIL,        1, BOWLINE],
             [FORE_DECK,  SIDE_RAIL,         3, BUNTLINE],
             [FORE_DECK,  SIDE_RAIL,         4, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,         5, CLEWLINE],
         ]],
         [FORE_GALLANT, [
-            [FORE_DECK,  BACK_RAIL,         1, BRACE],
-            [FORE_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
+            [FORE_DECK,  BACK_RAIL,         3, BRACE],
+            [FORE_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [FORE_DECK,  SHROUDS_RAIL,     -1, SHEET],
             [FORE_DECK,  SHROUDS_RAIL,     -2, CLEWBUNTLINES],
         ]],
@@ -199,7 +199,7 @@ var LINES = [
         [MAIN_SAIL, [
             [STERN_DECK, BULWARK,           1, BRACE],
             [STERN_DECK, SHROUDS_RAIL,      1, BRACE,           COIL],
-            [MAIN_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
+            [MAIN_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
             [STERN_DECK, BULWARK,          -1, SHEET],
             [MAIN_DECK,  BULWARK,          -1, TACK],
             [FORE_DECK,  SHROUDS_RAIL,      2, BOWLINE],
@@ -219,7 +219,7 @@ var LINES = [
         ]],
         [MAIN_GALLANT, [
             [STERN_DECK, SIDE_RAIL,        -2, BRACE],
-            [MAIN_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
+            [MAIN_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [MAIN_DECK,  SIDE_MAST_RAIL,   -2, SHEET],
             [MAIN_DECK,  SIDE_MAST_RAIL,    4, CLEWBUNTLINES],
         ]],

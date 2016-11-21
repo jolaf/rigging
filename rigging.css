@@ -234,7 +234,7 @@ img.vang {
 	font-weight: bold;
 }
 
-.active {
+.pin, .point {
 	cursor: pointer;
 }
 

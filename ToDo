@@ -12,9 +12,7 @@ Check other browsers
 Resolve problem with multiple ropes to one point
 Cleanup CSS
 It main table cannot be avoided, at least use divs instead of rows
-Add checkbox for showing correct answers
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Use singular even for double ropes like fore course sail downhaulers
 Change current question when changing masts/decks
-Reverse pin numbers on across-deck rails
-Optimize for mobile usage
+Optimize for mobile usage (remove hover?)
