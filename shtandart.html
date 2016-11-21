@@ -1305,9 +1305,10 @@ Mast.placeElements = function (linesLocation, fullLinesLocation) {
 };
 
 function onResize() {
-    var scale = $(window).width() / SCHEME_WIDTH;
+    onResize.scheme.hide();
+    var scale = $(document).width() / SCHEME_WIDTH;
     onResize.placeholder.css({ height: Math.floor(2 * SCHEME_HEIGHT * scale) });
-    onResize.scheme.css({ transform: 'scale(' + scale + ')'});
+    onResize.scheme.css({ transform: 'scale(' + scale + ')'}).show();
 }
 
 function setMode(mode) {
