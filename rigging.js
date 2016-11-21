@@ -135,7 +135,10 @@ Pin.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        pin.elements.addClass(Pin.marks[this.line.lineName]);
+        var markClass = Pin.marks[this.line.lineName];
+        if (markClass) {
+            pin.elements.addClass('mark ' + markClass);
+        }
     });
 };
 

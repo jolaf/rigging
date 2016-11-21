@@ -165,28 +165,27 @@ img.point {
 	filter: brightness(0); /* black */
 }
 
-.colored .clewline {
+.mark {
 	color: red;
-	filter: hue-rotate(60deg) brightness(300%); /* yellow */
+}
+
+.colored .clewline {
+	filter: hue-rotate(60deg) brightness(220%); /* yellow */
 }
 
 .colored .buntline {
-	color: red;
 	filter: hue-rotate(120deg) brightness(110%); /* dark green */
 }
 
 .colored .clewbuntlines {
-	color: red;
 	filter: hue-rotate(78deg) brightness(250%); /* yellow/green */
 }
 
 .colored .leechline {
-	color: red;
 	filter: hue-rotate(-30deg) brightness(70%); /* dark red */
 }
 
 .colored .bowline {
-	color: red;
 	filter: hue-rotate(-120deg) brightness(100%); /* dark blue */
 }
 
@@ -951,7 +950,10 @@ Pin.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        pin.elements.addClass(Pin.marks[this.line.lineName]);
+        var markClass = Pin.marks[this.line.lineName];
+        if (markClass) {
+            pin.elements.addClass('mark ' + markClass);
+        }
     });
 };
 
