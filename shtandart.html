@@ -651,7 +651,9 @@ var VANG_TACKLE = 'vang';
 // Decks
 var FORE_DECK = 'Бак';
 var MAIN_DECK = 'Главная';
-var STERN_DECK = 'Полуют, Ют';
+var STERN_DECK = 'ПолуЮт';
+
+var IGNORE_DECK = 'IGNORE';
 
 // Masts
 var BOWSPRIT = 'Бушприт';
@@ -731,7 +733,7 @@ var BEHIND_FRONT = 'за планкой спереди';
 var BULWARK = 'на фальшборту';
 var ABOVE_RAIL = 'над планкой у борта';
 var ON_DECK_FRONT = 'перед мачтой, на палубе';
-var ABOVE_RIGHT_LADDER = 'над трапом правого борта';
+var ABOVE_LADDER = 'над трапом';
 
 var POOP_BULWARK = 'на юте, на фальшборту';
 var POOP_FLAGSTAFF = 'на юте, на флагштоке';
@@ -766,15 +768,15 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте и юте', [
+    [STERN_DECK, 'На полуюте', [
         [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
-        [ABOVE_RIGHT_LADDER, STARBOARD, 1474, 425,      ,,,  KNOT],
+        [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
         [BULWARK,            ,           710, 480, [[,, SCLEAT, -45], [300, 10, SCLEAT, 90], [380, 10, SCLEAT, 90], [490, -23, VCLEAT]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
         [AT_MAST,            ,           632,  60, [[,,, -55], [98, 36,, 90]]],
-        [POOP_BULWARK,       ,            30, 350, [[,, VCLEAT, 15], [250, 60, VCLEAT, 11], [43, -92, VANG_TACKLE], [192, 136]]],
-        [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60],
+        [POOP_BULWARK,       ,            30, 350, [[,, VCLEAT, 15], [250, 60, VCLEAT, 11], [43, -92, VANG_TACKLE], [192, 136]], IGNORE_DECK],
+        [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],
     ]]
 ];
 
@@ -853,7 +855,7 @@ var LINES = [
             [MAIN_DECK,  SIDE_RAIL,        -1, SHEET],
         ]],
         [, [
-            [STERN_DECK, ABOVE_RIGHT_LADDER, , FLAG_HALYARD,    ,                    STARBOARD],
+            [STERN_DECK, ABOVE_LADDER,       , FLAG_HALYARD,    ,                    STARBOARD],
             [FORE_DECK,  BACK_PILLARS,       , TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
             [FORE_DECK,  SHROUDS_RAIL,      1, TACKLE,          'Гротовая',          ,          DETAIL_LINE],
             [MAIN_DECK,  ON_DECK_FRONT,      , TACKLE,          'Оттяжка гротовой',  ,          'Оттяжка гротовой талёвы',    'Оттяжки гротовых талёв'],
@@ -976,7 +978,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add side (for assymetric lines)
+function Point(deck, rail, index, x, y, type, rotation) {
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -1010,7 +1012,7 @@ Point.prototype.toString = function () {
 };
 
 Point.prototype.createElement = function () {
-    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
+    this.description = this.rail.description + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
     this.icon.css({
@@ -1061,8 +1063,8 @@ Point.tooltips = function (enable) {
     });
 };
 
-function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation) {
-       // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...])
+function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, ignoreDeck) {
+       // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...], ignoreDeck)
     assert(deck);
     this.deck = deck;
     assert(name, "No rail name");
@@ -1075,11 +1077,13 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation) 
         args = $.map(stepX, function (args, index) {
             return [[index, x0 + (args[0] || 0), y0 + (args[1] || 0), args[2] || CLEAT, args[3] || 0]]; // $.map flattens arrays
         });
-    } else { // stepX, stepY, nPoints, type = PIN, rotation
+        ignoreDeck = stepY;
+    } else { // stepX, stepY, nPoints, type = PIN, rotation, ignoreDeck
         args = $.map(Array(nPoints || 1), function (_undefined, index) {
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
+    this.description = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
     var prefix = [deck, this];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));

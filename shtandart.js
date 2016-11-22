@@ -26,7 +26,9 @@ var VANG_TACKLE = 'vang';
 // Decks
 var FORE_DECK = 'Бак';
 var MAIN_DECK = 'Главная';
-var STERN_DECK = 'Полуют, Ют';
+var STERN_DECK = 'ПолуЮт';
+
+var IGNORE_DECK = 'IGNORE';
 
 // Masts
 var BOWSPRIT = 'Бушприт';
@@ -106,7 +108,7 @@ var BEHIND_FRONT = 'за планкой спереди';
 var BULWARK = 'на фальшборту';
 var ABOVE_RAIL = 'над планкой у борта';
 var ON_DECK_FRONT = 'перед мачтой, на палубе';
-var ABOVE_RIGHT_LADDER = 'над трапом правого борта';
+var ABOVE_LADDER = 'над трапом';
 
 var POOP_BULWARK = 'на юте, на фальшборту';
 var POOP_FLAGSTAFF = 'на юте, на флагштоке';
@@ -141,15 +143,15 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте и юте', [
+    [STERN_DECK, 'На полуюте', [
         [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
-        [ABOVE_RIGHT_LADDER, STARBOARD, 1474, 425,      ,,,  KNOT],
+        [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
         [BULWARK,            ,           710, 480, [[,, SCLEAT, -45], [300, 10, SCLEAT, 90], [380, 10, SCLEAT, 90], [490, -23, VCLEAT]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
         [AT_MAST,            ,           632,  60, [[,,, -55], [98, 36,, 90]]],
-        [POOP_BULWARK,       ,            30, 350, [[,, VCLEAT, 15], [250, 60, VCLEAT, 11], [43, -92, VANG_TACKLE], [192, 136]]],
-        [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60],
+        [POOP_BULWARK,       ,            30, 350, [[,, VCLEAT, 15], [250, 60, VCLEAT, 11], [43, -92, VANG_TACKLE], [192, 136]], IGNORE_DECK],
+        [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],
     ]]
 ];
 
@@ -228,7 +230,7 @@ var LINES = [
             [MAIN_DECK,  SIDE_RAIL,        -1, SHEET],
         ]],
         [, [
-            [STERN_DECK, ABOVE_RIGHT_LADDER, , FLAG_HALYARD,    ,                    STARBOARD],
+            [STERN_DECK, ABOVE_LADDER,       , FLAG_HALYARD,    ,                    STARBOARD],
             [FORE_DECK,  BACK_PILLARS,       , TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
             [FORE_DECK,  SHROUDS_RAIL,      1, TACKLE,          'Гротовая',          ,          DETAIL_LINE],
             [MAIN_DECK,  ON_DECK_FRONT,      , TACKLE,          'Оттяжка гротовой',  ,          'Оттяжка гротовой талёвы',    'Оттяжки гротовых талёв'],

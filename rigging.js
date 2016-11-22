@@ -67,7 +67,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Somehow add side (for assymetric lines)
+function Point(deck, rail, index, x, y, type, rotation) {
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -101,7 +101,7 @@ Point.prototype.toString = function () {
 };
 
 Point.prototype.createElement = function () {
-    this.description = this.deck.title.capitalize() + ', ' + this.rail.name + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not benn constructed yet as in there
+    this.description = this.rail.description + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
@@ -152,8 +152,8 @@ Point.tooltips = function (enable) {
     });
 };
 
-function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation) {
-       // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...])
+function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, ignoreDeck) {
+       // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...], ignoreDeck)
     assert(deck);
     this.deck = deck;
     assert(name, "No rail name");
@@ -166,11 +166,13 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation) 
         args = $.map(stepX, function (args, index) {
             return [[index, x0 + (args[0] || 0), y0 + (args[1] || 0), args[2] || CLEAT, args[3] || 0]]; // $.map flattens arrays
         });
-    } else { // stepX, stepY, nPoints, type = PIN, rotation
+        ignoreDeck = stepY;
+    } else { // stepX, stepY, nPoints, type = PIN, rotation, ignoreDeck
         args = $.map(Array(nPoints || 1), function (_undefined, index) {
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
+    this.description = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
     var prefix = [deck, this];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
