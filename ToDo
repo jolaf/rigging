@@ -1,5 +1,7 @@
 Add sides to line descriptions, at least for assymmetric lines
 
+Remove hover on touch
+
 Resolve problem with multiple ropes to one point
 
 Make Which mode work
@@ -10,6 +12,7 @@ Add graphical representation to mast filters
 Move from tables to flex boxes
 
 Store all possible selections in variables
+Reduce number of event handlers to speed things up on mobile
 Cleanup CSS
 Cleanup main()
 
@@ -20,4 +23,3 @@ Move sailLines generation from HTML to JS code
 
 Check and fix Chrome visual issues
 Check other browsers
-Optimize for mobile usage (remove hover on touch?)

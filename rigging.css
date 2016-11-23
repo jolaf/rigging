@@ -98,6 +98,11 @@ span.selector {
 	margin-right: 0.3em;
 }
 
+.selector, .point, .pointNumber, .line, body, input, button {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
 #controls .selector:hover {
 	color: #fc0;
 	cursor: pointer;

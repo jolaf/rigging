@@ -67,7 +67,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, index, x, y, type, rotation) {
+function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Accept side
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -100,7 +100,7 @@ Point.prototype.toString = function () {
     return 'Point("' + this.deck.name + '", "' + this.rail.name + '", ' + this.number + ', ' + this.x + ', ' + this.y + ', "' + this.type + '", ' + this.rotation + ', ' + (this.line ? this.line.fullName : 'null') + ')';
 };
 
-Point.prototype.createElement = function () {
+Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
     this.description = this.rail.description + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
@@ -115,8 +115,9 @@ Point.prototype.createElement = function () {
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
-    this.elements.on('mouseenter mouseleave', this, function (event) {
+    this.elements.on('mouseenter mouseleave touchstart', this, function (event) {
         event.data.line.mouseHandler();
+        event.preventDefault();
     });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
@@ -193,7 +194,7 @@ Rail.prototype.attachLine = function (number, line) {
     if (!number) {
         number = 1;
     } else if (number < 0) {
-        number += this.portPoints.length + 1;
+        number += this.points.length + 1;
     }
     assert (this.assym ? line.assym == this.assym : (!line.assym || line.assym == PORT || line.assym == STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
     var point;
@@ -201,13 +202,13 @@ Rail.prototype.attachLine = function (number, line) {
     if (this.assym || line.assym != PORT) {
         point = this.points[number - 1];
         assert(point);
-        point.attachLine(line);
+        point.attachLine(line); // ToDo: Pass side
         ret.push(point);
     }
     if (!this.assym && (!line.assym || line.assym == PORT)) {
         point = this.portPoints[number - 1];
         assert(point);
-        point.attachLine(line);
+        point.attachLine(line); // ToDo: Pass side
         ret.push(point);
     }
     this.lines.push(line);
