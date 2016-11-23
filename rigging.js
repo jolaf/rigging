@@ -509,19 +509,19 @@ function setMode(mode) {
     $('.usedInMode' + mode.capitalize()).show();
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
-    case setMode.INFO:
-        setMode.schemeBlock.hide();
-        break;
-    case setMode.DEMO:
-        setMode.schemeBlock.show();
-        break;
-    case setMode.WHERE:
-    case setMode.WHICH:
-        setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
-        break;
-    default:
-        setMode(setMode.INFO);
-        return;
+        case setMode.INFO:
+            setMode.schemeBlock.hide();
+            break;
+        case setMode.DEMO:
+            setMode.schemeBlock.show();
+            break;
+        case setMode.WHERE:
+        case setMode.WHICH:
+            setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            break;
+        default:
+            setMode(setMode.INFO);
+            return;
     }
     Questionary.askQuestion(mode);
 }
@@ -620,73 +620,92 @@ Questionary.askQuestion = function (mode) {
     }
     var checkbox;
     switch(Questionary.mode) {
-    case setMode.WHERE:
-        var line;
-        while (true) {
-            line = Line.lines.random();
-            checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-            if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
-                break;
+        case setMode.INFO:
+            Questionary.status = null;
+            break;
+        case setMode.DEMO:
+            $('#overlay').addClass('highlight pointer');
+            $('#lines').addClass('highlight');
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(true);
+            break;
+        case setMode.WHERE:
+            var line;
+            while (true) {
+                line = Line.lines.random();
+                checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
+                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
+                    break;
+                }
             }
-        }
-        Questionary.correctAnswer = line.name;
-        $('#question').text(Questionary.correctAnswer);
-        $('#overlay').addClass('highlight pointer');
-        $('#decks').addClass('highlight');
-        $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
-        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = Questionary.ASKED;
-        Point.tooltips(false);
-        break;
-    case setMode.WHICH:
-        var point;
-        while (true) {
-            point = Point.points.random();
-            checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-            if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
-                break;
+            Questionary.correctAnswer = line.name;
+            $('#question').text(Questionary.correctAnswer);
+            $('#overlay').addClass('highlight pointer');
+            $('#decks').addClass('highlight');
+            $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
+            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(false);
+            break;
+        case setMode.WHICH:
+            var point;
+            while (true) {
+                point = Point.points.random();
+                checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
+                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
+                    break;
+                }
             }
-        }
-        Questionary.correctAnswer = point.description;
-        $('#question').text(Questionary.correctAnswer);
-        $('#overlay').removeClass('highlight pointer');
-        $('#lines').addClass('highlight');
-        $('.point, .line').removeClass('question rightAnswer wrongAnswer');
-        point.icon.addClass('question');
-        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = Questionary.ASKED;
-        Point.tooltips(false);
-        break;
-    default:
-        Questionary.status = null;
-        Point.tooltips(true);
+            Questionary.correctAnswer = point.description;
+            $('#question').text(Questionary.correctAnswer);
+            $('#overlay').removeClass('highlight pointer');
+            $('#lines').addClass('highlight');
+            $('.point, .line').removeClass('question rightAnswer wrongAnswer');
+            point.icon.addClass('question');
+            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(false);
+            break;
+        default:
+            assert(false);
     }
 };
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
-    if (Questionary.status !== Questionary.ASKED ||
-        !event.data && Questionary.mode == setMode.WHERE ||
-         event.data && Questionary.mode == setMode.WHICH) {
+    if (Questionary.status !== Questionary.ASKED) {
         return;
     }
     $('#overlay, #decks').removeClass('highlight');
     var element = $(this);
     var point = event.data;
-    $.each(Point.points, function (_index, point) {
-        if (point.line.name == Questionary.correctAnswer) {
-            point.element.add(point.icon).addClass('rightAnswer');
+    var isCorrect;
+    if (point) { // Click to scheme icon
+        switch(Questionary.mode) {
+            case setMode.DEMO:
+                break;
+            case setMode.WHERE:
+                $.each(Point.points, function (_index, point) {
+                    if (point.line.name == Questionary.correctAnswer) {
+                        point.element.add(point.icon).addClass('rightAnswer');
+                    }
+                });
+                isCorrect = point.line.name === Questionary.correctAnswer;
+                if (isCorrect) {
+                    $('#rightAnswer').show();
+                    $('#wrongAnswer').hide();
+                } else {
+                    point.element.add(point.icon).addClass('wrongAnswer').show();
+                    $('#rightAnswerText').text(point.line.name);
+                    $('#wrongAnswer').show();
+                    $('#rightAnswer').hide();
+                }
+                break;
+            case setMode.WHICH:
+                break;
         }
-    });
-    var isCorrect = point.line.name === Questionary.correctAnswer;
-    if (isCorrect) {
-        $('#rightAnswer').show();
-        $('#wrongAnswer').hide();
     } else {
-        point.element.add(point.icon).addClass('wrongAnswer').show();
-        $('#rightAnswerText').text(point.line.name);
-        $('#wrongAnswer').show();
-        $('#rightAnswer').hide();
+
     }
     Questionary.updateStatistics(isCorrect);
     $('#nextQuestionNote').show();

@@ -2,6 +2,8 @@ Add sides to line descriptions, at least for assymmetric lines
 
 Remove hover on touch
 
+Remove fullLines and respective HTML, CSS and JS code
+
 Resolve problem with multiple ropes to one point
 
 Make Which mode work
