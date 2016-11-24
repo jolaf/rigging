@@ -365,6 +365,37 @@ Line.prototype.createElement = function () {
     return this.element;
 };
 
+Line.prototype.linkSublines = function () {
+    var sublinesLocation = $('#sublines');
+    var subline;
+    this.sublines = [];
+    var line = this;
+    if (line.sail.name) {
+        subline = sublinesLocation.find('.sails .subline:contains(' + line.sail.name + ')').filter(function (_index, element) {
+            return element.textContent == line.sail.name;
+        });
+        assert(subline.length, "Unknown subline sail: " + this.sail.name);
+        assert(subline.length == 1, "Duplicate subline sail: " + this.sail.name);
+        this.sublines.push(subline);
+        subline = sublinesLocation.find('.sailLines .subline:contains(' + line.lineName + ')').filter(function (_index, element) {
+            return element.textContent == line.lineName;
+        });
+        assert(subline.length, "Unknown sail subline: " + line.lineName);
+        assert(subline.length == 1, "Duplicate sail subline: " + line.lineName);
+        this.sublines.push(subline);
+    } else {
+        subline = sublinesLocation.find('.nonSailLines .subline').filter(function (_index, element) {
+            return line.name.toLowerCase().indexOf(element.textContent.toLowerCase()) >= 0;
+        });
+        assert(subline.length, "Unknown non-sail subline: " + line.name);
+        assert(subline.length == 1, "Duplicate non-sail subline: " + line.name);
+        this.sublines.push(subline);
+    }
+    //this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
+    //this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    //return this.element;
+};
+
 Line.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
     $.each(this.points, function (_index, point) {
@@ -386,6 +417,12 @@ Line.construct = function () {
                 Line.lines.push(line);
             });
         });
+    });
+};
+
+Line.linkAllSublines = function () {
+    $.each(Line.lines, function (_index, line) {
+        line.linkSublines();
     });
 };
 
@@ -473,7 +510,7 @@ Mast.createElements = function () {
     });
 };
 
-Mast.placeElements = function (linesLocation, fullLinesLocation) {
+Mast.placeElements = function (fullLinesLocation) {
     var fullLinesElement = $(fullLinesLocation);
     var td;
     $.each(Mast.masts, function (index, mast) {
@@ -486,6 +523,52 @@ Mast.placeElements = function (linesLocation, fullLinesLocation) {
         } else {
             td.append(mast.element);
         }
+    });
+};
+
+function Subline(element, sublineType) {
+    this.element = element;
+    this.name = element.textContent;
+    this.sublineType = sublineType;
+}
+
+Subline.SAIL = 'SAIL';
+Subline.SAILLINE = 'SAILLINE';
+Subline.NONSAILLINE = 'NONSAILLINE';
+
+Subline.prototype.toString = function () {
+    return 'Subline("' + this.name + '", "' + this.sublineType + '")';
+};
+
+Subline.prototype.mouseHandler = function () {
+    this.element.toggleClass('on');
+    $.each(this.points, function (_index, point) {
+        point.mouseHandler();
+    });
+};
+
+Subline.construct = function (location) {
+    location = $(location);
+    var uniqueNames = [];
+    Subline.sublines = [];
+    $(location).children().each(function (_index, group) {
+        group = $(group);
+        var sublineType;
+        if (group.is('.sails')) {
+            sublineType = Subline.SAIL;
+        } else if (group.is('.sailLines')) {
+            sublineType = Subline.SAILLINE;
+        } else if (group.is('.nonSailLines')) {
+            sublineType = Subline.NONSAILLINE;
+        } else {
+            assert(false, "Wrong subline type: " + sublineType);
+        }
+        $(group).find('.subline').each(function (_index, element) {
+            var subline = applyNew(Subline, element, sublineType);
+            assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
+            uniqueNames.push(subline.name);
+            Subline.sublines.push(subline);
+        });
     });
 };
 
@@ -625,7 +708,7 @@ Questionary.askQuestion = function (mode) {
             break;
         case setMode.DEMO:
             $('#overlay').addClass('highlight pointer');
-            $('#lines').addClass('highlight');
+            $('#sublines').addClass('highlight');
             Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
             break;
@@ -659,7 +742,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.correctAnswer = point.description;
             $('#question').text(Questionary.correctAnswer);
             $('#overlay').removeClass('highlight pointer');
-            $('#lines').addClass('highlight');
+            $('#sublines').addClass('highlight');
             $('.point, .line').removeClass('question rightAnswer wrongAnswer');
             point.icon.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
@@ -741,12 +824,14 @@ function main() {
     // Create data structures from constant data
     Deck.construct();
     Line.construct();
+    Subline.construct('#sublines');
     // Create elements for data structures
     Deck.createElements();
     Mast.createElements();
+    Line.linkAllSublines();
     // Put generated elements to DOM
     Deck.placeElements('#decks');
-    Mast.placeElements('#lines', '#fullLines');
+    Mast.placeElements('#lines');
     Point.placeElements('#overlay');
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
@@ -767,7 +852,6 @@ function main() {
     $('#resetButton').click(Questionary.reset);
     $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
-    $('.line').click(Questionary.answerQuestion);
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
     onResize();

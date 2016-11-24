@@ -115,6 +115,11 @@ span.selector {
 	margin-right: 0.3em;
 }
 
+.selector, .point, .pointNumber, .line, .subline, body, input, button {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
 #controls .selector:hover {
 	color: #fc0;
 	cursor: pointer;
@@ -320,23 +325,23 @@ img.vang {
 	line-height: 0.1;
 }
 
-.pointNumber, .line {
+.pointNumber, .line, .subline {
 	font-weight: bold;
 }
 
-.pointer .point, .pointNumber, .line {
+.pointer .point, .pointNumber, .line, .subline {
 	cursor: pointer;
 }
 
-.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .line.on {
+.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .subline.on, .highlight .subline:hover, .highlight .subline.on {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
-.pointNumber.wrongAnswer, .line.wrongAnswer {
+.pointNumber.wrongAnswer, .line.wrongAnswer, .subline.wrongAnswer {
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }
 
-.pointNumber.rightAnswer, .line.rightAnswer {
+.pointNumber.rightAnswer, .line.rightAnswer, .subline.rightAnswer {
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 }
 
@@ -505,97 +510,98 @@ img.vang {
           </tr></table>
         </td></tr>
         <tr class="choiceBlock high modeDependent usedInModeDemo usedInModeWhich"><td>
-          <table class="center"><tr id="lines">
+          <table class="center"><tr id="sublines">
             <td class="deck sailLines"><div>
               <h2>Парусные снасти</h2>
               <h3>Управление рангоутом</h3>
               <ul>
-                <li class="line">Брас</li>
-                <li class="line">Бухта браса</li>
-                <li class="line">Топенант</li>
+                <li class="subline">Брас</li>
+                <li class="subline">Бухта браса</li>
+                <li class="subline">Топенант</li>
                 <li></li>
-                <li class="line">Дирик-фал</li>
-                <li class="line">Галс-таль</li>
-                <li class="line">Эренс-бакштаг</li>
+                <li class="subline">Дирик-фал</li>
+                <li class="subline">Галс-таль</li>
+                <li class="subline">Эренс-бакштаг</li>
               </ul>
             </div></td>
-            <td class="deck"><div>
+            <td class="deck sailLines"><div>
               <h3>Управление парусами</h3>
               <ul>
-                <li class="line">Шкот</li>
-                <li class="line">Бухта шкота</li>
-                <li class="line">Галс</li>
-                <li class="line">Булинь</li>
-                <li class="line">Нирал</li>
-                <li class="line">Фал</li>
+                <li class="subline">Шкот</li>
+                <li class="subline">Бухта шкота</li>
+                <li class="subline">Галс</li>
+                <li class="subline">Булинь</li>
+                <li class="subline">Нирал</li>
+                <li class="subline">Фал</li>
               </ul>
               <h3>Уборка парусов</h3>
               <ul>
-                <li class="line">Гитов</li>
-                <li class="line">Бык-гордень</li>
-                <li class="line">Нок-гордень</li>
+                <li class="subline">Гитов</li>
+                <li class="subline">Бык-гордень</li>
+                <li class="subline">Нок-гордень</li>
+                <li class="subline">Гитов/бык-гордень</li>
               </ul>
             </div></td>
             <td class="deck sails"><div>
               <h2>Паруса</h2>
               <h3>Бушприт</h3>
               <ul>
-                <li class="line">Блинд</li>
+                <li class="subline">Блинд</li>
               </ul>
               <h3>Фок</h3>
               <ul>
-                <li class="line">Фок</li>
-                <li class="line">Фор-марсель</li>
-                <li class="line">Фор-брамсель</li>
+                <li class="subline">Фок</li>
+                <li class="subline">Фор-марсель</li>
+                <li class="subline">Фор-брамсель</li>
               </ul>
             </div></td>
-            <td class="deck"><div>
+            <td class="deck sails"><div>
               <h3>Грот</h3>
               <ul>
-                <li class="line">Грот</li>
-                <li class="line">Грот-марсель</li>
-                <li class="line">Грот-брамсель</li>
-                <li class="line">Стаксель</li>
+                <li class="subline">Грот</li>
+                <li class="subline">Грот-марсель</li>
+                <li class="subline">Грот-брамсель</li>
+                <li class="subline">Стаксель</li>
               </ul>
               <h3>Бизань</h3>
               <ul>
-                <li class="line">Бизань</li>
-                <li class="line">Крюйс-марсель</li>
-                <li class="line">Бегин-рей</li>
-                <li class="line">Апсель</li>
+                <li class="subline">Бизань</li>
+                <li class="subline">Крюйс-марсель</li>
+                <li class="subline">Бегин-рей</li>
+                <li class="subline">Апсель</li>
               </ul>
             </div></td>
             <td class="deck nonSailLines"><div>
               <h2>Прочие снасти</h2>
               <h3>Талёвы</h3>
               <ul>
-                <li class="line">Гротовая</li>
-                <li class="line">Оттяжка гротовой</li>
-                <li class="line">Штаговая</li>
-                <li class="line">Нагель для работы</li>
-                <li class="line">Якорная</li>
+                <li class="subline">Гротовая</li>
+                <li class="subline">Оттяжка гротовой</li>
+                <li class="subline">Штаговая</li>
+                <li class="subline">Нагель для работы</li>
+                <li class="subline">Якорная</li>
               </ul>
             </div></td>
-            <td class="deck"><div>
+            <td class="deck nonSailLines"><div>
               <h3>Флаг-фалы</h3>
               <ul>
-                <li class="line">Фока</li>
-                <li class="line">Грота</li>
-                <li class="line">Бизани</li>
-                <li class="line">Рю</li>
-                <li class="line">Флагштока</li>
+                <li class="subline">Фока</li>
+                <li class="subline">Грота</li>
+                <li class="subline">Бизани</li>
+                <li class="subline">Рю</li>
+                <li class="subline">Флагштока</li>
               </ul>
               <h3>Прочее</h3>
               <ul>
-                <li class="line">Швартов</li>
-                <li class="line">Носовой шлюпки</li>
-                <li class="line">Свободный нагель</li>
+                <li class="subline">Швартов</li>
+                <li class="subline">Носовой шлюпки</li>
+                <li class="subline">Свободный нагель</li>
               </ul>
             </div></td>
           </tr></table>
         </td></tr>
         <tr class="choiceBlock high modeDependent"><td> <!-- usedInModeDemo usedInModeWhere usedInModeWhich -->
-          <table class="center"><tr id="fullLines">
+          <table class="center"><tr id="lines">
           </tr></table>
         </td></tr>
         <tr class="high modeDependent usedInModeInfo">
@@ -978,7 +984,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, index, x, y, type, rotation) {
+function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Accept side
     assert(deck);
     this.deck = deck;
     assert(rail);
@@ -1011,7 +1017,7 @@ Point.prototype.toString = function () {
     return 'Point("' + this.deck.name + '", "' + this.rail.name + '", ' + this.number + ', ' + this.x + ', ' + this.y + ', "' + this.type + '", ' + this.rotation + ', ' + (this.line ? this.line.fullName : 'null') + ')';
 };
 
-Point.prototype.createElement = function () {
+Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
     this.description = this.rail.description + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
@@ -1026,8 +1032,9 @@ Point.prototype.createElement = function () {
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
-    this.elements.on('mouseenter mouseleave', this, function (event) {
+    this.elements.on('mouseenter mouseleave touchstart', this, function (event) {
         event.data.line.mouseHandler();
+        event.preventDefault();
     });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
@@ -1104,7 +1111,7 @@ Rail.prototype.attachLine = function (number, line) {
     if (!number) {
         number = 1;
     } else if (number < 0) {
-        number += this.portPoints.length + 1;
+        number += this.points.length + 1;
     }
     assert (this.assym ? line.assym == this.assym : (!line.assym || line.assym == PORT || line.assym == STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
     var point;
@@ -1112,13 +1119,13 @@ Rail.prototype.attachLine = function (number, line) {
     if (this.assym || line.assym != PORT) {
         point = this.points[number - 1];
         assert(point);
-        point.attachLine(line);
+        point.attachLine(line); // ToDo: Pass side
         ret.push(point);
     }
     if (!this.assym && (!line.assym || line.assym == PORT)) {
         point = this.portPoints[number - 1];
         assert(point);
-        point.attachLine(line);
+        point.attachLine(line); // ToDo: Pass side
         ret.push(point);
     }
     this.lines.push(line);
@@ -1275,6 +1282,37 @@ Line.prototype.createElement = function () {
     return this.element;
 };
 
+Line.prototype.linkSublines = function () {
+    var sublinesLocation = $('#sublines');
+    var subline;
+    this.sublines = [];
+    var line = this;
+    if (line.sail.name) {
+        subline = sublinesLocation.find('.sails .subline:contains(' + line.sail.name + ')').filter(function (_index, element) {
+            return element.textContent == line.sail.name;
+        });
+        assert(subline.length, "Unknown subline sail: " + this.sail.name);
+        assert(subline.length == 1, "Duplicate subline sail: " + this.sail.name);
+        this.sublines.push(subline);
+        subline = sublinesLocation.find('.sailLines .subline:contains(' + line.lineName + ')').filter(function (_index, element) {
+            return element.textContent == line.lineName;
+        });
+        assert(subline.length, "Unknown sail subline: " + line.lineName);
+        assert(subline.length == 1, "Duplicate sail subline: " + line.lineName);
+        this.sublines.push(subline);
+    } else {
+        subline = sublinesLocation.find('.nonSailLines .subline').filter(function (_index, element) {
+            return line.name.toLowerCase().indexOf(element.textContent.toLowerCase()) >= 0;
+        });
+        assert(subline.length, "Unknown non-sail subline: " + line.name);
+        assert(subline.length == 1, "Duplicate non-sail subline: " + line.name);
+        this.sublines.push(subline);
+    }
+    //this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
+    //this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    //return this.element;
+};
+
 Line.prototype.mouseHandler = function () {
     this.element.toggleClass('on');
     $.each(this.points, function (_index, point) {
@@ -1296,6 +1334,12 @@ Line.construct = function () {
                 Line.lines.push(line);
             });
         });
+    });
+};
+
+Line.linkAllSublines = function () {
+    $.each(Line.lines, function (_index, line) {
+        line.linkSublines();
     });
 };
 
@@ -1383,7 +1427,7 @@ Mast.createElements = function () {
     });
 };
 
-Mast.placeElements = function (linesLocation, fullLinesLocation) {
+Mast.placeElements = function (fullLinesLocation) {
     var fullLinesElement = $(fullLinesLocation);
     var td;
     $.each(Mast.masts, function (index, mast) {
@@ -1396,6 +1440,52 @@ Mast.placeElements = function (linesLocation, fullLinesLocation) {
         } else {
             td.append(mast.element);
         }
+    });
+};
+
+function Subline(element, sublineType) {
+    this.element = element;
+    this.name = element.textContent;
+    this.sublineType = sublineType;
+}
+
+Subline.SAIL = 'SAIL';
+Subline.SAILLINE = 'SAILLINE';
+Subline.NONSAILLINE = 'NONSAILLINE';
+
+Subline.prototype.toString = function () {
+    return 'Subline("' + this.name + '", "' + this.sublineType + '")';
+};
+
+Subline.prototype.mouseHandler = function () {
+    this.element.toggleClass('on');
+    $.each(this.points, function (_index, point) {
+        point.mouseHandler();
+    });
+};
+
+Subline.construct = function (location) {
+    location = $(location);
+    var uniqueNames = [];
+    Subline.sublines = [];
+    $(location).children().each(function (_index, group) {
+        group = $(group);
+        var sublineType;
+        if (group.is('.sails')) {
+            sublineType = Subline.SAIL;
+        } else if (group.is('.sailLines')) {
+            sublineType = Subline.SAILLINE;
+        } else if (group.is('.nonSailLines')) {
+            sublineType = Subline.NONSAILLINE;
+        } else {
+            assert(false, "Wrong subline type: " + sublineType);
+        }
+        $(group).find('.subline').each(function (_index, element) {
+            var subline = applyNew(Subline, element, sublineType);
+            assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
+            uniqueNames.push(subline.name);
+            Subline.sublines.push(subline);
+        });
     });
 };
 
@@ -1419,19 +1509,19 @@ function setMode(mode) {
     $('.usedInMode' + mode.capitalize()).show();
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
-    case setMode.INFO:
-        setMode.schemeBlock.hide();
-        break;
-    case setMode.DEMO:
-        setMode.schemeBlock.show();
-        break;
-    case setMode.WHERE:
-    case setMode.WHICH:
-        setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
-        break;
-    default:
-        setMode(setMode.INFO);
-        return;
+        case setMode.INFO:
+            setMode.schemeBlock.hide();
+            break;
+        case setMode.DEMO:
+            setMode.schemeBlock.show();
+            break;
+        case setMode.WHERE:
+        case setMode.WHICH:
+            setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            break;
+        default:
+            setMode(setMode.INFO);
+            return;
     }
     Questionary.askQuestion(mode);
 }
@@ -1530,73 +1620,92 @@ Questionary.askQuestion = function (mode) {
     }
     var checkbox;
     switch(Questionary.mode) {
-    case setMode.WHERE:
-        var line;
-        while (true) {
-            line = Line.lines.random();
-            checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-            if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
-                break;
+        case setMode.INFO:
+            Questionary.status = null;
+            break;
+        case setMode.DEMO:
+            $('#overlay').addClass('highlight pointer');
+            $('#sublines').addClass('highlight');
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(true);
+            break;
+        case setMode.WHERE:
+            var line;
+            while (true) {
+                line = Line.lines.random();
+                checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
+                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
+                    break;
+                }
             }
-        }
-        Questionary.correctAnswer = line.name;
-        $('#question').text(Questionary.correctAnswer);
-        $('#overlay').addClass('highlight pointer');
-        $('#decks').addClass('highlight');
-        $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
-        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = Questionary.ASKED;
-        Point.tooltips(false);
-        break;
-    case setMode.WHICH:
-        var point;
-        while (true) {
-            point = Point.points.random();
-            checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-            if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
-                break;
+            Questionary.correctAnswer = line.name;
+            $('#question').text(Questionary.correctAnswer);
+            $('#overlay').addClass('highlight pointer');
+            $('#decks').addClass('highlight');
+            $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
+            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(false);
+            break;
+        case setMode.WHICH:
+            var point;
+            while (true) {
+                point = Point.points.random();
+                checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
+                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
+                    break;
+                }
             }
-        }
-        Questionary.correctAnswer = point.description;
-        $('#question').text(Questionary.correctAnswer);
-        $('#overlay').removeClass('highlight pointer');
-        $('#lines').addClass('highlight');
-        $('.point, .line').removeClass('question rightAnswer wrongAnswer');
-        point.icon.addClass('question');
-        $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-        Questionary.status = Questionary.ASKED;
-        Point.tooltips(false);
-        break;
-    default:
-        Questionary.status = null;
-        Point.tooltips(true);
+            Questionary.correctAnswer = point.description;
+            $('#question').text(Questionary.correctAnswer);
+            $('#overlay').removeClass('highlight pointer');
+            $('#sublines').addClass('highlight');
+            $('.point, .line').removeClass('question rightAnswer wrongAnswer');
+            point.icon.addClass('question');
+            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            Questionary.status = Questionary.ASKED;
+            Point.tooltips(false);
+            break;
+        default:
+            assert(false);
     }
 };
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
-    if (Questionary.status !== Questionary.ASKED ||
-        !event.data && Questionary.mode == setMode.WHERE ||
-         event.data && Questionary.mode == setMode.WHICH) {
+    if (Questionary.status !== Questionary.ASKED) {
         return;
     }
     $('#overlay, #decks').removeClass('highlight');
     var element = $(this);
     var point = event.data;
-    $.each(Point.points, function (_index, point) {
-        if (point.line.name == Questionary.correctAnswer) {
-            point.element.add(point.icon).addClass('rightAnswer');
+    var isCorrect;
+    if (point) { // Click to scheme icon
+        switch(Questionary.mode) {
+            case setMode.DEMO:
+                break;
+            case setMode.WHERE:
+                $.each(Point.points, function (_index, point) {
+                    if (point.line.name == Questionary.correctAnswer) {
+                        point.element.add(point.icon).addClass('rightAnswer');
+                    }
+                });
+                isCorrect = point.line.name === Questionary.correctAnswer;
+                if (isCorrect) {
+                    $('#rightAnswer').show();
+                    $('#wrongAnswer').hide();
+                } else {
+                    point.element.add(point.icon).addClass('wrongAnswer').show();
+                    $('#rightAnswerText').text(point.line.name);
+                    $('#wrongAnswer').show();
+                    $('#rightAnswer').hide();
+                }
+                break;
+            case setMode.WHICH:
+                break;
         }
-    });
-    var isCorrect = point.line.name === Questionary.correctAnswer;
-    if (isCorrect) {
-        $('#rightAnswer').show();
-        $('#wrongAnswer').hide();
     } else {
-        point.element.add(point.icon).addClass('wrongAnswer').show();
-        $('#rightAnswerText').text(point.line.name);
-        $('#wrongAnswer').show();
-        $('#rightAnswer').hide();
+
     }
     Questionary.updateStatistics(isCorrect);
     $('#nextQuestionNote').show();
@@ -1632,12 +1741,14 @@ function main() {
     // Create data structures from constant data
     Deck.construct();
     Line.construct();
+    Subline.construct('#sublines');
     // Create elements for data structures
     Deck.createElements();
     Mast.createElements();
+    Line.linkAllSublines();
     // Put generated elements to DOM
     Deck.placeElements('#decks');
-    Mast.placeElements('#lines', '#fullLines');
+    Mast.placeElements('#lines');
     Point.placeElements('#overlay');
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
@@ -1658,7 +1769,6 @@ function main() {
     $('#resetButton').click(Questionary.reset);
     $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
-    $('.line').click(Questionary.answerQuestion);
     $('body').click(Questionary.nextQuestion);
     setMode(window.location.hash.slice(1));
     onResize();

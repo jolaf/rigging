@@ -14,7 +14,7 @@ Add graphical representation to mast filters
 Move from tables to flex boxes
 
 Store all possible selections in variables
-Reduce number of event handlers to speed things up on mobile
+Use jQuery delegated events to reduce the load on event handlers
 Cleanup CSS
 Cleanup main()
 
