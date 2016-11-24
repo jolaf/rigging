@@ -366,30 +366,29 @@ Line.prototype.createElement = function () {
 };
 
 Line.prototype.linkSublines = function () {
-    var sublinesLocation = $('#sublines');
-    var subline;
+    var sublines;
     this.sublines = [];
     var line = this;
-    if (line.sail.name) {
-        subline = sublinesLocation.find('.sails .subline:contains(' + line.sail.name + ')').filter(function (_index, element) {
-            return element.textContent == line.sail.name;
+    if (line.sail.name) { // ToDo: Move part of functionality to Subline.getSubline() ?
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.SAIL && subline.name == line.sail.name;
         });
-        assert(subline.length, "Unknown subline sail: " + this.sail.name);
-        assert(subline.length == 1, "Duplicate subline sail: " + this.sail.name);
-        this.sublines.push(subline);
-        subline = sublinesLocation.find('.sailLines .subline:contains(' + line.lineName + ')').filter(function (_index, element) {
-            return element.textContent == line.lineName;
+        assert(sublines.length, "Unknown subline sail: " + this.sail.name);
+        assert(sublines.length == 1, "Duplicate subline sail: " + this.sail.name);
+        this.sublines.push(sublines[0]);
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.SAILLINE && subline.name == line.lineName;
         });
-        assert(subline.length, "Unknown sail subline: " + line.lineName);
-        assert(subline.length == 1, "Duplicate sail subline: " + line.lineName);
-        this.sublines.push(subline);
+        assert(sublines.length, "Unknown sail subline: " + line.lineName);
+        assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
+        this.sublines.push(sublines[0]);
     } else {
-        subline = sublinesLocation.find('.nonSailLines .subline').filter(function (_index, element) {
-            return line.name.toLowerCase().indexOf(element.textContent.toLowerCase()) >= 0;
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.NONSAILLINE && line.name.toLowerCase().indexOf(subline.name.toLowerCase()) >= 0;
         });
-        assert(subline.length, "Unknown non-sail subline: " + line.name);
-        assert(subline.length == 1, "Duplicate non-sail subline: " + line.name);
-        this.sublines.push(subline);
+        assert(sublines.length, "Unknown non-sail subline: " + line.name);
+        assert(sublines.length == 1, "Duplicate non-sail subline: " + line.name);
+        this.sublines.push(sublines[0]);
     }
     //this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
     //this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
@@ -564,7 +563,7 @@ Subline.construct = function (location) {
             assert(false, "Wrong subline type: " + sublineType);
         }
         $(group).find('.subline').each(function (_index, element) {
-            var subline = applyNew(Subline, element, sublineType);
+            var subline = applyNew(Subline, [element, sublineType]);
             assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
             uniqueNames.push(subline.name);
             Subline.sublines.push(subline);
