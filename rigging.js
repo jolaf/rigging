@@ -360,39 +360,10 @@ Line.prototype.toString = function () {
 };
 
 Line.prototype.createElement = function () {
+    this.sublines = Subline.getSublines(this);
     this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
     this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
     return this.element;
-};
-
-Line.prototype.linkSublines = function () {
-    var sublines;
-    this.sublines = [];
-    var line = this;
-    if (line.sail.name) { // ToDo: Move part of functionality to Subline.getSubline() ?
-        sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAIL && subline.name == line.sail.name;
-        });
-        assert(sublines.length, "Unknown subline sail: " + this.sail.name);
-        assert(sublines.length == 1, "Duplicate subline sail: " + this.sail.name);
-        this.sublines.push(sublines[0]);
-        sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAILLINE && subline.name == line.lineName;
-        });
-        assert(sublines.length, "Unknown sail subline: " + line.lineName);
-        assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
-        this.sublines.push(sublines[0]);
-    } else {
-        sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.NONSAILLINE && line.name.toLowerCase().indexOf(subline.name.toLowerCase()) >= 0;
-        });
-        assert(sublines.length, "Unknown non-sail subline: " + line.name);
-        assert(sublines.length == 1, "Duplicate non-sail subline: " + line.name);
-        this.sublines.push(sublines[0]);
-    }
-    //this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
-    //this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
-    //return this.element;
 };
 
 Line.prototype.mouseHandler = function () {
@@ -416,12 +387,6 @@ Line.construct = function () {
                 Line.lines.push(line);
             });
         });
-    });
-};
-
-Line.linkAllSublines = function () {
-    $.each(Line.lines, function (_index, line) {
-        line.linkSublines();
     });
 };
 
@@ -527,13 +492,25 @@ Mast.placeElements = function (fullLinesLocation) {
 
 function Subline(element, sublineType) {
     this.element = element;
-    this.name = element.textContent;
+    this.name = element.text();
     this.sublineType = sublineType;
+    this.points = [];
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
 }
 
 Subline.SAIL = 'SAIL';
 Subline.SAILLINE = 'SAILLINE';
 Subline.NONSAILLINE = 'NONSAILLINE';
+
+Subline.prototype.addLine = function (line) {
+    var points = this.points;
+    $.each(line.points, function (_index, point) {
+        if (points.indexOf(point) < 0) {
+            points.push(point);
+        }
+    });
+    return this;
+};
 
 Subline.prototype.toString = function () {
     return 'Subline("' + this.name + '", "' + this.sublineType + '")';
@@ -546,11 +523,10 @@ Subline.prototype.mouseHandler = function () {
     });
 };
 
-Subline.construct = function (location) {
-    location = $(location);
+Subline.construct = function () {
     var uniqueNames = [];
     Subline.sublines = [];
-    $(location).children().each(function (_index, group) {
+    $('#sublines').children().each(function (_index, group) {
         group = $(group);
         var sublineType;
         if (group.is('.sails')) {
@@ -563,12 +539,40 @@ Subline.construct = function (location) {
             assert(false, "Wrong subline type: " + sublineType);
         }
         $(group).find('.subline').each(function (_index, element) {
-            var subline = applyNew(Subline, [element, sublineType]);
+            var subline = applyNew(Subline, [$(element), sublineType]);
             assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
             uniqueNames.push(subline.name);
             Subline.sublines.push(subline);
         });
     });
+};
+
+Subline.getSublines = function (line) {
+    var ret = [];
+    var sublines;
+    if (line.sail.name) {
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.SAIL && subline.name == line.sail.name;
+        });
+        assert(sublines.length, "Unknown subline sail: " + line.sail.name);
+        assert(sublines.length == 1, "Duplicate subline sail: " + line.sail.name);
+        ret.push(sublines[0].addLine(line));
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.SAILLINE && subline.name == line.lineName;
+        });
+        assert(sublines.length, "Unknown sail subline: " + line.lineName);
+        assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
+        ret.push(sublines[0].addLine(line));
+    } else {
+        var lineName = line.name.toLowerCase();
+        sublines = Subline.sublines.filter(function (subline) {
+            return subline.sublineType === Subline.NONSAILLINE && lineName.indexOf(subline.name.toLowerCase()) >= 0;
+        });
+        assert(sublines.length, "Unknown non-sail subline: " + lineName);
+        assert(sublines.length == 1, "Duplicate non-sail subline: " + lineName);
+        ret.push(sublines[0].addLine(line));
+    }
+    return ret;
 };
 
 function onResize() {
@@ -823,11 +827,10 @@ function main() {
     // Create data structures from constant data
     Deck.construct();
     Line.construct();
-    Subline.construct('#sublines');
+    Subline.construct();
     // Create elements for data structures
     Deck.createElements();
     Mast.createElements();
-    Line.linkAllSublines();
     // Put generated elements to DOM
     Deck.placeElements('#decks');
     Mast.placeElements('#lines');
