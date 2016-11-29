@@ -115,7 +115,11 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
-    this.elements.on('mouseenter mouseleave', this, function (event) { event.data.line.mouseHandler(event.type == 'mouseenter'); });
+    this.elements.on('mouseenter mouseleave', this, function (event) {
+        if (Questionary.mode != setMode.WHICH) {
+            event.data.line.mouseHandler(event.type == 'mouseenter');
+        }
+    });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
 };
@@ -495,7 +499,11 @@ function Subline(element, sublineType) {
     this.name = element.text();
     this.sublineType = sublineType;
     this.points = [];
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
+    this.element.on('mouseenter mouseleave', this, function (event) {
+        if (Questionary.mode != setMode.WHICH) {
+            event.data.mouseHandler(event.type == 'mouseenter');
+        }
+    });
 }
 
 Subline.SAIL = 'SAIL';
