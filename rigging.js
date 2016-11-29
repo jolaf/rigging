@@ -124,8 +124,12 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function () {
-    this.element.toggleClass('on');
     this.icon.toggleClass('on');
+    this.element.toggleClass('on');
+    this.line.element.toggleClass('on');
+    $.each(this.line.sublines, function (_index, subline) {
+        subline.element.toggleClass('on');
+    });
 };
 
 Point.placeElements = function (location) {
@@ -366,8 +370,7 @@ Line.prototype.createElement = function () {
     return this.element;
 };
 
-Line.prototype.mouseHandler = function () {
-    this.element.toggleClass('on');
+Line.prototype.mouseHandler = function () { // ToDo: Add parameter to avoid stupid toggle
     $.each(this.points, function (_index, point) {
         point.mouseHandler();
     });
@@ -517,7 +520,6 @@ Subline.prototype.toString = function () {
 };
 
 Subline.prototype.mouseHandler = function () {
-    this.element.toggleClass('on');
     $.each(this.points, function (_index, point) {
         point.mouseHandler();
     });
@@ -711,7 +713,8 @@ Questionary.askQuestion = function (mode) {
             break;
         case setMode.DEMO:
             $('#overlay').addClass('highlight pointer');
-            $('#sublines').addClass('highlight');
+            $('#sublines, #lines').addClass('highlight');
+            $('.point').removeClass('question rightAnswer wrongAnswer');
             Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
             break;
@@ -727,7 +730,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.correctAnswer = line.name;
             $('#question').text(Questionary.correctAnswer);
             $('#overlay').addClass('highlight pointer');
-            $('#decks').addClass('highlight');
+            $('#decks, #lines').addClass('highlight');
             $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             Questionary.status = Questionary.ASKED;
@@ -745,7 +748,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.correctAnswer = point.description;
             $('#question').text(Questionary.correctAnswer);
             $('#overlay').removeClass('highlight pointer');
-            $('#sublines').addClass('highlight');
+            $('#sublines, #lines').addClass('highlight');
             $('.point, .line').removeClass('question rightAnswer wrongAnswer');
             point.icon.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
