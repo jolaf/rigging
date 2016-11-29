@@ -64,9 +64,9 @@ var DOWNHAULER = 'Нирал';
 var HALYARD = 'Фал';
 
 var CLEWLINE = 'Гитов';
+var LEECHLINE = 'Нок-гордень';
 var BUNTLINE = 'Бык-гордень';
 var CLEWBUNTLINES = 'Гитов/бык-гордень';
-var LEECHLINE = 'Нок-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
@@ -173,9 +173,9 @@ var LINES = [
             [FORE_DECK,  FRONT_RAIL,       -1, TACK],
             [FORE_DECK,  FRONT_RAIL,        2, BOWLINE],
             [FORE_DECK,  AT_MAST_FRONT,      , DOWNHAULER,      ,                    CENTER],
-            [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
-            [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,        -2, CLEWLINE],
+            [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
+            [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
         ]],
         [FORE_TOPSAIL, [
             [FORE_DECK,  BACK_RAIL,         2, BRACE],
@@ -183,9 +183,9 @@ var LINES = [
             [FORE_DECK,  FRONT_FISTS,        , SHEET],
             [FORE_DECK,  AT_MAST_SIDE,       , SHEET,           COIL],
             [FORE_DECK,  FRONT_RAIL,        1, BOWLINE],
-            [FORE_DECK,  SIDE_RAIL,         3, BUNTLINE],
-            [FORE_DECK,  SIDE_RAIL,         4, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,         5, CLEWLINE],
+            [FORE_DECK,  SIDE_RAIL,         4, LEECHLINE],
+            [FORE_DECK,  SIDE_RAIL,         3, BUNTLINE],
         ]],
         [FORE_GALLANT, [
             [FORE_DECK,  BACK_RAIL,         3, BRACE],
@@ -206,18 +206,18 @@ var LINES = [
             [MAIN_DECK,  BULWARK,          -1, TACK],
             [FORE_DECK,  SHROUDS_RAIL,      2, BOWLINE],
             [MAIN_DECK,  FRONT_PILLARS,      , DOWNHAULER],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    1, BUNTLINE],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    2, LEECHLINE],
             [MAIN_DECK,  SIDE_MAST_RAIL,    3, CLEWLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    2, LEECHLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    1, BUNTLINE],
         ]],
         [MAIN_TOPSAIL, [
             [STERN_DECK, SIDE_RAIL,        -1, BRACE],
             [MAIN_DECK,  BEHIND_MAST_RAIL,  2, LIFT],
             [MAIN_DECK,  BACK_FISTS,         , SHEET],
             [FORE_DECK,  SHROUDS_RAIL,      3, BOWLINE],
-            [MAIN_DECK,  SIDE_RAIL,         3, BUNTLINE],
-            [MAIN_DECK,  SIDE_RAIL,         4, LEECHLINE],
             [MAIN_DECK,  SIDE_RAIL,         5, CLEWLINE],
+            [MAIN_DECK,  SIDE_RAIL,         4, LEECHLINE],
+            [MAIN_DECK,  SIDE_RAIL,         3, BUNTLINE],
         ]],
         [MAIN_GALLANT, [
             [STERN_DECK, SIDE_RAIL,        -2, BRACE],

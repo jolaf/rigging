@@ -115,20 +115,17 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
-    this.elements.on('mouseenter mouseleave touchstart', this, function (event) {
-        event.data.line.mouseHandler();
-        event.preventDefault();
-    });
+    this.elements.on('mouseenter mouseleave', this, function (event) { event.data.line.mouseHandler(event.type == 'mouseenter'); });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
 };
 
-Point.prototype.mouseHandler = function () {
-    this.icon.toggleClass('on');
-    this.element.toggleClass('on');
-    this.line.element.toggleClass('on');
+Point.prototype.mouseHandler = function (isEnter) {
+    this.icon.toggleClass('on', isEnter);
+    this.element.toggleClass('on', isEnter);
+    this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
     $.each(this.line.sublines, function (_index, subline) {
-        subline.element.toggleClass('on');
+        subline.element.toggleClass('on', isEnter);
     });
 };
 
@@ -366,13 +363,13 @@ Line.prototype.toString = function () {
 Line.prototype.createElement = function () {
     this.sublines = Subline.getSublines(this);
     this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
     return this.element;
 };
 
-Line.prototype.mouseHandler = function () { // ToDo: Add parameter to avoid stupid toggle
+Line.prototype.mouseHandler = function (isEnter) {
     $.each(this.points, function (_index, point) {
-        point.mouseHandler();
+        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 
@@ -498,7 +495,7 @@ function Subline(element, sublineType) {
     this.name = element.text();
     this.sublineType = sublineType;
     this.points = [];
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
 }
 
 Subline.SAIL = 'SAIL';
@@ -519,9 +516,9 @@ Subline.prototype.toString = function () {
     return 'Subline("' + this.name + '", "' + this.sublineType + '")';
 };
 
-Subline.prototype.mouseHandler = function () {
+Subline.prototype.mouseHandler = function (isEnter) {
     $.each(this.points, function (_index, point) {
-        point.mouseHandler();
+        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 

@@ -333,7 +333,7 @@ img.vang {
 	cursor: pointer;
 }
 
-.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .subline.on, .highlight .subline:hover, .highlight .subline.on {
+.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .line.on, .highlight .subline:hover, .highlight .subline.on {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
@@ -604,7 +604,7 @@ img.vang {
             </div></td>
           </tr></table>
         </td></tr>
-        <tr class="choiceBlock high modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr class="choiceBlock high modeDependent"><td> <!-- usedInModeDemo usedInModeWhere usedInModeWhich -->
           <table class="center"><tr id="lines">
           </tr></table>
         </td></tr>
@@ -699,9 +699,9 @@ var DOWNHAULER = 'Нирал';
 var HALYARD = 'Фал';
 
 var CLEWLINE = 'Гитов';
+var LEECHLINE = 'Нок-гордень';
 var BUNTLINE = 'Бык-гордень';
 var CLEWBUNTLINES = 'Гитов/бык-гордень';
-var LEECHLINE = 'Нок-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
@@ -808,9 +808,9 @@ var LINES = [
             [FORE_DECK,  FRONT_RAIL,       -1, TACK],
             [FORE_DECK,  FRONT_RAIL,        2, BOWLINE],
             [FORE_DECK,  AT_MAST_FRONT,      , DOWNHAULER,      ,                    CENTER],
-            [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
-            [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,        -2, CLEWLINE],
+            [FORE_DECK,  SIDE_RAIL,         2, LEECHLINE],
+            [FORE_DECK,  SIDE_RAIL,         1, BUNTLINE],
         ]],
         [FORE_TOPSAIL, [
             [FORE_DECK,  BACK_RAIL,         2, BRACE],
@@ -818,9 +818,9 @@ var LINES = [
             [FORE_DECK,  FRONT_FISTS,        , SHEET],
             [FORE_DECK,  AT_MAST_SIDE,       , SHEET,           COIL],
             [FORE_DECK,  FRONT_RAIL,        1, BOWLINE],
-            [FORE_DECK,  SIDE_RAIL,         3, BUNTLINE],
-            [FORE_DECK,  SIDE_RAIL,         4, LEECHLINE],
             [FORE_DECK,  SIDE_RAIL,         5, CLEWLINE],
+            [FORE_DECK,  SIDE_RAIL,         4, LEECHLINE],
+            [FORE_DECK,  SIDE_RAIL,         3, BUNTLINE],
         ]],
         [FORE_GALLANT, [
             [FORE_DECK,  BACK_RAIL,         3, BRACE],
@@ -841,18 +841,18 @@ var LINES = [
             [MAIN_DECK,  BULWARK,          -1, TACK],
             [FORE_DECK,  SHROUDS_RAIL,      2, BOWLINE],
             [MAIN_DECK,  FRONT_PILLARS,      , DOWNHAULER],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    1, BUNTLINE],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    2, LEECHLINE],
             [MAIN_DECK,  SIDE_MAST_RAIL,    3, CLEWLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    2, LEECHLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    1, BUNTLINE],
         ]],
         [MAIN_TOPSAIL, [
             [STERN_DECK, SIDE_RAIL,        -1, BRACE],
             [MAIN_DECK,  BEHIND_MAST_RAIL,  2, LIFT],
             [MAIN_DECK,  BACK_FISTS,         , SHEET],
             [FORE_DECK,  SHROUDS_RAIL,      3, BOWLINE],
-            [MAIN_DECK,  SIDE_RAIL,         3, BUNTLINE],
-            [MAIN_DECK,  SIDE_RAIL,         4, LEECHLINE],
             [MAIN_DECK,  SIDE_RAIL,         5, CLEWLINE],
+            [MAIN_DECK,  SIDE_RAIL,         4, LEECHLINE],
+            [MAIN_DECK,  SIDE_RAIL,         3, BUNTLINE],
         ]],
         [MAIN_GALLANT, [
             [STERN_DECK, SIDE_RAIL,        -2, BRACE],
@@ -1036,20 +1036,17 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
-    this.elements.on('mouseenter mouseleave touchstart', this, function (event) {
-        event.data.line.mouseHandler();
-        event.preventDefault();
-    });
+    this.elements.on('mouseenter mouseleave', this, function (event) { event.data.line.mouseHandler(event.type == 'mouseenter'); });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
 };
 
-Point.prototype.mouseHandler = function () {
-    this.icon.toggleClass('on');
-    this.element.toggleClass('on');
-    this.line.element.toggleClass('on');
+Point.prototype.mouseHandler = function (isEnter) {
+    this.icon.toggleClass('on', isEnter);
+    this.element.toggleClass('on', isEnter);
+    this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
     $.each(this.line.sublines, function (_index, subline) {
-        subline.element.toggleClass('on');
+        subline.element.toggleClass('on', isEnter);
     });
 };
 
@@ -1287,13 +1284,13 @@ Line.prototype.toString = function () {
 Line.prototype.createElement = function () {
     this.sublines = Subline.getSublines(this);
     this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
     return this.element;
 };
 
-Line.prototype.mouseHandler = function () { // ToDo: Add parameter to avoid stupid toggle
+Line.prototype.mouseHandler = function (isEnter) {
     $.each(this.points, function (_index, point) {
-        point.mouseHandler();
+        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 
@@ -1419,7 +1416,7 @@ function Subline(element, sublineType) {
     this.name = element.text();
     this.sublineType = sublineType;
     this.points = [];
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(); });
+    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
 }
 
 Subline.SAIL = 'SAIL';
@@ -1440,9 +1437,9 @@ Subline.prototype.toString = function () {
     return 'Subline("' + this.name + '", "' + this.sublineType + '")';
 };
 
-Subline.prototype.mouseHandler = function () {
+Subline.prototype.mouseHandler = function (isEnter) {
     $.each(this.points, function (_index, point) {
-        point.mouseHandler();
+        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 

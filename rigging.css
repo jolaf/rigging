@@ -316,7 +316,7 @@ img.vang {
 	cursor: pointer;
 }
 
-.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .subline.on, .highlight .subline:hover, .highlight .subline.on {
+.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .line.on, .highlight .subline:hover, .highlight .subline.on {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
