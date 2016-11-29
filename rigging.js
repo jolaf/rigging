@@ -552,13 +552,13 @@ Subline.getSublines = function (line) {
     var sublines;
     if (line.sail.name) {
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAIL && subline.name == line.sail.name;
+            return subline.sublineType == Subline.SAIL && subline.name == (line.detail && line.name.indexOf(line.lineName) === 0 ? line.detail : line.sail.name);
         });
         assert(sublines.length, "Unknown subline sail: " + line.sail.name);
         assert(sublines.length == 1, "Duplicate subline sail: " + line.sail.name);
         ret.push(sublines[0].addLine(line));
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAILLINE && subline.name == line.lineName;
+            return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.indexOf(subline.name + ' ') === 0);
         });
         assert(sublines.length, "Unknown sail subline: " + line.lineName);
         assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);

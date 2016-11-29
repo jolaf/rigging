@@ -380,6 +380,18 @@ img.vang {
 	border-top: 2px solid black;
 }
 
+#sublines h2 {
+	margin-bottom: 0.5em;
+}
+
+#sublines h3 {
+	margin: 0;
+}
+
+#sublines ul:first-child {
+	margin-top: 1.5em;
+}
+
 #info {
 	text-align: center;
 	vertical-align: middle;

@@ -1,5 +1,7 @@
 Add sides to line descriptions, at least for assymmetric lines
 
+Create immediate tooltips
+
 Remove hover on touch
 
 Remove fullLines and respective HTML, CSS and JS code
@@ -7,7 +9,6 @@ Remove fullLines and respective HTML, CSS and JS code
 Resolve problem with multiple ropes to one point
 
 Make Which mode work
-Create Demo mode
 
 Add graphical representation to mast filters
 
