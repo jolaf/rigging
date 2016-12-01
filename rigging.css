@@ -349,7 +349,7 @@ img.vang {
 }
 
 .deck, .mast {
-	padding: 0 2em;
+	padding: 0 1em;
 }
 
 .questionBlock {
@@ -380,6 +380,10 @@ img.vang {
 	border-top: 2px solid black;
 }
 
+#sublines h3 {
+	font-weight: normal;
+}
+
 #sublines h2 {
 	margin-bottom: 0.5em;
 }
@@ -390,6 +394,10 @@ img.vang {
 
 #sublines ul:first-child {
 	margin-top: 1.5em;
+}
+
+#sublines h3 + ul {
+	margin-top: 0.5em;
 }
 
 #info {
