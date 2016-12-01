@@ -6,8 +6,13 @@ html, body {
 	white-space: nowrap;
 }
 
+body {
+	background: #ffeca4;
+}
+
 body, button {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
+    color: #4e1d00;
 }
 
 table {
@@ -63,8 +68,8 @@ table.center {
 }
 
 #controls td {
-	background-color: gray;
-	border: 5px solid white;
+	background-color: #b38451;
+	border: 5px solid #ffeca4;
 	font-weight: bold;
 	font-size: 120%;
 	padding: 0.3em 0.4em;
@@ -353,7 +358,7 @@ img.vang {
 }
 
 .questionBlock {
-	border-top: 2px solid black;
+	border-top: 2px solid #4e1d00;
 	text-align: center;
 	padding-bottom: 1em;
 }
@@ -377,7 +382,7 @@ img.vang {
 }
 
 .choiceBlock {
-	border-top: 2px solid black;
+	border-top: 2px solid #4e1d00;
 }
 
 #sublines h3 {
@@ -409,11 +414,11 @@ img.vang {
 .logo {
 	background: #94bfd8;
 	padding: 1em;
-	border: 1px solid black;
+	border: 1px solid #4e1d00;
 }
 
 #footer {
-	border-top: 2px solid black;
+	border-top: 2px solid #4e1d00;
 }
 
 #footer p {
