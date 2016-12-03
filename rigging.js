@@ -758,7 +758,7 @@ Questionary.askQuestion = function (mode) {
             $('#question').text(Questionary.correctAnswer.description);
             $('#overlay').removeClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
-            $('.point, .line').removeClass('question rightAnswer wrongAnswer');
+            $('.point, .subline').removeClass('question rightAnswer wrongAnswer');
             point.icon.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             Questionary.status = Questionary.ASKED;
@@ -799,14 +799,20 @@ Questionary.answerQuestion = function (event) {
                 $('#overlay, #sublines').removeClass('highlight');
                 $.each(Point.points, function (_index, point) {
                     if (point.line.name == Questionary.correctAnswer.line.name) {
-                        point.elements.addClass('rightAnswer');
+                        point.icon.addClass('rightAnswer');
+                        $.each(point.line.sublines, function (_index, subline) {
+                            subline.element.addClass('rightAnswer');
+                        });
                     }
                 });
                 Questionary.correctAnswer.elements.addClass('rightAnswer');
                 isCorrect = subline.points[0].line.name == Questionary.correctAnswer.line.name;
                 if (!isCorrect) {
                     $.each(subline.points, function (_index, point) {
-                        point.elements.addClass('wrongAnswer');
+                        point.icon.addClass('wrongAnswer');
+                        $.each(point.line.sublines, function (_index, subline) {
+                            subline.element.addClass('wrongAnswer');
+                        });
                     });
                     $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
                 }
