@@ -148,7 +148,7 @@ img.scheme {
 
 .mask {
 	position: absolute;
-	background: rgba(255, 255, 255, 0.75);
+	background: rgba(255, 236, 164, 0.75); /* #ffeca4 */
 	top: 0;
 	height: 100%;
 	display: none;
