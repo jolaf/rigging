@@ -504,6 +504,7 @@ function Subline(element, sublineType) {
             event.data.mouseHandler(event.type == 'mouseenter');
         }
     });
+    this.element.on('click', this, Questionary.answerQuestion);
 }
 
 Subline.SAIL = 'SAIL';
@@ -609,8 +610,14 @@ function setMode(mode) {
             setMode.schemeBlock.show();
             break;
         case setMode.WHERE:
+            setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            $('.mask').hide();
+            break;
         case setMode.WHICH:
             setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
+                $('#shadow' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
+            });
             break;
         default:
             setMode(setMode.INFO);
@@ -628,14 +635,12 @@ setMode.mode = null;
 
 function resetDecks() {
     $('.mask').hide();
-    $('#selectDecks input').prop('checked', true);
-    $('#selectDecks input').prop('disabled', false);
+    $('#selectDecks input').prop('checked', true).prop('disabled', false);
     $('#selectDecks :first-child input').prop('disabled', true);
 }
 
 function resetMasts() {
-    $('#selectMasts input').prop('checked', true);
-    $('#selectMasts input').prop('disabled', false);
+    $('#selectMasts input').prop('checked', true).prop('disabled', false);
     $('#selectMasts :first-child input').prop('disabled', true);
 }
 
@@ -720,7 +725,6 @@ Questionary.askQuestion = function (mode) {
             $('#overlay').addClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
             $('.point').removeClass('question rightAnswer wrongAnswer');
-            Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
             break;
         case setMode.WHERE:
@@ -767,44 +771,60 @@ Questionary.askQuestion = function (mode) {
 
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
+    assert(event.data);
     if (Questionary.status !== Questionary.ASKED) {
         return;
     }
-    $('#overlay, #decks').removeClass('highlight');
     var element = $(this);
-    var point = event.data;
     var isCorrect;
-    if (point) { // Click to scheme icon
-        switch(Questionary.mode) {
-            case setMode.DEMO:
-                break;
-            case setMode.WHERE:
-                $.each(Point.points, function (_index, point) {
-                    if (point.line.name == Questionary.correctAnswer) {
-                        point.element.add(point.icon).addClass('rightAnswer');
+    switch(Questionary.mode) {
+        case setMode.WHERE:
+            var point = event.data;
+            $('#overlay, #decks').removeClass('highlight');
+            $.each(Point.points, function (_index, point) {
+                if (point.line.name == Questionary.correctAnswer) {
+                    point.elements.addClass('rightAnswer');
+                }
+            });
+            isCorrect = point.line.name === Questionary.correctAnswer;
+            if (!isCorrect) {
+                point.elements.addClass('wrongAnswer');
+                $('#rightAnswerText').text(point.line.name);
+            }
+            Questionary.status = Questionary.ANSWERED;
+            break;
+        case setMode.WHICH:
+            var subline = event.data;
+            if (subline.sublineType === Subline.NONSAILLINE) {
+                $('#overlay, #sublines').removeClass('highlight');
+                $.each(Point.points, function (_index, point) { // ToDo: set Questionary.correctAnswer to point, not point.description, and highlight one point only
+                    if (point.description == Questionary.correctAnswer) {
+                        point.elements.addClass('rightAnswer');
                     }
                 });
-                isCorrect = point.line.name === Questionary.correctAnswer;
-                if (isCorrect) {
-                    $('#rightAnswer').show();
-                    $('#wrongAnswer').hide();
-                } else {
-                    point.element.add(point.icon).addClass('wrongAnswer').show();
-                    $('#rightAnswerText').text(point.line.name);
-                    $('#wrongAnswer').show();
-                    $('#rightAnswer').hide();
+                isCorrect = subline.points[0].description == Questionary.correctAnswer;
+                if (!isCorrect) {
+                    subline.points[0].elements.addClass('wrongAnswer');
+                    $('#rightAnswerText').text(subline.points[0].line.name);
                 }
-                break;
-            case setMode.WHICH:
-                break;
-        }
-    } else {
-
+                Questionary.status = Questionary.ANSWERED;
+            }
+            break;
+        default:
+            assert(false);
     }
-    Questionary.updateStatistics(isCorrect);
-    $('#nextQuestionNote').show();
-    Questionary.status = Questionary.ANSWERED;
-    Point.tooltips(true);
+    if (Questionary.status === Questionary.ANSWERED) {
+        if (isCorrect) {
+            $('#rightAnswer').show();
+            $('#wrongAnswer').hide();
+        } else {
+            $('#wrongAnswer').show();
+            $('#rightAnswer').hide();
+        }
+        Questionary.updateStatistics(isCorrect);
+        $('#nextQuestionNote').show();
+        Point.tooltips(true);
+    }
     event.stopPropagation(); // Avoid triggering nextQuestion()
 };
 
