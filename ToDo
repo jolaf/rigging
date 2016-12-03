@@ -1,3 +1,9 @@
+Add note "answer question to turn on tooltips"
+
+Insert more mode/status if's in handlers to reduce number of affected elements
+
+Remove Pointer in Which mode after answer
+
 Rerrange points on stern deck
 
 Fix flicker on hover on negative z-index

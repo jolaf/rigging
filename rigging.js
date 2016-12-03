@@ -116,9 +116,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         $(element).data('title', name);
     });
     this.elements.on('mouseenter mouseleave', this, function (event) {
-        if (Questionary.mode != setMode.WHICH) {
-            event.data.line.mouseHandler(event.type == 'mouseenter');
-        }
+        event.data.line.mouseHandler(event.type == 'mouseenter');
     });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
@@ -128,9 +126,11 @@ Point.prototype.mouseHandler = function (isEnter) {
     this.icon.toggleClass('on', isEnter);
     this.element.toggleClass('on', isEnter);
     this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
-    $.each(this.line.sublines, function (_index, subline) {
-        subline.element.toggleClass('on', isEnter);
-    });
+    if (Questionary.mode !== setMode.WHICH || Questionary.status !== Questionary.ASKED) {
+        $.each(this.line.sublines, function (_index, subline) {
+            subline.element.toggleClass('on', isEnter);
+        });
+    }
 };
 
 Point.placeElements = function (location) {
@@ -500,7 +500,7 @@ function Subline(element, sublineType) {
     this.sublineType = sublineType;
     this.points = [];
     this.element.on('mouseenter mouseleave', this, function (event) {
-        if (Questionary.mode != setMode.WHICH) {
+        if (Questionary.mode !== setMode.WHICH || Questionary.status === Questionary.ANSWERED) {
             event.data.mouseHandler(event.type == 'mouseenter');
         }
     });
@@ -724,7 +724,7 @@ Questionary.askQuestion = function (mode) {
         case setMode.DEMO:
             $('#overlay').addClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
-            $('.point').removeClass('question rightAnswer wrongAnswer');
+            $('.point, .subline').removeClass('question rightAnswer wrongAnswer');
             Point.tooltips(true);
             break;
         case setMode.WHERE:
@@ -796,7 +796,7 @@ Questionary.answerQuestion = function (event) {
         case setMode.WHICH:
             var subline = event.data;
             if (subline.sublineType === Subline.NONSAILLINE) {
-                $('#overlay, #sublines').removeClass('highlight');
+                $('#overlay').addClass('highlight pointer');
                 $.each(Point.points, function (_index, point) {
                     if (point.line.name == Questionary.correctAnswer.line.name) {
                         point.icon.addClass('rightAnswer');
