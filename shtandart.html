@@ -192,7 +192,19 @@ img.point {
 	filter: brightness(0) /* black */ blur(0.5px);
 }
 
-.highlight .point:hover, .highlight .point.on, .point.question {
+/* .point.on, */ .question {
+	z-index: -3;
+}
+
+.point.wrongAnswer {
+	z-index: -2;
+}
+
+.point.rightAnswer {
+	z-index: -1;
+}
+
+.highlight .point.on, .point.question {
     filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -208,7 +220,7 @@ img.point {
 	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px);
 }
 
-.colored.highlight .clewline.point:hover, .colored.highlight .clewline.point.on, .colored .clewline.point.question {
+.colored.highlight .clewline.point.on, .colored .clewline.point.question {
     filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -224,7 +236,7 @@ img.point {
 	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px);
 }
 
-.colored.highlight .buntline.point:hover, .colored.highlight .buntline.point.on, .colored .buntline.point.question {
+.colored.highlight .buntline.point.on, .colored .buntline.point.question {
     filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -240,7 +252,7 @@ img.point {
 	filter: hue-rotate(78deg) brightness(250%) /* yellow green */  blur(0.5px);
 }
 
-.colored.highlight .clewbuntlines.point:hover, .colored.highlight .clewbuntlines.point.on, .colored .clewbuntlines.point.question {
+.colored.highlight .clewbuntlines.point.on, .colored .clewbuntlines.point.question {
     filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -256,7 +268,7 @@ img.point {
 	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px);
 }
 
-.colored.highlight .leechline.point:hover, .colored.highlight .leechline.point.on, .colored .leechline.point.question {
+.colored.highlight .leechline.point.on, .colored .leechline.point.question {
     filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -272,7 +284,7 @@ img.point {
 	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px);
 }
 
-.colored.highlight .bowline.point:hover, .colored.highlight .bowline.point.on, .colored .bowline.point.question {
+.colored.highlight .bowline.point.on, .colored .bowline.point.question {
     filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
@@ -338,7 +350,7 @@ img.vang {
 	cursor: pointer;
 }
 
-.highlight .pointNumber:hover, .highlight .pointNumber.on, .highlight .line:hover, .highlight .line.on, .highlight .subline:hover, .highlight .subline.on {
+.highlight .pointNumber.on, .highlight .line.on, .highlight .subline.on {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
@@ -1684,12 +1696,12 @@ Questionary.askQuestion = function (mode) {
             while (true) {
                 point = Point.points.random();
                 checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
+                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.description != Questionary.correctAnswer.description)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = point.description;
-            $('#question').text(Questionary.correctAnswer);
+            Questionary.correctAnswer = point;
+            $('#question').text(Questionary.correctAnswer.description);
             $('#overlay').removeClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
             $('.point, .line').removeClass('question rightAnswer wrongAnswer');
@@ -1731,15 +1743,18 @@ Questionary.answerQuestion = function (event) {
             var subline = event.data;
             if (subline.sublineType === Subline.NONSAILLINE) {
                 $('#overlay, #sublines').removeClass('highlight');
-                $.each(Point.points, function (_index, point) { // ToDo: set Questionary.correctAnswer to point, not point.description, and highlight one point only
-                    if (point.description == Questionary.correctAnswer) {
+                $.each(Point.points, function (_index, point) {
+                    if (point.line.name == Questionary.correctAnswer.line.name) {
                         point.elements.addClass('rightAnswer');
                     }
                 });
-                isCorrect = subline.points[0].description == Questionary.correctAnswer;
+                Questionary.correctAnswer.elements.addClass('rightAnswer');
+                isCorrect = subline.points[0].line.name == Questionary.correctAnswer.line.name;
                 if (!isCorrect) {
-                    subline.points[0].elements.addClass('wrongAnswer');
-                    $('#rightAnswerText').text(subline.points[0].line.name);
+                    $.each(subline.points, function (_index, point) {
+                        point.elements.addClass('wrongAnswer');
+                    });
+                    $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
                 }
                 Questionary.status = Questionary.ANSWERED;
             }

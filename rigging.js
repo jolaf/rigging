@@ -750,12 +750,12 @@ Questionary.askQuestion = function (mode) {
             while (true) {
                 point = Point.points.random();
                 checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && point.description != Questionary.correctAnswer) {
+                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.description != Questionary.correctAnswer.description)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = point.description;
-            $('#question').text(Questionary.correctAnswer);
+            Questionary.correctAnswer = point;
+            $('#question').text(Questionary.correctAnswer.description);
             $('#overlay').removeClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
             $('.point, .line').removeClass('question rightAnswer wrongAnswer');
@@ -797,15 +797,18 @@ Questionary.answerQuestion = function (event) {
             var subline = event.data;
             if (subline.sublineType === Subline.NONSAILLINE) {
                 $('#overlay, #sublines').removeClass('highlight');
-                $.each(Point.points, function (_index, point) { // ToDo: set Questionary.correctAnswer to point, not point.description, and highlight one point only
-                    if (point.description == Questionary.correctAnswer) {
+                $.each(Point.points, function (_index, point) {
+                    if (point.line.name == Questionary.correctAnswer.line.name) {
                         point.elements.addClass('rightAnswer');
                     }
                 });
-                isCorrect = subline.points[0].description == Questionary.correctAnswer;
+                Questionary.correctAnswer.elements.addClass('rightAnswer');
+                isCorrect = subline.points[0].line.name == Questionary.correctAnswer.line.name;
                 if (!isCorrect) {
-                    subline.points[0].elements.addClass('wrongAnswer');
-                    $('#rightAnswerText').text(subline.points[0].line.name);
+                    $.each(subline.points, function (_index, point) {
+                        point.elements.addClass('wrongAnswer');
+                    });
+                    $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
                 }
                 Questionary.status = Questionary.ANSWERED;
             }
