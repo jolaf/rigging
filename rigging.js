@@ -116,7 +116,11 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         $(element).data('title', name);
     });
     this.elements.on('mouseenter mouseleave', this, function (event) {
-        event.data.line.mouseHandler(event.type == 'mouseenter');
+        if (Questionary.status === Questionary.ASKED) {
+            event.data.mouseHandler(event.type == 'mouseenter');
+        } else {
+            event.data.line.mouseHandler(event.type == 'mouseenter');
+        }
     });
     this.elements.on('click', this, Questionary.answerQuestion);
     return this.element;
