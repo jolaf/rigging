@@ -108,9 +108,16 @@ span.selector {
 	touch-action: manipulation;
 }
 
-#controls .selector:hover {
+#controls .selector {
+	cursor: default;
+}
+
+#controls .selector[disabled] {
+	color: #555;
+}
+
+#controls .selector:not([disabled]):hover {
 	color: #fc0;
-	cursor: pointer;
 }
 
 #schemeBlock {
@@ -144,6 +151,7 @@ img.scheme {
 	position: absolute;
 	top: 0;
 	left: 0;
+	z-index: 0;
 }
 
 .mask {
@@ -175,15 +183,15 @@ img.point {
 	filter: brightness(0) /* black */ blur(0.5px);
 }
 
-/* .point.on, */ .question {
+.point.wrongAnswer {
 	z-index: -3;
 }
 
-.point.wrongAnswer {
+.point.rightAnswer {
 	z-index: -2;
 }
 
-.point.rightAnswer {
+.point.on, .point.question {
 	z-index: -1;
 }
 
@@ -329,8 +337,8 @@ img.vang {
 	font-weight: bold;
 }
 
-.pointer .point, .pointNumber, .line, .subline {
-	cursor: pointer;
+.pointNumber, .line, .subline {
+	cursor: default;
 }
 
 .highlight .pointNumber.on, .highlight .line.on, .highlight .subline.on, .highlight .subline:hover {
@@ -339,14 +347,16 @@ img.vang {
 
 .pointNumber.wrongAnswer, .line.wrongAnswer, .subline.wrongAnswer {
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
-	color: white;
-	z-index: -2;
+	z-index: -3;
 }
 
 .pointNumber.rightAnswer, .line.rightAnswer, .subline.rightAnswer {
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
+	z-index: -2;
+}
+
+.wrongAnswer:not(.on), .rightAnswer:not(.on) {
 	color: white;
-	z-index: -1;
 }
 
 .colored .clewline.pointNumber {

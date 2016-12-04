@@ -123,10 +123,14 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
+    if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+        return;
+    }
     this.icon.toggleClass('on', isEnter);
-    this.element.toggleClass('on', isEnter);
     this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
-    if (Questionary.mode !== setMode.WHICH || Questionary.status !== Questionary.ASKED) {
+    if (Questionary.mode === setMode.WHERE) {
+        this.element.toggleClass('on', isEnter);
+    } else if (Questionary.mode === setMode.WHICH) {
         $.each(this.line.sublines, function (_index, subline) {
             subline.element.toggleClass('on', isEnter);
         });
@@ -635,12 +639,16 @@ setMode.mode = null;
 
 function resetDecks() {
     $('.mask').hide();
+    $('#selectDecks .selector').attr('disabled', false);
     $('#selectDecks input').prop('checked', true).prop('disabled', false);
+    $('#selectDecks .selector:first-child').attr('disabled', true);
     $('#selectDecks :first-child input').prop('disabled', true);
 }
 
 function resetMasts() {
+    $('#selectMasts .selector').attr('disabled', false);
     $('#selectMasts input').prop('checked', true).prop('disabled', false);
+    $('#selectMasts .selector:first-child').attr('disabled', true);
     $('#selectMasts :first-child input').prop('disabled', true);
 }
 
@@ -661,14 +669,17 @@ function menuHandler(event) {
                 resetDecks();
             } else {
                 $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectDecks :not(#deckAll) input:checked');
+                checked = $('#selectDecks :not(#deckAll) input:checked'); // ToDo: Create special class for not-all decks
                 switch (checked.length) {
                     case 1:
+                        checked.parent().attr('disabled', true);
                         checked.prop('disabled', true);
                         break;
                     case 2:
                     case 3:
+                        $('#selectDecks .selector').attr('disabled', false);
                         $('#selectDecks input').prop('disabled', false);
+                        $('#deckAll').attr('disabled', checked.length === 3);
                         $('#deckAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
                         break;
                     default:
@@ -683,11 +694,14 @@ function menuHandler(event) {
                 checked = $('#selectMasts :not(#mastAll) input:checked');
                 switch (checked.length) {
                     case 1:
+                        checked.parent().attr('disabled', true);
                         checked.prop('disabled', true);
                         break;
                     case 2:
                     case 3:
+                        $('#selectMasts .selector').attr('disabled', false);
                         $('#selectMasts input').prop('disabled', false);
+                        $('#mastAll .selector').attr('disabled', checked.length === 3);
                         $('#mastAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
                         break;
                     default:
@@ -722,8 +736,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            $('#overlay').addClass('highlight pointer');
-            $('#sublines, #lines').addClass('highlight');
+            $('#overlay, #sublines, #lines').addClass('highlight');
             $('.point, .subline').removeClass('question rightAnswer wrongAnswer');
             Point.tooltips(true);
             break;
@@ -738,10 +751,10 @@ Questionary.askQuestion = function (mode) {
             }
             Questionary.correctAnswer = line.name;
             $('#question').text(Questionary.correctAnswer);
-            $('#overlay').addClass('highlight pointer');
-            $('#decks, #lines').addClass('highlight');
-            $('.point, .pointNumber').removeClass('question rightAnswer wrongAnswer');
+            $('#overlay, #decks, #lines').addClass('highlight');
+            $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
             Point.tooltips(false);
             break;
@@ -758,9 +771,10 @@ Questionary.askQuestion = function (mode) {
             $('#question').text(Questionary.correctAnswer.description);
             $('#overlay').removeClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
-            $('.point, .subline').removeClass('question rightAnswer wrongAnswer');
+            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             point.icon.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
+            $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
             Point.tooltips(false);
             break;
@@ -772,7 +786,7 @@ Questionary.askQuestion = function (mode) {
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
     assert(event.data);
-    if (Questionary.status !== Questionary.ASKED) {
+    if (Questionary.mode === setMode.DEMO || Questionary.status !== Questionary.ASKED) {
         return;
     }
     var element = $(this);
@@ -780,7 +794,7 @@ Questionary.answerQuestion = function (event) {
     switch(Questionary.mode) {
         case setMode.WHERE:
             var point = event.data;
-            $('#overlay, #decks').removeClass('highlight');
+            point.elements.removeClass('on');
             $.each(Point.points, function (_index, point) {
                 if (point.line.name == Questionary.correctAnswer) {
                     point.elements.addClass('rightAnswer');
@@ -796,7 +810,7 @@ Questionary.answerQuestion = function (event) {
         case setMode.WHICH:
             var subline = event.data;
             if (subline.sublineType === Subline.NONSAILLINE) {
-                $('#overlay').addClass('highlight pointer');
+                $('#overlay').addClass('highlight');
                 $.each(Point.points, function (_index, point) {
                     if (point.line.name == Questionary.correctAnswer.line.name) {
                         point.icon.addClass('rightAnswer');
@@ -831,6 +845,7 @@ Questionary.answerQuestion = function (event) {
             $('#rightAnswer').hide();
         }
         Questionary.updateStatistics(isCorrect);
+        $('#tooltipNote').hide();
         $('#nextQuestionNote').show();
         Point.tooltips(true);
     }
