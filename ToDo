@@ -2,8 +2,6 @@ Insert more mode/status if's in handlers to reduce number of affected elements
 
 Rerrange points on stern deck
 
-Fix flicker on hover on negative z-index
-
 Think of using plural or fore course downhaulers in some places
 
 Add sides to line descriptions, at least for assymmetric lines
