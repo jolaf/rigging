@@ -712,7 +712,7 @@ function menuHandler(event) {
                     case 3:
                         $('#selectMasts .selector').attr('disabled', false);
                         $('#selectMasts input').prop('disabled', false);
-                        $('#mastAll .selector').attr('disabled', checked.length === 3);
+                        $('#mastAll').attr('disabled', checked.length === 3);
                         $('#mastAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
                         break;
                     default:
