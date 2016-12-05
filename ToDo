@@ -11,8 +11,6 @@ Insert more mode/status if's in handlers to reduce number of affected elements
 
 Rerrange points on stern deck
 
-Think of using plural for fore course downhaulers in some places
-
 Add sides to line descriptions, at least for assymmetric lines
 
 Create immediate tooltips
@@ -23,7 +21,7 @@ Reset statistics when turning on marks or scheme
 
 Remove fullLines and respective HTML, CSS and JS code
 
-Resolve problem with multiple ropes to one point
+Allow multiple lines to a single point
 
 Add graphical representation to mast filters
 
