@@ -871,9 +871,18 @@ function main() {
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
-    $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
-    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay, #pointNumbers').toggleClass('colored'); }).change();
-    $('#toggleTooltips').prop('checked', false).change(function (_event) { Point.tooltips(this.checked); }).change();
+    $('#toggleScheme').prop('checked', true).change(function (_event) {
+        schemeBlock.toggle(this.checked);
+        if (this.checked) {
+            Questionary.reset();
+        }
+    });
+    $('#toggleMarks').prop('checked', true).change(function (_event) {
+        $('#overlay, #pointNumbers').toggleClass('colored', this.checked);
+        if (this.checked) {
+            Questionary.reset();
+        }
+    }).change();
     resetDecks();
     resetMasts();
     $('.selector').click(menuHandler);
