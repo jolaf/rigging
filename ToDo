@@ -3,9 +3,9 @@ Make mizzen-sail-only ropes work without pointing to sail in Which mode
 
 Find a way to highlight all flag halyards and all tackles
 
-Create description
+Create description, README.md
 
-Add "from stern/center" to numbers in Which questions
+Add version or something?
 
 Insert more mode/status if's in handlers to reduce number of affected elements
 
@@ -24,8 +24,6 @@ Reset statistics when turning on marks or scheme
 Remove fullLines and respective HTML, CSS and JS code
 
 Resolve problem with multiple ropes to one point
-
-Make Which mode work
 
 Add graphical representation to mast filters
 
