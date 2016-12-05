@@ -130,6 +130,9 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
+    if (Questionary.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
+        return;
+    }
     this.icon.toggleClass('on', isEnter);
     this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
     if (Questionary.mode === setMode.WHERE) {
@@ -746,7 +749,8 @@ Questionary.askQuestion = function (mode) {
             break;
         case setMode.DEMO:
             $('#overlay, #sublines, #lines').addClass('highlight');
-            $('.point, .subline').removeClass('question rightAnswer wrongAnswer');
+            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
+            Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
             break;
         case setMode.WHERE:
@@ -797,12 +801,16 @@ Questionary.askQuestion = function (mode) {
 Questionary.answerQuestion = function (event) {
     assert(this === event.target);
     assert(event.data);
-    if (Questionary.mode === setMode.DEMO || Questionary.status !== Questionary.ASKED) {
+    if (Questionary.status !== Questionary.ASKED) {
         return;
     }
+    event.stopPropagation(); // Avoid triggering nextQuestion()
     var element = $(this);
     var isCorrect;
     switch(Questionary.mode) {
+        case setMode.DEMO:
+            Questionary.status = Questionary.ANSWERED;
+            return;
         case setMode.WHERE:
             var point = event.data;
             point.elements.removeClass('on');
@@ -816,7 +824,6 @@ Questionary.answerQuestion = function (event) {
                 point.elements.addClass('wrongAnswer');
                 $('#rightAnswerText').text(point.line.name);
             }
-            Questionary.status = Questionary.ANSWERED;
             break;
         case setMode.WHICH:
             var subline = event.data;
@@ -859,20 +866,18 @@ Questionary.answerQuestion = function (event) {
         default:
             assert(false);
     }
-    if (Questionary.status === Questionary.ANSWERED) {
-        if (isCorrect) {
-            $('#rightAnswer').show();
-            $('#wrongAnswer').hide();
-        } else {
-            $('#wrongAnswer').show();
-            $('#rightAnswer').hide();
-        }
-        Questionary.updateStatistics(isCorrect);
-        $('#tooltipNote').hide();
-        $('#nextQuestionNote').show();
-        Point.tooltips(true);
+    Questionary.status = Questionary.ANSWERED;
+    if (isCorrect) {
+        $('#rightAnswer').show();
+        $('#wrongAnswer').hide();
+    } else {
+        $('#wrongAnswer').show();
+        $('#rightAnswer').hide();
     }
-    event.stopPropagation(); // Avoid triggering nextQuestion()
+    Questionary.updateStatistics(isCorrect);
+    $('#tooltipNote').hide();
+    $('#nextQuestionNote').show();
+    Point.tooltips(true);
 };
 
 Questionary.updateStatistics = function (isCorrect) {

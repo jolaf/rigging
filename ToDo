@@ -1,7 +1,7 @@
 
-Refactor Demo mode to use clicks: use asked/answered logic
-
 Make mizzen-sail-only ropes work without pointing to sail in Which mode
+
+Find a way to highlight all flag halyards and all tackles
 
 Create description
 
@@ -11,7 +11,7 @@ Insert more mode/status if's in handlers to reduce number of affected elements
 
 Rerrange points on stern deck
 
-Think of using plural or fore course downhaulers in some places
+Think of using plural for fore course downhaulers in some places
 
 Add sides to line descriptions, at least for assymmetric lines
 
