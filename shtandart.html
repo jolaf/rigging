@@ -1075,8 +1075,8 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.element = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
-    this.elements = this.icon.add(this.element);
+    this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    this.elements = this.icon.add(this.pointNumber);
     var name = this.line.name;
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
@@ -1092,7 +1092,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         }
     });
     this.elements.on('click', this, Questionary.answerQuestion);
-    return this.element;
+    return this.pointNumber;
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
@@ -1101,7 +1101,7 @@ Point.prototype.mouseHandler = function (isEnter) {
     }
     this.icon.toggleClass('on', isEnter);
     if (Questionary.mode === setMode.WHERE) {
-        this.element.toggleClass('on', isEnter);
+        this.pointNumber.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
         $.each(this.line.sublines, function (_index, subline) {
             subline.element.toggleClass('on', isEnter);
@@ -1331,10 +1331,6 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     }
 }
 
-Line.prototype.createElement = function () {
-    this.sublines = Subline.getSublines(this);
-};
-
 Line.prototype.mouseHandler = function (isEnter) {
     $.each(this.sublines.length == 1 ? this.sublines : this.points, function (_index, sublineOrPoint) { // ToDo: Cheat, won't work with multiple points
         sublineOrPoint.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
@@ -1360,7 +1356,7 @@ Line.construct = function () {
 
 Line.getSublines = function () {
     $.each(Line.lines, function (_index, line) {
-        line.createElement();
+        line.sublines = Subline.getSublines(line);
     });
 };
 
