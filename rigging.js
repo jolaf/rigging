@@ -527,6 +527,7 @@ function Subline(element, sublineType) {
     this.element = element;
     this.name = element.text();
     this.sublineType = sublineType;
+    this.complimentaries = [];
     this.points = [];
     this.element.on('mouseenter mouseleave', this, function (event) {
         event.data.mouseHandler(event.type == 'mouseenter');
@@ -595,13 +596,17 @@ Subline.getSublines = function (line) {
         });
         assert(sublines.length, "Unknown subline sail: " + line.sail.name);
         assert(sublines.length == 1, "Duplicate subline sail: " + line.sail.name);
-        ret.push(sublines[0].addLine(line));
+        var sailSubline = sublines[0];
+        ret.push(sailSubline.addLine(line));
         sublines = Subline.sublines.filter(function (subline) {
             return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.indexOf(subline.name + ' ') === 0);
         });
         assert(sublines.length, "Unknown sail subline: " + line.lineName);
         assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
-        ret.push(sublines[0].addLine(line));
+        var sailLineSubline = sublines[0];
+        ret.push(sailLineSubline.addLine(line));
+        sailSubline.complimentaries.push(sailLineSubline);
+        sailLineSubline.complimentaries.push(sailSubline);
     } else {
         var lineName = line.name.toLowerCase();
         sublines = Subline.sublines.filter(function (subline) {
@@ -851,6 +856,9 @@ Questionary.answerQuestion = function (event) {
                 Questionary.preAnswer = null;
                 points = subline.points;
             } else {
+                if (!Questionary.preAnswer && subline.complimentaries.length === 1) {
+                    Questionary.preAnswer = subline.complimentaries[0];
+                }
                 if (!Questionary.preAnswer || subline.sublineType === Questionary.preAnswer.sublineType) {
                     Questionary.preAnswer = subline;
                     subline.element.addClass('preAnswer');
