@@ -103,7 +103,7 @@ span.selector {
 	margin-right: 0.3em;
 }
 
-.selector, .point, .pointNumber, .line, .subline, body, input, button {
+body, input, button, .selector, .point, .pointNumber, .subline {
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
 }
@@ -333,26 +333,21 @@ img.vang {
 	line-height: 0.1;
 }
 
-.pointNumber, .line, .subline {
+.pointNumber, .subline {
 	font-weight: bold;
-}
-
-.pointNumber, .line, .subline {
 	cursor: default;
 }
 
-.highlight .pointNumber.on, .highlight .line.on, .highlight .subline.on, .subline.preAnswer {
+.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
-.pointNumber.wrongAnswer, .line.wrongAnswer, .subline.wrongAnswer {
+.pointNumber.wrongAnswer, .subline.wrongAnswer {
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
-	z-index: -3;
 }
 
-.pointNumber.rightAnswer, .line.rightAnswer, .subline.rightAnswer {
+.pointNumber.rightAnswer, .subline.rightAnswer {
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
-	z-index: -2;
 }
 
 .wrongAnswer:not(.on), .rightAnswer:not(.on) {

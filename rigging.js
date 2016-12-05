@@ -96,10 +96,6 @@ Point.prototype.attachLine = function (line) {
     this.line = line;
 };
 
-Point.prototype.toString = function () {
-    return 'Point("' + this.deck.name + '", "' + this.rail.name + '", ' + this.number + ', ' + this.x + ', ' + this.y + ', "' + this.type + '", ' + this.rotation + ', ' + (this.line ? this.line.fullName : 'null') + ')';
-};
-
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
     this.description = this.rail.description;
     if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
@@ -147,7 +143,6 @@ Point.prototype.mouseHandler = function (isEnter) {
         return;
     }
     this.icon.toggleClass('on', isEnter);
-    this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
     if (Questionary.mode === setMode.WHERE) {
         this.element.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
@@ -248,10 +243,6 @@ Rail.prototype.attachLine = function (number, line) {
     return ret;
 };
 
-Rail.prototype.toString = function () {
-    return 'Rail("' + this.deck.name + '", "' + this.name + '", ' + this.points.length + ', ' + this.lines.length + ')';
-};
-
 Rail.prototype.createElement = function () {
     var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
     var points = $('span.points', element);
@@ -292,10 +283,6 @@ Deck.prototype.attachLine = function (railName, number, line) {
     });
     assert(rails.length == 1, "Unknown rail: " + railName);
     return rails[0].attachLine(number, line);
-};
-
-Deck.prototype.toString = function () {
-    return 'Deck("' + this.name + '", ' + this.rails.length + ', ' + this.lines.length + ')';
 };
 
 Deck.prototype.createElement = function () {
@@ -387,17 +374,8 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     }
 }
 
-Line.prototype.toString = function () {
-    return 'Line("' + this.mast.name + '", "' + this.sail.name + '", "' + this.name + '")';
-};
-
 Line.prototype.createElement = function () {
     this.sublines = Subline.getSublines(this);
-    this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
-    this.element.on('mouseenter mouseleave', this, function (event) {
-        event.data.mouseHandler(event.type == 'mouseenter');
-    });
-    return this.element;
 };
 
 Line.prototype.mouseHandler = function (isEnter) {
@@ -423,6 +401,12 @@ Line.construct = function () {
     });
 };
 
+Line.getSublines = function () {
+    $.each(Line.lines, function (_index, line) {
+        line.createElement();
+    });
+};
+
 function Sail(name, mast) {
     this.name = name;
     assert(mast);
@@ -433,24 +417,6 @@ function Sail(name, mast) {
 Sail.prototype.attachLine = function (line) {
     assert(line);
     this.lines.push(line);
-};
-
-Sail.prototype.toString = function () {
-    return 'Sail("' + this.mast.name + '", "' + this.name + '", ' + this.lines.length + ')';
-};
-
-Sail.prototype.createElement = function () {
-    var element = $('<div class="sail"><ul></ul></div>');
-    if (this.name ? this.name != this.mast.name : this.mast.sails.length > 1) {
-        var name = this.name ? this.name.capitalize() : 'Прочие снасти';
-        element.prepend($('<h3>' + name + '</h3>'));
-    }
-    var ul = $('ul', element);
-    $.each(this.lines, function (_index, line) {
-        ul.append(line.createElement());
-    });
-    this.element = element;
-    return this.element;
 };
 
 function Mast(name) {
@@ -488,41 +454,6 @@ Mast.prototype.attachLine = function (sailName, line) {
     return sail;
 };
 
-Mast.prototype.toString = function () {
-    return 'Mast("' + this.name + '", ' + this.sails.length + '", ' + this.lines.length + ')';
-};
-
-Mast.prototype.createElement = function () {
-    var element =  $('<div class="mast"><h2>' + (this.name ? this.name.capitalize() : 'Прочие снасти') + '</h2></div>');
-    $.each(this.sails, function (_index, sail) {
-        element.append(sail.createElement());
-    });
-    this.element = element;
-    return this.element;
-};
-
-Mast.createElements = function () {
-    $.each(Mast.masts, function (_index, mast) {
-        mast.createElement();
-    });
-};
-
-Mast.placeElements = function (fullLinesLocation) {
-    var fullLinesElement = $(fullLinesLocation);
-    var td;
-    $.each(Mast.masts, function (index, mast) {
-        if ($.inArray(index, [1, Mast.masts.length - 1, Mast.masts.length - 2]) < 0) {
-            td = $('<td>');
-            fullLinesElement.prepend(td);
-        }
-        if (index == 1) {
-            td.prepend(mast.element);
-        } else {
-            td.append(mast.element);
-        }
-    });
-};
-
 function Subline(element, sublineType) {
     this.element = element;
     this.name = element.text();
@@ -547,10 +478,6 @@ Subline.prototype.addLine = function (line) {
         }
     });
     return this;
-};
-
-Subline.prototype.toString = function () {
-    return 'Subline("' + this.name + '", "' + this.sublineType + '")';
 };
 
 Subline.prototype.mouseHandler = function (isEnter) {
@@ -769,7 +696,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            $('#overlay, #sublines, #lines').addClass('highlight');
+            $('#overlay, #sublines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
@@ -785,7 +712,7 @@ Questionary.askQuestion = function (mode) {
             }
             Questionary.correctAnswer = line.name;
             $('#question').text(Questionary.correctAnswer);
-            $('#overlay, #decks, #lines').addClass('highlight');
+            $('#overlay, #pointNumbers').addClass('highlight');
             $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             $('#tooltipNote').show();
@@ -804,7 +731,7 @@ Questionary.askQuestion = function (mode) {
             Questionary.correctAnswer = point;
             $('#question').text(Questionary.correctAnswer.description);
             $('#overlay').removeClass('highlight pointer');
-            $('#sublines, #lines').addClass('highlight');
+            $('#sublines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             $('.preAnswer').removeClass('preAnswer');
             point.icon.addClass('question');
@@ -934,10 +861,9 @@ function main() {
     Subline.construct();
     // Create elements for data structures
     Deck.createElements();
-    Mast.createElements();
+    Line.getSublines();
     // Put generated elements to DOM
-    Deck.placeElements('#decks');
-    Mast.placeElements('#lines');
+    Deck.placeElements('#pointNumbers');
     Point.placeElements('#overlay');
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
@@ -950,7 +876,7 @@ function main() {
     setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
     $('#toggleScheme').prop('checked', true).change(function (_event) { schemeBlock.toggle(); });
-    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay, #decks').toggleClass('colored'); }).change();
+    $('#toggleMarks').prop('checked', true).change(function (_event) { $('#overlay, #pointNumbers').toggleClass('colored'); }).change();
     $('#toggleTooltips').prop('checked', false).change(function (_event) { Point.tooltips(this.checked); }).change();
     resetDecks();
     resetMasts();

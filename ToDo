@@ -1,6 +1,4 @@
 
-Find a way to highlight all flag halyards and all tackles
-
 Create description, README.md
 
 Add version or something?
@@ -17,9 +15,8 @@ Remove hover on touch
 
 Reset statistics when turning on marks or scheme
 
-Remove fullLines and respective HTML, CSS and JS code
-
 Allow multiple lines to a single point
+Find a way to highlight all flag halyards and all tackles
 
 Add graphical representation to mast filters
 
