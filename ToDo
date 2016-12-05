@@ -1,3 +1,12 @@
+
+Refactor Demo mode to use clicks: use asked/answered logic
+
+Make mizzen-sail-only ropes work without pointing to sail in Which mode
+
+Create description
+
+Add "from stern/center" to numbers in Which questions
+
 Insert more mode/status if's in handlers to reduce number of affected elements
 
 Rerrange points on stern deck
@@ -31,6 +40,7 @@ Check and change current question when changing masts/decks?
 
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Move sailLines generation from HTML to JS code
+Add immediate tooltips to all highlighted points when Answered
 
 Check and fix Chrome visual issues
 Check other browsers

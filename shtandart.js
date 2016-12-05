@@ -240,7 +240,7 @@ var LINES = [
     [MIZZEN_MAST, [
         [MIZZEN_SAIL, [
             [STERN_DECK, AT_MAST,          -1, TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
-            [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE],
+            [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,     -2, VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,     -1, SHEET],
             [STERN_DECK, AT_FRONT,           , TACK,            ,                    PORT],

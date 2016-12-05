@@ -341,7 +341,7 @@ img.vang {
 	cursor: default;
 }
 
-.highlight .pointNumber.on, .highlight .line.on, .highlight .subline.on, .highlight .subline:hover {
+.highlight .pointNumber.on, .highlight .line.on, .highlight .subline.on, .subline.preAnswer {
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 

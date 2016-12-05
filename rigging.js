@@ -116,10 +116,13 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         $(element).data('title', name);
     });
     this.elements.on('mouseenter mouseleave', this, function (event) {
-        if (Questionary.status === Questionary.ASKED) {
-            event.data.mouseHandler(event.type == 'mouseenter');
-        } else {
+        if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+            return;
+        }
+        if (Questionary.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
             event.data.line.mouseHandler(event.type == 'mouseenter');
+        } else {
+            event.data.mouseHandler(event.type == 'mouseenter');
         }
     });
     this.elements.on('click', this, Questionary.answerQuestion);
@@ -127,14 +130,11 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
-    if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
-        return;
-    }
     this.icon.toggleClass('on', isEnter);
     this.line.element.toggleClass('on', isEnter); // ToDo: Make single jQuery collection for all of them
     if (Questionary.mode === setMode.WHERE) {
         this.element.toggleClass('on', isEnter);
-    } else if (Questionary.mode === setMode.WHICH) {
+    } else { // WHICH or DEMO
         $.each(this.line.sublines, function (_index, subline) {
             subline.element.toggleClass('on', isEnter);
         });
@@ -375,13 +375,15 @@ Line.prototype.toString = function () {
 Line.prototype.createElement = function () {
     this.sublines = Subline.getSublines(this);
     this.element = $('<li class="line">' + (this.pluralName || this.name) + '</li>');
-    this.element.on('mouseenter mouseleave', this, function (event) { event.data.mouseHandler(event.type == 'mouseenter'); });
+    this.element.on('mouseenter mouseleave', this, function (event) {
+        event.data.mouseHandler(event.type == 'mouseenter');
+    });
     return this.element;
 };
 
 Line.prototype.mouseHandler = function (isEnter) {
-    $.each(this.points, function (_index, point) {
-        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
+    $.each(this.sublines.length == 1 ? this.sublines : this.points, function (_index, sublineOrPoint) { // ToDo: Cheat, won't work with multiple points
+        sublineOrPoint.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 
@@ -508,9 +510,7 @@ function Subline(element, sublineType) {
     this.sublineType = sublineType;
     this.points = [];
     this.element.on('mouseenter mouseleave', this, function (event) {
-        if (Questionary.mode !== setMode.WHICH || Questionary.status === Questionary.ANSWERED) {
-            event.data.mouseHandler(event.type == 'mouseenter');
-        }
+        event.data.mouseHandler(event.type == 'mouseenter');
     });
     this.element.on('click', this, Questionary.answerQuestion);
 }
@@ -534,9 +534,13 @@ Subline.prototype.toString = function () {
 };
 
 Subline.prototype.mouseHandler = function (isEnter) {
-    $.each(this.points, function (_index, point) {
-        point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
-    });
+    if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+        this.element.toggleClass('on', isEnter);
+    } else {
+        $.each(this.points, function (_index, point) {
+            point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
+        });
+    }
 };
 
 Subline.construct = function () {
@@ -725,6 +729,7 @@ Questionary.ANSWERED = 'ANSWERED';
 
 Questionary.mode = null;
 Questionary.correctAnswer = null;
+Questionary.preAnswer = null;
 Questionary.status = null;
 Questionary.statAll = 0;
 Questionary.statCorrect = 0;
@@ -776,10 +781,12 @@ Questionary.askQuestion = function (mode) {
             $('#overlay').removeClass('highlight pointer');
             $('#sublines, #lines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
+            $('.preAnswer').removeClass('preAnswer');
             point.icon.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
+            Questionary.preAnswer = null;
             Point.tooltips(false);
             break;
         default:
@@ -813,29 +820,41 @@ Questionary.answerQuestion = function (event) {
             break;
         case setMode.WHICH:
             var subline = event.data;
-            if (subline.sublineType === Subline.NONSAILLINE) {
-                $('#overlay').addClass('highlight');
-                $.each(Point.points, function (_index, point) {
-                    if (point.line.name == Questionary.correctAnswer.line.name) {
-                        point.icon.addClass('rightAnswer');
-                        $.each(point.line.sublines, function (_index, subline) {
-                            subline.element.addClass('rightAnswer');
-                        });
-                    }
-                });
-                Questionary.correctAnswer.elements.addClass('rightAnswer');
-                isCorrect = subline.points[0].line.name == Questionary.correctAnswer.line.name;
-                if (!isCorrect) {
-                    $.each(subline.points, function (_index, point) {
-                        point.icon.addClass('wrongAnswer');
-                        $.each(point.line.sublines, function (_index, subline) {
-                            subline.element.addClass('wrongAnswer');
-                        });
-                    });
-                    $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
-                }
-                Questionary.status = Questionary.ANSWERED;
+            var points;
+            if (Questionary.preAnswer) {
+                Questionary.preAnswer.element.removeClass('preAnswer');
             }
+            if (subline.sublineType === Subline.NONSAILLINE) {
+                Questionary.preAnswer = null;
+                points = subline.points;
+            } else {
+                if (!Questionary.preAnswer || subline.sublineType === Questionary.preAnswer.sublineType) {
+                    Questionary.preAnswer = subline;
+                    subline.element.addClass('preAnswer');
+                    return;
+                }
+                points = subline.points.filter(function (value) {
+                    return Questionary.preAnswer.points.indexOf(value) >= 0;
+                });
+            }
+            isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
+            subline.element.mouseout();
+            $('#overlay').addClass('highlight');
+            Questionary.correctAnswer.icon.addClass('rightAnswer');
+            $.each(Questionary.correctAnswer.line.sublines, function (_index, subline) {
+                subline.element.addClass('rightAnswer');
+            });
+            if (!isCorrect) {
+                $.each(points, function (_index, point) {
+                    point.icon.addClass('wrongAnswer');
+                });
+                subline.element.addClass('wrongAnswer');
+                if (Questionary.preAnswer) {
+                    Questionary.preAnswer.element.addClass('wrongAnswer');
+                }
+                $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
+            }
+            Questionary.status = Questionary.ANSWERED;
             break;
         default:
             assert(false);
