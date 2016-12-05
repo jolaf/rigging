@@ -101,7 +101,7 @@ Point.prototype.toString = function () {
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
-    this.description = this.rail.description + (this.rail.points.length == 1 ? '' : ', №' + this.number); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
+    this.description = this.rail.description + (this.rail.direction ? ', ' + this.number + '-й ' + this.rail.direction : ''); // We can't do it in the constructor, as this.rail has not been constructed yet as in there
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
@@ -190,6 +190,8 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
         });
     }
     this.description = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
+    assert(args, "No points in rail: " + this.description);
+    this.direction = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с кормы' : 'от центра';
     var prefix = [deck, this];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
