@@ -1,7 +1,11 @@
 
-Create description, README.md
+Resetting statistics when checking a deck/mast
+
+Add checkbox for non-sail lines
 
 Add version or something?
+
+Check and change current question when changing masts/decks?
 
 Insert more mode/status if's in handlers to reduce number of affected elements
 
@@ -24,8 +28,6 @@ Store all possible selections in variables
 Use jQuery delegated events to reduce the load on event handlers
 Cleanup CSS
 Cleanup main()
-
-Check and change current question when changing masts/decks?
 
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Move sailLines generation from HTML to JS code

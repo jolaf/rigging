@@ -109,7 +109,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
             number = this.rail.points.length + 1 - this.number;
             direction = ' ' + this.rail.reverseDirection;
         }
-        this.description += ', ' + number  + '-й' + direction;
+        this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
     assert(this.line, "No line for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
@@ -890,6 +890,7 @@ function main() {
     $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
+    $('.info').on('hover mousedown focus keydown', function () { return false; });
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();
