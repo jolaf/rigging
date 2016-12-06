@@ -4,19 +4,18 @@
 
 Trainer software for tall ships rigging elements location.
 
-For now the only supported tallship is Russian frigate [Shtandart](https://www.shtandart.ru/frigate/).
+For now the only supported tallship is Russian frigate [Shtandart](https://www.shtandart.ru/en/frigate/).
 
 The software is written in HTML/CSS/JavaScript/ES5/jQuery and is supposed to be compiled into a single HTML file (including images) to be easily deployable and run offline, including onboard a tall ship at sea. :)
 
 The software thus is easily run from the repository without any installation, here's the [current version for Shtandart](https://rawgit.com/jolaf/rigging/master/shtandart.html).
 
-To re-compile from source files, put [jQuery library](http://jquery.com/download/) (slim-min version is enough) to the project folder and run
+For now the software is in Russian language only, sorry. And Google Translate for sites won't help also, sorry.
 
+To re-compile from source files, put [jQuery library](http://jquery.com/download/) (slim-min version is enough) to the project folder and run
 ```
 python build.py
 ```
-
-For now the software is in Russian language only, sorry. And Google Translate for sites won't help also, sorry.
 
 ---
 
@@ -31,7 +30,6 @@ For now the software is in Russian language only, sorry. And Google Translate fo
 Программа может быть запущена прямо из репозитория без всякой инсталляции, например, вот [актуальная версия для «Штандарта»](https://rawgit.com/jolaf/rigging/master/shtandart.html).
 
 Чтобы пересобрать программу из исходных файлов, положите [файл библиотеки jQuery](http://jquery.com/download/) (достаточно версии slim-min) в директорию проекта и запустите
-
 ```
 python build.py
 ```
