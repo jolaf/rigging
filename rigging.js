@@ -1,5 +1,5 @@
 /* jshint strict: global */
-/* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
+/* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, CENTER, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
 "use strict";
 
 window.onerror = function (message, url, lineNo, columnNo, errorObject) {
@@ -80,11 +80,12 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, index, x, y, type, rotation) { // ToDo: Accept side
+function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept side
     assert(deck);
     this.deck = deck;
     assert(rail);
     this.rail = rail;
+    this.side = side;
     this.number = index + 1;
     this.x = x;
     this.y = y;
@@ -110,7 +111,7 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
-    this.description = this.rail.description;
+    this.description = (this.side === CENTER ? '' : 'По ' + (this.side === PORT ? 'левому' : 'правому') + ' борту, ' + this.rail.description.toLowerCase()) + this.rail.description;
     if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
         var number;
         var direction;
@@ -217,11 +218,12 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
     assert(args, "No points in rail: " + this.description);
     this.direction        = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с кормы' : 'от центра';
     this.reverseDirection = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с носа'  : 'с краю';
-    var prefix = [deck, this];
+    var prefix = [deck, this, this.assym || STARBOARD];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
     });
     if (!this.assym) {
+        prefix[2] = PORT;
         this.portPoints = $.map(args, function (args, _index) {
             args[2] *= -1;
             return applyNew(Point, prefix.concat(args));
