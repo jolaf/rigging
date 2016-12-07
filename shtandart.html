@@ -1165,15 +1165,19 @@ var LINES = [
 /* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
 "use strict";
 
-window.onerror = function (message, url, lineNo, columnNo, error) {
+var theErrorObject = null;
+
+window.onerror = function (message, url, lineNo, columnNo, errorObject) {
     var prefix = 'Ошибка!\n\nПожалуйста, ';
     var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
     if (message.toLowerCase().indexOf('script error') >= 0) {
         message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
     } else {
-        message = prefix + suggestion + '\nMessage: ' + message + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error) + '\n';
+        message = prefix + suggestion + '\nMessage: ' + message + '\nURL: ' + url + ':' + lineNo + ':' + columnNo + '\n' + JSON.stringify(errorObject) + '\n';
     }
-    alert(message); // jshint ignore:line
+    theErrorObject = errorObject;
+    return true;
+    //alert(message); // jshint ignore:line
 };
 
 function assert(condition, message) {
@@ -2064,10 +2068,10 @@ function main() {
     resetMasts();
     $('.selector').click(menuHandler);
     $('#resetButton').click(Questionary.reset);
-    $('.selector, .point').mousedown(function (event) { event.preventDefault(); }); // Avoid selection by double-click
+    $('.selector, .point').mousedown(function (_event) { return false; }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
-    $('.info').on('hover mousedown focus keydown', function () { return false; });
+    $('button.info').on('hover mouseover mouseenter mousedown click focus keydown', function (_event) { return false; });
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();
