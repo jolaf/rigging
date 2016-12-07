@@ -153,6 +153,9 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 
 Point.prototype.mouseHandler = function (isEnter) {
     if (Questionary.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
+        if (isEnter) {
+            Questionary.lastEntered = this;
+        }
         return;
     }
     this.icon.toggleClass('on', isEnter);
@@ -492,6 +495,10 @@ Subline.prototype.addLine = function (line) {
 Subline.prototype.mouseHandler = function (isEnter) {
     if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         this.element.toggleClass('on', isEnter);
+    } else if (Questionary.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
+        if (isEnter) {
+            Questionary.lastEntered = this;
+        }
     } else {
         $.each(this.points, function (_index, point) {
             point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
@@ -579,6 +586,7 @@ function setMode(mode) {
             setMode.schemeBlock.hide();
             break;
         case setMode.DEMO:
+            Questionary.lastEntered = null;
             setMode.schemeBlock.show();
             break;
         case setMode.WHERE:
@@ -694,6 +702,8 @@ Questionary.status = null;
 Questionary.statAll = 0;
 Questionary.statCorrect = 0;
 
+Questionary.lastEntered = null;
+
 Questionary.askQuestion = function (mode) {
     if (mode) {
         Questionary.mode = mode;
@@ -709,6 +719,10 @@ Questionary.askQuestion = function (mode) {
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
+            if (Questionary.lastEntered) {
+                Questionary.lastEntered.mouseHandler(true);
+                Questionary.lastEntered = null;
+            }
             break;
         case setMode.WHERE:
             var line;
@@ -784,9 +798,9 @@ Questionary.answerQuestion = function (event) {
             break;
         case setMode.WHICH:
             var subline = event.data;
-            // if (!(subline instanceof Subline)) {
-            //    return;
-            // }
+            if (!(subline instanceof Subline)) {
+                return;
+            }
             var points;
             if (Questionary.preAnswer) {
                 Questionary.preAnswer.element.removeClass('preAnswer');
@@ -903,7 +917,7 @@ function main() {
     resetMasts();
     $('.selector').click(menuHandler);
     $('#resetButton').click(Questionary.reset);
-    $('.selector, .point').mousedown(function (_event) { return false; }); // Avoid selection by double-click
+    $('.selector, .point, .pointNumber, .subline').mousedown(function (_event) { return false; }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
     $('button.info').on('hover mousedown keydown', function (_event) { return false; });
