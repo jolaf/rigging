@@ -1166,10 +1166,12 @@ var LINES = [
 "use strict";
 
 window.onerror = function (message, url, lineNo, columnNo, error) {
+    var prefix = 'Ошибка!\n\nПожалуйста, ';
+    var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
     if (message.toLowerCase().indexOf('script error') >= 0) {
-        message = 'Ошибка: см. подробности проблемы в консоли браузера';
+        message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
     } else {
-        message = 'Message: ' + message + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error);
+        message = prefix + suggestion + '\nMessage: ' + message + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error) + '\n';
     }
     alert(message); // jshint ignore:line
 };
