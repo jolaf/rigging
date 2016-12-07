@@ -2,9 +2,18 @@
 /* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
 "use strict";
 
+window.onerror = function (message, url, lineNo, columnNo, error) {
+    if (message.toLowerCase().indexOf('script error') >= 0) {
+        message = 'Ошибка: см. подробности проблемы в консоли браузера';
+    } else {
+        message = 'Message: ' + message + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error);
+    }
+    alert(message); // jshint ignore:line
+};
+
 function assert(condition, message) {
     if (!condition) {
-        message = message || "Assertion failed";
+        message = "Ошибка: " + (message || 'Assertion failed');
         alert(message); // jshint ignore:line
         if (typeof Error !== "undefined") {
             throw new Error(message);
@@ -771,6 +780,9 @@ Questionary.answerQuestion = function (event) {
             break;
         case setMode.WHICH:
             var subline = event.data;
+            // if (!(subline instanceof Subline)) {
+            //    return;
+            // }
             var points;
             if (Questionary.preAnswer) {
                 Questionary.preAnswer.element.removeClass('preAnswer');
