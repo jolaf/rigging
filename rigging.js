@@ -138,10 +138,10 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         $(element).data('title', name);
     });
     this.elements.on('mouseenter mouseleave', this, function (event) {
-        if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+        if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
             return;
         }
-        if (Questionary.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
+        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
             event.data.line.mouseHandler(event.type == 'mouseenter');
         } else {
             event.data.mouseHandler(event.type == 'mouseenter');
@@ -152,14 +152,14 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
-    if (Questionary.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
+    if (setMode.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
         if (isEnter) {
             Questionary.lastEntered = this;
         }
         return;
     }
     this.icon.toggleClass('on', isEnter);
-    if (Questionary.mode === setMode.WHERE) {
+    if (setMode.mode === setMode.WHERE) {
         this.pointNumber.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
         $.each(this.line.sublines, function (_index, subline) {
@@ -493,9 +493,9 @@ Subline.prototype.addLine = function (line) {
 };
 
 Subline.prototype.mouseHandler = function (isEnter) {
-    if (Questionary.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+    if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         this.element.toggleClass('on', isEnter);
-    } else if (Questionary.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
+    } else if (setMode.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
         if (isEnter) {
             Questionary.lastEntered = this;
         }
@@ -590,11 +590,11 @@ function setMode(mode) {
             setMode.schemeBlock.show();
             break;
         case setMode.WHERE:
-            setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            $('#toggleScheme input').change();
             $('.mask').hide();
             break;
         case setMode.WHICH:
-            setMode.schemeBlock.toggle($('#toggleScheme')[0].checked);
+            $('#toggleScheme input').change();
             $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
                 $('#shadow' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
             });
@@ -603,7 +603,8 @@ function setMode(mode) {
             setMode(setMode.INFO);
             return;
     }
-    Questionary.askQuestion(mode);
+    Questionary.reset();
+    Questionary.askQuestion();
 }
 
 setMode.INFO = 'info';
@@ -698,7 +699,6 @@ function Questionary() {
 Questionary.ASKED = 'ASKED';
 Questionary.ANSWERED = 'ANSWERED';
 
-Questionary.mode = null;
 Questionary.correctAnswer = null;
 Questionary.preAnswer = null;
 Questionary.status = null;
@@ -707,13 +707,9 @@ Questionary.statCorrect = 0;
 
 Questionary.lastEntered = null;
 
-Questionary.askQuestion = function (mode) {
-    if (mode) {
-        Questionary.mode = mode;
-        Questionary.reset();
-    }
+Questionary.askQuestion = function () {
     var checkbox;
-    switch(Questionary.mode) {
+    switch(setMode.mode) {
         case setMode.INFO:
             Questionary.status = null;
             break;
@@ -781,7 +777,7 @@ Questionary.answerQuestion = function (event) {
     event.stopPropagation(); // Avoid triggering nextQuestion()
     var element = $(this);
     var isCorrect;
-    switch(Questionary.mode) {
+    switch(setMode.mode) {
         case setMode.DEMO:
             Questionary.status = Questionary.ANSWERED;
             return;
@@ -904,13 +900,17 @@ function main() {
     setMode.modeDependent = $('.modeDependent');
     setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
-    $('#toggleScheme').prop('checked', true).change(function (_event) {
+    $('#toggleScheme input').prop('checked', true).change(function (_event) {
         schemeBlock.toggle(this.checked);
         if (this.checked) {
             Questionary.reset();
         }
+        if (setMode.mode === setMode.WHICH) {
+            console.log('###', this.checked);
+            $('#toggleMarks').toggle(this.checked);
+        }
     });
-    $('#toggleMarks').prop('checked', true).change(function (_event) {
+    $('#toggleMarks input').prop('checked', true).change(function (_event) {
         $('#overlay, #pointNumbers').toggleClass('colored', this.checked);
         if (this.checked) {
             Questionary.reset();
