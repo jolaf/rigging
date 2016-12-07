@@ -1001,6 +1001,7 @@ var DECKS = [
         [BACK_RAIL,          ,          2979, 119,     ,      75, 3],
         [SIDE_RAIL,          ,          3124, 399,   74,        , 8],
         [SHROUDS_RAIL,       ,          3247, 457,   63,        , 5],
+        [ON_DECK_FRONT,      ,          3690, 340,     ,,, CLEAT],
         [FRONT_FISTS,        ,          3573, 115,     ,,,  FIST],
         [BACK_PILLARS,       ,          3255, 146,     ,,, CLEAT],
         [BEHIND_MAST_RAIL,   ,          3224,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
@@ -1009,7 +1010,7 @@ var DECKS = [
     ]],
     [MAIN_DECK, 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
-        [BULWARK,            ,          2267, 440, [[,, VCLEAT], [260, 46, SCLEAT], [430, -20, VCLEAT, -5]]],
+        [BULWARK,            ,          2267, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
         [SIDE_RAIL,          ,          1578, 500,   53,       7, 6],
         [ABOVE_RAIL,         ,          1630, 560,     ,,, CLEAT, 8],
         [FRONT_PILLARS,      ,          2170, 324,     ,,, CLEAT],
@@ -1023,11 +1024,11 @@ var DECKS = [
     [STERN_DECK, 'На полуюте', [
         [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
-        [BULWARK,            ,           710, 480, [[,, SCLEAT, -45], [300, 10, SCLEAT, 90], [380, 10, SCLEAT, 90], [490, -23, VCLEAT]]],
+        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [300, 30, SCLEAT, 93], [380, 34, SCLEAT, 93], [490,, VCLEAT, -1]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
         [AT_MAST,            ,           632,  60, [[,,, -55], [98, 36,, 90]]],
-        [POOP_BULWARK,       ,            30, 350, [[,, VCLEAT, 15], [250, 60, VCLEAT, 11], [43, -92, VANG_TACKLE], [192, 136]], IGNORE_DECK],
+        [POOP_BULWARK,       ,            30, 360, [[,, VANG_TACKLE], [60,, VCLEAT, 14], [280, 140,, 13]], IGNORE_DECK],
         [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],
     ]]
 ];
@@ -1072,6 +1073,7 @@ var LINES = [
         ]],
         [, [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
+            [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
         ]],
     ]],
     [MAIN_MAST, [
@@ -1118,7 +1120,7 @@ var LINES = [
         [MIZZEN_SAIL, [
             [STERN_DECK, AT_MAST,          -1, TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
-            [STERN_DECK, POOP_BULWARK,     -2, VANG,            ,                    ,          LINE_DETAIL],
+            [STERN_DECK, POOP_BULWARK,      1, VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,     -1, SHEET],
             [STERN_DECK, AT_FRONT,           , TACK,            ,                    PORT],
             [STERN_DECK, AT_MAST,           1, BUNTLINE,        ,                    PORT],
@@ -1154,7 +1156,6 @@ var LINES = [
             [MAIN_DECK,  BULWARK,           2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
             [STERN_DECK, BULWARK,           2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, BULWARK,           3, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
-            [STERN_DECK, POOP_BULWARK,      1, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,      2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,      3, FREE,            ,                    STARBOARD, DETAIL_LINE],
         ]],
