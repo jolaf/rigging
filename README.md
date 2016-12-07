@@ -10,6 +10,8 @@ The software is written in HTML/CSS/JavaScript/ES5/jQuery and is supposed to be 
 
 The software thus is easily run from the repository without any installation, here's the [current version for Shtandart](https://rawgit.com/jolaf/rigging/master/shtandart.html).
 
+You can use download link on the front page or just use the `Save As...` command of your browser to make your own fully-operational offline copy consisting of one file only.
+
 For now the software is in Russian language only, sorry. And Google Translate for sites won't help also, sorry.
 
 To re-compile from source files, run
@@ -28,6 +30,8 @@ python build.py
 Программа написана на HTML/CSS/JavaScript/ES5/jQuery и собирается в единый HTML-файл (вместе с картинками), чтобы её было легко копировать и использовать в отсутствии Интернета, в том числе на борту парусника в море. :)
 
 Программа может быть запущена прямо из репозитория без всякой инсталляции, например, вот [актуальная версия для «Штандарта»](https://rawgit.com/jolaf/rigging/master/shtandart.html).
+
+Также вы можете скачать программу по ссылке на главной странице, или использовать команду `Сохранить как...` вашего браузера, чтобы получить полностью-функциональную оффлайновую копию, состоящую из одного файла.
 
 Чтобы пересобрать программу из исходных файлов, запустите
 ```

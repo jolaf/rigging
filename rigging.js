@@ -592,15 +592,20 @@ function setMode(mode) {
         case setMode.DEMO:
             Questionary.lastEntered = null;
             setMode.schemeBlock.show();
+            $('.mastMask, .deckMask').hide();
             break;
         case setMode.WHERE:
             $('#toggleScheme input').change();
-            $('.mask').hide();
+            $('.deckMask').hide();
+            $('#selectMasts .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
+                $('#mastMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
+            });
             break;
         case setMode.WHICH:
             $('#toggleScheme input').change();
+            $('.mastMask').hide();
             $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#shadow' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
+                $('#deckMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
             });
             break;
         default:
@@ -619,7 +624,7 @@ setMode.WHICH = 'which';
 setMode.mode = null;
 
 function resetDecks() {
-    $('.mask').hide();
+    $('.deckMask').hide();
     $('#selectDecks .selector').attr('disabled', false);
     $('#selectDecks input').prop('checked', true).prop('disabled', false);
     $('#selectDecks .selector:first-child').attr('disabled', true);
@@ -652,7 +657,7 @@ function menuHandler(event) {
             if (deck == 'All') {
                 resetDecks();
             } else {
-                $('#shadow' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
+                $('#deckMask' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
                 checked = $('#selectDecks :not(#deckAll) input:checked'); // ToDo: Create special class for not-all decks
                 switch (checked.length) {
                     case 1:
