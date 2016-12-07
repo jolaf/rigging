@@ -111,7 +111,7 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
-    this.description = (this.side === CENTER ? '' : 'По ' + (this.side === PORT ? 'левому' : 'правому') + ' борту, ' + this.rail.description.toLowerCase()) + this.rail.description;
+    this.description = this.rail.description + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
     if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
         var number;
         var direction;
