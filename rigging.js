@@ -142,8 +142,14 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
             return;
         }
         if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
+            if (setMode.mode === setMode.DEMO) {
+                Questionary.lastEntered = event.type == 'mouseenter' ? event.data.icon : null;
+                if (Questionary.status === Questionary.ANSWERED) {
+                    return;
+                }
+            }
             event.data.line.mouseHandler(event.type == 'mouseenter');
-        } else {
+        } else { // WHERE ASKED
             event.data.mouseHandler(event.type == 'mouseenter');
         }
     });
@@ -152,18 +158,12 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
 };
 
 Point.prototype.mouseHandler = function (isEnter) {
-    if (setMode.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
-        if (isEnter) {
-            Questionary.lastEntered = this;
-        }
-        return;
-    }
     this.icon.toggleClass('on', isEnter);
     if (setMode.mode === setMode.WHERE) {
         this.pointNumber.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
         $.each(this.line.sublines, function (_index, subline) {
-            subline.element.toggleClass('on', isEnter);
+            subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
         });
     }
 };
@@ -473,6 +473,12 @@ function Subline(element, sublineType) {
     this.complimentaries = [];
     this.points = [];
     this.element.on('mouseenter mouseleave', this, function (event) {
+        if (setMode.mode === setMode.DEMO) {
+            Questionary.lastEntered = event.type == 'mouseenter' ? event.data.element : null;
+            if (Questionary.status === Questionary.ANSWERED) {
+                return;
+            }
+        }
         event.data.mouseHandler(event.type == 'mouseenter');
     });
     this.element.on('click', this, Questionary.answerQuestion);
@@ -495,10 +501,6 @@ Subline.prototype.addLine = function (line) {
 Subline.prototype.mouseHandler = function (isEnter) {
     if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         this.element.toggleClass('on', isEnter);
-    } else if (setMode.mode === setMode.DEMO && Questionary.status === Questionary.ANSWERED) {
-        if (isEnter) {
-            Questionary.lastEntered = this;
-        }
     } else {
         $.each(this.points, function (_index, point) {
             point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
@@ -719,7 +721,7 @@ Questionary.askQuestion = function () {
             Questionary.status = Questionary.ASKED;
             Point.tooltips(true);
             if (Questionary.lastEntered) {
-                Questionary.lastEntered.mouseHandler(true);
+                Questionary.lastEntered.mouseenter();
                 Questionary.lastEntered = null;
             }
             break;
@@ -906,7 +908,6 @@ function main() {
             Questionary.reset();
         }
         if (setMode.mode === setMode.WHICH) {
-            console.log('###', this.checked);
             $('#toggleMarks').toggle(this.checked);
         }
     });
