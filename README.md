@@ -12,7 +12,7 @@ The software thus is easily run from the repository without any installation, he
 
 For now the software is in Russian language only, sorry. And Google Translate for sites won't help also, sorry.
 
-To re-compile from source files, put [jQuery library](http://jquery.com/download/) (slim-min version is enough) to the project folder and run
+To re-compile from source files, run
 ```
 python build.py
 ```
@@ -29,7 +29,7 @@ python build.py
 
 Программа может быть запущена прямо из репозитория без всякой инсталляции, например, вот [актуальная версия для «Штандарта»](https://rawgit.com/jolaf/rigging/master/shtandart.html).
 
-Чтобы пересобрать программу из исходных файлов, положите [файл библиотеки jQuery](http://jquery.com/download/) (достаточно версии slim-min) в директорию проекта и запустите
+Чтобы пересобрать программу из исходных файлов, запустите
 ```
 python build.py
 ```

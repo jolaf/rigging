@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from base64 import b64encode
 from re import sub as reSub
+from urllib2 import urlopen
 from zipfile import ZipFile
 
 SOURCE = 'rigging.html'
@@ -10,7 +11,10 @@ ZIP = 'shtandart.zip'
 def loadFile(match, pattern, fileNamePos, base64 = False):
     print match.groups()
     fileName = match.group(fileNamePos)
-    data = open(fileName, 'rb').read()
+    if fileName.startswith('http'):
+        data = urlopen(fileName).read()
+    else:
+        data = open(fileName, 'rb').read()
     if base64:
         data = b64encode(data)
     elif fileName.endswith('.js'):
