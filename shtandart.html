@@ -382,16 +382,6 @@ img.vang {
 	cursor: default;
 }
 
-.info {
-	font-weight: bold;
-	z-index: -1;
-}
-
-button.info {
-	margin: 0;
-	font-weight: normal;
-}
-
 .highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .info.on {
 	-webkit-filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
@@ -499,6 +489,15 @@ button.info {
 
 #infoIntro p, #infoQuestions p {
 	text-align: center;
+}
+
+span.info {
+	font-weight: bold;
+	z-index: -1;
+}
+
+button.info {
+	margin: 0;
 }
 
 #logo {
@@ -2070,7 +2069,7 @@ function main() {
     $('.selector, .point').mousedown(function (_event) { return false; }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
-    $('button.info').on('hover mouseover mouseenter mousedown click focus keydown', function (_event) { return false; });
+    $('button.info').on('hover mousedown keydown', function (_event) { return false; });
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();

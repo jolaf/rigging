@@ -907,7 +907,7 @@ function main() {
     $('.selector, .point').mousedown(function (_event) { return false; }); // Avoid selection by double-click
     // Finishing setup
     $('body').click(Questionary.nextQuestion);
-    $('button.info').on('hover mouseover mouseenter mousedown click focus keydown', function (_event) { return false; });
+    $('button.info').on('hover mousedown keydown', function (_event) { return false; });
     setMode(window.location.hash.slice(1));
     onResize();
     $('#loading').hide();
