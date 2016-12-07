@@ -669,6 +669,9 @@ function menuHandler(event) {
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
                 }
+                if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input')[0].checked) {
+                    Questionary.askQuestion();
+                }
             }
         } else if (input.attr('name') === 'mast') {
             var mast = selector[0].id.slice(4);
@@ -690,6 +693,12 @@ function menuHandler(event) {
                         break;
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
+                }
+                if (Questionary.status === Questionary.ASKED && Questionary.correctAnswer.mast.name) {
+                    input = $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input');
+                    if (input.length && !input[0].checked) {
+                        Questionary.askQuestion();
+                    }
                 }
             }
         }
@@ -732,12 +741,12 @@ Questionary.askQuestion = function () {
             while (true) {
                 line = Line.lines.random();
                 checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
+                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = line.name;
-            $('#question').text(Questionary.correctAnswer);
+            Questionary.correctAnswer = line;
+            $('#question').text(Questionary.correctAnswer.name);
             $('#overlay, #pointNumbers').addClass('highlight');
             $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
@@ -789,11 +798,11 @@ Questionary.answerQuestion = function (event) {
             var point = event.data;
             point.elements.removeClass('on');
             $.each(Point.points, function (_index, point) {
-                if (point.line.name == Questionary.correctAnswer) {
+                if (point.line.name == Questionary.correctAnswer.name) {
                     point.elements.addClass('rightAnswer');
                 }
             });
-            isCorrect = point.line.name === Questionary.correctAnswer;
+            isCorrect = point.line.name === Questionary.correctAnswer.name;
             if (!isCorrect) {
                 point.elements.addClass('wrongAnswer');
                 $('#rightAnswerText').text(point.line.name);

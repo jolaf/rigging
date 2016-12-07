@@ -511,7 +511,7 @@ button.info {
 }
 
 #footer p {
-	margin: 0.1em 0.3em 0.3em;
+	margin: 0.1em 0.4em 0.3em;
 }
 
 .icon {
@@ -868,11 +868,14 @@ button.info {
       </table>
     </td>
   </tr>
-  <tr id="footer"><td>
-    <p>
+  <tr id="footer">
+    <td><p>
       &copy; Василий Захаров <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a> для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016
-    </p>
-  </td></tr>
+    </p></td>
+    <td>
+      <p id="build">b20161207-2003G</p>
+    </td>
+  </tr>
 </table>
 <script type="text/javascript">
 /* jshint elision: true */
@@ -1073,7 +1076,6 @@ var LINES = [
         ]],
         [, [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
-            [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
         ]],
     ]],
     [MAIN_MAST, [
@@ -1153,6 +1155,7 @@ var LINES = [
     [, [
         [, [
             [FORE_DECK,  SIDE_RAIL,        -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
+            [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [MAIN_DECK,  BULWARK,           2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
             [STERN_DECK, BULWARK,           2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, BULWARK,           3, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
@@ -1275,7 +1278,7 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
-    this.description = (this.side === CENTER ? '' : 'По ' + (this.side === PORT ? 'левому' : 'правому') + ' борту, ' + this.rail.description.toLowerCase()) + this.rail.description;
+    this.description = this.rail.description + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
     if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
         var number;
         var direction;
@@ -1833,6 +1836,9 @@ function menuHandler(event) {
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
                 }
+                if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input')[0].checked) {
+                    Questionary.askQuestion();
+                }
             }
         } else if (input.attr('name') === 'mast') {
             var mast = selector[0].id.slice(4);
@@ -1854,6 +1860,12 @@ function menuHandler(event) {
                         break;
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
+                }
+                if (Questionary.status === Questionary.ASKED && Questionary.correctAnswer.mast.name) {
+                    input = $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input');
+                    if (input.length && !input[0].checked) {
+                        Questionary.askQuestion();
+                    }
                 }
             }
         }
@@ -1896,12 +1908,12 @@ Questionary.askQuestion = function () {
             while (true) {
                 line = Line.lines.random();
                 checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && line.name != Questionary.correctAnswer) {
+                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = line.name;
-            $('#question').text(Questionary.correctAnswer);
+            Questionary.correctAnswer = line;
+            $('#question').text(Questionary.correctAnswer.name);
             $('#overlay, #pointNumbers').addClass('highlight');
             $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
@@ -1953,11 +1965,11 @@ Questionary.answerQuestion = function (event) {
             var point = event.data;
             point.elements.removeClass('on');
             $.each(Point.points, function (_index, point) {
-                if (point.line.name == Questionary.correctAnswer) {
+                if (point.line.name == Questionary.correctAnswer.name) {
                     point.elements.addClass('rightAnswer');
                 }
             });
-            isCorrect = point.line.name === Questionary.correctAnswer;
+            isCorrect = point.line.name === Questionary.correctAnswer.name;
             if (!isCorrect) {
                 point.elements.addClass('wrongAnswer');
                 $('#rightAnswerText').text(point.line.name);

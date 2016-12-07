@@ -1,6 +1,7 @@
 #!/usr/bin/python
 from base64 import b64encode
 from re import sub as reSub
+from datetime import datetime
 from urllib2 import urlopen
 from zipfile import ZipFile
 
@@ -31,7 +32,8 @@ PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambd
             (r'type="(\S+)" href="(\S+)"', lambda match: loadFile(match, r'type="\1" href="data:\1;base64,%s"', 2, True)),
             (r'<img ([^<>]*) src="((\S+)\.(\S+))"', lambda match: loadImage(match, r'<img \1 src="data:%s;base64,%s"', 2)),
             (r' url\("((\S+)\.(\S+))"\)', lambda match: loadImage(match, r' url("data:%s;base64,%s")')),
-            (r'[ \t]*</script>\n[ \t]*<script type="\S+">', ''))
+            (r'[ \t]*</script>\n[ \t]*<script type="\S+">', ''),
+            (r'(\sid="build">)\S+?(</)', lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG'))))
 
 def main():
     with open(SOURCE, 'rb') as f:

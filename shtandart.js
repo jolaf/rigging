@@ -196,7 +196,6 @@ var LINES = [
         ]],
         [, [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
-            [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
         ]],
     ]],
     [MAIN_MAST, [
@@ -276,6 +275,7 @@ var LINES = [
     [, [
         [, [
             [FORE_DECK,  SIDE_RAIL,        -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
+            [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [MAIN_DECK,  BULWARK,           2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
             [STERN_DECK, BULWARK,           2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, BULWARK,           3, MOORING_ROPE,    ,                    ,          LINE_DETAIL],

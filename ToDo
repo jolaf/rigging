@@ -1,19 +1,9 @@
 
-Add version or something?
-
-Check and change current question when changing masts/decks?
-
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
-
-Rerrange points on stern deck
-
-Add sides to line descriptions, at least for assymmetric lines
 
 Create immediate tooltips
 
 Remove hover on touch
-
-Split symmetric Rail in two?
 
 Allow multiple lines to a single point
 Find a way to highlight all flag halyards and all tackles
