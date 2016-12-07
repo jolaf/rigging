@@ -1169,11 +1169,7 @@ window.onerror = function (message, url, lineNo, columnNo, error) {
     if (message.toLowerCase().indexOf('script error') >= 0) {
         message = 'Ошибка: см. подробности проблемы в консоли браузера';
     } else {
-        message = 'Message: ' + message + '
-URL: ' + url + '
-Line: ' + lineNo + '
-Column: ' + columnNo + '
-Error object: ' + JSON.stringify(error);
+        message = 'Message: ' + message + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error);
     }
     alert(message); // jshint ignore:line
 };

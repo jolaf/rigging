@@ -9,9 +9,12 @@ ZIP = 'shtandart.zip'
 
 def loadFile(match, pattern, fileNamePos, base64 = False):
     print match.groups()
-    data = open(match.group(fileNamePos), 'rb').read()
+    fileName = match.group(fileNamePos)
+    data = open(fileName, 'rb').read()
     if base64:
         data = b64encode(data)
+    elif fileName.endswith('.js'):
+        data = data.replace(r'\n', r'\\n')
     return match.expand(pattern % data)
 
 def loadImage(match, pattern, fileNamePos = 1):
