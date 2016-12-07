@@ -639,6 +639,9 @@ function menuHandler(event) {
     if (input.attr('name') === 'mode') {
         setMode(this.id.slice(0, -4)); // jshint ignore:line
     } else {
+        if (input[0].checked) {
+            Questionary.reset();
+        }
         if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
             var deck = selector[0].id.slice(4);
             if (deck == 'All') {
