@@ -180,6 +180,27 @@ img.scheme {
 	width: 39.2%;
 }
 
+.mastMask {
+	position: absolute;
+	background: url("images/mastmask.png") no-repeat;
+	width: 160px;
+	height: 160px;
+	top: 44%;
+	display: none;
+}
+
+#mastMaskFore {
+	left: 82.2%;
+}
+
+#mastMaskMain {
+	left: 44.8%;
+}
+
+#mastMaskMizzen {
+	left: 16.4%;
+}
+
 img.point {
 	position: absolute;
 	background: url("images/sprite.png") no-repeat; /* red */

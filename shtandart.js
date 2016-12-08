@@ -66,7 +66,7 @@ var HALYARD = 'Фал';
 var CLEWLINE = 'Гитов';
 var LEECHLINE = 'Нок-гордень';
 var BUNTLINE = 'Бык-гордень';
-var CLEWBUNTLINES = 'Гитов/бык-гордень';
+var CLEWBUNTLINES = 'Гитов\xa0и\xa0бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
@@ -150,7 +150,7 @@ var DECKS = [
         [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [300, 30, SCLEAT, 93], [380, 34, SCLEAT, 93], [490,, VCLEAT, -1]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
-        [AT_MAST,            ,           632,  60, [[,,, -55], [98, 36,, 90]]],
+        [AT_MAST,            ,           627,  52, [[,,, -40], [103, 44,, 90]]], // 632 587, 625 595 -40
         [POOP_BULWARK,       ,            30, 360, [[,, VANG_TACKLE], [60,, VCLEAT, 14], [280, 140,, 13]], IGNORE_DECK],
         [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],
     ]]

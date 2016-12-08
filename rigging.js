@@ -546,7 +546,7 @@ Subline.getSublines = function (line) {
         var sailSubline = sublines[0];
         ret.push(sailSubline.addLine(line));
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.indexOf(subline.name + ' ') === 0);
+            return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.startsWith(subline.name + ' '));
         });
         assert(sublines.length, "Unknown sail subline: " + line.lineName);
         assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
@@ -632,6 +632,7 @@ function resetDecks() {
 }
 
 function resetMasts() {
+    $('.mastMask').hide();
     $('#selectMasts .selector').attr('disabled', false);
     $('#selectMasts input').prop('checked', true).prop('disabled', false);
     $('#selectMasts .selector:first-child').attr('disabled', true);
@@ -683,6 +684,7 @@ function menuHandler(event) {
             if (mast == 'All') {
                 resetMasts();
             } else {
+                $('#mastMask' + mast).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
                 checked = $('#selectMasts :not(#mastAll) input:checked');
                 switch (checked.length) {
                     case 1:
