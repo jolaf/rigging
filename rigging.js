@@ -2,19 +2,6 @@
 /* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, CENTER, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
 "use strict";
 
-window.onerror = function (message, url, lineNo, columnNo, errorObject) {
-    var prefix = 'Ошибка!\n\nПожалуйста, ';
-    var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
-    if (message.toLowerCase().indexOf('script error') >= 0) {
-        message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
-    } else if (errorObject && errorObject.stack) {
-        message = prefix + suggestion + '\n' + errorObject.stack + '\n';
-    } else {
-        message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
-    }
-    alert(message); // jshint ignore:line
-};
-
 function assert(condition, message) {
     if (!condition) {
         message = "Ошибка: " + (message || 'Assertion failed');

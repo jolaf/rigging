@@ -15,7 +15,24 @@
   <link rel="manifest" type="application/json" href="images/manifest.json">
   <link rel="mask-icon" type="image/svg+xml" href="images/safari-pinned-tab.svg" color="#5bbad5">
   <link rel="stylesheet" type="text/css" href="rigging.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+  <script type="text/javascript">
+  /* jshint strict: global */
+  /* globals window */
+  "use strict";
+
+  window.onerror = function (message, url, lineNo, columnNo, errorObject) {
+      var prefix = 'Ошибка!\n\nПожалуйста, ';
+      var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
+      if (message.toLowerCase().indexOf('script error') >= 0) {
+          message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
+      } else if (errorObject && errorObject.stack) {
+          message = prefix + suggestion + '\n' + errorObject.stack + '\n';
+      } else {
+          message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
+      }
+      alert(message); // jshint ignore:line
+  };
+  </script>
 </head>
 <body>
 <table class="wide high">
@@ -376,6 +393,7 @@
     </td>
   </tr></table></td></tr>
 </table>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
 <script type="text/javascript" src="shtandart.js"></script>
 <script type="text/javascript" src="rigging.js"></script>
 </body>

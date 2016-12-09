@@ -1,6 +1,7 @@
 /* jshint elision: true */
 /* jshint strict: global */
-"use strict";
+/* globals $, document, location, window */
+  "use strict";
 
 var SCHEME_WIDTH = 4064;
 var SCHEME_HEIGHT = 670;
