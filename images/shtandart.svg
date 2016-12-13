@@ -2,6 +2,7 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:rigging="https://github.com/jolaf/rigging"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -9,13 +10,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 744.09448819 1052.3622047"
+   width="190.55586mm"
+   height="20.563278mm"
+   viewBox="0 0 675.19794 72.862009"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="takelazh-alpha.svg">
+   sodipodi:docname="shtandart.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -26,24 +27,30 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.8"
-     inkscape:cx="541.57919"
-     inkscape:cy="627.26544"
+     inkscape:cx="391.42535"
+     inkscape:cy="15.395464"
      inkscape:document-units="px"
-     inkscape:current-layer="layer3"
+     inkscape:current-layer="layer4"
      showgrid="true"
-     inkscape:window-width="1850"
-     inkscape:window-height="1156"
-     inkscape:window-x="70"
-     inkscape:window-y="0"
+     inkscape:window-width="1855"
+     inkscape:window-height="1056"
+     inkscape:window-x="1985"
+     inkscape:window-y="24"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
      gridtolerance="1"
      objecttolerance="2"
-     guidetolerance="1">
+     guidetolerance="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
-       id="grid4394" />
+       id="grid4394"
+       originx="-36.939556"
+       originy="-611.87" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -53,7 +60,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -61,7 +68,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label=" bort"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-36.939556,-367.63021)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#4e1d00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 37.018505,398.01795 C 260,362.3622 560,352.3622 711.97897,403.16063"
@@ -134,7 +142,8 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="bak"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-36.939556,-367.63021)">
     <rect
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
        id="rect4272"
@@ -228,36 +237,42 @@
        cx="649.63"
        cy="397.56219"
        r="1.0671936" />
-    <circle
-       r="1.0671936"
-       cy="388.8522"
-       cx="584.97998"
-       id="circle4188"
-       style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1" />
-    <circle
-       style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
-       id="circle4190"
-       cx="596.17999"
-       cy="388.8522"
-       r="1.0671936" />
-    <circle
-       r="1.0671936"
-       cy="388.8522"
-       cx="607.38"
-       id="circle4192"
-       style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1" />
-    <circle
-       style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
-       id="circle4194"
-       cx="618.58002"
-       cy="388.8522"
-       r="1.0671936" />
-    <circle
-       r="1.0671936"
-       cy="388.8522"
-       cx="629.78003"
-       id="circle4196"
-       style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1" />
+    <g
+       id="g5102"
+       rigging:deck="fore"
+       rigging:rail="shrouds"
+       rigging:side="port">
+      <circle
+         style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
+         id="circle4188"
+         cx="584.97998"
+         cy="388.8522"
+         r="1.0671936" />
+      <circle
+         r="1.0671936"
+         cy="388.8522"
+         cx="596.17999"
+         id="circle4190"
+         style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
+         id="circle4192"
+         cx="607.38"
+         cy="388.8522"
+         r="1.0671936" />
+      <circle
+         r="1.0671936"
+         cy="388.8522"
+         cx="618.58002"
+         id="circle4194"
+         style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1" />
+      <circle
+         style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
+         id="circle4196"
+         cx="629.78003"
+         cy="388.8522"
+         r="1.0671936" />
+    </g>
     <ellipse
        cx="752.5545"
        cy="-89.318085"
@@ -396,7 +411,7 @@
        style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        transform="matrix(0,1,-1,0,0,0)" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:0;stroke-dasharray:none"
+       style="fill:none;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
        d="m 674.46428,440.36221 0.0893,-47.00001 8.03571,2.125 0,44.87501"
        id="path4294"
        inkscape:connector-curvature="0" />
@@ -405,7 +420,8 @@
      inkscape:groupmode="layer"
      id="layer6"
      inkscape:label="deck"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-36.939556,-367.63021)">
     <g
        id="g4211"
        transform="translate(0.53571428,-3.0357143)">
@@ -688,7 +704,8 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="afterdeck"
-     style="display:inline">
+     style="display:inline"
+     transform="translate(-36.939556,-367.63021)">
     <circle
        style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
        id="path4327"
