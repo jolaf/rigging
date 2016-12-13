@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <title>Бегучий такелаж фрегата &laquo;Штандарт&raquo;</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<object data="images/shtandart.svg" type="image/svg+xml" id="svg" width="100%"></object>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
+<script>
+  $(document).ready(function () {
+      var svg = $('#svg')[0].contentDocument.documentElement;
+      console.log($('[rigging\\:side]', svg)[0]);
+  });
+</script>
+</body>
+</html>
