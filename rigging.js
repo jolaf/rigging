@@ -862,8 +862,10 @@ Questionary.answerQuestion = function (event) {
             subline.element.mouseout();
             $('#overlay').addClass('highlight');
             Questionary.correctAnswer.icon.addClass('rightAnswer');
-            $.each(Questionary.correctAnswer.line.sublines, function (_index, subline) {
-                subline.element.addClass('rightAnswer');
+            $.each(Questionary.correctAnswer.lines, function (_index, line) {
+                $.each(line.sublines, function (_index, subline) {
+                    subline.element.addClass('rightAnswer');
+                });
             });
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
@@ -873,7 +875,7 @@ Questionary.answerQuestion = function (event) {
                 if (Questionary.preAnswer) {
                     Questionary.preAnswer.element.addClass('wrongAnswer');
                 }
-                $('#rightAnswerText').text(Questionary.correctAnswer.line.name);
+                $('#rightAnswerText').text(Line.mergeNames(Questionary.correctAnswer.lines));
             }
             Questionary.status = Questionary.ANSWERED;
             break;

@@ -1,4 +1,6 @@
 
+Sprit sail questions not re-asked when unselecting masts
+
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
 
 Create immediate tooltips
