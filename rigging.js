@@ -1,5 +1,5 @@
 /* jshint strict: global */
-/* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, CENTER, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, CLEWBUNTLINES, LEECHLINE, BOWLINE */
+/* globals $, document, location, window, CLEAT, SCHEME_WIDTH, SCHEME_HEIGHT, PIN, PORT, STARBOARD, CENTER, DECKS, LINES, DETAIL_LINE, LINE_DETAIL, SINGULAR, PLURAL, CLEWLINE, BUNTLINE, LEECHLINE, BOWLINE */
 "use strict";
 
 function assert(condition, message) {
@@ -78,23 +78,21 @@ function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept 
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.line = null;
+    this.lines = [];
     Point.points.push(this);
 }
 
 Point.points = [];
 
 Point.marks = {};
-Point.marks[    CLEWLINE ] = 'clewline';
-Point.marks[    BUNTLINE ] = 'buntline';
-Point.marks[CLEWBUNTLINES] = 'clewbuntlines';
-Point.marks[   LEECHLINE ] = 'leechline';
-Point.marks[     BOWLINE ] = 'bowline';
+Point.marks[ CLEWLINE] = 'clewline';
+Point.marks[ BUNTLINE] = 'buntline';
+Point.marks[LEECHLINE] = 'leechline';
+Point.marks[  BOWLINE] = 'bowline';
 
 Point.prototype.attachLine = function (line) {
     assert(line);
-    assert(!this.line, "Line already attached to " + this.description);
-    this.line = line;
+    this.lines.push(line);
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
@@ -112,7 +110,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         }
         this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    assert(this.line, "No line for point " + this.description);
+    assert(this.lines, "No lines for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
         left: this.x,
@@ -121,7 +119,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
     });
     this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
     this.elements = this.icon.add(this.pointNumber);
-    var name = this.line.name;
+    var name = Line.mergeNames(this.lines);
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
@@ -136,7 +134,9 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
                     return;
                 }
             }
-            event.data.line.mouseHandler(event.type == 'mouseenter');
+            $.each(event.data.lines, function (_index, line) {
+                line.mouseHandler(event.type == 'mouseenter');
+            });
         } else { // WHERE ASKED
             event.data.mouseHandler(event.type == 'mouseenter');
         }
@@ -150,8 +150,10 @@ Point.prototype.mouseHandler = function (isEnter) {
     if (setMode.mode === setMode.WHERE) {
         this.pointNumber.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
-        $.each(this.line.sublines, function (_index, subline) {
-            subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+        $.each(this.lines, function (_index, line) {
+            $.each(line.sublines, function (_index, subline) {
+                subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+            });
         });
     }
 };
@@ -164,7 +166,7 @@ Point.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        point.elements.addClass(Point.marks[this.line.lineName]);
+        point.elements.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     });
 };
 
@@ -406,6 +408,29 @@ Line.getSublines = function () {
     $.each(Line.lines, function (_index, line) {
         line.sublines = Subline.getSublines(line);
     });
+};
+
+Line.mergeNames = function (lines) {
+    assert(lines);
+    if (lines.length === 1) {
+        return lines[0].name;
+    }
+    var names = lines.map(function (line) { return line.name; });
+    var subNames = [];
+    var theLastWord;
+    for (var i = 0, name; name = names[i++];) { // jshint ignore:line
+        var words = name.split(' ');
+        var lastWord = words[words.length - 1];
+        if (theLastWord) {
+            if (lastWord != theLastWord) {
+                return names.join(' / ');
+            }
+        } else {
+            theLastWord = lastWord;
+        }
+        subNames.push(words.slice(0, -1).join(' '));
+    }
+    return subNames.join(' / ') + ' ' + theLastWord;
 };
 
 function Sail(name, mast) {
@@ -792,14 +817,20 @@ Questionary.answerQuestion = function (event) {
             var point = event.data;
             point.elements.removeClass('on');
             $.each(Point.points, function (_index, point) {
-                if (point.line.name == Questionary.correctAnswer.name) {
-                    point.elements.addClass('rightAnswer');
+                $.each(point.lines, function (_index, line) {
+                    if (line.name === Questionary.correctAnswer.name) {
+                        point.elements.addClass('rightAnswer');
+                    }
+                });
+            });
+            $.each(point.lines, function (_index, line) {
+                if (line.name === Questionary.correctAnswer.name) {
+                    isCorrect = true;
                 }
             });
-            isCorrect = point.line.name === Questionary.correctAnswer.name;
             if (!isCorrect) {
                 point.elements.addClass('wrongAnswer');
-                $('#rightAnswerText').text(point.line.name);
+                $('#rightAnswerText').text(Line.mergeNames(point.lines));
             }
             break;
         case setMode.WHICH:

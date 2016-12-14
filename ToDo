@@ -5,7 +5,10 @@ Create immediate tooltips
 
 Remove hover on touch
 
-Allow multiple lines to a single point
+Fix mooring points highlighting
+
+Replace $.each() with for () wherever appropriate
+
 Find a way to highlight all flag halyards and all tackles
 
 Move from tables to flex boxes

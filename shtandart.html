@@ -292,22 +292,22 @@ img.point {
     filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
-.colored .point.clewbuntlines {
+.colored .point.clewline.buntline {
 	-webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */  blur(0.5px);
 	filter: hue-rotate(78deg) brightness(250%) /* yellow green */  blur(0.5px);
 }
 
-.colored.highlight .point.clewbuntlines.on, .colored .point.clewbuntlines.question {
+.colored.highlight .point.clewline.buntline.on, .colored .point.clewline.buntline.question {
     -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
     filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
-.colored .point.clewbuntlines.wrongAnswer {
+.colored .point.clewline.buntline.wrongAnswer {
     -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
     filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
-.colored .point.clewbuntlines.rightAnswer {
+.colored .point.clewline.buntline.rightAnswer {
     -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
     filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
@@ -430,7 +430,7 @@ img.vang {
 	color: #017c01; /* dark green */
 }
 
-.colored .pointNumber.clewbuntlines, .info.clewbuntlines {
+.colored .pointNumber.clewline.buntline, .info.clewline.buntline {
 	color: #6cc100; /* yellow green */
 }
 
@@ -683,7 +683,6 @@ button.info {
                 <li class="subline">Гитов</li>
                 <li class="subline">Нок-гордень</li>
                 <li class="subline">Бык-гордень</li>
-                <li class="subline">Гитов&nbsp;и&nbsp;бык-гордень</li>
               </ul>
             </div></td>
             <td class="deck sails"><div>
@@ -798,9 +797,9 @@ button.info {
               <h2>Марки</h2>
               <p>
                 Точки крепления снастей, которые имеют на концах цветные марки, обозначены на схеме соответствующими цветами:
-                <span class="info clewline">гитовы</span>, <span class="info leechline">нок-горденя</span>, <span class="info buntline">бык-гординя</span>, <span class="info bowline">булиня</span>.
+                <span class="info clewline">гитовы</span>, <span class="info leechline">нок-горденя</span>, <span class="info buntline">бык-горденя</span>, <span class="info bowline">булиня</span>.
                 Кислотным жёлто-зелёным цветом обозначены точки крепления, куда одновременно приходят снасти
-                с жёлтой и зелёной марками &ndash; то есть, <span class="info clewbuntlines">гитовы и бык-горденя</span> малых парусов.
+                с жёлтой и зелёной марками &ndash; то есть, <span class="info clewline buntline">гитовы и бык-горденя</span> малых парусов.
               </p>
               <p>
                 При желании цветовое обозначение можно отключить, сняв галочку <strong>Марки</strong> в правом верхнем углу окна.
@@ -810,7 +809,7 @@ button.info {
             <section id="infoWhere">
               <h2>Где снасть?</h2>
               <p>
-                В это режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
+                В этом режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
                 Ответить можно кликом в соответствующую точку схемы.
                 Правильный ответ (и другие возможные правильные ответы) <span class="info rightAnswer">подсвечивается</span> зелёным цветом.
                 Если дан неправильный ответ, он также <span class="info wrongAnswer">подсвечивается</span> красным цветом.
@@ -897,7 +896,7 @@ button.info {
                 По любым вопросам &ndash; пишите на <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">почту</a>.
               </p>
               <p>
-                Программа новая, в ней конечно же есть недоделки и хватает шороховатостей.
+                Программа новая, в ней, конечно же, есть недоделки и хватает шероховатостей.
                 Ваши сообщения позволят быстрее с ними расправиться.
               </p>
               <p>
@@ -917,7 +916,7 @@ button.info {
       &copy; Василий Захаров <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a> для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016
     </p></td>
     <td>
-      <p id="build">b20161209-2038G</p>
+      <p id="build">b20161214-1838G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -993,7 +992,6 @@ var HALYARD = 'Фал';
 var CLEWLINE = 'Гитов';
 var LEECHLINE = 'Нок-гордень';
 var BUNTLINE = 'Бык-гордень';
-var CLEWBUNTLINES = 'Гитов\xa0и\xa0бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
@@ -1072,9 +1070,9 @@ var DECKS = [
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
     [STERN_DECK, 'На полуюте', [
-        [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
+        [AT_FRONT,           CENTER,    1331, -19,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
-        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [300, 30, SCLEAT, 93], [380, 34, SCLEAT, 93], [490,, VCLEAT, -1]]],
+        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [290, 30, SCLEAT, 105], [385, 32, SCLEAT, 80], [490,, VCLEAT, -1]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
         [AT_MAST,            ,           627,  52, [[,,, -40], [103, 44,, 90]]], // 632 587, 625 595 -40
@@ -1090,7 +1088,8 @@ var LINES = [
             [FORE_DECK,  FRONT_RAIL,        4, BRACE],
             [FORE_DECK,  FRONT_RAIL,        3, LIFT],
             [FORE_DECK,  SIDE_RAIL,        -1, SHEET],
-            [FORE_DECK,  BEHIND_FRONT,       , CLEWBUNTLINES],
+            [FORE_DECK,  BEHIND_FRONT,       , CLEWLINE],
+            [FORE_DECK,  BEHIND_FRONT,       , BUNTLINE],
         ]],
     ]],
     [FORE_MAST, [
@@ -1119,7 +1118,8 @@ var LINES = [
             [FORE_DECK,  BACK_RAIL,         3, BRACE],
             [FORE_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [FORE_DECK,  SHROUDS_RAIL,     -1, SHEET],
-            [FORE_DECK,  SHROUDS_RAIL,     -2, CLEWBUNTLINES],
+            [FORE_DECK,  SHROUDS_RAIL,     -2, CLEWLINE],
+            [FORE_DECK,  SHROUDS_RAIL,     -2, BUNTLINE],
         ]],
         [, [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
@@ -1151,7 +1151,8 @@ var LINES = [
             [STERN_DECK, SIDE_RAIL,        -2, BRACE],
             [MAIN_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [MAIN_DECK,  SIDE_MAST_RAIL,   -2, SHEET],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    4, CLEWBUNTLINES],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    4, CLEWLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    4, BUNTLINE],
         ]],
         [STAY_SAIL, [
             [MAIN_DECK,  AT_MAST_FRONT,      , HALYARD,         ,                    CENTER],
@@ -1171,7 +1172,8 @@ var LINES = [
             [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,      1, VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,     -1, SHEET],
-            [STERN_DECK, AT_FRONT,           , TACK,            ,                    PORT],
+            [STERN_DECK, AT_FRONT,           , TACK,            ,                    CENTER],
+            [STERN_DECK, BULWARK,           3, TACK],
             [STERN_DECK, AT_MAST,           1, BUNTLINE,        ,                    PORT],
             [STERN_DECK, AT_MAST,           1, LEECHLINE,       ,                    STARBOARD],
         ]],
@@ -1182,12 +1184,14 @@ var LINES = [
             [STERN_DECK, SIDE_RAIL,         2, LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,     -2, SHEET],
             [MAIN_DECK,  ABOVE_RAIL,         , BOWLINE],
-            [STERN_DECK, SHROUDS_RAIL,      2, CLEWBUNTLINES],
+            [STERN_DECK, SHROUDS_RAIL,      2, CLEWLINE],
+            [STERN_DECK, SHROUDS_RAIL,      2, BUNTLINE],
         ]],
         [MIZZEN_STAYSAIL, [
             [MAIN_DECK,  AT_MAST_BACK,       , TACK,            ,                    CENTER],
             [STERN_DECK, AT_MAST,          -1, HALYARD,         ,                    PORT],
-            [STERN_DECK, AT_FRONT,           , SHEET,            ,                   STARBOARD],
+            [STERN_DECK, AT_FRONT,           , SHEET,            ,                   CENTER],
+            [STERN_DECK, BULWARK,           2, SHEET],
         ]],
         [, [
             [STERN_DECK, SHROUDS_RAIL,      3, FLAG_HALYARD,    ,                    PORT],
@@ -1288,23 +1292,21 @@ function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept 
     this.y = y;
     this.type = type || CLEAT;
     this.rotation = rotation;
-    this.line = null;
+    this.lines = [];
     Point.points.push(this);
 }
 
 Point.points = [];
 
 Point.marks = {};
-Point.marks[    CLEWLINE ] = 'clewline';
-Point.marks[    BUNTLINE ] = 'buntline';
-Point.marks[CLEWBUNTLINES] = 'clewbuntlines';
-Point.marks[   LEECHLINE ] = 'leechline';
-Point.marks[     BOWLINE ] = 'bowline';
+Point.marks[ CLEWLINE] = 'clewline';
+Point.marks[ BUNTLINE] = 'buntline';
+Point.marks[LEECHLINE] = 'leechline';
+Point.marks[  BOWLINE] = 'bowline';
 
 Point.prototype.attachLine = function (line) {
     assert(line);
-    assert(!this.line, "Line already attached to " + this.description);
-    this.line = line;
+    this.lines.push(line);
 };
 
 Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
@@ -1322,7 +1324,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         }
         this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    assert(this.line, "No line for point " + this.description);
+    assert(this.lines, "No lines for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
     this.icon.css({
         left: this.x,
@@ -1331,7 +1333,7 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
     });
     this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
     this.elements = this.icon.add(this.pointNumber);
-    var name = this.line.name;
+    var name = Line.mergeNames(this.lines);
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
@@ -1346,7 +1348,9 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
                     return;
                 }
             }
-            event.data.line.mouseHandler(event.type == 'mouseenter');
+            $.each(event.data.lines, function (_index, line) {
+                line.mouseHandler(event.type == 'mouseenter');
+            });
         } else { // WHERE ASKED
             event.data.mouseHandler(event.type == 'mouseenter');
         }
@@ -1360,8 +1364,10 @@ Point.prototype.mouseHandler = function (isEnter) {
     if (setMode.mode === setMode.WHERE) {
         this.pointNumber.toggleClass('on', isEnter);
     } else { // WHICH or DEMO
-        $.each(this.line.sublines, function (_index, subline) {
-            subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+        $.each(this.lines, function (_index, line) {
+            $.each(line.sublines, function (_index, subline) {
+                subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+            });
         });
     }
 };
@@ -1374,7 +1380,7 @@ Point.placeElements = function (location) {
         icon.css({
             top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
         });
-        point.elements.addClass(Point.marks[this.line.lineName]);
+        point.elements.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     });
 };
 
@@ -1616,6 +1622,29 @@ Line.getSublines = function () {
     $.each(Line.lines, function (_index, line) {
         line.sublines = Subline.getSublines(line);
     });
+};
+
+Line.mergeNames = function (lines) {
+    assert(lines);
+    if (lines.length === 1) {
+        return lines[0].name;
+    }
+    var names = lines.map(function (line) { return line.name; });
+    var subNames = [];
+    var theLastWord;
+    for (var i = 0, name; name = names[i++];) { // jshint ignore:line
+        var words = name.split(' ');
+        var lastWord = words[words.length - 1];
+        if (theLastWord) {
+            if (lastWord != theLastWord) {
+                return names.join(' / ');
+            }
+        } else {
+            theLastWord = lastWord;
+        }
+        subNames.push(words.slice(0, -1).join(' '));
+    }
+    return subNames.join(' / ') + ' ' + theLastWord;
 };
 
 function Sail(name, mast) {
@@ -2002,14 +2031,20 @@ Questionary.answerQuestion = function (event) {
             var point = event.data;
             point.elements.removeClass('on');
             $.each(Point.points, function (_index, point) {
-                if (point.line.name == Questionary.correctAnswer.name) {
-                    point.elements.addClass('rightAnswer');
+                $.each(point.lines, function (_index, line) {
+                    if (line.name === Questionary.correctAnswer.name) {
+                        point.elements.addClass('rightAnswer');
+                    }
+                });
+            });
+            $.each(point.lines, function (_index, line) {
+                if (line.name === Questionary.correctAnswer.name) {
+                    isCorrect = true;
                 }
             });
-            isCorrect = point.line.name === Questionary.correctAnswer.name;
             if (!isCorrect) {
                 point.elements.addClass('wrongAnswer');
-                $('#rightAnswerText').text(point.line.name);
+                $('#rightAnswerText').text(Line.mergeNames(point.lines));
             }
             break;
         case setMode.WHICH:

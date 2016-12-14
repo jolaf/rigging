@@ -67,7 +67,6 @@ var HALYARD = 'Фал';
 var CLEWLINE = 'Гитов';
 var LEECHLINE = 'Нок-гордень';
 var BUNTLINE = 'Бык-гордень';
-var CLEWBUNTLINES = 'Гитов\xa0и\xa0бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
@@ -146,9 +145,9 @@ var DECKS = [
         [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
     ]],
     [STERN_DECK, 'На полуюте', [
-        [AT_FRONT,           ,          1331,  30,      ,,,  KNOT],
+        [AT_FRONT,           CENTER,    1331, -19,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
-        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [300, 30, SCLEAT, 93], [380, 34, SCLEAT, 93], [490,, VCLEAT, -1]]],
+        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [290, 30, SCLEAT, 105], [385, 32, SCLEAT, 80], [490,, VCLEAT, -1]]],
         [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
         [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
         [AT_MAST,            ,           627,  52, [[,,, -40], [103, 44,, 90]]], // 632 587, 625 595 -40
@@ -164,7 +163,8 @@ var LINES = [
             [FORE_DECK,  FRONT_RAIL,        4, BRACE],
             [FORE_DECK,  FRONT_RAIL,        3, LIFT],
             [FORE_DECK,  SIDE_RAIL,        -1, SHEET],
-            [FORE_DECK,  BEHIND_FRONT,       , CLEWBUNTLINES],
+            [FORE_DECK,  BEHIND_FRONT,       , CLEWLINE],
+            [FORE_DECK,  BEHIND_FRONT,       , BUNTLINE],
         ]],
     ]],
     [FORE_MAST, [
@@ -193,7 +193,8 @@ var LINES = [
             [FORE_DECK,  BACK_RAIL,         3, BRACE],
             [FORE_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [FORE_DECK,  SHROUDS_RAIL,     -1, SHEET],
-            [FORE_DECK,  SHROUDS_RAIL,     -2, CLEWBUNTLINES],
+            [FORE_DECK,  SHROUDS_RAIL,     -2, CLEWLINE],
+            [FORE_DECK,  SHROUDS_RAIL,     -2, BUNTLINE],
         ]],
         [, [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
@@ -225,7 +226,8 @@ var LINES = [
             [STERN_DECK, SIDE_RAIL,        -2, BRACE],
             [MAIN_DECK,  BEHIND_MAST_RAIL,  1, LIFT],
             [MAIN_DECK,  SIDE_MAST_RAIL,   -2, SHEET],
-            [MAIN_DECK,  SIDE_MAST_RAIL,    4, CLEWBUNTLINES],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    4, CLEWLINE],
+            [MAIN_DECK,  SIDE_MAST_RAIL,    4, BUNTLINE],
         ]],
         [STAY_SAIL, [
             [MAIN_DECK,  AT_MAST_FRONT,      , HALYARD,         ,                    CENTER],
@@ -245,7 +247,8 @@ var LINES = [
             [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,      1, VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, POOP_BULWARK,     -1, SHEET],
-            [STERN_DECK, AT_FRONT,           , TACK,            ,                    PORT],
+            [STERN_DECK, AT_FRONT,           , TACK,            ,                    CENTER],
+            [STERN_DECK, BULWARK,           3, TACK],
             [STERN_DECK, AT_MAST,           1, BUNTLINE,        ,                    PORT],
             [STERN_DECK, AT_MAST,           1, LEECHLINE,       ,                    STARBOARD],
         ]],
@@ -256,12 +259,14 @@ var LINES = [
             [STERN_DECK, SIDE_RAIL,         2, LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,     -2, SHEET],
             [MAIN_DECK,  ABOVE_RAIL,         , BOWLINE],
-            [STERN_DECK, SHROUDS_RAIL,      2, CLEWBUNTLINES],
+            [STERN_DECK, SHROUDS_RAIL,      2, CLEWLINE],
+            [STERN_DECK, SHROUDS_RAIL,      2, BUNTLINE],
         ]],
         [MIZZEN_STAYSAIL, [
             [MAIN_DECK,  AT_MAST_BACK,       , TACK,            ,                    CENTER],
             [STERN_DECK, AT_MAST,          -1, HALYARD,         ,                    PORT],
-            [STERN_DECK, AT_FRONT,           , SHEET,            ,                   STARBOARD],
+            [STERN_DECK, AT_FRONT,           , SHEET,            ,                   CENTER],
+            [STERN_DECK, BULWARK,           2, SHEET],
         ]],
         [, [
             [STERN_DECK, SHROUDS_RAIL,      3, FLAG_HALYARD,    ,                    PORT],
