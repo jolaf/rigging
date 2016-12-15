@@ -710,9 +710,9 @@ function menuHandler(event) {
                     default:
                         assert(false, "Checkbox misconfiguration: " + checked.length);
                 }
-                if (Questionary.status === Questionary.ASKED && Questionary.correctAnswer.mast.name) {
-                    input = $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input');
-                    if (input.length && !input[0].checked) {
+                if (Questionary.status === Questionary.ASKED) {
+                    input = Questionary.correctAnswer.mast.name ? $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input') : [];
+                    if (!input.length || !input[0].checked) {
                         Questionary.askQuestion();
                     }
                 }

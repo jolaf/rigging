@@ -1,15 +1,9 @@
 
-Sprit sail questions not re-asked when unselecting masts
-
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
 
 Create immediate tooltips
 
 Remove hover on touch
-
-Fix mooring points highlighting
-
-Replace $.each() with for () wherever appropriate
 
 Find a way to highlight all flag halyards and all tackles
 
