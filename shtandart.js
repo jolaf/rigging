@@ -3,7 +3,7 @@
 /* globals $, document, location, window */
   "use strict";
 
-var SCHEME_WIDTH = 4064;
+var SCHEME_WIDTH = 4339;
 var SCHEME_HEIGHT = 670;
 
 // Full name options
@@ -119,37 +119,37 @@ var DECKS = [
   // Deck        Title
     [FORE_DECK, 'На баке', [
       // Rail                Assym        X0   Y0 stepX    stepY  N  Type=PIN Rotation
-        [FRONT_RAIL,         ,          3800,  22,     ,      75, 5],
-        [BEHIND_FRONT,       ,          3836, 101,     ,,, CLEAT, 90],
-        [BACK_RAIL,          ,          2979, 119,     ,      75, 3],
-        [SIDE_RAIL,          ,          3124, 399,   74,        , 8],
-        [SHROUDS_RAIL,       ,          3247, 457,   63,        , 5],
-        [ON_DECK_FRONT,      ,          3690, 340,     ,,, CLEAT],
-        [FRONT_FISTS,        ,          3573, 115,     ,,,  FIST],
-        [BACK_PILLARS,       ,          3265, 146,     ,,, CLEAT],
-        [BEHIND_MAST_RAIL,   ,          3224,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
-        [AT_MAST_FRONT,      CENTER,    3492, -11,     ,,, CLEAT],
-        [AT_MAST_SIDE,       ,          3434,  85,     ,,, CLEAT, 75],
+        [FRONT_RAIL,         ,          4076,  22,     ,      75, 5], // 276
+        [BEHIND_FRONT,       ,          4112, 101,     ,,, CLEAT, 90],
+        [BACK_RAIL,          ,          3255, 119,     ,      75, 3],
+        [SIDE_RAIL,          ,          3400, 399,   74,        , 8],
+        [SHROUDS_RAIL,       ,          3523, 457,   63,        , 5],
+        [ON_DECK_FRONT,      ,          3966, 340,     ,,, CLEAT],
+        [FRONT_FISTS,        ,          3849, 115,     ,,,  FIST],
+        [BACK_PILLARS,       ,          3541, 146,     ,,, CLEAT],
+        [BEHIND_MAST_RAIL,   ,          3500,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
+        [AT_MAST_FRONT,      CENTER,    3768, -11,     ,,, CLEAT],
+        [AT_MAST_SIDE,       ,          3710,  85,     ,,, CLEAT, 75],
     ]],
     [MAIN_DECK, 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
-        [BULWARK,            ,          2267, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
-        [SIDE_RAIL,          ,          1578, 500,   53,       7, 6],
-        [ABOVE_RAIL,         ,          1630, 567,     ,,, CLEAT, 8],
-        [FRONT_PILLARS,      ,          2180, 324,     ,,, CLEAT],
-        [ON_DECK_FRONT,      ,          2130, 265,     ,,, CLEAT],
-        [BACK_FISTS,         ,          1604, 304,     ,,,  FIST],
-        [BEHIND_MAST_RAIL,   ,          1613,  26,     ,      93, 3],
-        [SIDE_MAST_RAIL,     ,          1692, 312,   69,        , 6],
-        [AT_MAST_FRONT,      CENTER,    1985, -12,     ,,, CLEAT, 90],
-        [AT_MAST_BACK,       CENTER,    1757, -12,     ,,, CLEAT, 90],
+        [BULWARK,            ,          2543, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
+        [SIDE_RAIL,          ,          1854, 500,   53,       7, 6],
+        [ABOVE_RAIL,         ,          1906, 567,     ,,, CLEAT, 8],
+        [FRONT_PILLARS,      ,          2456, 324,     ,,, CLEAT],
+        [ON_DECK_FRONT,      ,          2406, 265,     ,,, CLEAT],
+        [BACK_FISTS,         ,          1880, 304,     ,,,  FIST],
+        [BEHIND_MAST_RAIL,   ,          1889,  26,     ,      93, 3],
+        [SIDE_MAST_RAIL,     ,          1968, 312,   69,        , 6],
+        [AT_MAST_FRONT,      CENTER,    2261, -12,     ,,, CLEAT, 90],
+        [AT_MAST_BACK,       CENTER,    2033, -12,     ,,, CLEAT, 90],
     ]],
     [STERN_DECK, 'На полуюте', [
-        [AT_FRONT,           CENTER,    1331, -19,      ,,,  KNOT],
-        [ABOVE_LADDER,       STARBOARD, 1474, 425,      ,,,  KNOT],
-        [BULWARK,            ,           710, 490, [[,, SCLEAT, -45], [290, 30, SCLEAT, 105], [385, 32, SCLEAT, 80], [490,, VCLEAT, -1]]],
-        [SIDE_RAIL,          ,           843, 428,   43,       7, 4],
-        [SHROUDS_RAIL,       ,           510, 425,   38,       9, 5],
+        [AT_FRONT,           CENTER,    1607, -19,      ,,,  KNOT],
+        [ABOVE_LADDER,       STARBOARD, 1750, 425,      ,,,  KNOT],
+        [BULWARK,            ,           700, 490, [[,, SCLEAT, -45], [320, 25, SCLEAT, 105], [440, 27, SCLEAT, 80], [600, -3, VCLEAT]]],
+        [SIDE_RAIL,          ,           800, 569,   43,       3, 4],
+        [SHROUDS_RAIL,       ,           498, 569,   38,       6, 5],
         [AT_MAST,            ,           627,  52, [[,,, -40], [103, 44,, 90]]], // 632 587, 625 595 -40
         [POOP_BULWARK,       ,            30, 360, [[,, VANG_TACKLE], [60,, VCLEAT, 14], [280, 140,, 13]], IGNORE_DECK],
         [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],

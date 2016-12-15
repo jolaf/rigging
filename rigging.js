@@ -570,7 +570,9 @@ Subline.getSublines = function (line) {
         });
         assert(sublines.length, "Unknown non-sail subline: " + lineName);
         assert(sublines.length == 1, "Duplicate non-sail subline: " + lineName);
-        ret.push(sublines[0].addLine(line));
+        $.each(sublines, function (_index, subline) {
+            ret.push(subline.addLine(line));
+        });
     }
     return ret;
 };

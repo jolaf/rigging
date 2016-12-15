@@ -1,21 +1,19 @@
 
+Implement subline categories
+
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
-
-Create immediate tooltips
-
-Remove hover on touch
-
-Find a way to highlight all flag halyards and all tackles
-
 Move from tables to flex boxes
-
 Store all possible selections in variables
 Use jQuery delegated events to reduce the load on event handlers
 Cleanup CSS
 Cleanup main()
 
+Remove hover on touch
+
 Employ SVG scheme, try to remove the data table, extract all from SVG
-Move sailLines generation from HTML to JS code
+Move sublines generation from HTML to JS code?
+
+Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered
 
 Check and fix Chrome visual issues
