@@ -166,18 +166,18 @@ img.scheme {
 }
 
 #deckMaskFore {
-	left: 72.5%;
-	width: 27.5%;
+	right: 0;
+	width: 25.9%;
 }
 
 #deckMaskMain {
-	left: 39.2%;
-	width: 33.3%;
+	left: 43.1%;
+	width: 31%;
 }
 
 #deckMaskStern {
 	left: 0;
-	width: 39.2%;
+	width: 43.1%;
 }
 
 .mastMask {
@@ -190,15 +190,15 @@ img.scheme {
 }
 
 #mastMaskFore {
-	left: 82.2%;
+	left: 83.4%;
 }
 
 #mastMaskMain {
-	left: 44.8%;
+	left: 48.3%;
 }
 
 #mastMaskMizzen {
-	left: 16.4%;
+	left: 15.4%;
 }
 
 img.point {
