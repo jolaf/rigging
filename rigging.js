@@ -95,8 +95,9 @@ Point.prototype.attachLine = function (line) {
     this.lines.push(line);
 };
 
-Point.prototype.createElement = function () { // ToDo: Add side to description using %s or to the end
-    this.description = this.rail.description + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
+Point.prototype.createElement = function () {
+    // Setting location
+    this.location = this.rail.location + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
     if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
         var number;
         var direction;
@@ -108,18 +109,35 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
             number = this.rail.points.length + 1 - this.number;
             direction = ' ' + this.rail.reverseDirection;
         }
-        this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
+        this.location += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
-    this.icon.css({
-        left: this.x,
-        top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
-        transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
-    });
-    this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
-    var name = Line.mergeNames(this.lines);
+    // Construct point name from names of connected lines
+    assert(this.lines, "No lines for point " + this.location);
+    if (this.lines.length === 1) {
+        this.name = this.lines[0].name;
+    } else {
+        var lineNames = this.lines.map(function (line) { return line.name; });
+        var subNames = [];
+        var theLastWord;
+        for (var i = 0, lineName; lineName = lineNames[i++];) { // jshint ignore:line
+            var words = lineName.split(' ');
+            var lastWord = words[words.length - 1];
+            if (theLastWord) {
+                if (lastWord != theLastWord) {
+                    this.name = lineNames.join(' / ');
+                    break; // This is why we use for(), not $.each() above
+                }
+            } else {
+                theLastWord = lastWord;
+            }
+            subNames.push(words.slice(0, -1).join(' '));
+        }
+        if (!this.name) {
+            this.name = subNames.join(' / ') + ' ' + theLastWord;
+        }
+    }
+    // Connect similarly named lines
     var thisLines = this.lines;
-    assert(thisLines, "No lines for point " + this.description);
     $.each(Line.lines, function (_index, line) {
         if (thisLines.indexOf(line) < 0) {
             $.each(thisLines, function (_index, thisLine) {
@@ -129,10 +147,21 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
             });
         }
     });
-    this.elements = this.icon.add(this.pointNumber);
-    this.elements.each(function (_index, element) {
-        $(element).data('title', name);
+    // Creating HTML elements
+    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
+    this.icon.css({
+        left: this.x,
+        top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
+        transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
+    this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    // Preparing jQuery collections
+    this.elements = this.icon.add(this.pointNumber);
+    var thisName = this.name;
+    this.elements.each(function (_index, element) {
+        $(element).data('title', thisName);
+    });
+    // Setting event handlers
     this.elements.on('click', this, Questionary.answerQuestion);
     this.elements.on('mouseenter mouseleave', this, function (event) {
         var isEnter = (event.type == 'mouseenter');
@@ -202,8 +231,8 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
-    this.description = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
-    assert(args, "No points in rail: " + this.description);
+    this.location = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
+    assert(args, "No points in rail: " + this.location);
     this.direction        = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с кормы' : 'от центра';
     this.reverseDirection = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с носа'  : 'с краю';
     var prefix = [deck, this, this.assym || STARBOARD];
@@ -406,29 +435,6 @@ Line.getSublines = function () {
     $.each(Line.lines, function (_index, line) {
         line.sublines = Subline.getSublines(line);
     });
-};
-
-Line.mergeNames = function (lines) {
-    assert(lines);
-    if (lines.length === 1) {
-        return lines[0].name;
-    }
-    var names = lines.map(function (line) { return line.name; });
-    var subNames = [];
-    var theLastWord;
-    for (var i = 0, name; name = names[i++];) { // jshint ignore:line
-        var words = name.split(' ');
-        var lastWord = words[words.length - 1];
-        if (theLastWord) {
-            if (lastWord != theLastWord) {
-                return names.join(' / '); // This is why we use for(), not $.each() above
-            }
-        } else {
-            theLastWord = lastWord;
-        }
-        subNames.push(words.slice(0, -1).join(' '));
-    }
-    return subNames.join(' / ') + ' ' + theLastWord;
 };
 
 function Sail(name, mast) {
@@ -777,12 +783,12 @@ Questionary.askQuestion = function () {
             while (true) {
                 point = Point.points.random();
                 checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.description != Questionary.correctAnswer.description)) {
+                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.location != Questionary.correctAnswer.location)) {
                     break;
                 }
             }
             Questionary.correctAnswer = point;
-            $('#question').text(Questionary.correctAnswer.description);
+            $('#question').text(Questionary.correctAnswer.location);
             $('#overlay').removeClass('highlight pointer');
             $('#sublines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
@@ -829,7 +835,7 @@ Questionary.answerQuestion = function (event) {
             });
             if (!isCorrect) {
                 point.elements.addClass('wrongAnswer');
-                $('#rightAnswerText').text(Line.mergeNames(point.lines));
+                $('#rightAnswerText').text(point.name);
             }
             break;
         case setMode.WHICH:
@@ -874,7 +880,7 @@ Questionary.answerQuestion = function (event) {
                 if (Questionary.preAnswer) {
                     Questionary.preAnswer.element.addClass('wrongAnswer');
                 }
-                $('#rightAnswerText').text(Line.mergeNames(Questionary.correctAnswer.lines));
+                $('#rightAnswerText').text(Questionary.correctAnswer.name);
             }
             Questionary.status = Questionary.ANSWERED;
             break;

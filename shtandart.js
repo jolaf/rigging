@@ -119,28 +119,28 @@ var DECKS = [
   // Deck        Title
     [FORE_DECK, 'На баке', [
       // Rail                Assym        X0   Y0 stepX    stepY  N  Type=PIN Rotation
-        [FRONT_RAIL,         ,          4076,  22,     ,      75, 5], // 276
+        [FRONT_RAIL,         ,          4074,  22,     ,      75, 5], // 276
         [BEHIND_FRONT,       ,          4112, 101,     ,,, CLEAT, 90],
-        [BACK_RAIL,          ,          3255, 119,     ,      75, 3],
-        [SIDE_RAIL,          ,          3400, 399,   74,        , 8],
-        [SHROUDS_RAIL,       ,          3523, 457,   63,        , 5],
+        [BACK_RAIL,          ,          3254, 119,     ,      75, 3],
+        [SIDE_RAIL,          ,          3400, 398,   74,        , 8],
+        [SHROUDS_RAIL,       ,          3523, 455,   63,        , 5],
         [ON_DECK_FRONT,      ,          3966, 340,     ,,, CLEAT],
         [FRONT_FISTS,        ,          3849, 115,     ,,,  FIST],
         [BACK_PILLARS,       ,          3541, 146,     ,,, CLEAT],
-        [BEHIND_MAST_RAIL,   ,          3500,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
+        [BEHIND_MAST_RAIL,   ,          3499,  23, [[,, PIN], [, 55, PIN], [, 174, PIN]]],
         [AT_MAST_FRONT,      CENTER,    3768, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3710,  85,     ,,, CLEAT, 75],
     ]],
     [MAIN_DECK, 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
         [BULWARK,            ,          2543, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
-        [SIDE_RAIL,          ,          1854, 500,   53,       7, 6],
+        [SIDE_RAIL,          ,          1854, 499,   53,       7, 6],
         [ABOVE_RAIL,         ,          1906, 567,     ,,, CLEAT, 8],
         [FRONT_PILLARS,      ,          2456, 324,     ,,, CLEAT],
         [ON_DECK_FRONT,      ,          2406, 265,     ,,, CLEAT],
         [BACK_FISTS,         ,          1880, 304,     ,,,  FIST],
         [BEHIND_MAST_RAIL,   ,          1889,  26,     ,      93, 3],
-        [SIDE_MAST_RAIL,     ,          1968, 312,   69,        , 6],
+        [SIDE_MAST_RAIL,     ,          1968, 311,   69,        , 6],
         [AT_MAST_FRONT,      CENTER,    2261, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    2033, -12,     ,,, CLEAT, 90],
     ]],
@@ -148,8 +148,8 @@ var DECKS = [
         [AT_FRONT,           CENTER,    1607, -19,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1750, 425,      ,,,  KNOT],
         [BULWARK,            ,           700, 490, [[,, SCLEAT, -45], [320, 25, SCLEAT, 105], [440, 27, SCLEAT, 80], [600, -3, VCLEAT]]],
-        [SIDE_RAIL,          ,           800, 569,   43,       3, 4],
-        [SHROUDS_RAIL,       ,           498, 569,   38,       6, 5],
+        [SIDE_RAIL,          ,           800, 567,   43,       3, 4],
+        [SHROUDS_RAIL,       ,           498, 567,   38,       6, 5],
         [AT_MAST,            ,           627,  52, [[,,, -40], [103, 44,, 90]]], // 632 587, 625 595 -40
         [POOP_BULWARK,       ,            30, 360, [[,, VANG_TACKLE], [60,, VCLEAT, 14], [280, 140,, 13]], IGNORE_DECK],
         [POOP_FLAGSTAFF,     ,            85,  25,      ,,, CLEAT, 60, IGNORE_DECK],
