@@ -110,7 +110,6 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         }
         this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    assert(this.lines, "No lines for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
     this.icon.css({
         left: this.x,
@@ -118,44 +117,44 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
     this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
-    this.elements = this.icon.add(this.pointNumber);
     var name = Line.mergeNames(this.lines);
+    var thisLines = this.lines;
+    assert(thisLines, "No lines for point " + this.description);
+    $.each(Line.lines, function (_index, line) {
+        if (thisLines.indexOf(line) < 0) {
+            $.each(thisLines, function (_index, thisLine) {
+                if (line.name == thisLine.name) {
+                    thisLines.push(line);
+                }
+            });
+        }
+    });
+    this.elements = this.icon.add(this.pointNumber);
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
+    this.elements.on('click', this, Questionary.answerQuestion);
     this.elements.on('mouseenter mouseleave', this, function (event) {
+        var isEnter = (event.type == 'mouseenter');
         if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
             return;
         }
-        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
-            if (setMode.mode === setMode.DEMO) {
-                Questionary.lastEntered = event.type == 'mouseenter' ? event.data.icon : null;
-                if (Questionary.status === Questionary.ANSWERED) {
-                    return;
-                }
+        if (setMode.mode === setMode.DEMO) {
+            Questionary.lastEntered = (isEnter ? event.data.icon : null);
+            if (Questionary.status === Questionary.ANSWERED) {
+                return;
             }
+        }
+        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
             $.each(event.data.lines, function (_index, line) {
-                line.mouseHandler(event.type == 'mouseenter');
+                line.mouseHandler(isEnter);
             });
         } else { // WHERE ASKED
-            event.data.mouseHandler(event.type == 'mouseenter');
+            event.data.icon.toggleClass('on', isEnter);
+            event.data.pointNumber.toggleClass('on', isEnter);
         }
     });
-    this.elements.on('click', this, Questionary.answerQuestion);
     return this.pointNumber;
-};
-
-Point.prototype.mouseHandler = function (isEnter) {
-    this.icon.toggleClass('on', isEnter);
-    if (setMode.mode === setMode.WHERE) {
-        this.pointNumber.toggleClass('on', isEnter);
-    } else { // WHICH or DEMO
-        $.each(this.lines, function (_index, line) {
-            $.each(line.sublines, function (_index, subline) {
-                subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
-            });
-        });
-    }
 };
 
 Point.placeElements = function (location) {
@@ -382,23 +381,22 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
 }
 
 Line.prototype.mouseHandler = function (isEnter) {
-    $.each(this.sublines.length == 1 ? this.sublines : this.points, function (_index, sublineOrPoint) { // ToDo: Cheat, won't work with multiple points
-        sublineOrPoint.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
+    $.each(this.points, function (_index, point) {
+        point.elements.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+    });
+    $.each(this.sublines, function (_index, subline) {
+        subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 
 Line.construct = function () {
-    var uniqueNames = [];
     Line.lines = [];
     $.each(LINES, function (_index, args) {
         var prefix = [args[0], ''];
         $.each(args[1], function (_index, args) {
             prefix[1] = args[0];
             $.each(args[1], function (_index, args) {
-                var line = applyNew(Line, prefix.concat(args));
-                assert($.inArray(uniqueNames, line.name) < 0, "Duplicate line name: " + line.name);
-                uniqueNames.push(line.name);
-                Line.lines.push(line);
+                Line.lines.push(applyNew(Line, prefix.concat(args)));
             });
         });
     });
@@ -423,7 +421,7 @@ Line.mergeNames = function (lines) {
         var lastWord = words[words.length - 1];
         if (theLastWord) {
             if (lastWord != theLastWord) {
-                return names.join(' / ');
+                return names.join(' / '); // This is why we use for(), not $.each() above
             }
         } else {
             theLastWord = lastWord;
@@ -486,16 +484,24 @@ function Subline(element, sublineType) {
     this.sublineType = sublineType;
     this.complimentaries = [];
     this.points = [];
+    this.lines = [];
+    this.element.on('click', this, Questionary.answerQuestion);
     this.element.on('mouseenter mouseleave', this, function (event) {
+        var isEnter = (event.type == 'mouseenter');
         if (setMode.mode === setMode.DEMO) {
-            Questionary.lastEntered = event.type == 'mouseenter' ? event.data.element : null;
+            Questionary.lastEntered = (isEnter ? event.data.element : null);
             if (Questionary.status === Questionary.ANSWERED) {
                 return;
             }
         }
-        event.data.mouseHandler(event.type == 'mouseenter');
+        if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+            event.data.element.toggleClass('on', isEnter);
+        } else {
+            $.each(event.data.lines, function (_index, line) {
+                line.mouseHandler(isEnter);
+            });
+        }
     });
-    this.element.on('click', this, Questionary.answerQuestion);
 }
 
 Subline.SAIL = 'SAIL';
@@ -503,23 +509,14 @@ Subline.SAILLINE = 'SAILLINE';
 Subline.NONSAILLINE = 'NONSAILLINE';
 
 Subline.prototype.addLine = function (line) {
-    var points = this.points;
+    this.lines.push(line);
+    var thisPoints = this.points;
     $.each(line.points, function (_index, point) {
-        if (points.indexOf(point) < 0) {
-            points.push(point);
+        if (thisPoints.indexOf(point) < 0) {
+            thisPoints.push(point);
         }
     });
     return this;
-};
-
-Subline.prototype.mouseHandler = function (isEnter) {
-    if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
-        this.element.toggleClass('on', isEnter);
-    } else {
-        $.each(this.points, function (_index, point) {
-            point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
-        });
-    }
 };
 
 Subline.construct = function () {

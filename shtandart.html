@@ -784,7 +784,7 @@ button.info {
                 <strong>Наведение мыши</strong> на название снасти <span class="info on">подсвечивает</span> все паруса, снаряжённые такой снастью,
                 а также все точки крепления снастей этого типа на палубе.
                 Наведение мыши на название паруса аналогично <span class="info on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
-                Наведение на точку крепления снасти на схеме <span class="info on">подсвечивает</span> её тип и название паруса, к которому она относится.
+                Наведение на точку крепления снастей на схеме <span class="info on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке.
               </p>
               <p>
                 <strong>По клику</strong> в любое место <span class="info on">подсвеченные</span> снасти фиксируются, и далее,
@@ -813,6 +813,7 @@ button.info {
                 Ответить можно кликом в соответствующую точку схемы.
                 Правильный ответ (и другие возможные правильные ответы) <span class="info rightAnswer">подсвечивается</span> зелёным цветом.
                 Если дан неправильный ответ, он также <span class="info wrongAnswer">подсвечивается</span> красным цветом.
+                Если точек крепления для указанной снасти на палубе несколько, правильным ответом будет сочтено указание любой из них.
               </p>
               <p>
                 <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="info on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
@@ -870,7 +871,7 @@ button.info {
               <p>
                 Этот режим аналогичен режиму <strong>Где снасть?</strong>, но задаёт вопросы &laquo;наоборот&raquo;.
                 Программа называет расположение точки крепления снасти (и <span class="info on">подсвечивает</span> её на схеме)
-                и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
+                и предлагает вспомнить, какие снасти крепятся в этой точке.
                 Список снастей внизу аналогичен списку в режиме <strong>Просмотр</strong>.
               </p>
               <p>
@@ -881,6 +882,10 @@ button.info {
                 Для снастей, которыми снаряжены несколько парусов,
                 нужно последовательно, в любом порядке, кликнуть в название снасти и название паруса.
                 Пока выполнен только один из двух кликов, ответ считается неполным и может быть изменён.
+              </p>
+              <p>
+                Если в данной точке крепятся или могут крепиться различные снасти,
+                указание любой из них будет сочтено правильным ответом.
               </p>
               <p>
                 <strong>Галочки с названиями палуб</strong> в средней части верхнего меню позволяют
@@ -916,7 +921,7 @@ button.info {
       &copy; Василий Захаров <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a> для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016
     </p></td>
     <td>
-      <p id="build">b20161214-1852G</p>
+      <p id="build">b20161215-0420G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1324,7 +1329,6 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         }
         this.description += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    assert(this.lines, "No lines for point " + this.description);
     this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
     this.icon.css({
         left: this.x,
@@ -1332,44 +1336,44 @@ Point.prototype.createElement = function () { // ToDo: Add side to description u
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
     this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
-    this.elements = this.icon.add(this.pointNumber);
     var name = Line.mergeNames(this.lines);
+    var thisLines = this.lines;
+    assert(thisLines, "No lines for point " + this.description);
+    $.each(Line.lines, function (_index, line) {
+        if (thisLines.indexOf(line) < 0) {
+            $.each(thisLines, function (_index, thisLine) {
+                if (line.name == thisLine.name) {
+                    thisLines.push(line);
+                }
+            });
+        }
+    });
+    this.elements = this.icon.add(this.pointNumber);
     this.elements.each(function (_index, element) {
         $(element).data('title', name);
     });
+    this.elements.on('click', this, Questionary.answerQuestion);
     this.elements.on('mouseenter mouseleave', this, function (event) {
+        var isEnter = (event.type == 'mouseenter');
         if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
             return;
         }
-        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
-            if (setMode.mode === setMode.DEMO) {
-                Questionary.lastEntered = event.type == 'mouseenter' ? event.data.icon : null;
-                if (Questionary.status === Questionary.ANSWERED) {
-                    return;
-                }
+        if (setMode.mode === setMode.DEMO) {
+            Questionary.lastEntered = (isEnter ? event.data.icon : null);
+            if (Questionary.status === Questionary.ANSWERED) {
+                return;
             }
+        }
+        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
             $.each(event.data.lines, function (_index, line) {
-                line.mouseHandler(event.type == 'mouseenter');
+                line.mouseHandler(isEnter);
             });
         } else { // WHERE ASKED
-            event.data.mouseHandler(event.type == 'mouseenter');
+            event.data.icon.toggleClass('on', isEnter);
+            event.data.pointNumber.toggleClass('on', isEnter);
         }
     });
-    this.elements.on('click', this, Questionary.answerQuestion);
     return this.pointNumber;
-};
-
-Point.prototype.mouseHandler = function (isEnter) {
-    this.icon.toggleClass('on', isEnter);
-    if (setMode.mode === setMode.WHERE) {
-        this.pointNumber.toggleClass('on', isEnter);
-    } else { // WHICH or DEMO
-        $.each(this.lines, function (_index, line) {
-            $.each(line.sublines, function (_index, subline) {
-                subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
-            });
-        });
-    }
 };
 
 Point.placeElements = function (location) {
@@ -1596,23 +1600,22 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
 }
 
 Line.prototype.mouseHandler = function (isEnter) {
-    $.each(this.sublines.length == 1 ? this.sublines : this.points, function (_index, sublineOrPoint) { // ToDo: Cheat, won't work with multiple points
-        sublineOrPoint.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
+    $.each(this.points, function (_index, point) {
+        point.elements.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
+    });
+    $.each(this.sublines, function (_index, subline) {
+        subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
     });
 };
 
 Line.construct = function () {
-    var uniqueNames = [];
     Line.lines = [];
     $.each(LINES, function (_index, args) {
         var prefix = [args[0], ''];
         $.each(args[1], function (_index, args) {
             prefix[1] = args[0];
             $.each(args[1], function (_index, args) {
-                var line = applyNew(Line, prefix.concat(args));
-                assert($.inArray(uniqueNames, line.name) < 0, "Duplicate line name: " + line.name);
-                uniqueNames.push(line.name);
-                Line.lines.push(line);
+                Line.lines.push(applyNew(Line, prefix.concat(args)));
             });
         });
     });
@@ -1637,7 +1640,7 @@ Line.mergeNames = function (lines) {
         var lastWord = words[words.length - 1];
         if (theLastWord) {
             if (lastWord != theLastWord) {
-                return names.join(' / ');
+                return names.join(' / '); // This is why we use for(), not $.each() above
             }
         } else {
             theLastWord = lastWord;
@@ -1700,16 +1703,24 @@ function Subline(element, sublineType) {
     this.sublineType = sublineType;
     this.complimentaries = [];
     this.points = [];
+    this.lines = [];
+    this.element.on('click', this, Questionary.answerQuestion);
     this.element.on('mouseenter mouseleave', this, function (event) {
+        var isEnter = (event.type == 'mouseenter');
         if (setMode.mode === setMode.DEMO) {
-            Questionary.lastEntered = event.type == 'mouseenter' ? event.data.element : null;
+            Questionary.lastEntered = (isEnter ? event.data.element : null);
             if (Questionary.status === Questionary.ANSWERED) {
                 return;
             }
         }
-        event.data.mouseHandler(event.type == 'mouseenter');
+        if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+            event.data.element.toggleClass('on', isEnter);
+        } else {
+            $.each(event.data.lines, function (_index, line) {
+                line.mouseHandler(isEnter);
+            });
+        }
     });
-    this.element.on('click', this, Questionary.answerQuestion);
 }
 
 Subline.SAIL = 'SAIL';
@@ -1717,23 +1728,14 @@ Subline.SAILLINE = 'SAILLINE';
 Subline.NONSAILLINE = 'NONSAILLINE';
 
 Subline.prototype.addLine = function (line) {
-    var points = this.points;
+    this.lines.push(line);
+    var thisPoints = this.points;
     $.each(line.points, function (_index, point) {
-        if (points.indexOf(point) < 0) {
-            points.push(point);
+        if (thisPoints.indexOf(point) < 0) {
+            thisPoints.push(point);
         }
     });
     return this;
-};
-
-Subline.prototype.mouseHandler = function (isEnter) {
-    if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
-        this.element.toggleClass('on', isEnter);
-    } else {
-        $.each(this.points, function (_index, point) {
-            point.mouseHandler(isEnter); // ToDo: Replace with jQuery collection?
-        });
-    }
 };
 
 Subline.construct = function () {
