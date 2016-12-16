@@ -96,9 +96,9 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.prototype.createElement = function () {
-    // Setting location
+    // Setting location, we can't do it in the constructor, as this.rail has not been constructed yet as in there
     this.location = this.rail.location + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
-    if (this.rail.direction) { // We can't do it in the constructor, as this.rail has not been constructed yet as in there
+    if (this.rail.direction) {
         var number;
         var direction;
         var center = (this.rail.points.length + 1) / 2;
@@ -111,7 +111,7 @@ Point.prototype.createElement = function () {
         }
         this.location += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
     }
-    // Construct point name from names of connected lines
+    // Constructing point name from names of connected lines
     assert(this.lines, "No lines for point " + this.location);
     if (this.lines.length === 1) {
         this.name = this.lines[0].name;
@@ -136,7 +136,7 @@ Point.prototype.createElement = function () {
             this.name = subNames.join(' / ') + ' ' + theLastWord;
         }
     }
-    // Connect similarly named lines
+    // Connecting similarly named lines
     var thisLines = this.lines;
     $.each(Line.lines, function (_index, line) {
         if (thisLines.indexOf(line) < 0) {
@@ -163,26 +163,7 @@ Point.prototype.createElement = function () {
     });
     // Setting event handlers
     this.elements.on('click', this, Questionary.answerQuestion);
-    this.elements.on('mouseenter mouseleave', this, function (event) {
-        var isEnter = (event.type == 'mouseenter');
-        if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
-            return;
-        }
-        if (setMode.mode === setMode.DEMO) {
-            Questionary.lastEntered = (isEnter ? event.data.icon : null);
-            if (Questionary.status === Questionary.ANSWERED) {
-                return;
-            }
-        }
-        if (setMode.mode === setMode.DEMO || Questionary.status === Questionary.ANSWERED) {
-            $.each(event.data.lines, function (_index, line) {
-                line.mouseHandler(isEnter);
-            });
-        } else { // WHERE ASKED
-            event.data.icon.toggleClass('on', isEnter);
-            event.data.pointNumber.toggleClass('on', isEnter);
-        }
-    });
+    this.elements.on('mouseenter mouseleave', this, this.mouseHandler);
     return this.pointNumber;
 };
 
@@ -209,6 +190,23 @@ Point.tooltips = function (enable) {
             }
         });
     });
+};
+
+Point.prototype.mouseHandler = function (event) {
+    if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
+        return;
+    }
+    var isEnter = (event.type == 'mouseenter');
+    if (setMode.mode === setMode.DEMO) {
+        Questionary.lastEntered = (isEnter ? event.data.icon : null);
+        if (Questionary.status === Questionary.ANSWERED) {
+            return;
+        }
+    }
+    (setMode.mode === setMode.WHERE ?
+        (Questionary.status === Questionary.ASKED ? event.data.elements
+                                                  : event.data.whereObjects)
+                                                  : event.data.demoObjects).toggleClass('on', isEnter);
 };
 
 function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, ignoreDeck) {
@@ -300,10 +298,10 @@ function Deck(name, title, rails) {
     assert(title, "No deck title");
     this.title = title;
     var uniqueRails = [];
-    var deck = this;
+    var thisDeck = this;
     this.rails = $.map(rails, function (railArgs, _index) {
-        var rail = applyNew(Rail, [deck,].concat(railArgs));
-        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + deck.name + '/' + rail.name);
+        var rail = applyNew(Rail, [thisDeck,].concat(railArgs));
+        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + thisDeck.name + '/' + rail.name);
         uniqueRails.push(rail.name);
         return rail;
     });
@@ -371,7 +369,8 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     this.lineName = lineName;
     this.detail = detail || '';
     fullName = fullName || '';
-    var fullNameWords, pluralWords;
+    var fullNameWords;
+    var pluralWords;
     switch (fullName) {
         case DETAIL_LINE:
             fullNameWords = this.detail ? [this.detail, this.lineName] : [this.lineName,];
@@ -405,18 +404,9 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
     this.pluralName = pluralName === SINGULAR ? this.name : pluralWords.join(' ').capitalize();
     this.name = pluralName === PLURAL ? this.pluralName : this.name;
     if (this.assym) {
-        this.pluralName = undefined;
+        this.pluralName = null;
     }
 }
-
-Line.prototype.mouseHandler = function (isEnter) {
-    $.each(this.points, function (_index, point) {
-        point.elements.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
-    });
-    $.each(this.sublines, function (_index, subline) {
-        subline.element.toggleClass('on', isEnter); // ToDo: Replace with jQuery collection?
-    });
-};
 
 Line.construct = function () {
     Line.lines = [];
@@ -431,9 +421,35 @@ Line.construct = function () {
     });
 };
 
-Line.getSublines = function () {
+Line.linkLines = function () {
     $.each(Line.lines, function (_index, line) {
+        var demoElements = [];
+        var whereElements = [];
         line.sublines = Subline.getSublines(line);
+        $.each(line.sublines, function (_index, subline) {
+            demoElements.push(subline.element[0]);
+        });
+        $.each(line.points, function (_index, point) {
+            demoElements.push(point.icon[0]);
+            whereElements.push(point.icon[0]);
+            whereElements.push(point.pointNumber[0]);
+        });
+        line.demoObjects = $(demoElements);
+        line.whereObjects = $(whereElements);
+    });
+    $.each(Point.points.concat(Subline.sublines), function (_index, target) {
+        var demoElements = [];
+        var whereElements = [];
+        $.each(target.lines, function (_index, line) {
+            Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
+            if (target instanceof Point) {
+                Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
+            }
+        });
+        target.demoObjects = $(demoElements);
+        if (target instanceof Point) {
+            target.whereObjects = $(whereElements);
+        }
     });
 };
 
@@ -492,22 +508,7 @@ function Subline(element, sublineType) {
     this.points = [];
     this.lines = [];
     this.element.on('click', this, Questionary.answerQuestion);
-    this.element.on('mouseenter mouseleave', this, function (event) {
-        var isEnter = (event.type == 'mouseenter');
-        if (setMode.mode === setMode.DEMO) {
-            Questionary.lastEntered = (isEnter ? event.data.element : null);
-            if (Questionary.status === Questionary.ANSWERED) {
-                return;
-            }
-        }
-        if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
-            event.data.element.toggleClass('on', isEnter);
-        } else {
-            $.each(event.data.lines, function (_index, line) {
-                line.mouseHandler(isEnter);
-            });
-        }
-    });
+    this.element.on('mouseenter mouseleave', this, this.mouseHandler);
 }
 
 Subline.SAIL = 'SAIL';
@@ -523,6 +524,20 @@ Subline.prototype.addLine = function (line) {
         }
     });
     return this;
+};
+
+Subline.prototype.mouseHandler = function (event) {
+    var isEnter = (event.type == 'mouseenter');
+    if (setMode.mode === setMode.DEMO) {
+        Questionary.lastEntered = (isEnter ? event.data.element : null);
+        if (Questionary.status === Questionary.ANSWERED) {
+            return;
+        }
+    }
+    (setMode.mode === setMode.WHICH &&
+     Questionary.status === Questionary.ASKED ?
+        event.data.element
+      : event.data.demoObjects).toggleClass('on', isEnter);
 };
 
 Subline.construct = function () {
@@ -925,13 +940,13 @@ Questionary.reset = function (event) {
 };
 
 function main() {
-    // Create data structures from constant data
+    // Create data objects from constant data
     Deck.construct();
     Line.construct();
     Subline.construct();
-    // Create elements for data structures
+    // Configure and link data objects
     Deck.createElements();
-    Line.getSublines();
+    Line.linkLines();
     // Put generated elements to DOM
     Deck.placeElements('#pointNumbers');
     Point.placeElements('#overlay');
