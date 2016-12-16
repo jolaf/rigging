@@ -90,12 +90,7 @@ Point.marks[ BUNTLINE] = 'buntline';
 Point.marks[LEECHLINE] = 'leechline';
 Point.marks[  BOWLINE] = 'bowline';
 
-Point.prototype.attachLine = function (line) {
-    assert(line);
-    this.lines.push(line);
-};
-
-Point.prototype.createElement = function () {
+Point.prototype.createObject = function () {
     // Setting location, we can't do it in the constructor, as this.rail has not been constructed yet as in there
     this.location = this.rail.location + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
     if (this.rail.direction) {
@@ -147,46 +142,50 @@ Point.prototype.createElement = function () {
             });
         }
     });
-    // Creating HTML elements
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
-    this.icon.css({
+    // Creating HTML objects
+    this.iconObject = $('<img class="point ' + this.type + '" ' + ' alt="" src="images/blank.gif">');
+    this.iconObject.css({
         left: this.x,
-        top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
+        top: this.y, // Must be adjusted for height when visible (in placeObjects), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
     // Preparing jQuery collections
-    this.elements = this.icon.add(this.pointNumber);
+    this.objects = this.iconObject.add(this.numberObject);
     var thisName = this.name;
-    this.elements.each(function (_index, element) {
+    this.objects.each(function (_index, element) {
         $(element).data('title', thisName);
     });
     // Setting event handlers
-    this.elements.on('click', this, Questionary.answerQuestion);
-    this.elements.on('mouseenter mouseleave', this, this.mouseHandler);
-    return this.pointNumber;
+    this.objects.on('click', this, Questionary.answerQuestion);
+    this.objects.on('mouseenter mouseleave', this, this.mouseHandler);
+    return this.numberObject;
 };
 
-Point.placeElements = function (location) {
-    location = $(location);
+Point.prototype.attachLine = function (line) {
+    this.lines.push(line);
+};
+
+Point.placeObjects = function () {
+    var location = $('#overlay');
     $.each(Point.points, function (_index, point) {
-        var icon = point.icon;
-        location.append(icon);
-        icon.css({
-            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
+        var iconObject = point.iconObject;
+        location.append(iconObject);
+        iconObject.css({
+            top: '+=' + (SCHEME_HEIGHT - (parseInt(iconObject.css('top')) > -20 ? 0 : parseInt(iconObject.css('height')))), // Could be done in createObject(), but it only works in Firefox
         });
-        point.elements.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
+        point.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     });
 };
 
 Point.tooltips = function (enable) {
     $.each(Point.points, function (_index, point) {
-        point.elements.each(function (_index, point) {
-            point = $(point);
+        point.objects.each(function (_index, object) {
+            object = $(object);
             if (enable) {
-                point.attr('title', point.data('title'));
+                object.attr('title', object.data('title'));
             } else {
-                point.removeAttr('title');
+                object.removeAttr('title');
             }
         });
     });
@@ -198,13 +197,13 @@ Point.prototype.mouseHandler = function (event) {
     }
     var isEnter = (event.type == 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.icon : null);
+        Questionary.lastEntered = (isEnter ? event.data.iconObject : null);
         if (Questionary.status === Questionary.ANSWERED) {
             return;
         }
     }
     (setMode.mode === setMode.WHERE ?
-        (Questionary.status === Questionary.ASKED ? event.data.elements
+        (Questionary.status === Questionary.ASKED ? event.data.objects
                                                   : event.data.whereObjects)
                                                   : event.data.demoObjects).toggleClass('on', isEnter);
 };
@@ -250,7 +249,6 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
 }
 
 Rail.prototype.attachLine = function (number, line) {
-    assert(line);
     if (!number) {
         number = 1;
     } else if (number < 0) {
@@ -262,13 +260,13 @@ Rail.prototype.attachLine = function (number, line) {
     if (this.assym || line.assym != PORT) {
         point = this.points[number - 1];
         assert(point);
-        point.attachLine(line); // ToDo: Pass side
+        point.attachLine(line);
         ret.push(point);
     }
     if (!this.assym && (!line.assym || line.assym == PORT)) {
         point = this.portPoints[number - 1];
         assert(point);
-        point.attachLine(line); // ToDo: Pass side
+        point.attachLine(line);
         ret.push(point);
     }
     this.lines.push(line);
@@ -276,20 +274,20 @@ Rail.prototype.attachLine = function (number, line) {
     return ret;
 };
 
-Rail.prototype.createElement = function () {
-    var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
-    var points = $('span.points', element);
+Rail.prototype.createObject = function () {
+    var object = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
+    var points = $('span.points', object);
     $.each(this.portPoints.reverse(), function (_index, point) {
-        points.append(point.createElement()).append(' ');
+        points.append(point.createObject()).append(' ');
     });
     if (this.portPoints.length) {
         points.append('&nbsp;');
     }
     $.each(this.points, function (_index, point) {
-        points.append(' ').append(point.createElement());
+        points.append(' ').append(point.createObject());
     });
-    this.element = element;
-    return this.element;
+    this.object = object;
+    return this.object;
 };
 
 function Deck(name, title, rails) {
@@ -318,14 +316,14 @@ Deck.prototype.attachLine = function (railName, number, line) {
     return rails[0].attachLine(number, line);
 };
 
-Deck.prototype.createElement = function () {
-    var element =  $('<td class="deck"><h2>' + this.title.capitalize() + '</h2><ul></ul></td>');
-    var ul = $('ul', element);
+Deck.prototype.createObject = function () {
+    var object =  $('<td class="deck"><h2>' + this.title.capitalize() + '</h2><ul></ul></td>');
+    var ul = $('ul', object);
     $.each(this.rails, function (_index, rail) {
-        ul.append(rail.createElement());
+        ul.append(rail.createObject());
     });
-    this.element = element;
-    return this.element;
+    this.object = object;
+    return this.object;
 };
 
 Deck.construct = function () {
@@ -347,16 +345,16 @@ Deck.getDeck = function (deckName) {
     return decks[0];
 };
 
-Deck.createElements = function () {
+Deck.createObjects = function () {
     $.each(Deck.decks, function (_index, deck) {
-        deck.createElement();
+        deck.createObject();
     });
 };
 
-Deck.placeElements = function (location) {
-    var element = $(location);
+Deck.placeObjects = function () {
+    var location = $('#pointNumbers');
     $.each(Deck.decks, function (_index, deck) {
-        element.prepend(deck.element);
+        location.prepend(deck.object);
     });
 };
 
@@ -427,12 +425,12 @@ Line.linkLines = function () {
         var whereElements = [];
         line.sublines = Subline.getSublines(line);
         $.each(line.sublines, function (_index, subline) {
-            demoElements.push(subline.element[0]);
+            demoElements.push(subline.object[0]);
         });
         $.each(line.points, function (_index, point) {
-            demoElements.push(point.icon[0]);
-            whereElements.push(point.icon[0]);
-            whereElements.push(point.pointNumber[0]);
+            demoElements.push(point.iconObject[0]);
+            whereElements.push(point.iconObject[0]);
+            whereElements.push(point.numberObject[0]);
         });
         line.demoObjects = $(demoElements);
         line.whereObjects = $(whereElements);
@@ -500,15 +498,15 @@ Mast.prototype.attachLine = function (sailName, line) {
     return sail;
 };
 
-function Subline(element, sublineType) {
-    this.element = element;
-    this.name = element.text();
+function Subline(object, sublineType) {
+    this.object = object;
+    this.name = object.text();
     this.sublineType = sublineType;
     this.complimentaries = [];
     this.points = [];
     this.lines = [];
-    this.element.on('click', this, Questionary.answerQuestion);
-    this.element.on('mouseenter mouseleave', this, this.mouseHandler);
+    this.object.on('click', this, Questionary.answerQuestion);
+    this.object.on('mouseenter mouseleave', this, this.mouseHandler);
 }
 
 Subline.SAIL = 'SAIL';
@@ -529,14 +527,14 @@ Subline.prototype.addLine = function (line) {
 Subline.prototype.mouseHandler = function (event) {
     var isEnter = (event.type == 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.element : null);
+        Questionary.lastEntered = (isEnter ? event.data.object : null);
         if (Questionary.status === Questionary.ANSWERED) {
             return;
         }
     }
     (setMode.mode === setMode.WHICH &&
      Questionary.status === Questionary.ASKED ?
-        event.data.element
+        event.data.object
       : event.data.demoObjects).toggleClass('on', isEnter);
 };
 
@@ -808,7 +806,7 @@ Questionary.askQuestion = function () {
             $('#sublines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             $('.preAnswer').removeClass('preAnswer');
-            point.icon.addClass('question');
+            point.iconObject.addClass('question');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
@@ -827,7 +825,6 @@ Questionary.answerQuestion = function (event) {
         return;
     }
     event.stopPropagation(); // Avoid triggering nextQuestion()
-    var element = $(this);
     var isCorrect;
     switch(setMode.mode) {
         case setMode.DEMO:
@@ -835,11 +832,11 @@ Questionary.answerQuestion = function (event) {
             return;
         case setMode.WHERE:
             var point = event.data;
-            point.elements.removeClass('on');
+            point.objects.removeClass('on');
             $.each(Point.points, function (_index, point) {
                 $.each(point.lines, function (_index, line) {
                     if (line.name === Questionary.correctAnswer.name) {
-                        point.elements.addClass('rightAnswer');
+                        point.objects.addClass('rightAnswer');
                     }
                 });
             });
@@ -849,7 +846,7 @@ Questionary.answerQuestion = function (event) {
                 }
             });
             if (!isCorrect) {
-                point.elements.addClass('wrongAnswer');
+                point.objects.addClass('wrongAnswer');
                 $('#rightAnswerText').text(point.name);
             }
             break;
@@ -860,7 +857,7 @@ Questionary.answerQuestion = function (event) {
             }
             var points;
             if (Questionary.preAnswer) {
-                Questionary.preAnswer.element.removeClass('preAnswer');
+                Questionary.preAnswer.object.removeClass('preAnswer');
             }
             if (subline.sublineType === Subline.NONSAILLINE) {
                 Questionary.preAnswer = null;
@@ -871,7 +868,7 @@ Questionary.answerQuestion = function (event) {
                 }
                 if (!Questionary.preAnswer || subline.sublineType === Questionary.preAnswer.sublineType) {
                     Questionary.preAnswer = subline;
-                    subline.element.addClass('preAnswer');
+                    subline.object.addClass('preAnswer');
                     return;
                 }
                 points = subline.points.filter(function (value) {
@@ -879,21 +876,21 @@ Questionary.answerQuestion = function (event) {
                 });
             }
             isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
-            subline.element.mouseout();
+            subline.object.mouseout();
             $('#overlay').addClass('highlight');
-            Questionary.correctAnswer.icon.addClass('rightAnswer');
-            $.each(Questionary.correctAnswer.lines, function (_index, line) {
-                $.each(line.sublines, function (_index, subline) {
-                    subline.element.addClass('rightAnswer');
+            Questionary.correctAnswer.iconObject.addClass('rightAnswer');
+            $.each(Questionary.correctAnswer.lines, function (_index, correctLine) {
+                $.each(correctLine.sublines, function (_index, correctSubline) {
+                    correctSubline.object.addClass('rightAnswer');
                 });
             });
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
-                    point.icon.addClass('wrongAnswer');
+                    point.iconObject.addClass('wrongAnswer');
                 });
-                subline.element.addClass('wrongAnswer');
+                subline.object.addClass('wrongAnswer');
                 if (Questionary.preAnswer) {
-                    Questionary.preAnswer.element.addClass('wrongAnswer');
+                    Questionary.preAnswer.object.addClass('wrongAnswer');
                 }
                 $('#rightAnswerText').text(Questionary.correctAnswer.name);
             }
@@ -945,11 +942,11 @@ function main() {
     Line.construct();
     Subline.construct();
     // Configure and link data objects
-    Deck.createElements();
+    Deck.createObjects();
     Line.linkLines();
-    // Put generated elements to DOM
-    Deck.placeElements('#pointNumbers');
-    Point.placeElements('#overlay');
+    // Put generated objects to DOM
+    Deck.placeObjects();
+    Point.placeObjects();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
     $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
