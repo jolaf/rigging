@@ -99,7 +99,7 @@ Point.prototype.createObject = function () {
         var center = (this.rail.points.length + 1) / 2;
         if (this.number <= center) {
             number = this.number;
-            direction = number == center ? '' : ' ' + this.rail.direction;
+            direction = number === center ? '' : ' ' + this.rail.direction;
         } else {
             number = this.rail.points.length + 1 - this.number;
             direction = ' ' + this.rail.reverseDirection;
@@ -136,7 +136,7 @@ Point.prototype.createObject = function () {
     $.each(Line.lines, function (_index, line) {
         if (thisLines.indexOf(line) < 0) {
             $.each(thisLines, function (_index, thisLine) {
-                if (line.name == thisLine.name) {
+                if (line.name === thisLine.name) {
                     thisLines.push(line);
                 }
             });
@@ -149,7 +149,7 @@ Point.prototype.createObject = function () {
         top: this.y, // Must be adjusted for height when visible (in placeObjects), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.numberObject = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<a class="pointNumber">' + (this.rail.points.length === 1 ? 'I' : this.number) + '</a>');
     // Preparing jQuery collections
     this.objects = this.iconObject.add(this.numberObject);
     var thisName = this.name;
@@ -195,7 +195,7 @@ Point.prototype.mouseHandler = function (event) {
     if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         return;
     }
-    var isEnter = (event.type == 'mouseenter');
+    var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
         Questionary.lastEntered = (isEnter ? event.data.iconObject : null);
         if (Questionary.status === Questionary.ANSWERED) {
@@ -254,7 +254,7 @@ Rail.prototype.attachLine = function (number, line) {
     } else if (number < 0) {
         number += this.points.length + 1;
     }
-    assert (this.assym ? line.assym == this.assym : (!line.assym || line.assym == PORT || line.assym == STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
+    assert (this.assym ? line.assym === this.assym : (!line.assym || line.assym === PORT || line.assym === STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
     var point;
     var ret = [];
     if (this.assym || line.assym != PORT) {
@@ -263,7 +263,7 @@ Rail.prototype.attachLine = function (number, line) {
         point.attachLine(line);
         ret.push(point);
     }
-    if (!this.assym && (!line.assym || line.assym == PORT)) {
+    if (!this.assym && (!line.assym || line.assym === PORT)) {
         point = this.portPoints[number - 1];
         assert(point);
         point.attachLine(line);
@@ -311,10 +311,8 @@ function Deck(name, id, title, rails) {
 Deck.prototype.attachLine = function (railName, number, line) {
     assert(line);
     this.lines.push(line);
-    var rails = $.grep(this.rails, function (rail, _index) {
-        return railName === rail.name;
-    });
-    assert(rails.length == 1, "Unknown rail: " + railName);
+    var rails = this.rails.filter(function (rail) { return railName === rail.name; });
+    assert(rails.length === 1, "Unknown rail: " + railName);
     return rails[0].attachLine(number, line);
 };
 
@@ -331,7 +329,7 @@ Deck.prototype.createObject = function () {
 Deck.prototype.placeObject = function (location) {
     location.prepend(this.object);
     this.checkbox = $('#' + this.id + 'DeckSwitch input');
-    assert(this.checkbox.length == 1, "Deck checkbox not found: " + this.name + " / " + this.id);
+    assert(this.checkbox.length === 1, "Deck checkbox not found: " + this.name + " / " + this.id);
 };
 
 Deck.construct = function () {
@@ -346,10 +344,8 @@ Deck.construct = function () {
 
 Deck.getDeck = function (deckName) {
     assert(deckName, "No deck");
-    var decks = $.grep(Deck.decks, function (deck, _index) {
-        return deckName === deck.name;
-    });
-    assert(decks.length == 1, "Unknown deck: " + deckName);
+    var decks = Deck.decks.filter(function (deck) { return deckName === deck.name; });
+    assert(decks.length === 1, "Unknown deck: " + deckName);
     return decks[0];
 };
 
@@ -365,7 +361,7 @@ Deck.placeObjects = function () {
         deck.placeObject(location);
     });
     Deck.allCheckbox = $('#allDeckSwitch input');
-    assert(Deck.allCheckbox.length == 1, "All decks checkbox not found");
+    assert(Deck.allCheckbox.length === 1, "All decks checkbox not found");
 };
 
 function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
@@ -484,9 +480,9 @@ Mast.masts = [];
 
 Mast.getMast = function (mastName, mastID) {
     mastName = mastName || '';
-    var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
+    var masts = Mast.masts.filter(function (mast) { return mastName === mast.name; });
     var mast;
-    if (masts.length) { // == 1
+    if (masts.length) { // === 1
         mast = masts[0];
     } else {
         mast = new Mast(mastName, mastID);
@@ -498,8 +494,8 @@ Mast.getMast = function (mastName, mastID) {
 Mast.prototype.attachLine = function (sailName, line) {
     assert(line);
     var sail = new Sail(sailName, this);
-    var sails = $.grep(this.sails, function (checkSail, _index) { return sail.name === checkSail.name; });
-    if (sails.length) { // == 1
+    var sails = this.sails.filter(function (checkSail) { return sail.name === checkSail.name; });
+    if (sails.length) { // === 1
         sail = sails[0];
     } else {
         this.sails.push(sail);
@@ -521,7 +517,7 @@ Mast.placeObjects = function () {
         mast.placeObject();
     });
     Mast.allCheckbox = $('#allMastSwitch input');
-    assert(Mast.allCheckbox.length == 1, "All masts checkbox not found");
+    assert(Mast.allCheckbox.length === 1, "All masts checkbox not found");
 };
 
 function Subline(object, sublineType) {
@@ -551,7 +547,7 @@ Subline.prototype.addLine = function (line) {
 };
 
 Subline.prototype.mouseHandler = function (event) {
-    var isEnter = (event.type == 'mouseenter');
+    var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
         Questionary.lastEntered = (isEnter ? event.data.object : null);
         if (Questionary.status === Questionary.ANSWERED) {
@@ -593,17 +589,17 @@ Subline.getSublines = function (line) {
     var sublines;
     if (line.sail.name) {
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType == Subline.SAIL && subline.name == (line.detail && line.name.indexOf(line.lineName) === 0 ? line.detail : line.sail.name);
+            return subline.sublineType === Subline.SAIL && subline.name === (line.detail && line.name.indexOf(line.lineName) === 0 ? line.detail : line.sail.name);
         });
         assert(sublines.length, "Unknown subline sail: " + line.sail.name);
-        assert(sublines.length == 1, "Duplicate subline sail: " + line.sail.name);
+        assert(sublines.length === 1, "Duplicate subline sail: " + line.sail.name);
         var sailSubline = sublines[0];
         ret.push(sailSubline.addLine(line));
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.startsWith(subline.name + ' '));
+            return subline.sublineType === Subline.SAILLINE && (subline.name === (line.detail || line.lineName) || line.name.startsWith(subline.name + ' '));
         });
         assert(sublines.length, "Unknown sail subline: " + line.lineName);
-        assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
+        assert(sublines.length === 1, "Duplicate sail subline: " + line.lineName);
         var sailLineSubline = sublines[0];
         ret.push(sailLineSubline.addLine(line));
         sailSubline.complimentaries.push(sailLineSubline);
@@ -614,7 +610,7 @@ Subline.getSublines = function (line) {
             return subline.sublineType === Subline.NONSAILLINE && lineName.indexOf(subline.name.toLowerCase()) >= 0;
         });
         assert(sublines.length, "Unknown non-sail subline: " + lineName);
-        assert(sublines.length == 1, "Duplicate non-sail subline: " + lineName);
+        assert(sublines.length === 1, "Duplicate non-sail subline: " + lineName);
         $.each(sublines, function (_index, subline) {
             ret.push(subline.addLine(line));
         });
@@ -715,7 +711,7 @@ function menuHandler(event) {
     var checked;
     if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
         var deck = selector[0].id.slice(0, -10);
-        if (deck == 'all') {
+        if (deck === 'all') {
             resetDecks();
         } else {
             $('#' + deck + 'DeckMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
@@ -741,7 +737,7 @@ function menuHandler(event) {
         }
     } else if (input.attr('name') === 'mast') {
         var mast = selector[0].id.slice(0, -10);
-        if (mast == 'all') {
+        if (mast === 'all') {
             resetMasts();
         } else {
             $('#' + mast + 'MastMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
