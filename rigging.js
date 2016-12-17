@@ -22,7 +22,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.reEnd = function (suffix, cut) {
-    return this.slice(0, cut === 0 ? 0 : -(cut || suffix.length)) + suffix;
+    return this.slice(0, (cut === 0) ? 0 : -(cut || suffix.length)) + suffix;
 };
 
 Array.prototype.random = function () {
@@ -92,19 +92,19 @@ Point.marks[  BOWLINE] = 'bowline';
 
 Point.prototype.createObject = function () {
     // Setting location, we can't do it in the constructor, as this.rail has not been constructed yet as in there
-    this.location = this.rail.location + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
+    this.location = this.rail.location + ((this.side === CENTER) ? '' : (', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту'));
     if (this.rail.direction) {
         var number;
         var direction;
         var center = (this.rail.points.length + 1) / 2;
         if (this.number <= center) {
             number = this.number;
-            direction = number === center ? '' : ' ' + this.rail.direction;
+            direction = (number === center) ? '' : (' ' + this.rail.direction);
         } else {
             number = this.rail.points.length + 1 - this.number;
             direction = ' ' + this.rail.reverseDirection;
         }
-        this.location += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
+        this.location += ', ' + number  + '-' + ((this.type === PIN) ? 'й' : 'ая') + direction;
     }
     // Constructing point name from names of connected lines
     assert(this.lines, "No lines for point " + this.location);
@@ -149,7 +149,7 @@ Point.prototype.createObject = function () {
         top: this.y, // Must be adjusted for height when visible (in placeObjects), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.numberObject = $('<a class="pointNumber">' + (this.rail.points.length === 1 ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<a class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</a>');
     // Preparing jQuery collections
     this.objects = this.iconObject.add(this.numberObject);
     var thisName = this.name;
@@ -171,8 +171,8 @@ Point.placeObjects = function () {
     $.each(Point.points, function (_index, point) {
         var iconObject = point.iconObject;
         location.append(iconObject);
-        iconObject.css({
-            top: '+=' + (SCHEME_HEIGHT - (parseInt(iconObject.css('top')) > -20 ? 0 : parseInt(iconObject.css('height')))), // Could be done in createObject(), but it only works in Firefox
+        iconObject.css({ // Could be done in createObject(), but it only works in Firefox
+            top: '+=' + (SCHEME_HEIGHT - ((parseInt(iconObject.css('top')) > -20) ? 0 : parseInt(iconObject.css('height')))),
         });
         point.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     });
@@ -197,7 +197,7 @@ Point.prototype.mouseHandler = function (event) {
     }
     var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.iconObject : null);
+        Questionary.lastEntered = isEnter ? event.data.iconObject : null;
         if (Questionary.status === Questionary.ANSWERED) {
             return;
         }
@@ -228,10 +228,10 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
-    this.location = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
+    this.location = ignoreDeck ? name.capitalize() : (this.deck.title.capitalize() + ', ' + this.name);
     assert(args, "No points in rail: " + this.location);
-    this.direction        = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с кормы' : 'от центра';
-    this.reverseDirection = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с носа'  : 'с краю';
+    this.direction        = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с кормы' : 'от центра');
+    this.reverseDirection = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с носа'  : 'с краю');
     var prefix = [deck, this, this.assym || STARBOARD];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
@@ -254,7 +254,9 @@ Rail.prototype.attachLine = function (number, line) {
     } else if (number < 0) {
         number += this.points.length + 1;
     }
-    assert (this.assym ? line.assym === this.assym : (!line.assym || line.assym === PORT || line.assym === STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
+    assert(this.assym ? line.assym === this.assym
+                      : !line.assym || line.assym === PORT || line.assym === STARBOARD,
+        "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
     var point;
     var ret = [];
     if (this.assym || line.assym != PORT) {
@@ -385,7 +387,7 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
             pluralWords = $.map(fullNameWords.slice(0, 1), russianPlural).concat(fullNameWords.slice(1));
             break;
         case '': // GRAMMAR
-            fullNameWords = (this.detail ? [this.detail,] : []).concat([this.lineName,]).concat(this.sail.name || this.mast.name ? [this.sail.name || this.mast.name,] : []);
+            fullNameWords = (this.detail ? [this.detail,] : []).concat([this.lineName,]).concat((this.sail.name || this.mast.name) ? [this.sail.name || this.mast.name,] : []);
             fullNameWords = fullNameWords.slice(0, 1).concat($.map(fullNameWords.slice(1), russianGenetive));
             pluralWords = $.map(fullNameWords.slice(0, -1), russianPlural).concat(fullNameWords.slice(-1));
             pluralWords = pluralWords.slice(0, 1).concat($.map(pluralWords.slice(1, -1), russianGenetive)).concat(pluralWords.slice(-1));
@@ -405,8 +407,8 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
     }
     assert(pluralWords, "Empty pluralWords");
     this.name = fullNameWords.join(' ').capitalize();
-    this.pluralName = pluralName === SINGULAR ? this.name : pluralWords.join(' ').capitalize();
-    this.name = pluralName === PLURAL ? this.pluralName : this.name;
+    this.pluralName = (pluralName === SINGULAR) ? this.name : pluralWords.join(' ').capitalize();
+    this.name = (pluralName === PLURAL) ? this.pluralName : this.name;
     if (this.assym) {
         this.pluralName = null;
     }
@@ -549,7 +551,7 @@ Subline.prototype.addLine = function (line) {
 Subline.prototype.mouseHandler = function (event) {
     var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.object : null);
+        Questionary.lastEntered = isEnter ? event.data.object : null;
         if (Questionary.status === Questionary.ANSWERED) {
             return;
         }
@@ -589,7 +591,7 @@ Subline.getSublines = function (line) {
     var sublines;
     if (line.sail.name) {
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAIL && subline.name === (line.detail && line.name.indexOf(line.lineName) === 0 ? line.detail : line.sail.name);
+            return subline.sublineType === Subline.SAIL && subline.name === ((line.detail && line.name.indexOf(line.lineName) === 0) ? line.detail : line.sail.name);
         });
         assert(sublines.length, "Unknown subline sail: " + line.sail.name);
         assert(sublines.length === 1, "Duplicate subline sail: " + line.sail.name);
