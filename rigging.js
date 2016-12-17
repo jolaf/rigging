@@ -67,10 +67,10 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept side
+function Point(deck, rail, side, index, x, y, type, rotation) {
     assert(deck);
     this.deck = deck;
-    assert(rail);
+    assert(rail); // <--
     this.rail = rail;
     this.side = side;
     this.number = index + 1;
@@ -290,9 +290,11 @@ Rail.prototype.createObject = function () {
     return this.object;
 };
 
-function Deck(name, title, rails) {
+function Deck(name, id, title, rails) {
     assert(name, "No deck name");
     this.name = name;
+    assert(id, "No deck ID");
+    this.id = id;
     assert(title, "No deck title");
     this.title = title;
     var uniqueRails = [];
@@ -326,6 +328,12 @@ Deck.prototype.createObject = function () {
     return this.object;
 };
 
+Deck.prototype.placeObject = function (location) {
+    location.prepend(this.object);
+    this.checkbox = $('#' + this.id + 'DeckSwitch input');
+    assert(this.checkbox.length == 1, "Deck checkbox not found: " + this.name + " / " + this.id);
+};
+
 Deck.construct = function () {
     var uniqueNames = [];
     Deck.decks = $.map(DECKS, function (deckArgs, _index) {
@@ -354,14 +362,16 @@ Deck.createObjects = function () {
 Deck.placeObjects = function () {
     var location = $('#pointNumbers');
     $.each(Deck.decks, function (_index, deck) {
-        location.prepend(deck.object);
+        deck.placeObject(location);
     });
+    Deck.allCheckbox = $('#allDeckSwitch input');
+    assert(Deck.allCheckbox.length == 1, "All decks checkbox not found");
 };
 
-function Line(mastName, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
+function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
     this.assym = assym || false;
     this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
-    this.mast = Mast.getMast(mastName);
+    this.mast = Mast.getMast(mastName, mastID);
     this.sail = this.mast.attachLine(sailName, this);
     assert(lineName, "No line");
     this.lineName = lineName;
@@ -409,9 +419,9 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
 Line.construct = function () {
     Line.lines = [];
     $.each(LINES, function (_index, args) {
-        var prefix = [args[0], ''];
-        $.each(args[1], function (_index, args) {
-            prefix[1] = args[0];
+        var prefix = [args[0], args[1], ''];
+        $.each(args[2], function (_index, args) {
+            prefix[2] = args[0];
             $.each(args[1], function (_index, args) {
                 Line.lines.push(applyNew(Line, prefix.concat(args)));
             });
@@ -463,22 +473,23 @@ Sail.prototype.attachLine = function (line) {
     this.lines.push(line);
 };
 
-function Mast(name) {
+function Mast(name, id) {
     this.name = name;
+    this.id = id;
     this.sails = [];
     this.lines = [];
 }
 
 Mast.masts = [];
 
-Mast.getMast = function (mastName) {
+Mast.getMast = function (mastName, mastID) {
     mastName = mastName || '';
     var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
     var mast;
     if (masts.length) { // == 1
         mast = masts[0];
     } else {
-        mast = new Mast(mastName);
+        mast = new Mast(mastName, mastID);
         Mast.masts.push(mast);
     }
     return mast;
@@ -496,6 +507,21 @@ Mast.prototype.attachLine = function (sailName, line) {
     sail.attachLine(line);
     this.lines.push(line);
     return sail;
+};
+
+Mast.prototype.placeObject = function () {
+    this.checkbox = $('#' + this.id + 'MastSwitch input');
+    if (!this.checkbox.length) {
+        this.checkbox = null;
+    }
+};
+
+Mast.placeObjects = function () {
+    $.each(Mast.masts, function (_index, mast) {
+        mast.placeObject();
+    });
+    Mast.allCheckbox = $('#allMastSwitch input');
+    assert(Mast.allCheckbox.length == 1, "All masts checkbox not found");
 };
 
 function Subline(object, sublineType) {
@@ -604,13 +630,17 @@ function onResize() {
 }
 
 function setMode(mode) {
-    mode = mode.trim().toLowerCase() || 'info';
+    mode = mode.endsWith('ModeSwitch') ? mode.slice(0, -10) : (mode.trim().toLowerCase() || 'info');
     if (mode === setMode.mode) {
         return;
     }
+    var input = setMode.checkboxes[mode];
+    if (!input) {
+        mode = setMode.INFO;
+        input = setMode.checkboxes[mode];
+    }
     setMode.mode = mode;
     location.href = '#' + mode;
-    var input = $('#' + mode + 'Mode input');
     input.prop('checked', true);
     setMode.modeDependent.hide();
     $('.usedInMode' + mode.capitalize()).show();
@@ -625,22 +655,21 @@ function setMode(mode) {
             $('.mastMask, .deckMask').hide();
             break;
         case setMode.WHERE:
-            $('#toggleScheme input').change();
+            $('#schemeSwitch input').change();
             $('.deckMask').hide();
             $('#selectMasts .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#mastMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
+                $('#' + selector.id.slice(0, -10) + 'MastMask').toggle(!$(selector).find('input').prop('checked'));
             });
             break;
         case setMode.WHICH:
-            $('#toggleScheme input').change();
+            $('#schemeSwitch input').change();
             $('.mastMask').hide();
             $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#deckMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
+                $('#' + selector.id.slice(0, -10) + 'DeckMask').toggle(!$(selector).find('input').prop('checked'));
             });
             break;
         default:
-            setMode(setMode.INFO);
-            return;
+            assert(false);
     }
     Questionary.reset();
     Questionary.askQuestion();
@@ -676,66 +705,66 @@ function menuHandler(event) {
         input.click();
         return;
     }
-    var checked;
     if (input.attr('name') === 'mode') {
-        setMode(this.id.slice(0, -4)); // jshint ignore:line
-    } else {
-        if (input[0].checked) {
-            Questionary.reset();
-        }
-        if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
-            var deck = selector[0].id.slice(4);
-            if (deck == 'All') {
-                resetDecks();
-            } else {
-                $('#deckMask' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectDecks :not(#deckAll) input:checked'); // ToDo: Create special class for not-all decks
-                switch (checked.length) {
-                    case 1:
-                        checked.parent().attr('disabled', true);
-                        checked.prop('disabled', true);
-                        break;
-                    case 2:
-                    case 3:
-                        $('#selectDecks .selector').attr('disabled', false);
-                        $('#selectDecks input').prop('disabled', false);
-                        $('#deckAll').attr('disabled', checked.length === 3);
-                        $('#deckAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                        break;
-                    default:
-                        assert(false, "Checkbox misconfiguration: " + checked.length);
-                }
-                if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input')[0].checked) {
-                    Questionary.askQuestion();
-                }
+        setMode(this.id); // jshint ignore:line
+        return;
+    }
+    if (input.prop('checked')) {
+        Questionary.reset();
+    }
+    var checked;
+    if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
+        var deck = selector[0].id.slice(0, -10);
+        if (deck == 'all') {
+            resetDecks();
+        } else {
+            $('#' + deck + 'DeckMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
+            checked = $('#selectDecks :not(#allDeckSwitch) input:checked'); // ToDo: Create special class for not-all decks
+            switch (checked.length) {
+                case 1:
+                    checked.parent().attr('disabled', true);
+                    checked.prop('disabled', true);
+                    break;
+                case 2:
+                case 3:
+                    $('#selectDecks .selector').attr('disabled', false);
+                    $('#selectDecks input').prop('disabled', false);
+                    $('#allDeckSwitch').attr('disabled', checked.length === 3);
+                    $('#allDeckSwitch input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
+                    break;
+                default:
+                    assert(false, "Checkbox misconfiguration: " + checked.length);
             }
-        } else if (input.attr('name') === 'mast') {
-            var mast = selector[0].id.slice(4);
-            if (mast == 'All') {
-                resetMasts();
-            } else {
-                $('#mastMask' + mast).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectMasts :not(#mastAll) input:checked');
-                switch (checked.length) {
-                    case 1:
-                        checked.parent().attr('disabled', true);
-                        checked.prop('disabled', true);
-                        break;
-                    case 2:
-                    case 3:
-                        $('#selectMasts .selector').attr('disabled', false);
-                        $('#selectMasts input').prop('disabled', false);
-                        $('#mastAll').attr('disabled', checked.length === 3);
-                        $('#mastAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                        break;
-                    default:
-                        assert(false, "Checkbox misconfiguration: " + checked.length);
-                }
-                if (Questionary.status === Questionary.ASKED) {
-                    input = Questionary.correctAnswer.mast.name ? $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input') : [];
-                    if (!input.length || !input[0].checked) {
-                        Questionary.askQuestion();
-                    }
+            if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input').prop('checked')) {
+                Questionary.askQuestion();
+            }
+        }
+    } else if (input.attr('name') === 'mast') {
+        var mast = selector[0].id.slice(0, -10);
+        if (mast == 'all') {
+            resetMasts();
+        } else {
+            $('#' + mast + 'MastMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
+            checked = $('#selectMasts :not(#allMastSwitch) input:checked');
+            switch (checked.length) {
+                case 1:
+                    checked.parent().attr('disabled', true);
+                    checked.prop('disabled', true);
+                    break;
+                case 2:
+                case 3:
+                    $('#selectMasts .selector').attr('disabled', false);
+                    $('#selectMasts input').prop('disabled', false);
+                    $('#allMastSwitch').attr('disabled', checked.length === 3);
+                    $('#allMastSwitch input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
+                    break;
+                default:
+                    assert(false, "Checkbox misconfiguration: " + checked.length);
+            }
+            if (Questionary.status === Questionary.ASKED) {
+                input = Questionary.correctAnswer.mast.name ? $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input') : [];
+                if (!input.length || !input.prop('checked')) {
+                    Questionary.askQuestion();
                 }
             }
         }
@@ -758,7 +787,6 @@ Questionary.statCorrect = 0;
 Questionary.lastEntered = null;
 
 Questionary.askQuestion = function () {
-    var checkbox;
     switch(setMode.mode) {
         case setMode.INFO:
             Questionary.status = null;
@@ -777,8 +805,8 @@ Questionary.askQuestion = function () {
             var line;
             while (true) {
                 line = Line.lines.random();
-                checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
+                if ((line.mast.checkbox || Mast.allCheckbox).prop('checked') &&
+                    (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
                     break;
                 }
             }
@@ -795,8 +823,8 @@ Questionary.askQuestion = function () {
             var point;
             while (true) {
                 point = Point.points.random();
-                checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.location != Questionary.correctAnswer.location)) {
+                if (point.deck.checkbox.prop('checked') &&
+                    (!Questionary.correctAnswer || point.location != Questionary.correctAnswer.location)) {
                     break;
                 }
             }
@@ -946,27 +974,31 @@ function main() {
     Line.linkLines();
     // Put generated objects to DOM
     Deck.placeObjects();
+    Mast.placeObjects();
     Point.placeObjects();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
     $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
     onResize.scheme = $('#scheme');
     onResize.placeholder = $('#placeholder');
-    var schemeBlock = $('#schemeBlock');
+    setMode.schemeBlock = $('#schemeBlock');
     // Setup menu
+    setMode.checkboxes = {};
+    $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
+        setMode.checkboxes[mode] = $('#' + mode + 'ModeSwitch input');
+    });
     setMode.modeDependent = $('.modeDependent');
-    setMode.schemeBlock = schemeBlock;
     $('input[name=mode]').prop('checked', false);
-    $('#toggleScheme input').prop('checked', true).change(function (_event) {
-        schemeBlock.toggle(this.checked);
+    $('#schemeSwitch input').prop('checked', true).change(function (_event) {
+        setMode.schemeBlock.toggle(this.checked);
         if (this.checked) {
             Questionary.reset();
         }
         if (setMode.mode === setMode.WHICH) {
-            $('#toggleMarks').toggle(this.checked);
+            $('#marksSwitch').toggle(this.checked);
         }
     });
-    $('#toggleMarks input').prop('checked', true).change(function (_event) {
+    $('#marksSwitch input').prop('checked', true).change(function (_event) {
         $('#overlay, #pointNumbers').toggleClass('colored', this.checked);
         if (this.checked) {
             Questionary.reset();

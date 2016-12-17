@@ -116,8 +116,8 @@ var POOP_FLAGSTAFF = 'на юте, на флагштоке';
 var FREE = 'свободный нагель';
 
 var DECKS = [
-  // Deck        Title
-    [FORE_DECK, 'На баке', [
+  // Name        ID      Title
+    [FORE_DECK, 'fore', 'На баке', [
       // Rail                Assym        X0   Y0 stepX    stepY  N  Type=PIN Rotation
         [FRONT_RAIL,         ,          4074,  22,     ,      75, 5], // 276
         [BEHIND_FRONT,       ,          4112, 101,     ,,, CLEAT, 90],
@@ -131,7 +131,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    3768, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3710,  85,     ,,, CLEAT, 75],
     ]],
-    [MAIN_DECK, 'На главной палубе', [
+    [MAIN_DECK, 'main', 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
         [BULWARK,            ,          2543, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
         [SIDE_RAIL,          ,          1854, 499,   53,       7, 6],
@@ -144,7 +144,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    2261, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    2033, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте', [
+    [STERN_DECK, 'stern', 'На полуюте', [
         [AT_FRONT,           CENTER,    1607, -19,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1750, 425,      ,,,  KNOT],
         [BULWARK,            ,           700, 490, [[,, SCLEAT, -45], [320, 25, SCLEAT, 105], [440, 27, SCLEAT, 80], [600, -3, VCLEAT]]],
@@ -157,8 +157,8 @@ var DECKS = [
 ];
 
 var LINES = [
-  // Mast/Sail/Deck      Rail          Point#  Line             Detail               Assym      Full Name                     Plural
-    [BOWSPRIT, [
+  // Mast ID/Sail/Deck   Rail          Point#  Line             Detail               Assym      Full Name                     Plural
+    [BOWSPRIT,, [
         [SPRIT_SAIL, [
             [FORE_DECK,  FRONT_RAIL,        4, BRACE],
             [FORE_DECK,  FRONT_RAIL,        3, LIFT],
@@ -167,7 +167,7 @@ var LINES = [
             [FORE_DECK,  BEHIND_FRONT,       , BUNTLINE],
         ]],
     ]],
-    [FORE_MAST, [
+    [FORE_MAST, 'fore', [
         [FORE_SAIL, [
             [FORE_DECK,  BACK_RAIL,         1, BRACE],
             [FORE_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
@@ -200,7 +200,7 @@ var LINES = [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
         ]],
     ]],
-    [MAIN_MAST, [
+    [MAIN_MAST, 'main', [
         [MAIN_SAIL, [
             [STERN_DECK, BULWARK,           1, BRACE],
             [STERN_DECK, SHROUDS_RAIL,      1, BRACE,           COIL],
@@ -241,7 +241,7 @@ var LINES = [
             [MAIN_DECK,  SIDE_MAST_RAIL,   -1, TACKLE,          'Нагель для работы', ,          'Нагель для работы талёвами', 'Нагеля для работы талёвами'],
         ]],
     ]],
-    [MIZZEN_MAST, [
+    [MIZZEN_MAST, 'mizzen', [
         [MIZZEN_SAIL, [
             [STERN_DECK, AT_MAST,          -1, TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
@@ -273,12 +273,12 @@ var LINES = [
             [STERN_DECK, POOP_FLAGSTAFF,     , FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
         ]],
     ]],
-    [FLAG_STAFF, [
+    [FLAG_STAFF,, [
         [, [
             [STERN_DECK, POOP_FLAGSTAFF,     , FLAG_HALYARD,    ,                    STARBOARD],
         ]],
     ]],
-    [, [
+    [,, [
         [, [
             [FORE_DECK,  SIDE_RAIL,        -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
             [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],

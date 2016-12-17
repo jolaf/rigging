@@ -1,6 +1,10 @@
 
 Add lastEnter to other modes
 
+Replace == with ===
+
+Replace grep with filter
+
 Implement subline categories
 
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements

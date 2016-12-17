@@ -165,17 +165,17 @@ img.scheme {
 	display: none;
 }
 
-#deckMaskFore {
+#foreDeckMask {
 	right: 0;
 	width: 25.9%;
 }
 
-#deckMaskMain {
+#mainDeckMask {
 	left: 43.1%;
 	width: 31%;
 }
 
-#deckMaskStern {
+#sternDeckMask {
 	left: 0;
 	width: 43.1%;
 }
@@ -189,15 +189,15 @@ img.scheme {
 	display: none;
 }
 
-#mastMaskFore {
+#foreMastMask {
 	left: 83.4%;
 }
 
-#mastMaskMain {
+#mainMastMask {
 	left: 48.3%;
 }
 
-#mastMaskMizzen {
+#mizzenMastMask {
 	left: 15.4%;
 }
 

@@ -53,28 +53,28 @@
       <table class="wide high">
         <tr><td><form><table id="controls"><tr>
           <td id="modes">
-            <span id="infoMode"  class="selector"><input name="mode" type="radio">Описание</span>
-            <span id="demoMode"  class="selector"><input name="mode" type="radio">Просмотр</span>
-            <span id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</span>
-            <span id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</span>
+            <span id=  "infoModeSwitch" class="selector"><input name="mode" type="radio">Описание</span>
+            <span id=  "demoModeSwitch" class="selector"><input name="mode" type="radio">Просмотр</span>
+            <span id= "whereModeSwitch" class="selector"><input name="mode" type="radio">Где снасть?</span>
+            <span id= "whichModeSwitch" class="selector"><input name="mode" type="radio">Какая снасть?</span>
           </td>
           <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты
-            <span id="mastAll"    class="selector"><input name="mast" type="checkbox">Все</span>
-            <span id="mastMizzen" class="selector"><input name="mast" type="checkbox">Бизань</span>
-            <span id="mastMain"   class="selector"><input name="mast" type="checkbox">Грот</span>
-            <span id="mastFore"   class="selector"><input name="mast" type="checkbox">Фок</span>
+            <span id=   "allMastSwitch" class="selector"><input name="mast" type="checkbox">Все</span>
+            <span id="mizzenMastSwitch" class="selector"><input name="mast" type="checkbox">Бизань</span>
+            <span id=  "mainMastSwitch" class="selector"><input name="mast" type="checkbox">Грот</span>
+            <span id=  "foreMastSwitch" class="selector"><input name="mast" type="checkbox">Фок</span>
           </td>
           <td id="selectDecks" class="modeDependent usedInModeWhich">Палубы
-            <span id="deckAll"    class="selector"><input name="deck" type="checkbox">Все</span>
-            <span id="deckStern"  class="selector"><input name="deck" type="checkbox">ПолуЮт</span>
-            <span id="deckMain"   class="selector"><input name="deck" type="checkbox">Главная</span>
-            <span id="deckFore"   class="selector"><input name="deck" type="checkbox">Бак</span>
+            <span id=   "allDeckSwitch" class="selector"><input name="deck" type="checkbox">Все</span>
+            <span id= "sternDeckSwitch" class="selector"><input name="deck" type="checkbox">ПолуЮт</span>
+            <span id=  "mainDeckSwitch" class="selector"><input name="deck" type="checkbox">Главная</span>
+            <span id=  "foreDeckSwitch" class="selector"><input name="deck" type="checkbox">Бак</span>
           </td>
           <td id="selectFill" class="modeDependent usedInModeInfo usedInModeDemo">
           </td>
           <td id="options" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich">
-            <span id="toggleScheme" class="selector modeDependent usedInModeWhere usedInModeWhich"><input type="checkbox">Схема</span>
-            <span id="toggleMarks" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><input type="checkbox">Марки</span>
+            <span id="schemeSwitch" class="selector modeDependent usedInModeWhere usedInModeWhich"><input type="checkbox">Схема</span>
+            <span id= "marksSwitch" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><input type="checkbox">Марки</span>
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
@@ -82,12 +82,12 @@
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div id="overlay"></div>
-            <div id="mastMaskMizzen" class="mastMask"></div>
-            <div id="mastMaskMain"   class="mastMask"></div>
-            <div id="mastMaskFore"   class="mastMask"></div>
-            <div id="deckMaskStern"  class="deckMask"></div>
-            <div id="deckMaskMain"   class="deckMask"></div>
-            <div id="deckMaskFore"   class="deckMask"></div>
+            <div id="mizzenMastMask" class="mastMask"></div>
+            <div id=  "mainMastMask" class="mastMask"></div>
+            <div id=  "foreMastMask" class="mastMask"></div>
+            <div id= "sternDeckMask" class="deckMask"></div>
+            <div id=  "mainDeckMask" class="deckMask"></div>
+            <div id=  "foreDeckMask" class="deckMask"></div>
           </div>
           <div id="placeholder"></div>
         </td></tr>
@@ -256,7 +256,8 @@
                 <strong>Наведение мыши</strong> на название снасти <span class="info on">подсвечивает</span> все паруса, снаряжённые такой снастью,
                 а также все точки крепления снастей этого типа на палубе.
                 Наведение мыши на название паруса аналогично <span class="info on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
-                Наведение на точку крепления снастей на схеме <span class="info on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке.
+                Наведение на точку крепления снастей на схеме <span class="info on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
+                а также другие точки, где может крепиться эта или аналогичная снасть.
               </p>
               <p>
                 <strong>По клику</strong> в любое место <span class="info on">подсвеченные</span> снасти фиксируются, и далее,
