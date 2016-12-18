@@ -68,9 +68,9 @@ function russianGenetive(str) { // Родительный падеж сущес�
 }
 
 function Point(deck, rail, side, index, x, y, type, rotation) {
-    assert(deck);
+    assert(deck, "No deck for a Point");
     this.deck = deck;
-    assert(rail); // <--
+    assert(rail, "No rail for a Point"); // <--
     this.rail = rail;
     this.side = side;
     this.number = index + 1;
@@ -107,7 +107,7 @@ Point.prototype.createObject = function () {
         this.location += ', ' + number  + '-' + ((this.type === PIN) ? 'й' : 'ая') + direction;
     }
     // Constructing point name from names of connected lines
-    assert(this.lines, "No lines for point " + this.location);
+    assert(this.lines, "No lines for Point " + this.location);
     if (this.lines.length === 1) {
         this.name = this.lines[0].name;
     } else {
@@ -192,6 +192,8 @@ Point.tooltips = function (enable) {
 };
 
 Point.prototype.mouseHandler = function (event) {
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
     if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         return;
     }
@@ -210,10 +212,10 @@ Point.prototype.mouseHandler = function (event) {
 
 function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, ignoreDeck) {
        // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...], ignoreDeck)
-    assert(deck);
-    this.deck = deck;
-    assert(name, "No rail name");
+    assert(name, "No name for a Rail");
     this.name = name;
+    assert(deck, "No deck for Rail " + name);
+    this.deck = deck;
     this.assym = assym || false;
     x0 = x0 || 0;
     y0 = y0 || 0;
@@ -229,7 +231,7 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
         });
     }
     this.location = ignoreDeck ? name.capitalize() : (this.deck.title.capitalize() + ', ' + this.name);
-    assert(args, "No points in rail: " + this.location);
+    assert(args, "No points in Rail " + this.name);
     this.direction        = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с кормы' : 'от центра');
     this.reverseDirection = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с носа'  : 'с краю');
     var prefix = [deck, this, this.assym || STARBOARD];
@@ -261,13 +263,13 @@ Rail.prototype.attachLine = function (number, line) {
     var ret = [];
     if (this.assym || line.assym != PORT) {
         point = this.points[number - 1];
-        assert(point);
+        assert(point, "Bad point number: " + number);
         point.attachLine(line);
         ret.push(point);
     }
     if (!this.assym && (!line.assym || line.assym === PORT)) {
         point = this.portPoints[number - 1];
-        assert(point);
+        assert(point, "Bad point number: " + number);
         point.attachLine(line);
         ret.push(point);
     }
@@ -293,17 +295,17 @@ Rail.prototype.createObject = function () {
 };
 
 function Deck(name, id, title, rails) {
-    assert(name, "No deck name");
+    assert(name, "No name for a Deck");
     this.name = name;
-    assert(id, "No deck ID");
+    assert(id, "No ID for Deck " + name);
     this.id = id;
-    assert(title, "No deck title");
+    assert(title, "No title for Deck " + name);
     this.title = title;
     var uniqueRails = [];
     var thisDeck = this;
     this.rails = $.map(rails, function (railArgs, _index) {
         var rail = applyNew(Rail, [thisDeck,].concat(railArgs));
-        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + thisDeck.name + '/' + rail.name);
+        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate Rail name: " + thisDeck.name + '/' + rail.name);
         uniqueRails.push(rail.name);
         return rail;
     });
@@ -311,10 +313,10 @@ function Deck(name, id, title, rails) {
 }
 
 Deck.prototype.attachLine = function (railName, number, line) {
-    assert(line);
+    assert(line, "No line to attach to a Deck");
     this.lines.push(line);
     var rails = this.rails.filter(function (rail) { return railName === rail.name; });
-    assert(rails.length === 1, "Unknown rail: " + railName);
+    assert(rails.length === 1, "Unknown rail to attach in a Deck: " + railName);
     return rails[0].attachLine(number, line);
 };
 
@@ -345,9 +347,9 @@ Deck.construct = function () {
 };
 
 Deck.getDeck = function (deckName) {
-    assert(deckName, "No deck");
+    assert(deckName, "No deck name specified");
     var decks = Deck.decks.filter(function (deck) { return deckName === deck.name; });
-    assert(decks.length === 1, "Unknown deck: " + deckName);
+    assert(decks.length === 1, "Unknown Deck: " + deckName);
     return decks[0];
 };
 
@@ -371,7 +373,7 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
     this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
     this.mast = Mast.getMast(mastName, mastID);
     this.sail = this.mast.attachLine(sailName, this);
-    assert(lineName, "No line");
+    assert(lineName, "No name for a Line");
     this.lineName = lineName;
     this.detail = detail || '';
     fullName = fullName || '';
@@ -395,7 +397,7 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
         default:
             pluralWords = fullNameWords = fullName.split(' ');
     }
-    assert(fullNameWords, "Empty fullNameWords");
+    assert(fullNameWords, "Empty fullNameWords for a Line");
     pluralName = pluralName || '';
     switch (pluralName) {
         case SINGULAR:
@@ -405,7 +407,7 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
         default:
             pluralWords = pluralName.split(' ');
     }
-    assert(pluralWords, "Empty pluralWords");
+    assert(pluralWords, "Empty pluralWords for a Line");
     this.name = fullNameWords.join(' ').capitalize();
     this.pluralName = (pluralName === SINGULAR) ? this.name : pluralWords.join(' ').capitalize();
     this.name = (pluralName === PLURAL) ? this.pluralName : this.name;
@@ -461,13 +463,13 @@ Line.linkLines = function () {
 
 function Sail(name, mast) {
     this.name = name;
-    assert(mast);
+    assert(mast, "No mast for a Sail");
     this.mast = mast;
     this.lines = [];
 }
 
 Sail.prototype.attachLine = function (line) {
-    assert(line);
+    assert(line, "No line to attach to a Sail");
     this.lines.push(line);
 };
 
@@ -494,7 +496,7 @@ Mast.getMast = function (mastName, mastID) {
 };
 
 Mast.prototype.attachLine = function (sailName, line) {
-    assert(line);
+    assert(line, "No line to attach to a Mast");
     var sail = new Sail(sailName, this);
     var sails = this.sails.filter(function (checkSail) { return sail.name === checkSail.name; });
     if (sails.length) { // === 1
@@ -549,6 +551,8 @@ Subline.prototype.addLine = function (line) {
 };
 
 Subline.prototype.mouseHandler = function (event) {
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
     var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
         Questionary.lastEntered = isEnter ? event.data.object : null;
@@ -667,7 +671,7 @@ function setMode(mode) {
             });
             break;
         default:
-            assert(false);
+            assert(false, "Unknown mode: " + mode);
     }
     Questionary.reset();
     Questionary.askQuestion();
@@ -840,13 +844,13 @@ Questionary.askQuestion = function () {
             Point.tooltips(false);
             break;
         default:
-            assert(false);
+            assert(false, "Unknown mode: " + setMode.mode);
     }
 };
 
 Questionary.answerQuestion = function (event) {
-    assert(this === event.target);
-    assert(event.data);
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
     if (Questionary.status !== Questionary.ASKED) {
         return;
     }
@@ -923,7 +927,7 @@ Questionary.answerQuestion = function (event) {
             Questionary.status = Questionary.ANSWERED;
             break;
         default:
-            assert(false);
+            assert(false, "Unknown mode: " + setMode.mode);
     }
     Questionary.status = Questionary.ANSWERED;
     if (isCorrect) {
@@ -957,7 +961,7 @@ Questionary.nextQuestion = function (event) {
     }
 };
 
-Questionary.reset = function (event) {
+Questionary.reset = function () {
     Questionary.statAll = Questionary.statCorrect = 0;
     $('#statistics').hide();
 };
