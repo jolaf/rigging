@@ -1,4 +1,6 @@
 
+Check all $.each iterations for possibilities of using pre-set collections
+
 Add lastEnter to other modes
 
 Implement subline categories

@@ -70,7 +70,7 @@ function russianGenetive(str) { // Родительный падеж сущес�
 function Point(deck, rail, side, index, x, y, type, rotation) {
     assert(deck, "No deck for a Point");
     this.deck = deck;
-    assert(rail, "No rail for a Point"); // <--
+    assert(rail, "No rail for a Point");
     this.rail = rail;
     this.side = side;
     this.number = index + 1;
@@ -89,6 +89,8 @@ Point.marks[ CLEWLINE] = 'clewline';
 Point.marks[ BUNTLINE] = 'buntline';
 Point.marks[LEECHLINE] = 'leechline';
 Point.marks[  BOWLINE] = 'bowline';
+
+Point.locationObject = null;
 
 Point.prototype.createObject = function () {
     // Setting location, we can't do it in the constructor, as this.rail has not been constructed yet as in there
@@ -167,10 +169,10 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.placeObjects = function () {
-    var location = $('#overlay');
+    Point.locationObject = $('#overlay');
     $.each(Point.points, function (_index, point) {
         var iconObject = point.iconObject;
-        location.append(iconObject);
+        Point.locationObject.append(iconObject);
         iconObject.css({ // Could be done in createObject(), but it only works in Firefox
             top: '+=' + (SCHEME_HEIGHT - ((parseInt(iconObject.css('top')) > -20) ? 0 : parseInt(iconObject.css('height')))),
         });
@@ -178,14 +180,14 @@ Point.placeObjects = function () {
     });
 };
 
-Point.tooltips = function (enable) {
+Point.toggleTooltips = function (enable) {
     $.each(Point.points, function (_index, point) {
-        point.objects.each(function (_index, object) {
-            object = $(object);
+        point.objects.each(function (_index, pointObject) {
+            pointObject = $(pointObject);
             if (enable) {
-                object.attr('title', object.data('title'));
+                pointObject.attr('title', pointObject.data('title'));
             } else {
-                object.removeAttr('title');
+                pointObject.removeAttr('title');
             }
         });
     });
@@ -232,8 +234,13 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
     }
     this.location = ignoreDeck ? name.capitalize() : (this.deck.title.capitalize() + ', ' + this.name);
     assert(args, "No points in Rail " + this.name);
-    this.direction        = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с кормы' : 'от центра');
-    this.reverseDirection = args.length < 2 ? null : ((args[1][1] - args[0][1] > args[1][2] - args[0][2]) ? 'с носа'  : 'с краю');
+    if (args.length < 2) {
+        this.direction = this.reverseDirection = null;
+    } else {
+        var isFirstHalf = (args[1][1] - args[0][1] > args[1][2] - args[0][2]);
+        this.direction =  isFirstHalf ? 'с кормы' : 'от центра';
+        this.reverseDirection = isFirstHalf ? 'с носа'  : 'с краю';
+    }
     var prefix = [deck, this, this.assym || STARBOARD];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
@@ -247,8 +254,17 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
     } else {
         this.portPoints = [];
     }
-    this.lines = [];
 }
+
+Deck.construct = function () {
+    var uniqueNames = [];
+    Deck.decks = $.map(DECKS, function (deckArgs, _index) {
+        var deck = applyNew(Deck, deckArgs);
+        assert($.inArray(uniqueNames, deck.name) < 0, "Duplicate deck name: " + deck.name);
+        uniqueNames.push(deck.name);
+        return deck;
+    });
+};
 
 Rail.prototype.attachLine = function (number, line) {
     if (!number) {
@@ -273,7 +289,6 @@ Rail.prototype.attachLine = function (number, line) {
         point.attachLine(line);
         ret.push(point);
     }
-    this.lines.push(line);
     line.number = number;
     return ret;
 };
@@ -330,33 +345,16 @@ Deck.prototype.createObject = function () {
     return this.object;
 };
 
-Deck.prototype.placeObject = function (location) {
-    location.prepend(this.object);
-    this.checkbox = $('#' + this.id + 'DeckSwitch input');
-    assert(this.checkbox.length === 1, "Deck checkbox not found: " + this.name + " / " + this.id);
-};
-
-Deck.construct = function () {
-    var uniqueNames = [];
-    Deck.decks = $.map(DECKS, function (deckArgs, _index) {
-        var deck = applyNew(Deck, deckArgs);
-        assert($.inArray(uniqueNames, deck.name) < 0, "Duplicate deck name: " + deck.name);
-        uniqueNames.push(deck.name);
-        return deck;
-    });
-};
-
-Deck.getDeck = function (deckName) {
-    assert(deckName, "No deck name specified");
-    var decks = Deck.decks.filter(function (deck) { return deckName === deck.name; });
-    assert(decks.length === 1, "Unknown Deck: " + deckName);
-    return decks[0];
-};
-
 Deck.createObjects = function () {
     $.each(Deck.decks, function (_index, deck) {
         deck.createObject();
     });
+};
+
+Deck.prototype.placeObject = function (location) {
+    location.prepend(this.object);
+    this.checkbox = $('#' + this.id + 'DeckSwitch input');
+    assert(this.checkbox.length === 1, "Deck checkbox not found: " + this.name + " / " + this.id);
 };
 
 Deck.placeObjects = function () {
@@ -368,10 +366,17 @@ Deck.placeObjects = function () {
     assert(Deck.allCheckbox.length === 1, "All decks checkbox not found");
 };
 
+Deck.getDeck = function (deckName) {
+    assert(deckName, "No deck name specified");
+    var decks = Deck.decks.filter(function (deck) { return deckName === deck.name; });
+    assert(decks.length === 1, "Unknown Deck: " + deckName);
+    return decks[0];
+};
+
 function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
     this.assym = assym || false;
     this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
-    this.mast = Mast.getMast(mastName, mastID);
+    this.mast = Mast.getMast(mastName, mastID); // <--
     this.sail = this.mast.attachLine(sailName, this);
     assert(lineName, "No name for a Line");
     this.lineName = lineName;
@@ -794,10 +799,10 @@ Questionary.askQuestion = function () {
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            $('#overlay, #sublines').addClass('highlight');
+            $('#overlay, #sublines').addClass('highlight'); // ToDo: use pre-set selection variable
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             Questionary.status = Questionary.ASKED;
-            Point.tooltips(true);
+            Point.toggleTooltips(true);
             if (Questionary.lastEntered) {
                 Questionary.lastEntered.mouseenter();
                 Questionary.lastEntered = null;
@@ -814,12 +819,12 @@ Questionary.askQuestion = function () {
             }
             Questionary.correctAnswer = line;
             $('#question').text(Questionary.correctAnswer.name);
-            $('#overlay, #pointNumbers').addClass('highlight');
+            $('#overlay, #pointNumbers').addClass('highlight'); // ToDo: use pre-set selection variable
             $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
             $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
             $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
-            Point.tooltips(false);
+            Point.toggleTooltips(false);
             break;
         case setMode.WHICH:
             var point;
@@ -832,7 +837,7 @@ Questionary.askQuestion = function () {
             }
             Questionary.correctAnswer = point;
             $('#question').text(Questionary.correctAnswer.location);
-            $('#overlay').removeClass('highlight pointer');
+            Point.locationObject.removeClass('highlight pointer');
             $('#sublines').addClass('highlight');
             $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
             $('.preAnswer').removeClass('preAnswer');
@@ -841,7 +846,7 @@ Questionary.askQuestion = function () {
             $('#tooltipNote').show();
             Questionary.status = Questionary.ASKED;
             Questionary.preAnswer = null;
-            Point.tooltips(false);
+            Point.toggleTooltips(false);
             break;
         default:
             assert(false, "Unknown mode: " + setMode.mode);
@@ -907,7 +912,7 @@ Questionary.answerQuestion = function (event) {
             }
             isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
             subline.object.mouseout();
-            $('#overlay').addClass('highlight');
+            Point.locationObject.addClass('highlight');
             Questionary.correctAnswer.iconObject.addClass('rightAnswer');
             $.each(Questionary.correctAnswer.lines, function (_index, correctLine) {
                 $.each(correctLine.sublines, function (_index, correctSubline) {
@@ -940,7 +945,7 @@ Questionary.answerQuestion = function (event) {
     Questionary.updateStatistics(isCorrect);
     $('#tooltipNote').hide();
     $('#nextQuestionNote').show();
-    Point.tooltips(true);
+    Point.toggleTooltips(true);
 };
 
 Questionary.updateStatistics = function (isCorrect) {
@@ -980,7 +985,7 @@ function main() {
     Point.placeObjects();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
-    $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
+    Point.locationObject.css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
     onResize.scheme = $('#scheme');
     onResize.placeholder = $('#placeholder');
     setMode.schemeBlock = $('#schemeBlock');
@@ -1001,7 +1006,7 @@ function main() {
         }
     });
     $('#marksSwitch input').prop('checked', true).change(function (_event) {
-        $('#overlay, #pointNumbers').toggleClass('colored', this.checked);
+        $('#overlay, #pointNumbers').toggleClass('colored', this.checked); // ToDo: use pre-set selection variable
         if (this.checked) {
             Questionary.reset();
         }
