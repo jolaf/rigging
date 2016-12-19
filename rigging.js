@@ -324,12 +324,10 @@ function Deck(name, id, title, rails) {
         uniqueRails.push(rail.name);
         return rail;
     });
-    this.lines = [];
 }
 
 Deck.prototype.attachLine = function (railName, number, line) {
     assert(line, "No line to attach to a Deck");
-    this.lines.push(line);
     var rails = this.rails.filter(function (rail) { return railName === rail.name; });
     assert(rails.length === 1, "Unknown rail to attach in a Deck: " + railName);
     return rails[0].attachLine(number, line);
@@ -376,8 +374,8 @@ Deck.getDeck = function (deckName) {
 function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
     this.assym = assym || false;
     this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
-    this.mast = Mast.getMast(mastName, mastID); // <--
-    this.sail = this.mast.attachLine(sailName, this);
+    this.mast = Mast.getMast(mastName, mastID);
+    this.sail = this.mast.getSail(sailName);
     assert(lineName, "No name for a Line");
     this.lineName = lineName;
     this.detail = detail || '';
@@ -467,29 +465,21 @@ Line.linkLines = function () {
 };
 
 function Sail(name, mast) {
-    this.name = name;
     assert(mast, "No mast for a Sail");
-    this.mast = mast;
-    this.lines = [];
+    this.name = name;
 }
-
-Sail.prototype.attachLine = function (line) {
-    assert(line, "No line to attach to a Sail");
-    this.lines.push(line);
-};
 
 function Mast(name, id) {
     this.name = name;
     this.id = id;
     this.sails = [];
-    this.lines = [];
 }
 
 Mast.masts = [];
 
 Mast.getMast = function (mastName, mastID) {
     mastName = mastName || '';
-    var masts = Mast.masts.filter(function (mast) { return mastName === mast.name; });
+    var masts = Mast.masts.filter(function (mast) { return mast.name === mastName; });
     var mast;
     if (masts.length) { // === 1
         mast = masts[0];
@@ -500,17 +490,16 @@ Mast.getMast = function (mastName, mastID) {
     return mast;
 };
 
-Mast.prototype.attachLine = function (sailName, line) {
-    assert(line, "No line to attach to a Mast");
-    var sail = new Sail(sailName, this);
-    var sails = this.sails.filter(function (checkSail) { return sail.name === checkSail.name; });
+Mast.prototype.getSail = function (sailName) {
+    sailName = sailName || '';
+    var sails = this.sails.filter(function (sail) { return sail.name === sailName; });
+    var sail;
     if (sails.length) { // === 1
         sail = sails[0];
     } else {
+        sail = new Sail(sailName, this);
         this.sails.push(sail);
     }
-    sail.attachLine(line);
-    this.lines.push(line);
     return sail;
 };
 
@@ -533,7 +522,7 @@ function Subline(object, sublineType) {
     this.object = object;
     this.name = object.text();
     this.sublineType = sublineType;
-    this.complimentaries = [];
+    this.sublines = [];
     this.points = [];
     this.lines = [];
     this.object.on('click', this, Questionary.answerQuestion);
@@ -586,11 +575,15 @@ Subline.construct = function () {
         } else {
             assert(false, "Wrong subline type: " + sublineType);
         }
-        $(group).find('.subline').each(function (_index, element) {
-            var subline = applyNew(Subline, [$(element), sublineType]);
+        $('.subline', group).each(function (_index, element) {
+            var object = $(element);
+            var subline = applyNew(Subline, [object, sublineType]);
             assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
             uniqueNames.push(subline.name);
             Subline.sublines.push(subline);
+            if (sublineType === Subline.SAIL) {
+                object.text(russianGenetive(subline.name));
+            }
         });
     });
 };
@@ -613,8 +606,8 @@ Subline.getSublines = function (line) {
         assert(sublines.length === 1, "Duplicate sail subline: " + line.lineName);
         var sailLineSubline = sublines[0];
         ret.push(sailLineSubline.addLine(line));
-        sailSubline.complimentaries.push(sailLineSubline);
-        sailLineSubline.complimentaries.push(sailSubline);
+        sailSubline.sublines.push(sailLineSubline);
+        sailLineSubline.sublines.push(sailSubline);
     } else {
         var lineName = line.name.toLowerCase();
         sublines = Subline.sublines.filter(function (subline) {
@@ -641,16 +634,16 @@ function setMode(mode) {
     if (mode === setMode.mode) {
         return;
     }
-    var input = setMode.checkboxes[mode];
-    if (!input) {
+    var modeCheckbox = setMode.checkboxes[mode];
+    if (!modeCheckbox) {
         mode = setMode.INFO;
-        input = setMode.checkboxes[mode];
+        modeCheckbox = setMode.checkboxes[mode];
     }
     setMode.mode = mode;
     location.href = '#' + mode;
-    input.prop('checked', true);
+    modeCheckbox.prop('checked', true);
     setMode.modeDependent.hide();
-    $('.usedInMode' + mode.capitalize()).show();
+    setMode.used[mode].show(); // ToDo: Refactor to use a single cycle?
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
         case setMode.INFO:
@@ -659,20 +652,20 @@ function setMode(mode) {
         case setMode.DEMO:
             Questionary.lastEntered = null;
             setMode.schemeBlock.show();
-            $('.mastMask, .deckMask').hide();
+            $('.mastMask, .deckMask').hide(); // <--
             break;
         case setMode.WHERE:
             $('#schemeSwitch input').change();
             $('.deckMask').hide();
             $('#selectMasts .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#' + selector.id.slice(0, -10) + 'MastMask').toggle(!$(selector).find('input').prop('checked'));
+                $('#' + selector.id.slice(0, -10) + 'MastMask').toggle(!$('input', selector).prop('checked'));
             });
             break;
         case setMode.WHICH:
             $('#schemeSwitch input').change();
             $('.mastMask').hide();
             $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#' + selector.id.slice(0, -10) + 'DeckMask').toggle(!$(selector).find('input').prop('checked'));
+                $('#' + selector.id.slice(0, -10) + 'DeckMask').toggle(!$('input', selector).prop('checked'));
             });
             break;
         default:
@@ -686,6 +679,9 @@ setMode.INFO = 'info';
 setMode.DEMO = 'demo';
 setMode.WHERE = 'where';
 setMode.WHICH = 'which';
+
+setMode.checkboxes = {};
+setMode.used = {};
 
 setMode.mode = null;
 
@@ -707,7 +703,7 @@ function resetMasts() {
 
 function menuHandler(event) {
     var selector = $(this); // jshint ignore:line
-    var input = selector.find('input');
+    var input = $('input', selector);
     if (this === event.target) { // jshint ignore:line
         input.click();
         return;
@@ -898,8 +894,8 @@ Questionary.answerQuestion = function (event) {
                 Questionary.preAnswer = null;
                 points = subline.points;
             } else {
-                if (!Questionary.preAnswer && subline.complimentaries.length === 1) {
-                    Questionary.preAnswer = subline.complimentaries[0];
+                if (!Questionary.preAnswer && subline.sublines.length === 1) {
+                    Questionary.preAnswer = subline.sublines[0];
                 }
                 if (!Questionary.preAnswer || subline.sublineType === Questionary.preAnswer.sublineType) {
                     Questionary.preAnswer = subline;
@@ -990,9 +986,9 @@ function main() {
     onResize.placeholder = $('#placeholder');
     setMode.schemeBlock = $('#schemeBlock');
     // Setup menu
-    setMode.checkboxes = {};
     $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
         setMode.checkboxes[mode] = $('#' + mode + 'ModeSwitch input');
+        setMode.used[mode] = $('.usedInMode' + mode.capitalize());
     });
     setMode.modeDependent = $('.modeDependent');
     $('input[name=mode]').prop('checked', false);

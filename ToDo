@@ -1,9 +1,11 @@
 
 Check all $.each iterations for possibilities of using pre-set collections
 
+Get rid of Sail class?
+
 Add lastEnter to other modes
 
-Implement subline categories
+Redesign Sublines and implement subline categories
 
 Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
 Move from tables to flex boxes
