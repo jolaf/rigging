@@ -14,7 +14,6 @@
   <link rel="apple-touch-icon" type="image/png" href="images/apple-touch-icon.png">
   <link rel="manifest" type="application/json" href="images/manifest.json">
   <link rel="mask-icon" type="image/svg+xml" href="images/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="stylesheet" type="text/css" href="rigging.css">
   <script type="text/javascript">
   /* jshint strict: global */
   /* globals window */
@@ -33,6 +32,7 @@
       alert(message); // jshint ignore:line
   };
   </script>
+  <link rel="stylesheet" type="text/css" href="rigging.css">
 </head>
 <body>
 <table class="wide high">
@@ -77,17 +77,21 @@
             <span id= "marksSwitch" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><input type="checkbox">Марки</span>
           </td>
         </tr></table></form></td></tr>
-        <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr id="schemeBlock"><td>
           <div id="scheme">
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div id="overlay"></div>
-            <div id="mizzenMastMask" class="mastMask"></div>
-            <div id=  "mainMastMask" class="mastMask"></div>
-            <div id=  "foreMastMask" class="mastMask"></div>
-            <div id= "sternDeckMask" class="deckMask"></div>
-            <div id=  "mainDeckMask" class="deckMask"></div>
-            <div id=  "foreDeckMask" class="deckMask"></div>
+            <div class="modeDependent usedInModeWhere">
+              <div id="mizzenMastMask" class="mastMask"></div>
+              <div id=  "mainMastMask" class="mastMask"></div>
+              <div id=  "foreMastMask" class="mastMask"></div>
+            </div>
+            <div class="modeDependent usedInModeWhich">
+              <div id= "sternDeckMask" class="deckMask"></div>
+              <div id=  "mainDeckMask" class="deckMask"></div>
+              <div id=  "foreDeckMask" class="deckMask"></div>
+            </div>
           </div>
           <div id="placeholder"></div>
         </td></tr>
