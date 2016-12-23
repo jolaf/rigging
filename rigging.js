@@ -1005,9 +1005,9 @@ function main() {
     $('button.info').on('hover mousedown keydown', function (_event) { return false; });
     // Finishing setup
     setMode(window.location.hash);
-    onResize();
     $('#loading').hide();
     $('#main').show();
+    onResize();
     $(window).resize(onResize);
 }
 

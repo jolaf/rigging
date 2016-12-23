@@ -386,17 +386,17 @@ img.vang {
 	cursor: default;
 }
 
-.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .info.on {
+.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .doc.on {
 	-webkit-filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
-.pointNumber.wrongAnswer, .subline.wrongAnswer, .info.wrongAnswer {
+.pointNumber.wrongAnswer, .subline.wrongAnswer, .doc.wrongAnswer {
 	-webkit-filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }
 
-.pointNumber.rightAnswer, .subline.rightAnswer, .info.rightAnswer {
+.pointNumber.rightAnswer, .subline.rightAnswer, .doc.rightAnswer {
 	-webkit-filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 }
@@ -405,23 +405,23 @@ img.vang {
 	color: white;
 }
 
-.colored .pointNumber.clewline, .info.clewline {
+.colored .pointNumber.clewline, .doc.clewline {
 	color: #eb7d01; /* dark yellow */
 }
 
-.colored .pointNumber.buntline, .info.buntline {
+.colored .pointNumber.buntline, .doc.buntline {
 	color: #017c01; /* dark green */
 }
 
-.colored .pointNumber.clewline.buntline, .info.clewline.buntline {
+.colored .pointNumber.clewline.buntline, .doc.clewline.buntline {
 	color: #6cc100; /* yellow green */
 }
 
-.colored .pointNumber.leechline, .info.leechline {
+.colored .pointNumber.leechline, .doc.leechline {
 	color: #b3014b; /* dark red */
 }
 
-.colored .pointNumber.bowline, .info.bowline {
+.colored .pointNumber.bowline, .doc.bowline {
 	color: #0031ff; /* dark blue */
 }
 
@@ -495,12 +495,12 @@ img.vang {
 	text-align: center;
 }
 
-span.info {
+span.doc {
 	font-weight: bold;
 	z-index: -1;
 }
 
-button.info {
+button.doc {
 	margin: 0;
 }
 
@@ -515,7 +515,7 @@ button.info {
 }
 
 #footer p {
-	margin: 0.1em 0.4em 0.3em;
+	margin: 0.1em 0.4em 0.2em;
 }
 
 #footer :last-child > p {
