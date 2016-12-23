@@ -58,23 +58,23 @@
             <span id= "whereModeSwitch" class="selector"><input name="mode" type="radio">Где снасть?</span>
             <span id= "whichModeSwitch" class="selector"><input name="mode" type="radio">Какая снасть?</span>
           </td>
-          <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты
+          <td id="selectMasts" class="modeDependent where">Мачты
             <span id=   "allMastSwitch" class="selector"><input name="mast" type="checkbox">Все</span>
             <span id="mizzenMastSwitch" class="selector"><input name="mast" type="checkbox">Бизань</span>
             <span id=  "mainMastSwitch" class="selector"><input name="mast" type="checkbox">Грот</span>
             <span id=  "foreMastSwitch" class="selector"><input name="mast" type="checkbox">Фок</span>
           </td>
-          <td id="selectDecks" class="modeDependent usedInModeWhich">Палубы
+          <td id="selectDecks" class="modeDependent which">Палубы
             <span id=   "allDeckSwitch" class="selector"><input name="deck" type="checkbox">Все</span>
             <span id= "sternDeckSwitch" class="selector"><input name="deck" type="checkbox">ПолуЮт</span>
             <span id=  "mainDeckSwitch" class="selector"><input name="deck" type="checkbox">Главная</span>
             <span id=  "foreDeckSwitch" class="selector"><input name="deck" type="checkbox">Бак</span>
           </td>
-          <td id="selectFill" class="modeDependent usedInModeInfo usedInModeDemo">
+          <td id="selectFill" class="modeDependent info demo">
           </td>
-          <td id="options" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich">
-            <span id="schemeSwitch" class="selector modeDependent usedInModeWhere usedInModeWhich"><input type="checkbox">Схема</span>
-            <span id= "marksSwitch" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><input type="checkbox">Марки</span>
+          <td id="options" class="modeDependent demo where which">
+            <span id="schemeSwitch" class="selector modeDependent where which"><input type="checkbox">Схема</span>
+            <span id= "marksSwitch" class="selector modeDependent demo where which"><input type="checkbox">Марки</span>
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock"><td>
@@ -82,12 +82,12 @@
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div id="overlay"></div>
-            <div class="modeDependent usedInModeWhere">
+            <div class="modeDependent where">
               <div id="mizzenMastMask" class="mastMask"></div>
               <div id=  "mainMastMask" class="mastMask"></div>
               <div id=  "foreMastMask" class="mastMask"></div>
             </div>
-            <div class="modeDependent usedInModeWhich">
+            <div class="modeDependent which">
               <div id= "sternDeckMask" class="deckMask"></div>
               <div id=  "mainDeckMask" class="deckMask"></div>
               <div id=  "foreDeckMask" class="deckMask"></div>
@@ -95,14 +95,14 @@
           </div>
           <div id="placeholder"></div>
         </td></tr>
-        <tr id="schemeBorderFix" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr id="schemeBorderFix" class="modeDependent demo where which"><td>
           &nbsp;
         </td></tr>
-        <tr class="questionBlock modeDependent usedInModeWhere usedInModeWhich"><td>
-          <div class="modeDependent usedInModeWhere"><p>
+        <tr class="questionBlock modeDependent where which"><td>
+          <div class="modeDependent where"><p>
             Укажите на схеме сверху или в списке ниже точку крепления этой снасти:
           </p></div>
-          <div class="modeDependent usedInModeWhich"><p>
+          <div class="modeDependent which"><p>
             Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке:
           </p></div>
           <h2><span id="question"></span>?</h2>
@@ -127,11 +127,11 @@
             <button id="nextQuestionButton">Следующий вопрос</button>
           </p>
         </td></tr>
-        <tr class="choiceBlock high modeDependent usedInModeWhere"><td>
+        <tr class="choiceBlock high modeDependent where"><td>
           <table class="center"><tr id="pointNumbers">
           </tr></table>
         </td></tr>
-        <tr class="choiceBlock high modeDependent usedInModeDemo usedInModeWhich"><td>
+        <tr class="choiceBlock high modeDependent demo which"><td>
           <table class="center"><tr id="sublines">
             <td class="deck sailLines"><div>
               <h2 class="category sailLine">Снасти</h2>
@@ -214,7 +214,7 @@
             </div></td>
           </tr></table>
         </td></tr>
-        <tr class="high modeDependent usedInModeInfo">
+        <tr class="high modeDependent info">
           <td id="infoBlock">
             <section id="infoIntro">
               <h2>Описание</h2>

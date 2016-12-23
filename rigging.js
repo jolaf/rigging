@@ -979,7 +979,7 @@ function main() {
     setMode.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
     $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
         setMode.checkboxes[mode] = $('#' + mode + 'ModeSwitch input');
-        setMode.dependents[mode] = $('.usedInMode' + mode.capitalize());
+        setMode.dependents[mode] = $('.modeDependent.' + mode);
     });
     // Binding events for setMode()
     setMode.schemeCheckbox.prop('checked', true).change(function (_event) {
