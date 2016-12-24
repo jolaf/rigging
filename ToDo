@@ -7,10 +7,9 @@ Move setMode settings to a separate function
 
 Redesign Sublines and implement subline categories
 
-Insert more mode/status if's in ask/answer question handlers to reduce number of affected elements
 Move from tables to flex boxes
 Store all possible selections in variables
-Use jQuery delegated events to reduce the load on event handlers
+Use jQuery delegated events to reduce the load on event handlers?
 Cleanup CSS
 Cleanup main()
 
