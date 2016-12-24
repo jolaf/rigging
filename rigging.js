@@ -685,12 +685,13 @@ Subline.getSublines = function (line) {
 
 function onResize() {
     onResize.scheme.hide();
-    var scale = $(document).width() / SCHEME_WIDTH;
+    var scale = onResize.document.width() / SCHEME_WIDTH;
     onResize.placeholder.css({ height: Math.floor(2 * SCHEME_HEIGHT * scale) });
     onResize.scheme.css({ transform: 'scale(' + scale + ')'}).show();
 }
 
 onResize.configure = function () {
+    onResize.document = $(document);
     onResize.scheme = $('#scheme');
     onResize.placeholder = $('#placeholder');
 };
@@ -810,6 +811,10 @@ Questionary.construct = function () {
     Questionary.statAll = 0;
     Questionary.statCorrect = 0;
     Questionary.lastEntered = null;
+};
+
+Questionary.configure = function () {
+    // ToDo: create selections here
 };
 
 Questionary.askQuestion = function () {
@@ -990,7 +995,7 @@ Questionary.reset = function () {
     $('#statistics').hide();
 };
 
-function main() {
+function start() {
     // Create data objects from constant data
     Point.construct();
     Deck.construct();
@@ -1002,19 +1007,20 @@ function main() {
     // Configure and link data objects
     Deck.createObjects();
     Line.linkLines();
-    // Initialization requiring access to DOM
+    // Modifying DOM
     Deck.placeObjects();
     Mast.placeObjects();
     Point.placeObjects();
+    Questionary.configure();
     setMode.configure();
     onResize.configure();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
     Point.locationObject.css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
     // Binding menu handlers
-    $('.selector').click(menuHandler);
-    Deck.selectable.allSelector.click();
-    Mast.selectable.allSelector.click();
+    $('.selector').on('click firefoxWorkaround', menuHandler);
+    Deck.selectable.allCheckbox.trigger('firefoxWorkaround');
+    Mast.selectable.allCheckbox.trigger('firefoxWorkaround');
     // Binding other handlers
     $('#resetButton').click(Questionary.reset);
     $('.selector, .point, .pointNumber, .subline').mousedown(false); // Avoid selection by double-click
@@ -1028,4 +1034,12 @@ function main() {
     $(window).resize(onResize);
 }
 
-$(document).ready(main);
+function main() {
+    if (window.jQuery) {
+        $(document).ready(start);
+    } else {
+        window.setTimeout(main, 100);
+    }
+}
+
+main();

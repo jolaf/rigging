@@ -142,7 +142,7 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 }
 
 #scheme div:first-of-type img {
-	transform: scaleY(-1);
+	transform: scaleY(-1) translateY(-2px);
 }
 
 img.scheme {
