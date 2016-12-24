@@ -899,11 +899,7 @@ Questionary.answerQuestion = function (event) {
                     }
                 });
             });
-            $.each(point.lines, function (_index, line) {
-                if (line.name === Questionary.correctAnswer.name) { // ToDo: use collection for this?
-                    isCorrect = true;
-                }
-            });
+            isCorrect = point.lines.indexOf(Questionary.correctAnswer) >= 0;
             if (!isCorrect) {
                 point.objects.addClass('wrongAnswer');
                 $('#rightAnswerText').text(point.name); // ToDo: create selector
@@ -945,7 +941,7 @@ Questionary.answerQuestion = function (event) {
             });
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
-                    point.iconObject.addClass('wrongAnswer'); // ToDo: create a collection for this
+                    point.iconObject.addClass('wrongAnswer');
                 });
                 subline.object.addClass('wrongAnswer');
                 if (Questionary.preAnswer) {
@@ -959,14 +955,9 @@ Questionary.answerQuestion = function (event) {
             assert(false, "Unknown mode: " + setMode.mode);
     }
     Questionary.status = Questionary.ANSWERED;
-    if (isCorrect) {
-        $('#rightAnswer').show(); // ToDo: create selectors
-        $('#wrongAnswer').hide();
-    } else {
-        $('#wrongAnswer').show();
-        $('#rightAnswer').hide();
-    }
     Questionary.updateStatistics(isCorrect);
+    $('#rightAnswer').toggle(isCorrect); // ToDo: create selectors
+    $('#wrongAnswer').toggle(!isCorrect);
     $('#tooltipNote').hide();
     $('#nextQuestionNote').show();
     Point.toggleTooltips(true);
