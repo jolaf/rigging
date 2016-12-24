@@ -133,13 +133,17 @@ Point.prototype.createObject = function () {
             this.name = subNames.join(' / ') + ' ' + theLastWord;
         }
     }
-    // Connecting similarly named lines
+    // Connecting similarly named lines and points
+    var thisPoint = this;
     var thisLines = this.lines;
     $.each(Line.lines, function (_index, line) {
         if (thisLines.indexOf(line) < 0) {
             $.each(thisLines, function (_index, thisLine) {
                 if (line.name === thisLine.name) {
                     thisLines.push(line);
+                    if (line.points.indexOf(thisPoint) < 0) {
+                        line.points.push(thisPoint);
+                    }
                 }
             });
         }
@@ -303,7 +307,7 @@ function Selectable(tag, instances, strict) {
     this.tag = tag;
     this.instances = instances;
     this.strict = strict;
-    this.masks = null; // ToDo: Can we put it in this, not target?
+    this.masks = null;
     this.checkboxes = null;
     this.selectors = null;
     this.allCheckbox = null;
@@ -506,30 +510,36 @@ Line.linkLines = function () {
     $.each(Line.lines, function (_index, line) {
         var demoElements = [];
         var whereElements = [];
+        var whichElements = [];
         line.sublines = Subline.getSublines(line);
         $.each(line.sublines, function (_index, subline) {
             demoElements.push(subline.object[0]);
+            whichElements.push(subline.object[0]);
         });
         $.each(line.points, function (_index, point) {
             demoElements.push(point.iconObject[0]);
             whereElements.push(point.iconObject[0]);
             whereElements.push(point.numberObject[0]);
         });
-        line.demoObjects = $(demoElements);
-        line.whereObjects = $(whereElements);
+        line.demoObjects = $($.uniqueSort(demoElements));
+        line.whereObjects = $($.uniqueSort(whereElements));
+        line.whichObjects = $($.uniqueSort(whichElements));
     });
     $.each(Point.points.concat(Subline.sublines), function (_index, target) {
         var demoElements = [];
         var whereElements = [];
+        var whichElements = (target instanceof Point) ? [target.iconObject[0],] : null;
         $.each(target.lines, function (_index, line) {
             Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
             if (target instanceof Point) {
                 Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
+                Array.prototype.push.apply(whichElements, line.whichObjects.toArray());
             }
         });
-        target.demoObjects = $(demoElements);
+        target.demoObjects = $($.uniqueSort(demoElements));
         if (target instanceof Point) {
-            target.whereObjects = $(whereElements);
+            target.whereObjects = $($.uniqueSort(whereElements));
+            target.whichObjects = $($.uniqueSort(whichElements));
         }
     });
 };
@@ -892,13 +902,7 @@ Questionary.answerQuestion = function (event) {
         case setMode.WHERE:
             var point = event.data;
             point.objects.removeClass('on');
-            $.each(Point.points, function (_index, point) {
-                $.each(point.lines, function (_index, line) {
-                    if (line.name === Questionary.correctAnswer.name) { // ToDo: create a collection for this
-                        point.objects.addClass('rightAnswer');
-                    }
-                });
-            });
+            Questionary.correctAnswer.whereObjects.addClass('rightAnswer');
             isCorrect = point.lines.indexOf(Questionary.correctAnswer) >= 0;
             if (!isCorrect) {
                 point.objects.addClass('wrongAnswer');
@@ -933,12 +937,7 @@ Questionary.answerQuestion = function (event) {
             isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
             subline.object.mouseout();
             Point.locationObject.addClass('highlight');
-            Questionary.correctAnswer.iconObject.addClass('rightAnswer');
-            $.each(Questionary.correctAnswer.lines, function (_index, correctLine) {
-                $.each(correctLine.sublines, function (_index, correctSubline) {
-                    correctSubline.object.addClass('rightAnswer'); // ToDo: create a collection for this
-                });
-            });
+            Questionary.correctAnswer.whichObjects.addClass('rightAnswer');
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
                     point.iconObject.addClass('wrongAnswer');

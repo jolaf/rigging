@@ -1,8 +1,6 @@
 
 Store all possible selections in variables
 
-Check all $.each iterations for possibilities of using pre-set collections
-
 Redesign Sublines and implement subline categories
 
 Move from tables to flex boxes
