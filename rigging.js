@@ -373,7 +373,7 @@ Selectable.prototype.menuHandler = function (checkbox, answer) {
         this.allSelector.attr('disabled', isAll);
         this.allCheckbox.prop('disabled', isAll).prop('checked', isAll);
     }
-    if (Questionary.status === Questionary.ASKED && !Questionary.correctAnswer[this.tag].checkbox.prop('checked')) {
+    if (Questionary.status === Questionary.ASKED && !Questionary.rightAnswer[this.tag].checkbox.prop('checked')) {
         Questionary.askQuestion();
     }
 };
@@ -604,40 +604,14 @@ function Subline(object, sublineType) {
     this.object.on('mouseenter mouseleave', this, this.mouseHandler);
 }
 
-Subline.prototype.addLine = function (line) {
-    this.lines.push(line);
-    var thisPoints = this.points;
-    $.each(line.points, function (_index, point) {
-        if (thisPoints.indexOf(point) < 0) {
-            thisPoints.push(point);
-        }
-    });
-    return this;
-};
-
-Subline.prototype.mouseHandler = function (event) {
-    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
-    assert(event.data, "Event data is not specified");
-    var isEnter = (event.type === 'mouseenter');
-    if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = isEnter ? event.data.object : null;
-        if (Questionary.status === Questionary.ANSWERED) {
-            return;
-        }
-    }
-    (setMode.mode === setMode.WHICH &&
-     Questionary.status === Questionary.ASKED ?
-        event.data.object
-      : event.data.demoObjects).toggleClass('on', isEnter);
-};
-
 Subline.construct = function () {
     Subline.SAIL = 'SAIL';
     Subline.SAILLINE = 'SAILLINE';
     Subline.NONSAILLINE = 'NONSAILLINE';
     var uniqueNames = [];
     Subline.sublines = [];
-    $('#sublines').children().each(function (_index, group) {
+    Subline.locationObject = $('#sublines');
+    Subline.locationObject.children().each(function (_index, group) {
         group = $(group);
         var sublineType;
         if (group.is('.sails')) {
@@ -660,6 +634,17 @@ Subline.construct = function () {
             }
         });
     });
+};
+
+Subline.prototype.addLine = function (line) {
+    this.lines.push(line);
+    var thisPoints = this.points;
+    $.each(line.points, function (_index, point) {
+        if (thisPoints.indexOf(point) < 0) {
+            thisPoints.push(point);
+        }
+    });
+    return this;
 };
 
 Subline.getSublines = function (line) {
@@ -696,6 +681,22 @@ Subline.getSublines = function (line) {
     return ret;
 };
 
+Subline.prototype.mouseHandler = function (event) {
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
+    var isEnter = (event.type === 'mouseenter');
+    if (setMode.mode === setMode.DEMO) {
+        Questionary.lastEntered = isEnter ? event.data.object : null;
+        if (Questionary.status === Questionary.ANSWERED) {
+            return;
+        }
+    }
+    (setMode.mode === setMode.WHICH &&
+     Questionary.status === Questionary.ASKED ?
+        event.data.object
+      : event.data.demoObjects).toggleClass('on', isEnter);
+};
+
 function onResize() {
     onResize.scheme.hide();
     var scale = onResize.document.width() / SCHEME_WIDTH;
@@ -726,7 +727,7 @@ function setMode(mode) {
     modeCheckbox.prop('checked', true);
     setMode.allDependents.hide();
     setMode.dependents[mode].show(); // Sorry, no way to do it simple and fast in one cycle
-    $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
+    Questionary.allObjects.hide();
     switch(mode) {
         case setMode.INFO:
             setMode.schemeBlock.hide();
@@ -818,7 +819,7 @@ function Questionary() {
 Questionary.construct = function () {
     Questionary.ASKED = 'ASKED';
     Questionary.ANSWERED = 'ANSWERED';
-    Questionary.correctAnswer = null;
+    Questionary.rightAnswer = null;
     Questionary.preAnswer = null;
     Questionary.status = null;
     Questionary.statAll = 0;
@@ -827,7 +828,25 @@ Questionary.construct = function () {
 };
 
 Questionary.configure = function () {
-    // ToDo: create selections here
+    Questionary.highlightClasses = 'on question rightAnswer wrongAnswer';
+    Questionary.demoLocationObjects = Point.locationObject.add(Subline.locationObject);
+    Questionary.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
+    var pointObjects = $('.point');
+    Questionary.demoObjects = pointObjects.add('.subline');
+    Questionary.whereObjects = pointObjects.add('.pointNumber');
+    Questionary.questionObject = $('#question');
+    Questionary.rightAnswerObject = $('#rightAnswer');
+    Questionary.rightAnswerTextObject = $('#rightAnswerText');
+    Questionary.wrongAnswerObject = $('#wrongAnswer');
+    Questionary.tooltipNoteObject = $('#tooltipNote');
+    Questionary.nextQuestionNoteObject = $('#nextQuestionNote');
+    Questionary.nextQuestionButton = $('#nextQuestionButton')[0];
+    Questionary.statCorrectObject = $('#statCorrect');
+    Questionary.statAllObject = $('#statAll');
+    Questionary.statPercentObject = $('#statPercent');
+    Questionary.statisticsObject = $('#statistics');
+    Questionary.answerObjects = Questionary.rightAnswerObject.add(Questionary.wrongAnswerObject).add(Questionary.nextQuestionNoteObject);
+    Questionary.allObjects = Questionary.answerObjects.add(Questionary.statisticsObject);
 };
 
 Questionary.askQuestion = function () {
@@ -836,10 +855,14 @@ Questionary.askQuestion = function () {
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            $('#overlay, #sublines').addClass('highlight'); // ToDo: use pre-set selection variable
-            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
-            Questionary.status = Questionary.ASKED;
+            Questionary.demoLocationObjects.addClass('highlight');
+            Questionary.demoObjects.removeClass(Questionary.highlightClasses);
             Point.toggleTooltips(true);
+            Questionary.status = Questionary.ASKED;
+            if (Questionary.preAnswer) {
+                Questionary.preAnswer.object.removeClass('preAnswer');
+                Questionary.preAnswer = null;
+            }
             if (Questionary.lastEntered) {
                 Questionary.lastEntered.mouseenter();
                 Questionary.lastEntered = null;
@@ -849,41 +872,43 @@ Questionary.askQuestion = function () {
             var line;
             while (true) {
                 line = Line.lines.random();
-                if ((line.mast.checkbox || Mast.allCheckbox).prop('checked') &&
-                    (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
+                if (line.mast.checkbox.prop('checked') &&
+                    (!Questionary.rightAnswer || line.name != Questionary.rightAnswer.name)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = line;
-            $('#question').text(Questionary.correctAnswer.name);
-            $('#overlay, #pointNumbers').addClass('highlight'); // ToDo: use pre-set selection variable
-            $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
-            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-            $('#tooltipNote').show();
-            Questionary.status = Questionary.ASKED;
+            Questionary.rightAnswer = line;
+            Questionary.questionObject.text(Questionary.rightAnswer.name);
+            Questionary.whereLocationObjects.addClass('highlight');
+            Questionary.whereObjects.removeClass(Questionary.highlightClasses);
+            Questionary.answerObjects.hide();
+            Questionary.tooltipNoteObject.show();
             Point.toggleTooltips(false);
+            Questionary.status = Questionary.ASKED;
             break;
         case setMode.WHICH:
             var point;
             while (true) {
                 point = Point.points.random();
                 if (point.deck.checkbox.prop('checked') &&
-                    (!Questionary.correctAnswer || point.location != Questionary.correctAnswer.location)) {
+                    (!Questionary.rightAnswer || point.location != Questionary.rightAnswer.location)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = point;
-            $('#question').text(Questionary.correctAnswer.location);
+            Questionary.rightAnswer = point;
+            Questionary.questionObject.text(Questionary.rightAnswer.location);
             Point.locationObject.removeClass('highlight pointer');
-            $('#sublines').addClass('highlight');
-            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
-            $('.preAnswer').removeClass('preAnswer');
+            Subline.locationObject.addClass('highlight');
+            Questionary.demoObjects.removeClass(Questionary.highlightClasses);
             point.iconObject.addClass('question');
-            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-            $('#tooltipNote').show();
-            Questionary.status = Questionary.ASKED;
-            Questionary.preAnswer = null;
+            Questionary.answerObjects.hide();
+            Questionary.tooltipNoteObject.show();
             Point.toggleTooltips(false);
+            Questionary.status = Questionary.ASKED;
+            if (Questionary.preAnswer) {
+                Questionary.preAnswer.object.removeClass('preAnswer');
+                Questionary.preAnswer = null;
+            }
             break;
         default:
             assert(false, "Unknown mode: " + setMode.mode);
@@ -905,11 +930,11 @@ Questionary.answerQuestion = function (event) {
         case setMode.WHERE:
             var point = event.data;
             point.objects.removeClass('on');
-            Questionary.correctAnswer.whereObjects.addClass('rightAnswer');
-            isCorrect = point.lines.indexOf(Questionary.correctAnswer) >= 0;
+            Questionary.rightAnswer.whereObjects.addClass('rightAnswer');
+            isCorrect = point.lines.indexOf(Questionary.rightAnswer) >= 0;
             if (!isCorrect) {
                 point.objects.addClass('wrongAnswer');
-                $('#rightAnswerText').text(point.name); // ToDo: create selector
+                Questionary.rightAnswerTextObject.text(point.name);
             }
             break;
         case setMode.WHICH:
@@ -937,10 +962,10 @@ Questionary.answerQuestion = function (event) {
                     return Questionary.preAnswer.points.indexOf(value) >= 0;
                 });
             }
-            isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
+            isCorrect = points.indexOf(Questionary.rightAnswer) >= 0;
             subline.object.mouseout();
             Point.locationObject.addClass('highlight');
-            Questionary.correctAnswer.whichObjects.addClass('rightAnswer');
+            Questionary.rightAnswer.whichObjects.addClass('rightAnswer');
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
                     point.iconObject.addClass('wrongAnswer');
@@ -949,35 +974,34 @@ Questionary.answerQuestion = function (event) {
                 if (Questionary.preAnswer) {
                     Questionary.preAnswer.object.addClass('wrongAnswer');
                 }
-                $('#rightAnswerText').text(Questionary.correctAnswer.name);
+                Questionary.rightAnswerTextObject.text(Questionary.rightAnswer.name);
             }
-            Questionary.status = Questionary.ANSWERED;
             break;
         default:
             assert(false, "Unknown mode: " + setMode.mode);
     }
     Questionary.status = Questionary.ANSWERED;
     Questionary.updateStatistics(isCorrect);
-    $('#rightAnswer').toggle(isCorrect); // ToDo: create selectors
-    $('#wrongAnswer').toggle(!isCorrect);
-    $('#tooltipNote').hide();
-    $('#nextQuestionNote').show();
+    Questionary.rightAnswerObject.toggle(isCorrect);
+    Questionary.wrongAnswerObject.toggle(!isCorrect);
+    Questionary.tooltipNoteObject.hide();
+    Questionary.nextQuestionNoteObject.show();
     Point.toggleTooltips(true);
 };
 
 Questionary.updateStatistics = function (isCorrect) {
     Questionary.statAll += 1;
     Questionary.statCorrect += isCorrect ? 1 : 0;
-    $('#statCorrect').text(Questionary.statCorrect);
-    $('#statAll').text(Questionary.statAll);
-    $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
-    $('#statistics').show();
+    Questionary.statCorrectObject.text(Questionary.statCorrect);
+    Questionary.statAllObject.text(Questionary.statAll);
+    Questionary.statPercentObject.text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
+    Questionary.statisticsObject.show();
 };
 
 Questionary.nextQuestion = function (event) {
     if (Questionary.status === Questionary.ANSWERED) {
         Questionary.askQuestion();
-    } else if (Questionary.status === Questionary.ASKED && $(event.target).is('#nextQuestionButton')) {
+    } else if (Questionary.status === Questionary.ASKED && event.target === Questionary.nextQuestionButton) {
         Questionary.updateStatistics();
         Questionary.askQuestion();
     }
@@ -985,7 +1009,7 @@ Questionary.nextQuestion = function (event) {
 
 Questionary.reset = function () {
     Questionary.statAll = Questionary.statCorrect = 0;
-    $('#statistics').hide();
+    Questionary.statisticsObject.hide();
 };
 
 function start() {

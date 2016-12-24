@@ -1,12 +1,11 @@
 
-Store all possible selections in variables
-
 Redesign Sublines and implement subline categories
 
 Move from tables to flex boxes
+
 Use jQuery delegated events to reduce the load on event handlers?
+
 Cleanup CSS
-Cleanup main()
 
 Remove hover on touch
 
