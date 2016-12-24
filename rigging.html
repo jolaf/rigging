@@ -52,29 +52,29 @@
     <td>
       <table class="wide high">
         <tr><td><form><table id="controls"><tr>
-          <td id="modes">
-            <span id=  "infoModeSwitch" class="selector"><input name="mode" type="radio">Описание</span>
-            <span id=  "demoModeSwitch" class="selector"><input name="mode" type="radio">Просмотр</span>
-            <span id= "whereModeSwitch" class="selector"><input name="mode" type="radio">Где снасть?</span>
-            <span id= "whichModeSwitch" class="selector"><input name="mode" type="radio">Какая снасть?</span>
+          <td id="selectModes">
+            <span class="selector"><input name="mode" type="radio" class= "info">Описание</span>
+            <span class="selector"><input name="mode" type="radio" class= "demo">Просмотр</span>
+            <span class="selector"><input name="mode" type="radio" class="where">Где снасть?</span>
+            <span class="selector"><input name="mode" type="radio" class="which">Какая снасть?</span>
           </td>
           <td id="selectMasts" class="modeDependent where">Мачты
-            <span id=   "allMastSwitch" class="selector"><input name="mast" type="checkbox">Все</span>
-            <span id="mizzenMastSwitch" class="selector"><input name="mast" type="checkbox">Бизань</span>
-            <span id=  "mainMastSwitch" class="selector"><input name="mast" type="checkbox">Грот</span>
-            <span id=  "foreMastSwitch" class="selector"><input name="mast" type="checkbox">Фок</span>
+            <span class="selector"><input name="mast" type="checkbox" class=   "all">Все</span>
+            <span class="selector"><input name="mast" type="checkbox" class="mizzen">Бизань</span>
+            <span class="selector"><input name="mast" type="checkbox" class=  "main">Грот</span>
+            <span class="selector"><input name="mast" type="checkbox" class=  "fore">Фок</span>
           </td>
           <td id="selectDecks" class="modeDependent which">Палубы
-            <span id=   "allDeckSwitch" class="selector"><input name="deck" type="checkbox">Все</span>
-            <span id= "sternDeckSwitch" class="selector"><input name="deck" type="checkbox">ПолуЮт</span>
-            <span id=  "mainDeckSwitch" class="selector"><input name="deck" type="checkbox">Главная</span>
-            <span id=  "foreDeckSwitch" class="selector"><input name="deck" type="checkbox">Бак</span>
+            <span class="selector"><input name="deck" type="checkbox" class=   "all">Все</span>
+            <span class="selector"><input name="deck" type="checkbox" class= "stern">ПолуЮт</span>
+            <span class="selector"><input name="deck" type="checkbox" class=  "main">Главная</span>
+            <span class="selector"><input name="deck" type="checkbox" class=  "fore">Бак</span>
           </td>
           <td id="selectFill" class="modeDependent info demo">
           </td>
           <td id="options" class="modeDependent demo where which">
-            <span id="schemeSwitch" class="selector modeDependent where which"><input type="checkbox">Схема</span>
-            <span id= "marksSwitch" class="selector modeDependent demo where which"><input type="checkbox">Марки</span>
+            <span class="selector modeDependent      where which"><input id="schemeCheckbox" type="checkbox">Схема</span>
+            <span class="selector modeDependent demo where which"><input id="marksCheckbox"  type="checkbox">Марки</span>
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock"><td>
@@ -82,15 +82,15 @@
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div><img class="scheme" alt="" src="images/blank.gif"></div>
             <div id="overlay"></div>
-            <div class="modeDependent where">
-              <div id="mizzenMastMask" class="mastMask"></div>
-              <div id=  "mainMastMask" class="mastMask"></div>
-              <div id=  "foreMastMask" class="mastMask"></div>
+            <div class="mastMasks modeDependent where">
+              <div class="mizzen"></div>
+              <div class=  "main"></div>
+              <div class=  "fore"></div>
             </div>
-            <div class="modeDependent which">
-              <div id= "sternDeckMask" class="deckMask"></div>
-              <div id=  "mainDeckMask" class="deckMask"></div>
-              <div id=  "foreDeckMask" class="deckMask"></div>
+            <div class="deckMasks modeDependent which">
+              <div class= "stern"></div>
+              <div class=  "main"></div>
+              <div class=  "fore"></div>
             </div>
           </div>
           <div id="placeholder"></div>

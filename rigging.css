@@ -82,7 +82,7 @@ table.center {
 	margin: 0.5em 0;
 }
 
-#modes {
+#selectModes {
 	width: 47%;
 }
 
@@ -157,7 +157,7 @@ img.scheme {
 	z-index: 0;
 }
 
-.deckMask {
+.deckMasks > * {
 	position: absolute;
 	background: rgba(255, 236, 164, 0.75); /* #ffeca4 */
 	top: 0;
@@ -165,22 +165,22 @@ img.scheme {
 	display: none;
 }
 
-#foreDeckMask {
+.deckMasks .fore {
 	right: 0;
 	width: 25.9%;
 }
 
-#mainDeckMask {
+.deckMasks .main {
 	left: 43.1%;
 	width: 31%;
 }
 
-#sternDeckMask {
+.deckMasks .stern {
 	left: 0;
 	width: 43.1%;
 }
 
-.mastMask {
+.mastMasks > * {
 	position: absolute;
 	background: url("images/mastmask.png") no-repeat;
 	width: 160px;
@@ -189,15 +189,15 @@ img.scheme {
 	display: none;
 }
 
-#foreMastMask {
+.mastMasks .fore {
 	left: 83.4%;
 }
 
-#mainMastMask {
+.mastMasks .main {
 	left: 48.3%;
 }
 
-#mizzenMastMask {
+.mastMasks .mizzen {
 	left: 15.4%;
 }
 

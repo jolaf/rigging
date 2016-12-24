@@ -316,6 +316,16 @@ function Deck(name, id, title, rails) {
     });
 }
 
+Deck.decks = null;
+Deck.masks = null;
+Deck.checkboxes = null;
+Deck.selectors = null;
+Deck.allCheckbox = null;
+Deck.allSelector = null;
+Deck.singularSelectors = null;
+Deck.number = null;
+Deck.locationObject = null;
+
 Deck.construct = function () {
     var uniqueNames = [];
     Deck.decks = $.map(DECKS, function (deckArgs, _index) {
@@ -350,19 +360,28 @@ Deck.createObjects = function () {
 };
 
 Deck.prototype.placeObject = function () {
-    Deck.locationObject.prepend(this.object);
-    this.checkbox = $('#' + this.id + 'DeckSwitch input');
+    this.checkbox = $('.selector [name="deck"].' + this.id);
     assert(this.checkbox.length === 1, "Deck checkbox not found: " + this.name + " / " + this.id);
+    var mask = $('.deckMasks .' + this.id);
+    assert(mask.length === 1, "Deck mask not found: " + this.name + " / " + this.id);
+    this.checkbox.data('mask', mask);
+    Deck.locationObject.prepend(this.object);
 };
 
 Deck.placeObjects = function () {
+    Deck.masks = $('.deckMasks > *');
+    Deck.checkboxes = $('.selector [name="deck"]');
+    Deck.selectors = Deck.checkboxes.parent('.selector');
+    Deck.allCheckbox = $('.selector [name="deck"].all');
+    Deck.allSelector = Deck.allCheckbox.parent('.selector');
+    assert(Deck.allSelector.length === 1, "All decks selector not found");
+    Deck.singularSelectors = $('.selector [name="deck"]:not(.all)').parent('.selector');
+    Deck.number = Deck.singularSelectors.length;
+    assert(Deck.number > 2 && Deck.masks.length === Deck.number && Deck.selectors.length === Deck.number + 1 && Deck.checkboxes.length === Deck.number + 1, "Deck configuration inconsistency");
     Deck.locationObject = $('#pointNumbers');
     $.each(Deck.decks, function (_index, deck) {
         deck.placeObject();
     });
-    Deck.allSwitch = $('#allDeckSwitch');
-    Deck.allCheckbox = $('input', Deck.allSwitch);
-    assert(Deck.allCheckbox.length === 1, "All decks checkbox not found");
 };
 
 Deck.getDeck = function (deckName) {
@@ -477,6 +496,13 @@ function Mast(name, id) {
 }
 
 Mast.masts = [];
+Mast.masks = null;
+Mast.checkboxes = null;
+Mast.selectors = null;
+Mast.allCheckbox = null;
+Mast.allSelector = null;
+Mast.singularSelectors = null;
+Mast.number = null;
 
 Mast.getMast = function (mastName, mastID) {
     mastName = mastName || '';
@@ -505,19 +531,29 @@ Mast.prototype.getSail = function (sailName) {
 };
 
 Mast.prototype.placeObject = function () {
-    this.checkbox = $('#' + this.id + 'MastSwitch input');
-    if (!this.checkbox.length) {
-        this.checkbox = null;
+    this.checkbox = $('.selector [name="mast"].' + this.id);
+    if (this.checkbox.length) {
+        var mask = $('.mastMasks .' + this.id);
+        assert(mask.length === 1, "Mast mask not found: " + this.name + " / " + this.id);
+        this.checkbox.data('mask', mask);
+    } else {
+        this.checkbox = Mast.allCheckbox;
     }
 };
 
 Mast.placeObjects = function () {
+    Mast.masks = $('.mastMasks > *');
+    Mast.checkboxes = $('.selector [name="mast"]');
+    Mast.selectors = Mast.checkboxes.parent('.selector');
+    Mast.allCheckbox = $('.selector [name="mast"].all');
+    Mast.allSelector = Mast.allCheckbox.parent('.selector');
+    assert(Mast.allSelector.length === 1, "All masts selector not found");
+    Mast.singularSelectors = $('.selector [name="mast"]:not(.all)').parent('.selector');
+    Mast.number = Mast.singularSelectors.length;
+    assert(Mast.number > 2 && Mast.masks.length === Mast.number && Mast.selectors.length === Mast.number + 1 && Mast.checkboxes.length === Mast.number + 1, "Mast configuration inconsistency");
     $.each(Mast.masts, function (_index, mast) {
         mast.placeObject();
     });
-    Mast.allSwitch = $('#allMastSwitch');
-    Mast.allCheckbox = $('input', Mast.allSwitch);
-    assert(Mast.allCheckbox.length === 1, "All masts checkbox not found");
 };
 
 function Subline(object, sublineType) {
@@ -633,8 +669,7 @@ function onResize() {
 
 function setMode(mode) {
     mode = mode.trim();
-    mode = mode.startsWith('#') ? mode.slice(1) : mode.endsWith('ModeSwitch') ? mode.slice(0, -10) : mode;
-    mode = mode.trim().toLowerCase();
+    mode = (mode.startsWith('#') ? mode.slice(1).trim() : mode).toLowerCase();
     if (mode === setMode.mode) {
         return;
     }
@@ -643,11 +678,12 @@ function setMode(mode) {
         mode = setMode.INFO;
         modeCheckbox = setMode.checkboxes[mode];
     }
+    assert(modeCheckbox.length === 1, "Mode checkbox not found");
     setMode.mode = mode;
     location.href = '#' + mode;
     modeCheckbox.prop('checked', true);
     setMode.allDependents.hide();
-    setMode.dependents[mode].show(); // ToDo: Refactor to use a single cycle using hasClass
+    setMode.dependents[mode].show(); // Sorry, no way to do it simple and fast in one cycle
     $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
     switch(mode) {
         case setMode.INFO:
@@ -675,84 +711,71 @@ setMode.WHICH = 'which';
 
 setMode.checkboxes = {};
 setMode.dependents = {};
-setMode.deckMasks = null;
-setMode.mastMasks = null;
 setMode.schemeSelector = null;
 setMode.schemeCheckbox = null;
 
 setMode.mode = null;
 
 function menuHandler(event) {
-    var selector = $(this); // jshint ignore:line
-    var input = $('input', selector);
+    var checkbox = $('input', $(this)); // jshint ignore:line
     if (this === event.target) { // jshint ignore:line
-        input.click();
+        checkbox.click();
         return;
     }
-    if (input.attr('name') === 'mode') {
-        setMode(this.id); // jshint ignore:line
+    if (checkbox.prop('name') === 'mode') {
+        setMode(checkbox.prop('class'));
         return;
     }
-    if (input.prop('checked')) {
+    if (checkbox.prop('checked')) {
         Questionary.reset();
     }
     var checked;
-    if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
-        var deck = selector[0].id.slice(0, -10); // ToDo: Store as data in input or selector
-        if (deck === 'all') {
-            $('.deckMask').hide(); // ToDo: Optimize, do it once, store in selectors
-            $('#selectDecks input').prop('checked', true); // ToDo: Optimize, do it once, store in selectors
+    var isAll;
+    if (checkbox.prop('name') === 'deck') { // ToDo: Unify handling for decks and masts
+        var deckID = checkbox.prop('class');
+        if (deckID === 'all') {
+            Deck.masks.hide();
+            Deck.checkboxes.prop('checked', true);
         } else {
-            $('#' + deck + 'DeckMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
+            checkbox.data('mask').toggle(!checkbox.prop('checked'));
         }
-        checked = $('#selectDecks :not(#allDeckSwitch) input:checked'); // ToDo: Create special class for not-all decks
-        switch (checked.length) {
-            case 1:
-                checked.parent().attr('disabled', true);
-                checked.prop('disabled', true);
-                break;
-            case 2:
-            case 3:
-                $('#selectDecks .selector').attr('disabled', false);
-                $('#selectDecks input').prop('disabled', false);
-                $('#allDeckSwitch').attr('disabled', checked.length === 3);
-                $('#allDeckSwitch input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                break;
-            default:
-                assert(false, "Checkbox misconfiguration: " + checked.length);
+        checked = $('input:checked', Deck.singularSelectors);
+        assert(1 <= checked.length <= Deck.number, "Deck checkbox misconfiguration: " + checked.length);
+        isAll = checked.length === Deck.number;
+        if (checked.length === 1) {
+            checked.parent().attr('disabled', true);
+            checked.prop('disabled', true);
+        } else {
+            Deck.selectors.attr('disabled', false);
+            Deck.checkboxes.prop('disabled', false);
+            Deck.allSelector.attr('disabled', isAll);
+            Deck.allCheckbox.prop('disabled', isAll).prop('checked', isAll);
         }
-        if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input').prop('checked')) {
+        if (Questionary.status === Questionary.ASKED && !Questionary.correctAnswer.deck.checkbox.prop('checked')) {
             Questionary.askQuestion();
         }
-    } else if (input.attr('name') === 'mast') {
-        var mast = selector[0].id.slice(0, -10);
-        if (mast === 'all') {
-            $('.mastMask').hide(); // ToDo: Optimize, do it once, store in selectors
-            $('#selectMasts input').prop('checked', true); // ToDo: Optimize, do it once, store in selectors
+    } else if (checkbox.prop('name') === 'mast') {
+        var mastID = checkbox.prop('class');
+        if (mastID === 'all') {
+            Mast.masks.hide();
+            Mast.checkboxes.prop('checked', true);
         } else {
-            $('#' + mast + 'MastMask').toggle(!input.prop('checked')); // ToDo: Optimize, do it once, store in selectors
+            checkbox.data('mask').toggle(!checkbox.prop('checked'));
         }
-        checked = $('#selectMasts :not(#allMastSwitch) input:checked');
-        switch (checked.length) {
-            case 1:
-                checked.parent().attr('disabled', true);
-                checked.prop('disabled', true);
-                break;
-            case 2:
-            case 3:
-                $('#selectMasts .selector').attr('disabled', false);
-                $('#selectMasts input').prop('disabled', false);
-                $('#allMastSwitch').attr('disabled', checked.length === 3);
-                $('#allMastSwitch input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                break;
-            default:
-                assert(false, "Checkbox misconfiguration: " + checked.length);
+        checked = $('input:checked', Mast.singularSelectors);
+        assert(1 <= checked.length <= Mast.number, "Mast checkbox misconfiguration: " + checked.length);
+        isAll = checked.length === Mast.number;
+        if (checked.length === 1) {
+            checked.parent().attr('disabled', true);
+            checked.prop('disabled', true);
+        } else {
+            Mast.selectors.attr('disabled', false);
+            Mast.checkboxes.prop('disabled', false);
+            Mast.allSelector.attr('disabled', isAll);
+            Mast.allCheckbox.prop('disabled', isAll).prop('checked', isAll);
         }
-        if (Questionary.status === Questionary.ASKED) {
-            input = Questionary.correctAnswer.mast.name ? $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input') : [];
-            if (!input.length || !input.prop('checked')) {
-                Questionary.askQuestion();
-            }
+        if (Questionary.status === Questionary.ASKED && !Questionary.correctAnswer.mast.checkbox.prop('checked')) {
+            Questionary.askQuestion();
         }
     }
 }
@@ -969,16 +992,13 @@ function main() {
     onResize.placeholder = $('#placeholder');
     setMode.schemeBlock = $('#schemeBlock');
     // Binding to fixed DOM elements for setMode()
-    setMode.mastMasks = $('.mastMask');
-    setMode.deckMasks = $('.deckMask');
     setMode.allDependents = $('.modeDependent');
-    setMode.schemeSelector = $('#schemeSwitch');
-    setMode.schemeCheckbox = $('input', setMode.schemeSelector);
-    setMode.marksSelector = $('#marksSwitch');
-    setMode.marksCheckbox = $('input', setMode.marksSelector);
+    setMode.schemeCheckbox = $('#schemeCheckbox');
+    setMode.marksCheckbox = $('#marksCheckbox');
+    setMode.marksSelector = setMode.marksCheckbox.parent();
     setMode.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
     $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
-        setMode.checkboxes[mode] = $('#' + mode + 'ModeSwitch input');
+        setMode.checkboxes[mode] = $('.selector [name="mode"].' + mode);
         setMode.dependents[mode] = $('.modeDependent.' + mode);
     });
     // Binding events for setMode()
@@ -998,7 +1018,8 @@ function main() {
         }
     }).change();
     $('.selector').click(menuHandler);
-    $('#allMastSwitch, #allDeckSwitch').click();
+    Deck.allSelector.click();
+    Mast.allSelector.click();
     $('#resetButton').click(Questionary.reset);
     $('.selector, .point, .pointNumber, .subline').mousedown(function (_event) { return false; }); // Avoid selection by double-click
     $('body').click(Questionary.nextQuestion);
