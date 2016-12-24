@@ -1,14 +1,13 @@
 
+Store all possible selections in variables
+
 Check all $.each iterations for possibilities of using pre-set collections
 
 Get rid of Sail class?
 
-Move setMode settings to a separate function
-
 Redesign Sublines and implement subline categories
 
 Move from tables to flex boxes
-Store all possible selections in variables
 Use jQuery delegated events to reduce the load on event handlers?
 Cleanup CSS
 Cleanup main()

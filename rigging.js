@@ -690,6 +690,11 @@ function onResize() {
     onResize.scheme.css({ transform: 'scale(' + scale + ')'}).show();
 }
 
+onResize.configure = function () {
+    onResize.scheme = $('#scheme');
+    onResize.placeholder = $('#placeholder');
+};
+
 function setMode(mode) {
     mode = mode.trim();
     mode = (mode.startsWith('#') ? mode.slice(1).trim() : mode).toLowerCase();
@@ -737,6 +742,38 @@ setMode.construct = function () {
     setMode.schemeSelector = null;
     setMode.schemeCheckbox = null;
     setMode.mode = null;
+};
+
+setMode.configure = function () {
+    setMode.schemeBlock = $('#schemeBlock');
+    setMode.allDependents = $('.modeDependent');
+    setMode.schemeCheckbox = $('#schemeCheckbox');
+    setMode.marksCheckbox = $('#marksCheckbox');
+    setMode.marksSelector = setMode.marksCheckbox.parent();
+    setMode.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
+    $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
+        setMode.checkboxes[mode] = $('.selector [name="mode"].' + mode);
+        setMode.dependents[mode] = $('.modeDependent.' + mode);
+    });
+    setMode.schemeCheckbox.prop('checked', true).change(setMode.schemeHandler);
+    setMode.marksCheckbox.prop('checked', true).change(setMode.marksHandler).change();
+};
+
+setMode.schemeHandler = function () {
+    setMode.schemeBlock.toggle(this.checked);
+    if (this.checked) {
+        Questionary.reset();
+    }
+    if (setMode.mode === setMode.WHICH) {
+        setMode.marksSelector.toggle(this.checked);
+    }
+};
+
+setMode.marksHandler = function () {
+    setMode.whereLocationObjects.toggleClass('colored', this.checked);
+    if (this.checked) {
+        Questionary.reset();
+    }
 };
 
 function menuHandler(event) {
@@ -965,49 +1002,24 @@ function main() {
     // Configure and link data objects
     Deck.createObjects();
     Line.linkLines();
-    // Put generated objects to DOM
+    // Initialization requiring access to DOM
     Deck.placeObjects();
     Mast.placeObjects();
     Point.placeObjects();
+    setMode.configure();
+    onResize.configure();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
     Point.locationObject.css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
-    onResize.scheme = $('#scheme');
-    onResize.placeholder = $('#placeholder');
-    setMode.schemeBlock = $('#schemeBlock');
-    // Binding to fixed DOM elements for setMode()
-    setMode.allDependents = $('.modeDependent');
-    setMode.schemeCheckbox = $('#schemeCheckbox');
-    setMode.marksCheckbox = $('#marksCheckbox');
-    setMode.marksSelector = setMode.marksCheckbox.parent();
-    setMode.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
-    $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
-        setMode.checkboxes[mode] = $('.selector [name="mode"].' + mode);
-        setMode.dependents[mode] = $('.modeDependent.' + mode);
-    });
-    // Binding events for setMode()
-    setMode.schemeCheckbox.prop('checked', true).change(function (_event) {
-        setMode.schemeBlock.toggle(this.checked);
-        if (this.checked) {
-            Questionary.reset();
-        }
-        if (setMode.mode === setMode.WHICH) {
-            setMode.marksSelector.toggle(this.checked);
-        }
-    });
-    setMode.marksCheckbox.prop('checked', true).change(function (_event) {
-        setMode.whereLocationObjects.toggleClass('colored', this.checked);
-        if (this.checked) {
-            Questionary.reset();
-        }
-    }).change();
+    // Binding menu handlers
     $('.selector').click(menuHandler);
     Deck.selectable.allSelector.click();
     Mast.selectable.allSelector.click();
+    // Binding other handlers
     $('#resetButton').click(Questionary.reset);
-    $('.selector, .point, .pointNumber, .subline').mousedown(function (_event) { return false; }); // Avoid selection by double-click
+    $('.selector, .point, .pointNumber, .subline').mousedown(false); // Avoid selection by double-click
     $('body').click(Questionary.nextQuestion);
-    $('button.info').on('hover mousedown keydown', function (_event) { return false; });
+    $('button.doc').on('hover mousedown keydown', false);
     // Finishing setup
     setMode(window.location.hash);
     $('#loading').hide();
