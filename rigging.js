@@ -525,22 +525,25 @@ Line.linkLines = function () {
         line.whereObjects = $($.uniqueSort(whereElements));
         line.whichObjects = $($.uniqueSort(whichElements));
     });
-    $.each(Point.points.concat(Subline.sublines), function (_index, target) {
+    $.each(Point.points, function (_index, point) {
         var demoElements = [];
         var whereElements = [];
-        var whichElements = (target instanceof Point) ? [target.iconObject[0],] : null;
-        $.each(target.lines, function (_index, line) {
+        var whichElements = [point.iconObject[0],];
+        $.each(point.lines, function (_index, line) {
             Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
-            if (target instanceof Point) {
-                Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
-                Array.prototype.push.apply(whichElements, line.whichObjects.toArray());
-            }
+            Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
+            Array.prototype.push.apply(whichElements, line.whichObjects.toArray());
         });
-        target.demoObjects = $($.uniqueSort(demoElements));
-        if (target instanceof Point) {
-            target.whereObjects = $($.uniqueSort(whereElements));
-            target.whichObjects = $($.uniqueSort(whichElements));
-        }
+        point.demoObjects = $($.uniqueSort(demoElements));
+        point.whereObjects = $($.uniqueSort(whereElements));
+        point.whichObjects = $($.uniqueSort(whichElements));
+    });
+    $.each(Subline.sublines, function (_index, subline) {
+        var demoElements = [];
+        $.each(subline.lines, function (_index, line) {
+            Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
+        });
+        subline.demoObjects = $($.uniqueSort(demoElements));
     });
 };
 
