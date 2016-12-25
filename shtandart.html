@@ -4,16 +4,35 @@
   <title>Бегучий такелаж фрегата &laquo;Штандарт&raquo;</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="author" content="Vasily Zakharov (vmzakhar@gmail.com)">
-  <meta name="keywords" content="">
-  <meta name="description" content="">
+  <meta name="keywords" content="tall ship shtandart rigging sail trainer">
+  <meta name="description" content="Trainer software for frigate Shtandart rigging elements location">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="apple-mobile-web-app-title" content="Rigging Trainer: Shtandart">
-  <meta name="application-name" content="Rigging Trainer: Shtandart">
+  <meta name="apple-mobile-web-app-title" content="Shtandart Rigging">
+  <meta name="application-name" content="Shtandart Rigging">
   <meta name="theme-color" content="#ffffff">
-  <link rel="Shortcut Icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">
-  <link rel="apple-touch-icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAMAAAC7xnO3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTMyIDc5LjE1OTI4NCwgMjAxNi8wNC8xOS0xMzoxMzo0MCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUuNSAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mjk0NTU4Qjc5RjI1MTFFNkFDNkFEM0Q3MzYxMjBBN0MiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mjk0NTU4Qjg5RjI1MTFFNkFDNkFEM0Q3MzYxMjBBN0MiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoyOTQ1NThCNTlGMjUxMUU2QUM2QUQzRDczNjEyMEE3QyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoyOTQ1NThCNjlGMjUxMUU2QUM2QUQzRDczNjEyMEE3QyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Plh7pXIAAAAwUExURWBfX9LR0hQTE/r5+aqpqpCPj+fm5ry6u3d2dywrLN3c3PHw8EZFRcXFxQAAAP///8LU7wUAAAIQSURBVHja7FbduqUgCEUUhdR6/7cdEzWt5pxv5jpu9m7l4l8Ijv8V+Jgf82P+I9PGInZ69QvQmTEkKQKhv4iuAXYAUIFsF6YB3KsgxRvAvgLbHVDmlvYuSLaeG8DOp644ARAH09IF7+heAZwQN5hGzmdhrr/gb0DyzakJaMxQH7fjyOcLMYdbACwANsBwggSDmYcLfB4MyqQO7PmgAaz1zHq+Hwz1IFZVdAGq2/oidrF5/otJddACdJtQCJFTunuLHAK0+DS1nBWQraWsn8BtydAQaj5egD0szMDFzHOxismlnFoDNfpg+jSdM8dqswLFL7np0u7jjglvo6fwArSTZYqnM52miEj1VyaSY26ASibSts9Tx8so4NGrKOblOrvhbL9l1V0JCzM/iVpemu9n1hYnr3dYFqaNs8azvBPTao4wlVhZg7m8tdziCDi1b58mV716bXlMHAtS54BeNY1ymmAOl77pU+VonZKcVb8w3GffPC52vAZX7xTkrYY/XLmmZp9FmIBDXFKqnZFcZuy+LpPapGbvWQ5NPbLJ2+uM79Tk/GrSt1GI9LftMGalUDbN4WgCi6Nbuh97JfLIsABVqX0OelMg/rCRXFqr09SUWSA3o49d5l+55MjAOv5etuC5em4m66KqZXP25/1pSvMKYjGOAuOS5rLdwP+6ea0JLjgXtjkSY0z8vk0+5ip/BBgAeRCqvtQ+CC0AAAAASUVORK5CYII=">
-  <link rel="manifest" type="application/json" href="data:application/json;base64,ewoJIm5hbWUiOiAiVmlkZW9SUEciLAoJImljb25zIjogWwoJCXsKCQkJInNyYyI6ICJcL2FuZHJvaWQtY2hyb21lLTQ4eDQ4LnBuZyIsCgkJCSJzaXplcyI6ICI0OHg0OCIsCgkJCSJ0eXBlIjogImltYWdlXC9wbmciCgkJfQoJXSwKCSJ0aGVtZV9jb2xvciI6ICIjZmZmZmZmIiwKCSJkaXNwbGF5IjogInN0YW5kYWxvbmUiCn0K">
-  <link rel="mask-icon" type="image/svg+xml" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iNzEuMDAwMDAwcHQiIGhlaWdodD0iNzEuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA3MS4wMDAwMDAgNzEuMDAwMDAwIgogcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+CjxtZXRhZGF0YT4KQ3JlYXRlZCBieSBwb3RyYWNlIDEuMTEsIHdyaXR0ZW4gYnkgUGV0ZXIgU2VsaW5nZXIgMjAwMS0yMDEzCjwvbWV0YWRhdGE+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDcxLjAwMDAwMCkgc2NhbGUoMC4xMDAwMDAsLTAuMTAwMDAwKSIKZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIj4KPHBhdGggZD0iTTg1IDQ4NSBjLTM2IC0zNSAtMzQgLTExMCAzIC0xOTAgNjEgLTEyOCAxOTYgLTE5NCAzMzYgLTE2NSAzMSA2IDU2CjEzIDU2IDE1IDAgMiAtNCAxNSAtOSAyOSAtOSAyMyAtMTIgMjQgLTQ4IDE0IC02MCAtMTYgLTE5MyA2IC0xOTMgMzIgMCA0IDEyCjEwIDI4IDE0IDQwIDkgNjMgMzAgNjUgNjIgMiAyNSA3IDMwIDQyIDM1IDc5IDEzIDExMiA5OSA1OSAxNTMgLTE5IDE5IC0zNyAyNgotNjMgMjYgLTY2IC0xIC05MSAtMzggLTkxIC0xMzcgMCAtNDAgLTUgLTc0IC0xMiAtODEgLTE3IC0xNyAtNjkgLTE1IC05NiA0Ci0yOCAxOSAtMjggMzQgLTEgMzQgMzIgMCA3OSA1MyA3OSA5MCAwIDc2IC0xMDIgMTE5IC0xNTUgNjV6IG05MCAtNjUgYzAgLTMwCi0zMyAtNDAgLTUxIC0xNSAtMTkgMjUgLTYgNDcgMjUgNDMgMjAgLTIgMjYgLTggMjYgLTI4eiBtMjEwIDAgYzAgLTE4IC02IC0yNgotMjMgLTI4IC0xMyAtMiAtMjUgMyAtMjggMTIgLTEwIDI2IDQgNDggMjggNDQgMTcgLTIgMjMgLTEwIDIzIC0yOHoiLz4KPHBhdGggZD0iTTUwOSA0ODEgYy0yMCAtMjAgLTI5IC0zOSAtMjkgLTYxIDAgLTM3IDQ3IC05MCA3OSAtOTAgMjYgMCAyNiAtNiAwCi00OSAtMTkgLTMyIC0xOSAtMzQgLTIgLTQ3IDI2IC0yMCAzMCAtMTggNTYgMjQgMjggNDQgNDcgOTYgNDcgMTI4IDAgMTkgLTUKMjQgLTI1IDI0IC0xNCAwIC0zNCAtNSAtNDQgLTEyIC0yNiAtMTYgLTUzIC0zIC00OSAyNCAzIDIxIDcgMjMgNjEgMjAgNjQgLTQKNzEgNSAzMiA0MyAtMzUgMzYgLTg4IDM0IC0xMjYgLTR6Ii8+CjxwYXRoIGQ9Ik00NTMgMjY4IGMzIC03IDEzIC0zNiAyMyAtNjUgMTIgLTM3IDIxIC01MCAzMiAtNDUgOCAzIDIwIC0yIDI3IC0xMgoxNCAtMTggNTIgLTI5IDU5IC0xNyAzIDUgLTYgMTggLTE5IDMxIC0xOSAxNyAtMjIgMjcgLTE0IDM2IDggMTAgLTIgMjEgLTQ1CjQ5IC01OSAzOCAtNzAgNDIgLTYzIDIzeiIvPgo8L2c+Cjwvc3ZnPgo=" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="114x114" type="image/png" href="data:image/png;base64,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">
+  <link rel="icon" sizes="32x32" type="image/png" href="data:image/png;base64,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">
+  <link rel="icon" sizes="16x16" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAH/SURBVDhPfZLLSxtRFMaFLrvsP9CVmyJd9w8QVy5UcFNLrYjShYgUfEBFCxbbKj7R4guhvhNEUdQWFLVQ7IO2KCrBqFHznjh5zBjNZJJ8zj0Zx1xD/MGFmTN3vnPOd04WMnDkiuJRkRUvPrrwvNWFcCSuf+HJKBAKx/Ew/wAP8izIyrVgZkPSv/CkCbBMDp8Kt6hi8aeMM0HF4FIQmzuX+g2eNIHWKRG5dXb0LQTQr53uOT+m1iUUvnOi3Szqt25JE2DZx1ZD+tstiprA45IjHLujeiSJIbB7EkFegx2ds368GRDQ9MWHhhEfaj57qSpGRaeH4qkYAvEEkFNhg3yZdFuNaQGdsnY3xTe2wyjvcOvRJFwLLMPXPxfwyzEyce9Eofj4WgjT2hQsdgUvP90jMKFdbJk4p4z5jQ687vFQfGFLJl/mfsjUXiqcwOi3IIZXgqju91I1pW3JbOxHZm5xixOmTX4fOIHaIQH/DyMkwMwraHbgr/UK5u8SvIEYnpTbENWmkYohEIkmUNXnRUCO0+xZ+W9HfTR/UYqhd95PU7mLIfDLcoXl3xdY/RemPuuGBTyrPiUBZhx7ZrtwF0Ng/1RB9qtjDCwFaBNZ+U8rbbQ8lV0e2Dz8At1gCFidCl2WtHmXfHDRqR8RjFFmgjNxRWuhzSTi/eQ5mcmW636Aa/q3mKgk8G16AAAAAElFTkSuQmCC">
+  <link rel="mask-icon" type="image/svg+xml" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMTE0LjAwMDAwMHB0IiBoZWlnaHQ9IjExNC4wMDAwMDBwdCIgdmlld0JveD0iMCAwIDExNC4wMDAwMDAgMTE0LjAwMDAwMCIKIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIG1lZXQiPgo8bWV0YWRhdGE+CkNyZWF0ZWQgYnkgcG90cmFjZSAxLjExLCB3cml0dGVuIGJ5IFBldGVyIFNlbGluZ2VyIDIwMDEtMjAxMwo8L21ldGFkYXRhPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwxMTQuMDAwMDAwKSBzY2FsZSgwLjEwMDAwMCwtMC4xMDAwMDApIgpmaWxsPSIjMDAwMDAwIiBzdHJva2U9Im5vbmUiPgo8cGF0aCBkPSJNNTIwIDEwNzUgYy0xMCAtMTIgLTYgLTI5IDE2IC04NSAxNSAtMzggMjkgLTcwIDMxIC03MCAzIDAgMTMgMTAgMjMKMjIgMTcgMjEgMTkgMjEgODYgOSA5NSAtMTggMTEwIC0xNCAxMDYgMjkgLTIgMTkgLTExIDUwIC0yMCA2OSBsLTE3IDM0IC0xMDYKMyBjLTg0IDMgLTEwOSAxIC0xMTkgLTExeiIvPgo8cGF0aCBkPSJNMzYwIDkwNSBjMCAtMyA4IC0yMiAxOSAtNDMgMTAgLTIwIDIyIC01MiAyNiAtNzAgNSAtMjQgMTIgLTMyIDIzCi0zMCAxOCA0IDIxIDMzIDkgODEgbC03IDI3IDE3NSAwIGMxOTkgMCAxODYgNiAyMjYgLTEwMSA0NiAtMTE5IDM0IC0yNDggLTM5Ci00MjQgLTMwIC03MiAtNDIgLTkxIC02MCAtOTMgLTEzIC0yIC0yMiAyIC0yMiAxMCAwIDggLTIyIDQ4IC01MCA5MCAtNTkgOTAKLTc0IDE0NSAtNTYgMjAwIDEzIDM3IDEzIDM4IC05IDM4IC0yOCAwIC0zNSAtMTcgLTM1IC04MyAwIC02OSAxMyAtMTEwIDU1Ci0xNzggMTkgLTMxIDM1IC02MiAzNSAtNjggMCAtNTUgLTg2IDExOCAtOTkgMTk4IC00IDI5IC01IDcwIC0xIDkxIDcgMzcgNiA0MAotMTYgNDAgLTIyIDAgLTIzIC00IC0yNyAtODIgbC0zIC04MyAtMiA4MyBjLTIgNzYgLTMgODIgLTIzIDgyIC0yMSAwIC0yMiAtMgotMTYgLTExNyAzIC03MCAxMSAtMTM2IDIxIC0xNjIgMjEgLTU3IDIwIC02MSAtOSAtNjEgbC0yNSAwIDAgMTcwIGMwIDE2MyAtMQoxNzAgLTIwIDE3MCAtMTkgMCAtMjAgLTcgLTIwIC0xNjkgbDAgLTE2OSAtNDcgLTcgYy02NCAtOSAtMTAxIC0zMCAtMTA5IC02MAotMTMgLTU0IDM1IC0xMTUgMTE5IC0xNTAgMzYgLTE1IDM5IC0xNCA3MyA5IDIwIDEzIDcwIDM3IDExMiA1MyA1NCAyMCA4OSA0MAoxMjAgNzAgMzMgMzMgNTAgNDMgNzYgNDMgMzIgMCAzNCAzIDc5IDk4IDU5IDEyNyA3NyAxODkgODMgMjkyIDcgMTAxIC0xNSAxODMKLTY4IDI2MSBsLTMzIDQ5IC0yMjcgMCBjLTEyNiAwIC0yMjggLTIgLTIyOCAtNXogbTIwNCAtNjE3IGMxMiAtMjkgMTMgLTM4IDQKLTM4IC03IDAgLTIzIDMzIC0zNSA3NCAtMjcgODkgLTMwIDEyMSAtNCA1MSAxMCAtMjcgMjYgLTY3IDM1IC04N3ogbS0xNTQKLTEzNCBjMCAtNTIgMSAtNTUgMTggLTQzIDE0IDEyIDE0IDEwIC0yIC04IC0xMCAtMTIgLTE2IC0yOSAtMTIgLTM4IDkgLTI0Ci01MSAxMyAtNzUgNDcgLTMyIDQ0IC0yMiA3OSAyNiA5MSA0MyAxMCA0NSA5IDQ1IC00OXogbTgwIDUzIGMwIC0yIC05IC0xMgotMjAgLTIyIC0xOSAtMTggLTIwIC0xNyAtMjAgMyAwIDE1IDYgMjIgMjAgMjIgMTEgMCAyMCAtMiAyMCAtM3ogbTgwIC02IGMwCi01IC0yOCAtMjUgLTYyIC00NSAtMzUgLTIwIC01MyAtMjggLTQwIC0xOSAxMyAxMCAzOCAzMCA1NSA0NSAzMyAyOSA0NyAzNCA0NwoxOXogbTgwIDAgYzAgLTUgLTE0IC0yMCAtMzIgLTMyIGwtMzEgLTIzIDIzIDMyIGMyMyAzMiA0MCA0MSA0MCAyM3oiLz4KPHBhdGggZD0iTTI2MCA3MTAgYzY5IC0xMzUgNjQgLTI3NyAtMTUgLTQ2MiAtNSAtMTQgLTIgLTE4IDEyIC0xOCAxMiAwIDI2IDEzCjM3IDM4IDcyIDE0OCA4MyAzMDMgMzEgNDI1IC03IDE2IDQgMTcgMTcxIDE1IGwxNzkgLTMgMjQgLTQ4IGMyOSAtNTggMzEgLTE0OQo3IC0yNDMgLTIwIC03NiAtMjAgLTc0IDMgLTc0IDE0IDAgMjQgMTggNDUgODAgMzQgMTAzIDM0IDE3NyAxIDI0NSAtNDQgOTEKLTIzIDg1IC0yODQgODUgbC0yMzEgMCAyMCAtNDB6Ii8+CjwvZz4KPC9zdmc+Cg==">
+  <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">
+  <script type="text/javascript">
+  /* jshint strict: global */
+  /* globals window */
+  "use strict";
+
+  window.onerror = function (message, url, lineNo, columnNo, errorObject) {
+      var prefix = 'Ошибка!\n\nПожалуйста, ';
+      var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
+      if (message.toLowerCase().indexOf('script error') >= 0) {
+          message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
+      } else if (errorObject && errorObject.stack) {
+          message = prefix + suggestion + '\n' + errorObject.stack + '\n';
+      } else {
+          message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
+      }
+      alert(message); // jshint ignore:line
+  };
+  </script>
   <style type="text/css">
 html, body {
 	margin: 0;
@@ -99,7 +118,7 @@ table.center {
 	margin: 0.5em 0;
 }
 
-#modes {
+#selectModes {
 	width: 47%;
 }
 
@@ -159,7 +178,7 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 }
 
 #scheme div:first-of-type img {
-	transform: scaleY(-1);
+	transform: scaleY(-1) translateY(-2px);
 }
 
 img.scheme {
@@ -174,7 +193,7 @@ img.scheme {
 	z-index: 0;
 }
 
-.deckMask {
+.deckMasks > * {
 	position: absolute;
 	background: rgba(255, 236, 164, 0.75); /* #ffeca4 */
 	top: 0;
@@ -182,22 +201,22 @@ img.scheme {
 	display: none;
 }
 
-#deckMaskFore {
+.deckMasks .fore {
 	right: 0;
 	width: 25.9%;
 }
 
-#deckMaskMain {
+.deckMasks .main {
 	left: 43.1%;
 	width: 31%;
 }
 
-#deckMaskStern {
+.deckMasks .stern {
 	left: 0;
 	width: 43.1%;
 }
 
-.mastMask {
+.mastMasks > * {
 	position: absolute;
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJ4AAACgCAYAAAD99dWmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA4BpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozOTAyRTA5NkI3QzJFNTExQkY4RUEzQkNDRTYzNkFBQiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpGNDQwMTkyOUJDRUIxMUU2ODVCNjgwOEQwMzYxNjU0MSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpGNDQwMTkyOEJDRUIxMUU2ODVCNjgwOEQwMzYxNjU0MSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ0MgMjAxNyAoV2luZG93cykiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MWU5MGY2MS05MDIyLTc5NDUtOWNlZi1kYjliMTNiNzQ1MmMiIHN0UmVmOmRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoxM2I5NjljYi1iODAwLTExZTYtYTU1MC04YjBi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") no-repeat;
 	width: 160px;
@@ -206,15 +225,15 @@ img.scheme {
 	display: none;
 }
 
-#mastMaskFore {
+.mastMasks .fore {
 	left: 83.4%;
 }
 
-#mastMaskMain {
+.mastMasks .main {
 	left: 48.3%;
 }
 
-#mastMaskMizzen {
+.mastMasks .mizzen {
 	left: 15.4%;
 }
 
@@ -403,17 +422,17 @@ img.vang {
 	cursor: default;
 }
 
-.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .info.on {
+.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .doc.on {
 	-webkit-filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
 
-.pointNumber.wrongAnswer, .subline.wrongAnswer, .info.wrongAnswer {
+.pointNumber.wrongAnswer, .subline.wrongAnswer, .doc.wrongAnswer {
 	-webkit-filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
 }
 
-.pointNumber.rightAnswer, .subline.rightAnswer, .info.rightAnswer {
+.pointNumber.rightAnswer, .subline.rightAnswer, .doc.rightAnswer {
 	-webkit-filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
 }
@@ -422,23 +441,23 @@ img.vang {
 	color: white;
 }
 
-.colored .pointNumber.clewline, .info.clewline {
+.colored .pointNumber.clewline, .doc.clewline {
 	color: #eb7d01; /* dark yellow */
 }
 
-.colored .pointNumber.buntline, .info.buntline {
+.colored .pointNumber.buntline, .doc.buntline {
 	color: #017c01; /* dark green */
 }
 
-.colored .pointNumber.clewline.buntline, .info.clewline.buntline {
+.colored .pointNumber.clewline.buntline, .doc.clewline.buntline {
 	color: #6cc100; /* yellow green */
 }
 
-.colored .pointNumber.leechline, .info.leechline {
+.colored .pointNumber.leechline, .doc.leechline {
 	color: #b3014b; /* dark red */
 }
 
-.colored .pointNumber.bowline, .info.bowline {
+.colored .pointNumber.bowline, .doc.bowline {
 	color: #0031ff; /* dark blue */
 }
 
@@ -512,12 +531,12 @@ img.vang {
 	text-align: center;
 }
 
-span.info {
+span.doc {
 	font-weight: bold;
 	z-index: -1;
 }
 
-button.info {
+button.doc {
 	margin: 0;
 }
 
@@ -532,7 +551,7 @@ button.info {
 }
 
 #footer p {
-	margin: 0.1em 0.4em 0.3em;
+	margin: 0.1em 0.4em 0.2em;
 }
 
 #footer :last-child > p {
@@ -543,24 +562,6 @@ button.info {
 	vertical-align: bottom;
 }
   </style>
-  <script type="text/javascript">
-  /* jshint strict: global */
-  /* globals window */
-  "use strict";
-
-  window.onerror = function (message, url, lineNo, columnNo, errorObject) {
-      var prefix = 'Ошибка!\n\nПожалуйста, ';
-      var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
-      if (message.toLowerCase().indexOf('script error') >= 0) {
-          message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
-      } else if (errorObject && errorObject.stack) {
-          message = prefix + suggestion + '\n' + errorObject.stack + '\n';
-      } else {
-          message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
-      }
-      alert(message); // jshint ignore:line
-  };
-  </script>
 </head>
 <body>
 <table class="wide high">
@@ -580,53 +581,57 @@ button.info {
     <td>
       <table class="wide high">
         <tr><td><form><table id="controls"><tr>
-          <td id="modes">
-            <span id="infoMode"  class="selector"><input name="mode" type="radio">Описание</span>
-            <span id="demoMode"  class="selector"><input name="mode" type="radio">Просмотр</span>
-            <span id="whereMode" class="selector"><input name="mode" type="radio">Где снасть?</span>
-            <span id="whichMode" class="selector"><input name="mode" type="radio">Какая снасть?</span>
+          <td id="selectModes">
+            <span class="selector"><input name="mode" type="radio" class= "info">Описание</span>
+            <span class="selector"><input name="mode" type="radio" class= "demo">Просмотр</span>
+            <span class="selector"><input name="mode" type="radio" class="where">Где снасть?</span>
+            <span class="selector"><input name="mode" type="radio" class="which">Какая снасть?</span>
           </td>
-          <td id="selectMasts" class="modeDependent usedInModeWhere">Мачты
-            <span id="mastAll"    class="selector"><input name="mast" type="checkbox">Все</span>
-            <span id="mastMizzen" class="selector"><input name="mast" type="checkbox">Бизань</span>
-            <span id="mastMain"   class="selector"><input name="mast" type="checkbox">Грот</span>
-            <span id="mastFore"   class="selector"><input name="mast" type="checkbox">Фок</span>
+          <td id="selectMasts" class="modeDependent where">Мачты
+            <span class="selector"><input name="mast" type="checkbox" class=   "all">Все</span>
+            <span class="selector"><input name="mast" type="checkbox" class="mizzen">Бизань</span>
+            <span class="selector"><input name="mast" type="checkbox" class=  "main">Грот</span>
+            <span class="selector"><input name="mast" type="checkbox" class=  "fore">Фок</span>
           </td>
-          <td id="selectDecks" class="modeDependent usedInModeWhich">Палубы
-            <span id="deckAll"    class="selector"><input name="deck" type="checkbox">Все</span>
-            <span id="deckStern"  class="selector"><input name="deck" type="checkbox">ПолуЮт</span>
-            <span id="deckMain"   class="selector"><input name="deck" type="checkbox">Главная</span>
-            <span id="deckFore"   class="selector"><input name="deck" type="checkbox">Бак</span>
+          <td id="selectDecks" class="modeDependent which">Палубы
+            <span class="selector"><input name="deck" type="checkbox" class=   "all">Все</span>
+            <span class="selector"><input name="deck" type="checkbox" class= "stern">ПолуЮт</span>
+            <span class="selector"><input name="deck" type="checkbox" class=  "main">Главная</span>
+            <span class="selector"><input name="deck" type="checkbox" class=  "fore">Бак</span>
           </td>
-          <td id="selectFill" class="modeDependent usedInModeInfo usedInModeDemo">
+          <td id="selectFill" class="modeDependent info demo">
           </td>
-          <td id="options" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich">
-            <span id="toggleScheme" class="selector modeDependent usedInModeWhere usedInModeWhich"><input type="checkbox">Схема</span>
-            <span id="toggleMarks" class="selector modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><input type="checkbox">Марки</span>
+          <td id="options" class="modeDependent demo where which">
+            <span class="selector modeDependent      where which"><input id="schemeCheckbox" type="checkbox">Схема</span>
+            <span class="selector modeDependent demo where which"><input id="marksCheckbox"  type="checkbox">Марки</span>
           </td>
         </tr></table></form></td></tr>
-        <tr id="schemeBlock" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr id="schemeBlock"><td>
           <div id="scheme">
             <div><img class="scheme" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></div>
             <div><img class="scheme" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></div>
             <div id="overlay"></div>
-            <div id="mastMaskMizzen" class="mastMask"></div>
-            <div id="mastMaskMain"   class="mastMask"></div>
-            <div id="mastMaskFore"   class="mastMask"></div>
-            <div id="deckMaskStern"  class="deckMask"></div>
-            <div id="deckMaskMain"   class="deckMask"></div>
-            <div id="deckMaskFore"   class="deckMask"></div>
+            <div class="mastMasks modeDependent where">
+              <div class="mizzen"></div>
+              <div class=  "main"></div>
+              <div class=  "fore"></div>
+            </div>
+            <div class="deckMasks modeDependent which">
+              <div class= "stern"></div>
+              <div class=  "main"></div>
+              <div class=  "fore"></div>
+            </div>
           </div>
           <div id="placeholder"></div>
         </td></tr>
-        <tr id="schemeBorderFix" class="modeDependent usedInModeDemo usedInModeWhere usedInModeWhich"><td>
+        <tr id="schemeBorderFix" class="modeDependent demo where which"><td>
           &nbsp;
         </td></tr>
-        <tr class="questionBlock modeDependent usedInModeWhere usedInModeWhich"><td>
-          <div class="modeDependent usedInModeWhere"><p>
+        <tr class="questionBlock modeDependent where which"><td>
+          <div class="modeDependent where"><p>
             Укажите на схеме сверху или в списке ниже точку крепления этой снасти:
           </p></div>
-          <div class="modeDependent usedInModeWhich"><p>
+          <div class="modeDependent which"><p>
             Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке:
           </p></div>
           <h2><span id="question"></span>?</h2>
@@ -651,94 +656,94 @@ button.info {
             <button id="nextQuestionButton">Следующий вопрос</button>
           </p>
         </td></tr>
-        <tr class="choiceBlock high modeDependent usedInModeWhere"><td>
+        <tr class="choiceBlock high modeDependent where"><td>
           <table class="center"><tr id="pointNumbers">
           </tr></table>
         </td></tr>
-        <tr class="choiceBlock high modeDependent usedInModeDemo usedInModeWhich"><td>
+        <tr class="choiceBlock high modeDependent demo which"><td>
           <table class="center"><tr id="sublines">
             <td class="deck sailLines"><div>
-              <h2 class="category">Снасти</h2>
+              <h2 class="category sailLine">Снасти</h2>
               <ul>
-                <li class="subline">Брас</li>
-                <li class="subline">Бухта браса</li>
-                <li class="subline">Топенант</li>
+                <li class="subline sailLine">Брас</li>
+                <li class="subline sailLine">Бухта браса</li>
+                <li class="subline sailLine">Топенант</li>
               </ul>
               <ul>
-                <li class="subline">Дирик-фал</li>
-                <li class="subline">Галс-таль</li>
-                <li class="subline">Эренс-бакштаг</li>
+                <li class="subline sailLine">Дирик-фал</li>
+                <li class="subline sailLine">Галс-таль</li>
+                <li class="subline sailLine">Эренс-бакштаг</li>
               </ul>
             </div></td>
             <td class="deck sailLines"><div>
               <ul>
-                <li class="subline">Шкот</li>
-                <li class="subline">Бухта шкота</li>
-                <li class="subline">Галс</li>
-                <li class="subline">Булинь</li>
-                <li class="subline">Нирал</li>
-                <li class="subline">Фал</li>
+                <li class="subline sailLine">Шкот</li>
+                <li class="subline sailLine">Бухта шкота</li>
+                <li class="subline sailLine">Галс</li>
+                <li class="subline sailLine">Булинь</li>
+                <li class="subline sailLine">Нирал</li>
+                <li class="subline sailLine">Фал</li>
               </ul>
               <ul>
-                <li class="subline">Гитов</li>
-                <li class="subline">Нок-гордень</li>
-                <li class="subline">Бык-гордень</li>
-              </ul>
-            </div></td>
-            <td class="deck sails"><div>
-              <h2 class="category">Парусов</h2>
-              <ul>
-                <li class="subline">Блинд</li>
-              </ul>
-              <ul>
-                <li class="subline">Фок</li>
-                <li class="subline">Фор-марсель</li>
-                <li class="subline">Фор-брамсель</li>
+                <li class="subline sailLine">Гитов</li>
+                <li class="subline sailLine">Нок-гордень</li>
+                <li class="subline sailLine">Бык-гордень</li>
               </ul>
             </div></td>
             <td class="deck sails"><div>
+              <h2 class="category sail">Парусов</h2>
               <ul>
-                <li class="subline">Грот</li>
-                <li class="subline">Грот-марсель</li>
-                <li class="subline">Грот-брамсель</li>
-                <li class="subline">Стаксель</li>
+                <li class="subline sail">Блинд</li>
               </ul>
               <ul>
-                <li class="subline">Бизань</li>
-                <li class="subline">Крюйс-марсель</li>
-                <li class="subline">Бегин-рей</li>
-                <li class="subline">Апсель</li>
+                <li class="subline sail">Фок</li>
+                <li class="subline sail">Фор-марсель</li>
+                <li class="subline sail">Фор-брамсель</li>
+              </ul>
+            </div></td>
+            <td class="deck sails"><div>
+              <ul>
+                <li class="subline sail">Грот</li>
+                <li class="subline sail">Грот-марсель</li>
+                <li class="subline sail">Грот-брамсель</li>
+                <li class="subline sail">Стаксель</li>
+              </ul>
+              <ul>
+                <li class="subline sail">Бизань</li>
+                <li class="subline sail">Крюйс-марсель</li>
+                <li class="subline sail">Бегин-рей</li>
+                <li class="subline sail">Апсель</li>
               </ul>
             </div></td>
             <td class="deck nonSailLines"><div>
-              <h2 class="category">Прочие снасти</h2>
-              <h3 class="category">Талёвы</h3>
+              <h2 class="category tackle otherLine flagHalyard">Прочие снасти</h2>
+              <h3 class="category tackle">Талёвы</h3>
               <ul>
-                <li class="subline">Гротовая</li>
-                <li class="subline">Оттяжка гротовой</li>
-                <li class="subline">Штаговая</li>
-                <li class="subline">Нагель для работы</li>
-                <li class="subline">Якорная</li>
+                <li class="subline tackle">Гротовая</li>
+                <li class="subline tackle">Оттяжка гротовой</li>
+                <li class="subline tackle">Штаговая</li>
+                <li class="subline tackle">Нагель для работы</li>
+                <li class="subline tackle">Якорная</li>
               </ul>
             </div></td>
             <td class="deck nonSailLines"><div>
               <ul>
-                <li class="subline">Швартов</li>
-                <li class="subline">Носовой шлюпки</li>
-                <li class="subline">Свободный нагель</li>
+                <li class="subline otherLine">Швартов</li>
+                <li class="subline otherLine">Носовой шлюпки</li>
+                <li class="subline otherLine">Свободный нагель</li>
               </ul>
-              <h3 class="category">Флаг-фалы</h3>
+              <h3 class="category flagHalyard">Флаг-фалы</h3>
               <ul>
-                <li class="subline">Фока</li>
-                <li class="subline">Грота</li>
-                <li class="subline">Бизани</li>
-                <li class="subline">Рю</li>
-                <li class="subline">Флагштока</li>
+                <li class="subline flagHalyard">Фока</li>
+                <li class="subline flagHalyard">Грота</li>
+                <li class="subline flagHalyard">Бизани</li>
+                <li class="subline flagHalyard">Рю</li>
+                <li class="subline flagHalyard">Флагштока</li>
               </ul>
             </div></td>
           </tr></table>
         </td></tr>
-        <tr class="high modeDependent usedInModeInfo">
+        <tr class="high modeDependent info">
           <td id="infoBlock">
             <section id="infoIntro">
               <h2>Описание</h2>
@@ -781,13 +786,14 @@ button.info {
                 справа &ndash; прочие снасти, не имеющие отношения к парусам.
               </p>
               <p>
-                <strong>Наведение мыши</strong> на название снасти <span class="info on">подсвечивает</span> все паруса, снаряжённые такой снастью,
+                <strong>Наведение мыши</strong> на название снасти <span class="doc on">подсвечивает</span> все паруса, снаряжённые такой снастью,
                 а также все точки крепления снастей этого типа на палубе.
-                Наведение мыши на название паруса аналогично <span class="info on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
-                Наведение на точку крепления снастей на схеме <span class="info on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке.
+                Наведение мыши на название паруса аналогично <span class="doc on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
+                Наведение на точку крепления снастей на схеме <span class="doc on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
+                а также другие точки, где может крепиться эта или аналогичная снасть.
               </p>
               <p>
-                <strong>По клику</strong> в любое место <span class="info on">подсвеченные</span> снасти фиксируются, и далее,
+                <strong>По клику</strong> в любое место <span class="doc on">подсвеченные</span> снасти фиксируются, и далее,
                 наводя мышь на точки крепления снастей на схеме,
                 можно увидеть всплывающие подсказки с подписями.
                 Ещё один клик мышью вернёт вас в интерактивный режим.
@@ -797,9 +803,9 @@ button.info {
               <h2>Марки</h2>
               <p>
                 Точки крепления снастей, которые имеют на концах цветные марки, обозначены на схеме соответствующими цветами:
-                <span class="info clewline">гитовы</span>, <span class="info leechline">нок-горденя</span>, <span class="info buntline">бык-горденя</span>, <span class="info bowline">булиня</span>.
+                <span class="doc clewline">гитовы</span>, <span class="doc leechline">нок-горденя</span>, <span class="doc buntline">бык-горденя</span>, <span class="doc bowline">булиня</span>.
                 Кислотным жёлто-зелёным цветом обозначены точки крепления, куда одновременно приходят снасти
-                с жёлтой и зелёной марками &ndash; то есть, <span class="info clewline buntline">гитовы и бык-горденя</span> малых парусов.
+                с жёлтой и зелёной марками &ndash; то есть, <span class="doc clewline buntline">гитовы и бык-горденя</span> малых парусов.
               </p>
               <p>
                 При желании цветовое обозначение можно отключить, сняв галочку <strong>Марки</strong> в правом верхнем углу окна.
@@ -811,14 +817,14 @@ button.info {
               <p>
                 В этом режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
                 Ответить можно кликом в соответствующую точку схемы.
-                Правильный ответ (и другие возможные правильные ответы) <span class="info rightAnswer">подсвечивается</span> зелёным цветом.
-                Если дан неправильный ответ, он также <span class="info wrongAnswer">подсвечивается</span> красным цветом.
+                Правильный ответ (и другие возможные правильные ответы) <span class="doc rightAnswer">подсвечивается</span> зелёным цветом.
+                Если дан неправильный ответ, он также <span class="doc wrongAnswer">подсвечивается</span> красным цветом.
                 Если точек крепления для указанной снасти на палубе несколько, правильным ответом будет сочтено указание любой из них.
               </p>
               <p>
-                <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="info on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
+                <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="doc on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
                 Для перехода к следующему вопросу можно нажать кнопку
-                <button class="info">Следующий вопрос</button>
+                <button class="doc">Следующий вопрос</button>
                 или просто кликнуть в любое место схемы или списка.
                 Эту же кнопку можно использовать, если вы не знаете правильного ответа на вопрос и не хотите гадать.
               </p>
@@ -827,7 +833,7 @@ button.info {
                 Нагели на планках и другие точки крепления нумеруются на планках, идущих вдоль борта, с кормы,
                 а на планках, идущих перпендикулярно борту, от центра.
                 В каждом списке слева перечисляются точки крепления левого борта, а справа &ndash; правого борта.
-                Номера точек крепления в списках <span class="info on">подсвечиваются</span> синхронно с точками на схеме,
+                Номера точек крепления в списках <span class="doc on">подсвечиваются</span> синхронно с точками на схеме,
                 цветовая маркировка также синхронизирована.
               </p>
               <p>
@@ -858,7 +864,7 @@ button.info {
               </p>
               <p>
                 <strong>Статистику можно сбросить</strong> в любой момент, нажав на кнопку
-                <button class="info">Обнулить статистику</button>.
+                <button class="doc">Обнулить статистику</button>.
                 Также статистика сбрасывается автоматически при переключении режима работы программы,
                 при <strong>включении</strong> отображения схемы или цветовых марок,
                 а также при установке любой из галочек мачт или палуб &ndash;
@@ -870,7 +876,7 @@ button.info {
               <h2>Какая снасть?</h2>
               <p>
                 Этот режим аналогичен режиму <strong>Где снасть?</strong>, но задаёт вопросы &laquo;наоборот&raquo;.
-                Программа называет расположение точки крепления снасти (и <span class="info on">подсвечивает</span> её на схеме)
+                Программа называет расположение точки крепления снасти (и <span class="doc on">подсвечивает</span> её на схеме)
                 и предлагает вспомнить, какие снасти крепятся в этой точке.
                 Список снастей внизу аналогичен списку в режиме <strong>Просмотр</strong>.
               </p>
@@ -924,10 +930,12 @@ button.info {
   </tr>
   <tr id="footer"><td><table class="wide"><tr>
     <td><p>
-      &copy; <a href="http://vk.com/jolaf">Василий Захаров</a> <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a> для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016
+      &copy; <a href="http://vk.com/jolaf">Василий Захаров</a>
+      <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a>
+      для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016
     </p></td>
     <td>
-      <p id="build">b20161216-1925G</p>
+      <p id="build">b20161225-1100G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1052,8 +1060,8 @@ var POOP_FLAGSTAFF = 'на юте, на флагштоке';
 var FREE = 'свободный нагель';
 
 var DECKS = [
-  // Deck        Title
-    [FORE_DECK, 'На баке', [
+  // Name        ID      Title
+    [FORE_DECK, 'fore', 'На баке', [
       // Rail                Assym        X0   Y0 stepX    stepY  N  Type=PIN Rotation
         [FRONT_RAIL,         ,          4074,  22,     ,      75, 5], // 276
         [BEHIND_FRONT,       ,          4112, 101,     ,,, CLEAT, 90],
@@ -1067,7 +1075,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    3768, -11,     ,,, CLEAT],
         [AT_MAST_SIDE,       ,          3710,  85,     ,,, CLEAT, 75],
     ]],
-    [MAIN_DECK, 'На главной палубе', [
+    [MAIN_DECK, 'main', 'На главной палубе', [
       // Rail                Assym        X0   Y0  [[X  Y  Type=CLEAT Rotation], ...]
         [BULWARK,            ,          2543, 500, [[,, VCLEAT], [260, 50, SCLEAT, -3], [430, -25, VCLEAT, -6]]],
         [SIDE_RAIL,          ,          1854, 499,   53,       7, 6],
@@ -1080,7 +1088,7 @@ var DECKS = [
         [AT_MAST_FRONT,      CENTER,    2261, -12,     ,,, CLEAT, 90],
         [AT_MAST_BACK,       CENTER,    2033, -12,     ,,, CLEAT, 90],
     ]],
-    [STERN_DECK, 'На полуюте', [
+    [STERN_DECK, 'stern', 'На полуюте', [
         [AT_FRONT,           CENTER,    1607, -19,      ,,,  KNOT],
         [ABOVE_LADDER,       STARBOARD, 1750, 425,      ,,,  KNOT],
         [BULWARK,            ,           700, 490, [[,, SCLEAT, -45], [320, 25, SCLEAT, 105], [440, 27, SCLEAT, 80], [600, -3, VCLEAT]]],
@@ -1093,8 +1101,8 @@ var DECKS = [
 ];
 
 var LINES = [
-  // Mast/Sail/Deck      Rail          Point#  Line             Detail               Assym      Full Name                     Plural
-    [BOWSPRIT, [
+  // Mast ID/Sail/Deck   Rail          Point#  Line             Detail               Assym      Full Name                     Plural
+    [BOWSPRIT,, [
         [SPRIT_SAIL, [
             [FORE_DECK,  FRONT_RAIL,        4, BRACE],
             [FORE_DECK,  FRONT_RAIL,        3, LIFT],
@@ -1103,7 +1111,7 @@ var LINES = [
             [FORE_DECK,  BEHIND_FRONT,       , BUNTLINE],
         ]],
     ]],
-    [FORE_MAST, [
+    [FORE_MAST, 'fore', [
         [FORE_SAIL, [
             [FORE_DECK,  BACK_RAIL,         1, BRACE],
             [FORE_DECK,  BEHIND_MAST_RAIL,  3, LIFT],
@@ -1136,7 +1144,7 @@ var LINES = [
             [FORE_DECK,  BACK_PILLARS,       , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
         ]],
     ]],
-    [MAIN_MAST, [
+    [MAIN_MAST, 'main', [
         [MAIN_SAIL, [
             [STERN_DECK, BULWARK,           1, BRACE],
             [STERN_DECK, SHROUDS_RAIL,      1, BRACE,           COIL],
@@ -1177,7 +1185,7 @@ var LINES = [
             [MAIN_DECK,  SIDE_MAST_RAIL,   -1, TACKLE,          'Нагель для работы', ,          'Нагель для работы талёвами', 'Нагеля для работы талёвами'],
         ]],
     ]],
-    [MIZZEN_MAST, [
+    [MIZZEN_MAST, 'mizzen', [
         [MIZZEN_SAIL, [
             [STERN_DECK, AT_MAST,          -1, TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
             [STERN_DECK, SHROUDS_RAIL,     -1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
@@ -1209,12 +1217,12 @@ var LINES = [
             [STERN_DECK, POOP_FLAGSTAFF,     , FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
         ]],
     ]],
-    [FLAG_STAFF, [
+    [FLAG_STAFF,, [
         [, [
             [STERN_DECK, POOP_FLAGSTAFF,     , FLAG_HALYARD,    ,                    STARBOARD],
         ]],
     ]],
-    [, [
+    [,, [
         [, [
             [FORE_DECK,  SIDE_RAIL,        -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
             [FORE_DECK,  ON_DECK_FRONT,      , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
@@ -1247,7 +1255,7 @@ String.prototype.capitalize = function () {
 };
 
 String.prototype.reEnd = function (suffix, cut) {
-    return this.slice(0, cut === 0 ? 0 : -(cut || suffix.length)) + suffix;
+    return this.slice(0, (cut === 0) ? 0 : -(cut || suffix.length)) + suffix;
 };
 
 Array.prototype.random = function () {
@@ -1292,10 +1300,10 @@ function russianGenetive(str) { // Родительный падеж сущес�
     return str + 'а';
 }
 
-function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept side
-    assert(deck);
+function Point(deck, rail, side, index, x, y, type, rotation) {
+    assert(deck, "No deck for a Point");
     this.deck = deck;
-    assert(rail);
+    assert(rail, "No rail for a Point");
     this.rail = rail;
     this.side = side;
     this.number = index + 1;
@@ -1307,37 +1315,34 @@ function Point(deck, rail, side, index, x, y, type, rotation) { // ToDo: Accept 
     Point.points.push(this);
 }
 
-Point.points = [];
-
-Point.marks = {};
-Point.marks[ CLEWLINE] = 'clewline';
-Point.marks[ BUNTLINE] = 'buntline';
-Point.marks[LEECHLINE] = 'leechline';
-Point.marks[  BOWLINE] = 'bowline';
-
-Point.prototype.attachLine = function (line) {
-    assert(line);
-    this.lines.push(line);
+Point.construct = function () {
+    Point.points = [];
+    Point.marks = {};
+    Point.marks[ CLEWLINE] = 'clewline';
+    Point.marks[ BUNTLINE] = 'buntline';
+    Point.marks[LEECHLINE] = 'leechline';
+    Point.marks[  BOWLINE] = 'bowline';
+    Point.locationObject = null;
 };
 
-Point.prototype.createElement = function () {
+Point.prototype.createObject = function () {
     // Setting location, we can't do it in the constructor, as this.rail has not been constructed yet as in there
-    this.location = this.rail.location + (this.side === CENTER ? '' : ', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту');
+    this.location = this.rail.location + ((this.side === CENTER) ? '' : (', по ' + (this.side === PORT ? 'левому' : 'правому') + ' борту'));
     if (this.rail.direction) {
         var number;
         var direction;
         var center = (this.rail.points.length + 1) / 2;
         if (this.number <= center) {
             number = this.number;
-            direction = number == center ? '' : ' ' + this.rail.direction;
+            direction = (number === center) ? '' : (' ' + this.rail.direction);
         } else {
             number = this.rail.points.length + 1 - this.number;
             direction = ' ' + this.rail.reverseDirection;
         }
-        this.location += ', ' + number  + '-' + (this.type === PIN ? 'й' : 'ая') + direction;
+        this.location += ', ' + number  + '-' + ((this.type === PIN) ? 'й' : 'ая') + direction;
     }
     // Constructing point name from names of connected lines
-    assert(this.lines, "No lines for point " + this.location);
+    assert(this.lines, "No lines for Point " + this.location);
     if (this.lines.length === 1) {
         this.name = this.lines[0].name;
     } else {
@@ -1361,85 +1366,95 @@ Point.prototype.createElement = function () {
             this.name = subNames.join(' / ') + ' ' + theLastWord;
         }
     }
-    // Connecting similarly named lines
+    // Connecting similarly named lines and points
+    var thisPoint = this;
     var thisLines = this.lines;
     $.each(Line.lines, function (_index, line) {
         if (thisLines.indexOf(line) < 0) {
             $.each(thisLines, function (_index, thisLine) {
-                if (line.name == thisLine.name) {
+                if (line.name === thisLine.name) {
                     thisLines.push(line);
+                    if (line.points.indexOf(thisPoint) < 0) {
+                        line.points.push(thisPoint);
+                    }
                 }
             });
         }
     });
-    // Creating HTML elements
-    this.icon = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
-    this.icon.css({
+    // Creating HTML objects
+    this.iconObject = $('<img class="point ' + this.type + '" ' + ' alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">');
+    this.iconObject.css({
         left: this.x,
-        top: this.y, // Must be adjusted for height when visible (in placeElements), here it only works in Firefox
+        top: this.y, // Must be adjusted for height when visible (in placeObjects), here it only works in Firefox
         transform: ((this.y <= -20) ? 'scaleY(-1) ' : '') + 'rotate(' + (this.rotation || 0.01) + 'deg)' // Rotation is needed for drop-shadow to work correctly on mirrored elements in Chrome
     });
-    this.pointNumber = $('<a class="pointNumber">' + (this.rail.points.length == 1 ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<a class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</a>');
     // Preparing jQuery collections
-    this.elements = this.icon.add(this.pointNumber);
+    this.objects = this.iconObject.add(this.numberObject);
     var thisName = this.name;
-    this.elements.each(function (_index, element) {
+    this.objects.each(function (_index, element) {
         $(element).data('title', thisName);
     });
     // Setting event handlers
-    this.elements.on('click', this, Questionary.answerQuestion);
-    this.elements.on('mouseenter mouseleave', this, this.mouseHandler);
-    return this.pointNumber;
+    this.objects.on('click', this, Questionary.answerQuestion);
+    this.objects.on('mouseenter mouseleave', this, this.mouseHandler);
+    return this.numberObject;
 };
 
-Point.placeElements = function (location) {
-    location = $(location);
+Point.prototype.attachLine = function (line) {
+    this.lines.push(line);
+};
+
+Point.placeObjects = function () {
+    Point.locationObject = $('#overlay');
     $.each(Point.points, function (_index, point) {
-        var icon = point.icon;
-        location.append(icon);
-        icon.css({
-            top: '+=' + (SCHEME_HEIGHT - (parseInt(icon.css('top')) > -20 ? 0 : parseInt(icon.css('height')))), // Could be done in createElement(), but it only works in Firefox
+        var iconObject = point.iconObject;
+        Point.locationObject.append(iconObject);
+        iconObject.css({ // Could be done in createObject(), but it only works in Firefox
+            top: '+=' + (SCHEME_HEIGHT - ((parseInt(iconObject.css('top')) > -20) ? 0 : parseInt(iconObject.css('height')))),
         });
-        point.elements.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
+        point.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     });
 };
 
-Point.tooltips = function (enable) {
+Point.toggleTooltips = function (enable) {
     $.each(Point.points, function (_index, point) {
-        point.elements.each(function (_index, point) {
-            point = $(point);
+        point.objects.each(function (_index, pointObject) {
+            pointObject = $(pointObject);
             if (enable) {
-                point.attr('title', point.data('title'));
+                pointObject.attr('title', pointObject.data('title'));
             } else {
-                point.removeAttr('title');
+                pointObject.removeAttr('title');
             }
         });
     });
 };
 
 Point.prototype.mouseHandler = function (event) {
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
     if (setMode.mode === setMode.WHICH && Questionary.status === Questionary.ASKED) {
         return;
     }
-    var isEnter = (event.type == 'mouseenter');
+    var isEnter = (event.type === 'mouseenter');
     if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.icon : null);
+        Questionary.lastEntered = isEnter ? event.data.iconObject : null;
         if (Questionary.status === Questionary.ANSWERED) {
             return;
         }
     }
     (setMode.mode === setMode.WHERE ?
-        (Questionary.status === Questionary.ASKED ? event.data.elements
+        (Questionary.status === Questionary.ASKED ? event.data.objects
                                                   : event.data.whereObjects)
                                                   : event.data.demoObjects).toggleClass('on', isEnter);
 };
 
 function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, ignoreDeck) {
        // or (deck, name, assym, x0, x0, [[x, y, type = CLEAT, rotation = 0], ...], ignoreDeck)
-    assert(deck);
-    this.deck = deck;
-    assert(name, "No rail name");
+    assert(name, "No name for a Rail");
     this.name = name;
+    assert(deck, "No deck for Rail " + name);
+    this.deck = deck;
     this.assym = assym || false;
     x0 = x0 || 0;
     y0 = y0 || 0;
@@ -1454,10 +1469,15 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
             return [[index, (x0 || 0) + (stepX || 0) * index, (y0 || 0) + (stepY || 0) * index, type || PIN, rotation || 0]]; // $.map flattens arrays
         });
     }
-    this.location = ignoreDeck ? name.capitalize() : this.deck.title.capitalize() + ', ' + this.name;
-    assert(args, "No points in rail: " + this.location);
-    this.direction        = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с кормы' : 'от центра';
-    this.reverseDirection = args.length < 2 ? null : args[1][1] - args[0][1] > args[1][2] - args[0][2] ? 'с носа'  : 'с краю';
+    this.location = ignoreDeck ? name.capitalize() : (this.deck.title.capitalize() + ', ' + this.name);
+    assert(args, "No points in Rail " + this.name);
+    if (args.length < 2) {
+        this.direction = this.reverseDirection = null;
+    } else {
+        var isFirstHalf = (args[1][1] - args[0][1] > args[1][2] - args[0][2]);
+        this.direction =  isFirstHalf ? 'с кормы' : 'от центра';
+        this.reverseDirection = isFirstHalf ? 'с носа'  : 'с краю';
+    }
     var prefix = [deck, this, this.assym || STARBOARD];
     this.points = $.map(args, function (args, _index) {
         return applyNew(Point, prefix.concat(args));
@@ -1471,89 +1491,145 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
     } else {
         this.portPoints = [];
     }
-    this.lines = [];
 }
 
 Rail.prototype.attachLine = function (number, line) {
-    assert(line);
     if (!number) {
         number = 1;
     } else if (number < 0) {
         number += this.points.length + 1;
     }
-    assert (this.assym ? line.assym == this.assym : (!line.assym || line.assym == PORT || line.assym == STARBOARD), "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
+    assert(this.assym ? line.assym === this.assym
+                      : !line.assym || line.assym === PORT || line.assym === STARBOARD,
+        "Line assimmetry " + line.assym + " is not compatible with rail assimetry " + this.assym);
     var point;
     var ret = [];
     if (this.assym || line.assym != PORT) {
         point = this.points[number - 1];
-        assert(point);
-        point.attachLine(line); // ToDo: Pass side
+        assert(point, "Bad point number: " + number);
+        point.attachLine(line);
         ret.push(point);
     }
-    if (!this.assym && (!line.assym || line.assym == PORT)) {
+    if (!this.assym && (!line.assym || line.assym === PORT)) {
         point = this.portPoints[number - 1];
-        assert(point);
-        point.attachLine(line); // ToDo: Pass side
+        assert(point, "Bad point number: " + number);
+        point.attachLine(line);
         ret.push(point);
     }
-    this.lines.push(line);
     line.number = number;
     return ret;
 };
 
-Rail.prototype.createElement = function () {
-    var element = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
-    var points = $('span.points', element);
+Rail.prototype.createObject = function () {
+    var object = $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>');
+    var points = $('span.points', object);
     $.each(this.portPoints.reverse(), function (_index, point) {
-        points.append(point.createElement()).append(' ');
+        points.append(point.createObject()).append(' ');
     });
     if (this.portPoints.length) {
         points.append('&nbsp;');
     }
     $.each(this.points, function (_index, point) {
-        points.append(' ').append(point.createElement());
+        points.append(' ').append(point.createObject());
     });
-    this.element = element;
-    return this.element;
+    this.object = object;
+    return this.object;
 };
 
-function Deck(name, title, rails) {
-    assert(name, "No deck name");
+function Selectable(tag, instances, strict) {
+    this.tag = tag;
+    this.instances = instances;
+    this.strict = strict;
+    this.masks = null;
+    this.checkboxes = null;
+    this.selectors = null;
+    this.allCheckbox = null;
+    this.allSelector = null;
+    this.singularSelectors = null;
+    this.number = null;
+}
+
+Selectable.prototype.placeObject = function (instance) {
+    instance.checkbox = $('.selector [name="' + this.tag + '"].' + instance.id);
+    if (this.strict) {
+        assert(instance.checkbox.length === 1, this.tag.capitalize() + " checkbox not found: " + instance.name + " / " + instance.id);
+    }
+    var mask = $('.' + this.tag + 'Masks .' + instance.id);
+    if (instance.checkbox.length) {
+        assert(mask.length === 1, this.tag.capitalize() + " mask not found: " + instance.name + " / " + instance.id);
+        instance.checkbox.data('mask', mask);
+    } else {
+        instance.checkbox = this.allCheckbox;
+    }
+    if (instance.placeObject) {
+        instance.placeObject();
+    }
+};
+
+Selectable.prototype.placeObjects = function () {
+    this.masks = $('.' + this.tag + 'Masks > *');
+    this.checkboxes = $('.selector [name="' + this.tag + '"]');
+    this.selectors = this.checkboxes.parent('.selector');
+    this.allCheckbox = $('.selector [name="' + this.tag + '"].all');
+    this.allSelector = this.allCheckbox.parent('.selector');
+    assert(this.allSelector.length === 1, "All " + this.tag + "s selector not found");
+    this.singularSelectors = $('.selector [name="' + this.tag + '"]:not(.all)').parent('.selector');
+    this.number = this.singularSelectors.length;
+    assert(this.number > 2 &&
+           this.masks.length === this.number &&
+           this.selectors.length === this.number + 1 &&
+           this.checkboxes.length === this.number + 1,
+        this.tag.capitalize() + " configuration inconsistency");
+    var thisSelectable = this;
+    $.each(this.instances, function (_index, instance) {
+        thisSelectable.placeObject(instance);
+    });
+};
+
+Selectable.prototype.menuHandler = function (checkbox, answer) {
+    var id = checkbox.prop('class');
+    if (id === 'all') {
+        this.masks.hide();
+        this.checkboxes.prop('checked', true);
+    } else {
+        checkbox.data('mask').toggle(!checkbox.prop('checked'));
+    }
+    var checked = $('input:checked', this.singularSelectors);
+    assert(1 <= checked.length <= this.number, this.tag.capitalize() + " checkbox misconfiguration: " + checked.length);
+    var isAll = checked.length === this.number;
+    if (checked.length === 1) {
+        checked.parent().attr('disabled', true);
+        checked.prop('disabled', true);
+    } else {
+        this.selectors.attr('disabled', false);
+        this.checkboxes.prop('disabled', false);
+        this.allSelector.attr('disabled', isAll);
+        this.allCheckbox.prop('disabled', isAll).prop('checked', isAll);
+    }
+    if (Questionary.status === Questionary.ASKED && !Questionary.rightAnswer[this.tag].checkbox.prop('checked')) {
+        Questionary.askQuestion();
+    }
+};
+
+function Deck(name, id, title, rails) {
+    assert(name, "No name for a Deck");
     this.name = name;
-    assert(title, "No deck title");
+    assert(id, "No ID for Deck " + name);
+    this.id = id;
+    assert(title, "No title for Deck " + name);
     this.title = title;
     var uniqueRails = [];
     var thisDeck = this;
     this.rails = $.map(rails, function (railArgs, _index) {
         var rail = applyNew(Rail, [thisDeck,].concat(railArgs));
-        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate rail name: " + thisDeck.name + '/' + rail.name);
+        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate Rail name: " + thisDeck.name + '/' + rail.name);
         uniqueRails.push(rail.name);
         return rail;
     });
-    this.lines = [];
 }
 
-Deck.prototype.attachLine = function (railName, number, line) {
-    assert(line);
-    this.lines.push(line);
-    var rails = $.grep(this.rails, function (rail, _index) {
-        return railName === rail.name;
-    });
-    assert(rails.length == 1, "Unknown rail: " + railName);
-    return rails[0].attachLine(number, line);
-};
-
-Deck.prototype.createElement = function () {
-    var element =  $('<td class="deck"><h2>' + this.title.capitalize() + '</h2><ul></ul></td>');
-    var ul = $('ul', element);
-    $.each(this.rails, function (_index, rail) {
-        ul.append(rail.createElement());
-    });
-    this.element = element;
-    return this.element;
-};
-
 Deck.construct = function () {
+    Deck.locationObject = null;
     var uniqueNames = [];
     Deck.decks = $.map(DECKS, function (deckArgs, _index) {
         var deck = applyNew(Deck, deckArgs);
@@ -1561,36 +1637,53 @@ Deck.construct = function () {
         uniqueNames.push(deck.name);
         return deck;
     });
+    Deck.selectable = new Selectable('deck', Deck.decks, true);
+};
+
+Deck.prototype.attachLine = function (railName, number, line) {
+    assert(line, "No line to attach to a Deck");
+    var rails = this.rails.filter(function (rail) { return railName === rail.name; });
+    assert(rails.length === 1, "Unknown rail to attach in a Deck: " + railName);
+    return rails[0].attachLine(number, line);
+};
+
+Deck.prototype.createObject = function () {
+    var object =  $('<td class="deck"><h2>' + this.title.capitalize() + '</h2><ul></ul></td>');
+    var ul = $('ul', object);
+    $.each(this.rails, function (_index, rail) {
+        ul.append(rail.createObject());
+    });
+    this.object = object;
+};
+
+Deck.createObjects = function () {
+    $.each(Deck.decks, function (_index, deck) {
+        deck.createObject();
+    });
+};
+
+Deck.prototype.placeObject = function () {
+    Deck.locationObject.prepend(this.object);
+};
+
+Deck.placeObjects = function () {
+    Deck.locationObject = $('#pointNumbers');
+    Deck.selectable.placeObjects();
 };
 
 Deck.getDeck = function (deckName) {
-    assert(deckName, "No deck");
-    var decks = $.grep(Deck.decks, function (deck, _index) {
-        return deckName === deck.name;
-    });
-    assert(decks.length == 1, "Unknown deck: " + deckName);
+    assert(deckName, "No deck name specified");
+    var decks = Deck.decks.filter(function (deck) { return deckName === deck.name; });
+    assert(decks.length === 1, "Unknown Deck: " + deckName);
     return decks[0];
 };
 
-Deck.createElements = function () {
-    $.each(Deck.decks, function (_index, deck) {
-        deck.createElement();
-    });
-};
-
-Deck.placeElements = function (location) {
-    var element = $(location);
-    $.each(Deck.decks, function (_index, deck) {
-        element.prepend(deck.element);
-    });
-};
-
-function Line(mastName, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
+function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
     this.assym = assym || false;
     this.points = Deck.getDeck(deckName).attachLine(railName, number, this); // Also sets this.number
-    this.mast = Mast.getMast(mastName);
-    this.sail = this.mast.attachLine(sailName, this);
-    assert(lineName, "No line");
+    this.mast = Mast.getMast(mastName, mastID);
+    this.sail = this.mast.getSail(sailName);
+    assert(lineName, "No name for a Line");
     this.lineName = lineName;
     this.detail = detail || '';
     fullName = fullName || '';
@@ -1606,7 +1699,7 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
             pluralWords = $.map(fullNameWords.slice(0, 1), russianPlural).concat(fullNameWords.slice(1));
             break;
         case '': // GRAMMAR
-            fullNameWords = (this.detail ? [this.detail,] : []).concat([this.lineName,]).concat(this.sail.name || this.mast.name ? [this.sail.name || this.mast.name,] : []);
+            fullNameWords = (this.detail ? [this.detail,] : []).concat([this.lineName,]).concat((this.sail.name || this.mast.name) ? [this.sail.name || this.mast.name,] : []);
             fullNameWords = fullNameWords.slice(0, 1).concat($.map(fullNameWords.slice(1), russianGenetive));
             pluralWords = $.map(fullNameWords.slice(0, -1), russianPlural).concat(fullNameWords.slice(-1));
             pluralWords = pluralWords.slice(0, 1).concat($.map(pluralWords.slice(1, -1), russianGenetive)).concat(pluralWords.slice(-1));
@@ -1614,7 +1707,7 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
         default:
             pluralWords = fullNameWords = fullName.split(' ');
     }
-    assert(fullNameWords, "Empty fullNameWords");
+    assert(fullNameWords, "Empty fullNameWords for a Line");
     pluralName = pluralName || '';
     switch (pluralName) {
         case SINGULAR:
@@ -1624,10 +1717,10 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
         default:
             pluralWords = pluralName.split(' ');
     }
-    assert(pluralWords, "Empty pluralWords");
+    assert(pluralWords, "Empty pluralWords for a Line");
     this.name = fullNameWords.join(' ').capitalize();
-    this.pluralName = pluralName === SINGULAR ? this.name : pluralWords.join(' ').capitalize();
-    this.name = pluralName === PLURAL ? this.pluralName : this.name;
+    this.pluralName = (pluralName === SINGULAR) ? this.name : pluralWords.join(' ').capitalize();
+    this.name = (pluralName === PLURAL) ? this.pluralName : this.name;
     if (this.assym) {
         this.pluralName = null;
     }
@@ -1636,9 +1729,9 @@ function Line(mastName, sailName, deckName, railName, number, lineName, detail, 
 Line.construct = function () {
     Line.lines = [];
     $.each(LINES, function (_index, args) {
-        var prefix = [args[0], ''];
-        $.each(args[1], function (_index, args) {
-            prefix[1] = args[0];
+        var prefix = [args[0], args[1], ''];
+        $.each(args[2], function (_index, args) {
+            prefix[2] = args[0];
             $.each(args[1], function (_index, args) {
                 Line.lines.push(applyNew(Line, prefix.concat(args)));
             });
@@ -1650,95 +1743,131 @@ Line.linkLines = function () {
     $.each(Line.lines, function (_index, line) {
         var demoElements = [];
         var whereElements = [];
+        var whichElements = [];
         line.sublines = Subline.getSublines(line);
         $.each(line.sublines, function (_index, subline) {
-            demoElements.push(subline.element[0]);
+            demoElements.push(subline.object[0]);
+            whichElements.push(subline.object[0]);
         });
         $.each(line.points, function (_index, point) {
-            demoElements.push(point.icon[0]);
-            whereElements.push(point.icon[0]);
-            whereElements.push(point.pointNumber[0]);
+            demoElements.push(point.iconObject[0]);
+            whereElements.push(point.iconObject[0]);
+            whereElements.push(point.numberObject[0]);
         });
-        line.demoObjects = $(demoElements);
-        line.whereObjects = $(whereElements);
+        line.demoObjects = $($.uniqueSort(demoElements));
+        line.whereObjects = $($.uniqueSort(whereElements));
+        line.whichObjects = $($.uniqueSort(whichElements));
     });
-    $.each(Point.points.concat(Subline.sublines), function (_index, target) {
+    $.each(Point.points, function (_index, point) {
         var demoElements = [];
         var whereElements = [];
-        $.each(target.lines, function (_index, line) {
+        var whichElements = [point.iconObject[0],];
+        $.each(point.lines, function (_index, line) {
             Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
-            if (target instanceof Point) {
-                Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
-            }
+            Array.prototype.push.apply(whereElements, line.whereObjects.toArray());
+            Array.prototype.push.apply(whichElements, line.whichObjects.toArray());
         });
-        target.demoObjects = $(demoElements);
-        if (target instanceof Point) {
-            target.whereObjects = $(whereElements);
-        }
+        point.demoObjects = $($.uniqueSort(demoElements));
+        point.whereObjects = $($.uniqueSort(whereElements));
+        point.whichObjects = $($.uniqueSort(whichElements));
+    });
+    $.each(Subline.sublines, function (_index, subline) {
+        var demoElements = [];
+        $.each(subline.lines, function (_index, line) {
+            Array.prototype.push.apply(demoElements, line.demoObjects.toArray());
+        });
+        subline.demoObjects = $($.uniqueSort(demoElements));
     });
 };
 
 function Sail(name, mast) {
+    assert(mast, "No mast for a Sail");
     this.name = name;
-    assert(mast);
-    this.mast = mast;
-    this.lines = [];
 }
 
-Sail.prototype.attachLine = function (line) {
-    assert(line);
-    this.lines.push(line);
+function Mast(name, id) {
+    this.name = name;
+    this.id = id;
+    this.sails = [];
+}
+
+Mast.construct = function () {
+    Mast.masts = [];
+    Mast.selectable = new Selectable('mast', Mast.masts);
 };
 
-function Mast(name) {
-    this.name = name;
-    this.sails = [];
-    this.lines = [];
-}
-
-Mast.masts = [];
-
-Mast.getMast = function (mastName) {
+Mast.getMast = function (mastName, mastID) {
     mastName = mastName || '';
-    var masts = $.grep(Mast.masts, function (mast, _index) { return mastName === mast.name; });
+    var masts = Mast.masts.filter(function (mast) { return mast.name === mastName; });
     var mast;
-    if (masts.length) { // == 1
+    if (masts.length) { // === 1
         mast = masts[0];
     } else {
-        mast = new Mast(mastName);
+        mast = new Mast(mastName, mastID);
         Mast.masts.push(mast);
     }
     return mast;
 };
 
-Mast.prototype.attachLine = function (sailName, line) {
-    assert(line);
-    var sail = new Sail(sailName, this);
-    var sails = $.grep(this.sails, function (checkSail, _index) { return sail.name === checkSail.name; });
-    if (sails.length) { // == 1
+Mast.prototype.getSail = function (sailName) {
+    sailName = sailName || '';
+    var sails = this.sails.filter(function (sail) { return sail.name === sailName; });
+    var sail;
+    if (sails.length) { // === 1
         sail = sails[0];
     } else {
+        sail = new Sail(sailName, this);
         this.sails.push(sail);
     }
-    sail.attachLine(line);
-    this.lines.push(line);
     return sail;
 };
 
-function Subline(element, sublineType) {
-    this.element = element;
-    this.name = element.text();
+Mast.placeObjects = function () {
+    Mast.selectable.placeObjects();
+};
+
+function Subline(object, sublineType) {
+    this.object = object;
+    this.name = object.text();
     this.sublineType = sublineType;
-    this.complimentaries = [];
+    this.sublines = [];
     this.points = [];
     this.lines = [];
-    this.element.on('click', this, Questionary.answerQuestion);
-    this.element.on('mouseenter mouseleave', this, this.mouseHandler);
+    this.object.on('click', this, Questionary.answerQuestion);
+    this.object.on('mouseenter mouseleave', this, this.mouseHandler);
 }
 
-Subline.SAIL = 'SAIL';
-Subline.SAILLINE = 'SAILLINE';
-Subline.NONSAILLINE = 'NONSAILLINE';
+Subline.construct = function () {
+    Subline.SAIL = 'SAIL';
+    Subline.SAILLINE = 'SAILLINE';
+    Subline.NONSAILLINE = 'NONSAILLINE';
+    var uniqueNames = [];
+    Subline.sublines = [];
+    Subline.locationObject = $('#sublines');
+    Subline.locationObject.children().each(function (_index, group) {
+        group = $(group);
+        var sublineType;
+        if (group.is('.sails')) {
+            sublineType = Subline.SAIL;
+        } else if (group.is('.sailLines')) {
+            sublineType = Subline.SAILLINE;
+        } else if (group.is('.nonSailLines')) {
+            sublineType = Subline.NONSAILLINE;
+        } else {
+            assert(false, "Wrong subline type: " + sublineType);
+        }
+        $('.subline', group).each(function (_index, element) {
+            var object = $(element);
+            var subline = applyNew(Subline, [object, sublineType]);
+            assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
+            uniqueNames.push(subline.name);
+            Subline.sublines.push(subline);
+            if (sublineType === Subline.SAIL) {
+                object.text(russianGenetive(subline.name));
+            }
+        });
+    });
+};
 
 Subline.prototype.addLine = function (line) {
     this.lines.push(line);
@@ -1751,71 +1880,33 @@ Subline.prototype.addLine = function (line) {
     return this;
 };
 
-Subline.prototype.mouseHandler = function (event) {
-    var isEnter = (event.type == 'mouseenter');
-    if (setMode.mode === setMode.DEMO) {
-        Questionary.lastEntered = (isEnter ? event.data.element : null);
-        if (Questionary.status === Questionary.ANSWERED) {
-            return;
-        }
-    }
-    (setMode.mode === setMode.WHICH &&
-     Questionary.status === Questionary.ASKED ?
-        event.data.element
-      : event.data.demoObjects).toggleClass('on', isEnter);
-};
-
-Subline.construct = function () {
-    var uniqueNames = [];
-    Subline.sublines = [];
-    $('#sublines').children().each(function (_index, group) {
-        group = $(group);
-        var sublineType;
-        if (group.is('.sails')) {
-            sublineType = Subline.SAIL;
-        } else if (group.is('.sailLines')) {
-            sublineType = Subline.SAILLINE;
-        } else if (group.is('.nonSailLines')) {
-            sublineType = Subline.NONSAILLINE;
-        } else {
-            assert(false, "Wrong subline type: " + sublineType);
-        }
-        $(group).find('.subline').each(function (_index, element) {
-            var subline = applyNew(Subline, [$(element), sublineType]);
-            assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
-            uniqueNames.push(subline.name);
-            Subline.sublines.push(subline);
-        });
-    });
-};
-
 Subline.getSublines = function (line) {
     var ret = [];
     var sublines;
     if (line.sail.name) {
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType == Subline.SAIL && subline.name == (line.detail && line.name.indexOf(line.lineName) === 0 ? line.detail : line.sail.name);
+            return subline.sublineType === Subline.SAIL && subline.name === ((line.detail && line.name.indexOf(line.lineName) === 0) ? line.detail : line.sail.name);
         });
         assert(sublines.length, "Unknown subline sail: " + line.sail.name);
-        assert(sublines.length == 1, "Duplicate subline sail: " + line.sail.name);
+        assert(sublines.length === 1, "Duplicate subline sail: " + line.sail.name);
         var sailSubline = sublines[0];
         ret.push(sailSubline.addLine(line));
         sublines = Subline.sublines.filter(function (subline) {
-            return subline.sublineType === Subline.SAILLINE && (subline.name == (line.detail || line.lineName) || line.name.startsWith(subline.name + ' '));
+            return subline.sublineType === Subline.SAILLINE && (subline.name === (line.detail || line.lineName) || line.name.startsWith(subline.name + ' '));
         });
         assert(sublines.length, "Unknown sail subline: " + line.lineName);
-        assert(sublines.length == 1, "Duplicate sail subline: " + line.lineName);
+        assert(sublines.length === 1, "Duplicate sail subline: " + line.lineName);
         var sailLineSubline = sublines[0];
         ret.push(sailLineSubline.addLine(line));
-        sailSubline.complimentaries.push(sailLineSubline);
-        sailLineSubline.complimentaries.push(sailSubline);
+        sailSubline.sublines.push(sailLineSubline);
+        sailLineSubline.sublines.push(sailSubline);
     } else {
         var lineName = line.name.toLowerCase();
         sublines = Subline.sublines.filter(function (subline) {
             return subline.sublineType === Subline.NONSAILLINE && lineName.indexOf(subline.name.toLowerCase()) >= 0;
         });
         assert(sublines.length, "Unknown non-sail subline: " + lineName);
-        assert(sublines.length == 1, "Duplicate non-sail subline: " + lineName);
+        assert(sublines.length === 1, "Duplicate non-sail subline: " + lineName);
         $.each(sublines, function (_index, subline) {
             ret.push(subline.addLine(line));
         });
@@ -1823,25 +1914,53 @@ Subline.getSublines = function (line) {
     return ret;
 };
 
+Subline.prototype.mouseHandler = function (event) {
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
+    var isEnter = (event.type === 'mouseenter');
+    if (setMode.mode === setMode.DEMO) {
+        Questionary.lastEntered = isEnter ? event.data.object : null;
+        if (Questionary.status === Questionary.ANSWERED) {
+            return;
+        }
+    }
+    (setMode.mode === setMode.WHICH &&
+     Questionary.status === Questionary.ASKED ?
+        event.data.object
+      : event.data.demoObjects).toggleClass('on', isEnter);
+};
+
 function onResize() {
     onResize.scheme.hide();
-    var scale = $(document).width() / SCHEME_WIDTH;
+    var scale = onResize.document.width() / SCHEME_WIDTH;
     onResize.placeholder.css({ height: Math.floor(2 * SCHEME_HEIGHT * scale) });
     onResize.scheme.css({ transform: 'scale(' + scale + ')'}).show();
 }
 
+onResize.configure = function () {
+    onResize.document = $(document);
+    onResize.scheme = $('#scheme');
+    onResize.placeholder = $('#placeholder');
+};
+
 function setMode(mode) {
-    mode = mode.trim().toLowerCase() || 'info';
+    mode = mode.trim();
+    mode = (mode.startsWith('#') ? mode.slice(1).trim() : mode).toLowerCase();
     if (mode === setMode.mode) {
         return;
     }
+    var modeCheckbox = setMode.checkboxes[mode];
+    if (!modeCheckbox) {
+        mode = setMode.INFO;
+        modeCheckbox = setMode.checkboxes[mode];
+    }
+    assert(modeCheckbox.length === 1, "Mode checkbox not found");
     setMode.mode = mode;
     location.href = '#' + mode;
-    var input = $('#' + mode + 'Mode input');
-    input.prop('checked', true);
-    setMode.modeDependent.hide();
-    $('.usedInMode' + mode.capitalize()).show();
-    $('#rightAnswer, #wrongAnswer, #nextQuestionNote, #statistics').hide();
+    modeCheckbox.prop('checked', true);
+    setMode.allDependents.hide();
+    setMode.dependents[mode].show(); // Sorry, no way to do it simple and fast in one cycle
+    Questionary.allObjects.hide();
     switch(mode) {
         case setMode.INFO:
             setMode.schemeBlock.hide();
@@ -1849,123 +1968,80 @@ function setMode(mode) {
         case setMode.DEMO:
             Questionary.lastEntered = null;
             setMode.schemeBlock.show();
-            $('.mastMask, .deckMask').hide();
             break;
         case setMode.WHERE:
-            $('#toggleScheme input').change();
-            $('.deckMask').hide();
-            $('#selectMasts .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#mastMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
-            });
-            break;
         case setMode.WHICH:
-            $('#toggleScheme input').change();
-            $('.mastMask').hide();
-            $('#selectDecks .selector').each(function (_index, selector) { // ToDo: Unify with menuHandler()
-                $('#deckMask' + selector.id.slice(4)).toggle(!$(selector).find('input')[0].checked);
-            });
+            setMode.schemeCheckbox.change();
             break;
         default:
-            setMode(setMode.INFO);
-            return;
+            assert(false, "Unknown mode: " + mode);
     }
     Questionary.reset();
     Questionary.askQuestion();
 }
 
-setMode.INFO = 'info';
-setMode.DEMO = 'demo';
-setMode.WHERE = 'where';
-setMode.WHICH = 'which';
+setMode.construct = function () {
+    setMode.INFO = 'info';
+    setMode.DEMO = 'demo';
+    setMode.WHERE = 'where';
+    setMode.WHICH = 'which';
+    setMode.checkboxes = {};
+    setMode.dependents = {};
+    setMode.schemeSelector = null;
+    setMode.schemeCheckbox = null;
+    setMode.mode = null;
+};
 
-setMode.mode = null;
+setMode.configure = function () {
+    setMode.schemeBlock = $('#schemeBlock');
+    setMode.allDependents = $('.modeDependent');
+    setMode.schemeCheckbox = $('#schemeCheckbox');
+    setMode.marksCheckbox = $('#marksCheckbox');
+    setMode.marksSelector = setMode.marksCheckbox.parent();
+    setMode.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
+    $.each([setMode.INFO, setMode.DEMO, setMode.WHERE, setMode.WHICH], function (_index, mode) {
+        setMode.checkboxes[mode] = $('.selector [name="mode"].' + mode);
+        setMode.dependents[mode] = $('.modeDependent.' + mode);
+    });
+    setMode.schemeCheckbox.prop('checked', true).change(setMode.schemeHandler);
+    setMode.marksCheckbox.prop('checked', true).change(setMode.marksHandler).change();
+};
 
-function resetDecks() {
-    $('.deckMask').hide();
-    $('#selectDecks .selector').attr('disabled', false);
-    $('#selectDecks input').prop('checked', true).prop('disabled', false);
-    $('#selectDecks .selector:first-child').attr('disabled', true);
-    $('#selectDecks :first-child input').prop('disabled', true);
-}
+setMode.schemeHandler = function () {
+    setMode.schemeBlock.toggle(this.checked);
+    if (this.checked) {
+        Questionary.reset();
+    }
+    if (setMode.mode === setMode.WHICH) {
+        setMode.marksSelector.toggle(this.checked);
+    }
+};
 
-function resetMasts() {
-    $('.mastMask').hide();
-    $('#selectMasts .selector').attr('disabled', false);
-    $('#selectMasts input').prop('checked', true).prop('disabled', false);
-    $('#selectMasts .selector:first-child').attr('disabled', true);
-    $('#selectMasts :first-child input').prop('disabled', true);
-}
+setMode.marksHandler = function () {
+    setMode.whereLocationObjects.toggleClass('colored', this.checked);
+    if (this.checked) {
+        Questionary.reset();
+    }
+};
 
 function menuHandler(event) {
-    var selector = $(this); // jshint ignore:line
-    var input = selector.find('input');
+    var checkbox = $('input', $(this)); // jshint ignore:line
     if (this === event.target) { // jshint ignore:line
-        input.click();
+        checkbox.click();
         return;
     }
-    var checked;
-    if (input.attr('name') === 'mode') {
-        setMode(this.id.slice(0, -4)); // jshint ignore:line
-    } else {
-        if (input[0].checked) {
-            Questionary.reset();
-        }
-        if (input.attr('name') === 'deck') { // ToDo: Unify handling for decks and masts
-            var deck = selector[0].id.slice(4);
-            if (deck == 'All') {
-                resetDecks();
-            } else {
-                $('#deckMask' + deck).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectDecks :not(#deckAll) input:checked'); // ToDo: Create special class for not-all decks
-                switch (checked.length) {
-                    case 1:
-                        checked.parent().attr('disabled', true);
-                        checked.prop('disabled', true);
-                        break;
-                    case 2:
-                    case 3:
-                        $('#selectDecks .selector').attr('disabled', false);
-                        $('#selectDecks input').prop('disabled', false);
-                        $('#deckAll').attr('disabled', checked.length === 3);
-                        $('#deckAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                        break;
-                    default:
-                        assert(false, "Checkbox misconfiguration: " + checked.length);
-                }
-                if (Questionary.status === Questionary.ASKED && !$('#selectDecks :contains("' + Questionary.correctAnswer.deck.name + '") input')[0].checked) {
-                    Questionary.askQuestion();
-                }
-            }
-        } else if (input.attr('name') === 'mast') {
-            var mast = selector[0].id.slice(4);
-            if (mast == 'All') {
-                resetMasts();
-            } else {
-                $('#mastMask' + mast).toggle(!input[0].checked); // ToDo: Optimize, do it once, store in selectors
-                checked = $('#selectMasts :not(#mastAll) input:checked');
-                switch (checked.length) {
-                    case 1:
-                        checked.parent().attr('disabled', true);
-                        checked.prop('disabled', true);
-                        break;
-                    case 2:
-                    case 3:
-                        $('#selectMasts .selector').attr('disabled', false);
-                        $('#selectMasts input').prop('disabled', false);
-                        $('#mastAll').attr('disabled', checked.length === 3);
-                        $('#mastAll input').prop('disabled', checked.length === 3).prop('checked', checked.length === 3);
-                        break;
-                    default:
-                        assert(false, "Checkbox misconfiguration: " + checked.length);
-                }
-                if (Questionary.status === Questionary.ASKED) {
-                    input = Questionary.correctAnswer.mast.name ? $('#selectMasts :contains("' + Questionary.correctAnswer.mast.name + '") input') : [];
-                    if (!input.length || !input[0].checked) {
-                        Questionary.askQuestion();
-                    }
-                }
-            }
-        }
+    var name = checkbox.prop('name');
+    if (name === 'mode') {
+        setMode(checkbox.prop('class'));
+        return;
+    }
+    if (checkbox.prop('checked')) {
+        Questionary.reset();
+    }
+    if (name === 'deck') {
+        Deck.selectable.menuHandler(checkbox);
+    } else if (name === 'mast') {
+        Mast.selectable.menuHandler(checkbox);
     }
 }
 
@@ -1973,28 +2049,53 @@ function Questionary() {
     // Static container
 }
 
-Questionary.ASKED = 'ASKED';
-Questionary.ANSWERED = 'ANSWERED';
+Questionary.construct = function () {
+    Questionary.ASKED = 'ASKED';
+    Questionary.ANSWERED = 'ANSWERED';
+    Questionary.rightAnswer = null;
+    Questionary.preAnswer = null;
+    Questionary.status = null;
+    Questionary.statAll = 0;
+    Questionary.statCorrect = 0;
+    Questionary.lastEntered = null;
+};
 
-Questionary.correctAnswer = null;
-Questionary.preAnswer = null;
-Questionary.status = null;
-Questionary.statAll = 0;
-Questionary.statCorrect = 0;
-
-Questionary.lastEntered = null;
+Questionary.configure = function () {
+    Questionary.highlightClasses = 'on question rightAnswer wrongAnswer';
+    Questionary.demoLocationObjects = Point.locationObject.add(Subline.locationObject);
+    Questionary.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
+    var pointObjects = $('.point');
+    Questionary.demoObjects = pointObjects.add('.subline');
+    Questionary.whereObjects = pointObjects.add('.pointNumber');
+    Questionary.questionObject = $('#question');
+    Questionary.rightAnswerObject = $('#rightAnswer');
+    Questionary.rightAnswerTextObject = $('#rightAnswerText');
+    Questionary.wrongAnswerObject = $('#wrongAnswer');
+    Questionary.tooltipNoteObject = $('#tooltipNote');
+    Questionary.nextQuestionNoteObject = $('#nextQuestionNote');
+    Questionary.nextQuestionButton = $('#nextQuestionButton')[0];
+    Questionary.statCorrectObject = $('#statCorrect');
+    Questionary.statAllObject = $('#statAll');
+    Questionary.statPercentObject = $('#statPercent');
+    Questionary.statisticsObject = $('#statistics');
+    Questionary.answerObjects = Questionary.rightAnswerObject.add(Questionary.wrongAnswerObject).add(Questionary.nextQuestionNoteObject);
+    Questionary.allObjects = Questionary.answerObjects.add(Questionary.statisticsObject);
+};
 
 Questionary.askQuestion = function () {
-    var checkbox;
     switch(setMode.mode) {
         case setMode.INFO:
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            $('#overlay, #sublines').addClass('highlight');
-            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
+            Questionary.demoLocationObjects.addClass('highlight');
+            Questionary.demoObjects.removeClass(Questionary.highlightClasses);
+            Point.toggleTooltips(true);
             Questionary.status = Questionary.ASKED;
-            Point.tooltips(true);
+            if (Questionary.preAnswer) {
+                Questionary.preAnswer.object.removeClass('preAnswer');
+                Questionary.preAnswer = null;
+            }
             if (Questionary.lastEntered) {
                 Questionary.lastEntered.mouseenter();
                 Questionary.lastEntered = null;
@@ -2004,55 +2105,56 @@ Questionary.askQuestion = function () {
             var line;
             while (true) {
                 line = Line.lines.random();
-                checkbox = $('#selectMasts :contains("' + line.mast.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#mastAll input:checked').length) && (!Questionary.correctAnswer || line.name != Questionary.correctAnswer.name)) {
+                if (line.mast.checkbox.prop('checked') &&
+                    (!Questionary.rightAnswer || line.name != Questionary.rightAnswer.name)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = line;
-            $('#question').text(Questionary.correctAnswer.name);
-            $('#overlay, #pointNumbers').addClass('highlight');
-            $('.point, .pointNumber').removeClass('on question rightAnswer wrongAnswer');
-            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-            $('#tooltipNote').show();
+            Questionary.rightAnswer = line;
+            Questionary.questionObject.text(Questionary.rightAnswer.name);
+            Questionary.whereLocationObjects.addClass('highlight');
+            Questionary.whereObjects.removeClass(Questionary.highlightClasses);
+            Questionary.answerObjects.hide();
+            Questionary.tooltipNoteObject.show();
+            Point.toggleTooltips(false);
             Questionary.status = Questionary.ASKED;
-            Point.tooltips(false);
             break;
         case setMode.WHICH:
             var point;
             while (true) {
                 point = Point.points.random();
-                checkbox = $('#selectDecks :contains("' + point.deck.name + '") input');
-                if ((checkbox.length ? checkbox.prop('checked') : $('#deckAll input:checked').length) && (!Questionary.correctAnswer || point.location != Questionary.correctAnswer.location)) {
+                if (point.deck.checkbox.prop('checked') &&
+                    (!Questionary.rightAnswer || point.location != Questionary.rightAnswer.location)) {
                     break;
                 }
             }
-            Questionary.correctAnswer = point;
-            $('#question').text(Questionary.correctAnswer.location);
-            $('#overlay').removeClass('highlight pointer');
-            $('#sublines').addClass('highlight');
-            $('.point, .subline').removeClass('on question rightAnswer wrongAnswer');
-            $('.preAnswer').removeClass('preAnswer');
-            point.icon.addClass('question');
-            $('#rightAnswer, #wrongAnswer, #nextQuestionNote').hide();
-            $('#tooltipNote').show();
+            Questionary.rightAnswer = point;
+            Questionary.questionObject.text(Questionary.rightAnswer.location);
+            Point.locationObject.removeClass('highlight pointer');
+            Subline.locationObject.addClass('highlight');
+            Questionary.demoObjects.removeClass(Questionary.highlightClasses);
+            point.iconObject.addClass('question');
+            Questionary.answerObjects.hide();
+            Questionary.tooltipNoteObject.show();
+            Point.toggleTooltips(false);
             Questionary.status = Questionary.ASKED;
-            Questionary.preAnswer = null;
-            Point.tooltips(false);
+            if (Questionary.preAnswer) {
+                Questionary.preAnswer.object.removeClass('preAnswer');
+                Questionary.preAnswer = null;
+            }
             break;
         default:
-            assert(false);
+            assert(false, "Unknown mode: " + setMode.mode);
     }
 };
 
 Questionary.answerQuestion = function (event) {
-    assert(this === event.target);
-    assert(event.data);
+    assert(this === event.target, "Event delegation error, expected " + event.target + " but got " + this);
+    assert(event.data, "Event data is not specified");
     if (Questionary.status !== Questionary.ASKED) {
         return;
     }
     event.stopPropagation(); // Avoid triggering nextQuestion()
-    var element = $(this);
     var isCorrect;
     switch(setMode.mode) {
         case setMode.DEMO:
@@ -2060,22 +2162,12 @@ Questionary.answerQuestion = function (event) {
             return;
         case setMode.WHERE:
             var point = event.data;
-            point.elements.removeClass('on');
-            $.each(Point.points, function (_index, point) {
-                $.each(point.lines, function (_index, line) {
-                    if (line.name === Questionary.correctAnswer.name) {
-                        point.elements.addClass('rightAnswer');
-                    }
-                });
-            });
-            $.each(point.lines, function (_index, line) {
-                if (line.name === Questionary.correctAnswer.name) {
-                    isCorrect = true;
-                }
-            });
+            point.objects.removeClass('on');
+            Questionary.rightAnswer.whereObjects.addClass('rightAnswer');
+            isCorrect = point.lines.indexOf(Questionary.rightAnswer) >= 0;
             if (!isCorrect) {
-                point.elements.addClass('wrongAnswer');
-                $('#rightAnswerText').text(point.name);
+                point.objects.addClass('wrongAnswer');
+                Questionary.rightAnswerTextObject.text(point.name);
             }
             break;
         case setMode.WHICH:
@@ -2085,137 +2177,122 @@ Questionary.answerQuestion = function (event) {
             }
             var points;
             if (Questionary.preAnswer) {
-                Questionary.preAnswer.element.removeClass('preAnswer');
+                Questionary.preAnswer.object.removeClass('preAnswer');
             }
             if (subline.sublineType === Subline.NONSAILLINE) {
                 Questionary.preAnswer = null;
                 points = subline.points;
             } else {
-                if (!Questionary.preAnswer && subline.complimentaries.length === 1) {
-                    Questionary.preAnswer = subline.complimentaries[0];
+                if (!Questionary.preAnswer && subline.sublines.length === 1) {
+                    Questionary.preAnswer = subline.sublines[0];
                 }
                 if (!Questionary.preAnswer || subline.sublineType === Questionary.preAnswer.sublineType) {
                     Questionary.preAnswer = subline;
-                    subline.element.addClass('preAnswer');
+                    subline.object.addClass('preAnswer');
                     return;
                 }
                 points = subline.points.filter(function (value) {
                     return Questionary.preAnswer.points.indexOf(value) >= 0;
                 });
             }
-            isCorrect = points.indexOf(Questionary.correctAnswer) >= 0;
-            subline.element.mouseout();
-            $('#overlay').addClass('highlight');
-            Questionary.correctAnswer.icon.addClass('rightAnswer');
-            $.each(Questionary.correctAnswer.lines, function (_index, line) {
-                $.each(line.sublines, function (_index, subline) {
-                    subline.element.addClass('rightAnswer');
-                });
-            });
+            isCorrect = points.indexOf(Questionary.rightAnswer) >= 0;
+            subline.object.mouseout();
+            Point.locationObject.addClass('highlight');
+            Questionary.rightAnswer.whichObjects.addClass('rightAnswer');
             if (!isCorrect) {
                 $.each(points, function (_index, point) {
-                    point.icon.addClass('wrongAnswer');
+                    point.iconObject.addClass('wrongAnswer');
                 });
-                subline.element.addClass('wrongAnswer');
+                subline.object.addClass('wrongAnswer');
                 if (Questionary.preAnswer) {
-                    Questionary.preAnswer.element.addClass('wrongAnswer');
+                    Questionary.preAnswer.object.addClass('wrongAnswer');
                 }
-                $('#rightAnswerText').text(Questionary.correctAnswer.name);
+                Questionary.rightAnswerTextObject.text(Questionary.rightAnswer.name);
             }
-            Questionary.status = Questionary.ANSWERED;
             break;
         default:
-            assert(false);
+            assert(false, "Unknown mode: " + setMode.mode);
     }
     Questionary.status = Questionary.ANSWERED;
-    if (isCorrect) {
-        $('#rightAnswer').show();
-        $('#wrongAnswer').hide();
-    } else {
-        $('#wrongAnswer').show();
-        $('#rightAnswer').hide();
-    }
     Questionary.updateStatistics(isCorrect);
-    $('#tooltipNote').hide();
-    $('#nextQuestionNote').show();
-    Point.tooltips(true);
+    Questionary.rightAnswerObject.toggle(isCorrect);
+    Questionary.wrongAnswerObject.toggle(!isCorrect);
+    Questionary.tooltipNoteObject.hide();
+    Questionary.nextQuestionNoteObject.show();
+    Point.toggleTooltips(true);
 };
 
 Questionary.updateStatistics = function (isCorrect) {
     Questionary.statAll += 1;
     Questionary.statCorrect += isCorrect ? 1 : 0;
-    $('#statCorrect').text(Questionary.statCorrect);
-    $('#statAll').text(Questionary.statAll);
-    $('#statPercent').text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
-    $('#statistics').show();
+    Questionary.statCorrectObject.text(Questionary.statCorrect);
+    Questionary.statAllObject.text(Questionary.statAll);
+    Questionary.statPercentObject.text(Math.round(Questionary.statCorrect / Questionary.statAll * 100));
+    Questionary.statisticsObject.show();
 };
 
 Questionary.nextQuestion = function (event) {
     if (Questionary.status === Questionary.ANSWERED) {
         Questionary.askQuestion();
-    } else if (Questionary.status === Questionary.ASKED && $(event.target).is('#nextQuestionButton')) {
+    } else if (Questionary.status === Questionary.ASKED && event.target === Questionary.nextQuestionButton) {
         Questionary.updateStatistics();
         Questionary.askQuestion();
     }
 };
 
-Questionary.reset = function (event) {
+Questionary.reset = function () {
     Questionary.statAll = Questionary.statCorrect = 0;
-    $('#statistics').hide();
+    Questionary.statisticsObject.hide();
 };
 
-function main() {
+function start() {
     // Create data objects from constant data
+    Point.construct();
     Deck.construct();
+    Mast.construct();
     Line.construct();
     Subline.construct();
+    Questionary.construct();
+    setMode.construct();
     // Configure and link data objects
-    Deck.createElements();
+    Deck.createObjects();
     Line.linkLines();
-    // Put generated elements to DOM
-    Deck.placeElements('#pointNumbers');
-    Point.placeElements('#overlay');
+    // Modifying DOM
+    Deck.placeObjects();
+    Mast.placeObjects();
+    Point.placeObjects();
+    Questionary.configure();
+    setMode.configure();
+    onResize.configure();
     // Setup scheme
     $('img.scheme').css({ width: SCHEME_WIDTH, height: SCHEME_HEIGHT });
-    $('#overlay').css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
-    onResize.scheme = $('#scheme');
-    onResize.placeholder = $('#placeholder');
-    var schemeBlock = $('#schemeBlock');
-    // Setup menu
-    setMode.modeDependent = $('.modeDependent');
-    setMode.schemeBlock = schemeBlock;
-    $('input[name=mode]').prop('checked', false);
-    $('#toggleScheme input').prop('checked', true).change(function (_event) {
-        schemeBlock.toggle(this.checked);
-        if (this.checked) {
-            Questionary.reset();
-        }
-        if (setMode.mode === setMode.WHICH) {
-            $('#toggleMarks').toggle(this.checked);
-        }
-    });
-    $('#toggleMarks input').prop('checked', true).change(function (_event) {
-        $('#overlay, #pointNumbers').toggleClass('colored', this.checked);
-        if (this.checked) {
-            Questionary.reset();
-        }
-    }).change();
-    resetDecks();
-    resetMasts();
-    $('.selector').click(menuHandler);
+    Point.locationObject.css({ width: SCHEME_WIDTH, height: 2 * SCHEME_HEIGHT });
+    // Binding menu handlers
+    $('.selector').on('click firefoxWorkaround', menuHandler);
+    Deck.selectable.allCheckbox.trigger('firefoxWorkaround');
+    Mast.selectable.allCheckbox.trigger('firefoxWorkaround');
+    // Binding other handlers
     $('#resetButton').click(Questionary.reset);
-    $('.selector, .point, .pointNumber, .subline').mousedown(function (_event) { return false; }); // Avoid selection by double-click
-    // Finishing setup
+    $('.selector, .point, .pointNumber, .subline').mousedown(false); // Avoid selection by double-click
     $('body').click(Questionary.nextQuestion);
-    $('button.info').on('hover mousedown keydown', function (_event) { return false; });
-    setMode(window.location.hash.slice(1));
-    onResize();
+    $('button.doc').on('hover mousedown keydown', false);
+    // Finishing setup
+    setMode(window.location.hash);
     $('#loading').hide();
     $('#main').show();
+    onResize();
     $(window).resize(onResize);
 }
 
-$(document).ready(main);
+function main() {
+    if (window.jQuery) {
+        $(document).ready(start);
+    } else {
+        window.setTimeout(main, 100);
+    }
+}
+
+main();
 </script>
 </body>
 </html>
