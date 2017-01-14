@@ -377,6 +377,10 @@ img.vang {
 	background-position: -152px -1px;
 }
 
+#schemeBorderFix, .questionBlock, .choiceBlock {
+	border-bottom: 2px solid #4e1d00;
+}
+
 #schemeBorderFix * {
 	line-height: 0.1;
 }
@@ -430,7 +434,6 @@ img.vang {
 }
 
 .questionBlock {
-	border-top: 2px solid #4e1d00;
 	text-align: center;
 	padding-bottom: 1em;
 }
@@ -440,21 +443,16 @@ img.vang {
 	margin-top: 0;
 }
 
-#rightAnswer {
-	color: green;
+#rightAnswer, #wrongAnswer {
 	font-weight: bold;
 }
 
-#wrongAnswer {
-	font-weight: bold;
+#rightAnswer {
+	color: green;
 }
 
 #wrongAnswer span:first-child {
 	color: red;
-}
-
-.choiceBlock {
-	border-top: 2px solid #4e1d00;
 }
 
 #sublines h3 {

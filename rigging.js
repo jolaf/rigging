@@ -760,7 +760,7 @@ setMode.construct = function () {
 };
 
 setMode.configure = function () {
-    setMode.schemeBlock = $('#schemeBlock');
+    setMode.schemeBlock = $('#schemeBlock, #schemeBorderFix');
     setMode.allDependents = $('.modeDependent');
     setMode.schemeCheckbox = $('#schemeCheckbox');
     setMode.marksCheckbox = $('#marksCheckbox');
