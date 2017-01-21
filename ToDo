@@ -3,12 +3,12 @@ ReDo icons. White on blue?
 
 Redesign Sublines and implement subline categories
 
-Cleanup CSS
-
 Remove hover on touch
 
 Employ SVG scheme, try to remove the data table, extract all from SVG
 Move sublines generation from HTML to JS code?
+
+Cleanup CSS
 
 Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered

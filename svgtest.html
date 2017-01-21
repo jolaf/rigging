@@ -8,8 +8,9 @@
 <object data="images/shtandart.svg" type="image/svg+xml" id="svg" width="100%"></object>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js"></script>
 <script>
+  var svg;
   $(document).ready(function () {
-      var svg = $('#svg')[0].contentDocument.documentElement;
+      svg = $('#svg')[0].contentDocument.documentElement;
       console.log($('[rigging\\:side]', svg)[0]);
   });
 </script>
