@@ -32,6 +32,46 @@
          stdDeviation="0.26573121"
          id="feGaussianBlur4588" />
     </filter>
+    <filter
+       id="green-glow"
+       x="-500"
+       y="-500"
+       width="1000"
+       height="1000">
+      <feFlood
+         result="flood"
+         flood-color="rgb(0,255,0)"
+         flood-opacity="1"
+         id="feFlood5737" />
+      <feComposite
+         in="flood"
+         result="mask"
+         in2="SourceGraphic"
+         operator="in"
+         id="feComposite5739" />
+      <feMorphology
+         in="mask"
+         result="dilated"
+         operator="dilate"
+         radius="4"
+         id="feMorphology5741"
+         stdDeviation="6.6" />
+      <feGaussianBlur
+         in="dilated"
+         result="blurred"
+         stdDeviation="3.3"
+         id="feGaussianBlur5743"
+         radius="6" />
+      <feMerge
+         id="feMerge5745">
+        <feMergeNode
+           in="blurred"
+           id="feMergeNode5747" />
+        <feMergeNode
+           in="SourceGraphic"
+           id="feMergeNode5749" />
+      </feMerge>
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -1511,7 +1551,7 @@
          cy="400.30872"
          cx="190.7242"
          id="circle4461"
-         style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88175297;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88175297;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;filter:url(#green-glow)"
          transform="rotate(-4.7351251,-4464.3227,262.90522)" />
     </g>
     <g
@@ -1657,6 +1697,6 @@
        cy="30.781984"
        cx="509.0705"
        id="circle4381"
-       style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#f3cc00;stroke-width:0.68405706;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter4586)" />
+       style="display:inline;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#f3cc00;stroke-width:0.68405706;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1;" />
   </g>
 </svg>
