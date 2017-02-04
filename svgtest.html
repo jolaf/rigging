@@ -25,7 +25,14 @@
       if (!svg.length) {
         svg = $('#svgObject')[0].contentDocument.documentElement;
       }
-      console.log($('[rigging\\:side]', svg)[0]);
+      $('[rigging\\:rail]', svg).each(function (_index, rail) {
+        rail = $(rail);
+        console.log(rail.attr('rigging:deck'),
+                    rail.attr('rigging:rail'),
+                    rail.attr('rigging:side'),
+                    rail.children().length
+                    );
+      });
   });
 </script>
 </body>
