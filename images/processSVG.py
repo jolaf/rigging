@@ -6,8 +6,8 @@ TARGET = 'shtandart.svg'
 
 PATTERNS = ((r'(?ms)\s*<metadata>.*?</metadata>(\n*)', r'\1'),
             (r'(?ms)\s*<g></g>(\n*)', r'\1'),
-            (r' (class|filter)="\S+"', ''),
-            (r' ((deck|side|rail)=")', r' rigging:\1'),
+            (r' filter="\S+"', ''),
+            (r' ((deck|side|rail|mast)=")', r' rigging:\1'),
             ('  ', ' '),
             (r'\n\n', r'\n'))
 
