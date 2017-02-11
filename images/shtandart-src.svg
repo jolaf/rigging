@@ -164,15 +164,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.9999999"
-     inkscape:cx="165.67794"
-     inkscape:cy="109.02194"
+     inkscape:zoom="5.656854"
+     inkscape:cx="551.62405"
+     inkscape:cy="82.176319"
      inkscape:document-units="px"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="points"
      showgrid="false"
-     inkscape:window-width="1440"
-     inkscape:window-height="848"
-     inkscape:window-x="-8"
+     inkscape:window-width="2560"
+     inkscape:window-height="1537"
+     inkscape:window-x="1672"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      showguides="false"
@@ -472,21 +472,24 @@
   <svg:g
      inkscape:groupmode="layer"
      id="layer2"
-     inkscape:label="deckMasks">
+     inkscape:label="deckMasks"
+     style="display:none">
     <g
        id="deckMasks" />
   </svg:g>
   <svg:g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="mastMasks">
+     inkscape:label="mastMasks"
+     style="display:none">
     <g
        id="mastMasks" />
   </svg:g>
   <svg:g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="points">
+     inkscape:label="points"
+     style="display:inline">
     <svg:g
        id="points"
        style="display:inline"
@@ -644,7 +647,7 @@
          id="g5102"
          rigging:deck="fore"
          rigging:side="port"
-         rigging:rail="shrouds">
+         rigging:rail="shroudsRail">
         <svg:circle
            style="opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.26561278;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2.9000001;stroke-dasharray:none;stroke-opacity:1"
            id="circle4188"
@@ -972,6 +975,7 @@
       <svg:g
          rigging:deck="stern"
          rigging:rail="atFront"
+         rigging:side="center"
          id="g4276"
          transform="translate(-36.623883,-385.81996)">
         <svg:g
@@ -1058,7 +1062,7 @@
       <svg:g
          rigging:deck="stern"
          rigging:side="port"
-         rigging:rail="shrouds"
+         rigging:rail="shroudsRail"
          id="g4413">
         <svg:circle
            transform="rotate(-8.2972976,-2552.6485,70.819736)"
@@ -1229,7 +1233,7 @@
       </svg:g>
       <svg:g
          rigging:side="starboard"
-         rigging:rail="shrouds"
+         rigging:rail="shroudsRail"
          rigging:deck="fore"
          id="g4282"
          transform="translate(-36.939212,-264.5465)">
@@ -1330,7 +1334,7 @@
       <svg:g
          rigging:deck="fore"
          rigging:side="starboard"
-         rigging:rail="sideRail"
+         rigging:rail="frontRail"
          id="g4312"
          transform="translate(3.1976551e-4,38.750007)">
         <svg:circle
@@ -1398,6 +1402,7 @@
       <svg:g
          rigging:deck="fore"
          rigging:rail="atMastFront"
+         rigging:side="center"
          id="g1173">
         <svg:ellipse
            transform="rotate(90)"
@@ -1726,6 +1731,7 @@
       <svg:g
          rigging:deck="main"
          rigging:rail="atMastFront"
+         rigging:side="center"
          id="g1194">
         <svg:ellipse
            transform="scale(-1)"
@@ -1739,6 +1745,7 @@
       <svg:g
          rigging:deck="main"
          rigging:rail="atMastBack"
+         rigging:side="center"
          id="g1197">
         <svg:ellipse
            cx="-315.44531"
@@ -1803,7 +1810,7 @@
       <svg:g
          rigging:deck="stern"
          rigging:side="starboard"
-         rigging:rail="bulwark"
+         rigging:rail="sideRail"
          id="g4453"
          transform="matrix(1,0,0,-1,-1.2171184e-8,145.77061)">
         <svg:circle
@@ -1841,7 +1848,7 @@
       <svg:g
          rigging:deck="stern"
          rigging:side="starboard"
-         rigging:rail="shrouds"
+         rigging:rail="shroudsRail"
          id="g4463"
          transform="matrix(1,0,0,-1,0,145.5639)">
         <svg:circle
@@ -1990,6 +1997,93 @@
            rx="1.1255895"
            cy="-87.661819"
            cx="-34.806992" />
+      </svg:g>
+      <svg:g
+         transform="translate(-13.507767,-342.52707)"
+         id="g808"
+         rigging:side="starboard"
+         rigging:rail="aboveLadder"
+         rigging:deck="stern">
+        <svg:g
+           id="g804"
+           transform="translate(-0.03156727,0.06313453)">
+          <svg:circle
+             r="0.4261581"
+             cy="461.04416"
+             cx="283.88446"
+             id="circle792"
+             style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1" />
+          <svg:circle
+             style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+             id="circle794"
+             cx="285.22607"
+             cy="461.0126"
+             r="0.4261581" />
+          <svg:circle
+             r="0.4261581"
+             cy="461.02838"
+             cx="286.56769"
+             id="circle796"
+             style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1" />
+          <svg:circle
+             style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+             id="circle798"
+             cx="287.84616"
+             cy="461.02838"
+             r="0.4261581" />
+          <svg:circle
+             r="0.4261581"
+             cy="461.04416"
+             cx="289.14041"
+             id="circle800"
+             style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1" />
+          <svg:path
+             sodipodi:nodetypes="cccc"
+             inkscape:connector-curvature="0"
+             id="path802"
+             d="m 298.72105,455.17265 c -3.99317,0.48895 -15.45986,2.28426 -17.2673,3.4724 -0.87352,0.68368 -1.28132,1.45631 -0.50507,2.27284 0.29488,0.21805 1.51523,0.12627 1.51523,0.12627"
+             style="fill:none;fill-rule:evenodd;stroke:#4e1d00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+        </svg:g>
+        <svg:path
+           style="fill:none;fill-rule:evenodd;stroke:#4e1d00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+           d="m 290.63983,461.04416 c 0,0 1.79183,-1.09175 2.58851,-1.76777 0.49938,-0.42374 1.08756,-0.91263 1.3574,-1.42053 0.26984,-0.5079 0.39292,-0.88831 0.31567,-1.45209 -0.0772,-0.56378 -0.79993,-1.71985 -1.43805,-2.14657 -0.63813,-0.42672 -1.58057,-0.41427 -2.19218,-0.15784 -0.61162,0.25643 -0.56613,0.7134 -0.75762,1.35739 -0.19149,0.64399 0.11478,1.99311 0.2841,2.71479 0.16932,0.72168 0.25082,1.04256 0.59978,1.60993 0.34896,0.56737 0.9875,1.20391 1.5468,1.67306 0.5593,0.46915 1.76777,1.13642 1.76777,1.13642"
+           id="path806"
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="cszzzzzzzzc" />
+      </svg:g>
+      <svg:g
+         id="g826"
+         rigging:rail="onDeckFront"
+         rigging:side="port"
+         rigging:deck="fore"
+         transform="translate(542,14.176777)">
+        <svg:ellipse
+           inkscape:tile-y0="23.456158"
+           inkscape:tile-x0="57.956545"
+           style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+           id="ellipse824"
+           cx="23.537626"
+           cy="-88.174568"
+           rx="1.0446429"
+           ry="3.5267856"
+           transform="rotate(90)" />
+      </svg:g>
+      <svg:g
+         transform="translate(544,80.457108)"
+         rigging:deck="fore"
+         rigging:side="starboard"
+         rigging:rail="onDeckFront"
+         id="g830">
+        <svg:ellipse
+           transform="rotate(90)"
+           ry="3.5267856"
+           rx="1.0446429"
+           cy="-86.174568"
+           cx="27.537626"
+           id="ellipse828"
+           style="display:inline;opacity:1;fill:#4e1d00;fill-opacity:1;fill-rule:evenodd;stroke:#4e1d00;stroke-width:0.88;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+           inkscape:tile-x0="57.956545"
+           inkscape:tile-y0="23.456158" />
       </svg:g>
     </svg:g>
   </svg:g>
