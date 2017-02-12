@@ -30,6 +30,10 @@
 	stroke-width: 1px;
 }
 
+.highlight .on, .question {
+	filter: url(#filterHighlight);
+}
+
 .rightAnswer {
 	filter: url(#filterRightAnswer);
 }
@@ -38,8 +42,29 @@
 	filter: url(#filterWrongAnswer);
 }
 
-.highlight {
-	filter: url(#filterHighlight);
+.colored .clewline {
+	stroke: #eb7d01 !important; /* dark yellow */
+	  fill: #eb7d01 !important;
+}
+
+.colored .buntline {
+	stroke: #017c01 !important; /* dark green */
+	  fill: #017c01 !important;
+}
+
+.colored .clewline.buntline {
+	stroke: #6cc100 !important; /* yellow green */
+	  fill: #6cc100 !important;
+}
+
+.colored .leechline {
+	stroke: #b3014b !important; /* dark red */
+	  fill: #b3014b !important;
+}
+
+.colored .bowline {
+	stroke: #0031ff !important; /* dark blue */
+	  fill: #0031ff !important;
 }
 /* ]]> */
   </style>
@@ -86,10 +111,10 @@
       </feMerge>
     </filter>
     <filter
-       height="1000"
-       width="1000"
-       y="-500"
-       x="-500"
+       height="100"
+       width="100"
+       y="-50"
+       x="-50"
        id="filterWrongAnswer">
       <feFlood
          id="feFlood4410"
@@ -127,10 +152,10 @@
     </filter>
     <filter
        id="filterHighlight"
-       x="-500"
-       y="-500"
-       width="1000"
-       height="1000">
+       x="-50"
+       y="-50"
+       width="100"
+       height="100">
       <feFlood
          result="flood"
          flood-color="rgb(255,204,0)"

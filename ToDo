@@ -1,11 +1,28 @@
 
+Check points order in SVG !!!
+
+Add sorting of points in rails after moving to <use>
+
+Remove all styles from SVG with Python
+
+Move SVG from <object> to <use> ?
+
+Add SVG tooltips via <title>
+
+Add CSS rules for drawing and deckMask colors
+
+Selectively forward main CSS rules to SVG
+
+Increase size of points for better targeting
+
+Add filling to large points for better targeting
+
 ReDo icons. White on blue?
 
 Redesign Sublines and implement subline categories
 
 Remove hover on touch
 
-Employ SVG scheme, try to remove the data table, extract all from SVG
 Move sublines generation from HTML to JS code?
 
 Cleanup CSS

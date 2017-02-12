@@ -12,7 +12,7 @@ body {
 
 body, button {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
-    color: #4e1d00;
+	color: #4e1d00;
 }
 
 table {
@@ -221,18 +221,18 @@ img.point {
 }
 
 .highlight .point.on, .point.question {
-    -webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .point.wrongAnswer {
-    -webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .point.rightAnswer {
-    -webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: brightness(0) /* black */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 .colored .point.clewline {
@@ -241,18 +241,18 @@ img.point {
 }
 
 .colored.highlight .point.clewline.on, .colored .point.clewline.question {
-    -webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .colored .point.clewline.wrongAnswer {
-    -webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .colored .point.clewline.rightAnswer {
-    -webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: hue-rotate(60deg) brightness(220%) /* dark yellow */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 .colored .point.buntline {
@@ -261,18 +261,18 @@ img.point {
 }
 
 .colored.highlight .point.buntline.on, .colored .point.buntline.question {
-    -webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .colored .point.buntline.wrongAnswer {
-    -webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .colored .point.buntline.rightAnswer {
-    -webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: hue-rotate(120deg) brightness(110%) /* dark green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 .colored .point.clewline.buntline {
@@ -281,18 +281,18 @@ img.point {
 }
 
 .colored.highlight .point.clewline.buntline.on, .colored .point.clewline.buntline.question {
-    -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .colored .point.clewline.buntline.wrongAnswer {
-    -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .colored .point.clewline.buntline.rightAnswer {
-    -webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: hue-rotate(78deg) brightness(250%) /* yellow green */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 .colored .point.leechline {
@@ -301,18 +301,18 @@ img.point {
 }
 
 .colored.highlight .point.leechline.on, .colored .point.leechline.question {
-    -webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .colored .point.leechline.wrongAnswer {
-    -webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .colored .point.leechline.rightAnswer {
-    -webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: hue-rotate(-30deg) brightness(70%) /* dark red */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 .colored .point.bowline {
@@ -321,18 +321,18 @@ img.point {
 }
 
 .colored.highlight .point.bowline.on, .colored .point.bowline.question {
-    -webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
-    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	-webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
+	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0) drop-shadow(0px 0px 15px #fc0);
 }
 
 .colored .point.bowline.wrongAnswer {
-    -webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
-    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	-webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
+	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red) drop-shadow(0px 0px 15px red);
 }
 
 .colored .point.bowline.rightAnswer {
-    -webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
-    filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	-webkit-filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
+	filter: hue-rotate(-120deg) brightness(100%) /* dark blue */ blur(0.5px) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green) drop-shadow(0px 0px 15px green);
 }
 
 img.pin {
