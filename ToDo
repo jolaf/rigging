@@ -1,11 +1,15 @@
 
-Check points order in SVG !!!
+Restore starboard numeric points
+
+Fix isAlong
 
 Add sorting of points in rails after moving to <use>
 
 Remove all styles from SVG with Python
 
 Move SVG from <object> to <use> ?
+
+Refactor JS code to less stages as we work with DOM initially
 
 Add SVG tooltips via <title>
 
