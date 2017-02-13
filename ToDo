@@ -1,17 +1,15 @@
 
-Add sorting of points in rails after moving to <use>
+? Add sorting of points in rails after moving to <use>, using .x/.y
 
-Remove all styles from SVG with Python
+Update build to inline SVG
 
-Move SVG from <object> to <use> ?
+Remove !important from SVG CSS
+
+Remove all styles from SVG with Python, move to attributes?
 
 Refactor JS code to less stages as we work with DOM initially
 
-Add SVG tooltips via <title>
-
-Add CSS rules for drawing and deckMask colors
-
-Selectively forward main CSS rules to SVG
+!!!! Add SVG tooltips via <title>
 
 ReDo icons. White on blue?
 
@@ -19,7 +17,7 @@ Redesign Sublines and implement subline categories
 
 Remove hover on touch
 
-Move sublines generation from HTML to JS code?
+? Move sublines generation from HTML to JS code
 
 Cleanup CSS
 
