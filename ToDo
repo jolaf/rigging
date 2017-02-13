@@ -1,6 +1,4 @@
 
-Fix isAlong
-
 Add sorting of points in rails after moving to <use>
 
 Remove all styles from SVG with Python

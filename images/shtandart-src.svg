@@ -604,7 +604,8 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="frontRail"
-         id="g4296">
+         id="g4296"
+         rigging:isAcross="true">
         <circle
            r="1.0671936"
            cy="436.58221"
@@ -646,7 +647,8 @@
          rigging:side="starboard"
          rigging:rail="frontRail"
          id="g4312"
-         transform="translate(3.1976551e-4,38.750007)">
+         transform="translate(3.1976551e-4,38.750007)"
+         rigging:isAcross="true">
         <circle
            transform="translate(-36.939556,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
@@ -714,7 +716,8 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="backRail"
-         id="g4384">
+         id="g4384"
+         rigging:isAcross="true">
         <circle
            r="1.0671936"
            cy="60.03199"
@@ -739,7 +742,8 @@
          rigging:side="starboard"
          rigging:rail="backRail"
          id="g4349"
-         transform="translate(0,41.0122)">
+         transform="translate(0,41.0122)"
+         rigging:isAcross="true">
         <circle
            transform="translate(-36.939556,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
@@ -1054,7 +1058,8 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="behindMastRail"
-         id="g4334">
+         id="g4334"
+         rigging:isAcross="true">
         <circle
            r="1.0671936"
            cy="436.58221"
@@ -1082,7 +1087,8 @@
          rigging:side="starboard"
          rigging:rail="behindMastRail"
          id="g4339"
-         transform="matrix(1,0,0,-1,3.4200031e-4,145.33002)">
+         transform="matrix(1,0,0,-1,3.4200031e-4,145.33002)"
+         rigging:isAcross="true">
         <circle
            transform="translate(-36.939556,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
@@ -1456,7 +1462,8 @@
          rigging:deck="main"
          rigging:side="port"
          rigging:rail="behindMastRail"
-         id="g4374">
+         id="g4374"
+         rigging:isAcross="true">
         <circle
            r="1.0671936"
            cy="436.60721"
@@ -1484,7 +1491,8 @@
          rigging:side="starboard"
          rigging:rail="behindMastRail"
          id="g4415"
-         transform="translate(0,23.149704)">
+         transform="translate(0,23.149704)"
+         rigging:isAcross="true">
         <circle
            transform="translate(-36.939556,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
