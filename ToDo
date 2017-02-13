@@ -1,6 +1,4 @@
 
-Restore starboard numeric points
-
 Fix isAlong
 
 Add sorting of points in rails after moving to <use>
