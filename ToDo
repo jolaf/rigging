@@ -1,7 +1,7 @@
 
 ? Add sorting of points in rails after moving to <use>, using .x/.y
 
-Update build to inline SVG
+Fix tooltips in built file
 
 Remove !important from SVG CSS
 
@@ -9,7 +9,7 @@ Remove all styles from SVG with Python, move to attributes?
 
 Refactor JS code to less stages as we work with DOM initially
 
-!!!! Add SVG tooltips via <title>
+Cleanup and commit JS
 
 ReDo icons. White on blue?
 
