@@ -6,7 +6,9 @@ TARGET = 'shtandart.svg'
 
 PATTERNS = ((r'(?ms)\s*<metadata>.*?</metadata>(\n*)', r'\1'),
             (r'(?ms)\s*<g></g>(\n*)', r'\1'),
-            (r' filter="\S+"', ''),
+            (r' (fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"', ''),
+            (r' (height|width)="100%"', ''),
+            (r' (x|y)="0"', ''),
             (r' ((deck|side|rail|mast|isAcross|ignoreDeck)=")', r' rigging:\1'),
             ('  ', ' '),
             (r'\n\n', r'\n'))

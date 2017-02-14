@@ -1,15 +1,11 @@
 
 ? Add sorting of points in rails after moving to <use>, using .x/.y
 
-Fix tooltips in built file
-
-Remove !important from SVG CSS
-
-Remove all styles from SVG with Python, move to attributes?
-
 Refactor JS code to less stages as we work with DOM initially
 
 Cleanup and commit JS
+
+Cleanup CSS
 
 ReDo icons. White on blue?
 
@@ -19,10 +15,7 @@ Remove hover on touch
 
 ? Move sublines generation from HTML to JS code
 
-Cleanup CSS
-
 Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered
 
-Check and fix Chrome visual issues
 Check other browsers
