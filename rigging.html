@@ -16,22 +16,21 @@
   <link rel="mask-icon" type="image/svg+xml" href="images/safari-pinned-tab.svg">
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
   <script type="text/javascript">
-  /* jshint strict: global */
-  /* globals window */
-  "use strict";
-
-  window.onerror = function (message, url, lineNo, columnNo, errorObject) {
-      var prefix = 'Ошибка!\n\nПожалуйста, ';
-      var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
-      if (message.toLowerCase().indexOf('script error') >= 0) {
-          message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
-      } else if (errorObject && errorObject.stack) {
-          message = prefix + suggestion + '\n' + errorObject.stack + '\n';
-      } else {
-          message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
-      }
-      alert(message); // jshint ignore:line
-  };
+    /* jshint strict: global */
+    /* globals window */
+    "use strict";
+    window.onerror = function (message, url, lineNo, columnNo, errorObject) {
+        var prefix = 'Ошибка!\n\nПожалуйста, ';
+        var suggestion = 'сделайте скриншот и отправьте картинку разработчику на почту vmzakhar@gmail.com с темой "Такелаж «Штандарта»".\n\nСпасибо!\n';
+        if (message.toLowerCase().indexOf('script error') >= 0) {
+            message = prefix + 'откройте консоль браузера (нажмите F12, выберите "Консоль"), после чего ' + suggestion;
+        } else if (errorObject && errorObject.stack) {
+            message = prefix + suggestion + '\n' + errorObject.stack + '\n';
+        } else {
+            message = prefix + suggestion + '\n' + message + '\n@ ' + url + ':' + lineNo + ':' + columnNo + '\n';
+        }
+        alert(message); // jshint ignore:line
+    };
   </script>
   <link rel="stylesheet" type="text/css" href="rigging.css">
 </head>
@@ -79,25 +78,7 @@
           </td>
         </tr></table></form></td></tr>
         <tr id="schemeBlock"><td>
-          <div id="scheme">
-            <div><img class="scheme" alt="" src="images/blank.gif"></div>
-            <div><img class="scheme" alt="" src="images/blank.gif"></div>
-            <div id="overlay"></div>
-            <div class="mastMasks modeDependent where">
-              <div class="mizzen"></div>
-              <div class=  "main"></div>
-              <div class=  "fore"></div>
-            </div>
-            <div class="deckMasks modeDependent which">
-              <div class= "stern"></div>
-              <div class=  "main"></div>
-              <div class=  "fore"></div>
-            </div>
-          </div>
-          <div id="placeholder"></div>
-        </td></tr>
-        <tr id="schemeBorderFix" class="modeDependent demo where which"><td>
-          &nbsp;
+          <object type="image/svg+xml" data="images/shtandart.svg"></object>
         </td></tr>
         <tr class="questionBlock modeDependent where which"><td>
           <div class="modeDependent where"><p>
@@ -404,7 +385,7 @@
     <td><p>
       &copy; <a href="http://vk.com/jolaf">Василий Захаров</a>
       <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a>
-      для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="images/favicon.ico">Проекта &laquo;Штандарт&raquo;</a> 2016
+      для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="images/favicon.ico">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2017
     </p></td>
     <td>
       <p id="build">dev</p>
