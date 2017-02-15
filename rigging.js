@@ -989,7 +989,7 @@ function setupScheme() {
         if (contentDocument) {
             loadScheme(contentDocument, svgSelector);
         } else {
-            object.load(function () {
+            object.on('load', function () {
                 loadScheme(contentDocument, svgSelector);
             });
         }
