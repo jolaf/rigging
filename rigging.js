@@ -967,12 +967,11 @@ Questionary.reset = function () {
 };
 
 function setupScheme() {
-    console.log('setupScheme');
     var svgSelector = '#schemeBlock svg';
     scheme = $(svgSelector); // Try accessing inline SVG, for built project
     if (!scheme.length) { // Try accessing <object> SVG, for un-built project
         var contentDocument = $('#schemeBlock object')[0].contentDocument;
-        if (!contentDocument) {
+        if (!contentDocument) { // SVG has not been loaded yet
             window.setTimeout(setupScheme, 100);
             return;
         }

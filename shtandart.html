@@ -728,7 +728,7 @@ button.doc {
       для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2017
     </p></td>
     <td>
-      <p id="build">b20170215-1633G</p>
+      <p id="build">b20170215-2057G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1945,7 +1945,12 @@ function setupScheme() {
     var svgSelector = '#schemeBlock svg';
     scheme = $(svgSelector); // Try accessing inline SVG, for built project
     if (!scheme.length) { // Try accessing <object> SVG, for un-built project
-        scheme = $($('#schemeBlock object')[0].contentDocument.documentElement);
+        var contentDocument = $('#schemeBlock object')[0].contentDocument;
+        if (!contentDocument) { // SVG has not been loaded yet
+            window.setTimeout(setupScheme, 100);
+            return;
+        }
+        scheme = $(contentDocument.documentElement);
         // Copy CSS styles as they're not directly visible to object SVG
         var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
         $('defs', scheme).prepend(svgStyle);
@@ -1959,10 +1964,10 @@ function setupScheme() {
     }
     assert(scheme.length === 1, "SVG scheme not accessible");
     $('*', scheme).removeAttr('display');
+    start();
 }
 
 function start() {
-    setupScheme();
     // Create data objects from constant data
     Point.construct();
     Deck.construct();
@@ -1997,7 +2002,7 @@ function start() {
 
 function main() {
     if (window.jQuery) {
-        $(document).ready(start);
+        $(document).ready(setupScheme);
     } else {
         window.setTimeout(main, 100);
     }
