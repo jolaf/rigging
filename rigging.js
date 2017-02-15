@@ -783,7 +783,7 @@ Questionary.construct = function () {
 };
 
 Questionary.configure = function () {
-    Questionary.highlightClasses = 'on question rightAnswer wrongAnswer';
+    Questionary.highlightClasses = 'on rightAnswer wrongAnswer';
     Questionary.demoLocationObjects = Point.locationObject.add(Subline.locationObject);
     Questionary.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
     var pointObjects = $('>>', Point.locationObject);
@@ -810,7 +810,6 @@ Questionary.askQuestion = function () {
             Questionary.status = null;
             break;
         case setMode.DEMO:
-            Questionary.demoLocationObjects.addClass('highlight');
             Questionary.demoObjects.removeClass(Questionary.highlightClasses);
             Point.toggleTooltips(true);
             Questionary.status = Questionary.ASKED;
@@ -834,7 +833,6 @@ Questionary.askQuestion = function () {
             }
             Questionary.rightAnswer = line;
             Questionary.questionObject.text(Questionary.rightAnswer.name);
-            Questionary.whereLocationObjects.addClass('highlight');
             Questionary.whereObjects.removeClass(Questionary.highlightClasses);
             Questionary.answerObjects.hide();
             Questionary.tooltipNoteObject.show();
@@ -852,10 +850,8 @@ Questionary.askQuestion = function () {
             }
             Questionary.rightAnswer = point;
             Questionary.questionObject.text(Questionary.rightAnswer.location);
-            Point.locationObject.removeClass('highlight');
-            Subline.locationObject.addClass('highlight');
             Questionary.demoObjects.removeClass(Questionary.highlightClasses);
-            point.iconObject.addClass('question');
+            point.iconObject.addClass('on');
             Questionary.answerObjects.hide();
             Questionary.tooltipNoteObject.show();
             Point.toggleTooltips(false);
@@ -918,7 +914,6 @@ Questionary.answerQuestion = function (event) {
             }
             isCorrect = points.indexOf(Questionary.rightAnswer) >= 0;
             subline.object.mouseout();
-            Point.locationObject.addClass('highlight');
             Questionary.rightAnswer.whichObjects.addClass('rightAnswer');
             if (!isCorrect) {
                 $.each(points, function (_index, point) {

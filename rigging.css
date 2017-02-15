@@ -136,7 +136,7 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 	cursor: default;
 }
 
-.highlight .pointNumber.on, .highlight .subline.on, .subline.preAnswer, .doc.on {
+.pointNumber.on, .subline.on, .subline.preAnswer, .doc.on {
 	-webkit-filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
 }
@@ -326,7 +326,7 @@ button.doc {
 	  fill: #0031ff;
 }
 
-#schemeBlock svg .highlight .on, .question {
+#schemeBlock svg .on {
 	filter: url(#filterHighlight);
 }
 

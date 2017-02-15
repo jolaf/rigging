@@ -1,14 +1,10 @@
 
 ? Add sorting of points in rails after moving to <use>, using .x/.y
 
-Remove highlight class?
-
-? In LINES address decks by IDs, not names
-
 Move project info to loading page (or move loading page inside )
 
 Refactor JS code to less stages as we work with DOM initially
-Rename 'place' with 'configure'
+Rename 'place' to 'configure'
 
 Cleanup and commit JS
 
@@ -25,4 +21,4 @@ Remove hover on touch
 Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered
 
-Check other browsers
+Check other browsers, phones
