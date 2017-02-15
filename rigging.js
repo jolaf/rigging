@@ -967,6 +967,7 @@ Questionary.reset = function () {
 };
 
 function setupScheme() {
+    console.log('setupScheme');
     var svgSelector = '#schemeBlock svg';
     scheme = $(svgSelector); // Try accessing inline SVG, for built project
     if (!scheme.length) { // Try accessing <object> SVG, for un-built project
