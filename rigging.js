@@ -967,7 +967,8 @@ Questionary.reset = function () {
 };
 
 function loadScheme(contentDocument, svgSelector) {
-    scheme = $(contentDocument.documentElement);
+    console.log('loadScheme');
+    scheme = $($('#schemeBlock object')[0].documentElement);
     // Copy CSS styles as they're not directly visible to object SVG
     var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
     $('defs', scheme).prepend(svgStyle);
@@ -978,6 +979,9 @@ function loadScheme(contentDocument, svgSelector) {
             adder.call(svgStyleSheet, rule.cssText.slice(svgSelector.length + 1), svgStyleSheet.cssRules.length);
         }
     });
+    assert(scheme.length === 1, "SVG scheme not accessible");
+    $('*', scheme).removeAttr('display');
+    start();
 }
 
 function setupScheme() {
@@ -989,17 +993,15 @@ function setupScheme() {
         if (contentDocument) {
             loadScheme(contentDocument, svgSelector);
         } else {
-            object.on('load', function () {
+            console.log('No contentDocument!');
+            object[0].addEventListener('load', function () {
                 loadScheme(contentDocument, svgSelector);
-            });
+            }, false);
         }
     }
-    assert(scheme.length === 1, "SVG scheme not accessible");
-    $('*', scheme).removeAttr('display');
 }
 
 function start() {
-    setupScheme();
     // Create data objects from constant data
     Point.construct();
     Deck.construct();
@@ -1034,7 +1036,7 @@ function start() {
 
 function main() {
     if (window.jQuery) {
-        $(document).ready(start);
+        $(document).ready(setupScheme);
     } else {
         window.setTimeout(main, 100);
     }
