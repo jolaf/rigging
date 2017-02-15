@@ -968,7 +968,7 @@ Questionary.reset = function () {
 
 function loadScheme(contentDocument, svgSelector) {
     console.log('loadScheme');
-    scheme = $($('#schemeBlock object')[0].documentElement);
+    scheme = $($('#schemeBlock object')[0].contentDocument.documentElement);
     // Copy CSS styles as they're not directly visible to object SVG
     var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
     $('defs', scheme).prepend(svgStyle);
