@@ -246,12 +246,12 @@ function Rail(deck, name, assym, x0, y0, stepX, stepY, nPoints, type, rotation, 
         this.reverseDirection = isFirstHalf ? 'с носа'  : 'с краю';
     }
     var prefix = [deck, this, this.assym || STARBOARD];
-    this.points = $.map(args, function (args, _index) {
+    this.points = args.map(function (args) {
         return applyNew(Point, prefix.concat(args));
     });
     if (!this.assym) {
         prefix[2] = PORT;
-        this.portPoints = $.map(args, function (args, _index) {
+        this.portPoints = args.map(function (args) {
             args[2] *= -1;
             return applyNew(Point, prefix.concat(args));
         });
@@ -387,9 +387,9 @@ function Deck(name, id, title, rails) {
     this.title = title;
     var uniqueRails = [];
     var thisDeck = this;
-    this.rails = $.map(rails, function (railArgs, _index) {
+    this.rails = rails.map(function (railArgs) {
         var rail = applyNew(Rail, [thisDeck,].concat(railArgs));
-        assert($.inArray(uniqueRails, rail.name) < 0, "Duplicate Rail name: " + thisDeck.name + '/' + rail.name);
+        assert($.inArray(rail.name, uniqueRails) < 0, "Duplicate Rail name: " + thisDeck.name + '/' + rail.name);
         uniqueRails.push(rail.name);
         return rail;
     });
@@ -398,9 +398,9 @@ function Deck(name, id, title, rails) {
 Deck.construct = function () {
     Deck.locationObject = null;
     var uniqueNames = [];
-    Deck.decks = $.map(DECKS, function (deckArgs, _index) {
+    Deck.decks = DECKS.map(function (deckArgs) {
         var deck = applyNew(Deck, deckArgs);
-        assert($.inArray(uniqueNames, deck.name) < 0, "Duplicate deck name: " + deck.name);
+        assert($.inArray(deck.name, uniqueNames) < 0, "Duplicate deck name: " + deck.name);
         uniqueNames.push(deck.name);
         return deck;
     });
@@ -459,17 +459,17 @@ function Line(mastName, mastID, sailName, deckName, railName, number, lineName, 
     switch (fullName) {
         case DETAIL_LINE:
             fullNameWords = this.detail ? [this.detail, this.lineName] : [this.lineName,];
-            pluralWords = $.map(fullNameWords, russianPlural);
+            pluralWords = fullNameWords.map(russianPlural);
             break;
         case LINE_DETAIL:
             fullNameWords = this.detail ? [this.lineName, russianGenetive(this.detail)] : [this.lineName,];
-            pluralWords = $.map(fullNameWords.slice(0, 1), russianPlural).concat(fullNameWords.slice(1));
+            pluralWords = fullNameWords.slice(0, 1).map(russianPlural).concat(fullNameWords.slice(1));
             break;
         case '': // GRAMMAR
             fullNameWords = (this.detail ? [this.detail,] : []).concat([this.lineName,]).concat((this.sail.name || this.mast.name) ? [this.sail.name || this.mast.name,] : []);
-            fullNameWords = fullNameWords.slice(0, 1).concat($.map(fullNameWords.slice(1), russianGenetive));
-            pluralWords = $.map(fullNameWords.slice(0, -1), russianPlural).concat(fullNameWords.slice(-1));
-            pluralWords = pluralWords.slice(0, 1).concat($.map(pluralWords.slice(1, -1), russianGenetive)).concat(pluralWords.slice(-1));
+            fullNameWords = fullNameWords.slice(0, 1).concat(fullNameWords.slice(1).map(russianGenetive));
+            pluralWords = fullNameWords.slice(0, -1).map(russianPlural).concat(fullNameWords.slice(-1));
+            pluralWords = pluralWords.slice(0, 1).concat(pluralWords.slice(1, -1).map(russianGenetive)).concat(pluralWords.slice(-1));
             break;
         default:
             pluralWords = fullNameWords = fullName.split(' ');
@@ -626,7 +626,7 @@ Subline.construct = function () {
         $('.subline', group).each(function (_index, element) {
             var object = $(element);
             var subline = applyNew(Subline, [object, sublineType]);
-            assert($.inArray(uniqueNames, subline.name) < 0, "Duplicate subline name: " + subline.name);
+            assert($.inArray(subline.name, uniqueNames) < 0, "Duplicate subline name: " + subline.name);
             uniqueNames.push(subline.name);
             Subline.sublines.push(subline);
             if (sublineType === Subline.SAIL) {

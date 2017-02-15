@@ -1,10 +1,4 @@
 
-? Add sorting of points in rails after moving to <use>, using .x/.y
-
-Refactor JS code to less stages as we work with DOM initially
-
-Cleanup and commit JS
-
 Cleanup CSS
 
 ReDo icons. White on blue?
