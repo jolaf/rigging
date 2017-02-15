@@ -966,21 +966,33 @@ Questionary.reset = function () {
     Questionary.statisticsObject.hide();
 };
 
+function loadScheme(contentDocument, svgSelector) {
+    scheme = $(contentDocument.documentElement);
+    // Copy CSS styles as they're not directly visible to object SVG
+    var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
+    $('defs', scheme).prepend(svgStyle);
+    var svgStyleSheet = svgStyle[0].sheet;
+    var adder = svgStyleSheet.insertRule || svgStyleSheet.addRule; // IE compatibility
+    $.each(document.styleSheets[0].cssRules || document.styleSheets[0].rules, function (_index, rule) {
+        if (rule.cssText.startsWith(svgSelector)) {
+            adder.call(svgStyleSheet, rule.cssText.slice(svgSelector.length + 1), svgStyleSheet.cssRules.length);
+        }
+    });
+}
+
 function setupScheme() {
     var svgSelector = '#schemeBlock svg';
     scheme = $(svgSelector); // Try accessing inline SVG, for built project
     if (!scheme.length) { // Try accessing <object> SVG, for un-built project
-        scheme = $($('#schemeBlock object')[0].contentDocument.documentElement);
-        // Copy CSS styles as they're not directly visible to object SVG
-        var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
-        $('defs', scheme).prepend(svgStyle);
-        var svgStyleSheet = svgStyle[0].sheet;
-        var adder = svgStyleSheet.insertRule || svgStyleSheet.addRule; // IE compatibility
-        $.each(document.styleSheets[0].cssRules || document.styleSheets[0].rules, function (_index, rule) {
-            if (rule.cssText.startsWith(svgSelector)) {
-                adder.call(svgStyleSheet, rule.cssText.slice(svgSelector.length + 1), svgStyleSheet.cssRules.length);
-            }
-        });
+        var object = $('#schemeBlock object');
+        var contentDocument = object[0].contentDocument;
+        if (contentDocument) {
+            loadScheme(contentDocument, svgSelector);
+        } else {
+            object.load(function () {
+                loadScheme(contentDocument, svgSelector);
+            });
+        }
     }
     assert(scheme.length === 1, "SVG scheme not accessible");
     $('*', scheme).removeAttr('display');
