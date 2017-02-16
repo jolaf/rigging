@@ -23,7 +23,7 @@ def loadFile(match, replacePattern, fileNamePos, base64 = False, prefix = None):
     if not base64 and prefix is not None:
         indent = match.group(1)
         linePattern = ''.join((indent if indent and not indent.strip() else '', prefix, '%s\n'))
-        data = ''.join(linePattern % line for line in data.splitlines())
+        data = ''.join((linePattern % line) if line.strip() else '\n' for line in data.splitlines())
     return match.expand(replacePattern % data)
 
 def loadImage(match, pattern, fileNamePos = 1):

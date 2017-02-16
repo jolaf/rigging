@@ -971,6 +971,10 @@ function setupScheme() {
             return;
         }
         scheme = $(contentDocument.documentElement);
+        if (scheme.prop('tagName') !== 'svg') {
+            window.setTimeout(setupScheme, 100);
+            return;
+        }
         // Copy CSS styles as they're not directly visible to object SVG
         var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
         $('defs', scheme).prepend(svgStyle);
