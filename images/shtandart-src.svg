@@ -146,9 +146,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.2052133"
-     inkscape:cx="291.35505"
-     inkscape:cy="100.91101"
+     inkscape:zoom="3.1186426"
+     inkscape:cx="267.30886"
+     inkscape:cy="74.294115"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -165,7 +165,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="layer4">
+     inkscape:current-layer="svg993">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
@@ -453,8 +453,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="deckMasks"
-     style="display:none"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     style="display:none">
     <g
        id="deckMasks">
       <rect
@@ -469,18 +469,18 @@
       <rect
          class="deckMask"
          id="rect1476"
-         width="212.66234"
+         width="220.71146"
          height="146.64241"
-         x="285.31766"
+         x="277.26855"
          y="-0.80916661"
          rigging:deck="main"
          style="fill:#ffffff" />
       <rect
          class="deckMask"
          id="rect1478"
-         width="285.31757"
+         width="277.26846"
          height="146.64241"
-         x="0.00010187193"
+         x="0.00010191359"
          y="-0.80916661"
          rigging:deck="stern"
          style="fill:#ffffff" />
