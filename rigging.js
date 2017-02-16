@@ -962,27 +962,19 @@ Questionary.reset = function () {
 };
 
 function setupScheme() {
-    console.log('setupScheme');
     var svgSelector = '#schemeBlock svg';
     scheme = $(svgSelector); // Try accessing inline SVG, for built project
     if (!scheme.length) { // Try accessing <object> SVG, for un-built project
-        console.log('object');
-        var contentDocument = $('#schemeBlock object')[0].contentDocument;
-        console.log(contentDocument);
+        var contentDocument = $('#schemeBlock object')[0].contentDocument; // Doesn't work in WebKit while <object> is { display: none }
         if (!contentDocument) { // SVG has not been loaded yet
             window.setTimeout(setupScheme, 100);
             return;
         }
         scheme = $(contentDocument.documentElement);
-        console.log(scheme);
-        console.log(scheme[0]);
         // Copy CSS styles as they're not directly visible to object SVG
         var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
-        console.log(svgStyle);
-        console.log($('defs', scheme));
         $('defs', scheme).prepend(svgStyle);
         var svgStyleSheet = svgStyle[0].sheet;
-        console.log(svgStyleSheet);
         var adder = svgStyleSheet.insertRule || svgStyleSheet.addRule; // IE compatibility
         $.each(document.styleSheets[0].cssRules || document.styleSheets[0].rules, function (_index, rule) {
             if (rule.cssText.startsWith(svgSelector)) {
@@ -1025,7 +1017,7 @@ function start() {
     // Finishing setup
     setMode(window.location.hash);
     $('#loading').hide();
-    $('#main').show();
+    $('#main .hidden').removeClass('hidden'); // Workaround for WebKit: <object>.contentDocument doesn't work while <object> is { display: none }
 }
 
 function main() {
