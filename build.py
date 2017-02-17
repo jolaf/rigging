@@ -18,7 +18,7 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
     print match.groups()
     fileName = match.group(fileNamePos)
     if fileName.startswith('http'):
-        data = urlopen(fileName).read()
+        data = urlopen(fileName.replace('jquery.min.js', 'jquery.slim.min.js')).read()
     else:
         data = open(fileName, 'rb').read()
     if mode is BASE64:
@@ -43,7 +43,7 @@ PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambd
             (r'([ \t]*)<script type="(\S+)" src="(\S+)"></script>', lambda match: loadFile(match, r'\1<script type="\2">\n%s\1</script>', 3)),
             (r'(?s)(];\n)</script>\n[ \t]*<script type="\S+">.*"use strict";\n', r'\1'),
             (r'([ \t]*)<object type="image/svg\+xml" data="(\S+)".*?></object>\n', lambda match: loadFile(match, r'%s', 2, NO_INDENT)),
-            (r'(?s)([ \t]*)(scheme = \$\(svgSelector\);).*?\n\1}', r'\1\2'),
+            (r'(?s)([ \t]*)(scheme = \$\(\'#schemeBlock svg\'\);).*?\n\1}', r'\1\2'),
             (r'type="(\S+)" href="(\S+)"', lambda match: loadFile(match, r'type="\1" href="data:\1;base64,%s"', 2, BASE64)),
             (r'<img ([^<>]*) src="((\S+)\.(\S+))"', lambda match: loadImage(match, r'<img \1 src="%s"', 2)),
             (r' url\("((\S+)\.(\S+))"\)', lambda match: loadImage(match, r' url("%s")')),

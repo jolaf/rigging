@@ -1,24 +1,24 @@
 
-? Add sorting of points in rails after moving to <use>, using .x/.y
-
 Move project info to loading page (or move loading page inside )
 
 Refactor JS code to less stages as we work with DOM initially
 Rename 'place' to 'configure'
 
-Cleanup and commit JS
+Cleanup JS
 
 Cleanup CSS
 
 ReDo icons. White on blue?
 
-Redesign Sublines and implement subline categories
-
-Remove hover on touch
-
-? Move sublines generation from HTML to JS code
-
 Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered
 
 Check other browsers, phones
+
+Remove hover on touch
+
+? Add sorting of points in rails after moving to <use>, using .x/.y
+
+? Redesign Sublines and implement subline categories
+
+? Move sublines generation from HTML to JS code

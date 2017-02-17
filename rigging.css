@@ -66,11 +66,8 @@ table.center {
 	vertical-align: middle;
 }
 
-.hidden { /* Workaround for WebKit: <object>.contentDocument doesn't work while <object> is { display: none } */
-	position: absolute;
-	height: 0;
-	overflow: hidden;
-	border-bottom: none !important;
+#main {
+	display: none;
 }
 
 #controls td {

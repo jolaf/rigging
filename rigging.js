@@ -685,11 +685,11 @@ function setMode(mode) {
     Questionary.allObjects.hide();
     switch(mode) {
         case setMode.INFO:
-            setMode.schemeBlock.addClass('hidden');
+            setMode.schemeBlock.hide();
             break;
         case setMode.DEMO:
             Questionary.lastEntered = null;
-            setMode.schemeBlock.removeClass('hidden');
+            setMode.schemeBlock.show();
             break;
         case setMode.WHERE:
         case setMode.WHICH:
@@ -730,7 +730,7 @@ setMode.configure = function () {
 };
 
 setMode.schemeHandler = function () {
-    setMode.schemeBlock.toggleClass('hidden', !this.checked);
+    setMode.schemeBlock.toggle(this.checked);
     if (this.checked) {
         Questionary.reset();
     }
@@ -962,29 +962,16 @@ Questionary.reset = function () {
 };
 
 function setupScheme() {
-    var svgSelector = '#schemeBlock svg';
-    scheme = $(svgSelector); // Try accessing inline SVG, for built project
-    if (!scheme.length) { // Try accessing <object> SVG, for un-built project
-        var contentDocument = $('#schemeBlock object')[0].contentDocument; // Doesn't work in WebKit while <object> is { display: none }
-        if (!contentDocument) { // SVG has not been loaded yet
-            window.setTimeout(setupScheme, 100);
+    scheme = $('#schemeBlock svg'); // Try accessing inline SVG
+    if (!scheme.length) { // For unbuilt project, use AJAX to load the SVG image inline, as <object> works badly in Chrome
+        var svgObject = $('#schemeBlock object');
+        if (svgObject.length) {
+            var parent = svgObject.parent();
+            var url = svgObject.attr('data');
+            svgObject.remove(); // To avoid repeated attempts
+            parent.load(url, setupScheme);
             return;
         }
-        scheme = $(contentDocument.documentElement);
-        if (scheme.prop('tagName') !== 'svg') { // Workaround for WebKit returning HTML document instead of SVG one until SVG <object> is loaded
-            window.setTimeout(setupScheme, 100);
-            return;
-        }
-        // Copy CSS styles as they're not directly visible to object SVG
-        var svgStyle = $(document.createElementNS('http://www.w3.org/2000/svg', 'style')).attr('type', 'text/css');
-        $('defs', scheme).prepend(svgStyle);
-        var svgStyleSheet = svgStyle[0].sheet;
-        var adder = svgStyleSheet.insertRule || svgStyleSheet.addRule; // IE compatibility
-        $.each(document.styleSheets[0].cssRules || document.styleSheets[0].rules, function (_index, rule) {
-            if (rule.cssText.startsWith(svgSelector)) {
-                adder.call(svgStyleSheet, rule.cssText.slice(svgSelector.length + 1), svgStyleSheet.cssRules.length);
-            }
-        });
     }
     assert(scheme.length === 1, "SVG scheme not accessible");
     $('*', scheme).removeAttr('display');
@@ -1021,7 +1008,7 @@ function start() {
     // Finishing setup
     setMode(window.location.hash);
     $('#loading').hide();
-    $('#main').removeClass('hidden'); // Workaround for WebKit: <object>.contentDocument doesn't work while <object> is { display: none }
+    $('#main').show();
 }
 
 function main() {
