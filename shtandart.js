@@ -1,7 +1,7 @@
-/* jshint elision: true */
 /* jshint strict: global */
-/* globals $, document, location, window */
-  "use strict";
+/* jshint elision: true */
+/* globals $, document, window */
+"use strict";
 
 // Full name options
 var GRAMMAR = null;

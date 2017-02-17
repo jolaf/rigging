@@ -685,11 +685,11 @@ function setMode(mode) {
     Questionary.allObjects.hide();
     switch(mode) {
         case setMode.INFO:
-            setMode.schemeBlock.hide();
+            setMode.schemeBlock.addClass('hidden');
             break;
         case setMode.DEMO:
             Questionary.lastEntered = null;
-            setMode.schemeBlock.show();
+            setMode.schemeBlock.removeClass('hidden');
             break;
         case setMode.WHERE:
         case setMode.WHICH:
@@ -730,7 +730,7 @@ setMode.configure = function () {
 };
 
 setMode.schemeHandler = function () {
-    setMode.schemeBlock.toggle(this.checked);
+    setMode.schemeBlock.toggleClass('hidden', !this.checked);
     if (this.checked) {
         Questionary.reset();
     }
@@ -971,7 +971,7 @@ function setupScheme() {
             return;
         }
         scheme = $(contentDocument.documentElement);
-        if (scheme.prop('tagName') !== 'svg') {
+        if (scheme.prop('tagName') !== 'svg') { // Workaround for WebKit returning HTML document instead of SVG one until SVG <object> is loaded
             window.setTimeout(setupScheme, 100);
             return;
         }
@@ -1021,7 +1021,7 @@ function start() {
     // Finishing setup
     setMode(window.location.hash);
     $('#loading').hide();
-    $('#main .hidden').removeClass('hidden'); // Workaround for WebKit: <object>.contentDocument doesn't work while <object> is { display: none }
+    $('#main').removeClass('hidden'); // Workaround for WebKit: <object>.contentDocument doesn't work while <object> is { display: none }
 }
 
 function main() {

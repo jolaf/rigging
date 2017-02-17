@@ -70,6 +70,7 @@ table.center {
 	position: absolute;
 	height: 0;
 	overflow: hidden;
+	border-bottom: none !important;
 }
 
 #controls td {
