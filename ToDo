@@ -1,6 +1,4 @@
 
-Move project info to loading page (or move loading page inside )
-
 Refactor JS code to less stages as we work with DOM initially
 Rename 'place' to 'configure'
 

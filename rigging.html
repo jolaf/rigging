@@ -35,353 +35,351 @@
   <link rel="stylesheet" type="text/css" href="rigging.css">
 </head>
 <body>
-<table class="wide high">
-  <tr><td>
-    <h1>Бегучий такелаж фрегата &laquo;Штандарт&raquo;</h1>
-  </td></tr>
-  <tr id="loading"><td>
-    <noscript>
-      <p>Для функционирования этой страницы требуется поддержка <a href="https://ru.wikipedia.org/wiki/JavaScript">JavaScript</a> в браузере.</p>
-      <p>Пожалуйста, включите поддержку JavaScript и перезагрузите страницу.</p>
-    </noscript>
-    <script type="text/javascript">
-      document.write('<p>Идёт загрузка страницы, подождите...</p>\n<p>Если ожидание затягивается, попробуйте перезагрузить страницу.</p>\n<p>Если это не помогает, обратитесь к <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">разработчику</a>.</p>'); // jshint ignore:line
-    </script>
-  </td></tr>
-  <tr id="main">
-    <td>
-      <table class="wide high">
-        <tr><td><form><table id="controls"><tr>
-          <td id="selectModes">
-            <span class="selector"><input name="mode" type="radio" class= "info">Описание</span>
-            <span class="selector"><input name="mode" type="radio" class= "demo">Просмотр</span>
-            <span class="selector"><input name="mode" type="radio" class="where">Где снасть?</span>
-            <span class="selector"><input name="mode" type="radio" class="which">Какая снасть?</span>
-          </td>
-          <td id="selectMasts" class="modeDependent where">Мачты
-            <span class="selector"><input name="mast" type="checkbox" class=   "all">Все</span>
-            <span class="selector"><input name="mast" type="checkbox" class="mizzen">Бизань</span>
-            <span class="selector"><input name="mast" type="checkbox" class=  "main">Грот</span>
-            <span class="selector"><input name="mast" type="checkbox" class=  "fore">Фок</span>
-          </td>
-          <td id="selectDecks" class="modeDependent which">Палубы
-            <span class="selector"><input name="deck" type="checkbox" class=   "all">Все</span>
-            <span class="selector"><input name="deck" type="checkbox" class= "stern">ПолуЮт</span>
-            <span class="selector"><input name="deck" type="checkbox" class=  "main">Главная</span>
-            <span class="selector"><input name="deck" type="checkbox" class=  "fore">Бак</span>
-          </td>
-          <td id="selectFill" class="modeDependent info demo">
-          </td>
-          <td id="options" class="modeDependent demo where which">
-            <span class="selector modeDependent      where which"><input id="schemeCheckbox" type="checkbox">Схема</span>
-            <span class="selector modeDependent demo where which"><input id="marksCheckbox"  type="checkbox">Марки</span>
-          </td>
-        </tr></table></form></td></tr>
-        <tr id="schemeBlock"><td>
-          <object type="image/svg+xml" data="images/shtandart.svg"></object>
-        </td></tr>
-        <tr class="questionBlock modeDependent where which"><td>
-          <div class="modeDependent where"><p>
-            Укажите на схеме сверху или в списке ниже точку крепления этой снасти:
-          </p></div>
-          <div class="modeDependent which"><p>
-            Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке:
-          </p></div>
-          <h2><span id="question"></span>?</h2>
-          <h3>
-            &nbsp;
-            <span id="rightAnswer">Правильно!</span>
-            <span id="wrongAnswer"><span>Неправильно!</span>&nbsp; Это &ndash; <span id="rightAnswerText"></span>.</span>
-            &nbsp;
-          </h3>
+<table id="mainTable">
+  <tr id="mainRow"><td id="mainCell" class="loading"><table>
+    <tr><td>
+      <h1>Бегучий такелаж фрегата &laquo;Штандарт&raquo;</h1>
+    </td></tr>
+    <tr class="loading"><td><form><table id="controls"><tr>
+      <td id="selectModes">
+        <span class="selector"><input name="mode" type="radio" class= "info">Описание</span>
+        <span class="selector"><input name="mode" type="radio" class= "demo">Просмотр</span>
+        <span class="selector"><input name="mode" type="radio" class="where">Где снасть?</span>
+        <span class="selector"><input name="mode" type="radio" class="which">Какая снасть?</span>
+      </td>
+      <td id="selectMasts" class="modeDependent where">Мачты
+        <span class="selector"><input name="mast" type="checkbox" class=   "all">Все</span>
+        <span class="selector"><input name="mast" type="checkbox" class="mizzen">Бизань</span>
+        <span class="selector"><input name="mast" type="checkbox" class=  "main">Грот</span>
+        <span class="selector"><input name="mast" type="checkbox" class=  "fore">Фок</span>
+      </td>
+      <td id="selectDecks" class="modeDependent which">Палубы
+        <span class="selector"><input name="deck" type="checkbox" class=   "all">Все</span>
+        <span class="selector"><input name="deck" type="checkbox" class= "stern">ПолуЮт</span>
+        <span class="selector"><input name="deck" type="checkbox" class=  "main">Главная</span>
+        <span class="selector"><input name="deck" type="checkbox" class=  "fore">Бак</span>
+      </td>
+      <td id="selectFill" class="modeDependent info demo">
+      </td>
+      <td id="options" class="modeDependent demo where which">
+        <span class="selector modeDependent      where which"><input id="schemeCheckbox" type="checkbox">Схема</span>
+        <span class="selector modeDependent demo where which"><input id="marksCheckbox"  type="checkbox">Марки</span>
+      </td>
+    </tr></table></form></td></tr>
+    <tr id="schemeBlock" class="loading"><td>
+      <object type="image/svg+xml" data="images/shtandart.svg"></object>
+    </td></tr>
+    <tr class="questionBlock modeDependent where which loading"><td>
+      <div class="modeDependent where"><p>
+        Укажите на схеме сверху или в списке ниже точку крепления этой снасти:
+      </p></div>
+      <div class="modeDependent which"><p>
+        Укажите тип снасти (и парус, если это снасть определённого паруса), которая крепится в этой точке:
+      </p></div>
+      <h2><span id="question"></span>?</h2>
+      <h3>
+        &nbsp;
+        <span id="rightAnswer">Правильно!</span>
+        <span id="wrongAnswer"><span>Неправильно!</span>&nbsp; Это &ndash; <span id="rightAnswerText"></span>.</span>
+        &nbsp;
+      </h3>
+      <p>
+        &nbsp;
+        <span id="tooltipNote">Ответьте на вопрос (можно неправильно), чтобы включились подсказки при наведении мыши.</span>
+        <span id="nextQuestionNote">Кликните в произвольное место, чтобы перейти к следующему вопросу.</span>
+        &nbsp;
+      </p>
+      <p>
+        <span id="statistics">
+          <button id="resetButton">Обнулить статистику</button>
+          Правильных ответов <span id="statCorrect"></span> из <span id="statAll"></span>,
+          то есть <span id="statPercent"></span>%
+        </span>
+        <button id="nextQuestionButton">Следующий вопрос</button>
+      </p>
+    </td></tr>
+    <tr class="choiceBlock modeDependent where loading"><td>
+      <table class="center"><tr id="pointNumbers">
+      </tr></table>
+    </td></tr>
+    <tr class="choiceBlock modeDependent demo which loading"><td>
+      <table class="center"><tr id="sublines">
+        <td class="deck sailLines"><div>
+          <h2 class="category sailLine">Снасти</h2>
+          <ul>
+            <li class="subline sailLine">Брас</li>
+            <li class="subline sailLine">Бухта браса</li>
+            <li class="subline sailLine">Топенант</li>
+          </ul>
+          <ul>
+            <li class="subline sailLine">Дирик-фал</li>
+            <li class="subline sailLine">Галс-таль</li>
+            <li class="subline sailLine">Эренс-бакштаг</li>
+          </ul>
+        </div></td>
+        <td class="deck sailLines"><div>
+          <ul>
+            <li class="subline sailLine">Шкот</li>
+            <li class="subline sailLine">Бухта шкота</li>
+            <li class="subline sailLine">Галс</li>
+            <li class="subline sailLine">Булинь</li>
+            <li class="subline sailLine">Нирал</li>
+            <li class="subline sailLine">Фал</li>
+          </ul>
+          <ul>
+            <li class="subline sailLine">Гитов</li>
+            <li class="subline sailLine">Нок-гордень</li>
+            <li class="subline sailLine">Бык-гордень</li>
+          </ul>
+        </div></td>
+        <td class="deck sails"><div>
+          <h2 class="category sail">Парусов</h2>
+          <ul>
+            <li class="subline sail">Блинд</li>
+          </ul>
+          <ul>
+            <li class="subline sail">Фок</li>
+            <li class="subline sail">Фор-марсель</li>
+            <li class="subline sail">Фор-брамсель</li>
+          </ul>
+        </div></td>
+        <td class="deck sails"><div>
+          <ul>
+            <li class="subline sail">Грот</li>
+            <li class="subline sail">Грот-марсель</li>
+            <li class="subline sail">Грот-брамсель</li>
+            <li class="subline sail">Стаксель</li>
+          </ul>
+          <ul>
+            <li class="subline sail">Бизань</li>
+            <li class="subline sail">Крюйс-марсель</li>
+            <li class="subline sail">Бегин-рей</li>
+            <li class="subline sail">Апсель</li>
+          </ul>
+        </div></td>
+        <td class="deck nonSailLines"><div>
+          <h2 class="category tackle otherLine flagHalyard">Прочие снасти</h2>
+          <h3 class="category tackle">Талёвы</h3>
+          <ul>
+            <li class="subline tackle">Гротовая</li>
+            <li class="subline tackle">Оттяжка гротовой</li>
+            <li class="subline tackle">Штаговая</li>
+            <li class="subline tackle">Нагель для работы</li>
+            <li class="subline tackle">Якорная</li>
+          </ul>
+        </div></td>
+        <td class="deck nonSailLines"><div>
+          <ul>
+            <li class="subline otherLine">Швартов</li>
+            <li class="subline otherLine">Носовой шлюпки</li>
+            <li class="subline otherLine">Свободный нагель</li>
+          </ul>
+          <h3 class="category flagHalyard">Флаг-фалы</h3>
+          <ul>
+            <li class="subline flagHalyard">Фока</li>
+            <li class="subline flagHalyard">Грота</li>
+            <li class="subline flagHalyard">Бизани</li>
+            <li class="subline flagHalyard">Рю</li>
+            <li class="subline flagHalyard">Флагштока</li>
+          </ul>
+        </div></td>
+      </tr></table>
+    </td></tr>
+    <tr class="modeDependent info">
+      <td id="infoBlock">
+        <section id="infoIntro">
+          <h2 class="loading">Описание</h2>
           <p>
-            &nbsp;
-            <span id="tooltipNote">Ответьте на вопрос (можно неправильно), чтобы включились подсказки при наведении мыши.</span>
-            <span id="nextQuestionNote">Кликните в произвольное место, чтобы перейти к следующему вопросу.</span>
-            &nbsp;
+            [<a href="https://rawgit.com/jolaf/rigging/master/shtandart.html">Актуальная&nbsp;версия</a>]
+            [<a href="https://rawgit.com/jolaf/rigging/master/shtandart.zip">Скачать</a>]
+            [<a href="https://github.com/jolaf/rigging">Разработка&nbsp;программы</a>]
+            [<a href="https://www.shtandart.ru/frigate/"><img class="icon" alt="" src="images/favicon.ico">Фрегат&nbsp;&laquo;Штандарт&raquo;</a>]
+            [<a href="https://www.shtandart.ru/upload/iblock/7bd/7bd297ce94c589d5947e0289c2a7e0ec.pdf">Паруса.pdf</a>]
+            [<a href="https://www.shtandart.ru/upload/iblock/d7f/d7f3a665f4c9e3846b7dd48cf34af754.pdf">Такелаж.pdf</a>]
+            [<a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">E-mail&nbsp;разработчика</a>]
           </p>
           <p>
-            <span id="statistics">
-              <button id="resetButton">Обнулить статистику</button>
-              Правильных ответов <span id="statCorrect"></span> из <span id="statAll"></span>,
-              то есть <span id="statPercent"></span>%
-            </span>
-            <button id="nextQuestionButton">Следующий вопрос</button>
+            <a href="https://www.shtandart.ru/frigate/"><img id="logo" alt="" src="images/logo.png"></a>
           </p>
-        </td></tr>
-        <tr class="choiceBlock high modeDependent where"><td>
-          <table class="center"><tr id="pointNumbers">
-          </tr></table>
-        </td></tr>
-        <tr class="choiceBlock high modeDependent demo which"><td>
-          <table class="center"><tr id="sublines">
-            <td class="deck sailLines"><div>
-              <h2 class="category sailLine">Снасти</h2>
-              <ul>
-                <li class="subline sailLine">Брас</li>
-                <li class="subline sailLine">Бухта браса</li>
-                <li class="subline sailLine">Топенант</li>
-              </ul>
-              <ul>
-                <li class="subline sailLine">Дирик-фал</li>
-                <li class="subline sailLine">Галс-таль</li>
-                <li class="subline sailLine">Эренс-бакштаг</li>
-              </ul>
-            </div></td>
-            <td class="deck sailLines"><div>
-              <ul>
-                <li class="subline sailLine">Шкот</li>
-                <li class="subline sailLine">Бухта шкота</li>
-                <li class="subline sailLine">Галс</li>
-                <li class="subline sailLine">Булинь</li>
-                <li class="subline sailLine">Нирал</li>
-                <li class="subline sailLine">Фал</li>
-              </ul>
-              <ul>
-                <li class="subline sailLine">Гитов</li>
-                <li class="subline sailLine">Нок-гордень</li>
-                <li class="subline sailLine">Бык-гордень</li>
-              </ul>
-            </div></td>
-            <td class="deck sails"><div>
-              <h2 class="category sail">Парусов</h2>
-              <ul>
-                <li class="subline sail">Блинд</li>
-              </ul>
-              <ul>
-                <li class="subline sail">Фок</li>
-                <li class="subline sail">Фор-марсель</li>
-                <li class="subline sail">Фор-брамсель</li>
-              </ul>
-            </div></td>
-            <td class="deck sails"><div>
-              <ul>
-                <li class="subline sail">Грот</li>
-                <li class="subline sail">Грот-марсель</li>
-                <li class="subline sail">Грот-брамсель</li>
-                <li class="subline sail">Стаксель</li>
-              </ul>
-              <ul>
-                <li class="subline sail">Бизань</li>
-                <li class="subline sail">Крюйс-марсель</li>
-                <li class="subline sail">Бегин-рей</li>
-                <li class="subline sail">Апсель</li>
-              </ul>
-            </div></td>
-            <td class="deck nonSailLines"><div>
-              <h2 class="category tackle otherLine flagHalyard">Прочие снасти</h2>
-              <h3 class="category tackle">Талёвы</h3>
-              <ul>
-                <li class="subline tackle">Гротовая</li>
-                <li class="subline tackle">Оттяжка гротовой</li>
-                <li class="subline tackle">Штаговая</li>
-                <li class="subline tackle">Нагель для работы</li>
-                <li class="subline tackle">Якорная</li>
-              </ul>
-            </div></td>
-            <td class="deck nonSailLines"><div>
-              <ul>
-                <li class="subline otherLine">Швартов</li>
-                <li class="subline otherLine">Носовой шлюпки</li>
-                <li class="subline otherLine">Свободный нагель</li>
-              </ul>
-              <h3 class="category flagHalyard">Флаг-фалы</h3>
-              <ul>
-                <li class="subline flagHalyard">Фока</li>
-                <li class="subline flagHalyard">Грота</li>
-                <li class="subline flagHalyard">Бизани</li>
-                <li class="subline flagHalyard">Рю</li>
-                <li class="subline flagHalyard">Флагштока</li>
-              </ul>
-            </div></td>
-          </tr></table>
-        </td></tr>
-        <tr class="high modeDependent info">
-          <td id="infoBlock">
-            <section id="infoIntro">
-              <h2>Описание</h2>
-              <p>
-                [<a href="https://rawgit.com/jolaf/rigging/master/shtandart.html">Актуальная&nbsp;версия</a>]
-                [<a href="https://rawgit.com/jolaf/rigging/master/shtandart.zip">Скачать</a>]
-                [<a href="https://github.com/jolaf/rigging">Разработка&nbsp;программы</a>]
-                [<a href="https://www.shtandart.ru/frigate/"><img class="icon" alt="" src="images/favicon.ico">Фрегат&nbsp;&laquo;Штандарт&raquo;</a>]
-                [<a href="https://www.shtandart.ru/upload/iblock/7bd/7bd297ce94c589d5947e0289c2a7e0ec.pdf">Паруса.pdf</a>]
-                [<a href="https://www.shtandart.ru/upload/iblock/d7f/d7f3a665f4c9e3846b7dd48cf34af754.pdf">Такелаж.pdf</a>]
-                [<a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">E-mail&nbsp;разработчика</a>]
-              </p>
-              <p>
-                <a href="https://www.shtandart.ru/frigate/"><img id="logo" alt="" src="images/logo.png"></a>
-              </p>
-              <p>
-                Эта программа создана для облегчения изучения и выучивания мест расположения рабочих концов бегучего такелажа
-                <a href="https://www.shtandart.ru/frigate/">фрегата &laquo;Штандарт&raquo;</a> на палубе.
-              </p>
-              <p>
-                Программа поддерживает четыре основных режима работы, которые можно переключать в верхнем левом углу окна.
-              </p>
-              <p>
-                В режиме <strong>Описание</strong> отображается описание программы, которое вы сейчас читаете.
-              </p>
-              <p><strong>
-                В случае возникновения проблем сразу же делайте скриншот (кнопка PrintScreen на клавиатуре), и присылайте его на <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">почту</a>!
-              </strong></p>
-            </section>
-            <section id="infoDemo">
-              <h2>Просмотр</h2>
-              <p>
-                В этом режиме программа не задаёт никаких задачек.
-                Можно просто изучать расположение снастей на палубе с помощью мыши.
-                В верхней части окна во всю ширину отображается схема палубы фрегата
-                с обозначенным расположением кофель-нагельных планок и других точек крепления снастей.
-                Ниже схемы перечислены слева &ndash; снасти, относящиеся к парусам
-                (по группам &ndash; снасти управления рангоутом, снасти управления парусами и снасти для уборки парусов),
-                в центре перечислены паруса фрегата, сгруппированные по мачтам,
-                справа &ndash; прочие снасти, не имеющие отношения к парусам.
-              </p>
-              <p>
-                <strong>Наведение мыши</strong> на название снасти <span class="doc on">подсвечивает</span> все паруса, снаряжённые такой снастью,
-                а также все точки крепления снастей этого типа на палубе.
-                Наведение мыши на название паруса аналогично <span class="doc on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
-                Наведение на точку крепления снастей на схеме <span class="doc on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
-                а также другие точки, где может крепиться эта или аналогичная снасть.
-              </p>
-              <p>
-                <strong>По клику</strong> в любое место <span class="doc on">подсвеченные</span> снасти фиксируются, и далее,
-                наводя мышь на точки крепления снастей на схеме,
-                можно увидеть всплывающие подсказки с подписями.
-                Ещё один клик мышью вернёт вас в интерактивный режим.
-              </p>
-            </section>
-            <section id="infoMarks">
-              <h2>Марки</h2>
-              <p>
-                Точки крепления снастей, которые имеют на концах цветные марки, обозначены на схеме соответствующими цветами:
-                <span class="doc clewline">гитовы</span>, <span class="doc leechline">нок-горденя</span>, <span class="doc buntline">бык-горденя</span>, <span class="doc bowline">булиня</span>.
-                Кислотным жёлто-зелёным цветом обозначены точки крепления, куда одновременно приходят снасти
-                с жёлтой и зелёной марками &ndash; то есть, <span class="doc clewline buntline">гитовы и бык-горденя</span> малых парусов.
-              </p>
-              <p>
-                При желании цветовое обозначение можно отключить, сняв галочку <strong>Марки</strong> в правом верхнем углу окна.
-                Умение находить нужную снасть без ориентации на цветовые маркеры может пригодиться ночью.
-              </p>
-            </section>
-            <section id="infoWhere">
-              <h2>Где снасть?</h2>
-              <p>
-                В этом режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
-                Ответить можно кликом в соответствующую точку схемы.
-                Правильный ответ (и другие возможные правильные ответы) <span class="doc rightAnswer">подсвечивается</span> зелёным цветом.
-                Если дан неправильный ответ, он также <span class="doc wrongAnswer">подсвечивается</span> красным цветом.
-                Если точек крепления для указанной снасти на палубе несколько, правильным ответом будет сочтено указание любой из них.
-              </p>
-              <p>
-                <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="doc on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
-                Для перехода к следующему вопросу можно нажать кнопку
-                <button class="doc">Следующий вопрос</button>
-                или просто кликнуть в любое место схемы или списка.
-                Эту же кнопку можно использовать, если вы не знаете правильного ответа на вопрос и не хотите гадать.
-              </p>
-              <p>
-                <strong>Ниже схемы</strong> все точки крепления перечислены списком, в них тоже можно кликать для ответа на вопрос.
-                Нагели на планках и другие точки крепления нумеруются на планках, идущих вдоль борта, с кормы,
-                а на планках, идущих перпендикулярно борту, от центра.
-                В каждом списке слева перечисляются точки крепления левого борта, а справа &ndash; правого борта.
-                Номера точек крепления в списках <span class="doc on">подсвечиваются</span> синхронно с точками на схеме,
-                цветовая маркировка также синхронизирована.
-              </p>
-              <p>
-                <strong>Галочки с названиями мачт</strong> в средней части верхнего меню позволяют
-                ограничить задаваемые вопросы только снастями парусов соответствующих мачт.
-                Если хотя бы одна галочка мачты не стоит, вопросы по снастям, не привязанным к мачтам и парусам, не задаются.
-                Это позволяет учить не все 80 снастей разом, а группами &ndash;
-                сначала паруса одной мачты, потом другой, потом третьей, а потом уже всё вместе.
-              </p>
-              <p>
-                <strong>Галочки в правом верхнем углу</strong> позволяют отключить цветовую маркировку, а также схему.
-                Умение объяснить, где находится нужная снасть, не имея перед глазами схемы,
-                пригодится, если нет возможности выполнить какую-то операцию с этой снастью самому,
-                а нужно оперативно дать инструкции кому-то другому.
-              </p>
-              <p>
-                В некотором смысле, здесь имеется <strong>четыре уровня сложности</strong>: &laquo;со схемой и цветовой маркировкой&raquo;,
-                &laquo;со схемой, но без цветовой маркировки&raquo;, &laquo;без схемы, но с цветовой маркировкой&raquo;
-                и, самый сложный, &laquo;без схемы и цветовой маркировки&raquo;.
-                Соответственно, рекомендуется начинать с самого простого, и далее увеличивать сложность по мере усвоения материала.
-              </p>
-            </section>
-            <section id="infoStatistics">
-              <h2>Статистика</h2>
-              <p>
-                После ответа на первый вопрос программа отображает статистику правильных ответов.
-                Статистика нигде не сохраняется, и нужна только для объективной оценки собственных текущих знаний и отслеживания прогресса в обучении.
-              </p>
-              <p>
-                <strong>Статистику можно сбросить</strong> в любой момент, нажав на кнопку
-                <button class="doc">Обнулить статистику</button>.
-                Также статистика сбрасывается автоматически при переключении режима работы программы,
-                при <strong>включении</strong> отображения схемы или цветовых марок,
-                а также при установке любой из галочек мачт или палуб &ndash;
-                таким образом, отображающаяся статистика всегда отражает результат тренировки
-                в выбранном на данный момент или более сложном режиме.
-              </p>
-            </section>
-            <section id="infoWhich">
-              <h2>Какая снасть?</h2>
-              <p>
-                Этот режим аналогичен режиму <strong>Где снасть?</strong>, но задаёт вопросы &laquo;наоборот&raquo;.
-                Программа называет расположение точки крепления снасти (и <span class="doc on">подсвечивает</span> её на схеме)
-                и предлагает вспомнить, какие снасти крепятся в этой точке.
-                Список снастей внизу аналогичен списку в режиме <strong>Просмотр</strong>.
-              </p>
-              <p>
-                Для снастей, не связанных с парусами, или связанных только с одним парусом,
-                для ответа достаточно кликнуть в название снасти в списке внизу.
-              </p>
-              <p>
-                Для снастей, которыми снаряжены несколько парусов,
-                нужно последовательно, в любом порядке, кликнуть в название снасти и название паруса.
-                Пока выполнен только один из двух кликов, ответ считается неполным и может быть изменён.
-              </p>
-              <p>
-                Если в данной точке крепятся или могут крепиться различные снасти,
-                указание любой из них будет сочтено правильным ответом.
-              </p>
-              <p>
-                <strong>Галочки с названиями палуб</strong> в средней части верхнего меню позволяют
-                ограничить задаваемые вопросы только снастями, которые крепятся на соответствующих палубах.
-                Это позволяет учить не все 80 снастей разом, а группами &ndash;
-                сначала, например, те, что приходят на бак, потом те, что на главную палубу, и в конце те, что на корме.
-                Полуют и ют здесь рассматриваются как одна палуба и включаются/выключаются одной галочкой.
-              </p>
-            </section>
-            <section id="infoQuestions">
-              <h2>Вопросы? Замечания? Предложения?</h2>
-              <p>
-                По любым вопросам &ndash; пишите на <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">почту</a>.
-              </p>
-              <p>
-                Программа новая, в ней, конечно же, есть недоделки и хватает шероховатостей.
-                Ваши сообщения позволят быстрее с ними расправиться.
-              </p>
-              <p>
-                Если есть идеи, как сделать программу лучше &ndash; тоже не стесняйтесь высказаться.
-              </p>
-              <p><strong>
-                Спасибо! Успешного вам учебного процесса и семь футов под килем!
-              </strong></p>
-              <p>
-                Большое спасибо за идеи, помощь и поддержку в разработке программы<br>
-                <a href="https://vk.com/alek_i_amasa">Александре Григорьевой</a>,
-                <a href="https://vk.com/id4538067">Татьяне Ефремовой</a>,
-                <a href="https://vk.com/linaire">Роксане Колосовой</a>.
-              </p>
-            </section>
-          </td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <tr id="footer"><td><table class="wide"><tr>
+          <p>
+            Эта программа создана для облегчения изучения и выучивания мест расположения рабочих концов бегучего такелажа
+            <a href="https://www.shtandart.ru/frigate/">фрегата &laquo;Штандарт&raquo;</a> на палубе.
+          </p>
+          <div id="infoLoading" class="loading">
+            <noscript>
+              <p>Для функционирования этой страницы требуется поддержка <a href="https://ru.wikipedia.org/wiki/JavaScript">JavaScript</a> в браузере.</p>
+              <p>Пожалуйста, включите поддержку JavaScript и перезагрузите страницу.</p>
+            </noscript>
+            <script type="text/javascript">
+              document.write('<p>Идёт загрузка страницы, подождите...</p>\n<p>Если ожидание затягивается, попробуйте перезагрузить страницу.</p>\n<p>Если это не помогает, обратитесь к <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">разработчику</a>.</p>'); // jshint ignore:line
+            </script>
+          </div>
+          <div class="loading">
+            <p>
+              Программа поддерживает четыре основных режима работы, которые можно переключать в верхнем левом углу окна.
+            </p>
+            <p>
+              В режиме <strong>Описание</strong> отображается описание программы, которое вы сейчас читаете.
+            </p>
+            <p><strong>
+              В случае возникновения проблем сразу же делайте скриншот (кнопка PrintScreen на клавиатуре), и присылайте его на <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">почту</a>!
+            </strong></p>
+          </div>
+        </section>
+        <section id="infoDemo" class="loading">
+          <h2>Просмотр</h2>
+          <p>
+            В этом режиме программа не задаёт никаких задачек.
+            Можно просто изучать расположение снастей на палубе с помощью мыши.
+            В верхней части окна во всю ширину отображается схема палубы фрегата
+            с обозначенным расположением кофель-нагельных планок и других точек крепления снастей.
+            Ниже схемы перечислены слева &ndash; снасти, относящиеся к парусам
+            (по группам &ndash; снасти управления рангоутом, снасти управления парусами и снасти для уборки парусов),
+            в центре перечислены паруса фрегата, сгруппированные по мачтам,
+            справа &ndash; прочие снасти, не имеющие отношения к парусам.
+          </p>
+          <p>
+            <strong>Наведение мыши</strong> на название снасти <span class="doc on">подсвечивает</span> все паруса, снаряжённые такой снастью,
+            а также все точки крепления снастей этого типа на палубе.
+            Наведение мыши на название паруса аналогично <span class="doc on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
+            Наведение на точку крепления снастей на схеме <span class="doc on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
+            а также другие точки, где может крепиться эта или аналогичная снасть.
+          </p>
+          <p>
+            <strong>По клику</strong> в любое место <span class="doc on">подсвеченные</span> снасти фиксируются, и далее,
+            наводя мышь на точки крепления снастей на схеме,
+            можно увидеть всплывающие подсказки с подписями.
+            Ещё один клик мышью вернёт вас в интерактивный режим.
+          </p>
+        </section>
+        <section id="infoMarks" class="loading">
+          <h2>Марки</h2>
+          <p>
+            Точки крепления снастей, которые имеют на концах цветные марки, обозначены на схеме соответствующими цветами:
+            <span class="doc clewline">гитовы</span>, <span class="doc leechline">нок-горденя</span>, <span class="doc buntline">бык-горденя</span>, <span class="doc bowline">булиня</span>.
+            Кислотным жёлто-зелёным цветом обозначены точки крепления, куда одновременно приходят снасти
+            с жёлтой и зелёной марками &ndash; то есть, <span class="doc clewline buntline">гитовы и бык-горденя</span> малых парусов.
+          </p>
+          <p>
+            При желании цветовое обозначение можно отключить, сняв галочку <strong>Марки</strong> в правом верхнем углу окна.
+            Умение находить нужную снасть без ориентации на цветовые маркеры может пригодиться ночью.
+          </p>
+        </section>
+        <section id="infoWhere" class="loading">
+          <h2>Где снасть?</h2>
+          <p>
+            В этом режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
+            Ответить можно кликом в соответствующую точку схемы.
+            Правильный ответ (и другие возможные правильные ответы) <span class="doc rightAnswer">подсвечивается</span> зелёным цветом.
+            Если дан неправильный ответ, он также <span class="doc wrongAnswer">подсвечивается</span> красным цветом.
+            Если точек крепления для указанной снасти на палубе несколько, правильным ответом будет сочтено указание любой из них.
+          </p>
+          <p>
+            <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="doc on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
+            Для перехода к следующему вопросу можно нажать кнопку
+            <button class="doc">Следующий вопрос</button>
+            или просто кликнуть в любое место схемы или списка.
+            Эту же кнопку можно использовать, если вы не знаете правильного ответа на вопрос и не хотите гадать.
+          </p>
+          <p>
+            <strong>Ниже схемы</strong> все точки крепления перечислены списком, в них тоже можно кликать для ответа на вопрос.
+            Нагели на планках и другие точки крепления нумеруются на планках, идущих вдоль борта, с кормы,
+            а на планках, идущих перпендикулярно борту, от центра.
+            В каждом списке слева перечисляются точки крепления левого борта, а справа &ndash; правого борта.
+            Номера точек крепления в списках <span class="doc on">подсвечиваются</span> синхронно с точками на схеме,
+            цветовая маркировка также синхронизирована.
+          </p>
+          <p>
+            <strong>Галочки с названиями мачт</strong> в средней части верхнего меню позволяют
+            ограничить задаваемые вопросы только снастями парусов соответствующих мачт.
+            Если хотя бы одна галочка мачты не стоит, вопросы по снастям, не привязанным к мачтам и парусам, не задаются.
+            Это позволяет учить не все 80 снастей разом, а группами &ndash;
+            сначала паруса одной мачты, потом другой, потом третьей, а потом уже всё вместе.
+          </p>
+          <p>
+            <strong>Галочки в правом верхнем углу</strong> позволяют отключить цветовую маркировку, а также схему.
+            Умение объяснить, где находится нужная снасть, не имея перед глазами схемы,
+            пригодится, если нет возможности выполнить какую-то операцию с этой снастью самому,
+            а нужно оперативно дать инструкции кому-то другому.
+          </p>
+          <p>
+            В некотором смысле, здесь имеется <strong>четыре уровня сложности</strong>: &laquo;со схемой и цветовой маркировкой&raquo;,
+            &laquo;со схемой, но без цветовой маркировки&raquo;, &laquo;без схемы, но с цветовой маркировкой&raquo;
+            и, самый сложный, &laquo;без схемы и цветовой маркировки&raquo;.
+            Соответственно, рекомендуется начинать с самого простого, и далее увеличивать сложность по мере усвоения материала.
+          </p>
+        </section>
+        <section id="infoStatistics" class="loading">
+          <h2>Статистика</h2>
+          <p>
+            После ответа на первый вопрос программа отображает статистику правильных ответов.
+            Статистика нигде не сохраняется, и нужна только для объективной оценки собственных текущих знаний и отслеживания прогресса в обучении.
+          </p>
+          <p>
+            <strong>Статистику можно сбросить</strong> в любой момент, нажав на кнопку
+            <button class="doc">Обнулить статистику</button>.
+            Также статистика сбрасывается автоматически при переключении режима работы программы,
+            при <strong>включении</strong> отображения схемы или цветовых марок,
+            а также при установке любой из галочек мачт или палуб &ndash;
+            таким образом, отображающаяся статистика всегда отражает результат тренировки
+            в выбранном на данный момент или более сложном режиме.
+          </p>
+        </section>
+        <section id="infoWhich" class="loading">
+          <h2>Какая снасть?</h2>
+          <p>
+            Этот режим аналогичен режиму <strong>Где снасть?</strong>, но задаёт вопросы &laquo;наоборот&raquo;.
+            Программа называет расположение точки крепления снасти (и <span class="doc on">подсвечивает</span> её на схеме)
+            и предлагает вспомнить, какие снасти крепятся в этой точке.
+            Список снастей внизу аналогичен списку в режиме <strong>Просмотр</strong>.
+          </p>
+          <p>
+            Для снастей, не связанных с парусами, или связанных только с одним парусом,
+            для ответа достаточно кликнуть в название снасти в списке внизу.
+          </p>
+          <p>
+            Для снастей, которыми снаряжены несколько парусов,
+            нужно последовательно, в любом порядке, кликнуть в название снасти и название паруса.
+            Пока выполнен только один из двух кликов, ответ считается неполным и может быть изменён.
+          </p>
+          <p>
+            Если в данной точке крепятся или могут крепиться различные снасти,
+            указание любой из них будет сочтено правильным ответом.
+          </p>
+          <p>
+            <strong>Галочки с названиями палуб</strong> в средней части верхнего меню позволяют
+            ограничить задаваемые вопросы только снастями, которые крепятся на соответствующих палубах.
+            Это позволяет учить не все 80 снастей разом, а группами &ndash;
+            сначала, например, те, что приходят на бак, потом те, что на главную палубу, и в конце те, что на корме.
+            Полуют и ют здесь рассматриваются как одна палуба и включаются/выключаются одной галочкой.
+          </p>
+        </section>
+        <section id="infoQuestions" class="loading">
+          <h2>Вопросы? Замечания? Предложения?</h2>
+          <p>
+            По любым вопросам &ndash; пишите на <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">почту</a>.
+          </p>
+          <p>
+            Программа новая, в ней, конечно же, есть недоделки и хватает шероховатостей.
+            Ваши сообщения позволят быстрее с ними расправиться.
+          </p>
+          <p>
+            Если есть идеи, как сделать программу лучше &ndash; тоже не стесняйтесь высказаться.
+          </p>
+          <p><strong>
+            Спасибо! Успешного вам учебного процесса и семь футов под килем!
+          </strong></p>
+          <p>
+            Большое спасибо за идеи, помощь и поддержку в разработке программы<br>
+            <a href="https://vk.com/alek_i_amasa">Александре Григорьевой</a>,
+            <a href="https://vk.com/id4538067">Татьяне Ефремовой</a>,
+            <a href="https://vk.com/linaire">Роксане Колосовой</a>.
+          </p>
+        </section>
+      </td>
+    </tr>
+  </table></td></tr>
+  <tr id="footer"><td><table><tr>
     <td><p>
       &copy; <a href="http://vk.com/jolaf">Василий Захаров</a>
       <a href="mailto:vmzakhar@gmail.com?Subject=Такелаж%20&laquo;Штандарта&raquo;">vmzakhar@gmail.com</a>
@@ -392,7 +390,7 @@
     </td>
   </tr></table></td></tr>
 </table>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
 <script type="text/javascript" src="shtandart.js"></script>
 <script type="text/javascript" src="rigging.js"></script>
 </body>

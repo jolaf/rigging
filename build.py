@@ -18,7 +18,7 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
     print match.groups()
     fileName = match.group(fileNamePos)
     if fileName.startswith('http'):
-        data = urlopen(fileName.replace('jquery.min.js', 'jquery.slim.min.js')).read()
+        data = urlopen(fileName.replace('jquery.js', 'jquery.slim.min.js')).read()
     else:
         data = open(fileName, 'rb').read()
     if mode is BASE64:

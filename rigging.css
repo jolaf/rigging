@@ -18,6 +18,12 @@ body, button {
 table {
 	border-spacing: 0;
 	border-collapse: collapse;
+	width: 100%;
+}
+
+table.center {
+	margin: 0 auto;
+	width: 0;
 }
 
 p, td, button {
@@ -49,25 +55,26 @@ h1 {
 	padding: 0;
 }
 
-.wide, #controls {
-	width: 100%;
+.loading {
+	display: none;
 }
 
-table.center {
-	margin: 0 auto;
-}
-
-.high, #loading, #main, #answers, #lines {
+#mainTable, #mainRow, .choiceBlock {
 	height: 100%;
 }
 
-#loading td {
-	text-align: center;
+#mainCell.loading {
+	display: table-cell;
 	vertical-align: middle;
 }
 
-#main {
+#infoLoading {
 	display: none;
+	font-weight: bold;
+}
+
+#infoLoading.loading {
+	display: block;
 }
 
 #controls td {
@@ -228,7 +235,6 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 #infoBlock {
 	text-align: center;
 	vertical-align: middle;
-	height: 100%;
 	white-space: normal;
 	padding: 0 2em 2em;
 	line-height: 1.2;

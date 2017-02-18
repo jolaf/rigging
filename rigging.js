@@ -1007,8 +1007,7 @@ function start() {
     $('button.doc').on('hover mousedown keydown', false);
     // Finishing setup
     setMode(window.location.hash);
-    $('#loading').hide();
-    $('#main').show();
+    $('.loading').removeClass('loading');
 }
 
 function main() {
