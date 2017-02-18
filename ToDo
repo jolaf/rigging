@@ -1,9 +1,4 @@
 
-Refactor JS code to less stages as we work with DOM initially
-Rename 'place' to 'configure'
-
-Cleanup JS
-
 Cleanup CSS
 
 ReDo icons. White on blue?
@@ -11,7 +6,8 @@ ReDo icons. White on blue?
 Create immediate tooltips
 Add immediate tooltips to all highlighted points when Answered
 
-Check other browsers, phones
+Check other browsers
+Check phones
 
 Remove hover on touch
 

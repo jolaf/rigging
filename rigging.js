@@ -377,6 +377,7 @@ Deck.construct = function () {
     });
     DECKS = null; // jshint ignore:line
     Deck.selectable = new Selectable('deck', Deck.decks, true);
+    Deck.locationObject = $('#pointNumbers');
 };
 
 Deck.getDeck = function (deckID) {
@@ -395,21 +396,13 @@ Deck.prototype.createObject = function () {
         assert(existingObject.length <= 1, "Too many rails named " + rail.name + " (" + existingObject.length + ")");
         ul.append(rail.createObject(existingObject.length ? existingObject : null));
     });
-    this.object = object;
-};
-
-Deck.createObjects = function () {
-    $.each(Deck.decks, function (_index, deck) {
-        deck.createObject();
-    });
-};
-
-Deck.prototype.placeObject = function () {
-    Deck.locationObject.prepend(this.object);
+    Deck.locationObject.prepend(object);
 };
 
 Deck.placeObjects = function () {
-    Deck.locationObject = $('#pointNumbers');
+    $.each(Deck.decks, function (_index, deck) {
+        deck.createObject();
+    });
     Deck.selectable.placeObjects();
 };
 
@@ -555,10 +548,6 @@ Mast.prototype.getSail = function (sailName) {
         this.sails.push(sail);
     }
     return sail;
-};
-
-Mast.placeObjects = function () {
-    Mast.selectable.placeObjects();
 };
 
 function Subline(object, sublineType) {
@@ -979,7 +968,7 @@ function setupScheme() {
 }
 
 function start() {
-    // Create data objects from constant data
+    // Creating data objects from constant data
     Point.construct();
     Deck.construct();
     Rail.construct();
@@ -988,12 +977,11 @@ function start() {
     Subline.construct();
     Questionary.construct();
     setMode.construct();
-    // Configure and link data objects
-    Deck.createObjects();
-    Line.linkLines();
-    // Modifying DOM
+    // Cross-linking data objects
     Deck.placeObjects();
-    Mast.placeObjects();
+    Mast.selectable.placeObjects();
+    Line.linkLines();
+    // Configuring engine
     Questionary.configure();
     setMode.configure();
     // Binding menu handlers
@@ -1005,7 +993,7 @@ function start() {
     $('.selector, .point, .pointNumber, .subline').mousedown(false); // Avoid selection by double-click
     $('body').add(scheme).click(Questionary.nextQuestion);
     $('button.doc').on('hover mousedown keydown', false);
-    // Finishing setup
+    // Starting up
     setMode(window.location.hash);
     $('.loading').removeClass('loading');
 }
