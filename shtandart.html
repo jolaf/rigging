@@ -33,95 +33,14 @@
     };
   </script>
   <style type="text/css">
-html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	white-space: nowrap;
-}
+/* Widths and heights */
 
-body {
-	background: #ffeca4;
-}
-
-body, button {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	color: #4e1d00;
-}
-
-table {
-	border-spacing: 0;
-	border-collapse: collapse;
+html, body, table, #schemeBlock svg {
 	width: 100%;
 }
 
-table.center {
-	margin: 0 auto;
-	width: 0;
-}
-
-p, td, button {
-	font-size: 13px;
-}
-
-p, td {
-	line-height: 1.4;
-	margin: 2ex 0;
-	padding: 0;
-}
-
-td {
-	vertical-align: top;
-}
-
-ul {
-	list-style-type: none;
-	padding-left: 0;
-}
-
-button {
-	margin: 0 0.5em;
-}
-
-h1 {
-	text-align: center;
-	margin: 0;
-	padding: 0;
-}
-
-.loading {
-	display: none;
-}
-
-#mainTable, #mainRow, .choiceBlock {
+html, body, #mainTable, #mainRow, .choiceBlock {
 	height: 100%;
-}
-
-#mainCell.loading {
-	display: table-cell;
-	vertical-align: middle;
-}
-
-#infoLoading {
-	display: none;
-	font-weight: bold;
-}
-
-#infoLoading.loading {
-	display: block;
-}
-
-#controls td {
-	background-color: #b38451;
-	border: 5px solid #ffeca4;
-	font-weight: bold;
-	font-size: 120%;
-	padding: 0.3em 0.4em;
-}
-
-#controls span {
-	margin: 0.5em 0;
 }
 
 #selectModes {
@@ -140,6 +59,32 @@ h1 {
 	width: 53%;
 }
 
+/* Margins and paddings */
+
+html, body, h1, #sublines h3, #infoBlock button {
+	margin: 0;
+}
+
+html, body, p, td, h1 {
+	padding: 0;
+}
+
+p, td {
+	margin: 2ex 0;
+}
+
+button {
+	margin: 0 0.5em;
+}
+
+#controls td {
+	padding: 0.3em 0.4em;
+}
+
+#controls span {
+	margin: 0.5em 0;
+}
+
 span.selector {
 	margin-left: 0.5em;
 }
@@ -148,77 +93,8 @@ span.selector {
 	margin-right: 0.3em;
 }
 
-body, input, button, .selector, .point, .pointNumber, .subline {
-	-ms-touch-action: manipulation;
-	touch-action: manipulation;
-}
-
-#controls .selector {
-	cursor: default;
-}
-
-#controls .selector[disabled] {
-	color: #555;
-}
-
-#controls .selector:not([disabled]):hover {
-	color: #fc0;
-}
-
-#schemeBlock, .questionBlock {
-	border-bottom: 2px solid #4e1d00;
-}
-
 #schemeBlock td {
 	padding: 0.4em 0;
-}
-
-.pointNumber, .subline {
-	font-weight: bold;
-	cursor: default;
-}
-
-.pointNumber.on, .subline.on, .subline.preAnswer, .doc.on {
-	-webkit-filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
-	filter: drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0) drop-shadow(0px 0px 0.4em #fc0);
-}
-
-.pointNumber.wrongAnswer, .subline.wrongAnswer, .doc.wrongAnswer {
-	-webkit-filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
-	filter: drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red) drop-shadow(0px 0px 0.4em red);
-}
-
-.pointNumber.rightAnswer, .subline.rightAnswer, .doc.rightAnswer {
-	-webkit-filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
-	filter: drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green) drop-shadow(0px 0px 0.4em green);
-}
-
-.wrongAnswer:not(.on), .rightAnswer:not(.on) {
-	color: white;
-}
-
-.pointNumber {
-	color: black;
-}
-
-.colored .pointNumber.clewline, .doc.clewline {
-	color: #eb7d01; /* dark yellow */
-}
-
-.colored .pointNumber.buntline, .doc.buntline {
-	color: #017c01; /* dark green */
-}
-
-.colored .pointNumber.clewline.buntline, .doc.clewline.buntline {
-	color: #6cc100; /* yellow green */
-}
-
-.colored .pointNumber.leechline, .doc.leechline {
-	color: #b3014b; /* dark red */
-}
-
-.colored .pointNumber.bowline, .doc.bowline {
-	color: #0031ff; /* dark blue */
 }
 
 .deck, .mast {
@@ -226,37 +102,15 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 }
 
 .questionBlock {
-	text-align: center;
 	padding-bottom: 1em;
 }
 
 #question {
-	text-align: center;
 	margin-top: 0;
-}
-
-#rightAnswer, #wrongAnswer {
-	font-weight: bold;
-}
-
-#rightAnswer {
-	color: green;
-}
-
-#wrongAnswer span:first-child {
-	color: red;
-}
-
-#sublines h3 {
-	font-weight: normal;
 }
 
 #sublines h2 {
 	margin-bottom: 0.5em;
-}
-
-#sublines h3 {
-	margin: 0;
 }
 
 #sublines ul:first-child {
@@ -268,119 +122,360 @@ body, input, button, .selector, .point, .pointNumber, .subline {
 }
 
 #infoBlock {
-	text-align: center;
-	vertical-align: middle;
-	white-space: normal;
 	padding: 0 2em 2em;
-	line-height: 1.2;
 }
 
 #infoBlock p {
-	text-align: justify;
 	margin: 1.5em 0;
-}
-
-#infoIntro p, #infoQuestions p {
-	text-align: center;
-}
-
-span.doc {
-	font-weight: bold;
-	z-index: -1;
-}
-
-button.doc {
-	margin: 0;
-}
-
-#logo {
-	background: #94bfd8;
-	padding: 1em;
-	border: 1px solid #4e1d00;
-}
-
-#footer {
-	border-top: 2px solid #4e1d00;
 }
 
 #footer p {
 	margin: 0.1em 0.4em 0.2em;
 }
 
+/* Alignment */
+
+#infoBlock p {
+	text-align: justify;
+}
+
+h1, .questionBlock, #question, #infoBlock, #infoIntro p, #infoQuestions p {
+	text-align: center;
+}
+
+.choiceBlock table { /* centered */
+	margin: 0 auto;
+	width: 0;
+}
+
 #footer :last-child > p {
 	text-align: right;
+}
+
+td {
+	vertical-align: top;
+}
+
+#infoBlock {
+	vertical-align: middle;
 }
 
 .icon {
 	vertical-align: bottom;
 }
 
-/* SVG scheme styles */
+/* Whitespace */
 
-#schemeBlock object, #schemeBlock svg {
-	width: 100%;
+html, body {
+	white-space: nowrap;
 }
 
-#schemeBlock svg #drawing * {
-	stroke: #4e1d00;
+#infoBlock {
+	white-space: normal;
 }
 
-#schemeBlock svg #drawing .filled {
-	  fill: #4e1d00;
+/* Miscellaneous settings */
+
+body, input, button, .selector, .point, .pointNumber, .subline {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
 }
 
-#schemeBlock svg .deckMask {
-	  fill: #ffeca4;
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#filters {
+	height: 0;
+}
+
+#controls .selector, .pointNumber, .subline {
+	cursor: default;
+}
+
+#schemeBlock svg [fill=none] * {
+	fill: none !important;
+}
+
+.deckMask {
 	opacity: 0.75;
 }
 
-#schemeBlock svg .mastMask {
-	stroke: red;
+#infoBlock span {
+	position: relative;
+	z-index: -1;
 }
 
-#schemeBlock svg #points {
+#logo {
+	background: #94bfd8;
+	padding: 1em;
+}
+
+/* Loading settings */
+
+.loading, #infoLoading {
+	display: none;
+}
+
+#mainCell.loading {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#infoLoading.loading {
+	display: block;
+}
+
+/* Fonts */
+
+body, button {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+p, td, button {
+	font-size: 13px;
+}
+
+#controls td {
+	font-size: 120%;
+}
+
+p, td {
+	line-height: 1.4;
+}
+
+#infoBlock {
+	line-height: 1.2;
+}
+
+#controls td, #rightAnswer, #wrongAnswer, .pointNumber, .subline, #infoBlock span, #infoLoading {
+	font-weight: bold;
+}
+
+#sublines h3 {
+	font-weight: normal;
+}
+
+/* Background color */
+
+body {
+	background: #ffeca4;
+}
+
+#controls td {
+	border: 5px solid #ffeca4;
+}
+
+.deckMask {
+	fill: #ffeca4;
+}
+
+/* Text color */
+
+body, button {
+	color: #4e1d00;
+}
+
+#logo {
+	border: 1px solid #4e1d00; /* ToDo */
+}
+
+#schemeBlock, .questionBlock {
+	border-bottom: 2px solid #4e1d00;
+}
+
+#footer {
+	border-top: 2px solid #4e1d00;
+}
+
+#drawing [stroke] {
+	stroke: #4e1d00;
+}
+
+#drawing :not([fill=none]) {
+	fill: #4e1d00;
+}
+
+/* Controls colors */
+
+#controls td {
+	background-color: #b38451;
+}
+
+#controls .selector[disabled] {
+	color: #555;
+}
+
+#controls .selector:not([disabled]):hover {
+	color: #fc0;
+}
+
+/* Scheme colors */
+
+.pointNumber {
+	color: black;
+}
+
+#points [stroke] {
 	stroke: black;
 }
 
-#schemeBlock svg .colored .clewline {
-	stroke: #eb7d01; /* dark yellow */
-	  fill: #eb7d01;
+#points :not([fill=none]) {
+	fill: black;
 }
 
-#schemeBlock svg .colored .buntline {
-	stroke: #017c01; /* dark green */
-	  fill: #017c01;
+.mastMask {
+	stroke: red;
 }
 
-#schemeBlock svg .colored .clewline.buntline {
-	stroke: #6cc100; /* yellow green */
-	  fill: #6cc100;
+/* Mark colors */
+
+#pointNumbers.colored .clewline, #infoBlock .clewline {
+	color: #eb7d01; /* dark yellow */
 }
 
-#schemeBlock svg .colored .leechline {
-	stroke: #b3014b; /* dark red */
-	  fill: #b3014b;
+#points.colored .clewline { /* ToDo [stroke] */
+	stroke: #eb7d01;
 }
 
-#schemeBlock svg .colored .bowline {
-	stroke: #0031ff; /* dark blue */
-	  fill: #0031ff;
+#points.colored .clewline:not([fill=none]) {
+	fill: #eb7d01;
 }
 
-#schemeBlock svg .on {
-	filter: url(#filterHighlight);
+#pointNumbers.colored .buntline, #infoBlock .buntline {
+	color: #017c01; /* dark green */
 }
 
-#schemeBlock svg .rightAnswer {
+#points.colored .buntline { /* ToDo [stroke] */
+	stroke: #017c01;
+}
+
+#points.colored .buntline:not([fill=none]) {
+	fill: #017c01;
+}
+
+#pointNumbers.colored .clewline.buntline, #infoBlock .clewline.buntline {
+	color: #6cc100; /* yellow green */
+}
+
+#points.colored .clewline.buntline { /* ToDo [stroke] */
+	stroke: #6cc100;
+}
+
+#points.colored .clewline.buntline:not([fill=none]) {
+	fill: #6cc100;
+}
+
+#pointNumbers.colored .leechline, #infoBlock .leechline {
+	color: #b3014b; /* dark red */
+}
+
+#points.colored .leechline { /* ToDo [stroke] */
+	stroke: #b3014b;
+}
+
+#points.colored .leechline:not([fill=none]) {
+	fill: #b3014b;
+}
+
+#pointNumbers.colored .bowline, #infoBlock .bowline {
+	color: #0031ff; /* dark blue */
+}
+
+#points.colored .bowline { /* ToDo [stroke] */
+	stroke: #0031ff;
+}
+
+#points.colored .bowline:not([fill=none]) {
+	fill: #0031ff;
+}
+
+/* Questionnary highlighting colors */
+
+#rightAnswer {
+	color: green;
+}
+
+#filterRightAnswer feFlood {
+	flood-color: green;
+}
+
+.rightAnswer {
+	-webkit-filter: url(#filterRightAnswer);
 	filter: url(#filterRightAnswer);
 }
 
-#schemeBlock svg .wrongAnswer {
+#wrongAnswer span:first-child {
+	color: red;
+}
+
+#filterWrongAnswer feFlood {
+	flood-color: red;
+}
+
+.wrongAnswer {
+	-webkit-filter: url(#filterWrongAnswer);
 	filter: url(#filterWrongAnswer);
+}
+
+#pointNumbers .rightAnswer:not(.on), #sublines .rightAnswer:not(.on), #infoBlock .rightAnswer,
+#pointNumbers .wrongAnswer:not(.on), #sublines .wrongAnswer:not(.on), #infoBlock .wrongAnswer {
+	color: white;
+}
+
+#filterHighlight feFlood {
+	flood-color: #fc0;
+}
+
+.on, .preAnswer {
+	-webkit-filter: url(#filterHighlight);
+	filter: url(#filterHighlight);
 }
   </style>
 </head>
 <body>
+<div id="filters">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="filterRightAnswer" x="-50" y="-50" width="100" height="100">
+        <feFlood flood-color="green" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
+        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="filterWrongAnswer" x="-50" y="-50" width="100" height="100">
+        <feFlood flood-color="red" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
+        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="filterHighlight" x="-50" y="-50" width="100" height="100">
+        <feFlood flood-color="#fc0" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
+        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+</div>
 <table id="mainTable">
   <tr id="mainRow"><td id="mainCell" class="loading"><table>
     <tr><td>
@@ -415,36 +510,11 @@ button.doc {
     <tr id="schemeBlock" class="loading"><td>
       <svg version="1.1" viewBox="0 0 675.21811 145.47969" xmlns="http://www.w3.org/2000/svg" xmlns:rigging="https://github.com/jolaf/rigging" xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
-          <filter id="filterRightAnswer" x="-50" y="-50" width="100" height="100">
-            <feFlood flood-color="rgb(0,128,0)" result="flood"/>
-            <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-            <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-            <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
-            <feMerge>
-              <feMergeNode in="blurred"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-          <filter id="filterWrongAnswer" x="-50" y="-50" width="100" height="100">
-            <feFlood flood-color="rgb(255,0,0)" result="flood"/>
-            <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-            <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-            <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
-            <feMerge>
-              <feMergeNode in="blurred"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-          <filter id="filterHighlight" x="-50" y="-50" width="100" height="100">
-            <feFlood flood-color="rgb(255,204,0)" result="flood"/>
-            <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-            <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-            <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
-            <feMerge>
-              <feMergeNode in="blurred"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
+          <rect id="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64"/>
+          <symbol id="mastMask">
+            <path d="m425.11 59.525l26.5 26.5z"/>
+            <path d="m451.61 59.525l-26.5 26.5z"/>
+          </symbol>
         </defs>
         <g id="drawing" transform="translate(-36.919 -367.63)">
           <path d="m137.89 496.36 0.24873-112.22" fill="none" stroke="#000"/>
@@ -489,25 +559,16 @@ button.doc {
           <use transform="matrix(1 0 0 -1 .12944 880.84)" xlink:href="#portDrawing"/>
         </g>
         <g display="none">
-          <g id="deckMasks" fill="#fff">
-            <rect class="deckMask" x="497.98" y="-.80917" width="177.48" height="146.64" rigging:deck="fore"/>
-            <rect class="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64" rigging:deck="main"/>
-            <rect class="deckMask" x=".00010191" y="-.80917" width="277.27" height="146.64" rigging:deck="stern"/>
+          <g id="deckMasks" class="modeDependent which" fill="#fff">
+            <use class="deckMask" transform="matrix(.80532 0 0 1 274.69 0)" rigging:deck="fore" xlink:href="#deckMask"/>
+            <use class="deckMask" rigging:deck="main" xlink:href="#deckMask"/>
+            <use class="deckMask" transform="matrix(1.2558 0 0 1 -348.04 0)" rigging:deck="stern" xlink:href="#deckMask"/>
           </g>
         </g>
-        <g id="mastMasks" transform="translate(2.1603)" stroke="#f00">
-          <g class="mastMask" transform="rotate(-45 576.86 75.13)" rigging:mast="fore">
-            <path d="m578.06 54.263v37.477z"/>
-            <path d="m596.8 73.001h-37.477z"/>
-          </g>
-          <g class="mastMask" transform="rotate(-45 454.44 370.68)" rigging:mast="main">
-            <path d="m578.06 54.263v37.477z"/>
-            <path d="m596.8 73.001h-37.477z"/>
-          </g>
-          <g class="mastMask" transform="rotate(-45 363.23 590.45)" rigging:mast="mizzen">
-            <path d="m578.06 54.263v37.477z"/>
-            <path d="m596.8 73.001h-37.477z"/>
-          </g>
+        <g id="mastMasks" class="modeDependent where" stroke="red">
+          <use class="mastMask" transform="translate(140)" rigging:mast="fore" xlink:href="#mastMask"/>
+          <use class="mastMask" transform="translate(-104.89)" rigging:mast="main" xlink:href="#mastMask"/>
+          <use class="mastMask" transform="translate(-286.87)" rigging:mast="mizzen" xlink:href="#mastMask"/>
         </g>
         <g id="points" transform="translate(.020296 -7.1416e-6)">
           <g stroke="#000" rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="port">
@@ -842,11 +903,11 @@ button.doc {
       </p>
     </td></tr>
     <tr class="choiceBlock modeDependent where loading"><td>
-      <table class="center"><tr id="pointNumbers">
+      <table><tr id="pointNumbers">
       </tr></table>
     </td></tr>
     <tr class="choiceBlock modeDependent demo which loading"><td>
-      <table class="center"><tr id="sublines">
+      <table><tr id="sublines">
         <td class="deck sailLines"><div>
           <h2 class="category sailLine">Снасти</h2>
           <ul>
@@ -982,14 +1043,14 @@ button.doc {
             справа &ndash; прочие снасти, не имеющие отношения к парусам.
           </p>
           <p>
-            <strong>Наведение мыши</strong> на название снасти <span class="doc on">подсвечивает</span> все паруса, снаряжённые такой снастью,
+            <strong>Наведение мыши</strong> на название снасти <span class="on">подсвечивает</span> все паруса, снаряжённые такой снастью,
             а также все точки крепления снастей этого типа на палубе.
-            Наведение мыши на название паруса аналогично <span class="doc on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
-            Наведение на точку крепления снастей на схеме <span class="doc on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
+            Наведение мыши на название паруса аналогично <span class="on">подсвечивает</span> все снасти, которыми снаряжён данный парус.
+            Наведение на точку крепления снастей на схеме <span class="on">подсвечивает</span> тип снасти и название паруса для снастей, крепящихся в этой точке,
             а также другие точки, где может крепиться эта или аналогичная снасть.
           </p>
           <p>
-            <strong>По клику</strong> в любое место <span class="doc on">подсвеченные</span> снасти фиксируются, и далее,
+            <strong>По клику</strong> в любое место <span class="on">подсвеченные</span> снасти фиксируются, и далее,
             наводя мышь на точки крепления снастей на схеме,
             можно увидеть всплывающие подсказки с подписями.
             Ещё один клик мышью вернёт вас в интерактивный режим.
@@ -999,9 +1060,9 @@ button.doc {
           <h2>Марки</h2>
           <p>
             Точки крепления снастей, которые имеют на концах цветные марки, обозначены на схеме соответствующими цветами:
-            <span class="doc clewline">гитовы</span>, <span class="doc leechline">нок-горденя</span>, <span class="doc buntline">бык-горденя</span>, <span class="doc bowline">булиня</span>.
+            <span class="clewline">гитовы</span>, <span class="leechline">нок-горденя</span>, <span class="buntline">бык-горденя</span>, <span class="bowline">булиня</span>.
             Кислотным жёлто-зелёным цветом обозначены точки крепления, куда одновременно приходят снасти
-            с жёлтой и зелёной марками &ndash; то есть, <span class="doc clewline buntline">гитовы и бык-горденя</span> малых парусов.
+            с жёлтой и зелёной марками &ndash; то есть, <span class="clewline buntline">гитовы и бык-горденя</span> малых парусов.
           </p>
           <p>
             При желании цветовое обозначение можно отключить, сняв галочку <strong>Марки</strong> в правом верхнем углу окна.
@@ -1013,14 +1074,14 @@ button.doc {
           <p>
             В этом режиме программа называет снасть и предлагает вспомнить, в какую точку на палубе эта снасть приходит.
             Ответить можно кликом в соответствующую точку схемы.
-            Правильный ответ (и другие возможные правильные ответы) <span class="doc rightAnswer">подсвечивается</span> зелёным цветом.
-            Если дан неправильный ответ, он также <span class="doc wrongAnswer">подсвечивается</span> красным цветом.
+            Правильный ответ (и другие возможные правильные ответы) <span class="rightAnswer">подсвечивается</span> зелёным цветом.
+            Если дан неправильный ответ, он также <span class="wrongAnswer">подсвечивается</span> красным цветом.
             Если точек крепления для указанной снасти на палубе несколько, правильным ответом будет сочтено указание любой из них.
           </p>
           <p>
-            <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="doc on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
+            <strong>После того, как ответ дан</strong>, включается интерактивный режим с <span class="on">подсветкой</span> и вспывающими подсказками, аналогичный режиму Просмотра.
             Для перехода к следующему вопросу можно нажать кнопку
-            <button class="doc">Следующий вопрос</button>
+            <button>Следующий вопрос</button>
             или просто кликнуть в любое место схемы или списка.
             Эту же кнопку можно использовать, если вы не знаете правильного ответа на вопрос и не хотите гадать.
           </p>
@@ -1029,7 +1090,7 @@ button.doc {
             Нагели на планках и другие точки крепления нумеруются на планках, идущих вдоль борта, с кормы,
             а на планках, идущих перпендикулярно борту, от центра.
             В каждом списке слева перечисляются точки крепления левого борта, а справа &ndash; правого борта.
-            Номера точек крепления в списках <span class="doc on">подсвечиваются</span> синхронно с точками на схеме,
+            Номера точек крепления в списках <span class="on">подсвечиваются</span> синхронно с точками на схеме,
             цветовая маркировка также синхронизирована.
           </p>
           <p>
@@ -1060,7 +1121,7 @@ button.doc {
           </p>
           <p>
             <strong>Статистику можно сбросить</strong> в любой момент, нажав на кнопку
-            <button class="doc">Обнулить статистику</button>.
+            <button>Обнулить статистику</button>.
             Также статистика сбрасывается автоматически при переключении режима работы программы,
             при <strong>включении</strong> отображения схемы или цветовых марок,
             а также при установке любой из галочек мачт или палуб &ndash;
@@ -1072,7 +1133,7 @@ button.doc {
           <h2>Какая снасть?</h2>
           <p>
             Этот режим аналогичен режиму <strong>Где снасть?</strong>, но задаёт вопросы &laquo;наоборот&raquo;.
-            Программа называет расположение точки крепления снасти (и <span class="doc on">подсвечивает</span> её на схеме)
+            Программа называет расположение точки крепления снасти (и <span class="on">подсвечивает</span> её на схеме)
             и предлагает вспомнить, какие снасти крепятся в этой точке.
             Список снастей внизу аналогичен списку в режиме <strong>Просмотр</strong>.
           </p>
@@ -1129,7 +1190,7 @@ button.doc {
       для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2017
     </p></td>
     <td>
-      <p id="build">b20170218-1048G</p>
+      <p id="build">b20170220-2025G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -2330,9 +2391,26 @@ Questionary.reset = function () {
     Questionary.statisticsObject.hide();
 };
 
-function setupScheme() {
-    scheme = $('#schemeBlock svg');
-    assert(scheme.length === 1, "SVG scheme not accessible");
+function setupSVG(selector, callback) {
+    var svg = $(selector + ' svg'); // Try accessing inline SVG
+    if (!svg.length) { // For unbuilt project, use AJAX to load the SVG image inline, as <object> works badly in Chrome
+        var svgObject = $(selector + ' object');
+        if (svgObject.length) {
+            var parent = svgObject.parent();
+            var url = svgObject.attr('data');
+            svgObject.remove(); // To avoid repeated attempts
+            parent.load(url, function () {
+                setupSVG(selector, callback);
+            });
+            return;
+        }
+    }
+    assert(svg.length === 1, "SVG image not accessible");
+    callback(svg);
+}
+
+function setupScheme(svg) {
+    scheme = svg;
     $('*', scheme).removeAttr('display');
     start();
 }
@@ -2370,7 +2448,11 @@ function start() {
 
 function main() {
     if (window.jQuery) {
-        $(document).ready(setupScheme);
+        $(document).ready(function () {
+            setupSVG('#filters', function () {
+                setupSVG('#schemeBlock', setupScheme);
+            });
+        });
     } else {
         window.setTimeout(main, 100);
     }

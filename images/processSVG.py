@@ -18,7 +18,7 @@ def main():
         data = f.read()
     for (pattern, replace) in PATTERNS:
         data = reSub(pattern, replace, data)
-    with open(TARGET, 'w') as f:
+    with open(TARGET, 'wb') as f:
         f.write(data)
 
 main()

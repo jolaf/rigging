@@ -950,19 +950,26 @@ Questionary.reset = function () {
     Questionary.statisticsObject.hide();
 };
 
-function setupScheme() {
-    scheme = $('#schemeBlock svg'); // Try accessing inline SVG
-    if (!scheme.length) { // For unbuilt project, use AJAX to load the SVG image inline, as <object> works badly in Chrome
-        var svgObject = $('#schemeBlock object');
+function setupSVG(selector, callback) {
+    var svg = $(selector + ' svg'); // Try accessing inline SVG
+    if (!svg.length) { // For unbuilt project, use AJAX to load the SVG image inline, as <object> works badly in Chrome
+        var svgObject = $(selector + ' object');
         if (svgObject.length) {
             var parent = svgObject.parent();
             var url = svgObject.attr('data');
             svgObject.remove(); // To avoid repeated attempts
-            parent.load(url, setupScheme);
+            parent.load(url, function () {
+                setupSVG(selector, callback);
+            });
             return;
         }
     }
-    assert(scheme.length === 1, "SVG scheme not accessible");
+    assert(svg.length === 1, "SVG image not accessible");
+    callback(svg);
+}
+
+function setupScheme(svg) {
+    scheme = svg;
     $('*', scheme).removeAttr('display');
     start();
 }
@@ -1000,7 +1007,11 @@ function start() {
 
 function main() {
     if (window.jQuery) {
-        $(document).ready(setupScheme);
+        $(document).ready(function () {
+            setupSVG('#filters', function () {
+                setupSVG('#schemeBlock', setupScheme);
+            });
+        });
     } else {
         window.setTimeout(main, 100);
     }
