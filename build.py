@@ -3,7 +3,7 @@ from base64 import b64encode
 from re import sub as reSub
 from datetime import datetime
 from urllib2 import urlopen
-from zipfile import ZipFile
+from zipfile import ZipFile, ZIP_DEFLATED
 
 SOURCE = 'rigging.html'
 TARGET = 'shtandart.html'
@@ -56,7 +56,7 @@ def main():
         data = reSub(pattern, replace, data)
     with open(TARGET, 'wb') as f:
         f.write(data)
-    with ZipFile(ZIP, 'w') as f:
+    with ZipFile(ZIP, 'w', ZIP_DEFLATED) as f:
         f.write(TARGET)
 
 main()
