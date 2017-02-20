@@ -18,6 +18,18 @@
    id="svg993">
   <defs
      id="defs4">
+    <symbol
+       id="mastMask"
+       style="stroke:#ff0000">
+      <path
+         d="m 425.11266,59.524539 c 26.5,26.500001 26.5,26.500001 26.5,26.500001 z"
+         id="path89"
+         inkscape:connector-curvature="0" />
+      <path
+         d="m 451.61266,59.524539 c -26.5,26.5 -26.5,26.5 -26.5,26.5 z"
+         id="path91"
+         inkscape:connector-curvature="0" />
+    </symbol>
     <filter
        id="filterRightAnswer"
        x="-50"
@@ -25,77 +37,75 @@
        width="100"
        height="100">
       <feFlood
+         flood-color="green"
          result="flood"
-         flood-color="rgb(0,128,0)"
-         flood-opacity="1"
-         id="feFlood5737" />
+         id="feFlood10" />
       <feComposite
          in="flood"
-         result="mask"
          in2="SourceGraphic"
          operator="in"
-         id="feComposite5739" />
+         result="mask"
+         id="feComposite12" />
       <feMorphology
          in="mask"
-         result="dilated"
          operator="dilate"
          radius="4"
-         id="feMorphology5741"
-         stdDeviation="6.6" />
+         result="dilated"
+         stdDeviation="6.6"
+         id="feMorphology14" />
       <feGaussianBlur
          in="dilated"
+         radius="6"
          result="blurred"
          stdDeviation="3.3"
-         id="feGaussianBlur5743"
-         radius="6" />
+         id="feGaussianBlur16" />
       <feMerge
-         id="feMerge5745">
+         id="feMerge22">
         <feMergeNode
            in="blurred"
-           id="feMergeNode5747" />
+           id="feMergeNode18" />
         <feMergeNode
            in="SourceGraphic"
-           id="feMergeNode5749" />
+           id="feMergeNode20" />
       </feMerge>
     </filter>
     <filter
-       height="100"
-       width="100"
-       y="-50"
+       id="filterWrongAnswer"
        x="-50"
-       id="filterWrongAnswer">
+       y="-50"
+       width="100"
+       height="100">
       <feFlood
-         id="feFlood4410"
-         flood-opacity="1"
-         flood-color="rgb(255,0,0)"
-         result="flood" />
+         flood-color="red"
+         result="flood"
+         id="feFlood25" />
       <feComposite
-         id="feComposite4412"
-         operator="in"
+         in="flood"
          in2="SourceGraphic"
+         operator="in"
          result="mask"
-         in="flood" />
+         id="feComposite27" />
       <feMorphology
-         stdDeviation="6.6"
-         id="feMorphology4414"
-         radius="4"
+         in="mask"
          operator="dilate"
+         radius="4"
          result="dilated"
-         in="mask" />
+         stdDeviation="6.6"
+         id="feMorphology29" />
       <feGaussianBlur
+         in="dilated"
          radius="6"
-         id="feGaussianBlur4416"
-         stdDeviation="3.3"
          result="blurred"
-         in="dilated" />
+         stdDeviation="3.3"
+         id="feGaussianBlur31" />
       <feMerge
-         id="feMerge4422">
+         id="feMerge37">
         <feMergeNode
-           id="feMergeNode4418"
-           in="blurred" />
+           in="blurred"
+           id="feMergeNode33" />
         <feMergeNode
-           id="feMergeNode4420"
-           in="SourceGraphic" />
+           in="SourceGraphic"
+           id="feMergeNode35" />
       </feMerge>
     </filter>
     <filter
@@ -105,37 +115,36 @@
        width="100"
        height="100">
       <feFlood
+         flood-color="#fc0"
          result="flood"
-         flood-color="rgb(255,204,0)"
-         flood-opacity="1"
-         id="feFlood4426" />
+         id="feFlood40" />
       <feComposite
          in="flood"
-         result="mask"
          in2="SourceGraphic"
          operator="in"
-         id="feComposite4428" />
+         result="mask"
+         id="feComposite42" />
       <feMorphology
          in="mask"
-         result="dilated"
          operator="dilate"
          radius="4"
-         id="feMorphology4430"
-         stdDeviation="6.6" />
+         result="dilated"
+         stdDeviation="6.6"
+         id="feMorphology44" />
       <feGaussianBlur
          in="dilated"
+         radius="6"
          result="blurred"
          stdDeviation="3.3"
-         id="feGaussianBlur4432"
-         radius="6" />
+         id="feGaussianBlur46" />
       <feMerge
-         id="feMerge4438">
+         id="feMerge52">
         <feMergeNode
            in="blurred"
-           id="feMergeNode4434" />
+           id="feMergeNode48" />
         <feMergeNode
            in="SourceGraphic"
-           id="feMergeNode4436" />
+           id="feMergeNode50" />
       </feMerge>
     </filter>
   </defs>
@@ -146,9 +155,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.1186426"
-     inkscape:cx="267.30886"
-     inkscape:cy="74.294115"
+     inkscape:zoom="2.2052133"
+     inkscape:cx="353.67932"
+     inkscape:cy="57.339767"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -165,7 +174,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="svg993">
+     inkscape:current-layer="layer4">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
@@ -176,6 +185,31 @@
        orientation="0,1"
        id="guide4311"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="613.65944,82.304962"
+       orientation="0,1"
+       id="guide677"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="567.97224,61.218568"
+       orientation="1,0"
+       id="guide679"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="172.54566,63.089134"
+       orientation="0,1"
+       id="guide681"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="323.09798,74.199171"
+       orientation="1,0"
+       id="guide683"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="107.07581,99.820276"
+       orientation="-0.70710678,0.70710678"
+       id="guide685"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -185,7 +219,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -491,55 +525,24 @@
      id="layer3"
      inkscape:label="mastMasks"
      sodipodi:insensitive="true">
-    <g
-       id="mastMasks"
-       transform="translate(2.1603262)">
-      <g
-         transform="rotate(-45,576.85742,75.130083)"
-         id="g332"
-         rigging:mast="fore"
-         class="mastMask"
-         style="stroke:#ff0000;stroke-width:1px">
-        <path
-           d="m 578.05982,54.262911 c 0,37.476661 0,37.476661 0,37.476661 z"
-           id="path327"
-           inkscape:connector-curvature="0" />
-        <path
-           d="m 596.79815,73.001241 c -37.47666,0 -37.47666,0 -37.47666,0 z"
-           id="path329"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         id="g4015"
-         transform="rotate(-45,454.43715,370.67834)"
-         rigging:mast="main"
-         class="mastMask"
-         style="stroke:#ff0000;stroke-width:1px">
-        <path
-           inkscape:connector-curvature="0"
-           id="path4011"
-           d="m 578.05982,54.262911 c 0,37.476661 0,37.476661 0,37.476661 z" />
-        <path
-           inkscape:connector-curvature="0"
-           id="path4013"
-           d="m 596.79815,73.001241 c -37.47666,0 -37.47666,0 -37.47666,0 z" />
-      </g>
-      <g
-         transform="rotate(-45,363.22679,590.44623)"
-         id="g4021"
-         rigging:mast="mizzen"
-         class="mastMask"
-         style="stroke:#ff0000">
-        <path
-           d="m 578.05982,54.262911 c 0,37.476661 0,37.476661 0,37.476661 z"
-           id="path4017"
-           inkscape:connector-curvature="0" />
-        <path
-           d="m 596.79815,73.001241 c -37.47666,0 -37.47666,0 -37.47666,0 z"
-           id="path4019"
-           inkscape:connector-curvature="0" />
-      </g>
-    </g>
+    <use
+       id="use89"
+       xlink:href="#mastMask"
+       class="mastMask"
+       rigging:mast="fore"
+       transform="translate(140)" />
+    <use
+       id="use336"
+       xlink:href="#mastMask"
+       class="mastMask"
+       rigging:mast="main"
+       transform="translate(-104.88988)" />
+    <use
+       id="use338"
+       xlink:href="#mastMask"
+       class="mastMask"
+       rigging:mast="mizzen"
+       transform="translate(-286.8664)" />
   </g>
   <g
      inkscape:groupmode="layer"
