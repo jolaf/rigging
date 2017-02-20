@@ -18,9 +18,14 @@
    id="svg993">
   <defs
      id="defs4">
+    <rect
+       id="deckMask"
+       width="220.71146"
+       height="146.64241"
+       x="277.26855"
+       y="-0.80916661" />
     <symbol
-       id="mastMask"
-       style="stroke:#ff0000">
+       id="mastMask">
       <path
          d="m 425.11266,59.524539 c 26.5,26.500001 26.5,26.500001 26.5,26.500001 z"
          id="path89"
@@ -490,34 +495,26 @@
      sodipodi:insensitive="true"
      style="display:none">
     <g
-       id="deckMasks">
-      <rect
-         id="rect1474"
-         width="177.48378"
-         height="146.64241"
-         x="497.97998"
-         y="-0.80916661"
+       id="deckMasks"
+       class="modeDependent which"
+       style="fill:white">
+      <use
+         id="use758"
+         xlink:href="#deckMask"
+         class="deckMask"
          rigging:deck="fore"
+         transform="matrix(0.80532315,0,0,1,274.68923,0)" />
+      <use
+         id="use760"
+         xlink:href="#deckMask"
          class="deckMask"
-         style="fill:#ffffff" />
-      <rect
+         rigging:deck="main" />
+      <use
+         id="use668"
+         xlink:href="#deckMask"
          class="deckMask"
-         id="rect1476"
-         width="220.71146"
-         height="146.64241"
-         x="277.26855"
-         y="-0.80916661"
-         rigging:deck="main"
-         style="fill:#ffffff" />
-      <rect
-         class="deckMask"
-         id="rect1478"
-         width="277.26846"
-         height="146.64241"
-         x="0.00010191359"
-         y="-0.80916661"
          rigging:deck="stern"
-         style="fill:#ffffff" />
+         transform="matrix(1.2558,0,0,1,-348.04246,0)" />
     </g>
   </g>
   <g
@@ -525,24 +522,29 @@
      id="layer3"
      inkscape:label="mastMasks"
      sodipodi:insensitive="true">
-    <use
-       id="use89"
-       xlink:href="#mastMask"
-       class="mastMask"
-       rigging:mast="fore"
-       transform="translate(140)" />
-    <use
-       id="use336"
-       xlink:href="#mastMask"
-       class="mastMask"
-       rigging:mast="main"
-       transform="translate(-104.88988)" />
-    <use
-       id="use338"
-       xlink:href="#mastMask"
-       class="mastMask"
-       rigging:mast="mizzen"
-       transform="translate(-286.8664)" />
+    <g
+       id="mastMasks"
+       class="modeDependent where"
+       style="stroke:red">
+      <use
+         id="use89"
+         xlink:href="#mastMask"
+         class="mastMask"
+         rigging:mast="fore"
+         transform="translate(140)" />
+      <use
+         id="use336"
+         xlink:href="#mastMask"
+         class="mastMask"
+         rigging:mast="main"
+         transform="translate(-104.88988)" />
+      <use
+         id="use338"
+         xlink:href="#mastMask"
+         class="mastMask"
+         rigging:mast="mizzen"
+         transform="translate(-286.8664)" />
+    </g>
   </g>
   <g
      inkscape:groupmode="layer"

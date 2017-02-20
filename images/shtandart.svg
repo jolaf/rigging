@@ -1,6 +1,7 @@
 <svg version="1.1" viewBox="0 0 675.21811 145.47969" xmlns="http://www.w3.org/2000/svg" xmlns:rigging="https://github.com/jolaf/rigging" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <symbol id="mastMask" stroke="#ff0000">
+    <rect id="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64"/>
+    <symbol id="mastMask">
       <path d="m425.11 59.525l26.5 26.5z"/>
       <path d="m451.61 59.525l-26.5 26.5z"/>
     </symbol>
@@ -78,15 +79,17 @@
     <use transform="matrix(1 0 0 -1 .12944 880.84)" xlink:href="#portDrawing"/>
   </g>
   <g display="none">
-    <g id="deckMasks" fill="#fff">
-      <rect class="deckMask" x="497.98" y="-.80917" width="177.48" height="146.64" rigging:deck="fore"/>
-      <rect class="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64" rigging:deck="main"/>
-      <rect class="deckMask" x=".00010191" y="-.80917" width="277.27" height="146.64" rigging:deck="stern"/>
+    <g id="deckMasks" class="modeDependent which" fill="#fff">
+      <use class="deckMask" transform="matrix(.80532 0 0 1 274.69 0)" rigging:deck="fore" xlink:href="#deckMask"/>
+      <use class="deckMask" rigging:deck="main" xlink:href="#deckMask"/>
+      <use class="deckMask" transform="matrix(1.2558 0 0 1 -348.04 0)" rigging:deck="stern" xlink:href="#deckMask"/>
     </g>
   </g>
-  <use class="mastMask" transform="translate(140)" rigging:mast="fore" xlink:href="#mastMask"/>
-  <use class="mastMask" transform="translate(-104.89)" rigging:mast="main" xlink:href="#mastMask"/>
-  <use class="mastMask" transform="translate(-286.87)" rigging:mast="mizzen" xlink:href="#mastMask"/>
+  <g id="mastMasks" class="modeDependent where" stroke="red">
+    <use class="mastMask" transform="translate(140)" rigging:mast="fore" xlink:href="#mastMask"/>
+    <use class="mastMask" transform="translate(-104.89)" rigging:mast="main" xlink:href="#mastMask"/>
+    <use class="mastMask" transform="translate(-286.87)" rigging:mast="mizzen" xlink:href="#mastMask"/>
+  </g>
   <g id="points" transform="translate(.020296 -7.1416e-6)">
     <g stroke="#000" rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="port">
       <circle transform="translate(-36.94 -367.63)" cx="678.43" cy="436.58" r="1.0672"/>
