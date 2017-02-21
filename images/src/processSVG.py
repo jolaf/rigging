@@ -2,7 +2,7 @@
 from re import sub as reSub
 
 SOURCE = 'shtandart-opt.svg'
-TARGET = 'shtandart.svg'
+TARGET = '../shtandart.svg'
 
 PATTERNS = ((r'(?ms)\s*<metadata>.*?</metadata>(\n*)', r'\1'),
             (r'(?ms)\s*<g></g>(\n*)', r'\1'),
