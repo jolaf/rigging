@@ -28,6 +28,36 @@
     }
 
     Tipsy.prototype = {
+        setCSS: function(pos, gravity) {
+            var actualWidth = this.tip()[0].offsetWidth,
+                actualHeight = this.tip()[0].offsetHeight,
+                tp;
+            switch (gravity.charAt(0)) {
+                case 'n':
+                    tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+                    break;
+                case 's':
+                    tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
+                    break;
+                case 'e':
+                    tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
+                    break;
+                case 'w':
+                    tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
+                    break;
+            }
+
+            if (gravity.length == 2) {
+                if (gravity.charAt(1) == 'w') {
+                    tp.left = pos.left + pos.width / 2 - 15;
+                } else { // e
+                    tp.left = pos.left + pos.width / 2 - actualWidth + 15;
+                }
+            }
+
+            this.tip().css(tp);
+        },
+
         show: function() {
             var title = this.getTitle();
             if (title && this.enabled) {
@@ -51,35 +81,18 @@
                   });
                 }
 
-                var actualWidth = $tip[0].offsetWidth,
-                    actualHeight = $tip[0].offsetHeight,
-                    gravity = maybeCall(this.options.gravity, this.$element[0]);
+                var preliminaryGravity = maybeCall(this.options.gravity, this.$element[0]);
 
-                var tp;
-                switch (gravity.charAt(0)) {
-                    case 'n':
-                        tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
-                        break;
-                    case 's':
-                        tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
-                        break;
-                    case 'e':
-                        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
-                        break;
-                    case 'w':
-                        tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
-                        break;
+                this.setCSS(pos, preliminaryGravity);
+
+                var gravity = maybeCall(this.options.gravity, this.$element[0]);
+
+                if (gravity !== preliminaryGravity) {
+                    this.setCSS(pos, gravity);
                 }
 
-                if (gravity.length == 2) {
-                    if (gravity.charAt(1) == 'w') {
-                        tp.left = pos.left + pos.width / 2 - 15;
-                    } else {
-                        tp.left = pos.left + pos.width / 2 - actualWidth + 15;
-                    }
-                }
+                this.tip().addClass('tipsy-' + gravity);
 
-                $tip.css(tp).addClass('tipsy-' + gravity);
                 $tip.find('.tipsy-arrow')[0].className = 'tipsy-arrow tipsy-arrow-' + gravity.charAt(0);
                 if (this.options.className) {
                     $tip.addClass(maybeCall(this.options.className, this.$element[0]));
@@ -256,17 +269,17 @@
      */
      $.fn.tipsy.autoBounds = function(margin, prefer) {
         return function() {
-            var dir = {ns: prefer[0], ew: (prefer.length > 1 ? prefer[1] : false)},
-          boundTop = $(document).scrollTop() + margin,
-          boundLeft = $(document).scrollLeft() + margin,
-          $this = $(this);
-
-            if ($this.offset().top < boundTop) dir.ns = 'n';
-            if ($this.offset().left < boundLeft) dir.ew = 'w';
-            if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'e';
-            if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 's';
-
-            return dir.ns + (dir.ew ? dir.ew : '');
+            var dir = { ns: (prefer[0] == 's' ? 's' : 'n'),
+                        ew: (prefer.length > 1 ? prefer[1] : (prefer[0] === 'e' || prefer[0] === 'w' ? prefer[0] : '')) },
+                $this = $(this),
+                $tip = $this.data('tipsy').$tip,
+                diffTop = $tip.offset().top - $(document).scrollTop(),
+                diffLeft = $tip.offset().left - $(document).scrollLeft();
+            if (diffTop < margin) dir.ns = 'n';
+            if (diffLeft < margin) dir.ew = 'w';
+            if ($(window).height() < diffTop + $tip.height() + margin) dir.ns = 's';
+            if ($(window).width() < diffLeft + $tip.width()  + margin) dir.ew = 'e';
+            return dir.ns + dir.ew;
         };
     };
 

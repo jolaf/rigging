@@ -994,7 +994,7 @@ function start() {
     $('body').add(scheme).click(Questionary.nextQuestion);
     $('button.doc').on('hover mousedown keydown', false);
     // Setup tooltips
-    Questionary.whereObjects.tipsy({title: 'tipsy-title', gravity: $.fn.tipsy.autoBounds(300, 'nw'), offset: 5, opacity: 1});
+    Questionary.whereObjects.tipsy({title: 'tipsy-title', gravity: $.fn.tipsy.autoBounds(10, 'nw'), offset: 5, opacity: 1});
     // Starting up
     setMode(window.location.hash);
     $('.loading').removeClass('loading');
