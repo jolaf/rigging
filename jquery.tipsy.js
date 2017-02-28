@@ -2,6 +2,7 @@
 // version 1.0.0a
 // (c) 2008-2010 jason frame [jason@onehackoranother.com]
 // (c) 2013 Devon Meunier <devon@ajah.ca>
+// (c) 2016 Vasily Zakharov <vmzakhar@gmail.com> - fixed SVG objects sizing
 // released under the MIT license
 
 (function($) {
@@ -39,8 +40,8 @@
                 var pos;
                 try {
                   pos = $.extend({}, this.$element.offset(), {
-                    width: this.$element[0].getBBox().width,
-                    height: this.$element[0].getBBox().height
+                    width: this.$element[0].getBoundingClientRect().width,
+                    height: this.$element[0].getBoundingClientRect().height
                   });
                 }
                 catch (TypeError) {

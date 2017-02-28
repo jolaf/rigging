@@ -163,15 +163,9 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.toggleTooltips = function (enable) {
-    /*    Questionary.whereObjects$.each(Point.points, function (_index, point) {
-        if (enable) {
-            point.iconObject.prepend(point.titleObject);
-            point.numberObject.attr('title', point.name);
-        } else {
-            point.titleObject.detach();
-            point.numberObject.removeAttr('title');
-        }
-    });*/
+    $.each(Point.points, function (_index, point) {
+        point.objects.attr('tipsy-title', enable ? point.name : '');
+    });
 };
 
 Point.prototype.mouseHandler = function (event) {
@@ -1000,7 +994,7 @@ function start() {
     $('body').add(scheme).click(Questionary.nextQuestion);
     $('button.doc').on('hover mousedown keydown', false);
     // Setup tooltips
-    Questionary.whereObjects.tipsy({title: 'tipsy-title', gravity: 'nw'});
+    Questionary.whereObjects.tipsy({title: 'tipsy-title', gravity: $.fn.tipsy.autoBounds(300, 'nw'), offset: 5, opacity: 1});
     // Starting up
     setMode(window.location.hash);
     $('.loading').removeClass('loading');
