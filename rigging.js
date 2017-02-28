@@ -148,10 +148,9 @@ Point.prototype.createObject = function () {
         }
     });
     // Configuring HTML objects
-    this.titleObject = $(document.createElementNS('http://www.w3.org/2000/svg', 'title')).text(this.name);
-    this.iconObject.prepend(this.titleObject);
     this.numberObject = $('<a class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</a>');
     this.objects = this.iconObject.add(this.numberObject);
+    this.objects.attr('tipsy-title', this.name);
     this.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
     // Setting event handlers
     this.objects.on('click', this, Questionary.answerQuestion);
@@ -164,7 +163,7 @@ Point.prototype.attachLine = function (line) {
 };
 
 Point.toggleTooltips = function (enable) {
-    $.each(Point.points, function (_index, point) {
+    /*    Questionary.whereObjects$.each(Point.points, function (_index, point) {
         if (enable) {
             point.iconObject.prepend(point.titleObject);
             point.numberObject.attr('title', point.name);
@@ -172,7 +171,7 @@ Point.toggleTooltips = function (enable) {
             point.titleObject.detach();
             point.numberObject.removeAttr('title');
         }
-    });
+    });*/
 };
 
 Point.prototype.mouseHandler = function (event) {
@@ -1000,6 +999,8 @@ function start() {
     $('.selector, .point, .pointNumber, .subline').mousedown(false); // Avoid selection by double-click
     $('body').add(scheme).click(Questionary.nextQuestion);
     $('button.doc').on('hover mousedown keydown', false);
+    // Setup tooltips
+    Questionary.whereObjects.tipsy({title: 'tipsy-title', gravity: 'nw'});
     // Starting up
     setMode(window.location.hash);
     $('.loading').removeClass('loading');
