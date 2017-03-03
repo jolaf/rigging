@@ -449,30 +449,32 @@ body, button {
 
 /* Questionnary highlighting colors */
 
-#rightAnswer {
+#rightAnswer, .filterRightAnswer {
 	color: green;
 }
 
-#filterRightAnswer feFlood {
-	flood-color: green;
+#points .rightAnswer {
+	-webkit-filter: url(#filterRightAnswerPoint);
+	filter: url(#filterRightAnswerPoint);
 }
 
-.rightAnswer {
-	-webkit-filter: url(#filterRightAnswer);
-	filter: url(#filterRightAnswer);
+.choiceBlock .rightAnswer {
+	-webkit-filter: url(#filterRightAnswerText);
+	filter: url(#filterRightAnswerText);
 }
 
-#wrongAnswer span:first-child {
+#wrongAnswer span:first-child, .filterWrongAnswer {
 	color: red;
 }
 
-#filterWrongAnswer feFlood {
-	flood-color: red;
+#points .wrongAnswer {
+	-webkit-filter: url(#filterWrongAnswerPoint);
+	filter: url(#filterWrongAnswerPoint);
 }
 
-.wrongAnswer {
-	-webkit-filter: url(#filterWrongAnswer);
-	filter: url(#filterWrongAnswer);
+.choiceBlock .wrongAnswer {
+	-webkit-filter: url(#filterWrongAnswerText);
+	filter: url(#filterWrongAnswerText);
 }
 
 #pointNumbers .rightAnswer:not(.on), #sublines .rightAnswer:not(.on), #infoBlock .rightAnswer,
@@ -480,11 +482,16 @@ body, button {
 	color: white;
 }
 
-#filterHighlight feFlood {
-	flood-color: #fc0;
+.filterHighlight {
+	color: #fc0;
 }
 
-.on, .preAnswer {
-	-webkit-filter: url(#filterHighlight);
-	filter: url(#filterHighlight);
+#points .on {
+	-webkit-filter: url(#filterHighlightPoint);
+	filter: url(#filterHighlightPoint);
+}
+
+.choiceBlock .on, #sublines .preAnswer {
+	-webkit-filter: url(#filterHighlightText);
+	filter: url(#filterHighlightText);
 }
