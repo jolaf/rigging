@@ -3,9 +3,15 @@
     <filter id="filterRightAnswerPoint" class="filterRightAnswer" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -13,9 +19,13 @@
     <filter id="filterRightAnswerText" class="filterRightAnswer" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -23,9 +33,14 @@
     <filter id="filterWrongAnswerPoint" class="filterWrongAnswer" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -33,9 +48,13 @@
     <filter id="filterWrongAnswerText" class="filterWrongAnswer" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -43,9 +62,15 @@
     <filter id="filterHighlightPoint" class="filterHighlight" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
@@ -53,9 +78,15 @@
     <filter id="filterHighlightText" class="filterHighlight" x="-10" y="-10" width="20" height="20">
       <feFlood flood-color="currentColor" result="flood"/>
       <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-      <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-      <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+      <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+      <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
       <feMerge>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
+        <feMergeNode in="blurred"/>
         <feMergeNode in="blurred"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>

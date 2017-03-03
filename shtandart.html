@@ -485,30 +485,32 @@ body, button {
 
 /* Questionnary highlighting colors */
 
-#rightAnswer {
+#rightAnswer, .filterRightAnswer {
 	color: green;
 }
 
-#filterRightAnswer feFlood {
-	flood-color: green;
+#points .rightAnswer {
+	-webkit-filter: url(#filterRightAnswerPoint);
+	filter: url(#filterRightAnswerPoint);
 }
 
-.rightAnswer {
-	-webkit-filter: url(#filterRightAnswer);
-	filter: url(#filterRightAnswer);
+.choiceBlock .rightAnswer {
+	-webkit-filter: url(#filterRightAnswerText);
+	filter: url(#filterRightAnswerText);
 }
 
-#wrongAnswer span:first-child {
+#wrongAnswer span:first-child, .filterWrongAnswer {
 	color: red;
 }
 
-#filterWrongAnswer feFlood {
-	flood-color: red;
+#points .wrongAnswer {
+	-webkit-filter: url(#filterWrongAnswerPoint);
+	filter: url(#filterWrongAnswerPoint);
 }
 
-.wrongAnswer {
-	-webkit-filter: url(#filterWrongAnswer);
-	filter: url(#filterWrongAnswer);
+.choiceBlock .wrongAnswer {
+	-webkit-filter: url(#filterWrongAnswerText);
+	filter: url(#filterWrongAnswerText);
 }
 
 #pointNumbers .rightAnswer:not(.on), #sublines .rightAnswer:not(.on), #infoBlock .rightAnswer,
@@ -516,13 +518,18 @@ body, button {
 	color: white;
 }
 
-#filterHighlight feFlood {
-	flood-color: #fc0;
+.filterHighlight {
+	color: #fc0;
 }
 
-.on, .preAnswer {
-	-webkit-filter: url(#filterHighlight);
-	filter: url(#filterHighlight);
+#points .on {
+	-webkit-filter: url(#filterHighlightPoint);
+	filter: url(#filterHighlightPoint);
+}
+
+.choiceBlock .on, #sublines .preAnswer {
+	-webkit-filter: url(#filterHighlightText);
+	filter: url(#filterHighlightText);
 }
   </style>
 </head>
@@ -530,32 +537,93 @@ body, button {
 <div id="filters">
   <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <filter id="filterRightAnswer" x="-10" y="-10" width="20" height="20">
-        <feFlood flood-color="green" result="flood"/>
+      <filter id="filterRightAnswerPoint" class="filterRightAnswer" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
         <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
         <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
           <feMergeNode in="blurred"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
-      <filter id="filterWrongAnswer" x="-10" y="-10" width="20" height="20">
-        <feFlood flood-color="red" result="flood"/>
+      <filter id="filterRightAnswerText" class="filterRightAnswer" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
         <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
         <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
           <feMergeNode in="blurred"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
-      <filter id="filterHighlight" x="-10" y="-10" width="20" height="20">
-        <feFlood flood-color="#fc0" result="flood"/>
+      <filter id="filterWrongAnswerPoint" class="filterWrongAnswer" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
         <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
-        <feMorphology in="mask" operator="dilate" radius="4" result="dilated" stdDeviation="6.6"/>
-        <feGaussianBlur in="dilated" radius="6" result="blurred" stdDeviation="3.3"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
         <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="filterWrongAnswerText" class="filterWrongAnswer" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="filterHighlightPoint" class="filterHighlight" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="filterHighlightText" class="filterHighlight" x="-10" y="-10" width="20" height="20">
+        <feFlood flood-color="currentColor" result="flood"/>
+        <feComposite in="flood" in2="SourceGraphic" operator="in" result="mask"/>
+        <feMorphology in="mask" operator="dilate" radius="2" result="dilated"/>
+        <feGaussianBlur in="dilated" stdDeviation="4" result="blurred"/>
+        <feMerge>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
+          <feMergeNode in="blurred"/>
           <feMergeNode in="blurred"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
@@ -1277,7 +1345,7 @@ body, button {
       для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2017
     </p></td>
     <td>
-      <p id="build">b20170228-1851G</p>
+      <p id="build">b20170303-0041G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1964,7 +2032,7 @@ Point.prototype.createObject = function () {
         }
     });
     // Configuring HTML objects
-    this.numberObject = $('<a class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<span class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</span>');
     this.objects = this.iconObject.add(this.numberObject);
     this.objects.attr('tipsy-title', this.name);
     this.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));

@@ -148,7 +148,7 @@ Point.prototype.createObject = function () {
         }
     });
     // Configuring HTML objects
-    this.numberObject = $('<a class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</a>');
+    this.numberObject = $('<span class="pointNumber">' + ((this.rail.points.length === 1) ? 'I' : this.number) + '</span>');
     this.objects = this.iconObject.add(this.numberObject);
     this.objects.attr('tipsy-title', this.name);
     this.objects.addClass(this.lines.map(function (line) { return Point.marks[line.lineName]; }).join(' '));
