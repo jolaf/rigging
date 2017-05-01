@@ -18,6 +18,12 @@
    id="svg993">
   <defs
      id="defs4">
+    <circle
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0"
+       id="circle4449"
+       cx="160.87129"
+       cy="398.09106"
+       r="5.3709264" />
     <rect
        id="deckMask"
        width="220.71146"
@@ -44,13 +50,13 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="6.2372851"
-     inkscape:cx="491.41251"
-     inkscape:cy="99.776512"
+     inkscape:cx="169.94711"
+     inkscape:cy="80.537372"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
      inkscape:window-height="1156"
-     inkscape:window-x="71"
+     inkscape:window-x="75"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      showguides="false"
@@ -356,43 +362,49 @@
            x="400.07001"
            y="408.42535"
            class="filled" />
-        <circle
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0"
-           id="circle4449"
-           cx="164.07782"
-           cy="391.19705"
-           r="5.3709264" />
-        <circle
-           r="5.3709264"
-           cy="384.16824"
-           cx="223.48251"
-           id="circle4430"
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0" />
-        <circle
-           r="5.3709264"
-           cy="381.2207"
-           cx="269.5098"
-           id="circle4432"
-           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0" />
         <g
            id="g4442"
-           transform="translate(36.799774,367.30031)">
+           transform="translate(36.318796,367.62096)">
           <path
              inkscape:connector-curvature="0"
              id="path4436"
-             d="m 496.59123,4.621966 -0.22674,28.34193 24.9409,0"
+             d="m 496.59123,4.621966 -0.22674,28.34193 h 24.9409"
              style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1" />
           <path
              inkscape:connector-curvature="0"
              id="path4438"
-             d="m 512.91618,32.73716 0,-26.754781"
+             d="M 512.91618,32.73716 V 5.982379"
              style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
           <path
              inkscape:connector-curvature="0"
              id="path4440"
-             d="m 504.30023,32.73716 0,-27.661723"
+             d="M 504.30023,32.73716 V 5.075437"
              style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
         </g>
+        <use
+           x="0"
+           y="0"
+           xlink:href="#circle4449"
+           id="use11166"
+           transform="translate(2.791898,-9.5277809)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#circle4449"
+           id="use11168"
+           transform="translate(108.4099,-17.846781)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#use11168"
+           id="use11170"
+           transform="translate(-45.920002,3.1660001)"
+           width="100%"
+           height="100%" />
       </g>
     </g>
     <use
