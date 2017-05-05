@@ -13,11 +13,9 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="-2 -7 679 159"
    version="1.1"
-   inkscape:version="0.92.1 r"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="shtandart-src.svg"
-   id="svg993"
-   width="724.26666"
-   height="169.60001">
+   id="svg993">
   <defs
      id="defs4">
     <circle
@@ -51,15 +49,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="3.3467812"
-     inkscape:cx="286.84726"
-     inkscape:cy="84.756246"
+     inkscape:zoom="6.2372851"
+     inkscape:cx="169.94711"
+     inkscape:cy="80.537372"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
      inkscape:window-height="1156"
      inkscape:window-x="75"
-     inkscape:window-y="22"
+     inkscape:window-y="0"
      inkscape:window-maximized="0"
      showguides="false"
      inkscape:guide-bbox="true"
@@ -70,41 +68,39 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="points">
+     inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
        originx="-36.919279"
-       originy="-539.25229"
-       spacingx="1"
-       spacingy="1" />
+       originy="-539.25229" />
     <sodipodi:guide
-       position="0.038673154,0.45753275"
+       position="26.259072,72.747708"
        orientation="0,1"
        id="guide4311"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.90376941,0.51764126"
+       position="613.65944,82.304962"
        orientation="0,1"
        id="guide677"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.8364834,0.38502243"
+       position="567.97224,61.218568"
        orientation="1,0"
        id="guide679"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.25411732,0.396787"
+       position="172.54566,63.089134"
        orientation="0,1"
        id="guide681"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.47584385,0.46666145"
+       position="323.09798,74.199171"
        orientation="1,0"
        id="guide683"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.15769633,0.62780047"
+       position="107.07581,99.820276"
        orientation="-0.70710678,0.70710678"
        id="guide685"
        inkscape:locked="false" />
@@ -145,7 +141,7 @@
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011"
-       d="m 81.495986,18.9309 v 10.38004 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
+       d="m 81.495986,18.9309 0,10.38004 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
        id="path4306"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
@@ -175,7 +171,7 @@
        transform="translate(-36.919264,-367.63021)">
       <path
          style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.76700002;stroke-miterlimit:0"
-         d="m 290.80879,415.16836 h -8.16778 c -0.004,16.80629 -0.007,33.61259 -0.0109,50.41888 h 8.16778 c 0.004,-16.80629 0.007,-33.61259 0.0109,-50.41888 z"
+         d="m 290.80879,415.16836 -8.16778,0 c -0.004,16.80629 -0.007,33.61259 -0.0109,50.41888 l 8.16778,0 c 0.004,-16.80629 0.007,-33.61259 0.0109,-50.41888 z"
          id="path4247"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="ccccc" />
@@ -184,7 +180,7 @@
        sodipodi:nodetypes="ccccc"
        inkscape:connector-curvature="0"
        id="path4336"
-       d="m 295.25922,104.76417 h -8.07466 c 0,-21.33983 0,-42.67965 0,-64.01948 h 8.07466 c 0,21.33983 0,42.67965 0,64.01948 z"
+       d="m 295.25922,104.76417 -8.07466,0 c 0,-21.33983 0,-42.67965 0,-64.01948 l 8.07466,0 c 0,21.33983 0,42.67965 0,64.01948 z"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.86000508;stroke-miterlimit:0" />
     <g
        id="g4318"
@@ -193,7 +189,7 @@
          id="g4299">
         <path
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.8816328;stroke-miterlimit:0"
-           d="m 543.20009,431.43718 v -23.11187 h 8.15766 v 23.15017"
+           d="m 543.20009,431.43718 0,-23.11187 8.15766,0 0,23.15017"
            id="path4201"
            inkscape:connector-curvature="0" />
         <path
@@ -209,7 +205,7 @@
         <path
            inkscape:connector-curvature="0"
            id="path4308"
-           d="m 543.20009,431.43718 v -23.11187 h 8.15766 v 23.15017"
+           d="m 543.20009,431.43718 0,-23.11187 8.15766,0 0,23.15017"
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.8816328;stroke-miterlimit:0" />
         <path
            sodipodi:nodetypes="ccc"
@@ -243,7 +239,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path4412"
-       d="m 71.844996,125.611 v -18.61389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 4.95035,-0.0624"
+       d="m 71.844996,125.611 0,-18.61389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 4.95035,-0.0624"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011" />
     <circle
        r="14.805359"
@@ -279,7 +275,7 @@
            sodipodi:nodetypes="cccc"
            inkscape:connector-curvature="0"
            id="path4286"
-           d="m 305.94995,370.63551 0.25254,33.08249 c 2.4412,1.30618 4.88241,1.26129 7.32361,-0.12627 V 370.2567"
+           d="m 305.94995,370.63551 0.25254,33.08249 c 2.4412,1.30618 4.88241,1.26129 7.32361,-0.12627 l 0,-33.33503"
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-opacity:1" />
         <path
            sodipodi:nodetypes="cc"
@@ -335,7 +331,7 @@
            id="rect4238"
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.77742982;stroke-miterlimit:0;stroke-opacity:1" />
         <rect
-           transform="rotate(-4.7351251)"
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,0,0)"
            y="395.60526"
            x="148.09302"
            height="6.1536069"
@@ -343,7 +339,7 @@
            id="rect4267"
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.78730243;stroke-miterlimit:0;stroke-opacity:1" />
         <rect
-           transform="rotate(-8.2972976)"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,0,0)"
            style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0;stroke-opacity:1"
            id="rect4281"
            width="35"
@@ -480,7 +476,7 @@
          xlink:href="#mastMask"
          class="mastMask"
          rigging:mast="fore"
-         transform="translate(140)"
+         transform="translate(140,0)"
          x="0"
          y="0"
          width="100%"
@@ -490,7 +486,7 @@
          xlink:href="#mastMask"
          class="mastMask"
          rigging:mast="main"
-         transform="translate(-104.88988)"
+         transform="translate(-104.88988,0)"
          x="0"
          y="0"
          width="100%"
@@ -500,7 +496,7 @@
          xlink:href="#mastMask"
          class="mastMask"
          rigging:mast="mizzen"
-         transform="translate(-300.96611)"
+         transform="translate(-300.96611,0)"
          x="0"
          y="0"
          width="100%"
@@ -635,7 +631,7 @@
          rigging:rail="backRail"
          id="g4384"
          rigging:isAcross="true"
-         transform="translate(17.200238)">
+         transform="translate(17.200238,0)">
         <circle
            r="1.0671936"
            cy="60.03199"
@@ -898,7 +894,7 @@
            cy="-88.174568"
            rx="1.0446429"
            ry="3.5267856"
-           transform="rotate(90)" />
+           transform="matrix(0,1,-1,0,0,0)" />
       </g>
       <g
          transform="translate(544,80.457108)"
@@ -907,7 +903,7 @@
          rigging:rail="onDeckFront"
          id="g830">
         <ellipse
-           transform="rotate(90)"
+           transform="matrix(0,1,-1,0,0,0)"
            ry="3.5267856"
            rx="1.0446429"
            cy="-86.174568"
@@ -950,7 +946,7 @@
          rigging:rail="backPillars"
          id="g1152">
         <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
+           transform="matrix(0,1,-1,0,-36.93955,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4231"
            ry="4.7350903"
@@ -970,7 +966,7 @@
            ry="4.7350903"
            id="ellipse4347"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+           transform="matrix(0,1,-1,0,0,0)" />
       </g>
       <g
          rigging:deck="fore"
@@ -1035,7 +1031,7 @@
          rigging:side="center"
          id="g1173">
         <ellipse
-           transform="rotate(90)"
+           transform="matrix(0,1,-1,0,0,0)"
            cx="72.708595"
            cy="-594.65826"
            rx="1.1255895"
@@ -1050,7 +1046,7 @@
          id="g1146"
          transform="translate(0,-2)">
         <ellipse
-           transform="rotate(41.161219,471.06536,-233.00369)"
+           transform="matrix(0.75286057,0.65818003,-0.65818003,0.75286057,-36.939554,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4225"
            ry="4.7350903"
@@ -1071,7 +1067,7 @@
            ry="4.7350903"
            id="ellipse4332"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(131.16122)" />
+           transform="matrix(-0.65818005,0.75286056,-0.75286056,-0.65818005,0,0)" />
       </g>
       <g
          rigging:deck="main"
@@ -1173,54 +1169,48 @@
          rigging:side="port"
          rigging:rail="sideRail"
          id="g4358">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1167"
-           transform="translate(-77.836375,5.3043213e-4)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1167"
-           id="use1169"
-           transform="translate(11.200312)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1169"
-           id="use1171"
-           width="100%"
-           height="100%"
-           transform="translate(11.200313)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1171"
-           id="use1173"
-           width="100%"
-           height="100%"
-           transform="translate(11.199374)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1173"
-           id="use1175"
-           width="100%"
-           height="100%"
-           transform="translate(11.200313)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1175"
-           id="use1177"
-           width="100%"
-           height="100%"
-           transform="translate(11.200312)" />
+        <circle
+           r="1.0671936"
+           cy="378.79221"
+           cx="324.10001"
+           id="circle4240"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           transform="translate(-36.939556,-367.63021)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4242"
+           cx="335.29999"
+           cy="378.79221"
+           r="1.0671936"
+           transform="translate(-36.939556,-367.63021)" />
+        <circle
+           r="1.0671936"
+           cy="378.79221"
+           cx="346.5"
+           id="circle4244"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           transform="translate(-36.939556,-367.63021)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4246"
+           cx="357.70001"
+           cy="378.79221"
+           r="1.0671936"
+           transform="translate(-36.939556,-367.63021)" />
+        <circle
+           r="1.0671936"
+           cy="378.79221"
+           cx="368.89999"
+           id="circle4248"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           transform="translate(-36.939556,-367.63021)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4250"
+           cx="380.10001"
+           cy="378.79221"
+           r="1.0671936"
+           transform="translate(-36.939556,-367.63021)" />
       </g>
       <g
          rigging:deck="main"
@@ -1229,60 +1219,47 @@
          id="g4383"
          transform="translate(2.8753596e-4,123.28271)">
         <circle
-           transform="rotate(-8.2972976)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
-           id="nagel"
-           cx="359.56491"
-           cy="63.717396"
-           r="0.7591235" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1180"
-           transform="translate(-77.836624)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1180"
-           id="use1182"
-           transform="translate(11.200312)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1182"
-           id="use1184"
-           width="100%"
-           height="100%"
-           transform="translate(11.200312)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1184"
-           id="use1186"
-           width="100%"
-           height="100%"
-           transform="translate(11.199375)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1186"
-           id="use1188"
-           width="100%"
-           height="100%"
-           transform="translate(11.200312)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1188"
-           id="use1190"
-           width="100%"
-           height="100%"
-           transform="translate(11.200313)" />
+           transform="translate(-36.939556,-367.63021)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4385"
+           cx="324.10001"
+           cy="378.79221"
+           r="1.0671936" />
+        <circle
+           transform="translate(-36.939556,-367.63021)"
+           r="1.0671936"
+           cy="378.79221"
+           cx="335.29999"
+           id="circle4387"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
+        <circle
+           transform="translate(-36.939556,-367.63021)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4389"
+           cx="346.5"
+           cy="378.79221"
+           r="1.0671936" />
+        <circle
+           transform="translate(-36.939556,-367.63021)"
+           r="1.0671936"
+           cy="378.79221"
+           cx="357.70001"
+           id="circle4391"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
+        <circle
+           transform="translate(-36.939556,-367.63021)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
+           id="circle4393"
+           cx="368.89999"
+           cy="378.79221"
+           r="1.0671936" />
+        <circle
+           transform="translate(-36.939556,-367.63021)"
+           r="1.0671936"
+           cy="378.79221"
+           cx="380.10001"
+           id="circle4395"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
       </g>
       <g
          rigging:deck="main"
@@ -1290,7 +1267,7 @@
          rigging:rail="aboveRail"
          id="g1155">
         <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
+           transform="matrix(0,1,-1,0,-36.93955,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4236"
            ry="4.7350903"
@@ -1310,7 +1287,7 @@
            ry="4.7350903"
            id="ellipse4425"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+           transform="matrix(0,1,-1,0,0,0)" />
       </g>
       <g
          rigging:deck="main"
@@ -1318,7 +1295,7 @@
          rigging:rail="frontPillars"
          id="g1161">
         <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
+           transform="matrix(0,1,-1,0,-36.93955,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4219"
            ry="4.7350903"
@@ -1338,7 +1315,7 @@
            ry="4.7350903"
            id="ellipse4411"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+           transform="matrix(0,1,-1,0,0,0)" />
       </g>
       <g
          rigging:deck="main"
@@ -1352,7 +1329,7 @@
            ry="4.7350903"
            id="ellipse4229"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90,165.34533,-202.28488)" />
+           transform="matrix(0,1,-1,0,-36.93955,-367.63021)" />
       </g>
       <g
          rigging:deck="main"
@@ -1360,7 +1337,7 @@
          rigging:rail="onDeckFront"
          id="g1185">
         <ellipse
-           transform="rotate(90)"
+           transform="matrix(0,1,-1,0,0,0)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4413"
            ry="4.7350903"
@@ -1555,7 +1532,7 @@
          rigging:side="center"
          id="g1194">
         <ellipse
-           transform="scale(-1)"
+           transform="scale(-1,-1)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
            id="ellipse4427"
            ry="4.7350903"
@@ -1575,7 +1552,7 @@
            ry="4.7350903"
            id="ellipse4429"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="scale(-1)" />
+           transform="scale(-1,-1)" />
       </g>
       <g
          rigging:deck="stern"
@@ -1689,7 +1666,7 @@
          rigging:rail="bulwark"
          id="g4431">
         <rect
-           transform="rotate(-30.083222)"
+           transform="matrix(0.86529824,-0.50125738,0.50125738,0.86529824,0,0)"
            style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
            id="rect4301"
            width="4.7612329"
@@ -1744,7 +1721,7 @@
            width="4.7612329"
            id="rect4451"
            style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
-           transform="rotate(-38.629673)" />
+           transform="matrix(0.78119726,-0.62428426,0.62428426,0.78119726,0,0)" />
         <rect
            style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
            id="rect4449"
@@ -1783,39 +1760,35 @@
          rigging:side="port"
          rigging:rail="sideRail"
          id="g4420"
-         transform="translate(-19.299875)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1142"
-           id="use1144"
-           transform="translate(-19.732499,1.6340624)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1144"
-           id="use1146"
-           transform="translate(6.5774996,-0.54468742)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1146"
-           id="use1148"
-           width="100%"
-           height="100%"
-           transform="translate(6.5831249,-0.54468749)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1142"
-           transform="translate(-178.81775,4.4067824)"
-           width="100%"
-           height="100%" />
+         transform="translate(-19.299875,0)">
+        <circle
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)"
+           r="0.7591235"
+           cy="400.30872"
+           cx="170.92421"
+           id="path4269"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0" />
+        <circle
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4273"
+           cx="177.5242"
+           cy="400.30872"
+           r="0.7591235" />
+        <circle
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)"
+           r="0.7591235"
+           cy="400.30872"
+           cx="184.12421"
+           id="circle4275"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0" />
+        <circle
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4277"
+           cx="190.7242"
+           cy="400.30872"
+           r="0.7591235" />
       </g>
       <g
          rigging:deck="stern"
@@ -1823,38 +1796,34 @@
          rigging:rail="sideRail"
          id="g4453"
          transform="matrix(1,0,0,-1,-19.199875,145.77061)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1158"
-           id="use1160"
-           transform="translate(-6.5774996,0.54468723)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1156"
-           id="use1158"
-           transform="translate(-6.5831245,0.54468773)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1154"
-           id="use1156"
-           transform="translate(-6.5718744,0.54468722)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1154"
-           transform="translate(-178.91775,4.4065014)"
-           width="100%"
-           height="100%" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4455"
+           cx="170.92421"
+           cy="400.30872"
+           r="0.7591235"
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)" />
+        <circle
+           r="0.7591235"
+           cy="400.30872"
+           cx="177.5242"
+           id="circle4457"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4459"
+           cx="184.12421"
+           cy="400.30872"
+           r="0.7591235"
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)" />
+        <circle
+           r="0.7591235"
+           cy="400.30872"
+           cx="190.7242"
+           id="circle4461"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           transform="matrix(0.99658697,-0.08254948,0.08254948,0.99658697,-36.939569,-367.63022)" />
       </g>
       <g
          rigging:deck="stern"
@@ -1862,46 +1831,41 @@
          rigging:rail="shroudsRail"
          id="g4413"
          transform="translate(-26.8002,0.60027673)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1117"
-           transform="translate(-250.12911,12.72475)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1119"
-           transform="translate(-231.49119,10.169552)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1119"
-           id="use1121"
-           transform="translate(6.7637599,-1.2024459)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1121"
-           id="use1123"
-           transform="translate(-12.926297,1.9539759)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1123"
-           id="use1125"
-           transform="translate(-6.0122309,0.90183462)"
-           width="100%"
-           height="100%" />
+        <circle
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4283"
+           cx="93.993889"
+           cy="409.51785"
+           r="0.7591235" />
+        <circle
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)"
+           r="0.7591235"
+           cy="409.51785"
+           cx="100.59387"
+           id="circle4285"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0" />
+        <circle
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4287"
+           cx="107.19389"
+           cy="409.51785"
+           r="0.7591235" />
+        <circle
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)"
+           r="0.7591235"
+           cy="409.51785"
+           cx="113.79388"
+           id="circle4289"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0" />
+        <circle
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4291"
+           cx="120.3939"
+           cy="409.51785"
+           r="0.7591235" />
       </g>
       <g
          rigging:deck="stern"
@@ -1909,46 +1873,41 @@
          rigging:rail="shroudsRail"
          id="g4463"
          transform="matrix(1,0,0,-1,-26.8002,145.26421)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1133"
-           id="use1135"
-           width="100%"
-           height="100%"
-           transform="translate(6.5306249,-0.95156249)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1131"
-           id="use1133"
-           width="100%"
-           height="100%"
-           transform="translate(6.5315624,-0.95249999)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1129"
-           id="use1131"
-           width="100%"
-           height="100%"
-           transform="translate(6.5306249,-0.95249998)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1127"
-           id="use1129"
-           transform="translate(6.530625,-0.95276784)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#nagel"
-           id="use1127"
-           transform="translate(-249.82836,12.875056)"
-           width="100%"
-           height="100%" />
+        <circle
+           r="0.7591235"
+           cy="409.51785"
+           cx="93.993889"
+           id="circle4465"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4467"
+           cx="100.59387"
+           cy="409.51785"
+           r="0.7591235"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)" />
+        <circle
+           r="0.7591235"
+           cy="409.51785"
+           cx="107.19389"
+           id="circle4469"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)" />
+        <circle
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           id="circle4471"
+           cx="113.79388"
+           cy="409.51785"
+           r="0.7591235"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)" />
+        <circle
+           r="0.7591235"
+           cy="409.51785"
+           cx="120.3939"
+           id="circle4473"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88175297;stroke-miterlimit:0"
+           transform="matrix(0.9895326,-0.14430953,0.14430953,0.9895326,-36.939564,-367.6302)" />
       </g>
       <g
          rigging:deck="stern"
@@ -1963,9 +1922,9 @@
            cy="119.98176"
            rx="1.0446429"
            ry="3.5267856"
-           transform="rotate(-36.151225)" />
+           transform="matrix(0.80746279,-0.5899185,0.5899185,0.80746279,0,0)" />
         <ellipse
-           transform="rotate(8.7813166)"
+           transform="matrix(0.98827822,0.15266358,-0.15266358,0.98827822,0,0)"
            ry="3.5267856"
            rx="1.0446429"
            cy="36.14402"
@@ -1980,7 +1939,7 @@
          rigging:side="starboard"
          rigging:deck="stern">
         <ellipse
-           transform="rotate(-36.151225)"
+           transform="matrix(0.80746279,-0.5899185,0.5899185,0.80746279,0,0)"
            ry="3.5267856"
            rx="1.0446429"
            cy="120.09973"
@@ -1994,7 +1953,7 @@
            cy="36.20507"
            rx="1.0446429"
            ry="3.5267856"
-           transform="rotate(8.7813166)" />
+           transform="matrix(0.98827822,0.15266358,-0.15266358,0.98827822,0,0)" />
       </g>
       <g
          rigging:deck="stern"
@@ -2011,7 +1970,7 @@
              cy="420.36639"
              rx="4.1037445"
              ry="2.5569487"
-             transform="rotate(-18.749174,-1131.8714,-71.940313)" />
+             transform="matrix(0.94693476,-0.32142581,0.32142581,0.94693476,-36.939554,-367.63021)" />
           <path
              transform="translate(-36.939556,-367.63021)"
              sodipodi:nodetypes="cc"
@@ -2055,7 +2014,7 @@
            id="g4505"
            transform="translate(-1.7500003,-4.7500008)">
           <ellipse
-             transform="rotate(-18.749174,-1131.8714,-71.940313)"
+             transform="matrix(0.94693476,-0.32142581,0.32142581,0.94693476,-36.939554,-367.63021)"
              ry="2.5569487"
              rx="4.1037445"
              cy="420.36639"
@@ -2107,7 +2066,7 @@
            ry="4.7350903"
            id="ellipse4515"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(52.792748)" />
+           transform="matrix(0.60469993,0.79645339,-0.79645339,0.60469993,0,0)" />
       </g>
       <g
          rigging:deck="stern"
