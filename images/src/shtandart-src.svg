@@ -20,6 +20,14 @@
    height="169.60001">
   <defs
      id="defs4">
+    <ellipse
+       cx="3.2068169"
+       cy="-579.79816"
+       rx="1.1255895"
+       ry="4.7350903"
+       id="the_ellipse"
+       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
+       transform="rotate(89.50973)" />
     <circle
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0"
        id="circle4449"
@@ -65,9 +73,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.7330634"
-     inkscape:cx="631.44781"
-     inkscape:cy="100.11195"
+     inkscape:zoom="2.3665317"
+     inkscape:cx="549.59812"
+     inkscape:cy="94.27264"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
@@ -75,7 +83,7 @@
      inkscape:window-x="70"
      inkscape:window-y="22"
      inkscape:window-maximized="0"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true"
      gridtolerance="1"
      objecttolerance="5"
@@ -121,6 +129,11 @@
        position="0.15769633,0.62780047"
        orientation="-0.70710678,0.70710678"
        id="guide685"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="648.47754,81.795008"
+       orientation="1,0"
+       id="guide4874"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
@@ -646,28 +659,31 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="behindFront"
-         id="g1143">
-        <ellipse
-           transform="translate(-36.939556,-367.63021)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="path4223"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="428.87585"
-           cx="685.0882" />
+         id="g1143"
+         transform="rotate(-37.874827,414.61929,-760.73969)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4877"
+           transform="rotate(-53.257505,370.23468,499.19529)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="behindFront"
-         id="g1167">
-        <ellipse
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4325"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="85.245651"
-           cx="648.14838" />
+         id="g1167"
+         transform="translate(554.9175,48.180621)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4881"
+           transform="rotate(-90.103875,355.51465,260.5783)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
@@ -1102,17 +1118,15 @@
          rigging:rail="onDeckFront"
          rigging:side="port"
          rigging:deck="fore"
-         transform="translate(542,14.176777)">
-        <ellipse
-           inkscape:tile-y0="23.456158"
-           inkscape:tile-x0="57.956545"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           id="ellipse824"
-           cx="23.537626"
-           cy="-88.174568"
-           rx="1.0446429"
-           ry="3.5267856"
-           transform="rotate(90)" />
+         transform="rotate(-36.824817,379.74635,-782.53953)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4869"
+           transform="rotate(37.610555,295.16834,-711.57514)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          transform="translate(544,80.457108)"
@@ -1120,16 +1134,14 @@
          rigging:side="starboard"
          rigging:rail="onDeckFront"
          id="g830">
-        <ellipse
-           transform="rotate(90)"
-           ry="3.5267856"
-           rx="1.0446429"
-           cy="-86.174568"
-           cx="27.537626"
-           id="ellipse828"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           inkscape:tile-x0="57.956545"
-           inkscape:tile-y0="23.456158" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4872"
+           transform="rotate(0.24101817,-6560.3201,-117563.42)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
@@ -1162,29 +1174,31 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="backPillars"
-         id="g1152">
-        <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4231"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-592.40961"
-           cx="419.05444" />
+         id="g1152"
+         transform="rotate(-40.372798,556.16675,51.16615)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4852"
+           transform="rotate(-143.42179,576.73088,28.612042)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="backPillars"
-         id="g1179">
-        <ellipse
-           cx="94.557755"
-           cy="-555.46985"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4347"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+         id="g1179"
+         transform="rotate(-39.454421,556.16741,94.299072)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4857"
+           transform="rotate(37.992708,428.47717,11.941861)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
@@ -1253,45 +1267,46 @@
          rigging:deck="fore"
          rigging:rail="atMastFront"
          rigging:side="center"
-         id="g1173">
-        <ellipse
-           transform="rotate(90)"
-           cx="72.708595"
-           cy="-594.65826"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4329"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round" />
+         id="g1173"
+         transform="rotate(-32.907321,595.98481,73.283517)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4860"
+           transform="rotate(35.278699,469.90095,61.207508)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="atMastSide"
          id="g1146"
-         transform="translate(0,-2)">
-        <ellipse
-           transform="rotate(41.161219,471.06536,-233.00369)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4225"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-89.318085"
-           cx="752.5545" />
+         transform="rotate(-32.866432,586.85203,60.658186)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4863"
+           transform="rotate(-11.815963,891.42177,-20.483239)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="atMastSide"
          id="g1176"
-         transform="translate(0,2)">
-        <ellipse
-           cx="-323.55893"
-           cy="-499.25449"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4332"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(131.16122)" />
+         transform="rotate(-42.019081,592.00549,85.767633)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4866"
+           transform="rotate(-89.96514,627.8904,36.704991)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
@@ -1502,84 +1517,84 @@
          rigging:side="port"
          rigging:rail="aboveRail"
          id="g1155">
-        <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4236"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-338.58496"
-           cx="372.73309" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4885"
+           transform="translate(-278.09684,6.6038041)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="starboard"
          rigging:rail="aboveRail"
          id="g1191">
-        <ellipse
-           cx="140.60313"
-           cy="-301.64542"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4425"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4889"
+           transform="translate(-278.1591,142.33037)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="port"
          rigging:rail="frontPillars"
          id="g1161">
-        <ellipse
-           transform="rotate(90,165.34533,-202.28488)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4219"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-408.94211"
-           cx="412.6438" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4893"
+           transform="translate(-207.8016,46.767241)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="starboard"
          rigging:rail="frontPillars"
          id="g1182">
-        <ellipse
-           cx="100.96311"
-           cy="-372.00284"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4411"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4904"
+           transform="translate(-207.8016,102.71724)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="port"
          rigging:rail="onDeckFront"
          id="g1164">
-        <ellipse
-           cx="419.78665"
-           cy="-404.20996"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4229"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(90,165.34533,-202.28488)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4897"
+           transform="translate(-212.5341,53.910054)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="starboard"
          rigging:rail="onDeckFront"
          id="g1185">
-        <ellipse
-           transform="rotate(90)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4413"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-367.27084"
-           cx="93.531448" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4901"
+           transform="translate(-212.5341,95.284741)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
@@ -1767,28 +1782,28 @@
          rigging:rail="atMastFront"
          rigging:side="center"
          id="g1194">
-        <ellipse
-           transform="scale(-1)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4427"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-72.718941"
-           cx="-351.64542" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4911"
+           transform="rotate(90,428.48806,-78.596841)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:rail="atMastBack"
          rigging:side="center"
          id="g1197">
-        <ellipse
-           cx="-315.44531"
-           cy="-72.718941"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4429"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="scale(-1)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4908"
+           transform="rotate(90,410.38822,-96.696682)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="stern"
@@ -2169,45 +2184,47 @@
          rigging:rail="atMast"
          id="g4475"
          transform="translate(5.8396738,-2.6413048)">
-        <ellipse
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           id="ellipse4331"
-           cx="63.62294"
-           cy="119.98176"
-           rx="1.0446429"
-           ry="3.5267856"
-           transform="rotate(-36.151225)" />
-        <ellipse
-           transform="rotate(8.7813166)"
-           ry="3.5267856"
-           rx="1.0446429"
-           cy="36.14402"
-           cx="145.40965"
-           id="path4329"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4831"
+           transform="rotate(-140.87873,359.53823,113.22415)"
+           width="100%"
+           height="100%"
+           inkscape:transform-center-x="0.40647554"
+           inkscape:transform-center-y="0.17590064" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4843"
+           transform="rotate(-82.912712,389.13417,279.90641)"
+           width="100%"
+           height="100%" />
       </g>
       <g
-         transform="matrix(1,0,0,-1,5.8396738,148.28737)"
+         transform="matrix(1,0,0,-1,2.4724044,149.47582)"
          id="g668"
          rigging:rail="atMast"
          rigging:side="starboard"
          rigging:deck="stern">
-        <ellipse
-           transform="rotate(-36.151225)"
-           ry="3.5267856"
-           rx="1.0446429"
-           cy="120.09973"
-           cx="63.784439"
-           id="ellipse666"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0" />
-        <ellipse
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           id="ellipse664"
-           cx="145.01433"
-           cy="36.20507"
-           rx="1.0446429"
-           ry="3.5267856"
-           transform="rotate(8.7813166)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4846"
+           transform="rotate(34.628714,244.05925,-706.10248)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4848"
+           width="100%"
+           height="100%"
+           transform="rotate(94.254838,330.5307,-178.35419)" />
       </g>
       <g
          rigging:deck="stern"
@@ -2312,30 +2329,32 @@
          rigging:side="port"
          rigging:rail="poopFlagstaff"
          id="g1200"
-         rigging:ignoreDeck="true">
-        <ellipse
-           cx="81.286194"
-           cy="0.48085806"
-           rx="1.1255895"
-           ry="4.7350903"
-           id="ellipse4515"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="rotate(52.792748)" />
+         rigging:ignoreDeck="true"
+         transform="rotate(-41.659766,48.770743,65.031512)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4807"
+           transform="translate(-531.03361,66.785984)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="stern"
          rigging:side="starboard"
          rigging:rail="poopFlagstaff"
          id="g1203"
-         rigging:ignoreDeck="true">
-        <ellipse
-           transform="matrix(0.60469992,-0.79645339,-0.79645339,-0.60469992,0,0)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="ellipse4517"
-           ry="4.7350903"
-           rx="1.1255895"
-           cy="-87.661819"
-           cx="-34.806992" />
+         rigging:ignoreDeck="true"
+         transform="rotate(-36.994078,48.374531,82.058881)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4811"
+           transform="rotate(79.632184,264.72851,-278.94115)"
+           width="100%"
+           height="100%" />
       </g>
     </g>
   </g>
