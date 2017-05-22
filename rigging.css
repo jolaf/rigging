@@ -458,7 +458,7 @@ body, button {
 	filter: url(#filterRightAnswerPoint);
 }
 
-.choiceBlock .rightAnswer {
+.choiceBlock .rightAnswer, #infoBlock .rightAnswer {
 	-webkit-filter: url(#filterRightAnswerText);
 	filter: url(#filterRightAnswerText);
 }
@@ -472,7 +472,7 @@ body, button {
 	filter: url(#filterWrongAnswerPoint);
 }
 
-.choiceBlock .wrongAnswer {
+.choiceBlock .wrongAnswer, #infoBlock .wrongAnswer {
 	-webkit-filter: url(#filterWrongAnswerText);
 	filter: url(#filterWrongAnswerText);
 }
