@@ -54,6 +54,22 @@
        cx="568.58362"
        cy="234.16173"
        r="0.7591235" />
+    <rect
+       rx="2.4000001"
+       y="138.7025"
+       x="650.73022"
+       height="9.6126099"
+       width="18.14286"
+       id="rect_big"
+       style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round" />
+    <rect
+       rx="1.3"
+       y="135.08022"
+       x="624.19617"
+       height="9.1042395"
+       width="4.7612329"
+       id="rect_small"
+       style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001" />
     <symbol
        id="mastMask">
       <path
@@ -73,9 +89,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.3665317"
-     inkscape:cx="549.59812"
-     inkscape:cy="94.27264"
+     inkscape:zoom="6.6935624"
+     inkscape:cx="432.05654"
+     inkscape:cy="140.13465"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
@@ -1317,27 +1333,12 @@
            id="g4215"
            transform="translate(-103.90384,-375.30878)">
           <path
-             sodipodi:nodetypes="ccccccccc"
-             inkscape:connector-curvature="0"
-             id="path4217"
-             d="m 510.58036,395.264 6.33928,-12.72322 -0.3125,-0.9375 0.26786,-0.98214 9.73214,0.13393 -0.0893,1.02678 -3.25892,2.63393 -11.07143,14.59821 -1.60715,0.66965"
-             style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round" />
-          <path
              style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-             d="m 510.48526,395.21936 -6.33928,-12.72322 0.3125,-0.9375 -0.26786,-0.98214 -9.73214,0.13393 0.0893,1.02678 3.25892,2.63393 11.07143,14.59821 1.60715,0.66965"
+             d="m 508.87813,398.96935 -11.07143,-14.59821 -3.25892,-2.63393 -0.0893,-1.02678 9.73214,-0.13393 0.26786,0.98214 -0.3125,0.9375 6.47634,12.88985 6.29732,-12.84521 -0.3125,-0.9375 0.26786,-0.98214 9.73214,0.13393 -0.0893,1.02678 -3.25892,2.63393 -11.07143,14.59821 -1.65468,0.64733 z"
              id="path4219"
              inkscape:connector-curvature="0"
-             sodipodi:nodetypes="ccccccccc" />
+             sodipodi:nodetypes="ccccccccccccccccc" />
         </g>
-        <rect
-           rx="2.4000001"
-           y="377.54077"
-           x="467.41071"
-           height="9.6126099"
-           width="18.14286"
-           id="rect4221"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           transform="translate(-36.939556,-367.63021)" />
         <g
            transform="translate(-36.403842,-370.66592)"
            id="g4211">
@@ -1354,6 +1355,14 @@
              d="m 510.48526,395.21936 -6.33928,-12.72322 0.3125,-0.9375 -0.26786,-0.98214 -9.73214,0.13393 0.0893,1.02678 3.25892,2.63393 11.07143,14.59821 1.60715,0.66965"
              style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round" />
         </g>
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_big"
+           id="use4809"
+           transform="translate(-220.25904,-128.79193)"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
@@ -1377,15 +1386,14 @@
              d="m 510.48526,395.21936 -6.33928,-12.72322 0.3125,-0.9375 -0.26786,-0.98214 -9.73214,0.13393 0.0893,1.02678 3.25892,2.63393 11.07143,14.59821 1.60715,0.66965"
              style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round" />
         </g>
-        <rect
-           transform="translate(-36.939556,-367.63021)"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-           id="rect4381"
-           width="18.14286"
-           height="9.6126099"
-           x="467.41071"
-           y="377.54077"
-           rx="2.4000001" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_big"
+           id="use4850"
+           transform="translate(-220.25904,-128.79208)"
+           width="100%"
+           height="100%" />
         <g
            id="g4369"
            transform="translate(-36.403842,-370.66592)">
@@ -1916,31 +1924,30 @@
          rigging:side="port"
          rigging:rail="bulwark"
          id="g4431">
-        <rect
-           transform="rotate(-30.083222)"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
-           id="rect4301"
-           width="4.7612329"
-           height="9.1042395"
-           x="106.46219"
-           y="83.956207"
-           rx="1.3" />
-        <rect
-           rx="1.3"
-           y="12.452765"
-           x="174.32468"
-           height="9.1042395"
-           width="4.7612329"
-           id="rect4299"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001" />
-        <rect
-           rx="1.3"
-           y="12.173765"
-           x="193.88367"
-           height="9.1042395"
-           width="4.7612329"
-           id="rect4293"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4854"
+           transform="translate(-430.31252,-122.90644)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4856"
+           transform="translate(-449.87149,-122.90644)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4858"
+           transform="rotate(-31.962986,177.45086,933.07438)"
+           width="100%"
+           height="100%" />
         <g
            transform="matrix(0.76687964,0,0,0.76687964,-178.84901,-283.25254)"
            id="g4333">
@@ -1964,31 +1971,30 @@
          rigging:rail="bulwark"
          id="g4439"
          transform="matrix(1,0,0,-1,7.6282286e-5,145.59054)">
-        <rect
-           rx="1.3"
-           y="99.339127"
-           x="93.193863"
-           height="9.1042395"
-           width="4.7612329"
-           id="rect4451"
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
-           transform="rotate(-38.629673)" />
-        <rect
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
-           id="rect4449"
-           width="4.7612329"
-           height="9.1042395"
-           x="174.5246"
-           y="12.35253"
-           rx="1.3" />
-        <rect
-           style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
-           id="rect4447"
-           width="4.7612329"
-           height="9.1042395"
-           x="194.58359"
-           y="12.274533"
-           rx="1.3" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4861"
+           transform="translate(-430.31252,-122.90624)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4864"
+           transform="translate(-449.67187,-122.90644)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#rect_small"
+           id="use4867"
+           transform="rotate(-39.713927,219.14658,755.9997)"
+           width="100%"
+           height="100%" />
         <g
            id="g4441"
            transform="matrix(0.76687964,0,0,0.76687964,-177.54909,-282.85241)">
