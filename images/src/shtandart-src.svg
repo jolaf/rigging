@@ -165,6 +165,38 @@
          id="path91"
          inkscape:connector-curvature="0" />
     </symbol>
+    <g
+       id="duck"
+       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
+       style="stroke:#000000;stroke-width:0.99573284;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1.39999998;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke">
+      <g
+         id="g4797"
+         style="stroke:#000000;stroke-width:0.99573284;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1.39999998;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke">
+        <path
+           sodipodi:nodetypes="ccccccccccc"
+           inkscape:connector-curvature="0"
+           id="path4793"
+           d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99573284;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1.39999998;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke" />
+      </g>
+    </g>
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1.39999998;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="duck-rect"
+       width="3.3489215"
+       height="13.395686"
+       x="396.50137"
+       y="72.318771"
+       ry="0.924375" />
+    <rect
+       style="opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:1.39999998;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="duck-rect-big"
+       width="23.517138"
+       height="4.0828366"
+       x="529.23828"
+       y="-2.5727212"
+       transform="scale(1,-1)"
+       ry="0.924375" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -173,14 +205,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="19.332963"
-     inkscape:cy="72.482173"
+     inkscape:zoom="2.0295712"
+     inkscape:cx="166.87115"
+     inkscape:cy="82.304914"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="1850"
-     inkscape:window-height="1155"
-     inkscape:window-x="70"
+     inkscape:window-width="1386"
+     inkscape:window-height="855"
+     inkscape:window-x="54"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      showguides="true"
@@ -192,7 +224,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g4497">
+     inkscape:current-layer="g4357">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
@@ -1417,17 +1449,17 @@
         <use
            x="0"
            y="0"
-           xlink:href="#rect_big"
-           id="use4809"
-           transform="translate(-220.25904,-128.79193)"
+           xlink:href="#the_V_big"
+           id="use4855"
+           transform="translate(-249.57409,-121.50217)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_big"
-           id="use4855"
-           transform="translate(-249.57409,-121.50217)"
+           xlink:href="#duck-rect-big"
+           id="use4944"
+           transform="rotate(3.5593655,343.77141,-1605.8695)"
            width="100%"
            height="100%" />
       </g>
@@ -1444,21 +1476,22 @@
            id="use4862"
            transform="translate(-182.07445,-116.85947)"
            width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#rect_big"
-           id="use4850"
-           transform="translate(-220.25904,-128.79208)"
-           width="100%"
-           height="100%" />
+           height="100%"
+           style="stroke:#000000;stroke-opacity:1;stroke-width:0.93749999;stroke-miterlimit:4;stroke-dasharray:none" />
         <use
            x="0"
            y="0"
            xlink:href="#the_V_big"
            id="use4865"
            transform="translate(-249.57409,-121.50217)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck-rect-big"
+           id="use4941"
+           transform="rotate(3.4826045,302.92097,-1640.2734)"
            width="100%"
            height="100%" />
       </g>
@@ -1922,25 +1955,25 @@
         <use
            x="0"
            y="0"
-           xlink:href="#rect_small"
+           xlink:href="#duck"
            id="use4854"
-           transform="translate(-430.31252,-122.90644)"
+           transform="translate(161.55659,8.7764841)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#rect_small"
-           id="use4856"
-           transform="translate(-449.87149,-122.90644)"
+           xlink:href="#duck"
+           id="use4873"
+           transform="translate(141.11662,9.7003251)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#rect_small"
-           id="use4858"
-           transform="rotate(-31.962986,177.45086,933.07438)"
+           xlink:href="#duck-rect"
+           id="use4925"
+           transform="rotate(-30.639507,163.35185,524.29833)"
            width="100%"
            height="100%" />
       </g>
@@ -1953,33 +1986,33 @@
         <use
            x="0"
            y="0"
-           xlink:href="#rect_small"
-           id="use4861"
-           transform="translate(-430.31252,-122.90624)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#rect_small"
-           id="use4864"
-           transform="translate(-449.67187,-122.90644)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#rect_small"
-           id="use4867"
-           transform="rotate(-39.713927,219.14658,755.9997)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
            xlink:href="#the_V_small"
            id="use4874"
            transform="translate(-447.55381,-117.96327)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck"
+           id="use4891"
+           transform="translate(141.11662,10.393205)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck"
+           id="use4903"
+           transform="translate(161.55632,9.0074451)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck-rect"
+           id="use4928"
+           transform="rotate(-30.639507,163.35185,524.29833)"
            width="100%"
            height="100%" />
       </g>
@@ -2213,7 +2246,7 @@
            y="0"
            xlink:href="#the_V_small"
            id="use4879"
-           transform="rotate(-10.502656,-187.57209,3360.7685)"
+           transform="rotate(-10.502656,-196.48266,3361.2166)"
            width="100%"
            height="100%" />
         <use
@@ -2222,6 +2255,14 @@
            xlink:href="#strange_on_hut"
            id="use4797"
            transform="translate(-616.125,-26.624413)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck"
+           id="use4910"
+           transform="rotate(82.738926,20.794516,17.871831)"
            width="100%"
            height="100%" />
       </g>
@@ -2246,6 +2287,14 @@
            xlink:href="#strange_on_hut"
            id="use4859"
            transform="translate(-616.125,-25.78125)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#duck"
+           id="use4915"
+           transform="rotate(-102.6708,43.179969,22.378867)"
            width="100%"
            height="100%" />
       </g>
