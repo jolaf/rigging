@@ -19,6 +19,18 @@ function applyNew(f, args) {
     return new (f.bind.apply(f, [null].concat(args)))();
 }
 
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function (searchString, position) {
+        return this.substr(0, searchString.length) === searchString;
+    };
+}
+
+if (!String.prototype.endsWith) {
+    String.prototype.endsWith = function (searchString, position) {
+        return this.lastIndexOf(searchString) === this.length - searchString.length;
+    };
+}
+
 String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
 };
