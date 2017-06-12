@@ -11,13 +11,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   viewBox="-2 -7 679 159"
+   viewBox="-2 -11 659 125.58572"
    version="1.1"
-   inkscape:version="0.92.1 r"
-   sodipodi:docname="shtandart-src.svg"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="shtandart-src2.svg"
    id="svg993"
-   width="724.26666"
-   height="169.60001">
+   width="659"
+   height="149">
   <defs
      id="defs4">
     <ellipse
@@ -205,16 +205,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.56"
-     inkscape:cx="641.41992"
-     inkscape:cy="60.137698"
+     inkscape:zoom="1.8101934"
+     inkscape:cx="340.62933"
+     inkscape:cy="-4.6118805"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="1385"
-     inkscape:window-height="855"
-     inkscape:window-x="55"
-     inkscape:window-y="23"
-     inkscape:window-maximized="0"
+     inkscape:window-width="2560"
+     inkscape:window-height="1537"
+     inkscape:window-x="1672"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
      showguides="true"
      inkscape:guide-bbox="true"
      gridtolerance="1"
@@ -224,9 +224,12 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g5007"
+     inkscape:current-layer="layer2"
      inkscape:measure-start="653.516,44.8242"
-     inkscape:measure-end="653.516,53.9063">
+     inkscape:measure-end="653.516,53.9063"
+     viewbox-y="-11"
+     viewbox-x="-2"
+     viewbox-height="118">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
@@ -280,7 +283,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer1"
-     inkscape:label="drawing">
+     inkscape:label="drawing"
+     transform="translate(0,-20.599997)">
     <path
        inkscape:connector-curvature="0"
        id="path4304"
@@ -588,7 +592,8 @@
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="deckMasks"
-     style="display:none">
+     style="display:none"
+     transform="translate(0,-20.599997)">
     <g
        id="deckMasks"
        class="modeDependent which"
@@ -598,7 +603,7 @@
          xlink:href="#deckMask"
          class="deckMask"
          rigging:deck="fore"
-         transform="matrix(0.80532315,0,0,1,274.68923,0)"
+         transform="matrix(0.71904322,0,0,1,298.61194,0)"
          x="0"
          y="0"
          width="100%"
@@ -628,7 +633,8 @@
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="mastMasks"
-     style="display:none">
+     style="display:none"
+     transform="translate(0,-20.599997)">
     <g
        id="mastMasks"
        class="modeDependent where"
@@ -668,7 +674,8 @@
   <g
      inkscape:groupmode="layer"
      id="layer4"
-     inkscape:label="points">
+     inkscape:label="points"
+     transform="translate(0,-20.599997)">
     <g
        id="points"
        transform="translate(0.02029647,-7.1415848e-6)"
