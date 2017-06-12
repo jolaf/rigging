@@ -205,14 +205,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0295712"
-     inkscape:cx="166.87115"
-     inkscape:cy="82.304914"
+     inkscape:zoom="2.56"
+     inkscape:cx="560.14818"
+     inkscape:cy="133.42491"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="1386"
+     inkscape:window-width="1385"
      inkscape:window-height="855"
-     inkscape:window-x="54"
+     inkscape:window-x="55"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      showguides="true"
@@ -224,7 +224,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g4357">
+     inkscape:current-layer="points">
     <inkscape:grid
        type="xygrid"
        id="grid4394"
@@ -262,6 +262,11 @@
        orientation="1,0"
        id="guide4874"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="695.06835,139.89258"
+       orientation="0.064728883,0.99790289"
+       id="guide4796"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -291,8 +296,8 @@
        id="path4288"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-       d="m 645.67003,27.85699 -8.03571,-2.125 c -0.162,31.11554 -0.0623,65.64444 0,94.11768 l 8.03571,-2.125 c 0,-29.95589 0,-59.91179 0,-89.86768 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.97801447;stroke-miterlimit:0"
+       d="m 645.62101,16.319117 -8.55625,-2.551855 c -0.16012,38.870228 0.0671,82.382227 0.12814,117.951738 l 8.42811,-3.13515 z"
        id="path4294"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
@@ -341,7 +346,7 @@
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.86000508;stroke-miterlimit:0" />
     <g
        id="g4318"
-       transform="translate(-19.519496,-367.63021)">
+       transform="translate(-40.050316,-367.63021)">
       <g
          id="g4299">
         <path
@@ -423,10 +428,10 @@
            inkscape:tile-w="675.19792"
            inkscape:tile-cy="18.021847"
            inkscape:tile-cx="337.55918"
-           sodipodi:nodetypes="cc"
+           sodipodi:nodetypes="cccc"
            inkscape:connector-curvature="0"
            id="path4399"
-           d="M 37.018505,398.01795 C 260,362.3622 560,352.3622 711.97897,403.16063"
+           d="M 37.018505,398.01795 C 191.60907,373.29822 384.77,360.82825 538.40869,372.4819 m 135.52685,9.71247 c 17.53418,2.49051 23.2016,3.45638 38.27439,8.49441"
            style="fill-rule:evenodd;stroke-width:1px" />
         <path
            sodipodi:nodetypes="cccc"
@@ -458,17 +463,17 @@
            id="path4302"
            d="m 279.05464,404.98069 c 11.72159,2.0062 20.14897,-0.13337 26.89531,-4.41941"
            style="fill-rule:evenodd;stroke-width:1px" />
-        <rect
-           y="393.49634"
-           x="565.06024"
-           height="8.1077414"
-           width="109.463"
+        <path
+           transform="rotate(3.8619435)"
+           style="fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-miterlimit:0;stroke-dasharray:none;stroke-opacity:1"
+           d="m 559.78345,335.37296 138.3132,-0.1861 0.45056,7.89044 -138.29544,-0.11987 z"
            id="rect4158"
-           style="fill-rule:evenodd;stroke-width:0.88;stroke-miterlimit:0" />
+           inkscape:connector-curvature="0"
+           sodipodi:nodetypes="ccccc" />
         <rect
-           transform="matrix(0.9999985,-0.00173311,0.00207909,0.99999784,0,0)"
-           y="387.06268"
-           x="578.03949"
+           transform="matrix(0.99775733,0.06693505,-0.06658984,0.99778043,0,0)"
+           y="327.75925"
+           x="572.58405"
            height="5.6153321"
            width="57.041946"
            id="rect4272"
@@ -521,17 +526,19 @@
            class="filled" />
         <g
            id="g4442"
-           transform="translate(36.318796,367.62096)">
+           transform="translate(15.037579,366.49632)">
           <path
              inkscape:connector-curvature="0"
              id="path4436"
-             d="m 496.59123,4.621966 -0.22674,28.34193 h 24.9409"
-             style="fill-rule:evenodd;stroke-width:1px;stroke-linejoin:round" />
+             d="m 496.59123,4.621966 -0.22674,27.306129 24.9409,1.035801"
+             style="fill-rule:evenodd;stroke-width:1px;stroke-linejoin:round"
+             sodipodi:nodetypes="ccc" />
           <path
              inkscape:connector-curvature="0"
              id="path4438"
-             d="M 512.91618,32.73716 V 5.982379"
-             style="fill-rule:evenodd;stroke-width:1px" />
+             d="M 512.91618,32.73716 V 5.6070205"
+             style="fill-rule:evenodd;stroke-width:1px"
+             sodipodi:nodetypes="cc" />
           <path
              inkscape:connector-curvature="0"
              id="path4440"
@@ -575,7 +582,7 @@
     <path
        inkscape:connector-curvature="0"
        id="path4434"
-       d="M 521.10634,139.171 521.03594,6.747"
+       d="M 499.07521,140.5775 499.00481,4.684068"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05588222px"
        sodipodi:nodetypes="cc" />
   </g>
@@ -680,7 +687,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4878"
-           transform="translate(75.828368,122.99529)"
+           transform="translate(75.828368,120.55795)"
            width="100%"
            height="100%" />
         <use
@@ -688,7 +695,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4880"
-           transform="translate(75.828368,115.39591)"
+           transform="translate(75.828368,111.36483)"
            width="100%"
            height="100%" />
         <use
@@ -696,7 +703,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4882"
-           transform="translate(75.828368,107.7956)"
+           transform="translate(75.828368,102.63951)"
            width="100%"
            height="100%" />
         <use
@@ -704,7 +711,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4886"
-           transform="translate(75.828328,100.19529)"
+           transform="translate(75.828328,94.007952)"
            width="100%"
            height="100%" />
         <use
@@ -712,7 +719,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4884"
-           transform="translate(38.624393,81.433305)"
+           transform="translate(38.624393,74.589442)"
            width="100%"
            height="100%" />
         <use
@@ -720,7 +727,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4888"
-           transform="translate(75.828328,85.570249)"
+           transform="translate(75.828328,77.695452)"
            width="100%"
            height="100%" />
       </g>
@@ -736,7 +743,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4892"
-           transform="translate(75.828238,92.595642)"
+           transform="translate(75.828238,90.720756)"
            width="100%"
            height="100%" />
         <use
@@ -744,7 +751,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4894"
-           transform="translate(75.828238,100.19598)"
+           transform="translate(75.828238,100.28982)"
            width="100%"
            height="100%" />
         <use
@@ -752,7 +759,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4896"
-           transform="translate(75.828238,107.79535)"
+           transform="translate(75.828238,109.38919)"
            width="100%"
            height="100%" />
         <use
@@ -760,7 +767,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4898"
-           transform="translate(75.828238,115.39566)"
+           transform="translate(75.828238,118.39576)"
            width="100%"
            height="100%" />
         <use
@@ -768,7 +775,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4900"
-           transform="translate(38.624562,111.83318)"
+           transform="translate(38.624562,116.14568)"
            width="100%"
            height="100%" />
         <use
@@ -776,7 +783,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4902"
-           transform="translate(75.828238,129.63254)"
+           transform="translate(75.828238,136.00763)"
            width="100%"
            height="100%" />
       </g>
@@ -800,7 +807,7 @@
          rigging:side="starboard"
          rigging:rail="behindFront"
          id="g1167"
-         transform="translate(554.9175,48.180621)">
+         transform="translate(555.29284,48.180621)">
         <use
            x="0"
            y="0"
@@ -816,7 +823,7 @@
          rigging:rail="backRail"
          id="g4384"
          rigging:isAcross="true"
-         transform="translate(17.200238)">
+         transform="translate(-2.8623004)">
         <use
            x="0"
            y="0"
@@ -847,7 +854,7 @@
          rigging:side="starboard"
          rigging:rail="backRail"
          id="g4349"
-         transform="translate(17.20025,41.0122)"
+         transform="translate(-2.8623004,41.0122)"
          rigging:isAcross="true">
         <use
            x="0"
@@ -879,13 +886,13 @@
          rigging:side="port"
          rigging:rail="sideRail"
          id="g4304"
-         transform="translate(1.4005995,0.14005995)">
+         transform="rotate(3.8684716,821.86824,-178.44307)">
         <use
            x="0"
            y="0"
            xlink:href="#nagel-hole"
            id="use4812"
-           transform="translate(23.971053,72.673053)"
+           transform="translate(43.602168,72.567123)"
            width="100%"
            height="100%" />
         <use
@@ -893,7 +900,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4814"
-           transform="translate(55.075628,83.83544)"
+           transform="translate(72.068692,83.625911)"
            width="100%"
            height="100%" />
         <use
@@ -901,7 +908,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4816"
-           transform="translate(4.0022936,72.673053)"
+           transform="translate(16.680541,72.567489)"
            width="100%"
            height="100%" />
         <use
@@ -909,7 +916,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4818"
-           transform="translate(11.027894,72.673053)"
+           transform="translate(25.215494,72.653739)"
            width="100%"
            height="100%" />
         <use
@@ -917,7 +924,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4820"
-           transform="translate(34.638178,83.83544)"
+           transform="translate(45.526321,83.662647)"
            width="100%"
            height="100%" />
         <use
@@ -925,7 +932,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4822"
-           transform="translate(28.356938,83.83544)"
+           transform="translate(36.806553,83.733599)"
            width="100%"
            height="100%" />
         <use
@@ -933,7 +940,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4824"
-           transform="translate(21.981928,83.83544)"
+           transform="translate(27.70687,83.730639)"
            width="100%"
            height="100%" />
         <use
@@ -941,7 +948,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4826"
-           transform="translate(-21.591456,72.673053)"
+           transform="translate(-18.211461,72.632295)"
            width="100%"
            height="100%" />
         <use
@@ -949,7 +956,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4828"
-           transform="translate(8.950678,83.82606)"
+           transform="translate(10.260097,83.737724)"
            width="100%"
            height="100%" />
         <use
@@ -957,7 +964,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4830"
-           transform="translate(-34.622705,72.67306)"
+           transform="translate(-35.931886,72.761245)"
            width="100%"
            height="100%" />
         <use
@@ -965,7 +972,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4832"
-           transform="translate(-3.049312,83.8261)"
+           transform="translate(-7.6581765,83.761658)"
            width="100%"
            height="100%" />
         <use
@@ -973,7 +980,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4834"
-           transform="translate(-46.435205,72.67306)"
+           transform="translate(-52.721447,72.815974)"
            width="100%"
            height="100%" />
         <use
@@ -981,7 +988,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4836"
-           transform="translate(-52.903955,72.67306)"
+           transform="translate(-60.218804,72.886015)"
            width="100%"
            height="100%" />
         <use
@@ -989,7 +996,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4838"
-           transform="translate(-65.747688,72.67306)"
+           transform="translate(-75.41386,72.856414)"
            width="100%"
            height="100%" />
         <use
@@ -997,7 +1004,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4840"
-           transform="translate(-22.174322,83.82618)"
+           transform="translate(-30.530451,83.921379)"
            width="100%"
            height="100%" />
         <use
@@ -1005,7 +1012,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4842"
-           transform="translate(-34.549332,83.82618)"
+           transform="translate(-46.566119,83.980568)"
            width="100%"
            height="100%" />
       </g>
@@ -1145,7 +1152,7 @@
            height="100%" />
       </g>
       <g
-         transform="translate(-36.939556,-367.63051)"
+         transform="rotate(3.7694487,6449.379,-813.22967)"
          id="g5102"
          rigging:deck="fore"
          rigging:side="port"
@@ -1443,7 +1450,7 @@
            y="0"
            xlink:href="#the_V_big"
            id="use4844"
-           transform="translate(-182.07435,-116.83438)"
+           transform="translate(-202.7931,-121.45358)"
            width="100%"
            height="100%" />
         <use
@@ -1451,7 +1458,7 @@
            y="0"
            xlink:href="#the_V_big"
            id="use4855"
-           transform="translate(-249.57409,-121.50217)"
+           transform="translate(-270.82242,-123.34985)"
            width="100%"
            height="100%" />
         <use
@@ -1459,7 +1466,7 @@
            y="0"
            xlink:href="#duck-rect-big"
            id="use4944"
-           transform="rotate(3.5593655,343.77141,-1605.8695)"
+           transform="rotate(3.5593655,385.39445,-1942.5115)"
            width="100%"
            height="100%" />
       </g>
@@ -1474,16 +1481,16 @@
            y="0"
            xlink:href="#the_V_big"
            id="use4862"
-           transform="translate(-182.07445,-116.85947)"
+           transform="translate(-203.25513,-120.09291)"
            width="100%"
            height="100%"
-           style="stroke:#000000;stroke-opacity:1;stroke-width:0.93749999;stroke-miterlimit:4;stroke-dasharray:none" />
+           style="stroke:#000000;stroke-width:0.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
         <use
            x="0"
            y="0"
            xlink:href="#the_V_big"
            id="use4865"
-           transform="translate(-249.57409,-121.50217)"
+           transform="translate(-270.82289,-121.50217)"
            width="100%"
            height="100%" />
         <use
@@ -1491,7 +1498,7 @@
            y="0"
            xlink:href="#duck-rect-big"
            id="use4941"
-           transform="rotate(3.4826045,302.92097,-1640.2734)"
+           transform="rotate(3.4826045,352.36495,-2014.9189)"
            width="100%"
            height="100%" />
       </g>
