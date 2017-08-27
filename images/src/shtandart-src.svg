@@ -25,7 +25,7 @@
        id="circle4449"
        cx="160.87129"
        cy="398.09106"
-       r="5.3709264" />
+       r="4" />
     <ellipse
        cx="3.7214081"
        cy="-575.37415"
@@ -205,14 +205,14 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.8101934"
-     inkscape:cx="425.48505"
-     inkscape:cy="63.227991"
+     inkscape:zoom="2.83"
+     inkscape:cx="160.61103"
+     inkscape:cy="66.077385"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="1385"
-     inkscape:window-height="855"
-     inkscape:window-x="55"
+     inkscape:window-width="1847"
+     inkscape:window-height="1126"
+     inkscape:window-x="73"
      inkscape:window-y="23"
      inkscape:window-maximized="0"
      showguides="true"
@@ -224,7 +224,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g4357"
+     inkscape:current-layer="portDrawing"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -268,9 +268,24 @@
        id="guide4803"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="311.56892,122.69013"
-       orientation="-0.032012088,0.99948748"
-       id="guide4840"
+       position="407.81249,62.555805"
+       orientation="0,1"
+       id="guide4808"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="376.56281,124.44467"
+       orientation="0,1"
+       id="guide4810"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="108.21555,113.91974"
+       orientation="-0.10312625,0.99466827"
+       id="guide4811"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="108.00244,11.266949"
+       orientation="0.10419166,0.99455724"
+       id="guide4815"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
@@ -298,7 +313,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05588222px"
-       d="M 241.95325,140.29824 241.8505,107.81487 M 241.79011,37.7648 241.8138,4.2885"
+       d="M 241.95325,140.82828 241.8505,107.72653 M 241.79011,37.7648 241.8138,4.2885"
        id="path4288"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
@@ -399,8 +414,8 @@
        cy="72.837814"
        r="14.805359" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.84505069;stroke-miterlimit:0"
-       d="m 603.68097,35.940971 h 6.68695 l -0.18311,74.036329 h -6.59539 z"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.91852725;stroke-miterlimit:0"
+       d="m 603.73443,35.977709 h 7.9082 l -0.21655,73.962851 h -7.79992 z"
        id="rect4333"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
@@ -500,20 +515,21 @@
            sodipodi:nodetypes="ccccc" />
         <rect
            transform="rotate(-4.7351251)"
-           y="395.60526"
-           x="148.09302"
+           y="395.5506"
+           x="141.37463"
            height="6.1536069"
            width="27.592697"
            id="rect4267"
            style="fill-rule:evenodd;stroke-width:0.78730243;stroke-miterlimit:0" />
         <rect
-           transform="rotate(-8.2972976)"
-           style="fill-rule:evenodd;stroke-width:0.88;stroke-miterlimit:0"
+           transform="matrix(0.99404204,-0.10899732,0.15106094,0.98852445,0,0)"
+           style="fill-rule:evenodd;stroke-width:0.9215799;stroke-miterlimit:0"
            id="rect4281"
-           width="35"
-           height="6.0609107"
-           x="62.830605"
-           y="403.15234" />
+           width="42.940006"
+           height="5.5987296"
+           x="62.236431"
+           y="390.32986"
+           ry="0" />
         <rect
            y="412.18246"
            x="582.48383"
@@ -557,7 +573,7 @@
            y="0"
            xlink:href="#circle4449"
            id="use11166"
-           transform="translate(2.791898,-9.5277809)"
+           transform="translate(-10.108028,-8.4279975)"
            width="100%"
            height="100%" />
         <use
@@ -571,9 +587,9 @@
         <use
            x="0"
            y="0"
-           xlink:href="#use11168"
+           xlink:href="#circle4449"
            id="use11170"
-           transform="translate(-45.920002,3.1660001)"
+           transform="translate(59.279972,-14.233998)"
            width="100%"
            height="100%" />
       </g>
@@ -747,14 +763,14 @@
          rigging:side="starboard"
          rigging:rail="frontRail"
          id="g4312"
-         transform="translate(3.1976551e-4,40.250008)"
+         transform="translate(3.1976551e-4,41.650111)"
          rigging:isAcross="true">
         <use
            x="0"
            y="0"
            xlink:href="#nagel"
            id="use4892"
-           transform="translate(75.828238,90.720756)"
+           transform="translate(75.828238,93.32063)"
            width="100%"
            height="100%" />
         <use
@@ -762,7 +778,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4894"
-           transform="translate(75.828238,100.28982)"
+           transform="translate(75.828238,101.88963)"
            width="100%"
            height="100%" />
         <use
@@ -770,7 +786,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4896"
-           transform="translate(75.828238,109.38919)"
+           transform="translate(75.828238,110.58963)"
            width="100%"
            height="100%" />
         <use
@@ -778,7 +794,7 @@
            y="0"
            xlink:href="#nagel"
            id="use4898"
-           transform="translate(75.828238,118.39576)"
+           transform="translate(75.828238,119.39563)"
            width="100%"
            height="100%" />
         <use
@@ -786,7 +802,7 @@
            y="0"
            xlink:href="#nagel-hole"
            id="use4900"
-           transform="translate(20.680226,23.494314)"
+           transform="translate(20.680226,23.994376)"
            width="100%"
            height="100%" />
         <use
@@ -802,14 +818,13 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="behindFront"
-         id="g1143"
-         transform="rotate(-37.874827,409.2906,-762.56789)">
+         id="g1143">
         <use
            x="0"
            y="0"
            xlink:href="#the_ellipse"
            id="use4877"
-           transform="rotate(-53.257505,367.47408,495.06434)"
+           transform="rotate(-89.099613,642.29657,-8.3335647)"
            width="100%"
            height="100%" />
       </g>
@@ -817,14 +832,13 @@
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="behindFront"
-         id="g1167"
-         transform="translate(555.29284,47.337171)">
+         id="g1167">
         <use
            x="0"
            y="0"
            xlink:href="#the_ellipse"
            id="use4881"
-           transform="rotate(-90.103875,353.02923,258.64881)"
+           transform="rotate(-90.103875,656.23271,6.8018431)"
            width="100%"
            height="100%" />
       </g>
@@ -1155,29 +1169,28 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="frontFists"
-         id="g1149"
-         transform="matrix(0.83669509,0,0,0.96453845,99.122085,-1.0781649)">
+         id="g1149">
         <rect
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.91269189;stroke-miterlimit:0"
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.91446865;stroke-miterlimit:0"
            id="rect4199"
-           width="7.8053365"
-           height="7.8053365"
-           x="603.07367"
-           y="47.748638" />
+           width="7.8205314"
+           height="7.8205314"
+           x="603.70392"
+           y="44.940098" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="frontFists"
          id="g1170"
-         transform="matrix(0.77649093,0,0,0.97856321,135.61314,9.7517265)">
+         transform="translate(-0.0999806,4.9444451e-6)">
         <rect
-           y="85.274513"
-           x="602.97021"
-           height="8.0121279"
-           width="8.0121279"
+           y="93.177094"
+           x="603.70392"
+           height="7.8205314"
+           width="7.8205314"
            id="rect4327"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.93687236;stroke-miterlimit:0" />
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.91446865;stroke-miterlimit:0" />
       </g>
       <g
          rigging:deck="fore"
@@ -1500,7 +1513,7 @@
            y="0"
            xlink:href="#the_ellipse"
            id="use4885"
-           transform="translate(-273.67742,6.0513769)"
+           transform="rotate(-2.2865559,590.15954,6858.6339)"
            width="100%"
            height="100%" />
       </g>
@@ -1509,7 +1522,7 @@
          rigging:side="starboard"
          rigging:rail="aboveRail"
          id="g1191"
-         transform="translate(0,0.49966103)">
+         transform="rotate(4.400361,295.14251,140.82573)">
         <use
            x="0"
            y="0"
@@ -1625,17 +1638,15 @@
         <circle
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
            id="circle4243"
-           cx="328.12"
-           cy="429.04721"
-           r="1.0671936"
-           transform="translate(-36.939556,-367.63021)" />
+           cx="291.18045"
+           cy="60.216999"
+           r="1.0671936" />
         <circle
            r="1.0671936"
-           cy="421.4072"
-           cx="328.12"
+           cy="51.376999"
+           cx="291.18045"
            id="circle4245"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
-           transform="translate(-36.939556,-367.63021)" />
+           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
       </g>
       <g
          rigging:deck="main"
@@ -1652,18 +1663,16 @@
            cy="421.4072"
            r="1.0671936" />
         <circle
-           transform="translate(-36.939556,-367.63021)"
            r="1.0671936"
-           cy="429.04721"
-           cx="328.12"
+           cy="62.616997"
+           cx="291.18045"
            id="circle4419"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
         <circle
-           transform="translate(-36.939556,-367.63021)"
            style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
            id="circle4417"
-           cx="328.12"
-           cy="436.60721"
+           cx="291.18045"
+           cy="71.376999"
            r="1.0671936" />
       </g>
       <g
@@ -1844,7 +1853,7 @@
            y="0"
            xlink:href="#the_V_small"
            id="use4871"
-           transform="translate(-447.55381,-118.36333)"
+           transform="rotate(-4.6148401,-1022.5027,5605.0144)"
            width="100%"
            height="100%" />
         <use
@@ -1852,7 +1861,7 @@
            y="0"
            xlink:href="#duck"
            id="use4854"
-           transform="translate(161.55659,8.7764841)"
+           transform="rotate(-6.8377463,187.9971,-1316.393)"
            width="100%"
            height="100%" />
         <use
@@ -1860,7 +1869,7 @@
            y="0"
            xlink:href="#duck"
            id="use4873"
-           transform="translate(141.11662,9.7003251)"
+           transform="rotate(-6.8377463,189.9022,-1137.3752)"
            width="100%"
            height="100%" />
         <use
@@ -1868,7 +1877,7 @@
            y="0"
            xlink:href="#duck-rect"
            id="use4925"
-           transform="rotate(-30.639507,163.35185,524.29833)"
+           transform="rotate(-30.639507,159.92897,541.8049)"
            width="100%"
            height="100%" />
       </g>
@@ -1883,7 +1892,7 @@
            y="0"
            xlink:href="#the_V_small"
            id="use4874"
-           transform="translate(-447.55381,-117.96327)"
+           transform="rotate(-4.594098,-1035.1916,5629.7915)"
            width="100%"
            height="100%" />
         <use
@@ -1891,7 +1900,7 @@
            y="0"
            xlink:href="#duck"
            id="use4891"
-           transform="translate(141.11662,10.393205)"
+           transform="rotate(-12.841199,152.2112,-599.65069)"
            width="100%"
            height="100%" />
         <use
@@ -1899,7 +1908,7 @@
            y="0"
            xlink:href="#duck"
            id="use4903"
-           transform="translate(161.55632,9.0074451)"
+           transform="rotate(-11.307023,160.26693,-791.33182)"
            width="100%"
            height="100%" />
         <use
@@ -1907,7 +1916,7 @@
            y="0"
            xlink:href="#duck-rect"
            id="use4928"
-           transform="rotate(-30.639507,163.35185,524.29833)"
+           transform="rotate(-30.639507,159.92914,541.8051)"
            width="100%"
            height="100%" />
       </g>
@@ -1916,7 +1925,7 @@
          rigging:side="port"
          rigging:rail="sideRail"
          id="g4420"
-         transform="translate(-19.299875)">
+         transform="translate(-25.699996,0.40036963)">
         <use
            x="0"
            y="0"
@@ -1955,7 +1964,7 @@
          rigging:side="starboard"
          rigging:rail="sideRail"
          id="g4453"
-         transform="matrix(1,0,0,-1,-19.199875,145.77061)">
+         transform="matrix(1,0,0,-1,-25.599996,145.07082)">
         <use
            x="0"
            y="0"
@@ -1998,9 +2007,9 @@
         <use
            x="0"
            y="0"
-           xlink:href="#nagel"
-           id="use1117"
-           transform="translate(-450.79407,77.930258)"
+           xlink:href="#use1119"
+           id="use1121"
+           transform="translate(8.0640329,-0.9030018)"
            width="100%"
            height="100%" />
         <use
@@ -2008,15 +2017,7 @@
            y="0"
            xlink:href="#nagel"
            id="use1119"
-           transform="translate(-432.15615,75.375077)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1119"
-           id="use1121"
-           transform="translate(6.7637599,-1.2024459)"
+           transform="translate(-424.256,64.275464)"
            width="100%"
            height="100%" />
         <use
@@ -2024,7 +2025,7 @@
            y="0"
            xlink:href="#use1121"
            id="use1123"
-           transform="translate(-12.926297,1.9539759)"
+           transform="translate(-16.927009,1.8540021)"
            width="100%"
            height="100%" />
         <use
@@ -2032,7 +2033,15 @@
            y="0"
            xlink:href="#use1123"
            id="use1125"
-           transform="translate(-6.0122309,0.90183462)"
+           transform="translate(-8.9119992,0.9019982)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#nagel"
+           id="use1117"
+           transform="translate(-450.79407,67.130464)"
            width="100%"
            height="100%" />
       </g>
@@ -2049,7 +2058,7 @@
            id="use1135"
            width="100%"
            height="100%"
-           transform="translate(6.5306249,-0.95156249)" />
+           transform="translate(8.064,-0.751)" />
         <use
            x="0"
            y="0"
@@ -2057,7 +2066,7 @@
            id="use1133"
            width="100%"
            height="100%"
-           transform="translate(6.5315624,-0.95249999)" />
+           transform="translate(8.8629996,-0.953)" />
         <use
            x="0"
            y="0"
@@ -2065,13 +2074,13 @@
            id="use1131"
            width="100%"
            height="100%"
-           transform="translate(6.5306249,-0.95249998)" />
+           transform="translate(8.9119997,-0.952)" />
         <use
            x="0"
            y="0"
            xlink:href="#use1127"
            id="use1129"
-           transform="translate(6.530625,-0.95276784)"
+           transform="translate(8.763,-0.9529995)"
            width="100%"
            height="100%" />
         <use
@@ -2079,7 +2088,7 @@
            y="0"
            xlink:href="#nagel"
            id="use1127"
-           transform="translate(-450.49332,78.080568)"
+           transform="translate(-450.794,67.680414)"
            width="100%"
            height="100%" />
       </g>
