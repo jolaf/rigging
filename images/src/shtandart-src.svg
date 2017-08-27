@@ -70,18 +70,21 @@
        width="4.7612329"
        id="rect_small"
        style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001" />
-    <path
-       style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
-       d="m 654.54838,145.16274 -11.07143,-14.59821 -3.25892,-2.63393 -0.0893,-1.02678 9.73214,-0.13393 0.26786,0.98214 -0.3125,0.9375 6.47634,12.88985 6.29732,-12.84521 -0.3125,-0.9375 0.26786,-0.98214 9.73214,0.13393 -0.0893,1.02678 -3.25892,2.63393 -11.07143,14.59821 -1.65468,0.64733 z"
-       id="the_V_big"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccc" />
-    <path
-       sodipodi:nodetypes="ccccccccccccccccc"
-       inkscape:connector-curvature="0"
-       id="the_V_small"
-       d="m 658.95308,141.07226 -8.49045,-11.19507 -2.4992,-2.01991 -0.0685,-0.78741 7.46338,-0.10271 0.20542,0.75318 -0.23965,0.71895 5.073,9.7743 4.72286,-9.74006 -0.23965,-0.71895 0.20541,-0.75319 7.46338,0.10271 -0.0685,0.78742 -2.4992,2.01991 -8.49045,11.19507 -1.26894,0.49642 z"
-       style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.6748541;stroke-linecap:round;stroke-linejoin:round" />
+    <g
+       id="the_V">
+      <path
+         sodipodi:nodetypes="ccccccccccccccccc"
+         inkscape:connector-curvature="0"
+         id="the_V_black"
+         d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
+         style="fill:none;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.66953051;stroke-linecap:round;stroke-linejoin:round" />
+      <path
+         style="fill:#ffffff;fill-opacity:0.03137255;fill-rule:evenodd;stroke:none;stroke-width:0.68785197;stroke-linecap:round;stroke-linejoin:round"
+         d="m 426.22481,54.587986 -8.65398,-11.410691 -2.54733,-2.058812 -0.0698,-0.802582 7.60712,-0.104686 0.20938,0.767689 -0.24426,0.732797 5.06223,10.075351 4.92229,-10.040458 -0.24426,-0.732797 0.20938,-0.76769 7.60712,0.104687 -0.0698,0.802582 -2.54733,2.058812 -8.65398,11.41069 -1.29339,0.505986 z"
+         id="the_V_white"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccccccccccccccc" />
+    </g>
     <g
        transform="matrix(-1,0,0,1,657.0613,84.968375)"
        id="strange_on_hut">
@@ -205,9 +208,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.83"
-     inkscape:cx="504.75483"
-     inkscape:cy="126.93728"
+     inkscape:zoom="2.0011122"
+     inkscape:cx="487.02137"
+     inkscape:cy="31.4426"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1847"
@@ -224,7 +227,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g4497"
+     inkscape:current-layer="g4439"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -1345,17 +1348,17 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4844"
-           transform="rotate(4.8065969,1972.6627,-2340.978)"
+           xlink:href="#the_V"
+           id="use4823"
+           transform="rotate(5.1684607,795.69184,357.25453)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4855"
-           transform="translate(-262.81223,-123.90228)"
+           xlink:href="#the_V"
+           id="use4825"
+           transform="translate(-30.207996,-37.091)"
            width="100%"
            height="100%" />
         <use
@@ -1376,18 +1379,17 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4862"
-           transform="rotate(3.7196311,2387.6636,-3043.8703)"
+           xlink:href="#the_V"
+           id="use4844"
+           transform="rotate(3.9899468,902.88688,470.12835)"
            width="100%"
-           height="100%"
-           style="stroke:#000000;stroke-width:0.9375;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+           height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4865"
-           transform="translate(-262.61977,-123.06467)"
+           xlink:href="#the_V"
+           id="use4855"
+           transform="translate(-30.016103,-36.374222)"
            width="100%"
            height="100%" />
         <use
@@ -1858,9 +1860,9 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4871"
-           transform="rotate(-4.6148401,-1022.5027,5605.0144)"
+           xlink:href="#the_V"
+           id="use4862"
+           transform="rotate(-6.1732445,34.56228,2012.2135)"
            width="100%"
            height="100%" />
         <use
@@ -1897,9 +1899,9 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4874"
-           transform="rotate(-4.594098,-1035.1916,5629.7915)"
+           xlink:href="#the_V"
+           id="use4871"
+           transform="rotate(-5.0277302,-37.731903,2463.8518)"
            width="100%"
            height="100%" />
         <use
