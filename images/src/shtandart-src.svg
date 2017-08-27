@@ -26,6 +26,12 @@
        cx="160.87129"
        cy="398.09106"
        r="4" />
+    <rect
+       id="deckMask"
+       width="220.71146"
+       height="146.64241"
+       x="277.26855"
+       y="-0.80916661" />
     <ellipse
        cx="3.7214081"
        cy="-575.37415"
@@ -34,12 +40,6 @@
        id="the_ellipse"
        style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
        transform="rotate(89.50973)" />
-    <rect
-       id="deckMask"
-       width="220.71146"
-       height="146.64241"
-       x="277.26855"
-       y="-0.80916661" />
     <circle
        style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88218749;stroke-miterlimit:0"
        id="nagel"
@@ -206,8 +206,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.83"
-     inkscape:cx="160.61103"
-     inkscape:cy="66.077385"
+     inkscape:cx="504.75483"
+     inkscape:cy="126.93728"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1847"
@@ -224,7 +224,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="portDrawing"
+     inkscape:current-layer="g4497"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -248,19 +248,9 @@
        id="guide677"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="0.8364834,0.38502243"
-       orientation="1,0"
-       id="guide679"
-       inkscape:locked="false" />
-    <sodipodi:guide
        position="0.25411732,0.396787"
        orientation="0,1"
        id="guide681"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="0.47584385,0.46666145"
-       orientation="1,0"
-       id="guide683"
        inkscape:locked="false" />
     <sodipodi:guide
        position="647.58274,107.03375"
@@ -287,6 +277,11 @@
        orientation="0.10419166,0.99455724"
        id="guide4815"
        inkscape:locked="false" />
+    <sodipodi:guide
+       position="8.1272084,91.210251"
+       orientation="1,0"
+       id="guide4819"
+       inkscape:locked="false" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -308,8 +303,8 @@
     <path
        inkscape:connector-curvature="0"
        id="path4304"
-       d="m 78.845356,125.84614 -0.0719,-106.6045"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px"
+       d="M 78.845416,125.84614 78.773396,19.641857"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99988174px"
        sodipodi:nodetypes="cc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05588222px"
@@ -325,14 +320,20 @@
        sodipodi:nodetypes="cccccc" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011"
-       d="m 81.495986,18.9309 v 10.38004 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
+       d="m 81.495986,19.330857 v 10.179944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
        id="path4306"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       id="path4887"
+       d="m 87.296169,19.030857 v 3.279944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -5.025389,0.0348"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011" />
     <ellipse
        style="fill:none;stroke:#000000;stroke-width:0.98034978;stroke-miterlimit:0.30000001"
        id="path4314"
-       cx="40.678062"
+       cx="10.878501"
        cy="72.707199"
        rx="4.495326"
        ry="4.4953256" />
@@ -423,7 +424,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path4412"
-       d="m 71.844996,125.611 v -18.61389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 4.95035,-0.0624"
+       d="m 61.845,123.31086 v -16.81389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 15.25083,-0.0624"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011" />
     <circle
        r="14.805359"
@@ -453,7 +454,7 @@
            sodipodi:nodetypes="cccc"
            inkscape:connector-curvature="0"
            id="path4399"
-           d="M 37.018505,398.01795 C 191.60907,373.29822 384.77,360.82825 538.40869,372.4819 m 135.52704,8.96246 c 8.1877,0.64014 12.48758,2.54947 19.46811,7.27071"
+           d="M 42.518264,398.01795 C 197.10883,373.29822 384.77,360.82825 538.40869,372.4819 m 135.52704,8.96246 c 8.1877,0.64014 12.48758,2.54947 19.46811,7.27071"
            style="fill-rule:evenodd;stroke-width:1px" />
         <path
            sodipodi:nodetypes="cccc"
@@ -608,6 +609,12 @@
        d="m 499.07521,140.5775 0.0502,-27.33242 m 0.022,-81.024449 -0.14261,-27.5365618"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.05588222px"
        sodipodi:nodetypes="cccc" />
+    <path
+       sodipodi:nodetypes="ccscccscc"
+       inkscape:connector-curvature="0"
+       id="path4821"
+       d="m -2,119.57542 5.5163812,0.99944 c 0,0 0.93748,-0.0687 1.4249066,-0.56219 0.4794288,-0.48535 0.6924766,-1.3485 0.6924766,-1.3485 L 5.615469,72.674109 5.6337644,26.718741 c 0,0 -0.2130478,-0.863149 -0.6924766,-1.348502 C 4.4538612,24.876792 3.5163812,24.808052 3.5163812,24.808052 L -2,25.779783"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:7.5999999;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2148,25 +2155,17 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4879"
-           transform="rotate(-10.502656,-196.48266,3361.2166)"
+           xlink:href="#duck"
+           id="use4910"
+           transform="rotate(82.738926,18.330871,15.30307)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#strange_on_hut"
-           id="use4797"
-           transform="translate(-616.125,-26.624413)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#duck"
-           id="use4910"
-           transform="rotate(82.738926,20.794516,17.871831)"
+           id="use4859"
+           transform="matrix(1,0,0,-1,-617.32537,173.18922)"
            width="100%"
            height="100%" />
       </g>
@@ -2180,25 +2179,33 @@
         <use
            x="0"
            y="0"
-           xlink:href="#the_V_small"
-           id="use4883"
-           transform="rotate(-10.186393,-204.46247,3466.9955)"
+           xlink:href="#duck"
+           id="use4915"
+           transform="rotate(-100.03494,40.789198,23.908193)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#strange_on_hut"
-           id="use4859"
-           transform="translate(-616.125,-25.78125)"
+           id="use4797"
+           transform="matrix(1,0,0,-1,-617.32537,174.74637)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#duck"
-           id="use4915"
-           transform="rotate(-102.6708,43.179969,22.378867)"
+           xlink:href="#the_ellipse"
+           id="use4879"
+           transform="matrix(0.8697209,-0.15863436,0.15863436,0.8697209,-458.44891,121.53787)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#the_ellipse"
+           id="use4883"
+           transform="matrix(0.87160449,-0.14793553,0.14793553,0.87160449,-445.74572,112.88399)"
            width="100%"
            height="100%" />
       </g>
@@ -2208,13 +2215,13 @@
          rigging:rail="poopFlagstaff"
          id="g1200"
          rigging:ignoreDeck="true"
-         transform="rotate(-41.659766,48.770743,65.031512)">
+         transform="rotate(-41.659766,51.670746,57.409182)">
         <use
            x="0"
            y="0"
            xlink:href="#the_ellipse"
            id="use4807"
-           transform="translate(-526.61419,66.233557)"
+           transform="translate(-555.37768,40.642302)"
            width="100%"
            height="100%" />
       </g>
@@ -2224,13 +2231,13 @@
          rigging:rail="poopFlagstaff"
          id="g1203"
          rigging:ignoreDeck="true"
-         transform="rotate(-36.994078,48.374531,82.058881)">
+         transform="rotate(-36.994078,51.274504,73.390288)">
         <use
            x="0"
            y="0"
            xlink:href="#the_ellipse"
            id="use4811"
-           transform="rotate(79.632184,262.85013,-276.01428)"
+           transform="rotate(79.632184,262.1806,-305.46101)"
            width="100%"
            height="100%" />
       </g>
