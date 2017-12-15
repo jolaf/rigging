@@ -230,7 +230,7 @@ Rail.construct = function () {
     this.rails = $('[rigging\\:rail]', scheme).map(function (_index, rail) {
         rail = $(rail);
         var args = ['deck', 'side', 'rail', 'isAcross', 'ignoreDeck'].map(function(attr) {
-            return rail.attr('rigging:' + attr) || false;
+            return rail.attr('rigging:' + attr.toLowerCase()) || false;
         }).concat([rail.children(),]);
         rail = applyNew(Rail, args);
         assert($.inArray(rail.location, uniqueRails) < 0, "Duplicate Rail location: " + rail.location);
