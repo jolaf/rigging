@@ -56,8 +56,11 @@ var BUNTLINE = 'Бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
-var MOORING_ROPE = 'Швартов';
 var DINGHY_BOWLINE = 'Носовой шлюпки';
+
+var MOORING_BOW = 'Носовой швартов';
+var MOORING_STERN = 'Кормовой швартов';
+var MOORING_TAFF = 'Гакабортный швартов';
 
 // Details
 var COIL = 'Бухта';
@@ -230,11 +233,11 @@ var LINES = [
     [,, [
         [, [
             [FORE_DECK,  'sideRail',      -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
-            [FORE_DECK,  'onDeckFront',     , MOORING_ROPE,    ,                    ,          LINE_DETAIL],
+            [FORE_DECK,  'onDeckFront',     , MOORING_BOW ,    ,                    ,          LINE_DETAIL],
             [MAIN_DECK,  'bulwark',        2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
-            [STERN_DECK, 'bulwark',        2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
-            [STERN_DECK, 'bulwark',        3, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
-            [STERN_DECK, 'poopBulwark',    2, MOORING_ROPE,    ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'bulwark',        2, MOORING_STERN,   ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'bulwark',        3, MOORING_STERN,   ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'poopBulwark',    2, MOORING_TAFF,    ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'shroudsRail',    3, FREE,            ,                    STARBOARD, DETAIL_LINE],
         ]],
     ]],
