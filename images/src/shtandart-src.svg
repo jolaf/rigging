@@ -207,9 +207,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.0022244"
-     inkscape:cx="394.98887"
-     inkscape:cy="113.85431"
+     inkscape:zoom="5.66"
+     inkscape:cx="217.96947"
+     inkscape:cy="75.193694"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -1527,7 +1527,7 @@
            y="0"
            xlink:href="#the_V"
            id="use4823"
-           transform="rotate(5.1684607,795.69184,357.25453)"
+           transform="rotate(2.7684607,1094.4366,627.67707)"
            width="100%"
            height="100%" />
         <use
@@ -1535,7 +1535,7 @@
            y="0"
            xlink:href="#the_ellipse"
            id="use4918"
-           transform="matrix(0.95012232,0.05297662,-0.05297662,0.95012232,-100.39574,-24.71795)"
+           transform="matrix(0.95038668,0.04800109,-0.04800109,0.95038668,-92.270824,-21.679179)"
            width="100%"
            height="100%" />
         <use
@@ -1543,7 +1543,7 @@
            y="0"
            xlink:href="#duck-rect-big"
            id="use4944"
-           transform="matrix(-1.0222416,-0.01795805,0.02040836,-0.9990507,855.86112,44.718058)"
+           transform="matrix(-1.022046,-0.02687799,0.02912583,-0.99883457,856.36154,49.268157)"
            width="100%"
            height="100%" />
         <use
@@ -1551,7 +1551,7 @@
            y="0"
            xlink:href="#the_V"
            id="use4825"
-           transform="translate(-30.207996,-37.091)"
+           transform="rotate(0.9,2523.1994,-1639.0101)"
            width="100%"
            height="100%" />
         <use
@@ -1559,56 +1559,56 @@
            y="0"
            xlink:href="#the_ellipse"
            id="use4933"
-           transform="matrix(0.9507373,0,0,0.9507373,-177.2909,4.465541)"
+           transform="matrix(0.9507373,0,0,0.9507373,-169.33946,4.3413688)"
            width="100%"
            height="100%" />
       </g>
       <g
-         rigging:deck="main"
-         rigging:side="starboard"
+         id="g4121"
          rigging:rail="bulwark"
-         id="g4367"
-         transform="matrix(1,0,0,-1,1.0610231e-4,146.08043)">
+         rigging:side="starboard"
+         rigging:deck="main"
+         transform="matrix(1,0,0,-1,0,145.50047)">
         <use
-           x="0"
-           y="0"
+           height="100%"
+           width="100%"
+           transform="rotate(2.7684607,1094.4366,627.67707)"
+           id="use4111"
            xlink:href="#the_V"
-           id="use4844"
-           transform="rotate(3.9899468,902.88688,470.12835)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
            y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="matrix(0.95038668,0.04800109,-0.04800109,0.95038668,-92.270824,-21.679179)"
+           id="use4113"
            xlink:href="#the_ellipse"
-           id="use4935"
-           transform="matrix(0.94943435,0.04975774,-0.04975774,0.94943435,-100.00102,-22.53374)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
            y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="matrix(-1.022046,-0.02687799,0.02912583,-0.99883457,856.36154,49.268157)"
+           id="use4115"
            xlink:href="#duck-rect-big"
-           id="use4941"
-           transform="rotate(0.23705434,5652.4697,2325.2392)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
            y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(0.9,2523.1994,-1639.0101)"
+           id="use4117"
            xlink:href="#the_V"
-           id="use4855"
-           transform="translate(-30.016103,-36.374222)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
            y="0"
-           xlink:href="#the_ellipse"
-           id="use4937"
-           transform="matrix(0.9507373,0,0,0.9507373,-177.69091,4.7889606)"
+           x="0" />
+        <use
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="matrix(0.9507373,0,0,0.9507373,-169.33946,4.3413688)"
+           id="use4119"
+           xlink:href="#the_ellipse"
+           y="0"
+           x="0" />
       </g>
       <g
          rigging:deck="main"
@@ -1910,7 +1910,7 @@
          rigging:side="port"
          rigging:rail="aboveRail"
          id="g1155"
-         transform="translate(0,-0.49977307)">
+         transform="rotate(0.2,297.00749,-3437.1834)">
         <use
            x="0"
            y="0"
@@ -1925,7 +1925,7 @@
          rigging:side="starboard"
          rigging:rail="aboveRail"
          id="g1191"
-         transform="rotate(4.400361,295.14251,140.82573)">
+         transform="rotate(2.000361,290.56894,-198.41106)">
         <use
            x="0"
            y="0"
