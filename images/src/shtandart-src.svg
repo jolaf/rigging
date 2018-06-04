@@ -207,9 +207,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.83"
-     inkscape:cx="198.27803"
-     inkscape:cy="124.40261"
+     inkscape:zoom="4.0022244"
+     inkscape:cx="394.98887"
+     inkscape:cy="113.85431"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -1006,7 +1006,7 @@
            height="100%" />
       </g>
       <g
-         transform="matrix(0.99772155,-0.06746628,-0.06746628,-0.99772155,-10.166308,201.89804)"
+         transform="matrix(0.99778003,-0.06659558,-0.06659558,-0.99778003,-10.22636,201.14669)"
          id="g4934"
          rigging:rail="sideRail"
          rigging:side="starboard"
@@ -2138,7 +2138,7 @@
          rigging:side="port"
          rigging:rail="sideRail"
          id="g4420"
-         transform="translate(-25.699996,0.40036963)">
+         transform="rotate(-0.1,392.85689,14741.595)">
         <use
            x="0"
            y="0"
@@ -2264,7 +2264,7 @@
          rigging:side="port"
          rigging:rail="shroudsRail"
          id="g4413"
-         transform="translate(-26.8002,0.60027673)">
+         transform="rotate(-0.1,462.70103,15366.887)">
         <use
            x="0"
            y="0"
@@ -2311,7 +2311,7 @@
          rigging:side="starboard"
          rigging:rail="shroudsRail"
          id="g4463"
-         transform="matrix(1,0,0,-1,-26.8002,145.26421)">
+         transform="matrix(0.99996192,0.00872654,0.00872654,-0.99996192,-26.898419,144.34368)">
         <use
            x="0"
            y="0"
