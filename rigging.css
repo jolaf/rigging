@@ -336,12 +336,8 @@ body, button {
 	border-top: 2px solid #4e1d00;
 }
 
-#drawing [stroke] {
-	stroke: #4e1d00;
-}
-
-#drawing :not([fill=none]) {
-	fill: #4e1d00;
+#drawing {
+	color: #4e1d00;
 }
 
 .tipsy {

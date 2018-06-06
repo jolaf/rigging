@@ -32,54 +32,56 @@
     </g>
   </defs>
   <g transform="translate(0 -20.6)">
-    <g id="portDrawing" transform="translate(-36.92 -367.6)" fill="none" stroke="#000">
-      <path d="m42.52 398c154.6-24.72 342.3-37.19 495.9-25.54m135.5 8.962c8.188 0.6401 12.49 2.549 19.47 7.271" fill-rule="evenodd" stroke-width="1px"/>
-      <path transform="rotate(3.862)" d="m559.8 335.4 138.3-0.1861 0.4506 7.89-138.3-0.1199z" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9375"/>
-      <rect transform="matrix(.9978 .06694 -.06659 .9978 0 0)" x="615.9" y="328.8" width="57.04" height="5.615" fill-rule="evenodd" stroke-linecap="round" stroke-miterlimit="0" stroke-width=".88"/>
-      <rect class="filled" x="582.6" y="412.2" width="7.895" height="8.012" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9369"/>
-      <path d="m535.9 431.2 0.0131-31.85 8.206 0.0488-0.0723 31.8" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".8816"/>
-      <g transform="translate(15.04 366.5)">
-        <path d="m496.6 4.622 0.0178 26.67 24.7 1.671" fill-rule="evenodd" stroke-linejoin="round" stroke-width="1px"/>
-        <path d="m512.9 32.74v-27.13" fill-rule="evenodd" stroke-width="1px"/>
-        <path d="m504.3 31.79 6e-3 -26.72" fill-rule="evenodd" stroke-width="1px"/>
+    <g id="drawing">
+      <g id="portDrawing" transform="translate(-36.92 -367.6)" fill="none" stroke="currentColor">
+        <path d="m42.52 398c154.6-24.72 342.3-37.19 495.9-25.54m135.5 8.962c8.188 0.6401 12.49 2.549 19.47 7.271" fill-rule="evenodd" stroke-width="1px"/>
+        <path transform="rotate(3.862)" d="m559.8 335.4 138.3-0.1861 0.4506 7.89-138.3-0.1199z" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9375"/>
+        <rect transform="matrix(.9978 .06694 -.06659 .9978 0 0)" x="615.9" y="328.8" width="57.04" height="5.615" fill-rule="evenodd" stroke-linecap="round" stroke-miterlimit="0" stroke-width=".88"/>
+        <rect class="filled" x="582.6" y="412.2" width="7.895" height="8.012" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9369"/>
+        <path d="m535.9 431.2 0.0131-31.85 8.206 0.0488-0.0723 31.8" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".8816"/>
+        <g transform="translate(15.04 366.5)">
+          <path d="m496.6 4.622 0.0178 26.67 24.7 1.671" fill-rule="evenodd" stroke-linejoin="round" stroke-width="1px"/>
+          <path d="m512.9 32.74v-27.13" fill-rule="evenodd" stroke-width="1px"/>
+          <path d="m504.3 31.79 6e-3 -26.72" fill-rule="evenodd" stroke-width="1px"/>
+        </g>
+        <rect class="filled" x="400.7" y="404" width="8.109" height="8.109" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".88"/>
+        <rect x="331.8" y="403.9" width="77.18" height="8.348" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7774"/>
+        <path d="m317.9 375.4 50.1-2.045 0.2619 6.643-50.11 1.907z" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7774"/>
+        <path d="m305.9 370.6 0.2525 33.08c2.441 1.306 4.882 1.261 7.324-0.1263v-33.34" fill-rule="evenodd" stroke-width="1px"/>
+        <path d="m279.1 405c11.72 2.006 20.15-0.1334 26.9-4.419" fill-rule="evenodd" stroke-width="1px"/>
+        <path d="m279 402.6c12.58-3.001 19.72-7.042 26.84-13.72" fill-rule="evenodd" stroke-width="1px"/>
+        <path d="m279.1 398.7c16.01-5.945 25.1-19.22 26.52-28.11" fill-rule="evenodd" stroke-width="1px"/>
+        <path d="m279 393c11.48-8.995 11.33-15.34 12.44-21.74" fill-rule="evenodd" stroke-width="1px"/>
+        <use transform="translate(108.4 -16.6)" width="100%" height="100%" xlink:href="#pipe"/>
+        <use transform="translate(61.14 -13.12)" width="100%" height="100%" xlink:href="#pipe"/>
+        <rect transform="rotate(-5.435)" x="138.5" y="397" width="27.59" height="6.154" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7873"/>
+        <rect transform="matrix(.9931 -.1177 .1597 .9872 0 0)" x="58.77" y="391.2" width="42.94" height="5.599" ry="0" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9216"/>
+        <use transform="translate(-8.618 -6.316)" width="100%" height="100%" xlink:href="#pipe"/>
       </g>
-      <rect class="filled" x="400.7" y="404" width="8.109" height="8.109" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".88"/>
-      <rect x="331.8" y="403.9" width="77.18" height="8.348" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7774"/>
-      <path d="m317.9 375.4 50.1-2.045 0.2619 6.643-50.11 1.907z" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7774"/>
-      <path d="m305.9 370.6 0.2525 33.08c2.441 1.306 4.882 1.261 7.324-0.1263v-33.34" fill-rule="evenodd" stroke-width="1px"/>
-      <path d="m279.1 405c11.72 2.006 20.15-0.1334 26.9-4.419" fill-rule="evenodd" stroke-width="1px"/>
-      <path d="m279 402.6c12.58-3.001 19.72-7.042 26.84-13.72" fill-rule="evenodd" stroke-width="1px"/>
-      <path d="m279.1 398.7c16.01-5.945 25.1-19.22 26.52-28.11" fill-rule="evenodd" stroke-width="1px"/>
-      <path d="m279 393c11.48-8.995 11.33-15.34 12.44-21.74" fill-rule="evenodd" stroke-width="1px"/>
-      <use transform="translate(108.4 -16.6)" width="100%" height="100%" xlink:href="#pipe"/>
-      <use transform="translate(61.14 -13.12)" width="100%" height="100%" xlink:href="#pipe"/>
-      <rect transform="rotate(-5.435)" x="138.5" y="397" width="27.59" height="6.154" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".7873"/>
-      <rect transform="matrix(.9931 -.1177 .1597 .9872 0 0)" x="58.77" y="391.2" width="42.94" height="5.599" ry="0" fill-rule="evenodd" stroke-miterlimit="0" stroke-width=".9216"/>
-      <use transform="translate(-8.618 -6.316)" width="100%" height="100%" xlink:href="#pipe"/>
+      <use transform="matrix(1 0 0 -1 0 145.6)" width="100%" height="100%" xlink:href="#portDrawing"/>
+      <path d="m645.6 15.45c-3.876-1.16-8.605-1.635-8.605-1.635-0.1601 38.87 0.1154 82.34 0.1764 117.9 0 0 3.887-0.4615 8.424-1.564-0.182-8.555 0.0775-111.2 4e-3 -114.7z" fill="none" stroke="currentColor"/>
+      <path d="m603.7 35.98h7.908l-0.2166 73.96h-7.8z" fill="none" stroke="currentColor"/>
+      <circle cx="578.4" cy="72.84" r="14.81" fill="none" stroke="currentColor"/>
+      <path d="m545.6 36.03h8.047v73.74l-7.955-0.0915z" fill="none" stroke="currentColor"/>
+      <g transform="translate(-44.16 -367.6)" fill="none" stroke="currentColor">
+        <path d="m551.3 431.2c1.304 2.875 1.979 5.996 1.979 9.164 0 3.167-0.6748 6.288-1.979 9.164"/>
+        <path d="m543.1 431.2c1.304 2.875 1.979 5.996 1.979 9.164 0 3.167-0.6748 6.288-1.979 9.164"/>
+      </g>
+      <path d="m499.1 140.6 0.0502-27.33m0.022-81.02-0.1426-27.54" fill="none" stroke="currentColor"/>
+      <circle cx="333.5" cy="72.84" r="14.81" fill="none" stroke="currentColor"/>
+      <path d="m302.9 109.1h-8.075v-72.72h8.075z" fill="none" stroke="currentColor"/>
+      <path d="m242 140.8-0.1028-33.1m-0.06039-69.96 0.02369-33.48" fill="none" stroke="currentColor"/>
+      <path d="m241.7 37.44-8.306 0.0691c-4e-3 16.81 0.062 53.78 0.0582 70.58h8.168c4e-3 -16.81 0.0761-53.85 0.0799-70.65z" fill="none" stroke="currentColor"/>
+      <circle cx="137.5" cy="72.84" r="14.81" fill="none" stroke="currentColor"/>
+      <rect x="87.3" y="53.73" width="3.041" height="38.03" fill="none" stroke="currentColor"/>
+      <rect x="78.79" y="67.67" width="8.482" height="9.949" fill="none" stroke="currentColor"/>
+      <path d="m87.3 19.03v3.28c-0.1747 0.7129-0.4376 0.6722-0.6848 0.7663l-5.025 0.0348" fill="none" stroke="currentColor"/>
+      <path d="m81.5 19.33v10.18c-0.1747 0.7129-0.4376 0.6722-0.6848 0.7663l-2.226 0.0348" fill="none" stroke="currentColor"/>
+      <path d="m78.85 125.8-0.07202-106.2" fill="none" stroke="currentColor"/>
+      <path d="m61.84 123.3v-16.81c0.3886-1.278 0.9734-1.205 1.523-1.374l15.25-0.0624" fill="none" stroke="currentColor"/>
+      <circle cx="12.2" cy="72.71" r="4.495" fill="none" stroke="currentColor"/>
+      <path d="m6.016 115.7v-85.79" fill="none" stroke="currentColor"/>
     </g>
-    <use transform="matrix(1 0 0 -1 0 145.6)" width="100%" height="100%" xlink:href="#portDrawing"/>
-    <path d="m645.6 15.45c-3.876-1.16-8.605-1.635-8.605-1.635-0.1601 38.87 0.1154 82.34 0.1764 117.9 0 0 3.887-0.4615 8.424-1.564-0.182-8.555 0.0775-111.2 4e-3 -114.7z" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".978"/>
-    <path d="m603.7 35.98h7.908l-0.2166 73.96h-7.8z" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".9185"/>
-    <circle cx="578.4" cy="72.84" r="14.81" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
-    <path d="m545.6 36.03h8.047v73.74l-7.955-0.0915z" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".8881"/>
-    <g transform="translate(-44.16 -367.6)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="0">
-      <path d="m551.3 431.2c1.304 2.875 1.979 5.996 1.979 9.164 0 3.167-0.6748 6.288-1.979 9.164" stroke-width=".88"/>
-      <path d="m543.1 431.2c1.304 2.875 1.979 5.996 1.979 9.164 0 3.167-0.6748 6.288-1.979 9.164" stroke-width=".8803"/>
-    </g>
-    <path d="m499.1 140.6 0.0502-27.33m0.022-81.02-0.1426-27.54" fill="none" stroke="#000" stroke-width="1.056px"/>
-    <circle cx="333.5" cy="72.84" r="14.81" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
-    <path d="m302.9 109.1h-8.075v-72.72h8.075z" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".86"/>
-    <path d="m242 140.8-0.1028-33.1m-0.06039-69.96 0.02369-33.48" fill="none" stroke="#000" stroke-width="1.056px"/>
-    <path d="m241.7 37.44-8.306 0.0691c-4e-3 16.81 0.062 53.78 0.0582 70.58h8.168c4e-3 -16.81 0.0761-53.85 0.0799-70.65z" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".767"/>
-    <circle cx="137.5" cy="72.84" r="14.81" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
-    <rect x="87.3" y="53.73" width="3.041" height="38.03" fill="none" stroke="#000" stroke-width=".9615"/>
-    <rect x="78.79" y="67.67" width="8.482" height="9.949" fill="none" stroke="#000" stroke-width=".9212"/>
-    <path d="m87.3 19.03v3.28c-0.1747 0.7129-0.4376 0.6722-0.6848 0.7663l-5.025 0.0348" fill="none" stroke="#000" stroke-width=".88"/>
-    <path d="m81.5 19.33v10.18c-0.1747 0.7129-0.4376 0.6722-0.6848 0.7663l-2.226 0.0348" fill="none" stroke="#000" stroke-width=".88"/>
-    <path d="m78.85 125.8-0.07202-106.2" fill="none" stroke="#000" stroke-width=".9999px"/>
-    <path d="m61.84 123.3v-16.81c0.3886-1.278 0.9734-1.205 1.523-1.374l15.25-0.0624" fill="none" stroke="#000" stroke-width=".88"/>
-    <circle cx="12.2" cy="72.71" r="4.495" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
-    <path d="m6.016 115.7v-85.79" fill="none" stroke="#000" stroke-width=".9999px"/>
   </g>
   <g transform="translate(0 -20.6)" display="none">
     <g id="deckMasks" class="modeDependent which" fill="#fff">
