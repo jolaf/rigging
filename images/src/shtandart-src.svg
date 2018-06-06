@@ -25,9 +25,11 @@
        width="220.71146"
        height="146.64241"
        x="277.26855"
-       y="-0.80916661" />
+       y="-0.80916661"
+       fill="currentColor" />
     <g
-       id="mastMask">
+       id="mastMask"
+       stroke="currentColor">
       <path
          d="m 425.11266,59.524539 c 26.5,26.500001 26.5,26.500001 26.5,26.500001 z"
          id="path89"
@@ -41,7 +43,8 @@
        id="pipe"
        cx="160.87129"
        cy="398.09106"
-       r="4" />
+       r="4"
+       stroke="currentColor" />
     <g
        id="pin">
       <circle
@@ -56,7 +59,8 @@
          cy="28.152"
          transform="rotate(-8.2972976)"
          r="1.3"
-         id="circle8296" />
+         id="circle8296"
+         fill="currentColor" />
     </g>
     <circle
        r="0.97387618"
@@ -64,39 +68,44 @@
        cx="607.21271"
        id="pinhole"
        transform="rotate(-8.2972976)"
-       style="fill:none;stroke:#000000;stroke-width:0.60135722" />
+       style="fill:none;stroke:currentColor" />
     <ellipse
        cx="3.7214081"
        cy="-575.37415"
        rx="1.4"
        ry="5.6149998"
        id="cleat"
-       transform="rotate(89.50973)" />
+       transform="rotate(89.50973)"
+       fill="currentColor" />
     <rect
        id="lcleat"
        width="4"
        height="15"
        x="396.50137"
        y="72.318771"
-       ry="1.5" />
+       ry="1.5"
+       fill="currentColor" />
     <path
        sodipodi:nodetypes="ccccccccccc"
        inkscape:connector-curvature="0"
        id="xcleat"
        d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
-       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)" />
+       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
+       fill="currentColor" />
     <path
        id="kevel"
        sodipodi:nodetypes="ccccccccccccccccc"
        inkscape:connector-curvature="0"
-       d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z" />
+       d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
+       fill="currentColor" />
     <rect
        y="408.33606"
        x="324.09692"
        height="8.1089563"
        width="8.1090002"
        id="fist"
-       transform="translate(-36.939556,-367.63021)" />
+       transform="translate(-36.939556,-367.63021)"
+       fill="currentColor" />
     <g
        transform="matrix(-1,0,0,1,657.0613,84.968375)"
        id="tackle">
@@ -106,7 +115,8 @@
          cy="420.36639"
          rx="4.1037445"
          ry="2.5569487"
-         transform="rotate(-18.749174,-1131.8714,-71.940313)" />
+         transform="rotate(-18.749174,-1131.8714,-71.940313)"
+         fill="currentColor" />
       <path
          transform="translate(-36.939556,-367.63021)"
          sodipodi:nodetypes="cc"
@@ -138,7 +148,7 @@
          d="m 290.63983,461.04416 c 0,0 1.79183,-1.09175 2.58851,-1.76777 0.49938,-0.42374 1.08756,-0.91263 1.3574,-1.42053 0.26984,-0.5079 0.39292,-0.88831 0.31567,-1.45209 -0.0772,-0.56378 -0.79993,-1.71985 -1.43805,-2.14657 -0.63813,-0.42672 -1.58057,-0.41427 -2.19218,-0.15784 -0.61162,0.25643 -0.56613,0.7134 -0.75762,1.35739 -0.19149,0.64399 0.11478,1.99311 0.2841,2.71479 0.16932,0.72168 0.25082,1.04256 0.59978,1.60993 0.34896,0.56737 0.9875,1.20391 1.5468,1.67306 0.5593,0.46915 1.76777,1.13642 1.76777,1.13642"
          style="fill:none;stroke:currentColor" />
       <circle
-         style="fill:currentColor;stroke-width:0"
+         style="fill:currentColor"
          id="path4253"
          cx="283.88446"
          cy="461.04416"
@@ -148,21 +158,21 @@
          cy="461.0126"
          cx="285.22607"
          id="circle4255"
-         style="fill:currentColor;stroke-width:0" />
+         style="fill:currentColor" />
       <circle
          id="circle4257"
          cx="286.56769"
          cy="461.02838"
          r="0.4261581"
-         style="fill:currentColor;stroke-width:0" />
+         style="fill:currentColor" />
       <circle
          r="0.4261581"
          cy="461.02838"
          cx="287.84616"
          id="circle4259"
-         style="fill:currentColor;stroke-width:0" />
+         style="fill:currentColor" />
       <circle
-         style="fill:currentColor;stroke-width:0"
+         style="fill:currentColor"
          id="circle4261"
          cx="289.14041"
          cy="461.04416"

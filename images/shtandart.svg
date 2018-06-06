@@ -1,23 +1,23 @@
 <svg version="1.1" viewBox="1 -24 659 152" xmlns="http://www.w3.org/2000/svg" xmlns:rigging="https://github.com/jolaf/rigging" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
-    <rect id="deckMask" x="277.3" y="-.8092" width="220.7" height="146.6"/>
-    <g id="mastMask">
+    <rect id="deckMask" x="277.3" y="-.8092" width="220.7" height="146.6" fill="currentColor"/>
+    <g id="mastMask" stroke="currentColor">
       <path d="m425.1 59.52 26.5 26.5z"/>
       <path d="m451.6 59.52-26.5 26.5z"/>
     </g>
-    <circle id="pipe" cx="160.9" cy="398.1" r="4"/>
+    <circle id="pipe" cx="160.9" cy="398.1" r="4" stroke="currentColor"/>
     <g id="pin">
       <circle transform="rotate(-8.297)" cx="567.5" cy="28.15" r="2.7" fill="#fff" fill-opacity="9.999e-5"/>
-      <circle transform="rotate(-8.297)" cx="567.5" cy="28.15" r="1.3"/>
+      <circle transform="rotate(-8.297)" cx="567.5" cy="28.15" r="1.3" fill="currentColor"/>
     </g>
-    <circle id="pinhole" transform="rotate(-8.297)" cx="607.2" cy="138.8" r=".9739" fill="none" stroke="#000"/>
-    <ellipse id="cleat" transform="rotate(89.51)" cx="3.721" cy="-575.4" rx="1.4" ry="5.615"/>
-    <rect id="lcleat" x="396.5" y="72.32" width="4" height="15" ry="1.5"/>
-    <path id="xcleat" transform="matrix(.8824 0 0 1.005 -152.6 -25.95)" d="m215.3 40.28-0.9594-2.798v-6.102l0.9594-2.893-2.499-1.196-2.652 1.196 1.162 2.893v6.102l-1.161 2.798 2.652 1.514z"/>
-    <path id="kevel" d="m426.3 54.27-8.424-11.11-2.479-2.004-0.0671-0.7812 7.404-0.1019 0.2038 0.7472-0.2377 0.7133 4.927 9.807 4.791-9.773-0.2376-0.7133 0.2038-0.7472 7.404 0.1019-0.0671 0.7812-2.479 2.004-8.424 11.11-1.259 0.4925z"/>
-    <rect id="fist" transform="translate(-36.94 -367.6)" x="324.1" y="408.3" width="8.109" height="8.109"/>
+    <circle id="pinhole" transform="rotate(-8.297)" cx="607.2" cy="138.8" r=".9739" fill="none" stroke="currentColor"/>
+    <ellipse id="cleat" transform="rotate(89.51)" cx="3.721" cy="-575.4" rx="1.4" ry="5.615" fill="currentColor"/>
+    <rect id="lcleat" x="396.5" y="72.32" width="4" height="15" ry="1.5" fill="currentColor"/>
+    <path id="xcleat" transform="matrix(.8824 0 0 1.005 -152.6 -25.95)" d="m215.3 40.28-0.9594-2.798v-6.102l0.9594-2.893-2.499-1.196-2.652 1.196 1.162 2.893v6.102l-1.161 2.798 2.652 1.514z" fill="currentColor"/>
+    <path id="kevel" d="m426.3 54.27-8.424-11.11-2.479-2.004-0.0671-0.7812 7.404-0.1019 0.2038 0.7472-0.2377 0.7133 4.927 9.807 4.791-9.773-0.2376-0.7133 0.2038-0.7472 7.404 0.1019-0.0671 0.7812-2.479 2.004-8.424 11.11-1.259 0.4925z" fill="currentColor"/>
+    <rect id="fist" transform="translate(-36.94 -367.6)" x="324.1" y="408.3" width="8.109" height="8.109" fill="currentColor"/>
     <g id="tackle" transform="matrix(-1 0 0 1 657.1 84.97)">
-      <ellipse transform="rotate(-18.75 -1132 -71.94)" cx="-74.06" cy="420.4" rx="4.104" ry="2.557"/>
+      <ellipse transform="rotate(-18.75 -1132 -71.94)" cx="-74.06" cy="420.4" rx="4.104" ry="2.557" fill="currentColor"/>
       <path transform="translate(-36.94 -367.6)" d="m61.96 411.7 3.977 9.218" stroke="currentColor"/>
       <path transform="translate(-36.94 -367.6)" d="m59.62 412.7 3.977 9.218" stroke="currentColor"/>
     </g>

@@ -310,17 +310,13 @@ body {
 	border: 5px solid #ffeca4;
 }
 
-.deckMask {
-	fill: #ffeca4;
-}
-
-.tipsy-inner {
+.deckMask, .tipsy-inner {
 	color: #ffeca4;
 }
 
 /* Text color */
 
-body, button {
+body, button, #drawing {
 	color: #4e1d00;
 }
 
@@ -334,10 +330,6 @@ body, button {
 
 #footer {
 	border-top: 2px solid #4e1d00;
-}
-
-#drawing {
-	color: #4e1d00;
 }
 
 .tipsy {
@@ -365,59 +357,34 @@ body, button {
 
 /* Scheme colors */
 
-.pointNumber {
+#points, .pointNumber {
 	color: black;
-}
-
-#points {
-	color: black;
-	fill: black;
 }
 
 .mastMask {
-	stroke: red;
+	color: red;
 }
 
 /* Mark colors */
 
-#pointNumbers.colored .clewline, #infoBlock .clewline {
+.colored .clewline, #infoBlock .clewline {
 	color: #eb7d01; /* dark yellow */
 }
 
-#points.colored .clewline {
-	fill: #eb7d01;
-}
-
-#pointNumbers.colored .buntline, #infoBlock .buntline {
+.colored .buntline, #infoBlock .buntline {
 	color: #017c01; /* dark green */
 }
 
-#points.colored .buntline {
-	fill: #017c01;
-}
-
-#pointNumbers.colored .clewline.buntline, #infoBlock .clewline.buntline {
+.colored .clewline.buntline, #infoBlock .clewline.buntline {
 	color: #6cc100; /* yellow green */
 }
 
-#points.colored .clewline.buntline {
-	fill: #6cc100;
-}
-
-#pointNumbers.colored .leechline, #infoBlock .leechline {
+.colored .leechline, #infoBlock .leechline {
 	color: #b3014b; /* dark red */
 }
 
-#points.colored .leechline {
-	fill: #b3014b;
-}
-
-#pointNumbers.colored .bowline, #infoBlock .bowline {
+.colored .bowline, #infoBlock .bowline {
 	color: #0031ff; /* dark blue */
-}
-
-#points.colored .bowline {
-	fill: #0031ff;
 }
 
 /* Questionnary highlighting colors */
