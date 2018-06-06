@@ -16,7 +16,7 @@ For now the software is in Russian language only, sorry. And Google Translate fo
 
 To re-compile from source files, run
 ```
-python2 build.py
+python3 build.py
 ```
 
 ---
@@ -35,5 +35,5 @@ python2 build.py
 
 Чтобы пересобрать программу из исходных файлов, запустите
 ```
-python2 build.py
+python3 build.py
 ```
