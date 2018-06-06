@@ -231,7 +231,7 @@ Rail.construct = function () {
         rail = $(rail);
         var args = ['deck', 'side', 'rail', 'isAcross', 'ignoreDeck'].map(function(attr) {
             return rail.attr('rigging:' + attr.toLowerCase()) || false;
-        }).concat([rail.children(),]);
+        }).concat([rail.children('[xlink\\:href != "#pinhole"]'),]);
         rail = applyNew(Rail, args);
         assert($.inArray(rail.location, uniqueRails) < 0, "Duplicate Rail location: " + rail.location);
         uniqueRails.push(rail.location);
@@ -248,7 +248,7 @@ Rail.attachLine = function (deckName, railID, assym, number, line) {
         return rail.deck.name === deckName && rail.id === railID && (!assym || assym === rail.side);
     });
     assert(rails.length >= 1, "Unknown rail to attach: " + deckName + "/" + railID + "/" + assym);
-    assert(rails.length <= 2, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
+    assert(rails.length <= 3, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
     var points = [];
     $.each(rails, function (_index, rail) {
         points.push(rail.attachLine(number, line));

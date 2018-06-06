@@ -56,11 +56,14 @@ var BUNTLINE = 'Бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
+var FENDER = 'Кранец';
 var DINGHY_BOWLINE = 'Носовой шлюпки';
 
-var MOORING_BOW = 'Носовой швартов';
+var MOORING_BOW = 'Носовой швартов'; // ToDo: Split to details?
 var MOORING_STERN = 'Кормовой швартов';
 var MOORING_TAFF = 'Гакабортный швартов';
+
+var FREE = 'свободный нагель';
 
 // Details
 var COIL = 'Бухта';
@@ -71,8 +74,6 @@ var CROSS_JACK = 'Бегин-рей';
 var PORT = 'port';
 var STARBOARD = 'starboard';
 var CENTER = 'center';
-
-var FREE = 'свободный нагель';
 
 // Decks
 var DECKS = [
@@ -97,7 +98,6 @@ var RAILS = {
             atMast: 'на мачте',
        atMastFront: 'на мачте спереди',
         atMastSide: 'на мачте сбоку',
-        atMastBack: 'на мачте сзади',
            atFront: 'спереди',
        behindFront: 'за планкой спереди',
            bulwark: 'на фальшборту',
@@ -187,7 +187,8 @@ var LINES = [
         ]],
         [, [
             [STERN_DECK, 'aboveLadder',     , FLAG_HALYARD,    ,                    STARBOARD],
-            [FORE_DECK,  'backPillars',     , TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
+            [FORE_DECK,  'backPillars',    1, TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
+            [FORE_DECK,  'backPillars',   -1, TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
             [FORE_DECK,  'shroudsRail',    1, TACKLE,          'Гротовая',          ,          DETAIL_LINE],
             [MAIN_DECK,  'onDeckFront',     , TACKLE,          'Оттяжка гротовой',  ,          'Оттяжка гротовой талёвы',    'Оттяжки гротовых талёв'],
             [MAIN_DECK,  'sideMastRail',  -1, TACKLE,          'Нагель для работы', ,          'Нагель для работы талёвами', 'Нагеля для работы талёвами'],
@@ -215,7 +216,6 @@ var LINES = [
             [STERN_DECK, 'shroudsRail',    2, BUNTLINE],
         ]],
         [MIZZEN_STAYSAIL, [
-            [MAIN_DECK,  'atMastBack',      , TACK,            ,                    CENTER],
             [STERN_DECK, 'atMast',        -1, HALYARD,         ,                    PORT],
             [STERN_DECK, 'atFront',         , SHEET,            ,                   CENTER],
             [STERN_DECK, 'bulwark',        2, SHEET],
@@ -230,14 +230,19 @@ var LINES = [
             [STERN_DECK, 'poopFlagstaff',   , FLAG_HALYARD,    ,                    STARBOARD],
         ]],
     ]],
-    [,, [
+    [/*NO_MAST*/,, [
         [, [
             [FORE_DECK,  'sideRail',      -3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
             [FORE_DECK,  'onDeckFront',     , MOORING_BOW ,    ,                    ,          LINE_DETAIL],
+            [FORE_DECK,  'onDeckFront',     , MOORING_BOW ,    ,                    CENTER,    LINE_DETAIL],
             [MAIN_DECK,  'bulwark',        2, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
+            [MAIN_DECK,  'bulwark',        3, FENDER],
+            [MAIN_DECK,  'bulwark',       -2, FENDER],
             [STERN_DECK, 'bulwark',        2, MOORING_STERN,   ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'bulwark',        3, MOORING_STERN,   ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'bulwark',       -2, FENDER],
             [STERN_DECK, 'poopBulwark',    2, MOORING_TAFF,    ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'poopBulwark',   -2, FENDER],
             [STERN_DECK, 'shroudsRail',    3, FREE,            ,                    STARBOARD, DETAIL_LINE],
         ]],
     ]],
