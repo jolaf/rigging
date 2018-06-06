@@ -38,7 +38,6 @@
          inkscape:connector-curvature="0" />
     </g>
     <circle
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0"
        id="pipe"
        cx="160.87129"
        cy="398.09106"
@@ -53,7 +52,6 @@
          cx="567.53906"
          style="fill:#ffffff;fill-opacity:0.00009999" />
       <circle
-         style="fill:#000000"
          cx="567.53906"
          cy="28.152"
          transform="rotate(-8.2972976)"
@@ -65,8 +63,8 @@
        cy="138.77504"
        cx="607.21271"
        id="pinhole"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.60135722;stroke-miterlimit:0"
-       transform="rotate(-8.2972976)" />
+       transform="rotate(-8.2972976)"
+       style="fill:none;stroke:#000000;stroke-width:0.60135722" />
     <ellipse
        cx="3.7214081"
        cy="-575.37415"
@@ -92,6 +90,13 @@
        sodipodi:nodetypes="ccccccccccccccccc"
        inkscape:connector-curvature="0"
        d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z" />
+    <rect
+       y="408.33606"
+       x="324.09692"
+       height="8.1089563"
+       width="8.1090002"
+       id="fist"
+       transform="translate(-36.939556,-367.63021)" />
     <g
        transform="matrix(-1,0,0,1,657.0613,84.968375)"
        id="tackle">
@@ -108,32 +113,32 @@
          inkscape:connector-curvature="0"
          id="path4328"
          d="m 61.958952,411.73029 3.977475,9.21764"
-         style="stroke:#000000;stroke-width:1px" />
+         style="stroke:currentColor" />
       <path
          transform="translate(-36.939556,-367.63021)"
-         style="stroke:#000000;stroke-width:1px"
          d="m 59.622974,412.67731 3.977475,9.21764"
          id="path4325"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cc" />
+         sodipodi:nodetypes="cc"
+         style="stroke:currentColor" />
     </g>
     <g
        transform="translate(380.03047,-105.31189)"
        id="knot">
       <path
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px"
          d="m 298.72105,455.17265 c -3.99317,0.48895 -15.45986,2.28426 -17.2673,3.4724 -0.87352,0.68368 -1.28132,1.45631 -0.50507,2.27284 0.29488,0.21805 1.51523,0.12627 1.51523,0.12627"
          id="path4249"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
+         sodipodi:nodetypes="cccc"
+         style="fill:none;stroke:currentColor" />
       <path
          sodipodi:nodetypes="cszzzzzzzzc"
          inkscape:connector-curvature="0"
          id="path4251"
          d="m 290.63983,461.04416 c 0,0 1.79183,-1.09175 2.58851,-1.76777 0.49938,-0.42374 1.08756,-0.91263 1.3574,-1.42053 0.26984,-0.5079 0.39292,-0.88831 0.31567,-1.45209 -0.0772,-0.56378 -0.79993,-1.71985 -1.43805,-2.14657 -0.63813,-0.42672 -1.58057,-0.41427 -2.19218,-0.15784 -0.61162,0.25643 -0.56613,0.7134 -0.75762,1.35739 -0.19149,0.64399 0.11478,1.99311 0.2841,2.71479 0.16932,0.72168 0.25082,1.04256 0.59978,1.60993 0.34896,0.56737 0.9875,1.20391 1.5468,1.67306 0.5593,0.46915 1.76777,1.13642 1.76777,1.13642"
-         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px" />
+         style="fill:none;stroke:currentColor" />
       <circle
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-miterlimit:0"
+         style="fill:currentColor;stroke-width:0"
          id="path4253"
          cx="283.88446"
          cy="461.04416"
@@ -143,21 +148,21 @@
          cy="461.0126"
          cx="285.22607"
          id="circle4255"
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-miterlimit:0" />
+         style="fill:currentColor;stroke-width:0" />
       <circle
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-miterlimit:0"
          id="circle4257"
          cx="286.56769"
          cy="461.02838"
-         r="0.4261581" />
+         r="0.4261581"
+         style="fill:currentColor;stroke-width:0" />
       <circle
          r="0.4261581"
          cy="461.02838"
          cx="287.84616"
          id="circle4259"
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-miterlimit:0" />
+         style="fill:currentColor;stroke-width:0" />
       <circle
-         style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0;stroke-miterlimit:0"
+         style="fill:currentColor;stroke-width:0"
          id="circle4261"
          cx="289.14041"
          cy="461.04416"
@@ -171,9 +176,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.66"
-     inkscape:cx="494.83396"
-     inkscape:cy="138.01908"
+     inkscape:zoom="2.0011122"
+     inkscape:cx="198.42661"
+     inkscape:cy="146.02622"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -190,7 +195,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="points"
+     inkscape:current-layer="svg993"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -262,7 +267,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1218,28 +1223,31 @@
          rigging:deck="fore"
          rigging:side="port"
          rigging:rail="frontFists"
-         id="g1149">
-        <rect
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.91446865;stroke-miterlimit:0"
-           id="rect4199"
-           width="7.8205314"
-           height="7.8205314"
-           x="603.70392"
-           y="44.940098" />
+         id="g1149"
+         transform="translate(316.2579,3.5265024)">
+        <use
+           height="100%"
+           width="100%"
+           id="use10664"
+           transform="translate(0.1057145,0.1483681)"
+           xlink:href="#fist"
+           y="0"
+           x="0" />
       </g>
       <g
          rigging:deck="fore"
          rigging:side="starboard"
          rigging:rail="frontFists"
          id="g1170"
-         transform="translate(-0.0999806,4.9444451e-6)">
-        <rect
-           y="93.177094"
-           x="603.70392"
-           height="7.8205314"
-           width="7.8205314"
-           id="rect4327"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.91446865;stroke-miterlimit:0" />
+         transform="translate(316.16504,-7.999995)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#fist"
+           transform="translate(0.1057145,60.210611)"
+           id="use10668"
+           width="100%"
+           height="100%" />
       </g>
       <g
          id="g5002"
@@ -1367,7 +1375,7 @@
          rigging:side="starboard"
          rigging:rail="backPillars"
          id="g1179"
-         transform="rotate(-39.454421,558.83341,98.383279)">
+         transform="rotate(-37.954421,558.98991,98.501805)">
         <use
            x="0"
            y="0"
@@ -1929,28 +1937,29 @@
          rigging:rail="backFists"
          id="g1158"
          transform="translate(7.6003357,-4.2999418)">
-        <rect
-           y="408.33606"
-           x="324.09692"
-           height="8.1089563"
-           width="8.1090002"
-           id="rect4213"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           transform="translate(-36.939556,-367.63021)" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#fist"
+           transform="translate(0.1057145,0.1483681)"
+           id="use9904"
+           width="100%"
+           height="100%" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="starboard"
          rigging:rail="backFists"
          id="g1188"
-         transform="translate(7.6003244,4.4001568)">
-        <rect
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0"
-           id="rect4423"
-           width="8.1090002"
-           height="8.1089563"
-           x="287.15738"
-           y="96.605751" />
+         transform="translate(7.6003357,0.0878305)">
+        <use
+           height="100%"
+           width="100%"
+           id="use9976"
+           transform="translate(0.1057145,60.210611)"
+           xlink:href="#fist"
+           y="0"
+           x="0" />
       </g>
       <g
          rigging:deck="main"
@@ -1959,52 +1968,62 @@
          id="g4374"
          rigging:isAcross="true"
          transform="translate(7.5002644,-0.80013413)">
-        <circle
-           r="1.0671936"
-           cy="436.60721"
-           cx="328.12"
-           id="circle4234"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
-           transform="translate(-36.939556,-367.63021)" />
-        <circle
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
-           id="circle4243"
-           cx="291.18045"
-           cy="60.216999"
-           r="1.0671936" />
-        <circle
-           r="1.0671936"
-           cy="51.376999"
-           cx="291.18045"
-           id="circle4245"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           transform="translate(-274.31651,122.9979)"
+           width="100%"
+           height="100%"
+           id="use11352" />
+        <use
+           id="use11350"
+           height="100%"
+           width="100%"
+           transform="translate(-274.31651,114.24701)"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           transform="translate(-274.31651,105.40778)"
+           width="100%"
+           height="100%"
+           id="use11281" />
       </g>
       <g
-         rigging:deck="main"
-         rigging:side="starboard"
+         transform="matrix(1,0,0,-1,7.5002644,146.72254)"
+         rigging:isAcross="true"
+         id="g11360"
          rigging:rail="behindMastRail"
-         id="g4415"
-         transform="translate(7.5002644,23.949866)"
-         rigging:isAcross="true">
-        <circle
-           transform="translate(-36.939556,-367.63021)"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
-           id="circle4421"
-           cx="328.12"
-           cy="421.4072"
-           r="1.0671936" />
-        <circle
-           r="1.0671936"
-           cy="62.616997"
-           cx="291.18045"
-           id="circle4419"
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001" />
-        <circle
-           style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.26561278;stroke-miterlimit:2.9000001"
-           id="circle4417"
-           cx="291.18045"
-           cy="71.376999"
-           r="1.0671936" />
+         rigging:side="starboard"
+         rigging:deck="main">
+        <use
+           id="use11354"
+           height="100%"
+           width="100%"
+           transform="translate(-274.31651,122.9979)"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           transform="translate(-274.31651,114.24701)"
+           width="100%"
+           height="100%"
+           id="use11356" />
+        <use
+           id="use11358"
+           height="100%"
+           width="100%"
+           transform="translate(-274.31651,105.40778)"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
          transform="translate(-13.507767,-342.52707)"

@@ -345,7 +345,7 @@ body, button {
 }
 
 .tipsy {
-	-webkit-filter: drop-shadow(0 0 2px #4e1d00);
+	-webkit-filter: drop-shadow(1px 1px 2px #4e1d00);
 	filter: drop-shadow(1px 1px 2px #4e1d00);
 }
 
@@ -373,11 +373,8 @@ body, button {
 	color: black;
 }
 
-#points [stroke] {
-	stroke: black;
-}
-
-#points :not([fill=none]) {
+#points {
+	color: black;
 	fill: black;
 }
 
@@ -395,19 +392,11 @@ body, button {
 	fill: #eb7d01;
 }
 
-#points.colored .clewline:not([fill=none]) {
-	fill: #eb7d01;
-}
-
 #pointNumbers.colored .buntline, #infoBlock .buntline {
 	color: #017c01; /* dark green */
 }
 
 #points.colored .buntline {
-	fill: #017c01;
-}
-
-#points.colored .buntline:not([fill=none]) {
 	fill: #017c01;
 }
 
@@ -419,10 +408,6 @@ body, button {
 	fill: #6cc100;
 }
 
-#points.colored .clewline.buntline:not([fill=none]) {
-	fill: #6cc100;
-}
-
 #pointNumbers.colored .leechline, #infoBlock .leechline {
 	color: #b3014b; /* dark red */
 }
@@ -431,19 +416,11 @@ body, button {
 	fill: #b3014b;
 }
 
-#points.colored .leechline:not([fill=none]) {
-	fill: #b3014b;
-}
-
 #pointNumbers.colored .bowline, #infoBlock .bowline {
 	color: #0031ff; /* dark blue */
 }
 
 #points.colored .bowline {
-	fill: #0031ff;
-}
-
-#points.colored .bowline:not([fill=none]) {
 	fill: #0031ff;
 }
 
