@@ -1,10 +1,20 @@
 
+Переупорядочить точки в конфиге
+Выделить швартовы в отдельную категорию
+Переструктурировать "Прочие снасти", сделать ещё колонку? убрать заголовок?
+Проверить падежи швартовов и кранцев
+Вернуть drawing коричневым
+Проверить, что правый борт тоже перекрасился
+Сделать полупрозрачными клюзы и дырки
+
+Проверить, как теперь работает подсветка в Хроме
+
 Check other browsers
 Check phones
 
-Remove hover on touch
+? Remove hover on touch
 
-? Add sorting of points in rails after moving to <use>, using .x/.y
+-- Add sorting of points in rails after moving to <use>, using .x/.y
 
 ? Redesign Sublines and implement subline categories
 

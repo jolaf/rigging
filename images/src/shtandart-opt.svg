@@ -6,17 +6,17 @@
       <path d="m451.6 59.52-26.5 26.5z"/>
     </g>
     <circle id="pipe" cx="160.9" cy="398.1" r="4" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
-    <circle id="pin" transform="rotate(-8.297)" cx="567.5" cy="28.15" r=".7591" fill-rule="evenodd" stroke="#000" stroke-miterlimit="0" stroke-width=".8822"/>
-    <circle id="pinhole" transform="rotate(-8.297)" cx="607.2" cy="138.8" r=".9739" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".6014"/>
-    <ellipse id="cleat" transform="rotate(89.51)" cx="3.721" cy="-575.4" rx="1.126" ry="4.735" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".88"/>
-    <rect id="lcleat" x="396.5" y="72.32" width="3.349" height="13.4" ry=".9244" fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="1.4" stroke-width=".9375" style="paint-order:markers fill stroke"/>
-    <path id="xcleat" transform="matrix(.8824 0 0 1.005 -152.6 -25.95)" d="m215.3 40.28-0.9594-2.798v-6.102l0.9594-2.893-2.499-1.196-2.652 1.196 1.162 2.893v6.102l-1.161 2.798 2.652 1.514z" fill="none" stroke="#000" stroke-linejoin="round" stroke-miterlimit="1.4" stroke-width=".9957" style="paint-order:markers fill stroke"/>
-    <g id="kevel">
-      <path d="m426.3 54.27-8.424-11.11-2.479-2.004-0.0671-0.7812 7.404-0.1019 0.2038 0.7472-0.2377 0.7133 4.927 9.807 4.791-9.773-0.2376-0.7133 0.2038-0.7472 7.404 0.1019-0.0671 0.7812-2.479 2.004-8.424 11.11-1.259 0.4925z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".6695"/>
-      <path d="m426.2 54.59-8.654-11.41-2.547-2.059-0.0698-0.8026 7.607-0.1047 0.2094 0.7677-0.2443 0.7328 5.062 10.08 4.922-10.04-0.2443-0.7328 0.2094-0.7677 7.607 0.1047-0.0698 0.8026-2.547 2.059-8.654 11.41-1.293 0.506z" fill="#fff" fill-opacity=".03137" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width=".6879"/>
+    <g id="pin">
+      <circle transform="rotate(-8.297)" cx="567.5" cy="28.15" r="2.7" fill="#f00" fill-opacity="9.999e-5"/>
+      <circle transform="rotate(-8.297)" cx="567.5" cy="28.15" r="1.3"/>
     </g>
+    <circle id="pinhole" transform="rotate(-8.297)" cx="607.2" cy="138.8" r=".9739" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".6014"/>
+    <ellipse id="cleat" transform="rotate(89.51)" cx="3.721" cy="-575.4" rx="1.4" ry="5.615"/>
+    <rect id="lcleat" x="396.5" y="72.32" width="4" height="15" ry="1.5"/>
+    <path id="xcleat" transform="matrix(.8824 0 0 1.005 -152.6 -25.95)" d="m215.3 40.28-0.9594-2.798v-6.102l0.9594-2.893-2.499-1.196-2.652 1.196 1.162 2.893v6.102l-1.161 2.798 2.652 1.514z"/>
+    <path id="kevel" d="m426.3 54.27-8.424-11.11-2.479-2.004-0.0671-0.7812 7.404-0.1019 0.2038 0.7472-0.2377 0.7133 4.927 9.807 4.791-9.773-0.2376-0.7133 0.2038-0.7472 7.404 0.1019-0.0671 0.7812-2.479 2.004-8.424 11.11-1.259 0.4925z"/>
     <g id="tackle" transform="matrix(-1 0 0 1 657.1 84.97)">
-      <ellipse transform="rotate(-18.75 -1132 -71.94)" cx="-74.06" cy="420.4" rx="4.104" ry="2.557" fill="#fff" fill-opacity=".001" fill-rule="evenodd" stroke="#000" stroke-miterlimit=".3" stroke-width=".88"/>
+      <ellipse transform="rotate(-18.75 -1132 -71.94)" cx="-74.06" cy="420.4" rx="4.104" ry="2.557"/>
       <path transform="translate(-36.94 -367.6)" d="m61.96 411.7 3.977 9.218" stroke="#000" stroke-width="1px"/>
       <path transform="translate(-36.94 -367.6)" d="m59.62 412.7 3.977 9.218" stroke="#000" stroke-width="1px"/>
     </g>
@@ -77,7 +77,7 @@
     <path d="m81.5 19.33v10.18c-0.1747 0.7129-0.4376 0.6722-0.6848 0.7663l-2.226 0.0348" fill="none" stroke="#000" stroke-width=".88"/>
     <path d="m78.85 125.8-0.07202-106.2" fill="none" stroke="#000" stroke-width=".9999px"/>
     <path d="m61.84 123.3v-16.81c0.3886-1.278 0.9734-1.205 1.523-1.374l15.25-0.0624" fill="none" stroke="#000" stroke-width=".88"/>
-    <ellipse cx="12.2" cy="72.71" rx="4.495" ry="4.495" fill="none" stroke="#000" stroke-miterlimit=".3" stroke-width=".9803"/>
+    <circle cx="12.2" cy="72.71" r="4.495" fill="none" stroke="#000" stroke-miterlimit="0" stroke-width=".962"/>
     <path d="m6.016 115.7v-85.79" fill="none" stroke="#000" stroke-width=".9999px"/>
   </g>
   <g transform="translate(0 -20.6)" display="none">
@@ -193,7 +193,7 @@
         <use transform="translate(-13.73 37.35)" width="100%" height="100%" xlink:href="#pinhole"/>
         <use transform="translate(-13.82 55.76)" width="100%" height="100%" xlink:href="#pinhole"/>
       </g>
-      <g transform="rotate(-32.91 595.2 76.05)" rigging:deck="fore" rigging:rail="atMastFront" rigging:side="center">
+      <g transform="rotate(-34.41 594.6 75.75)" rigging:deck="fore" rigging:rail="atMastFront" rigging:side="center">
         <use transform="rotate(35.28 468.6 68.43)" width="100%" height="100%" xlink:href="#cleat"/>
       </g>
       <g transform="translate(446.8 -2.641)" rigging:deck="fore" rigging:rail="atMastSide" rigging:side="port">
@@ -202,9 +202,8 @@
       <g transform="matrix(1 0 0 -1 446.8 148.2)" rigging:deck="fore" rigging:rail="atMastSide" rigging:side="starboard">
         <use transform="matrix(.7669 -.6417 -.6417 -.7669 -297 433.8)" width="100%" height="100%" xlink:href="#cleat"/>
       </g>
-      <g transform="rotate(-36.15 551.2 53.35)" rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
+      <g transform="matrix(1.615 -.5899 1.18 .8075 -408.6 335.4)" stroke-width=".7071" rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
         <use transform="rotate(216.6 574.4 28.16)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(216.6 570.4 26.87)" width="100%" height="100%" xlink:href="#cleat"/>
       </g>
       <g transform="rotate(-39.45 558.8 98.38)" rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
         <use transform="rotate(37.99 427.1 18.64)" width="100%" height="100%" xlink:href="#cleat"/>
@@ -323,7 +322,7 @@
         <use transform="rotate(-5.038 210.4 -1800)" width="100%" height="100%" xlink:href="#xcleat"/>
         <use transform="rotate(-4.838 225.6 -1651)" width="100%" height="100%" xlink:href="#xcleat"/>
         <use transform="matrix(.8798 -.08678 .08678 .8798 -374 67.39)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(-30.64 159.3 547.5)" width="100%" height="100%" xlink:href="#lcleat"/>
+        <use transform="rotate(-30.64 159.9 547.6)" width="100%" height="100%" xlink:href="#lcleat"/>
       </g>
       <g transform="matrix(1 0 0 -1 0 145.8)" rigging:deck="stern" rigging:rail="bulwark" rigging:side="starboard">
         <use transform="rotate(-4.173 -116.4 2968)" width="100%" height="100%" xlink:href="#kevel"/>

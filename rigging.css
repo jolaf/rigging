@@ -391,8 +391,8 @@ body, button {
 	color: #eb7d01; /* dark yellow */
 }
 
-#points.colored .clewline { /* ToDo [stroke] */
-	stroke: #eb7d01;
+#points.colored .clewline {
+	fill: #eb7d01;
 }
 
 #points.colored .clewline:not([fill=none]) {
@@ -403,8 +403,8 @@ body, button {
 	color: #017c01; /* dark green */
 }
 
-#points.colored .buntline { /* ToDo [stroke] */
-	stroke: #017c01;
+#points.colored .buntline {
+	fill: #017c01;
 }
 
 #points.colored .buntline:not([fill=none]) {
@@ -415,8 +415,8 @@ body, button {
 	color: #6cc100; /* yellow green */
 }
 
-#points.colored .clewline.buntline { /* ToDo [stroke] */
-	stroke: #6cc100;
+#points.colored .clewline.buntline {
+	fill: #6cc100;
 }
 
 #points.colored .clewline.buntline:not([fill=none]) {
@@ -427,8 +427,8 @@ body, button {
 	color: #b3014b; /* dark red */
 }
 
-#points.colored .leechline { /* ToDo [stroke] */
-	stroke: #b3014b;
+#points.colored .leechline {
+	fill: #b3014b;
 }
 
 #points.colored .leechline:not([fill=none]) {
@@ -439,8 +439,8 @@ body, button {
 	color: #0031ff; /* dark blue */
 }
 
-#points.colored .bowline { /* ToDo [stroke] */
-	stroke: #0031ff;
+#points.colored .bowline {
+	fill: #0031ff;
 }
 
 #points.colored .bowline:not([fill=none]) {

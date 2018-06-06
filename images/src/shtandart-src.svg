@@ -43,13 +43,23 @@
        cx="160.87129"
        cy="398.09106"
        r="4" />
-    <circle
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88218749;stroke-miterlimit:0"
-       id="pin"
-       cx="567.53906"
-       cy="28.152"
-       transform="rotate(-8.2972976)"
-       r="0.7591235" />
+    <g
+       id="pin">
+      <circle
+         id="circle8623"
+         r="2.7"
+         transform="rotate(-8.2972976)"
+         cy="28.152"
+         cx="567.53906"
+         style="fill:#ffffff;fill-opacity:0.00009999" />
+      <circle
+         style="fill:#000000"
+         cx="567.53906"
+         cy="28.152"
+         transform="rotate(-8.2972976)"
+         r="1.3"
+         id="circle8296" />
+    </g>
     <circle
        r="0.97387618"
        cy="138.77504"
@@ -60,46 +70,32 @@
     <ellipse
        cx="3.7214081"
        cy="-575.37415"
-       rx="1.1255895"
-       ry="4.7350903"
+       rx="1.4"
+       ry="5.6149998"
        id="cleat"
-       style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-linecap:round;stroke-linejoin:round"
        transform="rotate(89.50973)" />
     <rect
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.9375;stroke-linejoin:round;stroke-miterlimit:1.39999998;paint-order:markers fill stroke"
        id="lcleat"
-       width="3.3489215"
-       height="13.395686"
+       width="4"
+       height="15"
        x="396.50137"
        y="72.318771"
-       ry="0.924375" />
+       ry="1.5" />
     <path
        sodipodi:nodetypes="ccccccccccc"
        inkscape:connector-curvature="0"
        id="xcleat"
        d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
-       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99573284;stroke-linejoin:round;stroke-miterlimit:1.39999998;paint-order:markers fill stroke" />
-    <g
-       id="kevel">
-      <path
-         sodipodi:nodetypes="ccccccccccccccccc"
-         inkscape:connector-curvature="0"
-         d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
-         style="fill:none;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.66953051;stroke-linecap:round;stroke-linejoin:round"
-         id="path1050" />
-      <path
-         style="fill:#ffffff;fill-opacity:0.03137255;fill-rule:evenodd;stroke-width:0.68785197;stroke-linecap:round;stroke-linejoin:round"
-         d="m 426.22481,54.587986 -8.65398,-11.410691 -2.54733,-2.058812 -0.0698,-0.802582 7.60712,-0.104686 0.20938,0.767689 -0.24426,0.732797 5.06223,10.075351 4.92229,-10.040458 -0.24426,-0.732797 0.20938,-0.76769 7.60712,0.104687 -0.0698,0.802582 -2.54733,2.058812 -8.65398,11.41069 -1.29339,0.505986 z"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccccccccccccccc"
-         id="path1052" />
-    </g>
+       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)" />
+    <path
+       id="kevel"
+       sodipodi:nodetypes="ccccccccccccccccc"
+       inkscape:connector-curvature="0"
+       d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z" />
     <g
        transform="matrix(-1,0,0,1,657.0613,84.968375)"
        id="tackle">
       <ellipse
-         style="fill:#ffffff;fill-opacity:0.00100002;fill-rule:evenodd;stroke:#000000;stroke-width:0.88;stroke-miterlimit:0.30000001"
          id="path4323"
          cx="-74.057053"
          cy="420.36639"
@@ -175,9 +171,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.83"
-     inkscape:cx="297.45494"
-     inkscape:cy="102.27832"
+     inkscape:zoom="5.66"
+     inkscape:cx="494.83396"
+     inkscape:cy="138.01908"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -194,7 +190,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="layer2"
+     inkscape:current-layer="points"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -560,13 +556,12 @@
        id="path4412"
        d="m 61.845,123.31086 v -16.81389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 15.25083,-0.0624"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.88000011" />
-    <ellipse
-       style="fill:none;stroke:#000000;stroke-width:0.98034978;stroke-miterlimit:0.30000001"
-       id="path4314"
+    <circle
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.96200013;stroke-miterlimit:0"
+       id="circle4314"
        cx="12.203586"
        cy="72.707199"
-       rx="4.495326"
-       ry="4.4953256" />
+       r="4.495326" />
     <path
        sodipodi:nodetypes="cc"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99988174px"
@@ -1307,7 +1302,7 @@
          rigging:rail="atMastFront"
          rigging:side="center"
          id="g1173"
-         transform="rotate(-32.907321,595.16649,76.05436)">
+         transform="rotate(-34.407321,594.59587,75.749819)">
         <use
            x="0"
            y="0"
@@ -1352,11 +1347,12 @@
            x="0" />
       </g>
       <g
-         transform="rotate(-36.15093,551.16419,53.345141)"
+         transform="matrix(1.6149317,-0.58991434,1.1798287,0.80746583,-408.62042,335.41042)"
          id="g4131"
          rigging:rail="backPillars"
          rigging:side="port"
-         rigging:deck="fore">
+         rigging:deck="fore"
+         style="stroke-width:0.70710677">
         <use
            height="100%"
            width="100%"
@@ -1365,14 +1361,6 @@
            xlink:href="#cleat"
            y="0"
            x="0" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use345"
-           transform="rotate(-143.42179,570.44448,26.87361)"
-           width="100%"
-           height="100%" />
       </g>
       <g
          rigging:deck="fore"
@@ -2090,7 +2078,7 @@
            y="0"
            xlink:href="#lcleat"
            id="use4925"
-           transform="rotate(-30.639507,159.34537,547.49262)"
+           transform="rotate(-30.639507,159.91542,547.64877)"
            width="100%"
            height="100%" />
       </g>
