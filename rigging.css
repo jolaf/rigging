@@ -1,3 +1,5 @@
+@namespace xlink 'http://www.w3.org/1999/xlink';
+
 /* Widths and heights */
 
 html, body, table, #schemeBlock svg {
@@ -160,12 +162,16 @@ ul {
 	cursor: default;
 }
 
-#schemeBlock svg [fill=none] * {
+#schemeBlock svg [fill="none"] * {
 	fill: none !important;
 }
 
 .deckMask {
 	opacity: 0.75;
+}
+
+[xlink|href="#pinhole"], [xlink|href="#pipe"] {
+	opacity: 0.33;
 }
 
 #infoBlock span {
@@ -316,7 +322,7 @@ body {
 
 /* Text color */
 
-body, button, #drawing {
+body, button, #drawing, [xlink|href="#pinhole"] {
 	color: #4e1d00;
 }
 

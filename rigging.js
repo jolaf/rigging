@@ -780,7 +780,7 @@ Questionary.configure = function () {
     Questionary.highlightClasses = 'on rightAnswer wrongAnswer';
     Questionary.demoLocationObjects = Point.locationObject.add(Subline.locationObject);
     Questionary.whereLocationObjects = Point.locationObject.add(Deck.locationObject);
-    var pointObjects = $('>>', Point.locationObject);
+    var pointObjects = $('> > [xlink\\:href != "#pinhole"]', Point.locationObject);
     Questionary.demoObjects = pointObjects.add('.subline');
     Questionary.whereObjects = pointObjects.add('.pointNumber');
     Questionary.questionObject = $('#question');
