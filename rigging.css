@@ -137,6 +137,28 @@ html, body {
 	white-space: normal;
 }
 
+/* Opacity */
+
+.deckMask {
+	opacity: 0.75;
+}
+
+[xlink|href="#pipe"] {
+	opacity: 0.5;
+}
+
+.solid {
+	fill-opacity: 0.5;
+}
+
+[xlink|href="#pinhole"] {
+	opacity: 0.33;
+}
+
+.rail {
+	fill-opacity: 0.2;
+}
+
 /* Miscellaneous settings */
 
 body, input, button, .selector, .point, .pointNumber, .subline {
@@ -160,18 +182,6 @@ ul {
 
 #controls .selector, .pointNumber, .subline {
 	cursor: default;
-}
-
-#schemeBlock svg [fill="none"] * {
-	fill: none !important;
-}
-
-.deckMask {
-	opacity: 0.75;
-}
-
-[xlink|href="#pinhole"], [xlink|href="#pipe"] {
-	opacity: 0.33;
 }
 
 #infoBlock span {
@@ -324,6 +334,10 @@ body {
 
 body, button, #drawing, [xlink|href="#pinhole"] {
 	color: #4e1d00;
+}
+
+.solid, .rail {
+	fill: #4e1d00;
 }
 
 #logo {

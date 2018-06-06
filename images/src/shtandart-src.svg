@@ -186,9 +186,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0011122"
-     inkscape:cx="327.20075"
-     inkscape:cy="146.02622"
+     inkscape:zoom="11.32"
+     inkscape:cx="502.95447"
+     inkscape:cy="121.22345"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -205,7 +205,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="portDrawing"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -310,7 +310,8 @@
            d="m 559.78345,335.37296 138.3132,-0.1861 0.45056,7.89044 -138.29544,-0.11987 z"
            id="rect4158"
            inkscape:connector-curvature="0"
-           sodipodi:nodetypes="ccccc" />
+           sodipodi:nodetypes="ccccc"
+           class="rail" />
         <rect
            transform="matrix(0.99775733,0.06693505,-0.06658984,0.99778043,0,0)"
            y="328.80136"
@@ -318,7 +319,8 @@
            height="5.6153321"
            width="57.041946"
            id="rect4272"
-           style="fill-rule:evenodd;stroke-width:0.88;stroke-linecap:round;stroke-miterlimit:0" />
+           style="fill-rule:evenodd;stroke-width:0.88;stroke-linecap:round;stroke-miterlimit:0"
+           class="rail" />
         <rect
            y="412.18246"
            x="582.60071"
@@ -326,16 +328,18 @@
            width="7.895206"
            id="rect4212"
            style="fill-rule:evenodd;stroke-width:0.93687236;stroke-miterlimit:0"
-           class="filled" />
+           class="solid" />
         <path
            style="fill-rule:evenodd;stroke-width:0.8816328;stroke-miterlimit:0"
            d="m 535.88779,431.22596 0.0131,-31.84623 8.20649,0.0488 -0.0723,31.79743"
            id="path4201"
            inkscape:connector-curvature="0"
-           sodipodi:nodetypes="cccc" />
+           sodipodi:nodetypes="cccc"
+           class="rail" />
         <g
            id="g4442"
-           transform="translate(15.037579,366.49632)">
+           transform="translate(15.037579,366.49632)"
+           class="solid">
           <path
              inkscape:connector-curvature="0"
              id="path4436"
@@ -362,22 +366,25 @@
            height="8.1089563"
            x="400.67026"
            y="404.02512"
-           class="filled" />
+           class="solid" />
         <rect
            style="fill-rule:evenodd;stroke-width:0.77742982;stroke-miterlimit:0"
            id="rect4231"
            width="77.184006"
            height="8.348403"
            x="331.80298"
-           y="403.94504" />
+           y="403.94504"
+           class="rail" />
         <path
            style="fill-rule:evenodd;stroke-width:0.77742982;stroke-miterlimit:0"
            d="m 317.92266,375.36768 50.1014,-2.04461 0.26193,6.64295 -50.10685,1.90661 z"
            id="rect4238"
            inkscape:connector-curvature="0"
-           sodipodi:nodetypes="ccccc" />
+           sodipodi:nodetypes="ccccc"
+           class="rail" />
         <g
-           id="g2411">
+           id="g2411"
+           class="solid">
           <path
              style="fill-rule:evenodd;stroke-width:1px"
              d="m 305.94995,370.63551 0.25254,33.08249 c 2.4412,1.30618 4.88241,1.26129 7.32361,-0.12627 V 370.2567"
@@ -432,7 +439,8 @@
            height="6.1536069"
            width="27.592697"
            id="rect4267"
-           style="fill-rule:evenodd;stroke-width:0.78730243;stroke-miterlimit:0" />
+           style="fill-rule:evenodd;stroke-width:0.78730243;stroke-miterlimit:0"
+           class="rail" />
         <rect
            transform="matrix(0.99305302,-0.11766772,0.15968158,0.98716857,0,0)"
            style="fill-rule:evenodd;stroke-width:0.9215799;stroke-miterlimit:0"
@@ -441,7 +449,8 @@
            height="5.5987296"
            x="58.76849"
            y="391.19165"
-           ry="0" />
+           ry="0"
+           class="rail" />
         <use
            x="0"
            y="0"
@@ -464,29 +473,34 @@
          id="path4294"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cccccc"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="rail" />
       <path
          style="fill:none;stroke:currentColor"
          d="m 603.73443,35.977709 h 7.9082 l -0.21655,73.962851 h -7.79992 z"
          id="rect4333"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         class="rail" />
       <circle
          style="fill:none;stroke:currentColor"
          id="path4330"
          cx="578.35858"
          cy="72.837814"
-         r="14.805359" />
+         r="14.805359"
+         class="solid" />
       <path
          style="fill:none;stroke:currentColor"
          d="m 545.59119,36.028473 h 8.04692 v 73.736167 l -7.95537,-0.0915 z"
          id="rect4326"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
+         sodipodi:nodetypes="ccccc"
+         class="rail" />
       <g
          id="g4318"
          transform="translate(-44.16018,-367.63021)"
-         style="fill:none;stroke:currentColor">
+         style="fill:none;stroke:currentColor"
+         class="solid">
         <path
            sodipodi:nodetypes="ccc"
            inkscape:connector-curvature="0"
@@ -509,13 +523,15 @@
          cy="72.837807"
          cx="333.48096"
          id="circle327"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="solid	" />
       <path
          sodipodi:nodetypes="ccccc"
          inkscape:connector-curvature="0"
          id="path4336"
          d="M 302.85966,109.06385 H 294.785 V 36.343666 h 8.07466 z"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="rail" />
       <path
          style="fill:none;stroke:currentColor"
          d="M 241.95325,140.82828 241.8505,107.72653 M 241.79011,37.7648 241.8138,4.2885"
@@ -527,39 +543,45 @@
          inkscape:connector-curvature="0"
          id="path4060"
          d="m 241.69368,37.438819 -8.30588,0.0691 c -0.004,16.80629 0.062,53.77605 0.0582,70.582341 h 8.16778 c 0.004,-16.806291 0.0761,-53.845101 0.0799,-70.651391 z"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="solid" />
       <circle
          style="fill:none;stroke:currentColor"
          id="circle329"
          cx="137.48137"
          cy="72.837807"
-         r="14.805359" />
+         r="14.805359"
+         class="solid" />
       <rect
          style="fill:none;stroke:currentColor"
          id="rect4322"
          width="3.0405231"
          height="38.030529"
          x="87.298279"
-         y="53.730049" />
+         y="53.730049"
+         class="solid" />
       <rect
          style="fill:none;stroke:currentColor"
          id="rect4317"
          width="8.4818048"
          height="9.9488058"
          x="78.788872"
-         y="67.6717" />
+         y="67.6717"
+         class="solid" />
       <path
          sodipodi:nodetypes="cccc"
          inkscape:connector-curvature="0"
          id="path4887"
          d="m 87.296169,19.030857 v 3.279944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -5.025389,0.0348"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="solid" />
       <path
          style="fill:none;stroke:currentColor"
          d="m 81.495986,19.330857 v 10.179944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
          id="path4306"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
+         sodipodi:nodetypes="cccc"
+         class="solid" />
       <path
          inkscape:connector-curvature="0"
          id="path4304"
@@ -571,13 +593,15 @@
          inkscape:connector-curvature="0"
          id="path4412"
          d="m 61.845,123.31086 v -16.81389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 15.25083,-0.0624"
-         style="fill:none;stroke:currentColor" />
+         style="fill:none;stroke:currentColor"
+         class="solid" />
       <circle
          style="fill:none;stroke:currentColor"
          id="circle4314"
          cx="12.203586"
          cy="72.707199"
-         r="4.495326" />
+         r="4.495326"
+         class="solid" />
       <path
          sodipodi:nodetypes="cc"
          style="fill:none;stroke:currentColor"
