@@ -1,8 +1,9 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
 from base64 import b64encode
 from re import sub as reSub
 from datetime import datetime
-from urllib2 import urlopen
+from urllib.request import urlopen
 from zipfile import ZipFile, ZIP_DEFLATED
 
 SOURCE = 'rigging.html'
@@ -15,15 +16,16 @@ INDENT = '  '
 NO_INDENT = ''
 
 def loadFile(match, replacePattern, fileNamePos, mode = None):
-    print match.groups()
+    print(match.groups())
     fileName = match.group(fileNamePos)
     if fileName.startswith('http'):
         data = urlopen(fileName.replace('jquery.js', 'jquery.slim.min.js')).read()
     else:
         data = open(fileName, 'rb').read()
     if mode is BASE64:
-        data = b64encode(data)
+        data = b64encode(data).decode()
     else:
+        data = data.decode()
         if fileName.endswith('.js'):
             data = data.replace('\\', '\\\\')
         if mode is JOIN_LINES:
@@ -36,8 +38,8 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
     return match.expand(replacePattern % data)
 
 def loadImage(match, pattern, fileNamePos = 1):
-    print match.groups()
-    return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(match.group(fileNamePos), 'rb').read()))))
+    print(match.groups())
+    return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(match.group(fileNamePos), 'rb').read()).decode())))
 
 PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambda match: loadFile(match, r'\1<style type="\2">\n%s\1</style>', 3)),
             (r'([ \t]*)<script type="(\S+)" src="(\S+)"></script>', lambda match: loadFile(match, r'\1<script type="\2">\n%s\1</script>', 3)),
@@ -51,11 +53,11 @@ PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambd
 
 def main():
     with open(SOURCE, 'rb') as f:
-        data = f.read()
+        data = f.read().decode()
     for (pattern, replace) in PATTERNS:
         data = reSub(pattern, replace, data)
     with open(TARGET, 'wb') as f:
-        f.write(data)
+        f.write(data.encode())
     with ZipFile(ZIP, 'w', ZIP_DEFLATED) as f:
         f.write(TARGET)
 

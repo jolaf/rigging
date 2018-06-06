@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
 from re import sub as reSub
 
 SOURCE = 'shtandart-opt.svg'
@@ -19,6 +20,6 @@ def main():
     for (pattern, replace) in PATTERNS:
         data = reSub(pattern, replace, data)
     with open(TARGET, 'wb') as f:
-        f.write(data)
+        f.write(data.encode())
 
 main()
