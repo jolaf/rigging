@@ -18,167 +18,6 @@
    id="svg993"
    height="100%"
    width="100%">
-  <defs
-     id="defs4">
-    <rect
-       id="deckMask"
-       width="220.71146"
-       height="146.64241"
-       x="277.26855"
-       y="-0.80916661"
-       fill="currentColor" />
-    <g
-       id="mastMask"
-       stroke="currentColor">
-      <path
-         d="m 425.11266,59.524539 c 26.5,26.500001 26.5,26.500001 26.5,26.500001 z"
-         id="path89"
-         inkscape:connector-curvature="0" />
-      <path
-         d="m 451.61266,59.524539 c -26.5,26.5 -26.5,26.5 -26.5,26.5 z"
-         id="path91"
-         inkscape:connector-curvature="0" />
-    </g>
-    <circle
-       id="pipe"
-       cx="160.87129"
-       cy="398.09106"
-       r="4"
-       stroke="currentColor" />
-    <g
-       id="pin">
-      <circle
-         id="circle8623"
-         r="2.7"
-         transform="rotate(-8.2972976)"
-         cy="28.152"
-         cx="567.53906"
-         style="fill:#ffffff;fill-opacity:0.00009999" />
-      <circle
-         cx="567.53906"
-         cy="28.152"
-         transform="rotate(-8.2972976)"
-         r="1.3"
-         id="circle8296"
-         fill="currentColor" />
-    </g>
-    <circle
-       r="0.97387618"
-       cy="138.77504"
-       cx="607.21271"
-       id="pinhole"
-       transform="rotate(-8.2972976)"
-       style="fill:none;stroke:currentColor" />
-    <ellipse
-       cx="3.7214081"
-       cy="-575.37415"
-       rx="1.4"
-       ry="5.6149998"
-       id="cleat"
-       transform="rotate(89.50973)"
-       fill="currentColor" />
-    <rect
-       id="lcleat"
-       width="4"
-       height="15"
-       x="396.50137"
-       y="72.318771"
-       ry="1.5"
-       fill="currentColor" />
-    <path
-       sodipodi:nodetypes="ccccccccccc"
-       inkscape:connector-curvature="0"
-       id="xcleat"
-       d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
-       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
-       fill="currentColor" />
-    <path
-       id="kevel"
-       sodipodi:nodetypes="ccccccccccccccccc"
-       inkscape:connector-curvature="0"
-       d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
-       fill="currentColor" />
-    <rect
-       y="408.33606"
-       x="324.09692"
-       height="8.1089563"
-       width="8.1090002"
-       id="fist"
-       transform="translate(-36.939556,-367.63021)"
-       fill="currentColor" />
-    <g
-       transform="matrix(-1,0,0,1,657.0613,84.968375)"
-       id="tackle">
-      <ellipse
-         id="path4323"
-         cx="-74.057053"
-         cy="420.36639"
-         rx="4.1037445"
-         ry="2.5569487"
-         transform="rotate(-18.749174,-1131.8714,-71.940313)"
-         fill="currentColor" />
-      <path
-         transform="translate(-36.939556,-367.63021)"
-         sodipodi:nodetypes="cc"
-         inkscape:connector-curvature="0"
-         id="path4328"
-         d="m 61.958952,411.73029 3.977475,9.21764"
-         style="stroke:currentColor" />
-      <path
-         transform="translate(-36.939556,-367.63021)"
-         d="m 59.622974,412.67731 3.977475,9.21764"
-         id="path4325"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cc"
-         style="stroke:currentColor" />
-    </g>
-    <g
-       transform="translate(380.03047,-105.31189)"
-       id="knot">
-      <path
-         d="m 298.72105,455.17265 c -3.99317,0.48895 -15.45986,2.28426 -17.2673,3.4724 -0.87352,0.68368 -1.28132,1.45631 -0.50507,2.27284 0.29488,0.21805 1.51523,0.12627 1.51523,0.12627"
-         id="path4249"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc"
-         style="fill:none;stroke:currentColor" />
-      <path
-         sodipodi:nodetypes="cszzzzzzzzc"
-         inkscape:connector-curvature="0"
-         id="path4251"
-         d="m 290.63983,461.04416 c 0,0 1.79183,-1.09175 2.58851,-1.76777 0.49938,-0.42374 1.08756,-0.91263 1.3574,-1.42053 0.26984,-0.5079 0.39292,-0.88831 0.31567,-1.45209 -0.0772,-0.56378 -0.79993,-1.71985 -1.43805,-2.14657 -0.63813,-0.42672 -1.58057,-0.41427 -2.19218,-0.15784 -0.61162,0.25643 -0.56613,0.7134 -0.75762,1.35739 -0.19149,0.64399 0.11478,1.99311 0.2841,2.71479 0.16932,0.72168 0.25082,1.04256 0.59978,1.60993 0.34896,0.56737 0.9875,1.20391 1.5468,1.67306 0.5593,0.46915 1.76777,1.13642 1.76777,1.13642"
-         style="fill:none;stroke:currentColor" />
-      <circle
-         style="fill:currentColor"
-         id="path4253"
-         cx="283.88446"
-         cy="461.04416"
-         r="0.4261581" />
-      <circle
-         r="0.4261581"
-         cy="461.0126"
-         cx="285.22607"
-         id="circle4255"
-         style="fill:currentColor" />
-      <circle
-         id="circle4257"
-         cx="286.56769"
-         cy="461.02838"
-         r="0.4261581"
-         style="fill:currentColor" />
-      <circle
-         r="0.4261581"
-         cy="461.02838"
-         cx="287.84616"
-         id="circle4259"
-         style="fill:currentColor" />
-      <circle
-         style="fill:currentColor"
-         id="circle4261"
-         cx="289.14041"
-         cy="461.04416"
-         r="0.4261581" />
-    </g>
-  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -186,15 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.32"
-     inkscape:cx="502.95447"
-     inkscape:cy="121.22345"
+     inkscape:zoom="1.415"
+     inkscape:cx="353.29879"
+     inkscape:cy="30.192312"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="2560"
-     inkscape:window-height="1537"
-     inkscape:window-x="1672"
-     inkscape:window-y="-8"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      showguides="false"
      inkscape:guide-bbox="true"
@@ -205,70 +44,231 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="portDrawing"
+     inkscape:current-layer="layer1"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
      viewbox-x="-2"
      viewbox-height="118">
     <inkscape:grid
-       type="xygrid"
-       id="grid4394"
-       originx="-36.919279"
-       originy="-539.25229"
+       spacingy="1"
        spacingx="1"
-       spacingy="1" />
+       originy="-539.25229"
+       originx="-36.919279"
+       id="grid4394"
+       type="xygrid" />
     <sodipodi:guide
-       position="0.038673154,0.45753275"
-       orientation="0,1"
+       inkscape:locked="false"
        id="guide4311"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="0.90376941,0.51764126"
        orientation="0,1"
+       position="0.038673154,0.45753275" />
+    <sodipodi:guide
+       inkscape:locked="false"
        id="guide677"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="0.25411732,0.396787"
        orientation="0,1"
+       position="0.90376941,0.51764126" />
+    <sodipodi:guide
+       inkscape:locked="false"
        id="guide681"
-       inkscape:locked="false" />
+       orientation="0,1"
+       position="0.25411732,0.396787" />
     <sodipodi:guide
-       position="647.58274,107.03375"
-       orientation="1,0"
+       inkscape:locked="false"
        id="guide4803"
-       inkscape:locked="false" />
+       orientation="1,0"
+       position="647.58274,107.03375" />
     <sodipodi:guide
-       position="407.81249,62.555805"
-       orientation="0,1"
+       inkscape:locked="false"
        id="guide4808"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="376.56281,124.44467"
        orientation="0,1"
+       position="407.81249,62.555805" />
+    <sodipodi:guide
+       inkscape:locked="false"
        id="guide4810"
-       inkscape:locked="false" />
+       orientation="0,1"
+       position="376.56281,124.44467" />
     <sodipodi:guide
-       position="108.21555,113.91974"
-       orientation="-0.10312625,0.99466827"
+       inkscape:locked="false"
        id="guide4811"
-       inkscape:locked="false" />
+       orientation="-0.10312625,0.99466827"
+       position="108.21555,113.91974" />
     <sodipodi:guide
-       position="108.00244,11.266949"
-       orientation="0.10419166,0.99455724"
+       inkscape:locked="false"
        id="guide4815"
-       inkscape:locked="false" />
+       orientation="0.10419166,0.99455724"
+       position="108.00244,11.266949" />
     <sodipodi:guide
-       position="8.1272084,91.210251"
-       orientation="1,0"
+       inkscape:locked="false"
        id="guide4819"
-       inkscape:locked="false" />
-    <sodipodi:guide
-       position="652.76561,105.52893"
        orientation="1,0"
+       position="8.1272084,91.210251" />
+    <sodipodi:guide
+       inkscape:locked="false"
        id="guide4075"
-       inkscape:locked="false" />
+       orientation="1,0"
+       position="652.76561,105.52893" />
   </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <rect
+       fill="currentColor"
+       y="-0.80916661"
+       x="277.26855"
+       height="146.64241"
+       width="220.71146"
+       id="deckMask" />
+    <g
+       stroke="currentColor"
+       id="mastMask">
+      <path
+         inkscape:connector-curvature="0"
+         id="path89"
+         d="m 425.11266,59.524539 c 26.5,26.500001 26.5,26.500001 26.5,26.500001 z" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path91"
+         d="m 451.61266,59.524539 c -26.5,26.5 -26.5,26.5 -26.5,26.5 z" />
+    </g>
+    <circle
+       stroke="currentColor"
+       r="4"
+       cy="398.09106"
+       cx="160.87129"
+       id="pipe" />
+    <g
+       id="pin">
+      <circle
+         style="fill:#ffffff;fill-opacity:0.00009999"
+         cx="567.53906"
+         cy="28.152"
+         transform="rotate(-8.2972976)"
+         r="2.7"
+         id="circle8623" />
+      <circle
+         fill="currentColor"
+         id="circle8296"
+         r="1.8"
+         transform="rotate(-8.2972976)"
+         cy="28.152"
+         cx="567.53906" />
+    </g>
+    <circle
+       style="fill:none;stroke:currentColor"
+       transform="rotate(-8.2972976)"
+       id="pinhole"
+       cx="607.21271"
+       cy="138.77504"
+       r="1.5" />
+    <ellipse
+       fill="currentColor"
+       transform="rotate(89.50973)"
+       id="cleat"
+       ry="5.6149998"
+       rx="1.4"
+       cy="-575.37415"
+       cx="3.7214081" />
+    <rect
+       fill="currentColor"
+       ry="1.5"
+       y="72.318771"
+       x="396.50137"
+       height="15"
+       width="4"
+       id="lcleat" />
+    <path
+       fill="currentColor"
+       transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
+       d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
+       id="xcleat"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc" />
+    <path
+       fill="currentColor"
+       d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccc"
+       id="kevel" />
+    <rect
+       fill="currentColor"
+       transform="translate(-36.939556,-367.63021)"
+       id="fist"
+       width="8.1090002"
+       height="8.1089563"
+       x="324.09692"
+       y="408.33606" />
+    <g
+       id="tackle"
+       transform="matrix(-1,0,0,1,657.0613,84.968375)">
+      <ellipse
+         fill="currentColor"
+         transform="rotate(-18.749174,-1131.8714,-71.940313)"
+         ry="2.5569487"
+         rx="4.1037445"
+         cy="420.36639"
+         cx="-74.057053"
+         id="path4323" />
+      <path
+         style="stroke:currentColor"
+         d="m 61.958952,411.73029 3.977475,9.21764"
+         id="path4328"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cc"
+         transform="translate(-36.939556,-367.63021)" />
+      <path
+         style="stroke:currentColor"
+         sodipodi:nodetypes="cc"
+         inkscape:connector-curvature="0"
+         id="path4325"
+         d="m 59.622974,412.67731 3.977475,9.21764"
+         transform="translate(-36.939556,-367.63021)" />
+    </g>
+    <g
+       id="knot"
+       transform="translate(380.03047,-105.31189)">
+      <path
+         style="fill:none;stroke:currentColor"
+         sodipodi:nodetypes="cccc"
+         inkscape:connector-curvature="0"
+         id="path4249"
+         d="m 298.72105,455.17265 c -3.99317,0.48895 -15.45986,2.28426 -17.2673,3.4724 -0.87352,0.68368 -1.28132,1.45631 -0.50507,2.27284 0.29488,0.21805 1.51523,0.12627 1.51523,0.12627" />
+      <path
+         style="fill:none;stroke:currentColor"
+         d="m 290.63983,461.04416 c 0,0 1.79183,-1.09175 2.58851,-1.76777 0.49938,-0.42374 1.08756,-0.91263 1.3574,-1.42053 0.26984,-0.5079 0.39292,-0.88831 0.31567,-1.45209 -0.0772,-0.56378 -0.79993,-1.71985 -1.43805,-2.14657 -0.63813,-0.42672 -1.58057,-0.41427 -2.19218,-0.15784 -0.61162,0.25643 -0.56613,0.7134 -0.75762,1.35739 -0.19149,0.64399 0.11478,1.99311 0.2841,2.71479 0.16932,0.72168 0.25082,1.04256 0.59978,1.60993 0.34896,0.56737 0.9875,1.20391 1.5468,1.67306 0.5593,0.46915 1.76777,1.13642 1.76777,1.13642"
+         id="path4251"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cszzzzzzzzc" />
+      <circle
+         r="0.4261581"
+         cy="461.04416"
+         cx="283.88446"
+         id="path4253"
+         style="fill:currentColor" />
+      <circle
+         style="fill:currentColor"
+         id="circle4255"
+         cx="285.22607"
+         cy="461.0126"
+         r="0.4261581" />
+      <circle
+         style="fill:currentColor"
+         r="0.4261581"
+         cy="461.02838"
+         cx="286.56769"
+         id="circle4257" />
+      <circle
+         style="fill:currentColor"
+         id="circle4259"
+         cx="287.84616"
+         cy="461.02838"
+         r="0.4261581" />
+      <circle
+         r="0.4261581"
+         cy="461.04416"
+         cx="289.14041"
+         id="circle4261"
+         style="fill:currentColor" />
+    </g>
+  </defs>
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -277,766 +277,574 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:groupmode="layer"
-     id="layer1"
+     transform="translate(0,-20.599997)"
      inkscape:label="drawing"
-     transform="translate(0,-20.599997)">
+     id="layer1"
+     inkscape:groupmode="layer">
     <g
        id="drawing">
       <g
-         style="fill:none;stroke:currentColor"
-         transform="translate(-36.919264,-367.63021)"
-         id="portDrawing">
+         id="portDrawing"
+         style="fill:none;stroke:currentColor">
         <path
-           inkscape:tile-y0="-1.6731129e-06"
-           inkscape:tile-x0="-2.8809948e-07"
-           inkscape:tile-h="36.004633"
-           inkscape:tile-w="675.19792"
-           inkscape:tile-cy="18.021847"
-           inkscape:tile-cx="337.55918"
-           sodipodi:nodetypes="cccc"
-           inkscape:connector-curvature="0"
-           id="path4399"
-           d="M 42.518264,398.01795 C 197.10883,373.29822 384.77,360.82825 538.40869,372.4819 m 135.52704,8.96246 c 8.1877,0.64014 12.48758,2.54947 19.46811,7.27071"
-           style="fill-rule:evenodd;stroke-width:1px" />
+           style="stroke-width:1;fill-rule:evenodd"
+           d="M5.599 30.38774C160.189566 5.66801 347.850736 -6.80196 501.489426 4.85169M637.016466 13.81415C645.204166 14.45429 649.504046 16.36362 656.484576 21.08486"
+           id="path4399" />
         <path
-           transform="rotate(3.8619435)"
-           style="fill-rule:evenodd;stroke-width:0.9375;stroke-miterlimit:0"
-           d="m 559.78345,335.37296 138.3132,-0.1861 0.45056,7.89044 -138.29544,-0.11987 z"
+           class="rail"
            id="rect4158"
-           inkscape:connector-curvature="0"
-           sodipodi:nodetypes="ccccc"
-           class="rail" />
+           d="M499.004807786 4.68406916906C499.004807786 4.68406916906 637.01646537 13.8141457539 637.01646537 13.8141457539C637.01646537 13.8141457539 636.934560584 21.7170148098 636.934560584 21.7170148098C636.934560584 21.7170148098 498.961230548 12.282859193 498.961230548 12.282859193C498.961230548 12.282859193 499.004807786 4.68406916906 499.004807786 4.68406916906"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
         <rect
-           transform="matrix(0.99775733,0.06693505,-0.06658984,0.99778043,0,0)"
-           y="328.80136"
-           x="615.87537"
-           height="5.6153321"
-           width="57.041946"
+           transform="matrix(0.997985,0.063452,-0.063107,0.998007,-36.919264,-367.630210)"
+           class="rail"
+           style="stroke-miterlimit:0;stroke-width:1;stroke-linecap:round;fill-rule:evenodd"
            id="rect4272"
-           style="fill-rule:evenodd;stroke-width:0.88;stroke-linecap:round;stroke-miterlimit:0"
-           class="rail" />
+           width="57.041946"
+           height="5.6153321"
+           x="614.65808"
+           y="330.17624" />
         <rect
-           y="412.18246"
-           x="582.60071"
-           height="8.0121279"
-           width="7.895206"
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,-36.919264,-367.630210)"
+           class="solid"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd"
            id="rect4212"
-           style="fill-rule:evenodd;stroke-width:0.93687236;stroke-miterlimit:0"
-           class="solid" />
+           width="7.895206"
+           height="8.0121279"
+           x="582.60071"
+           y="412.18246" />
         <path
-           style="fill-rule:evenodd;stroke-width:0.8816328;stroke-miterlimit:0"
-           d="m 535.88779,431.22596 0.0131,-31.84623 8.20649,0.0488 -0.0723,31.79743"
+           class="rail"
            id="path4201"
-           inkscape:connector-curvature="0"
-           sodipodi:nodetypes="cccc"
-           class="rail" />
+           d="M498.968526 63.59575C498.968526 63.59575 498.981626 31.74952 498.981626 31.74952C498.981626 31.74952 507.188116 31.79832 507.188116 31.79832C507.188116 31.79832 507.115816 63.59575 507.115816 63.59575"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
         <g
-           id="g4442"
-           transform="translate(15.037579,366.49632)"
-           class="solid">
+           class="solid"
+           id="g4442">
           <path
-             inkscape:connector-curvature="0"
-             id="path4436"
-             d="m 496.59123,4.621966 0.0178,26.671383 24.69632,1.670547"
-             style="fill-rule:evenodd;stroke-width:1px;stroke-linejoin:round"
-             sodipodi:nodetypes="ccc" />
+             style="stroke-linejoin:round;stroke-width:1;fill-rule:evenodd"
+             d="M474.709545 3.488076C474.709545 3.488076 474.727345 30.159459 474.727345 30.159459C474.727345 30.159459 499.423665 31.830006 499.423665 31.830006"
+             id="path4436" />
           <path
-             inkscape:connector-curvature="0"
-             id="path4438"
-             d="M 512.91618,32.73716 V 5.6070205"
-             style="fill-rule:evenodd;stroke-width:1px"
-             sodipodi:nodetypes="cc" />
+             style="stroke-width:1;fill-rule:evenodd"
+             d="M491.034495 31.60327C491.034495 31.60327 491.034495 4.4731305 491.034495 4.4731305"
+             id="path4438" />
           <path
-             inkscape:connector-curvature="0"
-             id="path4440"
-             d="m 504.29436,31.791854 0.006,-26.716417"
-             style="fill-rule:evenodd;stroke-width:1px"
-             sodipodi:nodetypes="cc" />
+             style="stroke-width:1;fill-rule:evenodd"
+             d="M482.412675 30.657964C482.412675 30.657964 482.418675 3.941547 482.418675 3.941547"
+             id="path4440" />
         </g>
         <rect
-           style="fill-rule:evenodd;stroke-width:0.88;stroke-miterlimit:0"
-           id="rect4227"
-           width="8.1090002"
-           height="8.1089563"
-           x="400.67026"
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,-36.919264,-367.630210)"
+           class="solid"
            y="404.02512"
-           class="solid" />
+           x="400.67026"
+           height="8.1089563"
+           width="8.1090002"
+           id="rect4227"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
         <rect
-           style="fill-rule:evenodd;stroke-width:0.77742982;stroke-miterlimit:0"
-           id="rect4231"
-           width="77.184006"
-           height="8.348403"
-           x="331.80298"
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,-36.919264,-367.630210)"
+           class="rail"
            y="403.94504"
-           class="rail" />
+           x="331.80298"
+           height="8.348403"
+           width="77.184006"
+           id="rect4231"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
         <path
-           style="fill-rule:evenodd;stroke-width:0.77742982;stroke-miterlimit:0"
-           d="m 317.92266,375.36768 50.1014,-2.04461 0.26193,6.64295 -50.10685,1.90661 z"
+           class="rail"
            id="rect4238"
-           inkscape:connector-curvature="0"
-           sodipodi:nodetypes="ccccc"
-           class="rail" />
+           d="M281.003396 7.73747C281.003396 7.73747 331.104796 5.69286 331.104796 5.69286C331.104796 5.69286 331.366726 12.33581 331.366726 12.33581C331.366726 12.33581 281.259876 14.24242 281.259876 14.24242C281.259876 14.24242 281.003396 7.73747 281.003396 7.73747"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
         <g
-           id="g2411"
-           class="solid">
+           class="solid"
+           id="g2411">
           <path
-             style="fill-rule:evenodd;stroke-width:1px"
-             d="m 305.94995,370.63551 0.25254,33.08249 c 2.4412,1.30618 4.88241,1.26129 7.32361,-0.12627 V 370.2567"
              id="path4286"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cccc" />
+             d="M269.030686 3.0053C269.030686 3.0053 269.283226 36.08779 269.283226 36.08779C271.724426 37.39397 274.165636 37.34908 276.606836 35.96152C276.606836 35.96152 276.606836 2.62649 276.606836 2.62649"
+             style="stroke-width:1;fill-rule:evenodd" />
           <path
-             style="fill-rule:evenodd;stroke-width:1px"
-             d="m 279.05464,404.98069 c 11.72159,2.0062 20.14897,-0.13337 26.89531,-4.41941"
              id="path4302"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
+             d="M242.135376 37.35048C253.856966 39.35668 262.284346 37.21711 269.030686 32.93107"
+             style="stroke-width:1;fill-rule:evenodd" />
           <path
-             style="fill-rule:evenodd;stroke-width:1px"
-             d="m 279.01855,402.63768 c 12.57753,-3.0013 19.72489,-7.04182 26.84122,-13.71769"
              id="path4300"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
+             d="M242.099286 35.00747C254.676816 32.00617 261.824176 27.96565 268.940506 21.28978"
+             style="stroke-width:1;fill-rule:evenodd" />
           <path
-             style="fill-rule:evenodd;stroke-width:1px"
-             d="m 279.05464,398.74616 c 16.00564,-5.94549 25.09746,-19.22062 26.5165,-28.11065"
              id="path4298"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
+             d="M242.135376 31.11595C258.141016 25.17046 267.232836 11.89533 268.651876 3.0053"
+             style="stroke-width:1;fill-rule:evenodd" />
           <path
-             style="fill-rule:evenodd;stroke-width:1px"
-             d="m 278.98559,393.0088 c 11.48286,-8.99476 11.33132,-15.33988 12.44342,-21.74195"
              id="path4296"
-             inkscape:connector-curvature="0"
-             sodipodi:nodetypes="cc" />
+             d="M242.066326 25.37859C253.549186 16.38383 253.397646 10.03871 254.509746 3.63664"
+             style="stroke-width:1;fill-rule:evenodd" />
         </g>
         <use
-           x="0"
-           y="0"
-           xlink:href="#pipe"
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,71.490636,-384.234163)"
+           height="100%"
+           width="100%"
            id="use11168"
-           transform="translate(108.4099,-16.603953)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
            xlink:href="#pipe"
+           y="0"
+           x="0" />
+        <use
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,24.224396,-380.745552)"
+           height="100%"
+           width="100%"
            id="use11170"
-           transform="translate(61.14366,-13.115342)"
-           width="100%"
-           height="100%" />
-        <rect
-           transform="rotate(-5.4351251)"
-           y="396.98651"
-           x="138.53073"
-           height="6.1536069"
-           width="27.592697"
-           id="rect4267"
-           style="fill-rule:evenodd;stroke-width:0.78730243;stroke-miterlimit:0"
-           class="rail" />
-        <rect
-           transform="matrix(0.99305302,-0.11766772,0.15968158,0.98716857,0,0)"
-           style="fill-rule:evenodd;stroke-width:0.9215799;stroke-miterlimit:0"
-           id="rect4281"
-           width="42.940006"
-           height="5.5987296"
-           x="58.76849"
-           y="391.19165"
-           ry="0"
-           class="rail" />
-        <use
-           x="0"
-           y="0"
            xlink:href="#pipe"
+           y="0"
+           x="0" />
+        <rect
+           transform="matrix(0.995504,-0.094719,0.094719,0.995504,-36.919264,-367.630210)"
+           class="rail"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd"
+           id="rect4267"
+           width="27.592697"
+           height="6.1536069"
+           x="138.67274"
+           y="395.49405" />
+        <rect
+           transform="matrix(0.993053,-0.117668,0.159682,0.987169,-36.919264,-367.630210)"
+           class="rail"
+           ry="0"
+           y="391.19165"
+           x="58.76849"
+           height="5.5987296"
+           width="42.940006"
+           id="rect4281"
+           style="stroke-width:1;stroke-miterlimit:0;fill-rule:evenodd" />
+        <use
+           transform="matrix(1.000000,0.000000,0.000000,1.000000,-45.537226,-373.946175)"
+           height="100%"
+           width="100%"
            id="use11166"
-           transform="translate(-8.6179616,-6.3159649)"
-           width="100%"
-           height="100%" />
+           xlink:href="#pipe"
+           y="0"
+           x="0" />
       </g>
       <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
+         transform="matrix(1.000000,0.000000,0.000000,-1.000000,0.000000,145.579670)"
+         xlink:href="#portDrawing"
          id="use405"
-         transform="matrix(1,0,0,-1,0,145.57967)"
-         xlink:href="#portDrawing" />
+         x="0"
+         y="0"
+         width="100%"
+         height="100%" />
       <path
-         d="m 645.62101,15.449246 c -3.87562,-1.159569 -8.60454,-1.635096 -8.60454,-1.635096 -0.16012,38.870228 0.11539,82.335339 0.17643,117.90485 0,0 3.88735,-0.46149 8.42437,-1.56419 -0.182,-8.55529 0.0775,-111.179922 0.004,-114.705564 z"
+         class="rail"
+         style="fill:none;stroke:currentColor"
          id="path4294"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccccc"
-         style="fill:none;stroke:currentColor"
-         class="rail" />
+         d="M645.62101 15.449246C641.74539 14.289677 637.01647 13.81415 637.01647 13.81415C636.85635 52.684378 637.13186 96.149489 637.1929 131.719C637.1929 131.719 641.08025 131.25751 645.61727 130.15481C645.43527 121.59952 645.69477 18.974888 645.62127 15.449246C645.62127 15.449246 645.62101 15.449246 645.62101 15.449246" />
       <path
-         style="fill:none;stroke:currentColor"
-         d="m 603.73443,35.977709 h 7.9082 l -0.21655,73.962851 h -7.79992 z"
+         class="rail"
          id="rect4333"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc"
-         class="rail" />
+         d="M603.73443 35.977709C603.73443 35.977709 611.64263 35.977709 611.64263 35.977709C611.64263 35.977709 611.42608 109.94056 611.42608 109.94056C611.42608 109.94056 603.62616 109.94056 603.62616 109.94056C603.62616 109.94056 603.73443 35.977709 603.73443 35.977709"
+         style="fill:none;stroke:currentColor" />
       <circle
-         style="fill:none;stroke:currentColor"
-         id="path4330"
-         cx="578.35858"
+         class="solid"
+         r="14.805359"
          cy="72.837814"
-         r="14.805359"
-         class="solid" />
+         cx="578.35858"
+         id="path4330"
+         style="fill:none;stroke:currentColor" />
       <path
-         style="fill:none;stroke:currentColor"
-         d="m 545.59119,36.028473 h 8.04692 v 73.736167 l -7.95537,-0.0915 z"
+         class="rail"
          id="rect4326"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc"
-         class="rail" />
+         d="M545.59119 36.028473C545.59119 36.028473 553.63811 36.028473 553.63811 36.028473C553.63811 36.028473 553.63811 109.76464 553.63811 109.76464C553.63811 109.76464 545.68274 109.67314 545.68274 109.67314C545.68274 109.67314 545.59119 36.028473 545.59119 36.028473"
+         style="fill:none;stroke:currentColor" />
       <g
-         id="g4318"
-         transform="translate(-44.16018,-367.63021)"
+         class="solid"
          style="fill:none;stroke:currentColor"
-         class="solid">
+         id="g4318">
         <path
-           sodipodi:nodetypes="ccc"
-           inkscape:connector-curvature="0"
-           id="path4211"
-           d="m 551.28543,431.22599 c 1.30437,2.87547 1.97916,5.9965 1.97915,9.1637 0,3.1672 -0.67479,6.28823 -1.97916,9.1637" />
+           d="M507.12525 63.59578C508.42962 66.47125 509.10441 69.59228 509.1044 72.75948C509.1044 75.92668 508.42961 79.04771 507.12524 81.92318"
+           id="path4211" />
         <path
-           sodipodi:nodetypes="ccc"
-           inkscape:connector-curvature="0"
-           id="path4312"
-           d="m 543.13821,431.22596 c 1.30437,2.87547 1.97916,5.9965 1.97917,9.16373 0,3.16723 -0.67479,6.28826 -1.97916,9.16373" />
+           d="M498.97803 63.59575C500.2824 66.47122 500.95719 69.59225 500.9572 72.75948C500.9572 75.92671 500.28241 79.04774 498.97804 81.92321"
+           id="path4312" />
       </g>
       <path
-         inkscape:connector-curvature="0"
-         id="path4434"
-         d="m 499.07521,140.5775 0.0502,-27.33242 m 0.022,-81.024449 -0.14261,-27.5365618"
          style="fill:none;stroke:currentColor"
-         sodipodi:nodetypes="cccc" />
+         d="M499.07521 140.5775C499.07521 140.5775 499.12541 113.24508 499.12541 113.24508M499.14741 32.220631C499.14741 32.220631 499.0048 4.6840692 499.0048 4.6840692"
+         id="path4434" />
       <circle
-         r="14.805359"
-         cy="72.837807"
-         cx="333.48096"
+         class="solid "
+         style="fill:none;stroke:currentColor"
          id="circle327"
-         style="fill:none;stroke:currentColor"
-         class="solid	" />
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="path4336"
-         d="M 302.85966,109.06385 H 294.785 V 36.343666 h 8.07466 z"
-         style="fill:none;stroke:currentColor"
-         class="rail" />
-      <path
-         style="fill:none;stroke:currentColor"
-         d="M 241.95325,140.82828 241.8505,107.72653 M 241.79011,37.7648 241.8138,4.2885"
-         id="path4288"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc" />
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="path4060"
-         d="m 241.69368,37.438819 -8.30588,0.0691 c -0.004,16.80629 0.062,53.77605 0.0582,70.582341 h 8.16778 c 0.004,-16.806291 0.0761,-53.845101 0.0799,-70.651391 z"
-         style="fill:none;stroke:currentColor"
-         class="solid" />
-      <circle
-         style="fill:none;stroke:currentColor"
-         id="circle329"
-         cx="137.48137"
+         cx="333.48096"
          cy="72.837807"
-         r="14.805359"
-         class="solid" />
-      <rect
-         style="fill:none;stroke:currentColor"
-         id="rect4322"
-         width="3.0405231"
-         height="38.030529"
-         x="87.298279"
-         y="53.730049"
-         class="solid" />
-      <rect
-         style="fill:none;stroke:currentColor"
-         id="rect4317"
-         width="8.4818048"
-         height="9.9488058"
-         x="78.788872"
-         y="67.6717"
-         class="solid" />
+         r="14.805359" />
       <path
-         sodipodi:nodetypes="cccc"
-         inkscape:connector-curvature="0"
-         id="path4887"
-         d="m 87.296169,19.030857 v 3.279944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -5.025389,0.0348"
+         class="rail"
          style="fill:none;stroke:currentColor"
-         class="solid" />
+         d="M302.85966 109.06385C302.85966 109.06385 294.785 109.06385 294.785 109.06385C294.785 109.06385 294.785 36.343666 294.785 36.343666C294.785 36.343666 302.85966 36.343666 302.85966 36.343666C302.85966 36.343666 302.85966 109.06385 302.85966 109.06385"
+         id="path4336" />
       <path
-         style="fill:none;stroke:currentColor"
-         d="m 81.495986,19.330857 v 10.179944 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -2.22551,0.0348"
-         id="path4306"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="cccc"
-         class="solid" />
+         id="path4288"
+         d="M241.95325 140.82828C241.95325 140.82828 241.8505 107.72653 241.8505 107.72653M241.79011 37.7648C241.79011 37.7648 241.8138 4.2885 241.8138 4.2885"
+         style="fill:none;stroke:currentColor" />
       <path
-         inkscape:connector-curvature="0"
-         id="path4304"
-         d="M 78.845416,125.84614 78.773396,19.641857"
+         class="solid"
          style="fill:none;stroke:currentColor"
-         sodipodi:nodetypes="cc" />
-      <path
-         sodipodi:nodetypes="cccc"
-         inkscape:connector-curvature="0"
-         id="path4412"
-         d="m 61.845,123.31086 v -16.81389 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 15.25083,-0.0624"
-         style="fill:none;stroke:currentColor"
-         class="solid" />
+         d="M241.69368 37.438819C241.69368 37.438819 233.3878 37.507919 233.3878 37.507919C233.3838 54.314209 233.4498 91.283969 233.446 108.09026C233.446 108.09026 241.61378 108.09026 241.61378 108.09026C241.61778 91.283969 241.68988 54.245159 241.69368 37.438869C241.69368 37.438869 241.69368 37.438819 241.69368 37.438819"
+         id="path4060" />
       <circle
-         style="fill:none;stroke:currentColor"
-         id="circle4314"
-         cx="12.203586"
-         cy="72.707199"
-         r="4.495326"
-         class="solid" />
+         class="solid"
+         r="14.805359"
+         cy="72.837807"
+         cx="137.48137"
+         id="circle329"
+         style="fill:none;stroke:currentColor" />
+      <rect
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+         class="solid"
+         y="53.730049"
+         x="87.298279"
+         height="38.030529"
+         width="3.0405231"
+         id="rect4322"
+         style="fill:none;stroke:currentColor" />
+      <rect
+         transform="matrix(1.000000,0.000000,0.000000,1.000000,0.000000,0.000000)"
+         class="solid"
+         y="67.6717"
+         x="78.788872"
+         height="9.9488058"
+         width="8.4818048"
+         id="rect4317"
+         style="fill:none;stroke:currentColor" />
       <path
-         sodipodi:nodetypes="cc"
+         class="solid"
          style="fill:none;stroke:currentColor"
-         d="M 6.0164631,115.67883 V 29.893398"
+         d="M87.296169 19.030857C87.296169 19.030857 87.296169 22.310801 87.296169 22.310801C87.121439 23.023711 86.858529 22.983001 86.611389 23.077111C86.611389 23.077111 81.586 23.111911 81.586 23.111911"
+         id="path4887" />
+      <path
+         class="solid"
+         id="path4306"
+         d="M81.495986 19.330857C81.495986 19.330857 81.495986 29.510801 81.495986 29.510801C81.321256 30.223711 81.058346 30.183001 80.811206 30.277111C80.811206 30.277111 78.585696 30.311911 78.585696 30.311911"
+         style="fill:none;stroke:currentColor" />
+      <path
+         style="fill:none;stroke:currentColor"
+         d="M78.845416 125.84614C78.845416 125.84614 78.773396 19.641857 78.773396 19.641857"
+         id="path4304" />
+      <path
+         class="solid"
+         style="fill:none;stroke:currentColor"
+         d="M61.845 123.31086C61.845 123.31086 61.845 106.49697 61.845 106.49697C62.23362 105.21856 62.81845 105.29155 63.36817 105.12279C63.36817 105.12279 78.619 105.06039 78.619 105.06039"
+         id="path4412" />
+      <circle
+         class="solid"
+         r="4.495326"
+         cy="72.707199"
+         cx="12.203586"
+         id="circle4314"
+         style="fill:none;stroke:currentColor" />
+      <path
          id="path4069"
-         inkscape:connector-curvature="0" />
+         d="M6.0164631 115.67883C6.0164631 115.67883 6.0164631 29.893398 6.0164631 29.893398"
+         style="fill:none;stroke:currentColor" />
     </g>
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="deckMasks"
+     style="display:none"
      transform="translate(0,-20.599997)"
-     style="display:none">
+     inkscape:label="deckMasks"
+     id="layer2"
+     inkscape:groupmode="layer">
     <g
-       id="deckMasks"
+       style="color:#ffffff"
        class="modeDependent which"
-       style="fill:#ffffff">
+       id="deckMasks">
       <use
-         id="use758"
-         xlink:href="#deckMask"
-         class="deckMask"
-         rigging:deck="fore"
+         style="stroke-width:1.00083089"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
          transform="matrix(0.71784977,0,0,1,299.42576,0)"
-         x="0"
-         y="0"
-         width="100%"
-         height="100%"
-         style="stroke-width:1.00083089" />
-      <use
-         id="use760"
-         xlink:href="#deckMask"
+         rigging:deck="fore"
          class="deckMask"
-         rigging:deck="main"
-         x="0"
-         y="0"
-         width="100%"
-         height="100%"
+         xlink:href="#deckMask"
+         id="use758" />
+      <use
+         style="stroke-width:0.99871236"
          transform="matrix(1.0025803,0,0,1,-0.80201633,0)"
-         style="stroke-width:0.99871236" />
-      <use
-         id="use668"
-         xlink:href="#deckMask"
-         class="deckMask"
-         rigging:deck="stern"
-         transform="matrix(1.23109,0,0,1,-335.87624,0)"
-         x="0"
-         y="0"
-         width="100%"
          height="100%"
-         style="stroke-width:1.00998592" />
+         width="100%"
+         y="0"
+         x="0"
+         rigging:deck="main"
+         class="deckMask"
+         xlink:href="#deckMask"
+         id="use760" />
+      <use
+         style="stroke-width:1.00998592"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
+         transform="matrix(1.23109,0,0,1,-335.87624,0)"
+         rigging:deck="stern"
+         class="deckMask"
+         xlink:href="#deckMask"
+         id="use668" />
     </g>
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="layer3"
+     transform="translate(0,-20.599997)"
      inkscape:label="mastMasks"
-     transform="translate(0,-20.599997)">
+     id="layer3"
+     inkscape:groupmode="layer">
     <g
-       id="mastMasks"
+       style="color:#ff0000"
        class="modeDependent where"
-       style="stroke:#ff0000">
+       id="mastMasks">
       <use
-         id="use89"
-         xlink:href="#mastMask"
-         class="mastMask"
-         rigging:mast="fore"
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
          transform="translate(140)"
-         x="0"
-         y="0"
-         width="100%"
-         height="100%" />
-      <use
-         id="use336"
-         xlink:href="#mastMask"
+         rigging:mast="fore"
          class="mastMask"
-         rigging:mast="main"
+         xlink:href="#mastMask"
+         id="use89" />
+      <use
+         height="100%"
+         width="100%"
+         y="0"
+         x="0"
          transform="translate(-104.88988)"
-         x="0"
-         y="0"
-         width="100%"
-         height="100%" />
-      <use
-         id="use338"
-         xlink:href="#mastMask"
+         rigging:mast="main"
          class="mastMask"
-         rigging:mast="mizzen"
-         transform="translate(-300.96611)"
-         x="0"
-         y="0"
+         xlink:href="#mastMask"
+         id="use336" />
+      <use
+         height="100%"
          width="100%"
-         height="100%" />
+         y="0"
+         x="0"
+         transform="translate(-300.96611)"
+         rigging:mast="mizzen"
+         class="mastMask"
+         xlink:href="#mastMask"
+         id="use338" />
     </g>
   </g>
   <g
-     inkscape:groupmode="layer"
-     id="layer4"
+     transform="translate(0,-20.599997)"
      inkscape:label="points"
-     transform="translate(0,-20.599997)">
+     id="layer4"
+     inkscape:groupmode="layer">
     <g
-       id="points"
-       transform="translate(0.02029647,-7.1415848e-6)"
+       inkscape:transform-center-y="-60.498592"
        inkscape:transform-center-x="-152.32154"
-       inkscape:transform-center-y="-60.498592">
+       transform="translate(0.02029647,-7.1415848e-6)"
+       id="points">
       <g
-         rigging:deck="fore"
-         rigging:side="port"
+         id="g1143"
          rigging:rail="behindFront"
-         id="g1143">
+         rigging:side="port"
+         rigging:deck="fore">
         <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4877"
+           height="100%"
+           width="100%"
            transform="rotate(-89.099613,642.29657,-8.3335647)"
-           width="100%"
-           height="100%" />
+           id="use4877"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
       </g>
       <g
-         rigging:deck="fore"
-         rigging:side="starboard"
+         id="g1167"
          rigging:rail="behindFront"
-         id="g1167">
+         rigging:side="starboard"
+         rigging:deck="fore">
         <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4881"
+           height="100%"
+           width="100%"
            transform="rotate(-90.103875,656.23271,6.8018431)"
-           width="100%"
-           height="100%" />
+           id="use4881"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
       </g>
       <g
-         rigging:deck="fore"
-         rigging:side="port"
-         rigging:rail="frontRail"
-         id="g4296"
+         transform="translate(0,-1.1249989)"
          rigging:isAcross="true"
-         transform="translate(0,-1.1249989)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4878"
-           transform="translate(75.828368,120.55795)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4880"
-           transform="translate(75.828368,111.36483)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4882"
-           transform="translate(75.828368,102.63951)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4886"
-           transform="translate(75.828328,94.007952)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4884"
-           transform="translate(20.680057,-18.061924)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4888"
-           transform="translate(75.828328,77.695452)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="fore"
-         rigging:side="starboard"
+         id="g4296"
          rigging:rail="frontRail"
-         id="g4312"
+         rigging:side="port"
+         rigging:deck="fore">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(75.828368,120.55795)"
+           id="use4878"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(75.828368,111.36483)"
+           id="use4880"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(75.828368,102.63951)"
+           id="use4882"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(75.828328,94.007952)"
+           id="use4886"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(20.680057,-18.061924)"
+           id="use4884"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(75.828328,77.695452)"
+           id="use4888"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         rigging:isAcross="true"
          transform="translate(3.1976551e-4,41.650111)"
-         rigging:isAcross="true">
+         id="g4312"
+         rigging:rail="frontRail"
+         rigging:side="starboard"
+         rigging:deck="fore">
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4892"
+           height="100%"
+           width="100%"
            transform="translate(75.828238,93.32063)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4892"
            xlink:href="#pin"
-           id="use4894"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(75.828238,101.88963)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4894"
            xlink:href="#pin"
-           id="use4896"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(75.828238,110.58963)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4896"
            xlink:href="#pin"
-           id="use4898"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(75.828238,119.39563)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
+           id="use4898"
+           xlink:href="#pin"
            y="0"
-           xlink:href="#pinhole"
-           id="use4900"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(20.680226,23.994376)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
+           id="use4900"
+           xlink:href="#pinhole"
            y="0"
-           xlink:href="#pin"
-           id="use4902"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(75.828238,136.00763)"
-           width="100%"
-           height="100%" />
+           id="use4902"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
-         id="g4125"
-         rigging:rail="onDeckFront"
-         rigging:side="center"
+         transform="rotate(90,336.06431,324.36446)"
          rigging:deck="fore"
-         transform="rotate(90,336.06431,324.36446)">
+         rigging:side="center"
+         rigging:rail="onDeckFront"
+         id="g4125">
         <use
-           height="100%"
-           width="100%"
-           transform="rotate(0.24101817,-6431.2049,-116512.54)"
+           x="0"
+           y="0"
+           xlink:href="#cleat"
            id="use4123"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-      </g>
-      <g
-         id="g826"
-         rigging:rail="onDeckFront"
-         rigging:side="port"
-         rigging:deck="fore"
-         transform="rotate(-33.824817,358.48768,-866.82196)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4869"
-           transform="rotate(37.610555,293.76976,-704.80991)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         transform="rotate(-3,2151.6971,-10313.03)"
-         rigging:deck="fore"
-         rigging:side="starboard"
-         rigging:rail="onDeckFront"
-         id="g830">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4872"
            transform="rotate(0.24101817,-6431.2049,-116512.54)"
            width="100%"
            height="100%" />
       </g>
       <g
+         transform="rotate(-33.824817,358.48768,-866.82196)"
          rigging:deck="fore"
          rigging:side="port"
-         rigging:rail="sideRail"
+         rigging:rail="onDeckFront"
+         id="g826">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(37.610555,293.76976,-704.80991)"
+           id="use4869"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         id="g830"
+         rigging:rail="onDeckFront"
+         rigging:side="starboard"
+         rigging:deck="fore"
+         transform="rotate(-3,2151.6971,-10313.03)">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(0.24101817,-6431.2049,-116512.54)"
+           id="use4872"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="rotate(3.8684716,821.86824,-178.44307)"
          id="g4304"
-         transform="rotate(3.8684716,821.86824,-178.44307)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4812"
-           transform="translate(18.549066,-19.603543)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4814"
-           transform="translate(65.801754,84.049686)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4818"
-           transform="translate(2.6878743,-19.687702)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4816"
-           transform="translate(-5.2858597,-19.811902)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4820"
-           transform="translate(41.878401,83.909322)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4822"
-           transform="translate(33.813389,83.935999)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4824"
-           transform="translate(25.929679,83.850814)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4826"
-           transform="translate(-37.278234,-19.943171)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4828"
-           transform="translate(9.8859512,83.763024)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4830"
-           transform="translate(-53.127931,-19.940721)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4832"
-           transform="translate(-5.9745215,83.647808)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4834"
-           transform="translate(-69.075667,-19.942917)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4836"
-           transform="translate(-77.040703,-19.841251)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4840"
-           transform="translate(-29.78216,83.870779)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4838"
-           transform="translate(-92.890514,-19.826577)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4842"
-           transform="translate(-45.724291,83.923643)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         transform="matrix(0.99778003,-0.06659558,-0.06659558,-0.99778003,-10.22636,201.14669)"
-         id="g4934"
          rigging:rail="sideRail"
-         rigging:side="starboard"
+         rigging:side="port"
          rigging:deck="fore">
         <use
            height="100%"
            width="100%"
            transform="translate(18.549066,-19.603543)"
-           id="use4850"
+           id="use4812"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1044,7 +852,7 @@
            height="100%"
            width="100%"
            transform="translate(65.801754,84.049686)"
-           id="use4856"
+           id="use4814"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1052,7 +860,7 @@
            height="100%"
            width="100%"
            transform="translate(2.6878743,-19.687702)"
-           id="use4861"
+           id="use4818"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1060,7 +868,7 @@
            height="100%"
            width="100%"
            transform="translate(-5.2858597,-19.811902)"
-           id="use4858"
+           id="use4816"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1068,7 +876,7 @@
            height="100%"
            width="100%"
            transform="translate(41.878401,83.909322)"
-           id="use4864"
+           id="use4820"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1076,7 +884,7 @@
            height="100%"
            width="100%"
            transform="translate(33.813389,83.935999)"
-           id="use4867"
+           id="use4822"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1084,7 +892,7 @@
            height="100%"
            width="100%"
            transform="translate(25.929679,83.850814)"
-           id="use4876"
+           id="use4824"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1092,7 +900,7 @@
            height="100%"
            width="100%"
            transform="translate(-37.278234,-19.943171)"
-           id="use4906"
+           id="use4826"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1100,7 +908,7 @@
            height="100%"
            width="100%"
            transform="translate(9.8859512,83.763024)"
-           id="use4913"
+           id="use4828"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1108,7 +916,7 @@
            height="100%"
            width="100%"
            transform="translate(-53.127931,-19.940721)"
-           id="use4917"
+           id="use4830"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1116,7 +924,7 @@
            height="100%"
            width="100%"
            transform="translate(-5.9745215,83.647808)"
-           id="use4919"
+           id="use4832"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1124,7 +932,7 @@
            height="100%"
            width="100%"
            transform="translate(-69.075667,-19.942917)"
-           id="use4921"
+           id="use4834"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1132,7 +940,7 @@
            height="100%"
            width="100%"
            transform="translate(-77.040703,-19.841251)"
-           id="use4923"
+           id="use4836"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1140,7 +948,7 @@
            height="100%"
            width="100%"
            transform="translate(-29.78216,83.870779)"
-           id="use4930"
+           id="use4840"
            xlink:href="#pin"
            y="0"
            x="0" />
@@ -1148,7 +956,7 @@
            height="100%"
            width="100%"
            transform="translate(-92.890514,-19.826577)"
-           id="use4926"
+           id="use4838"
            xlink:href="#pinhole"
            y="0"
            x="0" />
@@ -1156,217 +964,369 @@
            height="100%"
            width="100%"
            transform="translate(-45.724291,83.923643)"
-           id="use4932"
+           id="use4842"
            xlink:href="#pin"
            y="0"
            x="0" />
       </g>
       <g
-         transform="rotate(3.7694487,6406.5583,-164.40198)"
-         id="g5102"
          rigging:deck="fore"
-         rigging:side="port"
-         rigging:rail="shroudsRail">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4853"
-           transform="translate(64.118908,442.89579)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4851"
-           transform="translate(52.918608,442.89579)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4849"
-           transform="translate(41.719258,442.89579)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4847"
-           transform="translate(30.518958,442.89579)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4845"
-           transform="translate(19.318648,442.89579)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
          rigging:side="starboard"
-         rigging:rail="shroudsRail"
-         rigging:deck="fore"
-         id="g4282"
-         transform="rotate(-3.7508852,-3214.9561,624.85863)">
+         rigging:rail="sideRail"
+         id="g4934"
+         transform="matrix(0.99778003,-0.06659558,-0.06659558,-0.99778003,-10.22636,201.14669)">
         <use
            x="0"
            y="0"
-           xlink:href="#pin"
-           id="use4833"
-           transform="translate(64.119828,442.89547)"
+           xlink:href="#pinhole"
+           id="use4850"
+           transform="translate(18.549066,-19.603543)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use4835"
-           transform="translate(52.919528,442.89547)"
+           id="use4856"
+           transform="translate(65.801754,84.049686)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4861"
+           transform="translate(2.6878743,-19.687702)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4858"
+           transform="translate(-5.2858597,-19.811902)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use4837"
-           transform="translate(41.719228,442.89547)"
+           id="use4864"
+           transform="translate(41.878401,83.909322)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use4839"
-           transform="translate(30.518928,442.89547)"
+           id="use4867"
+           transform="translate(33.813389,83.935999)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use4841"
-           transform="translate(19.319558,442.89547)"
+           id="use4876"
+           transform="translate(25.929679,83.850814)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4906"
+           transform="translate(-37.278234,-19.943171)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use4913"
+           transform="translate(9.8859512,83.763024)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4917"
+           transform="translate(-53.127931,-19.940721)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use4919"
+           transform="translate(-5.9745215,83.647808)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4921"
+           transform="translate(-69.075667,-19.942917)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4923"
+           transform="translate(-77.040703,-19.841251)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use4930"
+           transform="translate(-29.78216,83.870779)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4926"
+           transform="translate(-92.890514,-19.826577)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use4932"
+           transform="translate(-45.724291,83.923643)"
            width="100%"
            height="100%" />
       </g>
       <g
-         rigging:deck="fore"
+         rigging:rail="shroudsRail"
          rigging:side="port"
-         rigging:rail="frontFists"
-         id="g1149"
-         transform="translate(316.2579,3.5265024)">
+         rigging:deck="fore"
+         id="g5102"
+         transform="rotate(3.7694487,6421.5819,-164.89638)">
         <use
            height="100%"
            width="100%"
-           id="use10664"
-           transform="translate(0.1057145,0.1483681)"
-           xlink:href="#fist"
+           transform="translate(64.118908,442.89579)"
+           id="use4853"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(52.918608,442.89579)"
+           id="use4851"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(41.719258,442.89579)"
+           id="use4849"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(30.518958,442.89579)"
+           id="use4847"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(19.318648,442.89579)"
+           id="use4845"
+           xlink:href="#pin"
            y="0"
            x="0" />
       </g>
       <g
+         transform="rotate(-3.7508852,-3203.5105,625.23339)"
+         id="g4282"
          rigging:deck="fore"
-         rigging:side="starboard"
+         rigging:rail="shroudsRail"
+         rigging:side="starboard">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(64.119828,442.89547)"
+           id="use4833"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(52.919528,442.89547)"
+           id="use4835"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(41.719228,442.89547)"
+           id="use4837"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(30.518928,442.89547)"
+           id="use4839"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(19.319558,442.89547)"
+           id="use4841"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(316.2579,3.5265024)"
+         id="g1149"
          rigging:rail="frontFists"
-         id="g1170"
-         transform="translate(316.16504,-7.999995)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#fist"
-           transform="translate(0.1057145,60.210611)"
-           id="use10668"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         id="g5002"
-         transform="translate(0.52681812)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4991"
-           transform="translate(-13.73291,18.493652)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4989"
-           transform="translate(-13.73291,9.3336976)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4987"
-           transform="translate(-13.73291,-9.3383788)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         id="g5007"
-         transform="translate(0.52681812)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4993"
-           transform="translate(-13.817852,28.385572)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4995"
-           transform="translate(-13.72879,37.353515)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4997"
-           transform="translate(-13.82254,55.757759)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="fore"
-         rigging:rail="atMastFront"
-         rigging:side="center"
-         id="g1173"
-         transform="rotate(-34.407321,594.59587,75.749819)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4860"
-           transform="rotate(35.278699,468.55991,68.433043)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         transform="translate(446.7934,-2.6413048)"
-         id="g1383"
-         rigging:rail="atMastSide"
          rigging:side="port"
          rigging:deck="fore">
         <use
            x="0"
            y="0"
+           xlink:href="#fist"
+           transform="translate(0.1057145,0.1483681)"
+           id="use10664"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="translate(316.16504,-7.999995)"
+         id="g1170"
+         rigging:rail="frontFists"
+         rigging:side="starboard"
+         rigging:deck="fore">
+        <use
+           height="100%"
+           width="100%"
+           id="use10668"
+           transform="translate(0.1057145,60.210611)"
+           xlink:href="#fist"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(0.52681812)"
+         id="g5002">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.73291,18.493652)"
+           id="use4991"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.73291,9.3336976)"
+           id="use4989"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.73291,-9.3383788)"
+           id="use4987"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(0.52681812)"
+         id="g5007">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.817852,28.385572)"
+           id="use4993"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.72879,37.353515)"
+           id="use4995"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-13.82254,55.757759)"
+           id="use4997"
+           xlink:href="#pinhole"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="rotate(-34.407321,594.59587,75.749819)"
+         id="g1173"
+         rigging:side="center"
+         rigging:rail="atMastFront"
+         rigging:deck="fore">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(35.278699,468.55991,68.433043)"
+           id="use4860"
            xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         rigging:deck="fore"
+         rigging:side="port"
+         rigging:rail="atMastSide"
+         id="g1383"
+         transform="translate(446.7934,-2.6413048)">
+        <use
+           inkscape:transform-center-y="0.17023408"
+           inkscape:transform-center-x="-0.40887294"
+           height="100%"
+           width="100%"
+           transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
            id="use1381"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="matrix(1,0,0,-1,446.7934,148.18149)"
+         id="g1389"
+         rigging:rail="atMastSide"
+         rigging:side="starboard"
+         rigging:deck="fore">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#cleat"
+           id="use1387"
            transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
            width="100%"
            height="100%"
@@ -1374,191 +1334,222 @@
            inkscape:transform-center-y="0.17023408" />
       </g>
       <g
+         style="stroke-width:0.70710677"
          rigging:deck="fore"
-         rigging:side="starboard"
-         rigging:rail="atMastSide"
-         id="g1389"
-         transform="matrix(1,0,0,-1,446.7934,148.18149)">
-        <use
-           inkscape:transform-center-y="0.17023408"
-           inkscape:transform-center-x="-0.40887294"
-           height="100%"
-           width="100%"
-           transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
-           id="use1387"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-      </g>
-      <g
-         transform="matrix(1.6149317,-0.58991434,1.1798287,0.80746583,-408.62042,335.41042)"
+         rigging:side="port"
+         rigging:rail="backPillars"
          id="g4131"
+         transform="matrix(1.6149317,-0.58991434,1.1798287,0.80746583,-408.62042,335.41042)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#cleat"
+           id="use4129"
+           transform="rotate(-143.42179,574.42988,28.15793)"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="rotate(-37.954421,558.98991,98.501805)"
+         id="g1179"
          rigging:rail="backPillars"
-         rigging:side="port"
-         rigging:deck="fore"
-         style="stroke-width:0.70710677">
+         rigging:side="starboard"
+         rigging:deck="fore">
         <use
            height="100%"
            width="100%"
-           transform="rotate(-143.42179,574.42988,28.15793)"
-           id="use4129"
+           transform="rotate(37.992708,427.06981,18.636861)"
+           id="use4857"
            xlink:href="#cleat"
            y="0"
            x="0" />
       </g>
       <g
-         rigging:deck="fore"
-         rigging:side="starboard"
-         rigging:rail="backPillars"
-         id="g1179"
-         transform="rotate(-37.954421,558.98991,98.501805)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4857"
-           transform="rotate(37.992708,427.06981,18.636861)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="fore"
-         rigging:side="port"
-         rigging:rail="behindMastRail"
+         transform="translate(0.17560604)"
+         rigging:isAcross="true"
          id="g4334"
-         rigging:isAcross="true"
-         transform="translate(0.17560604)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4920"
-           transform="translate(-16.180842,122.1517)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4922"
-           transform="translate(-16.180842,113.05232)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4924"
-           transform="translate(-16.180842,94.303264)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="fore"
-         rigging:side="starboard"
          rigging:rail="behindMastRail"
-         id="g4339"
-         transform="matrix(1,0,0,-1,0.17594804,145.33002)"
-         rigging:isAcross="true">
+         rigging:side="port"
+         rigging:deck="fore">
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4927"
-           transform="translate(-16.180842,121.40189)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,122.1517)"
+           id="use4920"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4929"
-           transform="translate(-16.180842,112.49001)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,113.05232)"
+           id="use4922"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4931"
-           transform="translate(-16.180842,93.928453)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,94.303264)"
+           id="use4924"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
-         rigging:deck="fore"
-         rigging:side="port"
-         rigging:rail="backRail"
-         id="g4384"
          rigging:isAcross="true"
-         transform="translate(-7.2256487,-5.4374012)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4905"
-           transform="translate(-55.340162,117.45379)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4907"
-           transform="translate(-55.340162,106.53567)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4909"
-           transform="translate(-55.340162,98.995351)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="fore"
+         transform="matrix(1,0,0,-1,0.17594804,145.33002)"
+         id="g4339"
+         rigging:rail="behindMastRail"
          rigging:side="starboard"
-         rigging:rail="backRail"
-         id="g4349"
-         transform="translate(-7.2256487,46.918551)"
-         rigging:isAcross="true">
+         rigging:deck="fore">
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4912"
-           transform="translate(-55.340162,95.714712)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,121.40189)"
+           id="use4927"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4914"
-           transform="translate(-55.340162,106.53534)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,112.49001)"
+           id="use4929"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4916"
-           transform="translate(-55.340162,114.07565)"
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-16.180842,93.928453)"
+           id="use4931"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
-         rigging:deck="main"
+         transform="translate(-7.2256487,-5.4374012)"
+         rigging:isAcross="true"
+         id="g4384"
+         rigging:rail="backRail"
          rigging:side="port"
+         rigging:deck="fore">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,117.45379)"
+           id="use4905"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,106.53567)"
+           id="use4907"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,98.995351)"
+           id="use4909"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         rigging:isAcross="true"
+         transform="translate(-7.2256487,46.918551)"
+         id="g4349"
+         rigging:rail="backRail"
+         rigging:side="starboard"
+         rigging:deck="fore">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,95.714712)"
+           id="use4912"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,106.53534)"
+           id="use4914"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-55.340162,114.07565)"
+           id="use4916"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         id="g4357"
          rigging:rail="bulwark"
-         id="g4357">
+         rigging:side="port"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(3.7684607,921.29611,469.4407)"
+           id="use4823"
+           xlink:href="#kevel"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="matrix(0.95038668,0.04800109,-0.04800109,0.95038668,-92.270824,-21.679179)"
+           id="use4918"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+        <use
+           style="stroke-width:1.1674819"
+           height="100%"
+           width="100%"
+           transform="matrix(-0.01971953,1.022046,-0.73281318,-0.02912583,493.15321,-396.81429)"
+           id="use4944"
+           xlink:href="#lcleat"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(0.9,2554.8189,-1639.2584)"
+           id="use4825"
+           xlink:href="#kevel"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="matrix(0.9507373,0,0,0.9507373,-169.33946,4.3413688)"
+           id="use4933"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="matrix(1,0,0,-1,0,145.54563)"
+         rigging:deck="main"
+         rigging:side="starboard"
+         rigging:rail="bulwark"
+         id="g363">
         <use
            x="0"
            y="0"
            xlink:href="#kevel"
-           id="use4823"
+           id="use353"
            transform="rotate(3.7684607,921.29611,469.4407)"
            width="100%"
            height="100%" />
@@ -1566,7 +1557,7 @@
            x="0"
            y="0"
            xlink:href="#cleat"
-           id="use4918"
+           id="use355"
            transform="matrix(0.95038668,0.04800109,-0.04800109,0.95038668,-92.270824,-21.679179)"
            width="100%"
            height="100%" />
@@ -1574,15 +1565,16 @@
            x="0"
            y="0"
            xlink:href="#lcleat"
-           id="use4944"
-           transform="matrix(-0.02687799,1.022046,-0.99883457,-0.02912583,516.73854,-396.81429)"
+           id="use357"
+           transform="matrix(-0.01971953,1.022046,-0.73281318,-0.02912583,493.15321,-396.81429)"
            width="100%"
-           height="100%" />
+           height="100%"
+           style="stroke-width:1.1674819" />
         <use
            x="0"
            y="0"
            xlink:href="#kevel"
-           id="use4825"
+           id="use359"
            transform="rotate(0.9,2554.8189,-1639.2584)"
            width="100%"
            height="100%" />
@@ -1590,454 +1582,383 @@
            x="0"
            y="0"
            xlink:href="#cleat"
-           id="use4933"
+           id="use361"
            transform="matrix(0.9507373,0,0,0.9507373,-169.33946,4.3413688)"
            width="100%"
            height="100%" />
       </g>
       <g
-         id="g2423"
-         rigging:rail="bulwark"
-         rigging:side="starboard"
-         rigging:deck="main"
-         transform="matrix(1,0,0,-1,0,145.532)">
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(3.2684607,994.62651,536.45873)"
-           id="use2413"
-           xlink:href="#kevel"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="matrix(0.95038668,0.04800109,-0.04800109,0.95038668,-92.270824,-21.679179)"
-           id="use2415"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="matrix(-0.02687799,1.022046,-0.99883457,-0.02912583,516.73854,-396.81429)"
-           id="use2417"
-           xlink:href="#lcleat"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(0.9,2554.8189,-1639.2584)"
-           id="use2419"
-           xlink:href="#kevel"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="matrix(0.9507373,0,0,0.9507373,-169.33946,4.3413688)"
-           id="use2421"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="port"
-         rigging:rail="frontPillars"
+         transform="translate(0.39986412,-4.50021)"
          id="g1161"
-         transform="translate(0.39986412,-4.50021)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4893"
-           transform="translate(-203.38218,46.214814)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="starboard"
          rigging:rail="frontPillars"
+         rigging:side="port"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-203.38218,46.214814)"
+           id="use4893"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(0.29986412,4.199791)"
          id="g1182"
-         transform="translate(0.29986412,4.199791)">
+         rigging:rail="frontPillars"
+         rigging:side="starboard"
+         rigging:deck="main">
         <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4904"
+           height="100%"
+           width="100%"
            transform="translate(-203.38218,102.16481)"
-           width="100%"
-           height="100%" />
+           id="use4904"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
       </g>
       <g
-         rigging:deck="main"
-         rigging:side="port"
-         rigging:rail="onDeckFront"
+         transform="translate(-10.636056,4.599977)"
          id="g1164"
-         transform="translate(-10.636056,4.599977)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4897"
-           transform="translate(-208.11468,53.357627)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="starboard"
          rigging:rail="onDeckFront"
-         id="g1185"
-         transform="translate(-10.636056,-3.79971)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4901"
-           transform="translate(-208.11468,94.732314)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:rail="atMastFront"
-         rigging:side="center"
-         id="g1194"
-         transform="rotate(90,350.45486,71.528605)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4911"
-           transform="rotate(90,426.55456,-76.110919)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
          rigging:side="port"
-         rigging:rail="sideMastRail"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-208.11468,53.357627)"
+           id="use4897"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(-10.636056,-3.79971)"
+         id="g1185"
+         rigging:rail="onDeckFront"
+         rigging:side="starboard"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-208.11468,94.732314)"
+           id="use4901"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="rotate(90,350.45486,71.528605)"
+         id="g1194"
+         rigging:side="center"
+         rigging:rail="atMastFront"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(90,426.55456,-76.110919)"
+           id="use4911"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(7.5999953,-4.399712)"
          id="g4366"
-         transform="translate(7.5999953,-4.399712)">
+         rigging:rail="sideMastRail"
+         rigging:side="port"
+         rigging:deck="main">
         <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4801"
+           height="100%"
+           width="100%"
            transform="translate(-214.5712,98.845453)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4801"
            xlink:href="#pin"
-           id="use4799"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(-224.6702,98.845453)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4799"
            xlink:href="#pin"
-           id="use4795"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(-234.6702,98.845453)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4795"
            xlink:href="#pin"
-           id="use4793"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(-244.8712,98.845453)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4793"
            xlink:href="#pin"
-           id="use4791"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
            transform="translate(-254.9702,98.845453)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
+           id="use4791"
            xlink:href="#pin"
-           id="use4789"
-           transform="translate(-264.9702,98.845451)"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
            width="100%"
-           height="100%" />
+           transform="translate(-264.9702,98.845451)"
+           id="use4789"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(7.5002953,60.524984)"
+         id="g4397"
+         rigging:rail="sideMastRail"
+         rigging:side="starboard"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-214.4715,98.845757)"
+           id="use4899"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-224.6705,98.845757)"
+           id="use4895"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-234.6705,98.845757)"
+           id="use4890"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-244.8715,98.845757)"
+           id="use4875"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-254.9705,98.845757)"
+           id="use4870"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-265.0705,98.845757)"
+           id="use4805"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="rotate(-2.2773942,278.92014,10.611705)"
+         id="g4358"
+         rigging:rail="sideRail"
+         rigging:side="port"
+         rigging:deck="main">
+        <use
+           transform="translate(-238.30061,65.152408)"
+           height="100%"
+           width="100%"
+           id="use1177"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           inkscape:transform-center-y="-51.471377"
+           inkscape:transform-center-x="-207.8844"
+           transform="translate(-246.51528,65.147698)"
+           height="100%"
+           width="100%"
+           id="use1175"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           inkscape:transform-center-y="-79.955537"
+           inkscape:transform-center-x="-246.86272"
+           transform="translate(-262.98582,65.26682)"
+           height="100%"
+           width="100%"
+           id="use1173"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           transform="translate(-254.81409,65.202952)"
+           height="100%"
+           width="100%"
+           id="use1171"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-271.64999,65.180036)"
+           id="use1169"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-279.9012,65.206064)"
+           id="use1167"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
          rigging:deck="main"
          rigging:side="starboard"
-         rigging:rail="sideMastRail"
-         id="g4397"
-         transform="translate(7.5002953,60.524984)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4899"
-           transform="translate(-214.4715,98.845757)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4895"
-           transform="translate(-224.6705,98.845757)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4890"
-           transform="translate(-234.6705,98.845757)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4875"
-           transform="translate(-244.8715,98.845757)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4870"
-           transform="translate(-254.9705,98.845757)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use4805"
-           transform="translate(-265.0705,98.845757)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="port"
          rigging:rail="sideRail"
-         id="g4358"
-         transform="rotate(-2.2773942,278.92014,10.611705)">
+         id="g11874"
+         transform="matrix(0.99927798,0.03799355,0.03799355,-0.99927798,-0.20275347,135.06237)">
         <use
            x="0"
            y="0"
-           xlink:href="#use1175"
-           id="use1177"
+           xlink:href="#pin"
+           id="use11862"
            width="100%"
            height="100%"
-           transform="translate(8.301)" />
+           transform="translate(-238.30061,65.152408)" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1173"
-           id="use1175"
+           xlink:href="#pin"
+           id="use11864"
            width="100%"
            height="100%"
-           transform="translate(8.4)" />
+           transform="translate(-246.51528,65.147698)"
+           inkscape:transform-center-x="-207.8844"
+           inkscape:transform-center-y="-51.471377" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1171"
-           id="use1173"
+           xlink:href="#pin"
+           id="use11866"
            width="100%"
            height="100%"
-           transform="translate(8.399)" />
+           transform="translate(-262.98582,65.26682)"
+           inkscape:transform-center-x="-246.86272"
+           inkscape:transform-center-y="-79.955537" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1169"
-           id="use1171"
+           xlink:href="#pin"
+           id="use11868"
            width="100%"
            height="100%"
-           transform="translate(8.301)" />
+           transform="translate(-254.81409,65.202952)" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1167"
-           id="use1169"
-           transform="translate(8.2999953)"
+           xlink:href="#pin"
+           id="use11870"
+           transform="translate(-271.64999,65.180036)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use1167"
+           id="use11872"
            transform="translate(-279.9012,65.206064)"
            width="100%"
            height="100%" />
       </g>
       <g
-         rigging:deck="main"
-         rigging:side="starboard"
-         rigging:rail="sideRail"
-         id="g4383"
-         transform="rotate(2.3205598,-2768.9847,73.46013)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1188"
-           id="use1190"
-           width="100%"
-           height="100%"
-           transform="translate(8.201)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1186"
-           id="use1188"
-           width="100%"
-           height="100%"
-           transform="translate(8.4)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1184"
-           id="use1186"
-           width="100%"
-           height="100%"
-           transform="translate(8.399)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1182"
-           id="use1184"
-           width="100%"
-           height="100%"
-           transform="translate(8.301)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1180"
-           id="use1182"
-           transform="translate(8.1999977)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use1180"
-           transform="translate(-279.80149,65.205524)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="port"
-         rigging:rail="aboveRail"
+         transform="rotate(0.2,349.30272,-2298.3122)"
          id="g1155"
-         transform="rotate(0.2,349.30272,-2298.3122)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4885"
-           transform="rotate(-2.2865559,590.15954,6858.6339)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="starboard"
          rigging:rail="aboveRail"
-         id="g1191"
-         transform="rotate(2.400361,287.89987,-141.81787)">
+         rigging:side="port"
+         rigging:deck="main">
         <use
-           x="0"
-           y="0"
+           height="100%"
+           width="100%"
+           transform="rotate(-2.2865559,590.15954,6858.6339)"
+           id="use4885"
            xlink:href="#cleat"
-           id="use4889"
-           transform="translate(-269.76638,141.63916)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="port"
-         rigging:rail="backFists"
-         id="g1158"
-         transform="translate(7.6003357,-4.2999418)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#fist"
-           transform="translate(0.1057145,0.1483681)"
-           id="use9904"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="main"
-         rigging:side="starboard"
-         rigging:rail="backFists"
-         id="g1188"
-         transform="translate(7.6003357,0.0878305)">
-        <use
-           height="100%"
-           width="100%"
-           id="use9976"
-           transform="translate(0.1057145,60.210611)"
-           xlink:href="#fist"
            y="0"
            x="0" />
       </g>
       <g
-         rigging:deck="main"
-         rigging:side="port"
-         rigging:rail="behindMastRail"
-         id="g4374"
-         rigging:isAcross="true"
-         transform="translate(7.5002644,-0.80013413)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           transform="translate(-274.31651,122.9979)"
-           width="100%"
-           height="100%"
-           id="use11352" />
-        <use
-           id="use11350"
-           height="100%"
-           width="100%"
-           transform="translate(-274.31651,114.24701)"
-           xlink:href="#pin"
-           y="0"
-           x="0" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           transform="translate(-274.31651,105.40778)"
-           width="100%"
-           height="100%"
-           id="use11281" />
-      </g>
-      <g
-         transform="matrix(1,0,0,-1,7.5002644,146.72254)"
-         rigging:isAcross="true"
-         id="g11360"
-         rigging:rail="behindMastRail"
+         transform="rotate(2.400361,287.89987,-141.81787)"
+         id="g1191"
+         rigging:rail="aboveRail"
          rigging:side="starboard"
          rigging:deck="main">
         <use
-           id="use11354"
+           height="100%"
+           width="100%"
+           transform="translate(-269.76638,141.63916)"
+           id="use4889"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(7.6003357,-4.2999418)"
+         id="g1158"
+         rigging:rail="backFists"
+         rigging:side="port"
+         rigging:deck="main">
+        <use
+           height="100%"
+           width="100%"
+           id="use9904"
+           transform="translate(0.1057145,0.1483681)"
+           xlink:href="#fist"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(7.6003357,0.0878305)"
+         id="g1188"
+         rigging:rail="backFists"
+         rigging:side="starboard"
+         rigging:deck="main">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#fist"
+           transform="translate(0.1057145,60.210611)"
+           id="use9976"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="translate(7.5002644,-0.80013413)"
+         rigging:isAcross="true"
+         id="g4374"
+         rigging:rail="behindMastRail"
+         rigging:side="port"
+         rigging:deck="main">
+        <use
+           id="use11352"
            height="100%"
            width="100%"
            transform="translate(-274.31651,122.9979)"
@@ -2051,9 +1972,9 @@
            transform="translate(-274.31651,114.24701)"
            width="100%"
            height="100%"
-           id="use11356" />
+           id="use11350" />
         <use
-           id="use11358"
+           id="use11281"
            height="100%"
            width="100%"
            transform="translate(-274.31651,105.40778)"
@@ -2062,209 +1983,268 @@
            x="0" />
       </g>
       <g
-         transform="translate(-13.507767,-342.52707)"
-         id="g808"
+         rigging:deck="main"
          rigging:side="starboard"
-         rigging:rail="aboveLadder"
-         rigging:deck="stern">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#knot"
-           id="use4887"
-           transform="translate(-380.09361,105.43816)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="stern"
-         rigging:rail="atFront"
-         rigging:side="center"
-         id="g4276"
-         transform="translate(-48.824024,-385.81996)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#knot"
-           id="use4868"
-           transform="translate(-380.09361,105.43816)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="stern"
-         rigging:side="port"
-         rigging:rail="bulwark"
-         id="g4431">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#kevel"
-           id="use4862"
-           transform="rotate(-4.1732445,-116.35496,2967.5728)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#xcleat"
-           id="use4854"
-           transform="rotate(-5.0377463,210.39137,-1799.6596)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#xcleat"
-           id="use4873"
-           transform="rotate(-4.8377463,225.62093,-1651.0959)"
-           width="100%"
-           height="100%" />
-        <use
-           height="100%"
-           width="100%"
-           transform="matrix(0.87980077,-0.08677511,0.08677511,0.87980077,-374.0032,67.391243)"
-           id="use4079"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#lcleat"
-           id="use4925"
-           transform="rotate(-30.639507,159.91542,547.64877)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         id="g4331"
-         rigging:rail="bulwark"
-         rigging:side="starboard"
-         rigging:deck="stern"
-         transform="matrix(1,0,0,-1,0,145.76991)">
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(-4.1732445,-116.35496,2967.5728)"
-           id="use4321"
-           xlink:href="#kevel"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(-5.0377463,210.39137,-1799.6596)"
-           id="use4323"
-           xlink:href="#xcleat"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(-4.8377463,225.62093,-1651.0959)"
-           id="use4325"
-           xlink:href="#xcleat"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
-           transform="rotate(-30.639507,159.34537,547.49262)"
-           id="use4329"
-           xlink:href="#lcleat"
-           y="0"
-           x="0" />
-      </g>
-      <g
-         rigging:deck="stern"
-         rigging:side="port"
-         rigging:rail="sideRail"
-         id="g4420"
-         transform="rotate(-0.9,158.2616,1533.8436)">
+         rigging:rail="behindMastRail"
+         id="g11360"
+         rigging:isAcross="true"
+         transform="matrix(1,0,0,-1,7.5002644,146.72254)">
         <use
            x="0"
            y="0"
            xlink:href="#pin"
+           transform="translate(-274.31651,122.9979)"
+           width="100%"
+           height="100%"
+           id="use11354" />
+        <use
+           id="use11356"
+           height="100%"
+           width="100%"
+           transform="translate(-274.31651,114.24701)"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           transform="translate(-274.31651,105.40778)"
+           width="100%"
+           height="100%"
+           id="use11358" />
+      </g>
+      <g
+         rigging:deck="stern"
+         rigging:rail="aboveLadder"
+         rigging:side="starboard"
+         id="g808"
+         transform="translate(-13.507767,-342.52707)">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-380.09361,105.43816)"
+           id="use4887"
+           xlink:href="#knot"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="translate(-48.824024,-385.81996)"
+         id="g4276"
+         rigging:side="center"
+         rigging:rail="atFront"
+         rigging:deck="stern">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-380.09361,105.43816)"
+           id="use4868"
+           xlink:href="#knot"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         id="g4431"
+         rigging:rail="bulwark"
+         rigging:side="port"
+         rigging:deck="stern">
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(-4.1732445,-116.35496,2967.5728)"
+           id="use4862"
+           xlink:href="#kevel"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(-5.0377463,210.39137,-1799.6596)"
+           id="use4854"
+           xlink:href="#xcleat"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(-4.8377463,225.62093,-1651.0959)"
+           id="use4873"
+           xlink:href="#xcleat"
+           y="0"
+           x="0" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#cleat"
+           id="use4079"
+           transform="matrix(0.87980077,-0.08677511,0.08677511,0.87980077,-374.0032,67.391243)"
+           width="100%"
+           height="100%" />
+        <use
+           height="100%"
+           width="100%"
+           transform="rotate(-30.639507,159.91542,547.64877)"
+           id="use4925"
+           xlink:href="#lcleat"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         transform="matrix(1,0,0,-1,0,145.76991)"
+         rigging:deck="stern"
+         rigging:side="starboard"
+         rigging:rail="bulwark"
+         id="g4331">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#kevel"
+           id="use4321"
+           transform="rotate(-4.1732445,-116.35496,2967.5728)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#xcleat"
+           id="use4323"
+           transform="rotate(-5.0377463,210.39137,-1799.6596)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#xcleat"
+           id="use4325"
+           transform="rotate(-4.8377463,225.62093,-1651.0959)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#lcleat"
+           id="use4329"
+           transform="rotate(-30.639507,159.34537,547.49262)"
+           width="100%"
+           height="100%" />
+      </g>
+      <g
+         transform="rotate(-1,69.432957,1381.3053)"
+         id="g4420"
+         rigging:rail="sideRail"
+         rigging:side="port"
+         rigging:deck="stern">
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-379.48271,69.612309)"
            id="use1142"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-385.97096,70.177006)"
+           id="use1146"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           transform="translate(-392.68967,70.722278)"
+           height="100%"
+           width="100%"
+           id="use1148"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-399.21733,71.258485)"
+           id="use1144"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         rigging:deck="stern"
+         rigging:side="starboard"
+         rigging:rail="sideRail"
+         id="g11918"
+         transform="matrix(0.9998477,0.01745241,0.01745241,-0.9998477,-24.096527,144.04591)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use11910"
            transform="translate(-379.48271,69.612309)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1146"
-           id="use1148"
-           width="100%"
-           height="100%"
-           transform="translate(6.5831249,-0.54468749)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1144"
-           id="use1146"
-           transform="translate(6.5774996,-0.54468742)"
+           xlink:href="#pin"
+           id="use11912"
+           transform="translate(-385.97096,70.177006)"
            width="100%"
            height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1142"
-           id="use1144"
-           transform="translate(-19.732499,1.6340624)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="stern"
-         rigging:side="starboard"
-         rigging:rail="sideRail"
-         id="g4453"
-         transform="matrix(0.99984769,0.01745241,0.01745241,-0.99984769,-23.996537,142.61385)">
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use1154"
-           transform="translate(-379.58271,69.612029)"
+           id="use11914"
            width="100%"
-           height="100%" />
+           height="100%"
+           transform="translate(-392.68967,70.722278)" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1154"
-           id="use1156"
-           transform="translate(-6.5718744,0.54468722)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1156"
-           id="use1158"
-           transform="translate(-6.5831245,0.54468773)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1158"
-           id="use1160"
-           transform="translate(-6.5774996,0.54468723)"
+           xlink:href="#pin"
+           id="use11916"
+           transform="translate(-399.21733,71.258485)"
            width="100%"
            height="100%" />
       </g>
       <g
-         rigging:deck="stern"
-         rigging:side="port"
-         rigging:rail="atMast"
+         transform="translate(5.8396738,-2.6413048)"
          id="g4475"
-         transform="translate(5.8396738,-2.6413048)">
+         rigging:rail="atMast"
+         rigging:side="port"
+         rigging:deck="stern">
+        <use
+           inkscape:transform-center-y="0.17022774"
+           inkscape:transform-center-x="0.40887413"
+           height="100%"
+           width="100%"
+           transform="rotate(-140.07873,358.83786,115.15587)"
+           id="use4831"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
         <use
            x="0"
            y="0"
            xlink:href="#cleat"
-           id="use4831"
+           id="use1371"
+           transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
+           width="100%"
+           height="100%"
+           inkscape:transform-center-x="-0.40887294"
+           inkscape:transform-center-y="0.17023408" />
+      </g>
+      <g
+         rigging:deck="stern"
+         rigging:side="starboard"
+         rigging:rail="atMast"
+         id="g1377"
+         transform="matrix(1,0,0,-1,5.8396738,148.18149)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#cleat"
+           id="use1373"
            transform="rotate(-140.07873,358.83786,115.15587)"
            width="100%"
            height="100%"
@@ -2276,190 +2256,124 @@
            height="100%"
            width="100%"
            transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
-           id="use1371"
+           id="use1375"
            xlink:href="#cleat"
            y="0"
            x="0" />
       </g>
       <g
-         transform="matrix(1,0,0,-1,5.8396738,148.18149)"
-         id="g1377"
-         rigging:rail="atMast"
-         rigging:side="starboard"
+         transform="rotate(-0.7,172.95131,2205.1374)"
+         id="g4413"
+         rigging:rail="shroudsRail"
+         rigging:side="port"
          rigging:deck="stern">
         <use
-           inkscape:transform-center-y="0.17022774"
-           inkscape:transform-center-x="0.40887413"
            height="100%"
            width="100%"
-           transform="rotate(-140.07873,358.83786,115.15587)"
-           id="use1373"
-           xlink:href="#cleat"
+           transform="translate(-416.18593,63.518811)"
+           id="use1121"
+           xlink:href="#pin"
            y="0"
            x="0" />
         <use
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use1375"
-           transform="matrix(0.76692697,-0.64173438,-0.64173438,-0.76692697,-297.00637,433.75061)"
-           width="100%"
            height="100%"
-           inkscape:transform-center-x="-0.40887294"
-           inkscape:transform-center-y="0.17023408" />
+           width="100%"
+           transform="translate(-424.256,64.275464)"
+           id="use1119"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-433.1106,65.220528)"
+           id="use1123"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-442.03273,66.185565)"
+           id="use1125"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           transform="translate(-450.79407,67.130464)"
+           id="use1117"
+           xlink:href="#pin"
+           y="0"
+           x="0" />
       </g>
       <g
          rigging:deck="stern"
-         rigging:side="port"
+         rigging:side="starboard"
          rigging:rail="shroudsRail"
-         id="g4413"
-         transform="rotate(-0.7,178.0641,2205.1686)">
+         id="g11898"
+         transform="matrix(0.99990252,0.01396218,0.01396218,-0.99990252,-26.943925,143.1269)">
         <use
            x="0"
            y="0"
-           xlink:href="#use1119"
-           id="use1121"
-           transform="translate(8.0640329,-0.9030018)"
+           xlink:href="#pin"
+           id="use11888"
+           transform="translate(-416.18593,63.518811)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use1119"
+           id="use11890"
            transform="translate(-424.256,64.275464)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
-           xlink:href="#use1121"
-           id="use1123"
-           transform="translate(-16.927009,1.8540021)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1123"
-           id="use1125"
-           transform="translate(-8.9119992,0.9019982)"
+           xlink:href="#pin"
+           id="use11892"
+           transform="translate(-433.1106,65.220528)"
            width="100%"
            height="100%" />
         <use
            x="0"
            y="0"
            xlink:href="#pin"
-           id="use1117"
+           id="use11894"
+           transform="translate(-442.03273,66.185565)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#pin"
+           id="use11896"
            transform="translate(-450.79407,67.130464)"
            width="100%"
            height="100%" />
       </g>
       <g
-         rigging:deck="stern"
-         rigging:side="starboard"
-         rigging:rail="shroudsRail"
-         id="g4463"
-         transform="matrix(0.99992537,0.01221701,0.01221701,-0.99992537,-26.934887,143.88192)">
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1133"
-           id="use1135"
-           width="100%"
-           height="100%"
-           transform="translate(8.064,-0.751)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1131"
-           id="use1133"
-           width="100%"
-           height="100%"
-           transform="translate(8.8629996,-0.953)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1129"
-           id="use1131"
-           width="100%"
-           height="100%"
-           transform="translate(8.9119997,-0.952)" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#use1127"
-           id="use1129"
-           transform="translate(8.763,-0.9529995)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use1127"
-           transform="translate(-450.794,67.680414)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         rigging:deck="stern"
-         rigging:side="port"
-         rigging:rail="poopBulwark"
+         transform="translate(0.49668888)"
          id="g4487"
-         transform="translate(0.49668888)">
-        <use
-           height="100%"
-           width="100%"
-           transform="matrix(0.87815234,-0.10211653,0.10211653,0.87815234,-449.56833,85.411862)"
-           id="use4077"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#xcleat"
-           id="use4910"
-           transform="rotate(81.138926,17.895166,15.233039)"
-           width="100%"
-           height="100%" />
-        <use
-           x="0"
-           y="0"
-           xlink:href="#tackle"
-           id="use4859"
-           transform="matrix(1,0,0,-1,-617.32537,173.18922)"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         transform="matrix(1,0,0,-1,0.49668888,145.56767)"
-         id="g4343"
          rigging:rail="poopBulwark"
-         rigging:side="starboard"
+         rigging:side="port"
          rigging:deck="stern">
         <use
            x="0"
            y="0"
            xlink:href="#cleat"
-           id="use4335"
+           id="use4077"
            transform="matrix(0.87815234,-0.10211653,0.10211653,0.87815234,-449.56833,85.411862)"
            width="100%"
            height="100%" />
         <use
            height="100%"
            width="100%"
-           transform="matrix(0.87815234,-0.10211653,0.10211653,0.87815234,-461.99217,90.754582)"
-           id="use4337"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-        <use
-           height="100%"
-           width="100%"
            transform="rotate(81.138926,17.895166,15.233039)"
-           id="use4339"
+           id="use4910"
            xlink:href="#xcleat"
            y="0"
            x="0" />
@@ -2467,42 +2381,81 @@
            height="100%"
            width="100%"
            transform="matrix(1,0,0,-1,-617.32537,173.18922)"
-           id="use4341"
+           id="use4859"
            xlink:href="#tackle"
            y="0"
            x="0" />
       </g>
       <g
          rigging:deck="stern"
-         rigging:side="port"
-         rigging:rail="poopFlagstaff"
-         id="g1200"
-         rigging:ignoreDeck="true"
-         transform="rotate(-44.188023,53.027007,59.232153)">
+         rigging:side="starboard"
+         rigging:rail="poopBulwark"
+         id="g4343"
+         transform="matrix(1,0,0,-1,0.49668888,145.56767)">
+        <use
+           height="100%"
+           width="100%"
+           transform="matrix(0.87815234,-0.10211653,0.10211653,0.87815234,-449.56833,85.411862)"
+           id="use4335"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
         <use
            x="0"
            y="0"
            xlink:href="#cleat"
-           id="use4807"
-           transform="translate(-554.65168,41.288222)"
+           id="use4337"
+           transform="matrix(0.87815234,-0.10211653,0.10211653,0.87815234,-461.99217,90.754582)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#xcleat"
+           id="use4339"
+           transform="rotate(81.138926,17.895166,15.233039)"
+           width="100%"
+           height="100%" />
+        <use
+           x="0"
+           y="0"
+           xlink:href="#tackle"
+           id="use4341"
+           transform="matrix(1,0,0,-1,-617.32537,173.18922)"
            width="100%"
            height="100%" />
       </g>
       <g
-         transform="matrix(0.71705633,0.69701523,0.69701523,-0.71705633,-26.282056,91.622647)"
+         transform="rotate(-44.188023,53.027007,59.232153)"
          rigging:ignoreDeck="true"
-         id="g4354"
+         id="g1200"
          rigging:rail="poopFlagstaff"
-         rigging:side="starboard"
+         rigging:side="port"
          rigging:deck="stern">
         <use
            height="100%"
            width="100%"
            transform="translate(-554.65168,41.288222)"
-           id="use4352"
+           id="use4807"
            xlink:href="#cleat"
            y="0"
            x="0" />
+      </g>
+      <g
+         rigging:deck="stern"
+         rigging:side="starboard"
+         rigging:rail="poopFlagstaff"
+         id="g4354"
+         rigging:ignoreDeck="true"
+         transform="matrix(0.71705633,0.69701523,0.69701523,-0.71705633,-26.282056,91.622647)">
+        <use
+           x="0"
+           y="0"
+           xlink:href="#cleat"
+           id="use4352"
+           transform="translate(-554.65168,41.288222)"
+           width="100%"
+           height="100%" />
       </g>
     </g>
   </g>
