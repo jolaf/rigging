@@ -2,15 +2,22 @@
 
 from base64 import b64encode
 from datetime import datetime
+from itertools import chain
 from os.path import dirname, join
 from re import sub
 from sys import argv
 from urllib.request import urlopen
 from zipfile import ZipFile, ZIP_DEFLATED
 
+try:
+    from scour.scour import getInOut as scourGetInOut, sanitizeOptions as scourSanitizeOptions, start as scourStart
+except ImportError as ex:
+    raise ImportError("%s: %s\n\nPlease install scour 0.36 or later: https://pypi.org/project/scour/\n" % (ex.__class__.__name__, ex))
+
 DIRNAME = dirname(argv[0])
 
-SVG_SOURCE = join('images', 'src', 'shtandart-opt.svg')
+SVG_SOURCE = join('images', 'src', 'shtandart-src.svg')
+SVG_OPTIMIZED = join('images', 'src', 'shtandart-opt.svg')
 SVG_TARGET = join('images', 'shtandart.svg')
 
 HTML_SOURCE = 'rigging.html'
@@ -61,10 +68,37 @@ SVG_PATTERNS = (
     (r' ((deck|side|rail|mast|isAcross|ignoreDeck)=")',
         r' rigging:\1'),
     (r'\n\n',
-        r'\n'))
+        r'\n')
+)
 
-def compileSVG():
-    with open(getFileName(SVG_SOURCE), 'r') as f:
+SCOUR_OPTIONS = {
+    'verbose': True,
+    'digits': 5,
+    'renderer_workaround': True,
+    'strip_xml_prolog': True,
+    'remove_titles': True,
+    'remove_descriptions': True,
+    'remove_metadata': True,
+    'strip_comments': True,
+    'embed_rasters': False,
+    'enable_viewboxing': True,
+    'indent_type': 'space',
+    'indent_depth': 2,
+    'strip_xml_space_attribute': True,
+    'strip_ids': True,
+    'protect_ids_noninkscape': True,
+    'error_on_flowtext': True
+}
+
+def scourSVG():
+    options = scourSanitizeOptions()
+    for (option, value) in chain(SCOUR_OPTIONS.items(), {'infilename': getFileName(SVG_SOURCE), 'outfilename': getFileName(SVG_OPTIMIZED)}.items()):
+        setattr(options, option, value)
+    (inputFile, outputFile) = scourGetInOut(scourSanitizeOptions(options))
+    scourStart(options, inputFile, outputFile)
+
+def cleanSVG():
+    with open(getFileName(SVG_OPTIMIZED), 'r') as f:
         data = f.read()
     for (pattern, replace) in SVG_PATTERNS:
         data = sub(pattern, replace, data)
@@ -89,7 +123,8 @@ HTML_PATTERNS = (
     (r' url\("((\S+)\.(\S+))"\)',
         lambda match: loadImage(match, r' url("%s")')),
     (r'(\sid="build">)\S+?(</)',
-        lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG'))))
+        lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG')))
+)
 
 def compileHTML():
     with open(getFileName(HTML_SOURCE), 'rb') as f:
@@ -98,14 +133,20 @@ def compileHTML():
         data = sub(pattern, replace, data)
     with open(getFileName(HTML_TARGET), 'wb') as f:
         f.write(data.encode())
+
+def createZip():
     with ZipFile(getFileName(ZIP_TARGET), 'w', ZIP_DEFLATED) as f:
         f.write(getFileName(HTML_TARGET))
 
 def main():
-    print("Compiling SVG...")
-    compileSVG()
-    print("Compiling HTML...")
+    print("\nOptimizing SVG...")
+    scourSVG()
+    print("\nCleaining SVG...")
+    cleanSVG()
+    print("\nCompiling HTML...")
     compileHTML()
-    print("DONE")
+    print("\nCreating ZIP...")
+    createZip()
+    print("\nDONE")
 
 main()
