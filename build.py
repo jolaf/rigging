@@ -1,19 +1,25 @@
 #!/usr/bin/python3
 
 from base64 import b64encode
-from re import sub as reSub
 from datetime import datetime
+from os.path import dirname, join
+from re import sub as reSub
+from sys import argv
 from urllib.request import urlopen
 from zipfile import ZipFile, ZIP_DEFLATED
 
+DIRNAME = dirname(argv[0])
+
 SOURCE = 'rigging.html'
 TARGET = 'shtandart.html'
-ZIP = 'shtandart.zip'
+ZIP_TARGET = 'shtandart.zip'
 
 BASE64 = 'BASE64'
 JOIN_LINES = 'JOIN_LINES'
-INDENT = '  '
 NO_INDENT = ''
+
+def getFileName(fileName):
+    return join(DIRNAME, fileName)
 
 def loadFile(match, replacePattern, fileNamePos, mode = None):
     print(match.groups())
@@ -21,7 +27,7 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
     if fileName.startswith('http'):
         data = urlopen(fileName.replace('jquery.js', 'jquery.slim.min.js')).read()
     else:
-        data = open(fileName, 'rb').read()
+        data = open(getFileName(fileName), 'rb').read()
     if mode is BASE64:
         data = b64encode(data).decode()
     else:
@@ -39,7 +45,7 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
 
 def loadImage(match, pattern, fileNamePos = 1):
     print(match.groups())
-    return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(match.group(fileNamePos), 'rb').read()).decode())))
+    return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(getFileName(match.group(fileNamePos)), 'rb').read()).decode())))
 
 PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambda match: loadFile(match, r'\1<style type="\2">\n%s\1</style>', 3)),
             (r'([ \t]*)<script type="(\S+)" src="(\S+)"></script>', lambda match: loadFile(match, r'\1<script type="\2">\n%s\1</script>', 3)),
@@ -52,13 +58,13 @@ PATTERNS = ((r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">', lambd
             (r'(\sid="build">)\S+?(</)', lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG'))))
 
 def main():
-    with open(SOURCE, 'rb') as f:
+    with open(getFileName(SOURCE), 'rb') as f:
         data = f.read().decode()
     for (pattern, replace) in PATTERNS:
         data = reSub(pattern, replace, data)
-    with open(TARGET, 'wb') as f:
+    with open(getFileName(TARGET), 'wb') as f:
         f.write(data.encode())
-    with ZipFile(ZIP, 'w', ZIP_DEFLATED) as f:
-        f.write(TARGET)
+    with ZipFile(getFileName(ZIP_TARGET), 'w', ZIP_DEFLATED) as f:
+        f.write(getFileName(TARGET))
 
 main()
