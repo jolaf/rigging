@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0011122"
-     inkscape:cx="84.528178"
-     inkscape:cy="47.075828"
+     inkscape:zoom="22.64"
+     inkscape:cx="100.70979"
+     inkscape:cy="24.482038"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1920"
@@ -44,7 +44,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="layer4"
+     inkscape:current-layer="g803"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -1258,20 +1258,20 @@
              x="0"
              y="0"
              xlink:href="#pin"
+             id="use1171"
+             width="100%"
+             height="100%"
+             transform="translate(-254.81409,65.202952)" />
+          <use
+             x="0"
+             y="0"
+             xlink:href="#pin"
              id="use1173"
              width="100%"
              height="100%"
              transform="translate(-262.98582,65.26682)"
              inkscape:transform-center-x="-246.86272"
              inkscape:transform-center-y="-79.955537" />
-          <use
-             x="0"
-             y="0"
-             xlink:href="#pin"
-             id="use1171"
-             width="100%"
-             height="100%"
-             transform="translate(-254.81409,65.202952)" />
           <use
              x="0"
              y="0"
@@ -1347,16 +1347,6 @@
            id="g4475"
            transform="translate(5.8396738,-2.6413048)">
           <use
-             x="0"
-             y="0"
-             xlink:href="#cleat"
-             id="use4831"
-             transform="rotate(-140.07873,358.83786,115.15587)"
-             width="100%"
-             height="100%"
-             inkscape:transform-center-x="0.40887413"
-             inkscape:transform-center-y="0.17022774" />
-          <use
              inkscape:transform-center-y="0.17023408"
              inkscape:transform-center-x="-0.40887294"
              height="100%"
@@ -1366,6 +1356,16 @@
              xlink:href="#cleat"
              y="0"
              x="0" />
+          <use
+             x="0"
+             y="0"
+             xlink:href="#cleat"
+             id="use4831"
+             transform="rotate(-140.07873,358.83786,115.15587)"
+             width="100%"
+             height="100%"
+             inkscape:transform-center-x="0.40887413"
+             inkscape:transform-center-y="0.17022774" />
         </g>
         <g
            rigging:deck="stern"
@@ -2012,20 +2012,20 @@
              y="0"
              x="0" />
           <use
+             transform="translate(-254.81409,65.202952)"
+             height="100%"
+             width="100%"
+             id="use765"
+             xlink:href="#pin"
+             y="0"
+             x="0" />
+          <use
              inkscape:transform-center-y="-79.955537"
              inkscape:transform-center-x="-246.86272"
              transform="translate(-262.98582,65.26682)"
              height="100%"
              width="100%"
              id="use763"
-             xlink:href="#pin"
-             y="0"
-             x="0" />
-          <use
-             transform="translate(-254.81409,65.202952)"
-             height="100%"
-             width="100%"
-             id="use765"
              xlink:href="#pin"
              y="0"
              x="0" />
@@ -2104,16 +2104,6 @@
            rigging:rail="atMast"
            rigging:deck="stern">
           <use
-             inkscape:transform-center-y="0.17022774"
-             inkscape:transform-center-x="0.40887413"
-             height="100%"
-             width="100%"
-             transform="rotate(-140.07873,358.83786,115.15587)"
-             id="use787"
-             xlink:href="#cleat"
-             y="0"
-             x="0" />
-          <use
              x="0"
              y="0"
              xlink:href="#cleat"
@@ -2123,6 +2113,16 @@
              height="100%"
              inkscape:transform-center-x="-0.40887294"
              inkscape:transform-center-y="0.17023408" />
+          <use
+             inkscape:transform-center-y="0.17022774"
+             inkscape:transform-center-x="0.40887413"
+             height="100%"
+             width="100%"
+             transform="rotate(-140.07873,358.83786,115.15587)"
+             id="use787"
+             xlink:href="#cleat"
+             y="0"
+             x="0" />
         </g>
         <g
            transform="rotate(-0.7,172.95131,2205.1374)"
@@ -2148,9 +2148,9 @@
           <use
              height="100%"
              width="100%"
-             transform="translate(-433.1106,65.220528)"
+             transform="translate(-488.21338,-38.549715)"
              id="use797"
-             xlink:href="#pin"
+             xlink:href="#pinhole"
              y="0"
              x="0" />
           <use
@@ -2265,21 +2265,6 @@
              height="100%" />
         </g>
         <g
-           transform="translate(-13.507767,-342.52707)"
-           id="g808"
-           rigging:side="starboard"
-           rigging:rail="aboveLadder"
-           rigging:deck="stern">
-          <use
-             x="0"
-             y="0"
-             xlink:href="#knot"
-             id="use4887"
-             transform="translate(-380.09361,105.43816)"
-             width="100%"
-             height="100%" />
-        </g>
-        <g
            rigging:deck="stern"
            rigging:rail="atFront"
            rigging:side="center"
@@ -2293,6 +2278,21 @@
              transform="translate(-380.09361,105.43816)"
              width="100%"
              height="100%" />
+        </g>
+        <g
+           transform="translate(-48.824024,-357.81996)"
+           id="g346"
+           rigging:side="starboard"
+           rigging:rail="aboveLadder"
+           rigging:deck="stern">
+          <use
+             height="100%"
+             width="100%"
+             transform="translate(-380.09361,105.43816)"
+             id="use344"
+             xlink:href="#knot"
+             y="0"
+             x="0" />
         </g>
         <g
            rigging:deck="stern"
