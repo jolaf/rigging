@@ -287,10 +287,12 @@ Rail.prototype.createObject = function (existingObject) {
         adder.call(pointsObject, content);
     };
     if (pointsObject.children().length) {
-        insertContent('&nbsp;&nbsp;');
+        insertContent(' &nbsp; ');
     }
-    $.each(this.points, function (_index, point) {
-        insertContent(' ');
+    $.each(this.points, function (index, point) {
+        if (index) {
+            insertContent(' ');
+        }
         insertContent(point.createObject());
     });
     return object;
