@@ -64,11 +64,11 @@ SVG_PATTERNS = (
 )
 
 HTML_PATTERNS = (
-    (r'([ \t]*)<link rel="stylesheet" type="(\S+)" href="(\S+)">',
-        lambda match: loadFile(match, r'\1<style type="\2">\n%s\1</style>', 3)),
-    (r'([ \t]*)<script type="(\S+)" src="(\S+)"></script>',
-        lambda match: loadFile(match, r'\1<script type="\2">\n%s\1</script>', 3)),
-    (r'(?s)(];\n)</script>\n[ \t]*<script type="\S+">.*"use strict";\n',
+    (r'([ \t]*)<link rel="stylesheet" href="(\S+)">',
+        lambda match: loadFile(match, r'\1<style>\n%s\1</style>', 2)),
+    (r'([ \t]*)<script src="(\S+)"></script>',
+        lambda match: loadFile(match, r'\1<script>\n%s\1</script>', 2)),
+    (r'(?s)(];\n)</script>\n[ \t]*<script>.*"use strict";\n',
         r'\1'),
     (r'([ \t]*)<object type="image/svg\+xml" data="(\S+)".*?></object>\n',
         lambda match: loadFile(match, r'%s', 2, NO_INDENT)),
