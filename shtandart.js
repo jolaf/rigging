@@ -1,10 +1,8 @@
 /* jshint strict: global */
 /* jshint elision: true */
-/* globals $, document, window */
 "use strict";
 
 // Full name options
-var GRAMMAR = null;
 var DETAIL_LINE = 'DETAIL_LINE';
 var LINE_DETAIL = 'LINE_DETAIL';
 

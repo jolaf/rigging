@@ -47,7 +47,7 @@ function lcm(array) { // array of positive integers
     var a = array[0];
     for (var i = 1; i < array.length; i++) {
         var b = array[i], c = a * b;
-        while (a && b) (a > b) ? a %= b : b %= a;
+        while (a && b) (a > b) ? a %= b : b %= a; // jshint ignore:line
         a = c / (a + b);
     }
     return a;
