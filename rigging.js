@@ -43,6 +43,16 @@ Array.prototype.random = function () {
     return this[Math.floor(Math.random() * this.length)];
 };
 
+function lcm(array) { // array of positive integers
+    var a = array[0];
+    for (var i = 1; i < array.length; i++) {
+        var b = array[i], c = a * b;
+        while (a && b) (a > b) ? a %= b : b %= a;
+        a = c / (a + b);
+    }
+    return a;
+}
+
 function russianPlural(str) { // Множественное число существительного
     if (str.endsWith('а')) {
         return str.reEnd('ы');
@@ -411,11 +421,12 @@ Deck.placeObjects = function () {
     Deck.selectable.placeObjects();
 };
 
-function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
+function Line(mastName, mastID, sailName, deckName, railName, number, invWeight, lineName, detail, assym, fullName, pluralName) {
     this.points = Rail.attachLine(deckName, railName, assym, number, this); // Also sets this.number
     this.mast = Mast.getMast(mastName, mastID);
     this.sail = this.mast.getSail(sailName);
     assert(lineName, "No name for a Line");
+    this.invWeight = invWeight || 1;
     this.lineName = lineName;
     this.detail = detail || '';
     fullName = fullName || '';
@@ -470,6 +481,13 @@ Line.construct = function () {
         });
     });
     LINES = null; // jshint ignore:line
+    var lcmWeight = lcm(Line.lines.map(function (line) { return line.invWeight; }));
+    Line.randomLines = [];
+    $.each(Line.lines, function (_index, line) {
+        for (var i = 0; i < lcmWeight / line.invWeight; i++) {
+            Line.randomLines.push(line);
+        }
+    });
 };
 
 Line.linkLines = function () {
@@ -817,7 +835,7 @@ Questionary.askQuestion = function () {
         case setMode.WHERE:
             var line;
             while (true) {
-                line = Line.lines.random();
+                line = Line.randomLines.random();
                 if (line.mast.checkbox.prop('checked') &&
                     (!Questionary.rightAnswer || line.name != Questionary.rightAnswer.name)) {
                     break;

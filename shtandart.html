@@ -1370,7 +1370,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
       для <a href="http://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2017
     </p></td>
     <td>
-      <p id="build">b20180613-1131G</p>
+      <p id="build">b20180613-1446G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1778,140 +1778,140 @@ var RAILS = {
 };
 
 var LINES = [
-  // Mast ID/Sail/Deck   Rail         Point#  Line             Detail               Assym      Full Name                     Plural
+  // Mast ID/Sail/Deck    Rail        Point#  1/rnd  Line             Detail               Assym      Full Name                     Plural
     [BOWSPRIT,, [
         [SPRIT_SAIL, [
-            [FORE_DECK,  'frontRail',      4, BRACE],
-            [FORE_DECK,  'frontRail',      3, LIFT],
-            [FORE_DECK,  'sideRail',       1, SHEET],
-            [FORE_DECK,  'behindFront',     , CLEWLINE],
-            [FORE_DECK,  'behindFront',     , BUNTLINE],
+            [FORE_DECK,  'frontRail',      4,  ,     BRACE],
+            [FORE_DECK,  'frontRail',      3,  ,     LIFT],
+            [FORE_DECK,  'sideRail',       1,  ,     SHEET],
+            [FORE_DECK,  'behindFront',     , 2,     CLEWLINE],
+            [FORE_DECK,  'behindFront',     , 2,     BUNTLINE],
         ]],
     ]],
     [FORE_MAST, 'fore', [
         [FORE_SAIL, [
-            [FORE_DECK,  'backRail',       1, BRACE],
-            [FORE_DECK,  'behindMastRail', 3, LIFT],
-            [MAIN_DECK,  'bulwark',       -2, SHEET],
-            [FORE_DECK,  'frontRail',     -1, TACK],
-            [FORE_DECK,  'frontRail',      1, BOWLINE],
-            [FORE_DECK,  'atMastFront',     , DOWNHAULER,      ,                    CENTER,    ,                             PLURAL],
-            [FORE_DECK,  'sideRail',       2, CLEWLINE],
-            [FORE_DECK,  'sideRail',      -2, LEECHLINE],
-            [FORE_DECK,  'sideRail',      -1, BUNTLINE],
+            [FORE_DECK,  'backRail',       1,  ,     BRACE],
+            [FORE_DECK,  'behindMastRail', 3,  ,     LIFT],
+            [MAIN_DECK,  'bulwark',       -2,  ,     SHEET],
+            [FORE_DECK,  'frontRail',     -1,  ,     TACK],
+            [FORE_DECK,  'frontRail',      1,  ,     BOWLINE],
+            [FORE_DECK,  'atMastFront',     ,  ,     DOWNHAULER,      ,                    CENTER,    ,                             PLURAL],
+            [FORE_DECK,  'sideRail',       2,  ,     CLEWLINE],
+            [FORE_DECK,  'sideRail',      -2,  ,     LEECHLINE],
+            [FORE_DECK,  'sideRail',      -1,  ,     BUNTLINE],
         ]],
         [FORE_TOPSAIL, [
-            [FORE_DECK,  'backRail',       2, BRACE],
-            [FORE_DECK,  'behindMastRail', 2, LIFT],
-            [FORE_DECK,  'frontFists',      , SHEET],
-            [FORE_DECK,  'atMastSide',      , SHEET,           COIL],
-            [FORE_DECK,  'frontRail',      2, BOWLINE],
-            [FORE_DECK,  'sideRail',       4, CLEWLINE],
-            [FORE_DECK,  'sideRail',       5, LEECHLINE],
-            [FORE_DECK,  'sideRail',       6, BUNTLINE],
+            [FORE_DECK,  'backRail',       2,  ,     BRACE],
+            [FORE_DECK,  'behindMastRail', 2,  ,     LIFT],
+            [FORE_DECK,  'frontFists',      ,  ,     SHEET],
+            [FORE_DECK,  'atMastSide',      ,  ,     SHEET,           COIL],
+            [FORE_DECK,  'frontRail',      2,  ,     BOWLINE],
+            [FORE_DECK,  'sideRail',       4,  ,     CLEWLINE],
+            [FORE_DECK,  'sideRail',       5,  ,     LEECHLINE],
+            [FORE_DECK,  'sideRail',       6,  ,     BUNTLINE],
         ]],
         [FORE_GALLANT, [
-            [FORE_DECK,  'backRail',       3, BRACE],
-            [FORE_DECK,  'behindMastRail', 1, LIFT],
-            [FORE_DECK,  'shroudsRail',    1, SHEET],
-            [FORE_DECK,  'shroudsRail',    2, CLEWLINE],
-            [FORE_DECK,  'shroudsRail',    2, BUNTLINE],
+            [FORE_DECK,  'backRail',       3,  ,     BRACE],
+            [FORE_DECK,  'behindMastRail', 1,  ,     LIFT],
+            [FORE_DECK,  'shroudsRail',    1,  ,     SHEET],
+            [FORE_DECK,  'shroudsRail',    2, 2,     CLEWLINE],
+            [FORE_DECK,  'shroudsRail',    2, 2,     BUNTLINE],
         ]],
         [, [
-            [FORE_DECK,  'backPillars',     , FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
+            [FORE_DECK,  'backPillars',     ,  ,     FLAG_HALYARD,    ,                    STARBOARD, ,                             PLURAL],
         ]],
     ]],
     [MAIN_MAST, 'main', [
         [MAIN_SAIL, [
-            [STERN_DECK, 'bulwark',       -1, BRACE],
-            [STERN_DECK, 'shroudsRail',   -1, BRACE,           COIL],
-            [MAIN_DECK,  'behindMastRail', 3, LIFT],
-            [STERN_DECK, 'bulwark',        1, SHEET],
-            [MAIN_DECK,  'bulwark',        1, TACK],
-            [FORE_DECK,  'shroudsRail',   -2, BOWLINE],
-            [MAIN_DECK,  'frontPillars',    , DOWNHAULER,      ,                    ,         ,                              PLURAL],
-            [MAIN_DECK,  'sideMastRail',  -3, CLEWLINE],
-            [MAIN_DECK,  'sideMastRail',  -2, LEECHLINE],
-            [MAIN_DECK,  'sideMastRail',  -1, BUNTLINE],
+            [STERN_DECK, 'bulwark',       -1,  ,     BRACE],
+            [STERN_DECK, 'shroudsRail',   -1,  ,     BRACE,           COIL],
+            [MAIN_DECK,  'behindMastRail', 3,  ,     LIFT],
+            [STERN_DECK, 'bulwark',        1,  ,     SHEET],
+            [MAIN_DECK,  'bulwark',        1,  ,     TACK],
+            [FORE_DECK,  'shroudsRail',   -2,  ,     BOWLINE],
+            [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,         ,                              PLURAL],
+            [MAIN_DECK,  'sideMastRail',  -3,  ,     CLEWLINE],
+            [MAIN_DECK,  'sideMastRail',  -2,  ,     LEECHLINE],
+            [MAIN_DECK,  'sideMastRail',  -1,  ,     BUNTLINE],
         ]],
         [MAIN_TOPSAIL, [
-            [STERN_DECK, 'sideRail',       1, BRACE],
-            [MAIN_DECK,  'behindMastRail', 2, LIFT],
-            [MAIN_DECK,  'backFists',       , SHEET],
-            [FORE_DECK,  'shroudsRail',   -3, BOWLINE],
-            [MAIN_DECK,  'sideRail',       2, CLEWLINE],
-            [MAIN_DECK,  'sideRail',       3, LEECHLINE],
-            [MAIN_DECK,  'sideRail',       4, BUNTLINE],
+            [STERN_DECK, 'sideRail',       1,  ,     BRACE],
+            [MAIN_DECK,  'behindMastRail', 2,  ,     LIFT],
+            [MAIN_DECK,  'backFists',       ,  ,     SHEET],
+            [FORE_DECK,  'shroudsRail',   -3,  ,     BOWLINE],
+            [MAIN_DECK,  'sideRail',       2,  ,     CLEWLINE],
+            [MAIN_DECK,  'sideRail',       3,  ,     LEECHLINE],
+            [MAIN_DECK,  'sideRail',       4,  ,     BUNTLINE],
         ]],
         [MAIN_GALLANT, [
-            [STERN_DECK, 'sideRail',       2, BRACE],
-            [MAIN_DECK,  'behindMastRail', 1, LIFT],
-            [MAIN_DECK,  'sideMastRail',   2, SHEET],
-            [MAIN_DECK,  'sideMastRail',   3, CLEWLINE],
-            [MAIN_DECK,  'sideMastRail',   3, BUNTLINE],
+            [STERN_DECK, 'sideRail',       2,  ,     BRACE],
+            [MAIN_DECK,  'behindMastRail', 1,  ,     LIFT],
+            [MAIN_DECK,  'sideMastRail',   2,  ,     SHEET],
+            [MAIN_DECK,  'sideMastRail',   3, 2,     CLEWLINE],
+            [MAIN_DECK,  'sideMastRail',   3, 2,     BUNTLINE],
         ]],
         [STAY_SAIL, [
-            [MAIN_DECK,  'atMastFront',     , HALYARD,         ,                    CENTER],
-            [MAIN_DECK,  'sideRail',       1, SHEET],
+            [MAIN_DECK,  'atMastFront',     ,  ,     HALYARD,         ,                    CENTER],
+            [MAIN_DECK,  'sideRail',       1,  ,     SHEET],
         ]],
         [, [
-            [STERN_DECK, 'aboveLadder',     , FLAG_HALYARD,    ,                    STARBOARD],
-            [FORE_DECK,  'backPillars',    1, TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
-            [FORE_DECK,  'shroudsRail',   -1, TACKLE,          'Гротовая',          ,          DETAIL_LINE],
-            [MAIN_DECK,  'onDeckFront',     , TACKLE,          'Оттяжка гротовой',  ,          'Оттяжка гротовой талёвы',    'Оттяжки гротовых талёв'],
-            [MAIN_DECK,  'sideMastRail',   1, TACKLE,          'Нагель для работы', ,          'Нагель для работы талёвами', 'Нагеля для работы талёвами'],
+            [STERN_DECK, 'aboveLadder',     ,  ,     FLAG_HALYARD,    ,                    STARBOARD],
+            [FORE_DECK,  'backPillars',    1,  ,     TACKLE,          'Штаговая',          PORT,      DETAIL_LINE],
+            [FORE_DECK,  'shroudsRail',   -1,  ,     TACKLE,          'Гротовая',          ,          DETAIL_LINE],
+            [MAIN_DECK,  'onDeckFront',     ,  ,     TACKLE,          'Оттяжка гротовой',  ,          'Оттяжка гротовой талёвы',    'Оттяжки гротовых талёв'],
+            [MAIN_DECK,  'sideMastRail',   1,  ,     TACKLE,          'Нагель для работы', ,          'Нагель для работы талёвами', 'Нагеля для работы талёвами'],
         ]],
     ]],
     [MIZZEN_MAST, 'mizzen', [
         [MIZZEN_SAIL, [
-            [STERN_DECK, 'atMast',         1, TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
-            [STERN_DECK, 'shroudsRail',    1, TACK_TACKLE,     ,                    ,          LINE_DETAIL],
-            [STERN_DECK, 'poopBulwark',   -1, VANG,            ,                    ,          LINE_DETAIL],
-            [STERN_DECK, 'poopBulwark',   -2, SHEET],
-            [STERN_DECK, 'atFront',         , TACK,            ,                    CENTER],
-            [STERN_DECK, 'bulwark',        2, TACK],
-            [STERN_DECK, 'atMast',        -1, BUNTLINE,        ,                    PORT],
-            [STERN_DECK, 'atMast',        -1, LEECHLINE,       ,                    STARBOARD],
+            [STERN_DECK, 'atMast',         1,  ,     TOPPING_LIFT,    ,                    STARBOARD, LINE_DETAIL],
+            [STERN_DECK, 'shroudsRail',    1,  ,     TACK_TACKLE,     ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'poopBulwark',   -1,  ,     VANG,            ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'poopBulwark',   -2,  ,     SHEET],
+            [STERN_DECK, 'atFront',         ,  ,     TACK,            ,                    CENTER],
+            [STERN_DECK, 'bulwark',        2, 2,     TACK],
+            [STERN_DECK, 'atMast',        -1,  ,     BUNTLINE,        ,                    PORT],
+            [STERN_DECK, 'atMast',        -1,  ,     LEECHLINE,       ,                    STARBOARD],
         ]],
         [MIZZEN_TOPSAIL, [
-            [MAIN_DECK,  'sideRail',      -2, BRACE],
-            [MAIN_DECK,  'sideRail',      -1, BRACE,           CROSS_JACK,          ,          LINE_DETAIL],
-            [STERN_DECK, 'sideRail',      -1, LIFT],
-            [STERN_DECK, 'sideRail',      -2, LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
-            [STERN_DECK, 'shroudsRail',    2, SHEET],
-            [MAIN_DECK,  'aboveRail',       , BOWLINE],
-            [STERN_DECK, 'shroudsRail',   -2, CLEWLINE],
-            [STERN_DECK, 'shroudsRail',   -2, BUNTLINE],
+            [MAIN_DECK,  'sideRail',      -2,  ,     BRACE],
+            [MAIN_DECK,  'sideRail',      -1,  ,     BRACE,           CROSS_JACK,          ,          LINE_DETAIL],
+            [STERN_DECK, 'sideRail',      -1,  ,     LIFT],
+            [STERN_DECK, 'sideRail',      -2,  ,     LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
+            [STERN_DECK, 'shroudsRail',    2,  ,     SHEET],
+            [MAIN_DECK,  'aboveRail',       ,  ,     BOWLINE],
+            [STERN_DECK, 'shroudsRail',   -2, 2,     CLEWLINE],
+            [STERN_DECK, 'shroudsRail',   -2, 2,     BUNTLINE],
         ]],
         [MIZZEN_STAYSAIL, [
-            [STERN_DECK, 'atMast',         1, HALYARD,         ,                    PORT],
-            [STERN_DECK, 'atFront',         , SHEET,            ,                   CENTER],
-            [STERN_DECK, 'bulwark',        3, SHEET],
+            [STERN_DECK, 'atMast',         1,  ,     HALYARD,         ,                    PORT],
+            [STERN_DECK, 'atFront',         ,  ,     SHEET,            ,                   CENTER],
+            [STERN_DECK, 'bulwark',        3, 2,     SHEET],
         ]],
         [, [
-            [STERN_DECK, 'shroudsRail',    3, FLAG_HALYARD,    ,                    PORT],
-            [STERN_DECK, 'poopFlagstaff',   , FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
+            [STERN_DECK, 'shroudsRail',    3,  ,     FLAG_HALYARD,    ,                    PORT],
+            [STERN_DECK, 'poopFlagstaff',   ,  ,     FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
         ]],
     ]],
     [FLAG_STAFF,, [
         [, [
-            [STERN_DECK, 'poopFlagstaff',   , FLAG_HALYARD,    ,                    STARBOARD],
+            [STERN_DECK, 'poopFlagstaff',   ,  ,     FLAG_HALYARD,    ,                    STARBOARD],
         ]],
     ]],
     [/*NO_MAST*/,, [
         [, [
-            [FORE_DECK,  'sideRail',       3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
-            [FORE_DECK,  'onDeckFront',     , MOORING,         OF_BOW,              ,          DETAIL_LINE],
-            [FORE_DECK,  'onDeckFront',     , MOORING,         OF_BOW,              CENTER,    DETAIL_LINE],
-            [MAIN_DECK,  'bulwark',        2, FENDER],
-            [MAIN_DECK,  'bulwark',        3, OF_DINGHY,       OF_BOW,              ,          DETAIL_LINE,                  SINGULAR],
-            [MAIN_DECK,  'bulwark',       -1, FENDER],
-            [STERN_DECK, 'bulwark',        2, MOORING,         OF_STERN,            ,          DETAIL_LINE],
-            [STERN_DECK, 'bulwark',        3, MOORING,         OF_STERN,            ,          DETAIL_LINE],
-            [STERN_DECK, 'bulwark',       -2, FENDER,          ,                    PORT],
-            [STERN_DECK, 'poopBulwark',   -2, MOORING,         OF_TAFF,             ,          DETAIL_LINE],
-            [STERN_DECK, 'poopBulwark',    1, FENDER],
-            [STERN_DECK, 'poopBulwark',    2, FENDER,          ,                    STARBOARD],
+            [FORE_DECK,  'sideRail',       3,  ,     TACKLE,          'Якорная',           ,          DETAIL_LINE],
+            [FORE_DECK,  'onDeckFront',     , 6,     MOORING,         OF_BOW,              ,          DETAIL_LINE],
+            [FORE_DECK,  'onDeckFront',     , 6,     MOORING,         OF_BOW,              CENTER,    DETAIL_LINE],
+            [MAIN_DECK,  'bulwark',        2, 5,     FENDER],
+            [MAIN_DECK,  'bulwark',        3,  ,     OF_DINGHY,       OF_BOW,              ,          DETAIL_LINE,                  SINGULAR],
+            [MAIN_DECK,  'bulwark',       -1, 5,     FENDER],
+            [STERN_DECK, 'bulwark',        2, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
+            [STERN_DECK, 'bulwark',        3, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -2, 5,     FENDER,          ,                    PORT],
+            [STERN_DECK, 'poopBulwark',   -2, 3,     MOORING,         OF_TAFF,             ,          DETAIL_LINE],
+            [STERN_DECK, 'poopBulwark',    1, 5,     FENDER],
+            [STERN_DECK, 'poopBulwark',    2, 5,     FENDER,          ,                    STARBOARD],
         ]],
     ]],
 ];
@@ -1956,6 +1956,16 @@ String.prototype.reEnd = function (suffix, cut) {
 Array.prototype.random = function () {
     return this[Math.floor(Math.random() * this.length)];
 };
+
+function lcm(array) { // array of positive integers
+    var a = array[0];
+    for (var i = 1; i < array.length; i++) {
+        var b = array[i], c = a * b;
+        while (a && b) (a > b) ? a %= b : b %= a;
+        a = c / (a + b);
+    }
+    return a;
+}
 
 function russianPlural(str) { // Множественное число существительного
     if (str.endsWith('а')) {
@@ -2325,11 +2335,12 @@ Deck.placeObjects = function () {
     Deck.selectable.placeObjects();
 };
 
-function Line(mastName, mastID, sailName, deckName, railName, number, lineName, detail, assym, fullName, pluralName) {
+function Line(mastName, mastID, sailName, deckName, railName, number, invWeight, lineName, detail, assym, fullName, pluralName) {
     this.points = Rail.attachLine(deckName, railName, assym, number, this); // Also sets this.number
     this.mast = Mast.getMast(mastName, mastID);
     this.sail = this.mast.getSail(sailName);
     assert(lineName, "No name for a Line");
+    this.invWeight = invWeight || 1;
     this.lineName = lineName;
     this.detail = detail || '';
     fullName = fullName || '';
@@ -2384,6 +2395,13 @@ Line.construct = function () {
         });
     });
     LINES = null; // jshint ignore:line
+    var lcmWeight = lcm(Line.lines.map(function (line) { return line.invWeight; }));
+    Line.randomLines = [];
+    $.each(Line.lines, function (_index, line) {
+        for (var i = 0; i < lcmWeight / line.invWeight; i++) {
+            Line.randomLines.push(line);
+        }
+    });
 };
 
 Line.linkLines = function () {
@@ -2731,7 +2749,7 @@ Questionary.askQuestion = function () {
         case setMode.WHERE:
             var line;
             while (true) {
-                line = Line.lines.random();
+                line = Line.randomLines.random();
                 if (line.mast.checkbox.prop('checked') &&
                     (!Questionary.rightAnswer || line.name != Questionary.rightAnswer.name)) {
                     break;
