@@ -72,16 +72,36 @@ span.selector {
 	margin-top: 0;
 }
 
-#sublines h2 {
-	margin-bottom: 0.5em;
+#sublines * {
+	margin: 0;
 }
 
-#sublines ul:first-child {
+#sublines h2 {
+	margin-top: 0.7em;
+}
+
+#sublines h3:first-child {
 	margin-top: 1.5em;
 }
 
+#sublines ul + h3 {
+	margin-top: 0.6em;
+}
+
+#sublines ul:first-child {
+	margin-top: 1em;
+}
+
+#sublines h2 + ul {
+	margin-top: 0.65em;
+}
+
 #sublines h3 + ul {
-	margin-top: 0.5em;
+	margin-top: 0.4em;
+}
+
+#sublines ul + ul {
+	margin-top: 1.35em;
 }
 
 #infoBlock {

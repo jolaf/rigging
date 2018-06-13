@@ -57,11 +57,13 @@ var BUNTLINE = 'Бык-гордень';
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
 var FENDER = 'Кранец';
-var DINGHY_BOWLINE = 'Носовой шлюпки';
+var MOORING = 'Швартов';
 
-var MOORING_BOW = 'Носовой швартов'; // ToDo: Split to details?
-var MOORING_STERN = 'Кормовой швартов';
-var MOORING_TAFF = 'Гакабортный швартов';
+var OF_BOW = 'Носовой';
+var OF_STERN = 'Кормовой';
+var OF_TAFF = 'Гакабортный';
+
+var OF_DINGHY = 'шлюпки';
 
 // Details
 var COIL = 'Бухта';
@@ -230,15 +232,15 @@ var LINES = [
     [/*NO_MAST*/,, [
         [, [
             [FORE_DECK,  'sideRail',       3, TACKLE,          'Якорная',           ,          DETAIL_LINE],
-            [FORE_DECK,  'onDeckFront',     , MOORING_BOW,     ,                    ,          LINE_DETAIL],
-            [FORE_DECK,  'onDeckFront',     , MOORING_BOW,     ,                    CENTER,    LINE_DETAIL],
+            [FORE_DECK,  'onDeckFront',     , MOORING,         OF_BOW,              ,          DETAIL_LINE],
+            [FORE_DECK,  'onDeckFront',     , MOORING,         OF_BOW,              CENTER,    DETAIL_LINE],
             [MAIN_DECK,  'bulwark',        2, FENDER],
-            [MAIN_DECK,  'bulwark',        3, DINGHY_BOWLINE,  ,                    ,          ,                             SINGULAR],
+            [MAIN_DECK,  'bulwark',        3, OF_DINGHY,       OF_BOW,              ,          DETAIL_LINE,                  SINGULAR],
             [MAIN_DECK,  'bulwark',       -1, FENDER],
-            [STERN_DECK, 'bulwark',        2, MOORING_STERN,   ,                    ,          LINE_DETAIL],
-            [STERN_DECK, 'bulwark',        3, MOORING_STERN,   ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'bulwark',        2, MOORING,         OF_STERN,            ,          DETAIL_LINE],
+            [STERN_DECK, 'bulwark',        3, MOORING,         OF_STERN,            ,          DETAIL_LINE],
             [STERN_DECK, 'bulwark',       -2, FENDER,          ,                    PORT],
-            [STERN_DECK, 'poopBulwark',   -2, MOORING_TAFF,    ,                    ,          LINE_DETAIL],
+            [STERN_DECK, 'poopBulwark',   -2, MOORING,         OF_TAFF,             ,          DETAIL_LINE],
             [STERN_DECK, 'poopBulwark',    1, FENDER],
             [STERN_DECK, 'poopBulwark',    2, FENDER,          ,                    STARBOARD],
         ]],

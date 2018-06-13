@@ -635,10 +635,8 @@ Subline.getSublines = function (line) {
             return subline.sublineType === Subline.NONSAILLINE && lineName.indexOf(subline.name.toLowerCase()) >= 0;
         });
         assert(sublines.length, "Unknown non-sail subline: " + lineName);
-        assert(sublines.length === 1, "Duplicate non-sail subline: " + lineName);
-        $.each(sublines, function (_index, subline) {
-            ret.push(subline.addLine(line));
-        });
+        var subline = sublines.reduce(function (a, b) {return a.name.length > b.name.length ? a : b;});
+        ret.push(subline.addLine(line));
     }
     return ret;
 };
