@@ -132,8 +132,8 @@ var LINES = [
             [FORE_DECK,  'backRail',       2,  ,     BRACE],
             [FORE_DECK,  'behindMastRail', 2,  ,     LIFT],
             [FORE_DECK,  'frontFists',      ,  ,     SHEET],
-            [FORE_DECK,  'atMastFront',     ,  ,     SHEET,           COIL,                PORT],
-            [FORE_DECK,  'atMastFront',     ,  ,     SHEET,           COIL,                STARBOARD],
+            [FORE_DECK,  'atMastFront',     , 2,     SHEET,           COIL,                PORT],
+            [FORE_DECK,  'atMastFront',     , 2,     SHEET,           COIL,                STARBOARD],
             [FORE_DECK,  'frontRail',      2,  ,     BOWLINE],
             [FORE_DECK,  'sideRail',       5,  ,     CLEWLINE],
             [FORE_DECK,  'sideRail',       4,  ,     LEECHLINE],
@@ -197,7 +197,7 @@ var LINES = [
             [STERN_DECK, 'shroudsRail',   -1,  ,     TACK_TACKLE,     ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    1,  ,     VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    2,  ,     SHEET],
-            [STERN_DECK, 'atFront',         ,  ,     TACK,            ,                    CENTER],
+            [STERN_DECK, 'atFront',         , 2,     TACK,            ,                    CENTER],
             [STERN_DECK, 'bulwark',       -2, 2,     TACK],
             [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    PORT],
             [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    STARBOARD],
@@ -214,7 +214,7 @@ var LINES = [
         ]],
         [MIZZEN_STAYSAIL, [
             [STERN_DECK, 'atMast',        -1,  ,     HALYARD,         ,                    PORT],
-            [STERN_DECK, 'atFront',         ,  ,     SHEET,            ,                   CENTER],
+            [STERN_DECK, 'atFront',         , 2,     SHEET,            ,                   CENTER],
             [STERN_DECK, 'bulwark',       -3, 2,     SHEET],
         ]],
         [, [

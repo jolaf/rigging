@@ -1364,7 +1364,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
       для <a href="https://shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2018
     </p></td>
     <td>
-      <p id="build">b20180614-0145G</p>
+      <p id="build">b20180614-1316G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1795,8 +1795,8 @@ var LINES = [
             [FORE_DECK,  'backRail',       2,  ,     BRACE],
             [FORE_DECK,  'behindMastRail', 2,  ,     LIFT],
             [FORE_DECK,  'frontFists',      ,  ,     SHEET],
-            [FORE_DECK,  'atMastFront',     ,  ,     SHEET,           COIL,                PORT],
-            [FORE_DECK,  'atMastFront',     ,  ,     SHEET,           COIL,                STARBOARD],
+            [FORE_DECK,  'atMastFront',     , 2,     SHEET,           COIL,                PORT],
+            [FORE_DECK,  'atMastFront',     , 2,     SHEET,           COIL,                STARBOARD],
             [FORE_DECK,  'frontRail',      2,  ,     BOWLINE],
             [FORE_DECK,  'sideRail',       5,  ,     CLEWLINE],
             [FORE_DECK,  'sideRail',       4,  ,     LEECHLINE],
@@ -1860,7 +1860,7 @@ var LINES = [
             [STERN_DECK, 'shroudsRail',   -1,  ,     TACK_TACKLE,     ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    1,  ,     VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    2,  ,     SHEET],
-            [STERN_DECK, 'atFront',         ,  ,     TACK,            ,                    CENTER],
+            [STERN_DECK, 'atFront',         , 2,     TACK,            ,                    CENTER],
             [STERN_DECK, 'bulwark',       -2, 2,     TACK],
             [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    PORT],
             [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    STARBOARD],
@@ -1877,7 +1877,7 @@ var LINES = [
         ]],
         [MIZZEN_STAYSAIL, [
             [STERN_DECK, 'atMast',        -1,  ,     HALYARD,         ,                    PORT],
-            [STERN_DECK, 'atFront',         ,  ,     SHEET,            ,                   CENTER],
+            [STERN_DECK, 'atFront',         , 2,     SHEET,            ,                   CENTER],
             [STERN_DECK, 'bulwark',       -3, 2,     SHEET],
         ]],
         [, [
@@ -2164,7 +2164,7 @@ Rail.attachLine = function (deckName, railID, assym, number, line) {
         return rail.deck.name === deckName && rail.id === railID && (assym ? rail.side === assym : rail.side !== CENTER);
     });
     assert(rails.length >= 1, "Unknown rail to attach: " + deckName + "/" + railID + "/" + assym);
-    assert(rails.length <= 3, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
+    assert(rails.length <= 2, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
     var points = [];
     $.each(rails, function (_index, rail) {
         points.push(rail.attachLine(number, line));

@@ -258,7 +258,7 @@ Rail.attachLine = function (deckName, railID, assym, number, line) {
         return rail.deck.name === deckName && rail.id === railID && (assym ? rail.side === assym : rail.side !== CENTER);
     });
     assert(rails.length >= 1, "Unknown rail to attach: " + deckName + "/" + railID + "/" + assym);
-    assert(rails.length <= 3, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
+    assert(rails.length <= 2, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
     var points = [];
     $.each(rails, function (_index, rail) {
         points.push(rail.attachLine(number, line));
