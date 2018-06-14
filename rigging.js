@@ -280,7 +280,7 @@ Rail.prototype.attachLine = function (number, line) {
 };
 
 Rail.prototype.createObject = function (existingObject) {
-    var object = existingObject || $('<li class="rail"><span class="rail">' + this.name + '</span>: <span class="points"></span></li>').data('name', this.name);
+    var object = existingObject || $('<li class="rail"><span class="rail">' + this.name + '</span>:&nbsp; <span class="points"></span></li>').data('name', this.name);
     var pointsObject = $('span.points', object);
     var adder = ((this.side === PORT && this.isAcross) ? pointsObject.prepend : pointsObject.append);
     var insertContent = function (content) {
