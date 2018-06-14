@@ -13,7 +13,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="100%"
    height="100%"
-   id="svg993"
+   id="svg1"
    sodipodi:docname="shtandart-src.svg"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.1"
@@ -24,7 +24,7 @@
      viewbox-y="-11"
      inkscape:measure-end="335.547,74.4141"
      inkscape:measure-start="320.703,74.4141"
-     inkscape:current-layer="points"
+     inkscape:current-layer="layer6"
      fit-margin-bottom="0"
      fit-margin-right="0"
      fit-margin-left="0"
@@ -35,14 +35,14 @@
      inkscape:guide-bbox="true"
      showguides="false"
      inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="1672"
-     inkscape:window-height="1537"
-     inkscape:window-width="2560"
+     inkscape:window-y="27"
+     inkscape:window-x="1987"
+     inkscape:window-height="1025"
+     inkscape:window-width="1853"
      showgrid="false"
      inkscape:document-units="px"
-     inkscape:cy="-91.119427"
-     inkscape:cx="266.65693"
+     inkscape:cy="-3.4204947"
+     inkscape:cx="326.43593"
      inkscape:zoom="1.415"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -109,17 +109,17 @@
        position="652.76561,105.52893" />
   </sodipodi:namedview>
   <defs
-     id="defs4">
+     id="defs1">
     <rect
-       fill="currentColor"
        y="-0.80916661"
        x="277.26855"
        height="146.64241"
        width="220.71146"
-       id="deckMask" />
+       id="deckMask"
+       style="fill:currentColor" />
     <g
-       stroke="currentColor"
-       id="mastMask">
+       id="mastMask"
+       style="stroke:currentColor">
       <path
          inkscape:connector-curvature="0"
          id="path89"
@@ -130,28 +130,19 @@
          d="m 451.61266,59.524539 c -26.5,26.5 -26.5,26.5 -26.5,26.5 z" />
     </g>
     <circle
-       stroke="currentColor"
        r="4"
        cy="398.09106"
        cx="160.87129"
-       id="pipe" />
-    <g
-       id="pin">
-      <circle
-         style="fill:#ffffff;fill-opacity:0.00009999"
-         cx="567.53906"
-         cy="28.152"
-         transform="rotate(-8.2972976)"
-         r="2.7"
-         id="circle8623" />
-      <circle
-         fill="currentColor"
-         id="circle8296"
-         r="1.8"
-         transform="rotate(-8.2972976)"
-         cy="28.152"
-         cx="567.53906" />
-    </g>
+       id="pipe"
+       style="stroke:currentColor" />
+    <circle
+       id="pin"
+       r="1.8"
+       cy="28.152"
+       cx="567.53906"
+       style="fill:currentColor"
+       transform="rotate(-8.2972976)"
+       class="aura" />
     <circle
        style="fill:none;stroke:currentColor"
        transform="rotate(-8.2972976)"
@@ -160,53 +151,58 @@
        cy="138.77504"
        r="1.5" />
     <ellipse
-       fill="currentColor"
        transform="rotate(89.50973)"
        id="cleat"
        ry="5.6149998"
        rx="1.4"
        cy="-575.37415"
-       cx="3.7214081" />
+       cx="3.7214081"
+       style="fill:currentColor"
+       class="aura" />
     <rect
-       fill="currentColor"
        ry="1.5"
        y="72.318771"
        x="396.50137"
        height="15"
        width="4"
-       id="lcleat" />
+       id="lcleat"
+       style="fill:currentColor"
+       class="aura" />
     <path
-       fill="currentColor"
        transform="matrix(0.88236341,0,0,1.0046375,-152.59427,-25.947418)"
        d="m 215.31021,40.277111 -0.95943,-2.797651 v -6.102014 l 0.95943,-2.892834 -2.49898,-1.196208 -2.6523,1.196208 1.16164,2.892834 v 6.102014 l -1.1613,2.797651 2.65196,1.514274 z"
        id="xcleat"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
+       sodipodi:nodetypes="ccccccccccc"
+       style="fill:currentColor"
+       class="aura" />
     <path
-       fill="currentColor"
        d="m 426.25945,54.267381 -8.42355,-11.106754 -2.4793,-2.003965 -0.0671,-0.781209 7.40427,-0.1019 0.20384,0.747241 -0.23767,0.71328 4.92744,9.806998 4.79109,-9.773032 -0.23764,-0.713295 0.20383,-0.747226 7.40431,0.10189 -0.0671,0.781214 -2.47932,2.003976 -8.42352,11.106753 -1.25893,0.492504 z"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccc"
-       id="kevel" />
+       id="kevel"
+       style="fill:currentColor"
+       class="aura" />
     <rect
-       fill="currentColor"
        transform="translate(-36.939556,-367.63021)"
        id="fist"
        width="8.1090002"
        height="8.1089563"
        x="324.09692"
-       y="408.33606" />
+       y="408.33606"
+       style="fill:currentColor"
+       class="aura" />
     <g
        id="tackle"
        transform="matrix(-1,0,0,1,657.0613,84.968375)">
       <ellipse
-         fill="currentColor"
          transform="rotate(-18.749174,-1131.8714,-71.940313)"
          ry="2.5569487"
          rx="4.1037445"
          cy="420.36639"
          cx="-74.057053"
-         id="path4323" />
+         id="path4323"
+         style="fill:currentColor" />
       <path
          style="stroke:currentColor"
          d="m 61.958952,411.73029 3.977475,9.21764"
@@ -270,7 +266,7 @@
     </g>
   </defs>
   <metadata
-     id="metadata7">
+     id="metadata1">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -282,9 +278,16 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:label="background"
+     id="layer1"
+     inkscape:groupmode="layer">
+    <g
+       id="background" />
+  </g>
+  <g
      transform="translate(0,-20.599997)"
      inkscape:label="drawing"
-     id="layer1"
+     id="layer2"
      inkscape:groupmode="layer">
     <g
        id="drawing">
@@ -580,7 +583,7 @@
   <g
      transform="translate(0,-20.599997)"
      inkscape:label="deckMasks"
-     id="layer2"
+     id="layer3"
      inkscape:groupmode="layer"
      style="display:none">
     <g
@@ -625,7 +628,7 @@
   <g
      transform="translate(0,-20.599997)"
      inkscape:label="mastMasks"
-     id="layer3"
+     id="layer4"
      inkscape:groupmode="layer">
     <g
        style="color:#ff0000"
@@ -666,7 +669,7 @@
   <g
      transform="translate(0,-20.599997)"
      inkscape:label="points"
-     id="layer4"
+     id="layer5"
      inkscape:groupmode="layer">
     <g
        inkscape:transform-center-y="-60.498592"
@@ -2485,5 +2488,12 @@
            height="100%" />
       </g>
     </g>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer6"
+     inkscape:label="markup">
+    <g
+       id="markup" />
   </g>
 </svg>

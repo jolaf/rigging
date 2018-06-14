@@ -157,26 +157,27 @@ html, body {
 	white-space: normal;
 }
 
-/* Opacity */
+/* Scheme presentation */
 
-.deckMask {
-	opacity: 0.75;
+.solid {
+	fill-opacity: 0.5;
 }
 
 [xlink|href="#pipe"] {
 	opacity: 0.5;
 }
 
-.solid {
-	fill-opacity: 0.5;
-}
-
-[xlink|href="#pinhole"] {
-	opacity: 0.33;
-}
-
 .rail {
 	fill-opacity: 0.15;
+}
+
+.deckMask {
+	opacity: 0.75;
+}
+
+.aura {
+	stroke: transparent;
+	stroke-width: 3;
 }
 
 /* Miscellaneous settings */

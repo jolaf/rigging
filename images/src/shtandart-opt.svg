@@ -6,16 +6,13 @@
       <path d="m451.61 59.525-26.5 26.5z"/>
     </g>
     <circle id="pipe" cx="160.87" cy="398.09" r="4" stroke="currentColor"/>
-    <g id="pin">
-      <circle transform="rotate(-8.2973)" cx="567.54" cy="28.152" r="2.7" fill="#fff" fill-opacity="9.999e-5"/>
-      <circle transform="rotate(-8.2973)" cx="567.54" cy="28.152" r="1.8" fill="currentColor"/>
-    </g>
+    <circle id="pin" class="aura" transform="rotate(-8.2973)" cx="567.54" cy="28.152" r="1.8" fill="currentColor"/>
     <circle id="pinhole" transform="rotate(-8.2973)" cx="607.21" cy="138.78" r="1.5" fill="none" stroke="currentColor"/>
-    <ellipse id="cleat" transform="rotate(89.51)" cx="3.7214" cy="-575.37" rx="1.4" ry="5.615" fill="currentColor"/>
-    <rect id="lcleat" x="396.5" y="72.319" width="4" height="15" ry="1.5" fill="currentColor"/>
-    <path id="xcleat" transform="matrix(.88236 0 0 1.0046 -152.59 -25.947)" d="m215.31 40.277-0.95943-2.7977v-6.102l0.95943-2.8928-2.499-1.1962-2.6523 1.1962 1.1616 2.8928v6.102l-1.1613 2.7977 2.652 1.5143z" fill="currentColor"/>
-    <path id="kevel" d="m426.26 54.267-8.4236-11.107-2.4793-2.004-0.0671-0.78121 7.4043-0.1019 0.20384 0.74724-0.23767 0.71328 4.9274 9.807 4.7911-9.773-0.23764-0.7133 0.20383-0.74723 7.4043 0.10189-0.0671 0.78121-2.4793 2.004-8.4235 11.107-1.2589 0.4925z" fill="currentColor"/>
-    <rect id="fist" transform="translate(-36.94 -367.63)" x="324.1" y="408.34" width="8.109" height="8.109" fill="currentColor"/>
+    <ellipse id="cleat" class="aura" transform="rotate(89.51)" cx="3.7214" cy="-575.37" rx="1.4" ry="5.615" fill="currentColor"/>
+    <rect id="lcleat" class="aura" x="396.5" y="72.319" width="4" height="15" ry="1.5" fill="currentColor"/>
+    <path id="xcleat" class="aura" transform="matrix(.88236 0 0 1.0046 -152.59 -25.947)" d="m215.31 40.277-0.95943-2.7977v-6.102l0.95943-2.8928-2.499-1.1962-2.6523 1.1962 1.1616 2.8928v6.102l-1.1613 2.7977 2.652 1.5143z" fill="currentColor"/>
+    <path id="kevel" class="aura" d="m426.26 54.267-8.4236-11.107-2.4793-2.004-0.0671-0.78121 7.4043-0.1019 0.20384 0.74724-0.23767 0.71328 4.9274 9.807 4.7911-9.773-0.23764-0.7133 0.20383-0.74723 7.4043 0.10189-0.0671 0.78121-2.4793 2.004-8.4235 11.107-1.2589 0.4925z" fill="currentColor"/>
+    <rect id="fist" class="aura" transform="translate(-36.94 -367.63)" x="324.1" y="408.34" width="8.109" height="8.109" fill="currentColor"/>
     <g id="tackle" transform="matrix(-1 0 0 1 657.06 84.968)">
       <ellipse transform="rotate(-18.749 -1131.9 -71.94)" cx="-74.057" cy="420.37" rx="4.1037" ry="2.5569" fill="currentColor"/>
       <path transform="translate(-36.94 -367.63)" d="m61.959 411.73 3.9775 9.2176" stroke="currentColor"/>
