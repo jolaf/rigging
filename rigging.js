@@ -255,7 +255,7 @@ Rail.construct = function () {
 Rail.attachLine = function (deckName, railID, assym, number, line) {
     assert(line, "No line to attach to a Deck");
     var rails = this.rails.filter(function (rail) {
-        return rail.deck.name === deckName && rail.id === railID && (!assym || assym === rail.side);
+        return rail.deck.name === deckName && rail.id === railID && (assym ? rail.side === assym : rail.side !== CENTER);
     });
     assert(rails.length >= 1, "Unknown rail to attach: " + deckName + "/" + railID + "/" + assym);
     assert(rails.length <= 3, "Too many rails to attach: " + deckName + "/" + railID + "/" + assym + " (" + rails.length + ")");
