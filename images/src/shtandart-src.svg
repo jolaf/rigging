@@ -15,7 +15,7 @@
    height="100%"
    id="svg1"
    sodipodi:docname="shtandart-src.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.1 r"
    version="1.1"
    viewBox="1 -24 659 152">
   <sodipodi:namedview
@@ -24,7 +24,7 @@
      viewbox-y="-11"
      inkscape:measure-end="335.547,74.4141"
      inkscape:measure-start="320.703,74.4141"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="drawing"
      fit-margin-bottom="0"
      fit-margin-right="0"
      fit-margin-left="0"
@@ -34,16 +34,16 @@
      gridtolerance="1"
      inkscape:guide-bbox="true"
      showguides="false"
-     inkscape:window-maximized="1"
-     inkscape:window-y="27"
-     inkscape:window-x="1987"
-     inkscape:window-height="1025"
-     inkscape:window-width="1853"
+     inkscape:window-maximized="0"
+     inkscape:window-y="36"
+     inkscape:window-x="232"
+     inkscape:window-height="855"
+     inkscape:window-width="1385"
      showgrid="false"
      inkscape:document-units="px"
-     inkscape:cy="-3.4204947"
-     inkscape:cx="326.43593"
-     inkscape:zoom="1.415"
+     inkscape:cy="106.51837"
+     inkscape:cx="555.06524"
+     inkscape:zoom="2.83"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -283,6 +283,13 @@
      inkscape:groupmode="layer">
     <g
        id="background" />
+    <rect
+       style="opacity:1;fill:#ffeca4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+       id="rect6803"
+       width="717.60095"
+       height="368.79492"
+       x="-20.987772"
+       y="-138.85161" />
   </g>
   <g
      transform="translate(0,-20.599997)"
@@ -293,7 +300,7 @@
        id="drawing">
       <g
          id="portDrawing"
-         style="fill:none;stroke:currentColor">
+         style="fill:none;stroke:#aa5f28">
         <path
            style="fill-rule:evenodd"
            d="M 5.599,30.38774 C 160.18957,5.66801 347.85074,-6.80196 501.48943,4.85169 m 135.52704,8.96246 c 8.1877,0.64014 12.48758,2.54947 19.46811,7.27071"
@@ -629,7 +636,8 @@
      transform="translate(0,-20.599997)"
      inkscape:label="mastMasks"
      id="layer4"
-     inkscape:groupmode="layer">
+     inkscape:groupmode="layer"
+     style="display:none">
     <g
        style="color:#ff0000"
        class="modeDependent where"
