@@ -93,10 +93,10 @@
       <path d="m6.0165 115.68v-85.785" fill="none" stroke="currentColor"/>
     </g>
   </g>
-  <g transform="translate(0 -20.6)" display="none">
+  <g transform="translate(0 -20.6)">
     <g id="deckMasks" class="modeDependent which" color="#ffffff">
       <use class="deckMask" transform="matrix(.71785 0 0 1 299.43 0)" width="100%" height="100%" stroke-width="1.0008" rigging:deck="fore" xlink:href="#deckMask"/>
-      <use class="deckMask" transform="matrix(1.0026 0 0 1 -.80202 0)" width="100%" height="100%" stroke-width=".99871" rigging:deck="main" xlink:href="#deckMask"/>
+      <use class="deckMask" transform="matrix(1.0033,0,0,1,-1.1,0)" width="100%" height="100%" stroke-width=".99728" rigging:deck="main" xlink:href="#deckMask"/>
       <use class="deckMask" transform="matrix(1.2311 0 0 1 -335.88 0)" width="100%" height="100%" stroke-width="1.01" rigging:deck="stern" xlink:href="#deckMask"/>
     </g>
   </g>
