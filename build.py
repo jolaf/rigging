@@ -113,20 +113,10 @@ def loadImage(match, pattern, fileNamePos = 1):
     print('I', fileName)
     return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(getFileName(fileName), 'rb').read()).decode())))
 
-def cleanSVG():
-    with open(getFileName(SVG_OPTIMIZED), 'r') as f:
-        data = f.read()
-    for (pattern, replace) in SVG_PATTERNS:
-        newData = sub(pattern, replace, data)
-        print('+' if newData != data else '-', pattern)
-        data = newData
-    with open(getFileName(SVG_TARGET), 'wb') as f:
-        f.write(data.encode())
-
-def compileHTML():
-    with open(getFileName(HTML_SOURCE), 'rb') as f:
+def cleanupFile(source, target, patterns):
+    with open(getFileName(source), 'rb') as f:
         data = f.read().decode()
-    for (pattern, replace) in HTML_PATTERNS:
+    for (pattern, replace) in patterns:
         newData = sub(pattern, replace, data)
         if newData != data:
             if not callable(replace):
@@ -134,7 +124,7 @@ def compileHTML():
         else:
             print('-', pattern)
         data = newData
-    with open(getFileName(HTML_TARGET), 'wb') as f:
+    with open(getFileName(target), 'wb') as f:
         f.write(data.encode())
 
 def createZip():
@@ -144,10 +134,10 @@ def createZip():
 def main():
     print("\nOptimizing SVG...")
     scourSVG()
-    print("\nCleaining SVG...")
-    cleanSVG()
+    print("\nCleaning SVG...")
+    cleanupFile(SVG_OPTIMIZED, SVG_TARGET, SVG_PATTERNS)
     print("\nCompiling HTML...")
-    compileHTML()
+    cleanupFile(HTML_SOURCE, HTML_TARGET, HTML_PATTERNS)
     print("\nCreating ZIP...")
     createZip()
     print("\nDONE")
