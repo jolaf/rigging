@@ -49,6 +49,10 @@ SCOUR_OPTIONS = {
 SVG_PATTERNS = (
     (r'(?ms)\s*<metadata>.*?</metadata>(\n*)',
         r'\1'),
+    (r'(?ms)\s*<style>.*?</style>(\n*)',
+        r'\1'),
+    (r'(?ms)\s*<g id="background">.*?</g>(\n*)',
+        r'\1'),
     (r'(?ms)\s*<g></g>(\n*)',
         r'\1'),
     (r' (fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"',
@@ -95,7 +99,7 @@ def scourSVG():
     scourStart(options, inputFile, outputFile)
 
 def loadFile(match, replacePattern, fileNamePos, mode = None):
-    print(match.groups())
+    print('F', match.groups())
     fileName = match.group(fileNamePos)
     if fileName.startswith('http'):
         data = urlopen(fileName.replace('jquery.js', 'jquery.slim.min.js')).read()
@@ -115,14 +119,16 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
     return match.expand(replacePattern % data)
 
 def loadImage(match, pattern, fileNamePos = 1):
-    print(match.groups())
+    print('I', match.groups())
     return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(getFileName(match.group(fileNamePos)), 'rb').read()).decode())))
 
 def cleanSVG():
     with open(getFileName(SVG_OPTIMIZED), 'r') as f:
         data = f.read()
     for (pattern, replace) in SVG_PATTERNS:
-        data = sub(pattern, replace, data)
+        newData = sub(pattern, replace, data)
+        print('+' if newData != data else '-', pattern)
+        data = newData
     with open(getFileName(SVG_TARGET), 'wb') as f:
         f.write(data.encode())
 
@@ -130,7 +136,9 @@ def compileHTML():
     with open(getFileName(HTML_SOURCE), 'rb') as f:
         data = f.read().decode()
     for (pattern, replace) in HTML_PATTERNS:
-        data = sub(pattern, replace, data)
+        newData = sub(pattern, replace, data)
+        print('+' if newData != data else '-', pattern)
+        data = newData
     with open(getFileName(HTML_TARGET), 'wb') as f:
         f.write(data.encode())
 

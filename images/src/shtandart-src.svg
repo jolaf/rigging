@@ -15,7 +15,7 @@
    height="100%"
    id="svg1"
    sodipodi:docname="shtandart-src.svg"
-   inkscape:version="0.92.1 r"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    version="1.1"
    viewBox="1 -24 659 152">
   <sodipodi:namedview
@@ -24,7 +24,7 @@
      viewbox-y="-11"
      inkscape:measure-end="335.547,74.4141"
      inkscape:measure-start="320.703,74.4141"
-     inkscape:current-layer="drawing"
+     inkscape:current-layer="layer2"
      fit-margin-bottom="0"
      fit-margin-right="0"
      fit-margin-left="0"
@@ -34,15 +34,15 @@
      gridtolerance="1"
      inkscape:guide-bbox="true"
      showguides="false"
-     inkscape:window-maximized="0"
-     inkscape:window-y="36"
-     inkscape:window-x="232"
-     inkscape:window-height="855"
-     inkscape:window-width="1385"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="1672"
+     inkscape:window-height="1537"
+     inkscape:window-width="2560"
      showgrid="false"
      inkscape:document-units="px"
      inkscape:cy="106.51837"
-     inkscape:cx="555.06524"
+     inkscape:cx="262.7261"
      inkscape:zoom="2.83"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -108,6 +108,17 @@
        orientation="1,0"
        position="652.76561,105.52893" />
   </sodipodi:namedview>
+  <style
+     id="style707">
+    /* <![CDATA[ */
+    #background {
+      fill: #ffeca4;
+    }
+    #drawing {
+      color: #aa5f28;
+    }
+    /* ]]> */
+  </style>
   <defs
      id="defs1">
     <rect
@@ -282,14 +293,15 @@
      id="layer1"
      inkscape:groupmode="layer">
     <g
-       id="background" />
-    <rect
-       style="opacity:1;fill:#ffeca4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.60000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
-       id="rect6803"
-       width="717.60095"
-       height="368.79492"
-       x="-20.987772"
-       y="-138.85161" />
+       id="background">
+      <rect
+         style="fill-rule:evenodd;stroke-width:1.60000002;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+         id="rect6803"
+         width="717.60095"
+         height="368.79492"
+         x="-20.987772"
+         y="-138.85161" />
+    </g>
   </g>
   <g
      transform="translate(0,-20.599997)"
@@ -300,7 +312,7 @@
        id="drawing">
       <g
          id="portDrawing"
-         style="fill:none;stroke:#aa5f28">
+         style="fill:none;stroke:currentColor">
         <path
            style="fill-rule:evenodd"
            d="M 5.599,30.38774 C 160.18957,5.66801 347.85074,-6.80196 501.48943,4.85169 m 135.52704,8.96246 c 8.1877,0.64014 12.48758,2.54947 19.46811,7.27071"
@@ -455,7 +467,7 @@
       <use
          transform="matrix(1,0,0,-1,0,145.57967)"
          xlink:href="#portDrawing"
-         id="use405"
+         id="starboardDrawing"
          x="0"
          y="0"
          width="100%"

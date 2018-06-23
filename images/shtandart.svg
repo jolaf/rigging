@@ -57,7 +57,7 @@
         <rect class="rail" transform="matrix(.99305 -.11767 .15968 .98717 -36.919 -367.63)" x="58.768" y="391.19" width="42.94" height="5.5987" ry="0"/>
         <use transform="translate(-45.537 -373.95)" xlink:href="#pipe"/>
       </g>
-      <use transform="matrix(1 0 0 -1 0 145.58)" xlink:href="#portDrawing"/>
+      <use id="starboardDrawing" transform="matrix(1 0 0 -1 0 145.58)" xlink:href="#portDrawing"/>
       <path class="rail" d="m645.62 15.449c-3.8756-1.1596-8.6045-1.6351-8.6045-1.6351-0.16012 38.87 0.11539 82.335 0.17643 117.9 0 0 3.8874-0.46149 8.4244-1.5642-0.182-8.5553 0.0775-111.18 4e-3 -114.71h-2.6e-4" fill="none" stroke="currentColor"/>
       <path class="rail" d="m603.73 35.978h7.9082l-0.21655 73.963h-7.7999l0.10827-73.963" fill="none" stroke="currentColor"/>
       <circle class="solid" cx="578.36" cy="72.838" r="14.805" fill="none" stroke="currentColor"/>
@@ -89,7 +89,7 @@
       <use class="deckMask" transform="matrix(1.2311 0 0 1 -335.88 0)" rigging:deck="stern" xlink:href="#deckMask"/>
     </g>
   </g>
-  <g transform="translate(0 -20.6)">
+  <g transform="translate(0 -20.6)" display="none">
     <g id="mastMasks" class="modeDependent where" color="#ff0000">
       <use class="mastMask" transform="translate(140)" rigging:mast="fore" xlink:href="#mastMask"/>
       <use class="mastMask" transform="translate(-104.89)" rigging:mast="main" xlink:href="#mastMask"/>
