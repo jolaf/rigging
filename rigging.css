@@ -81,11 +81,11 @@ span.selector {
 }
 
 #sublines h3:first-child {
-	margin-top: 1.5em;
+	margin-top: 0.45em;
 }
 
 #sublines ul + h3 {
-	margin-top: 0.6em;
+	margin-top: 0.75em;
 }
 
 #sublines ul:first-child {
@@ -97,7 +97,7 @@ span.selector {
 }
 
 #sublines h3 + ul {
-	margin-top: 0.4em;
+	margin-top: 0.25em;
 }
 
 #sublines ul + ul {
