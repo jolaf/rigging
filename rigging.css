@@ -163,7 +163,7 @@ html, body {
 	fill-opacity: 0.5;
 }
 
-[xlink|href="#pipe"] {
+[xlink|href="#pinhole"], [xlink|href="#pipe"] {
 	opacity: 0.5;
 }
 
