@@ -47,24 +47,14 @@ SCOUR_OPTIONS = {
 }
 
 SVG_PATTERNS = (
-    (r'(?ms)\s*<metadata>.*?</metadata>(\n*)',
-        r'\1'),
     (r'(?ms)\s*<style>.*?</style>(\n*)',
         r'\1'),
     (r'(?ms)\s*<g id="background">.*?</g>(\n*)',
-        r'\1'),
-    (r'(?ms)\s*<g></g>(\n*)',
         r'\1'),
     (r' (fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"',
         ''),
     (r' (height|width)="100%"',
         ''),
-    (r' (x|y)="0"',
-        ''),
-    (r' ((deck|side|rail|mast|isAcross|ignoreDeck)=")',
-        r' rigging:\1'),
-    (r'\n\n',
-        r'\n')
 )
 
 HTML_PATTERNS = (
@@ -76,8 +66,6 @@ HTML_PATTERNS = (
         r'\1'),
     (r'([ \t]*)<object type="image/svg\+xml" data="(\S+)".*?></object>\n',
         lambda match: loadFile(match, r'%s', 2, NO_INDENT)),
-    (r'(?s)([ \t]*)(scheme = \$\(\'#schemeBlock svg\'\);).*?\n\1}',
-        r'\1\2'),
     (r'type="(\S+)" href="(\S+)"',
         lambda match: loadFile(match, r'type="\1" href="data:\1;base64,%s"', 2, BASE64)),
     (r'<img ([^<>]*) src="((\S+)\.(\S+))"',
