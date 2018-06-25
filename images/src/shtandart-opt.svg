@@ -19,9 +19,13 @@
     <ellipse id="cleat" class="aura" transform="rotate(89.51)" cx="3.7214" cy="-575.37" rx="1.4" ry="5.615" fill="currentColor"/>
     <rect id="lcleat" class="aura" x="396.5" y="72.319" width="4" height="15" ry="1.5" fill="currentColor"/>
     <path id="xcleat" class="aura" transform="matrix(.88236 0 0 1.0046 -152.59 -25.947)" d="m215.31 40.277-0.95943-2.7977v-6.102l0.95943-2.8928-2.499-1.1962-2.6523 1.1962 1.1616 2.8928v6.102l-1.1613 2.7977 2.652 1.5143z" fill="currentColor"/>
+    <g id="halfKevel">
+      <path d="m427.52 40.223v11.347l-5.6418-11.308z" fill-opacity="0"/>
+      <path d="m427.52 54.794 0.0673-3.2528-0.0673 3.2528-1.2606-0.52648-8.4236-11.107-2.4793-2.004-0.0671-0.78121 7.4043-0.1019 0.20384 0.74724-0.23767 0.71328 4.9274 9.807" fill="currentColor"/>
+    </g>
     <g id="kevel" class="aura">
-      <path d="m433.15 40.285-5.5908 11.285-5.6029-11.277 11.194-0.0081" fill-opacity="0"/>
-      <path d="m426.26 54.267-8.4236-11.107-2.4793-2.004-0.0671-0.78121 7.4043-0.1019 0.20384 0.74724-0.23767 0.71328 4.9274 9.807 4.7911-9.773-0.23764-0.7133 0.20383-0.74723 7.4043 0.10189-0.0671 0.78121-2.4793 2.004-8.4235 11.107-1.2589 0.4925z" fill="currentColor"/>
+      <use xlink:href="#halfKevel"/>
+      <use transform="matrix(-1 0 0 1 855.04 0)" xlink:href="#halfKevel"/>
     </g>
     <rect id="fist" class="aura" transform="translate(-36.94 -367.63)" x="324.1" y="408.34" width="8.109" height="8.109" fill="currentColor"/>
     <g id="tackle" class="aura" transform="matrix(-1 0 0 1 657.06 84.968)" fill="currentColor">
