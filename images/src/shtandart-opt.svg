@@ -40,363 +40,359 @@
     </g>
   </defs>
   <g id="background" fill="#ffeca4">
-    <rect x="-20.988" y="-138.85" width="717.6" height="368.79" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" style="paint-order:markers fill stroke"/>
+    <rect x="-20.988" y="-138.85" width="717.6" height="368.79"/>
   </g>
-  <g transform="translate(0 -20.6)">
-    <g id="drawing" color="#aa5f28">
-      <g id="portDrawing" fill="none" stroke="currentColor">
-        <path d="m5.599 30.388c154.59-24.72 342.25-37.19 495.89-25.536m135.53 8.9625c8.1877 0.64014 12.488 2.5495 19.468 7.2707" fill-rule="evenodd"/>
-        <path class="rail" d="m499 4.6841 138.01 9.1301-0.0819 7.9029-137.97-9.4342s0.0436-7.5988 0.0436-7.5988" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <rect class="rail" transform="matrix(.99798 .063452 -.063107 .99801 -36.919 -367.63)" x="614.66" y="330.18" width="57.042" height="5.6153" fill-rule="evenodd" stroke-linecap="round" stroke-miterlimit="0"/>
-        <rect class="solid" transform="translate(-36.919 -367.63)" x="582.6" y="412.18" width="7.8952" height="8.0121" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <path class="rail" d="m498.97 63.596 0.0131-31.846 8.2065 0.0488-0.0723 31.797" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <g class="solid">
-          <path d="m474.71 3.4881 0.0178 26.671 24.696 1.6705" fill-rule="evenodd" stroke-linejoin="round"/>
-          <path d="m491.03 31.603v-27.13" fill-rule="evenodd"/>
-          <path d="m482.41 30.658 6e-3 -26.716" fill-rule="evenodd"/>
-        </g>
-        <rect class="solid" transform="translate(-36.919 -367.63)" x="400.67" y="404.03" width="8.109" height="8.109" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <rect class="rail" transform="translate(-36.919 -367.63)" x="331.8" y="403.95" width="77.184" height="8.3484" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <path class="rail" d="m281 7.7375 50.101-2.0446s0.26193 6.643 0.26193 6.643l-50.107 1.9066s-0.25648-6.505-0.25648-6.505" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <g class="solid">
-          <path d="m269.03 3.0053s0.25254 33.082 0.25254 33.082c2.4412 1.3062 4.8824 1.2613 7.3236-0.12627v-33.335" fill-rule="evenodd"/>
-          <path d="m242.14 37.35c11.722 2.0062 20.149-0.13337 26.895-4.4194" fill-rule="evenodd"/>
-          <path d="m242.1 35.007c12.578-3.0013 19.725-7.0418 26.841-13.718" fill-rule="evenodd"/>
-          <path d="m242.14 31.116c16.006-5.9455 25.097-19.221 26.516-28.111" fill-rule="evenodd"/>
-          <path d="m242.07 25.379c11.483-8.9948 11.331-15.34 12.443-21.742" fill-rule="evenodd"/>
-        </g>
-        <use transform="translate(71.491 -384.23)" width="100%" height="100%" xlink:href="#pipe"/>
-        <use transform="translate(24.224 -380.75)" width="100%" height="100%" xlink:href="#pipe"/>
-        <rect class="rail" transform="rotate(-5.4351 -3891 205.08)" x="138.67" y="395.49" width="27.593" height="6.1536" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <rect class="rail" transform="matrix(.99305 -.11767 .15968 .98717 -36.919 -367.63)" x="58.768" y="391.19" width="42.94" height="5.5987" ry="0" fill-rule="evenodd" stroke-miterlimit="0"/>
-        <use transform="translate(-45.537 -373.95)" width="100%" height="100%" xlink:href="#pipe"/>
+  <g id="drawing" color="#aa5f28">
+    <g id="portDrawing" fill="none" stroke="currentColor">
+      <path d="m5.599 9.7877c154.59-24.72 342.25-37.19 495.89-25.536m135.53 8.9625c8.1877 0.64014 12.488 2.5495 19.468 7.2707" fill-rule="evenodd"/>
+      <path class="rail" d="m499-15.916 138.01 9.1301-0.0819 7.9029-137.97-9.4342s0.0436-7.5988 0.0436-7.5988" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <rect class="rail" transform="matrix(.99798 .063452 -.063107 .99801 -36.919 -388.23)" x="614.66" y="330.18" width="57.042" height="5.6153" fill-rule="evenodd" stroke-linecap="round" stroke-miterlimit="0"/>
+      <rect class="solid" transform="translate(-36.919 -388.23)" x="582.6" y="412.18" width="7.8952" height="8.0121" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <path class="rail" d="m498.97 42.996 0.0131-31.846 8.2065 0.0488-0.0723 31.797" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <g class="solid">
+        <path d="m474.71-17.112 0.0178 26.671 24.696 1.6705" fill-rule="evenodd" stroke-linejoin="round"/>
+        <path d="m491.03 11.003v-27.13" fill-rule="evenodd"/>
+        <path d="m482.41 10.058 6e-3 -26.716" fill-rule="evenodd"/>
       </g>
-      <use id="starboardDrawing" transform="matrix(1 0 0 -1 0 145.58)" width="100%" height="100%" xlink:href="#portDrawing"/>
-      <path class="rail" d="m645.62 15.449c-3.8756-1.1596-8.6045-1.6351-8.6045-1.6351-0.16012 38.87 0.11539 82.335 0.17643 117.9 0 0 3.8874-0.46149 8.4244-1.5642-0.182-8.5553 0.0775-111.18 4e-3 -114.71h-2.6e-4" fill="none" stroke="currentColor"/>
-      <path class="rail" d="m603.73 35.978h7.9082l-0.21655 73.963h-7.7999l0.10827-73.963" fill="none" stroke="currentColor"/>
-      <circle class="solid" cx="578.36" cy="72.838" r="14.805" fill="none" stroke="currentColor"/>
-      <path class="rail" d="m545.59 36.028h8.0469v73.736l-7.9554-0.0915-0.0915-73.645" fill="none" stroke="currentColor"/>
-      <g class="solid" fill="none" stroke="currentColor">
-        <path d="m507.13 63.596c1.3044 2.8755 1.9792 5.9965 1.9792 9.1637 0 3.1672-0.67479 6.2882-1.9792 9.1637"/>
-        <path d="m498.98 63.596c1.3044 2.8755 1.9792 5.9965 1.9792 9.1637 0 3.1672-0.67479 6.2883-1.9792 9.1637"/>
+      <rect class="solid" transform="translate(-36.919 -388.23)" x="400.67" y="404.03" width="8.109" height="8.109" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <rect class="rail" transform="translate(-36.919 -388.23)" x="331.8" y="403.95" width="77.184" height="8.3484" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <path class="rail" d="m281-12.863 50.101-2.0446s0.26193 6.643 0.26193 6.643l-50.107 1.9066s-0.25648-6.505-0.25648-6.505" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <g class="solid">
+        <path d="m269.03-17.595s0.25254 33.082 0.25254 33.082c2.4412 1.3062 4.8824 1.2613 7.3236-0.12627v-33.335" fill-rule="evenodd"/>
+        <path d="m242.14 16.75c11.722 2.0062 20.149-0.13337 26.895-4.4194" fill-rule="evenodd"/>
+        <path d="m242.1 14.407c12.578-3.0013 19.725-7.0418 26.841-13.718" fill-rule="evenodd"/>
+        <path d="m242.14 10.516c16.006-5.9455 25.097-19.221 26.516-28.111" fill-rule="evenodd"/>
+        <path d="m242.07 4.7786c11.483-8.9948 11.331-15.34 12.443-21.742" fill-rule="evenodd"/>
       </g>
-      <path d="m499.08 140.58 0.0502-27.332m0.022-81.024-0.14261-27.537" fill="none" stroke="currentColor"/>
-      <circle class="solid " cx="333.48" cy="72.838" r="14.805" fill="none" stroke="currentColor"/>
-      <path class="rail" d="m302.86 109.06h-8.0747v-72.72h8.0747v72.72" fill="none" stroke="currentColor"/>
-      <path d="m241.95 140.83-0.10275-33.102m-0.0604-69.962 0.0237-33.476" fill="none" stroke="currentColor"/>
-      <path class="solid" d="m241.69 37.439-8.3059 0.0691c-4e-3 16.806 0.062 53.776 0.0582 70.582h8.1678c4e-3 -16.806 0.0761-53.845 0.0799-70.651v-5e-5" fill="none" stroke="currentColor"/>
-      <circle class="solid" cx="137.48" cy="72.838" r="14.805" fill="none" stroke="currentColor"/>
-      <rect class="solid" x="87.298" y="53.73" width="3.0405" height="38.031" fill="none" stroke="currentColor"/>
-      <rect class="solid" x="78.789" y="67.672" width="8.4818" height="9.9488" fill="none" stroke="currentColor"/>
-      <path class="solid" d="m87.296 19.031v3.2799c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-5.0254 0.0348" fill="none" stroke="currentColor"/>
-      <path class="solid" d="m81.496 19.331v10.18c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-2.2255 0.0348" fill="none" stroke="currentColor"/>
-      <path d="m78.845 125.85-0.07202-106.2" fill="none" stroke="currentColor"/>
-      <path class="solid" d="m61.845 123.31v-16.814c0.38862-1.2784 0.97345-1.2054 1.5232-1.3742 0 0 15.251-0.0624 15.251-0.0624" fill="none" stroke="currentColor"/>
-      <circle class="solid" cx="12.204" cy="72.707" r="4.4953" fill="none" stroke="currentColor"/>
-      <path d="m6.0165 115.68v-85.785" fill="none" stroke="currentColor"/>
+      <use transform="translate(71.491 -404.83)" width="100%" height="100%" xlink:href="#pipe"/>
+      <use transform="translate(24.224 -401.35)" width="100%" height="100%" xlink:href="#pipe"/>
+      <rect class="rail" transform="rotate(-5.4351 -4108 194.78)" x="138.67" y="395.49" width="27.593" height="6.1536" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <rect class="rail" transform="matrix(.99305 -.11767 .15968 .98717 -36.919 -388.23)" x="58.768" y="391.19" width="42.94" height="5.5987" ry="0" fill-rule="evenodd" stroke-miterlimit="0"/>
+      <use transform="translate(-45.537 -394.55)" width="100%" height="100%" xlink:href="#pipe"/>
+    </g>
+    <use id="starboardDrawing" transform="matrix(1 0 0 -1 0 104.38)" width="100%" height="100%" xlink:href="#portDrawing"/>
+    <path class="rail" d="m645.62-5.1508c-3.8756-1.1596-8.6045-1.6351-8.6045-1.6351-0.16012 38.87 0.11539 82.335 0.17643 117.9 0 0 3.8874-0.46149 8.4244-1.5642-0.182-8.5553 0.0775-111.18 4e-3 -114.71h-2.6e-4" fill="none" stroke="currentColor"/>
+    <path class="rail" d="m603.73 15.378h7.9082l-0.21655 73.963h-7.7999l0.10827-73.963" fill="none" stroke="currentColor"/>
+    <circle class="solid" cx="578.36" cy="52.238" r="14.805" fill="none" stroke="currentColor"/>
+    <path class="rail" d="m545.59 15.428h8.0469v73.736l-7.9554-0.0915-0.0915-73.645" fill="none" stroke="currentColor"/>
+    <g class="solid" fill="none" stroke="currentColor">
+      <path d="m507.13 42.996c1.3044 2.8755 1.9792 5.9965 1.9792 9.1637 0 3.1672-0.67479 6.2882-1.9792 9.1637"/>
+      <path d="m498.98 42.996c1.3044 2.8755 1.9792 5.9965 1.9792 9.1637 0 3.1672-0.67479 6.2883-1.9792 9.1637"/>
+    </g>
+    <path d="m499.08 119.98 0.0502-27.332m0.022-81.024-0.14261-27.537" fill="none" stroke="currentColor"/>
+    <circle class="solid " cx="333.48" cy="52.238" r="14.805" fill="none" stroke="currentColor"/>
+    <path class="rail" d="m302.86 88.464h-8.0747v-72.72h8.0747v72.72" fill="none" stroke="currentColor"/>
+    <path d="m241.95 120.23s-0.10275-33.102-0.10275-33.102m-0.0604-69.962 0.0237-33.476" fill="none" stroke="currentColor"/>
+    <path class="solid" d="m241.69 16.839-8.3059 0.0691c-4e-3 16.806 0.062 53.776 0.0582 70.582h8.1678c4e-3 -16.806 0.0761-53.845 0.0799-70.651v-5e-5" fill="none" stroke="currentColor"/>
+    <circle class="solid" cx="137.48" cy="52.238" r="14.805" fill="none" stroke="currentColor"/>
+    <rect class="solid" transform="translate(0 -20.6)" x="87.298" y="53.73" width="3.0405" height="38.031" fill="none" stroke="currentColor"/>
+    <rect class="solid" transform="translate(0 -20.6)" x="78.789" y="67.672" width="8.4818" height="9.9488" fill="none" stroke="currentColor"/>
+    <path class="solid" d="m87.296-1.5691v3.2799c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-5.0254 0.0348" fill="none" stroke="currentColor"/>
+    <path class="solid" d="m81.496-1.2691v10.18c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-2.2255 0.0348" fill="none" stroke="currentColor"/>
+    <path d="m78.845 105.25-0.07202-106.2" fill="none" stroke="currentColor"/>
+    <path class="solid" d="m61.845 102.71v-16.814c0.38862-1.2784 0.97345-1.2054 1.5232-1.3742 0 0 15.251-0.0624 15.251-0.0624" fill="none" stroke="currentColor"/>
+    <circle class="solid" cx="12.204" cy="52.207" r="4.4953" fill="none" stroke="currentColor"/>
+    <path d="m6.0165 95.079v-85.785" fill="none" stroke="currentColor"/>
+  </g>
+  <g display="none">
+    <g id="deckMasks">
+      <use class="deckMask" transform="matrix(.71785 0 0 1 299.43 -20.6)" width="100%" height="100%" color="#ffffff" rigging:deck="fore" xlink:href="#deckMask"/>
+      <use class="deckMask" transform="matrix(1.0033 0 0 1 -1.1 -20.6)" width="100%" height="100%" color="#ffffff" rigging:deck="main" xlink:href="#deckMask"/>
+      <use class="deckMask" transform="matrix(1.2311 0 0 1 -335.88 -20.6)" width="100%" height="100%" color="#ffffff" rigging:deck="stern" xlink:href="#deckMask"/>
     </g>
   </g>
-  <g transform="translate(0 -20.6)" display="none">
-    <g id="deckMasks" class="modeDependent which" color="#ffffff">
-      <use class="deckMask" transform="matrix(.71785 0 0 1 299.43 0)" width="100%" height="100%" stroke-width="1.0008" rigging:deck="fore" xlink:href="#deckMask"/>
-      <use class="deckMask" transform="matrix(1.0033,0,0,1,-1.1,0)" width="100%" height="100%" stroke-width=".99728" rigging:deck="main" xlink:href="#deckMask"/>
-      <use class="deckMask" transform="matrix(1.2311 0 0 1 -335.88 0)" width="100%" height="100%" stroke-width="1.01" rigging:deck="stern" xlink:href="#deckMask"/>
+  <g display="none">
+    <g id="mastMasks">
+      <use class="mastMask" transform="translate(140 -20.6)" width="100%" height="100%" color="#ff0000" rigging:mast="fore" xlink:href="#mastMask"/>
+      <use class="mastMask" transform="translate(-104.89 -20.6)" width="100%" height="100%" color="#ff0000" rigging:mast="main" xlink:href="#mastMask"/>
+      <use class="mastMask" transform="translate(-300.97 -20.6)" width="100%" height="100%" color="#ff0000" rigging:mast="mizzen" xlink:href="#mastMask"/>
     </g>
   </g>
-  <g transform="translate(0 -20.6)" display="none">
-    <g id="mastMasks" class="modeDependent where" color="#ff0000">
-      <use class="mastMask" transform="translate(140)" width="100%" height="100%" rigging:mast="fore" xlink:href="#mastMask"/>
-      <use class="mastMask" transform="translate(-104.89)" width="100%" height="100%" rigging:mast="main" xlink:href="#mastMask"/>
-      <use class="mastMask" transform="translate(-300.97)" width="100%" height="100%" rigging:mast="mizzen" xlink:href="#mastMask"/>
+  <g id="points">
+    <g rigging:deck="fore" rigging:rail="behindFront" rigging:side="port">
+      <use transform="rotate(-89.1 631.84 -18.644)" width="100%" height="100%" xlink:href="#cleat"/>
     </g>
-  </g>
-  <g transform="translate(0 -20.6)">
-    <g id="points" transform="translate(.020296 -7.1416e-6)">
-      <g rigging:deck="fore" rigging:rail="behindFront" rigging:side="port">
-        <use transform="rotate(-89.1 642.3 -8.3336)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 0 145.51)" rigging:deck="fore" rigging:rail="behindFront" rigging:side="starboard">
-        <use transform="rotate(-89.1 642.3 -8.3336)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(0 -1.125)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="port">
-        <use transform="translate(75.828 120.56)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 111.36)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 102.64)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 94.008)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(20.68 -18.062)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(75.828 77.695)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 0 146.63)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="starboard">
-        <use transform="translate(75.828 120.56)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 111.36)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 102.64)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(75.828 94.008)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(20.68 -18.062)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(75.828 77.695)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="rotate(-33.825 358.49 -866.82)" rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="port">
-        <use transform="rotate(37.611 293.77 -704.81)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(90 336.06 324.36)" rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="center">
-        <use transform="rotate(.24102 -6431.2 -116513)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(.83074 .55666 .55666 -.83074 543.2 92.667)" rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="starboard">
-        <use transform="rotate(37.611 293.77 -704.81)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(3.8685 821.87 -178.44)" rigging:deck="fore" rigging:rail="sideRail" rigging:side="port">
-        <use transform="translate(-45.724 83.924)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-92.891 -19.827)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-29.782 83.871)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-77.041 -19.841)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-69.076 -19.943)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-5.9745 83.648)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-53.128 -19.941)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(9.886 83.763)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-37.278 -19.943)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(25.93 83.851)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(33.813 83.936)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(41.878 83.909)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-5.2859 -19.812)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(2.6879 -19.688)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(65.802 84.05)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(18.549 -19.604)" width="100%" height="100%" xlink:href="#pinhole"/>
-      </g>
-      <g transform="matrix(.99772 -.067466 -.067466 -.99772 -10.166 201.36)" rigging:deck="fore" rigging:rail="sideRail" rigging:side="starboard">
-        <use transform="translate(-45.724 83.924)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-92.891 -19.827)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-29.782 83.871)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-77.041 -19.841)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-69.076 -19.943)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-5.9745 83.648)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-53.128 -19.941)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(9.886 83.763)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-37.278 -19.943)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(25.93 83.851)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(33.813 83.936)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(41.878 83.909)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-5.2859 -19.812)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(2.6879 -19.688)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(65.802 84.05)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(18.549 -19.604)" width="100%" height="100%" xlink:href="#pinhole"/>
-      </g>
-      <g transform="rotate(3.7694 6421.6 -164.9)" rigging:deck="fore" rigging:rail="shroudsRail" rigging:side="port">
-        <use transform="translate(19.319 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(30.519 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(41.719 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(52.919 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(64.119 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(.99784 -.065742 -.065742 -.99784 3.0514 568.03)" rigging:deck="fore" rigging:rail="shroudsRail" rigging:side="starboard">
-        <use transform="translate(19.319 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(30.519 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(41.719 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(52.919 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(64.119 442.9)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="translate(.52682)" rigging:side="port">
-        <use transform="translate(-13.733 18.494)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-13.733 9.3337)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-13.733 -9.3384)" width="100%" height="100%" xlink:href="#pinhole"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 .52682 145.51)" rigging:side="starboard">
-        <use transform="translate(-13.733 18.494)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-13.733 9.3337)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-13.733 -9.3384)" width="100%" height="100%" xlink:href="#pinhole"/>
-      </g>
-      <g transform="translate(316.26 3.5265)" rigging:deck="fore" rigging:rail="frontFists" rigging:side="port">
-        <use transform="translate(.10571 .14837)" width="100%" height="100%" xlink:href="#fist"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 316.26 141.98)" rigging:deck="fore" rigging:rail="frontFists" rigging:side="starboard">
-        <use transform="translate(.10571 .14837)" width="100%" height="100%" xlink:href="#fist"/>
-      </g>
-      <g transform="translate(446.79 -2.6413)" rigging:deck="fore" rigging:rail="atMastFront" rigging:side="port">
-        <use transform="matrix(.76693 -.64173 -.64173 -.76693 -297.01 433.75)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(-34.407 594.6 75.75)" rigging:deck="fore" rigging:rail="atMastFront" rigging:side="center">
-        <use transform="rotate(35.279 468.56 68.433)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 446.79 148.15)" rigging:deck="fore" rigging:rail="atMastFront" rigging:side="starboard">
-        <use transform="matrix(.76693 -.64173 -.64173 -.76693 -297.01 433.75)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(.17561)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="port">
-        <use transform="translate(-16.181 122.15)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-16.181 113.05)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-16.181 94.303)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 .17561 145.51)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="starboard">
-        <use transform="translate(-16.181 122.15)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-16.181 113.05)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-16.181 94.303)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1.6149 -.58991 1.1798 .80747 -408.62 335.41)" stroke-width=".70711" rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
-        <use transform="rotate(216.58 574.43 28.158)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(-37.954 558.99 98.502)" rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
-        <use transform="rotate(37.993 427.07 18.637)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(-7.2256 -5.4374)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="backRail" rigging:side="port">
-        <use transform="translate(-55.34 117.45)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-55.34 106.54)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-55.34 98.995)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 -7.2256 150.94)" rigging:deck="fore" rigging:isAcross="true" rigging:rail="backRail" rigging:side="starboard">
-        <use transform="translate(-55.34 117.45)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-55.34 106.54)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-55.34 98.995)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g rigging:deck="main" rigging:rail="bulwark" rigging:side="port">
-        <use transform="matrix(.95074 0 0 .95074 -169.34 4.3414)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(.9 2554.8 -1639.3)" width="100%" height="100%" xlink:href="#kevel"/>
-        <use transform="matrix(-.01972 1.022 -.73281 -.029126 493.15 -396.81)" width="100%" height="100%" stroke-width="1.1675" xlink:href="#lcleat"/>
-        <use transform="matrix(.95039 .048001 -.048001 .95039 -92.271 -21.679)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(3.7685 921.3 469.44)" width="100%" height="100%" xlink:href="#kevel"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 0 145.51)" rigging:deck="main" rigging:rail="bulwark" rigging:side="starboard">
-        <use transform="matrix(.95074 0 0 .95074 -169.34 4.3414)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(.9 2554.8 -1639.3)" width="100%" height="100%" xlink:href="#kevel"/>
-        <use transform="matrix(-.01972 1.022 -.73281 -.029126 493.15 -396.81)" width="100%" height="100%" stroke-width="1.1675" xlink:href="#lcleat"/>
-        <use transform="matrix(.95039 .048001 -.048001 .95039 -92.271 -21.679)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(3.7685 921.3 469.44)" width="100%" height="100%" xlink:href="#kevel"/>
-      </g>
-      <g transform="translate(.39986 -4.5002)" rigging:deck="main" rigging:rail="frontPillars" rigging:side="port">
-        <use transform="translate(-203.38 46.215)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 .39986 150.01)" rigging:deck="main" rigging:rail="frontPillars" rigging:side="starboard">
-        <use transform="translate(-203.38 46.215)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(-10.636 4.6)" rigging:deck="main" rigging:rail="onDeckFront" rigging:side="port">
-        <use transform="translate(-208.11 53.358)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 -10.636 140.91)" rigging:deck="main" rigging:rail="onDeckFront" rigging:side="starboard">
-        <use transform="translate(-208.11 53.358)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(90 350.45 71.529)" rigging:deck="main" rigging:rail="atMastFront" rigging:side="center">
-        <use transform="rotate(90 426.55 -76.111)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(7.6 -4.3997)" rigging:deck="main" rigging:rail="sideMastRail" rigging:side="port">
-        <use transform="translate(-264.97 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-254.97 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-244.87 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-234.67 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-224.67 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-214.57 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 7.6 149.91)" rigging:deck="main" rigging:rail="sideMastRail" rigging:side="starboard">
-        <use transform="translate(-264.97 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-254.97 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-244.87 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-234.67 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-224.67 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-214.57 98.845)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="translate(7.6003 -4.2999)" rigging:deck="main" rigging:rail="backFists" rigging:side="port">
-        <use transform="translate(.10571 .14837)" width="100%" height="100%" xlink:href="#fist"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 7.6003 149.81)" rigging:deck="main" rigging:rail="backFists" rigging:side="starboard">
-        <use transform="translate(.10571 .14837)" width="100%" height="100%" xlink:href="#fist"/>
-      </g>
-      <g transform="translate(7.5003 -.80013)" rigging:deck="main" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="port">
-        <use transform="translate(-274.32 123)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-274.32 114.25)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-274.32 105.41)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 7.5003 146.31)" rigging:deck="main" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="starboard">
-        <use transform="translate(-274.32 123)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-274.32 114.25)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-274.32 105.41)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="rotate(-2.2774 278.92 10.612)" rigging:deck="main" rigging:rail="sideRail" rigging:side="port">
-        <use transform="translate(-279.9 65.206)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-271.65 65.18)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-262.99 65.267)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-254.81 65.203)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-246.52 65.148)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-238.3 65.152)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(.99921 .039738 .039738 -.99921 -.20138 134.41)" rigging:deck="main" rigging:rail="sideRail" rigging:side="starboard">
-        <use transform="translate(-279.9 65.206)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-271.65 65.18)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-262.99 65.267)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-254.81 65.203)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-246.52 65.148)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-238.3 65.152)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="rotate(.2 349.3 -2298.3)" rigging:deck="main" rigging:rail="aboveRail" rigging:side="port">
-        <use transform="rotate(-2.2866 590.16 6858.6)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(.99999 -.0034906 -.0034906 -.99999 -8.0205 146.74)" rigging:deck="main" rigging:rail="aboveRail" rigging:side="starboard">
-        <use transform="rotate(-2.2866 590.16 6858.6)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g rigging:deck="stern" rigging:rail="bulwark" rigging:side="port">
-        <use transform="rotate(-30.64 159.92 547.65)" width="100%" height="100%" xlink:href="#lcleat"/>
-        <use transform="matrix(.8798 -.086775 .086775 .8798 -374 67.391)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="rotate(-4.8377 225.62 -1651.1)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="rotate(-5.0377 210.39 -1799.7)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="rotate(-4.1732 -116.35 2967.6)" width="100%" height="100%" xlink:href="#kevel"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 0 145.77)" rigging:deck="stern" rigging:rail="bulwark" rigging:side="starboard">
-        <use transform="rotate(-30.64 159.35 547.49)" width="100%" height="100%" xlink:href="#lcleat"/>
-        <use transform="rotate(-4.8377 225.62 -1651.1)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="rotate(-5.0377 210.39 -1799.7)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="rotate(-4.1732 -116.35 2967.6)" width="100%" height="100%" xlink:href="#kevel"/>
-      </g>
-      <g transform="translate(-48.824 -385.82)" rigging:deck="stern" rigging:rail="atFront" rigging:side="center">
-        <use transform="translate(-380.09 105.44)" width="100%" height="100%" xlink:href="#knot"/>
-      </g>
-      <g transform="translate(-48.824 -357.82)" rigging:deck="stern" rigging:rail="aboveLadder" rigging:side="starboard">
-        <use transform="translate(-380.09 105.44)" width="100%" height="100%" xlink:href="#knot"/>
-      </g>
-      <g transform="rotate(-1 69.433 1381.3)" rigging:deck="stern" rigging:rail="sideRail" rigging:side="port">
-        <use transform="translate(-399.22 71.258)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-392.69 70.722)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-385.97 70.177)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-379.48 69.612)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(.99985 .017452 .017452 -.99985 -24.097 144.08)" rigging:deck="stern" rigging:rail="sideRail" rigging:side="starboard">
-        <use transform="translate(-399.22 71.258)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-392.69 70.722)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-385.97 70.177)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-379.48 69.612)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="rotate(-.7 172.95 2205.1)" rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="port">
-        <use transform="translate(-450.79 67.13)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-442.03 66.186)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-433.11 65.221)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-424.26 64.275)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-416.19 63.519)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="matrix(.99993 .012217 .012217 -.99993 -26.927 143.23)" rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="starboard">
-        <use transform="translate(-450.79 67.13)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-442.03 66.186)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-488.24 -38.578)" width="100%" height="100%" xlink:href="#pinhole"/>
-        <use transform="translate(-424.26 64.275)" width="100%" height="100%" xlink:href="#pin"/>
-        <use transform="translate(-416.19 63.519)" width="100%" height="100%" xlink:href="#pin"/>
-      </g>
-      <g transform="translate(5.8397 -2.6413)" rigging:deck="stern" rigging:rail="atMast" rigging:side="port">
-        <use transform="rotate(219.92 358.84 115.16)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="matrix(.76693 -.64173 -.64173 -.76693 -297.01 433.75)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 5.8397 148.15)" rigging:deck="stern" rigging:rail="atMast" rigging:side="starboard">
-        <use transform="rotate(219.92 358.84 115.16)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="matrix(.76693 -.64173 -.64173 -.76693 -297.01 433.75)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="translate(.49669)" rigging:deck="stern" rigging:rail="poopBulwark" rigging:side="port">
-        <use transform="matrix(1 0 0 -1 -617.33 173.19)" width="100%" height="100%" xlink:href="#tackle"/>
-        <use transform="rotate(81.139 17.895 15.233)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="matrix(.87815 -.10212 .10212 .87815 -449.57 85.412)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(1 0 0 -1 .49669 145.57)" rigging:deck="stern" rigging:rail="poopBulwark" rigging:side="starboard">
-        <use transform="matrix(1 0 0 -1 -617.33 173.19)" width="100%" height="100%" xlink:href="#tackle"/>
-        <use transform="rotate(81.139 17.895 15.233)" width="100%" height="100%" xlink:href="#xcleat"/>
-        <use transform="matrix(.87815 -.10212 .10212 .87815 -461.99 90.755)" width="100%" height="100%" xlink:href="#cleat"/>
-        <use transform="matrix(.87815 -.10212 .10212 .87815 -449.57 85.412)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="rotate(-44.188 53.027 59.232)" rigging:deck="stern" rigging:ignoreDeck="true" rigging:rail="poopFlagstaff" rigging:side="port">
-        <use transform="translate(-554.65 41.288)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
-      <g transform="matrix(.71706 .69702 .69702 -.71706 -26.282 91.786)" rigging:deck="stern" rigging:ignoreDeck="true" rigging:rail="poopFlagstaff" rigging:side="starboard">
-        <use transform="translate(-554.65 41.288)" width="100%" height="100%" xlink:href="#cleat"/>
-      </g>
+    <g rigging:deck="fore" rigging:rail="behindFront" rigging:side="starboard">
+      <use transform="matrix(.015714 .99988 .99988 -.015714 640.56 -509.11)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="port">
+      <use transform="translate(75.849 98.833)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(75.849 89.64)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(75.849 80.915)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(75.849 72.283)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(20.7 -39.787)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="translate(75.849 55.97)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 75.849 5.4729)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 75.849 14.666)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 75.849 23.391)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 75.849 32.023)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 20.7 144.09)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(1 0 0 -1 75.849 48.335)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="port">
+      <use transform="rotate(3.7858 525.83 819.64)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="center">
+      <use transform="rotate(90.241 577.35 54.645)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="starboard">
+      <use transform="matrix(.99782 -.066026 -.066026 -.99782 55.265 137.24)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="sideRail" rigging:side="port">
+      <use transform="rotate(3.8685 -92.776 -907.37)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1466.9 -1553.8)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -99.967 -671.32)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1459.2 -1319.1)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 1456.7 -1201.1)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -108.57 -318.72)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1448.7 -965.03)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -118.21 -83.961)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1440.8 -730.37)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -127.54 153.53)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 -132.74 270.21)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 -136.38 389.63)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1422.8 -256.78)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 1417 -138.79)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -150.43 743.75)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1407.8 96.003)" width="100%" height="100%" xlink:href="#pinhole"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="sideRail" rigging:side="starboard">
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -61.428 100.11)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -101.49 206.81)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -45.519 99.09)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -85.673 205.75)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -77.719 205.32)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -21.75 97.707)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -61.808 204.24)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -5.9338 96.522)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -45.994 203.17)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 10.067 95.352)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 17.927 94.735)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 25.976 94.217)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -14.083 200.88)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -6.136 200.22)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 49.835 92.463)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 9.6834 199.07)" width="100%" height="100%" xlink:href="#pinhole"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="shroudsRail" rigging:side="port">
+      <use transform="rotate(3.7695 -4.6647 -102.8)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.7695 -10.267 67.386)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.7695 -15.868 237.57)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.7695 -21.47 407.74)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.7695 -27.072 577.92)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="shroudsRail" rigging:side="starboard">
+      <use transform="matrix(.99784 -.065742 -.065742 -.99784 -6.7682 104.22)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99784 -.065742 -.065742 -.99784 4.4079 103.49)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99784 -.065742 -.065742 -.99784 15.584 102.75)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99784 -.065742 -.065742 -.99784 26.759 102.01)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99784 -.065742 -.065742 -.99784 37.935 101.28)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:side="port">
+      <use transform="translate(-13.186 -2.1063)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="translate(-13.186 -11.266)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="translate(-13.186 -29.938)" width="100%" height="100%" xlink:href="#pinhole"/>
+    </g>
+    <g rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -13.186 106.41)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(1 0 0 -1 -13.186 115.57)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(1 0 0 -1 -13.186 134.24)" width="100%" height="100%" xlink:href="#pinhole"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="frontFists" rigging:side="port">
+      <use transform="translate(316.38 -16.925)" width="100%" height="100%" xlink:href="#fist"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="frontFists" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 316.38 121.23)" width="100%" height="100%" xlink:href="#fist"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="atMastFront" rigging:side="port">
+      <use transform="matrix(.76693 -.64173 -.64173 -.76693 149.81 410.51)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="atMastFront" rigging:side="center">
+      <use transform="rotate(.87139 -2934.9 1273.9)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="atMastFront" rigging:side="starboard">
+      <use transform="rotate(39.921 496.45 53.135)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="port">
+      <use transform="translate(-15.985 101.55)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-15.985 92.452)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-15.985 73.703)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -15.985 2.7541)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -15.985 11.854)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -15.985 30.603)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
+      <use transform="matrix(-1.9999 -.007457 .014915 -.99997 1700.7 31.123)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g transform="translate(-21.375)" rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
+      <use transform="rotate(.038274 -115481 -4.4438)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="backRail" rigging:side="port">
+      <use transform="translate(-62.546 91.416)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-62.546 80.498)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-62.546 72.958)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="backRail" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -62.546 12.889)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -62.546 23.808)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -62.546 31.348)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="bulwark" rigging:side="port">
+      <use transform="matrix(.95074 0 0 .95074 -169.32 -16.259)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="rotate(.89998 3866.4 -1648.1)" width="100%" height="100%" xlink:href="#kevel"/>
+      <use transform="matrix(-.01972 1.022 -.73281 -.029126 493.17 -417.41)" width="100%" height="100%" xlink:href="#lcleat"/>
+      <use transform="matrix(.95039 .048001 -.048001 .95039 -92.251 -42.279)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="rotate(3.7685 1234.4 459.45)" width="100%" height="100%" xlink:href="#kevel"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="bulwark" rigging:side="starboard">
+      <use transform="matrix(.95074 0 0 -.95074 -169.32 120.56)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="matrix(.99988 -.015707 -.015707 -.99988 -25.413 165.24)" width="100%" height="100%" xlink:href="#kevel"/>
+      <use transform="matrix(-.01972 -1.022 -.73281 .029126 493.17 521.72)" width="100%" height="100%" xlink:href="#lcleat"/>
+      <use transform="matrix(.95039 -.048001 -.048001 -.95039 -92.251 146.59)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="matrix(.99784 -.065725 -.065725 -.99784 32.866 184.44)" width="100%" height="100%" xlink:href="#kevel"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="frontPillars" rigging:side="port">
+      <use transform="translate(-202.96 21.115)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="frontPillars" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -202.96 83.191)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="onDeckFront" rigging:side="port">
+      <use transform="translate(-218.73 37.358)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="onDeckFront" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -218.73 66.948)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="atMastFront" rigging:side="center">
+      <use transform="rotate(180 462.33 25.459)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="sideMastRail" rigging:side="port">
+      <use transform="translate(-257.35 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-247.35 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-237.25 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-227.05 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-217.05 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-206.95 73.846)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="sideMastRail" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -257.35 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -247.35 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -237.25 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -227.05 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -217.05 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -206.95 30.46)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="backFists" rigging:side="port">
+      <use transform="translate(7.7263 -24.752)" width="100%" height="100%" xlink:href="#fist"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="backFists" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 7.7263 129.06)" width="100%" height="100%" xlink:href="#fist"/>
+    </g>
+    <g rigging:deck="main" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="port">
+      <use transform="translate(-266.8 101.6)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-266.8 92.847)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="translate(-266.8 84.008)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:isAcross="true" rigging:rail="behindMastRail" rigging:side="starboard">
+      <use transform="matrix(1 0 0 -1 -266.8 2.7081)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -266.8 11.459)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(1 0 0 -1 -266.8 20.298)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="sideRail" rigging:side="port">
+      <use transform="rotate(-2.2774 1540.9 7008.1)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-2.2774 1536.1 6800.5)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-2.2774 1534 6582.6)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-2.2774 1528.3 6377)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-2.2774 1522.7 6168.3)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-2.2774 1518.7 5961.7)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="sideRail" rigging:side="starboard">
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -277.27 37.537)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -269.03 37.891)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -260.37 38.148)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -252.2 38.537)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -243.91 38.922)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99921 .039738 .039738 -.99921 -235.7 39.243)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="aboveRail" rigging:side="port">
+      <use transform="rotate(-2.0865 30.149 7725.9)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="main" rigging:rail="aboveRail" rigging:side="starboard">
+      <use transform="matrix(.99934 .036409 .036409 -.99934 -281.27 98.086)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="bulwark" rigging:side="port">
+      <use transform="rotate(-30.64 122.33 537.31)" width="100%" height="100%" xlink:href="#lcleat"/>
+      <use transform="matrix(.8798 -.086775 .086775 .8798 -373.98 46.791)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="rotate(-4.8377 -18.218 -1661.6)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="rotate(-5.0377 -23.735 -1810.2)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="rotate(-4.1732 -399.01 2957)" width="100%" height="100%" xlink:href="#kevel"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="bulwark" rigging:side="starboard">
+      <use transform="matrix(.86039 .50964 .50964 -.86039 -256.75 -32.473)" width="100%" height="100%" xlink:href="#lcleat"/>
+      <use transform="matrix(.99644 .084334 .084334 -.99644 140.07 112.02)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="matrix(.99614 .087812 .087812 -.99614 158.86 113.65)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="matrix(.99735 .072772 .072772 -.99735 -216.25 125.77)" width="100%" height="100%" xlink:href="#kevel"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="atFront" rigging:side="center">
+      <use transform="translate(-428.9 -300.98)" width="100%" height="100%" xlink:href="#knot"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="aboveLadder" rigging:side="starboard">
+      <use transform="translate(-428.9 -272.98)" width="100%" height="100%" xlink:href="#knot"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="sideRail" rigging:side="port">
+      <use transform="rotate(-.99998 3172.4 24208)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.99998 3138.4 23834)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.99998 3103.8 23449)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.99998 3068.2 23078)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="sideRail" rigging:side="starboard">
+      <use transform="matrix(.99985 .017452 .017452 -.99985 -421.99 45.269)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99985 .017452 .017452 -.99985 -415.47 45.919)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99985 .017452 .017452 -.99985 -408.76 46.581)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99985 .017452 .017452 -.99985 -402.29 47.259)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="port">
+      <use transform="rotate(-.7 4204.5 39057)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.7 4122.8 38341)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.7 4039.4 37611)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.7 3957.7 36887)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(-.7 3891.8 36227)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="starboard">
+      <use transform="matrix(.99992 .012217 .012217 -.99992 -476.85 49.996)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99992 .012217 .012217 -.99992 -468.1 51.047)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99992 .012217 .012217 -.99992 -515.58 155.24)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99992 .012217 .012217 -.99992 -450.35 53.175)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99992 .012217 .012217 -.99992 -442.29 54.03)" width="100%" height="100%" xlink:href="#pin"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="atMast" rigging:side="port">
+      <use transform="rotate(219.92 357.55 102.47)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="matrix(.76693 -.64173 -.64173 -.76693 -291.15 410.51)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="atMast" rigging:side="starboard">
+      <use transform="matrix(-.76693 .64173 .64173 .76693 566 -306.2)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="rotate(39.921 275.97 -553.92)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="poopBulwark" rigging:side="port">
+      <use transform="matrix(1 0 0 -1 -616.81 152.59)" width="100%" height="100%" xlink:href="#tackle"/>
+      <use transform="rotate(81.139 30.184 5.235)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="matrix(.87815 -.10212 .10212 .87815 -449.05 64.812)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:rail="poopBulwark" rigging:side="starboard">
+      <use transform="translate(-616.81 -48.222)" width="100%" height="100%" xlink:href="#tackle"/>
+      <use transform="matrix(.15404 -.98806 -.98806 -.15404 30.707 129.76)" width="100%" height="100%" xlink:href="#xcleat"/>
+      <use transform="matrix(.87815 .10212 .10212 -.87815 -461.48 34.213)" width="100%" height="100%" xlink:href="#cleat"/>
+      <use transform="matrix(.87815 .10212 .10212 -.87815 -449.05 39.556)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:ignoreDeck="true" rigging:rail="poopFlagstaff" rigging:side="port">
+      <use transform="rotate(-44.188 355.84 711.44)" width="100%" height="100%" xlink:href="#cleat"/>
+    </g>
+    <g rigging:deck="stern" rigging:ignoreDeck="true" rigging:rail="poopFlagstaff" rigging:side="starboard">
+      <use transform="matrix(.71706 .69702 .69702 -.71706 -395.2 -345.02)" width="100%" height="100%" xlink:href="#cleat"/>
     </g>
   </g>
 </svg>
