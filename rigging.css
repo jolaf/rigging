@@ -472,7 +472,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
 	filter: url(#filterHighlightPoint);
 }
 
-.choiceBlock .on, #sublines .preAnswer {
+.choiceBlock .on, #infoBlock .on, #sublines .preAnswer {
 	-webkit-filter: url(#filterHighlightText);
 	filter: url(#filterHighlightText);
 }
