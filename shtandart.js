@@ -164,7 +164,7 @@ var LINES = [
             [MAIN_DECK,  'sideMastRail',   1,  ,     BUNTLINE],
         ]],
         [MAIN_TOPSAIL, [
-            [STERN_DECK, 'sideRail',       1,  ,     BRACE],
+            [STERN_DECK, 'sideRail',      -1,  ,     BRACE],
             [MAIN_DECK,  'behindMastRail', 2,  ,     LIFT],
             [MAIN_DECK,  'backFists',       ,  ,     SHEET],
             [FORE_DECK,  'shroudsRail',    3,  ,     BOWLINE],
@@ -173,7 +173,7 @@ var LINES = [
             [MAIN_DECK,  'sideRail',       3,  ,     BUNTLINE],
         ]],
         [MAIN_GALLANT, [
-            [STERN_DECK, 'sideRail',       2,  ,     BRACE],
+            [STERN_DECK, 'sideRail',      -2,  ,     BRACE],
             [MAIN_DECK,  'behindMastRail', 1,  ,     LIFT],
             [MAIN_DECK,  'sideMastRail',  -2,  ,     SHEET],
             [MAIN_DECK,  'sideMastRail',  -3, 2,     CLEWLINE],
@@ -205,8 +205,8 @@ var LINES = [
         [MIZZEN_TOPSAIL, [
             [MAIN_DECK,  'sideRail',       2,  ,     BRACE],
             [MAIN_DECK,  'sideRail',       1,  ,     BRACE,           CROSS_JACK,          ,          LINE_DETAIL],
-            [STERN_DECK, 'sideRail',      -1,  ,     LIFT],
-            [STERN_DECK, 'sideRail',      -2,  ,     LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
+            [STERN_DECK, 'sideRail',       1,  ,     LIFT],
+            [STERN_DECK, 'sideRail',       2,  ,     LIFT,            CROSS_JACK,          ,          LINE_DETAIL],
             [STERN_DECK, 'shroudsRail',   -2,  ,     SHEET],
             [MAIN_DECK,  'aboveRail',       ,  ,     BOWLINE],
             [STERN_DECK, 'shroudsRail',    2, 2,     CLEWLINE],
