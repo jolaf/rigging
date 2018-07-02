@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.6880439"
-     inkscape:cx="202.59987"
-     inkscape:cy="90.229643"
+     inkscape:zoom="1.9007341"
+     inkscape:cx="317.24388"
+     inkscape:cy="131.68036"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
@@ -44,7 +44,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="g4331"
+     inkscape:current-layer="portDrawing"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -123,9 +123,14 @@
        id="guide7440"
        inkscape:locked="false" />
     <sodipodi:guide
-       position="427.37862,81.111491"
+       position="4.0921951,114.20944"
        orientation="1,0"
        id="guide5245"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="-43.154057,143.22683"
+       orientation="0,1"
+       id="guide5226"
        inkscape:locked="false" />
   </sodipodi:namedview>
   <style
@@ -554,8 +559,8 @@
            y="-394.54617"
            x="-45.537228" />
         <path
-           style="fill:none;fill-rule:evenodd;stroke-width:1.00157475;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
-           d="M 5.5602865,-5.530888 C 21.320014,-8.4849417 41.686905,-12.03077 61.530857,1.4988546 L 5.599,9.787743 Z"
+           style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke-width:1.00157475;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="M 5.5297413,-13.11941 C 47.74923,-13.376335 59.264743,-11.19373 76.411566,-0.4542385 L 5.599,9.787743 Z"
            id="path7423"
            inkscape:connector-curvature="0"
            sodipodi:nodetypes="cccc" />
@@ -674,9 +679,9 @@
       <path
          inkscape:connector-curvature="0"
          id="path4069"
-         d="m -5.7515261,-5.2670669 c 5.2167288,-1.7153079 11.5097673,-5.6726931 11.3670352,1.5619233 0.06996,3.52616667 0,13.7142556 0,13.7142556 L 5.599,94.591927 c 0,0 0.090484,10.220583 0.020524,13.746753 0.142732,7.23462 -6.15030598,3.2416 -11.367035,1.52629"
+         d="M 5.599,9.787743 V 94.591927"
          style="stroke-width:0.99148059;stroke-linecap:round"
-         sodipodi:nodetypes="cccccc" />
+         sodipodi:nodetypes="cc" />
     </g>
   </g>
   <g
