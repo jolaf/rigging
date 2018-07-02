@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.017103"
-     inkscape:cx="495.23004"
-     inkscape:cy="130.94426"
+     inkscape:zoom="9.9236823"
+     inkscape:cx="249.01693"
+     inkscape:cy="132.81641"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="1850"
@@ -460,11 +460,15 @@
           <path
              inkscape:connector-curvature="0"
              id="path4302"
-             d="m 242.13538,16.750483 c 11.72159,2.0062 20.14897,-0.13337 26.89531,-4.41941" />
+             d="m 242.13538,16.750483 c 11.72159,2.0062 20.36273,-0.06212 27.10907,-4.348156 l -0.21376,-29.640752 -26.89531,1.333898 z"
+             style="fill:none;fill-opacity:1"
+             sodipodi:nodetypes="ccccc" />
           <path
              inkscape:connector-curvature="0"
              id="path4300"
-             d="m 242.09929,14.407473 c 12.57753,-3.0013 19.72489,-7.04182 26.84122,-13.71769" />
+             d="m 242.15273,14.371846 c 12.57753,-3.0013 19.67145,-7.006193 26.78778,-13.682063"
+             style="stroke-width:1.00157475;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none"
+             sodipodi:nodetypes="cc" />
           <path
              inkscape:connector-curvature="0"
              id="path4298"
@@ -570,12 +574,8 @@
          style="stroke-width:1.0015748;stroke-linejoin:round" />
       <path
          inkscape:connector-curvature="0"
-         id="path4288"
-         d="m 241.95325,120.22828 c 0,0 -0.10275,-33.101747 -0.10275,-33.101747 m -0.0604,-69.96173 c 0,0 0.0237,-33.4763 0.0237,-33.4763" />
-      <path
-         inkscape:connector-curvature="0"
          class="solid"
-         d="m 241.69368,16.838822 c 0,0 -8.30588,0.0691 -8.30588,0.0691 -0.004,16.80629 0.062,53.77605 0.0582,70.582341 0,0 8.16778,0 8.16778,0 0.004,-16.806291 0.0761,-53.845101 0.0799,-70.651391 0,0 0,-5e-5 0,-5e-5"
+         d="m 242.09405,16.838822 c 0,0 -8.30588,0.0691 -8.30588,0.0691 -0.004,16.80629 0.062,53.77605 0.0582,70.582341 0,0 8.16778,0 8.16778,0 0.004,-16.806291 0.0761,-53.845101 0.0799,-70.651391 0,0 0,-5e-5 0,-5e-5"
          id="path4060"
          style="stroke-linejoin:round" />
       <circle
