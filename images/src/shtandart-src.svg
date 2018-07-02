@@ -13,7 +13,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="1 -24 659 152"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.1 r"
    sodipodi:docname="shtandart-src.svg"
    id="svg1"
    height="100%"
@@ -25,16 +25,16 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.6912538"
-     inkscape:cx="291.57749"
-     inkscape:cy="48.366376"
+     inkscape:zoom="5.3825076"
+     inkscape:cx="499.62523"
+     inkscape:cy="73.539953"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:window-width="2560"
-     inkscape:window-height="1537"
-     inkscape:window-x="1672"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1850"
+     inkscape:window-height="1155"
+     inkscape:window-x="70"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
      showguides="false"
      inkscape:guide-bbox="true"
      gridtolerance="1"
@@ -420,7 +420,7 @@
            id="g4442">
           <path
              inkscape:connector-curvature="0"
-             style="fill-rule:evenodd;stroke-linejoin:round;stroke-width:1.0015748;stroke-linecap:round"
+             style="fill-rule:evenodd;stroke-linejoin:round;stroke-width:1.0015748;stroke-linecap:round;fill:none;fill-opacity:1"
              d="m 474.70954,-17.111921 c 0,0 0.0178,26.671383 0.0178,26.671383 0,0 24.69632,1.670547 24.69632,1.670547"
              id="path4436" />
           <path
@@ -556,14 +556,10 @@
          id="g4318">
         <path
            inkscape:connector-curvature="0"
-           d="m 507.12525,42.995783 c 1.30437,2.87547 1.97916,5.9965 1.97915,9.1637 0,3.1672 -0.67479,6.28823 -1.97916,9.1637"
+           d="m 507.12524,61.323183 c 1.30437,-2.87547 1.97916,-5.9965 1.97916,-9.1637 10e-6,-3.1672 -0.0132,-6.268368 -1.98858,-9.16373 h -8.13779 c 1.30437,2.87547 1.97916,5.9965 1.97917,9.16373 0,3.16723 -0.67479,6.28826 -1.97916,9.16373 l 8.1472,-3e-5"
            id="path4211"
-           style="stroke-linecap:round" />
-        <path
-           inkscape:connector-curvature="0"
-           d="m 498.97803,42.995753 c 1.30437,2.87547 1.97916,5.9965 1.97917,9.16373 0,3.16723 -0.67479,6.28826 -1.97916,9.16373"
-           id="path4312"
-           style="stroke-linecap:round" />
+           style="stroke-linecap:round;stroke-width:1.0015748;stroke-miterlimit:4;stroke-dasharray:none;stroke-linejoin:round"
+           sodipodi:nodetypes="ccccccc" />
       </g>
       <circle
          class="solid "
