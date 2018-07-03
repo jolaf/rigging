@@ -1,5 +1,3 @@
-# rigging
-
 (ENGLISH)
 
 Trainer software for tall ships rigging elements location.
