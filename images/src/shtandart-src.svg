@@ -458,7 +458,7 @@
          r="14.805359"
          class="solid" />
       <path
-         style="stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round"
+         style="stroke-linecap:round;stroke-linejoin:round"
          d="m 545.59119,15.428476 c 0,0 8.04692,0 8.04692,0 0,0 0,73.736167 0,73.736167 0,0 -7.95537,-0.0915 -7.95537,-0.0915 0,0 -0.0915,-73.644667 -0.0915,-73.644667"
          id="rect4326"
          class="rail"
@@ -468,7 +468,7 @@
          inkscape:connector-curvature="0"
          d="m 507.12524,61.323183 c 1.30437,-2.87547 1.97916,-5.9965 1.97916,-9.1637 10e-6,-3.1672 -0.0132,-6.268368 -1.98858,-9.16373 h -8.13779 c 1.30437,2.87547 1.97916,5.9965 1.97917,9.16373 0,3.16723 -0.67479,6.28826 -1.97916,9.16373 l 8.1472,-3e-5"
          id="path4211"
-         style="stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round"
+         style="stroke-linecap:round;stroke-linejoin:round"
          sodipodi:nodetypes="ccccccc" />
       <circle
          r="14.805359"
@@ -477,7 +477,7 @@
          id="circle327"
          class="solid " />
       <path
-         style="stroke-width:1.00157475;stroke-linejoin:round"
+         style="stroke-linejoin:round"
          id="path4336"
          d="m 302.85966,88.463853 c 0,0 -8.07466,0 -8.07466,0 0,0 0,-72.720184 0,-72.720184 0,0 8.07466,0 8.07466,0 0,0 0,72.720184 0,72.720184"
          class="rail"
@@ -509,7 +509,7 @@
          d="m 78.788872,47.071705 h 8.481805 v 9.948806 h -8.481805" />
       <path
          sodipodi:nodetypes="cccccccc"
-         style="stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round"
+         style="stroke-linecap:round;stroke-linejoin:round"
          id="path4887"
          d="m 87.327419,-1.7081781 -0.03125,3.4189821 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -5.12078,0.0085 0.0054,6.4251896 c -0.17473,0.71291 -0.43764,0.6722 -0.68478,0.76631 l -1.99878,0.0348 -0.0234,-10.38660734"
          class="solid"
@@ -518,7 +518,7 @@
          inkscape:connector-curvature="0"
          id="path5796"
          d="M 81.490609,2.485614 V -1.077483"
-         style="stroke-width:1.00157475;stroke-linejoin:round" />
+         style="stroke-linejoin:round" />
       <path
          sodipodi:nodetypes="cc"
          id="path4304"
@@ -526,7 +526,7 @@
          inkscape:connector-curvature="0" />
       <path
          sodipodi:nodetypes="ccccc"
-         style="stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round"
+         style="stroke-linecap:round;stroke-linejoin:round"
          id="path4412"
          d="M 61.845,102.71086 V 85.896973 c 0.38862,-1.27841 0.97345,-1.20542 1.52317,-1.37418 l 15.427176,-0.03721 -0.02519,20.438307"
          class="solid"
@@ -582,7 +582,7 @@
              sodipodi:nodetypes="cccc"
              id="path4436"
              d="m 474.81031,-17.514997 -0.083,27.074459 24.25429,1.590061 0.0232,-27.065449"
-             style="fill-rule:evenodd;stroke-width:1.00157475;stroke-linecap:round;stroke-linejoin:round"
+             style="fill-rule:evenodd;stroke-linecap:round;stroke-linejoin:round"
              inkscape:connector-curvature="0" />
           <path
              id="path4438"
@@ -631,7 +631,7 @@
              inkscape:connector-curvature="0" />
           <path
              sodipodi:nodetypes="cc"
-             style="stroke-width:1.00157475;stroke-linecap:round"
+             style="stroke-linecap:round"
              d="m 242.15273,14.371846 c 12.57753,-3.0013 19.67145,-7.006193 26.78778,-13.682063"
              id="path4300"
              inkscape:connector-curvature="0" />
@@ -668,7 +668,7 @@
         <path
            id="rect4267"
            d="m 166.06023,-10.062489 c 0,0 0.58286,6.1259406 0.58286,6.1259406 0,0 -27.46864,2.6135531 -27.46864,2.6135531 0,0 -0.58286,-6.1259402 -0.58286,-6.1259402"
-           style="stroke-width:1.00157475;stroke-linejoin:round"
+           style="stroke-linejoin:round"
            inkscape:connector-curvature="0" />
         <rect
            style="stroke-width:0.99959207;stroke-linejoin:round"
@@ -686,7 +686,7 @@
            inkscape:connector-curvature="0"
            id="path7423"
            d="M 5.599,9.787743 5.5922413,-10.24441 C 47.81173,-10.501335 66.827243,-12.19373 83.974066,-1.4542385"
-           style="fill-rule:evenodd;stroke-width:1.00157475;stroke-linejoin:round" />
+           style="fill-rule:evenodd;stroke-linejoin:round" />
         <path
            sodipodi:nodetypes="cccc"
            style="stroke-linecap:round"
