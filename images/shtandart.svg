@@ -2,14 +2,19 @@
     #background {
       fill: #ffeca4;
     }
-    #drawing, #wood {
+    #drawing {
       color: #aa5f28;
     }
     #wood {
+      fill: #aa5f28;
       opacity: 0.5;
     }
     /* ]]>*/</style>
   <defs>
+    <pattern id="wood" width="5" height="5" fill="#aa5f28" opacity=".5" patternUnits="userSpaceOnUse" viewBox="0,0,100,100">
+      <rect width="100" height="5"/>
+      <rect y="5" width="100" height="95" opacity=".1"/>
+    </pattern>
     <rect id="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64" fill="currentColor"/>
     <g id="mastMask" stroke="currentColor">
       <path d="m425.11 59.525 26.5 26.5z"/>
@@ -52,6 +57,7 @@
     </g>
   </defs>
   <g id="drawing" fill="none" stroke="currentColor">
+    <path d="m656.48 0.48486c-6.9805-4.7212-11.28-6.6306-19.468-7.2707l-138.01-9.1301c-153.64-11.654-338.82 0.98394-493.41 25.704v84.791c154.59 24.719 339.77 37.357 493.41 25.703l138.01-9.1301c8.1877-0.64014 12.488-2.5495 19.468-7.2707" fill="url(#wood)" stroke="none"/>
     <path class="rail" d="m645.62-5.1508c-3.6104-1.3363-8.6045-1.6351-8.6045-1.6351-0.16012 38.87 0.11539 82.335 0.17643 117.9 0 0 3.9315-0.10794 8.4244-1.5642-0.182-8.5553 0.0775-111.18 4e-3 -114.71h-2.6e-4" stroke-linejoin="round"/>
     <path class="rail" d="m603.73 15.378h7.9082l-0.21655 73.963h-7.7999l0.10827-73.963" stroke-linecap="round" stroke-linejoin="round"/>
     <circle class="solid" cx="578.36" cy="52.238" r="14.805"/>
