@@ -1,0 +1,9 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+header > h1 + img {
+  background: #94bfd8;
+  padding: 1em;
+}
