@@ -246,7 +246,10 @@
       <use transform="matrix(1 0 0 -1 -15.985 30.603)" width="100%" height="100%" xlink:href="#pin"/>
     </g>
     <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
-      <use transform="matrix(-1.9999 -.007457 .014915 -.99997 1700.7 31.123)" width="100%" height="100%" xlink:href="#cleat"/>
+      <g id="doubleCleat">
+        <use transform="rotate(.038274 -43239 -31826)" xlink:href="#cleat"/>
+        <use transform="rotate(.038274 -43243 -45390)" xlink:href="#cleat"/>
+      </g>
     </g>
     <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
       <use transform="rotate(.038274 -115492 -31800)" width="100%" height="100%" xlink:href="#cleat"/>
