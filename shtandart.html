@@ -646,26 +646,36 @@ body, button, #drawing, [xlink|href="#pinhole"] {
     </tr></table></form></td></tr>
     <tr id="schemeBlock" class="loading"><td>
       <svg version="1.1" viewBox="1 -24 659 152" xmlns="http://www.w3.org/2000/svg" xmlns:rigging="https://github.com/jolaf/rigging" xmlns:xlink="http://www.w3.org/1999/xlink">
+          #background {
+            fill: #ffeca4;
+          }
+          #drawing, #wood {
+            color: #aa5f28;
+          }
+          #wood {
+            opacity: 0.5;
+          }
+          /* ]]>*/</style>
         <defs>
           <rect id="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64" fill="currentColor"/>
           <g id="mastMask" stroke="currentColor">
             <path d="m425.11 59.525 26.5 26.5z"/>
             <path d="m451.61 59.525-26.5 26.5z"/>
           </g>
-          <circle id="pipe" cx="160.87" cy="398.09" r="4" stroke="currentColor"/>
+          <circle id="pipe" cx="160.87" cy="398.09" r="4" fill="none" stroke="currentColor"/>
           <circle id="pin" class="aura" transform="rotate(-8.2973)" cx="567.54" cy="28.152" r="1.8" fill="currentColor"/>
           <circle id="pinhole" transform="rotate(-8.2973)" cx="607.21" cy="138.78" r="1.5" fill="none" stroke="currentColor"/>
           <ellipse id="cleat" class="aura" transform="rotate(89.51)" cx="3.7214" cy="-575.37" rx="1.6" ry="5.4" fill="currentColor"/>
           <rect id="lcleat" class="aura" x="396.5" y="72.319" width="4" height="15" ry="1.5" fill="currentColor"/>
           <g id="xcleat" class="aura" fill="currentColor">
             <path id="quarterXcleat" class="aura" d="m42.185 13.735s-0.02581-2.0385-2e-3 -2.9049c0.15922-0.41516 0.28958-0.64665 0.30224-0.94611 0.03217-0.76088-0.40671-1.1909-0.4667-2.1167-0.05275-0.81402 0.28972-0.93379 1.8718-0.92558v6.8933z"/>
-            <use transform="matrix(-1,0,0,1,87.75,0)" xlink:href="#quarterXcleat"/>
-            <use transform="matrix(1,0,0,-1,0,27.45)" xlink:href="#quarterXcleat"/>
-            <use transform="rotate(180,43.875,13.725)" xlink:href="#quarterXcleat"/>
+            <use transform="matrix(-1,0,0,1,87.6,0)" xlink:href="#quarterXcleat"/>
+            <use transform="matrix(1,0,0,-1,0,27.3)" xlink:href="#quarterXcleat"/>
+            <use transform="rotate(180,43.8,13.65)" xlink:href="#quarterXcleat"/>
           </g>
-          <g id="kevel" class="aura">
-            <path id="halfKevel" d="m426.56 44.452c0.60532 1.2006 1.0806 2.3051 1.8189 2.3986-0.01 0.73499 0.0152 2.7494 0 3.8964-1.2974 0.16392-6.5021-8.2816-9.7365-11.618-0.7397-0.76292-0.81818-0.71678-2.4328-1.725-0.22169-0.13843-0.60743-1.1367 0.14216-1.1532 2.1213-0.04671 4.9257 0.03738 7.0992 0.0075 1.5602-0.02145 0.44012 1.9106 0.42506 2.1683" fill="currentColor"/>
-            <use transform="matrix(-1 0 0 1 856.74 0)" xlink:href="#halfKevel"/>
+          <g id="kevel" class="aura" fill="currentColor">
+            <path id="halfKevel" d="m426.56 44.452c0.60532 1.2006 1.081 2.3051 1.8193 2.3986v3.8964c-1.2974 0.16392-6.5024-8.2816-9.7369-11.618-0.7397-0.76292-0.81818-0.71678-2.4328-1.725-0.22169-0.13843-0.60743-1.1367 0.14216-1.1532 2.1213-0.04671 4.9257 0.03738 7.0992 0.0075 1.5602-0.02145 0.44012 1.9106 0.42506 2.1683"/>
+            <use transform="matrix(-1,0,0,1,856.54,0)" xlink:href="#halfKevel"/>
           </g>
           <rect id="fist" class="aura" x="287.16" y="40.706" width="8" height="8" rx=".8" ry=".8" fill="currentColor"/>
           <g id="tackle" class="aura" fill="currentColor">
@@ -1365,7 +1375,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
       для <a href="https://shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2018
     </p></td>
     <td>
-      <p id="build">b20180703-0227G</p>
+      <p id="build">b20180703-0255G</p>
     </td>
   </tr></table></td></tr>
 </table>
