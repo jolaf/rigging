@@ -55,6 +55,8 @@ SVG_PATTERNS = (
         r'\1'),
     (r' (color|fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"',
         ''),
+    (r' (x|y)="0"',
+        ''),
     (r' (height|width)="100%"',
         ''),
 )
