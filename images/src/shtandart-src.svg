@@ -185,7 +185,8 @@
   </sodipodi:namedview>
   <style
      id="style1">
-    /*  */
+    /* <![CDATA[ */
+  </style>
     #background {
       fill: #ffeca4;
     }
@@ -197,7 +198,7 @@
     #wood {
       opacity: 0.5;
     }
-    /*  */
+    /* ]]> */
   </style>
   <defs
      id="defs1">
