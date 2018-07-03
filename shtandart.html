@@ -646,30 +646,21 @@ body, button, #drawing, [xlink|href="#pinhole"] {
     </tr></table></form></td></tr>
     <tr id="schemeBlock" class="loading"><td>
       <svg version="1.1" viewBox="1 -24 659 152" xmlns="http://www.w3.org/2000/svg" xmlns:rigging="https://github.com/jolaf/rigging" xmlns:xlink="http://www.w3.org/1999/xlink">
-          #background {
-            fill: #ffeca4;
-          }
-          #drawing {
-            color: #aa5f28;
-          }
-          #wood {
-            fill: #aa5f28;
-            opacity: 0.5;
-          }
-          /* ]]>*/</style>
         <defs>
-          <pattern id="wood" width="5" height="5" fill="#aa5f28" opacity=".5" patternUnits="userSpaceOnUse" viewBox="0,0,100,100">
-            <rect width="100" height="5"/>
-            <rect y="5" width="100" height="95" opacity=".1"/>
+          <pattern id="wood" width="5" height="5" patternUnits="userSpaceOnUse" viewBox="0,0,100,100">
+            <g fill="currentColor">
+              <rect width="100" height="5"/>
+              <rect y="5" width="100" height="95" opacity=".1"/>
+            </g>
           </pattern>
           <rect id="deckMask" x="277.27" y="-.80917" width="220.71" height="146.64" fill="currentColor"/>
           <g id="mastMask" stroke="currentColor">
             <path d="m425.11 59.525 26.5 26.5z"/>
             <path d="m451.61 59.525-26.5 26.5z"/>
           </g>
-          <circle id="pipe" cx="160.87" cy="398.09" r="4" fill="none" stroke="currentColor"/>
+          <circle id="pipe" cx="160.87" cy="398.09" r="4" stroke="currentColor"/>
           <circle id="pin" class="aura" transform="rotate(-8.2973)" cx="567.54" cy="28.152" r="1.8" fill="currentColor"/>
-          <circle id="pinhole" transform="rotate(-8.2973)" cx="607.21" cy="138.78" r="1.5" fill="none" stroke="currentColor"/>
+          <circle id="pinhole" transform="rotate(-8.2973)" cx="607.21" cy="138.78" r="1.5" stroke="currentColor"/>
           <ellipse id="cleat" class="aura" transform="rotate(89.51)" cx="3.7214" cy="-575.37" rx="1.6" ry="5.4" fill="currentColor"/>
           <rect id="lcleat" class="aura" x="396.5" y="72.319" width="4" height="15" ry="1.5" fill="currentColor"/>
           <g id="xcleat" class="aura" fill="currentColor">
@@ -715,7 +706,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
           <path class="solid" d="m242.14 16.839-8.3059 0.0691c-4e-3 16.806 0.062 53.776 0.0582 70.582h8.1678c4e-3 -16.806 0.0761-53.845 0.0799-70.651v-5e-5" stroke-linejoin="round"/>
           <circle class="solid" cx="137.48" cy="52.238" r="14.805"/>
           <rect class="solid" x="87.298" y="33.13" width="3.0405" height="38.031" stroke-linejoin="round"/>
-          <path d="m78.789 47.072h8.4818v9.9488h-8.4818"/>
+          <path class="solid" d="m78.789 47.072h8.4818v9.9488h-8.4818"/>
           <path class="solid" d="m87.327-1.7082-0.03125 3.419c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-5.1208 0.0085 0.0054 6.4252c-0.17473 0.71291-0.43764 0.6722-0.68478 0.76631l-1.9988 0.0348-0.0234-10.387" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="m81.491 2.4856v-3.5631" stroke-linejoin="round"/>
           <path d="m78.795 84.486 0.0171-74.774"/>
@@ -743,7 +734,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
             <use x="71.490639" y="-404.83417" xlink:href="#pipe"/>
             <use x="24.286896" y="-401.34555" xlink:href="#pipe"/>
             <use x="-45.537228" y="-394.54617" xlink:href="#pipe"/>
-            <path d="m166.06-10.062s0.58286 6.1259 0.58286 6.1259l-27.469 2.6136s-0.58286-6.1259-0.58286-6.1259" stroke-linejoin="round"/>
+            <path class="rail" d="m166.06-10.062s0.58286 6.1259 0.58286 6.1259l-27.469 2.6136s-0.58286-6.1259-0.58286-6.1259" stroke-linejoin="round"/>
             <rect class="rail" transform="matrix(.99324 -.11605 .1289 .99166 0 0)" x="84.382" y=".80017" width="43.093" height="5.5743" ry="0" stroke-linejoin="round"/>
             <path class="solid" d="m5.599 9.7877-0.0067587-20.032c42.219-0.25692 61.235-1.9493 78.382 8.7902" stroke-linejoin="round"/>
             <path d="m5.599 9.7877c154.59-24.72 339.77-37.357 493.41-25.704m138.01 9.1301c8.1877 0.64014 12.488 2.5495 19.468 7.2707" stroke-linecap="round"/>
@@ -1381,7 +1372,7 @@ body, button, #drawing, [xlink|href="#pinhole"] {
       для <a href="https://shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2018
     </p></td>
     <td>
-      <p id="build">b20180703-0314G</p>
+      <p id="build">b20180703-0415G</p>
     </td>
   </tr></table></td></tr>
 </table>

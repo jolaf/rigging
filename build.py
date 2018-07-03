@@ -53,11 +53,13 @@ SVG_PATTERNS = (
         r'\1'),
     (r'(?ms)\s*<(?:g|g [^>]*)>\s*</g>(\n*)',
         r'\1'),
-    (r' (color|fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"',
+    (r' (?:color|fill-rule|filter|stroke-miterlimit|stroke-width|style)="\S+"',
         ''),
-    (r' (x|y)="0"',
+    (r' (?:fill|stroke)="#\S+"',
         ''),
-    (r' (height|width)="100%"',
+    (r' (?:x|y)="0"',
+        ''),
+    (r' (?:height|width)="100%"',
         ''),
 )
 

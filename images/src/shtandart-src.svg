@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="4.0000002"
-     inkscape:cx="168.94787"
-     inkscape:cy="85.787877"
+     inkscape:zoom="2.0000001"
+     inkscape:cx="276.72893"
+     inkscape:cy="64.872507"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -44,7 +44,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="portDrawing"
+     inkscape:current-layer="layer1"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -186,43 +186,52 @@
   <style
      id="style1">
     /* <![CDATA[ */
-  </style>
-    #background {
+    #background, #pinhole, #pipe {
       fill: #ffeca4;
     }
 
-    #drawing {
+    #drawing, #wood g {
       color: #aa5f28;
     }
 
-    #wood {
-      fill: #aa5f28;
-      opacity: 0.5;
+    #wood g {
+      opacity: 0.3;
+    }
+
+    .solid {
+      fill: #a78452;
+    }
+
+    .rail {
+      fill: #e5cd8c;
     }
     /* ]]> */
   </style>
   <defs
      id="defs1">
     <pattern
-       style="opacity:0.5;fill:#aa5f28"
        patternUnits="userSpaceOnUse"
        viewBox="0,0,100,100"
        height="5"
        width="5"
        id="wood">
-      <rect
-         id="rect1431"
-         height="5"
-         width="100"
-         y="0"
-         x="0" />
-      <rect
-         style="opacity:0.1"
-         x="0"
-         y="5"
-         width="100"
-         height="95"
-         id="rect3597" />
+      <g
+         fill="currentColor"
+         id="g13364">
+        <rect
+           id="rect1431"
+           height="5"
+           width="100"
+           y="0"
+           x="0" />
+        <rect
+           style="opacity:0.1"
+           x="0"
+           y="5"
+           width="100"
+           height="95"
+           id="rect3597" />
+      </g>
     </pattern>
     <rect
        style="fill:currentColor"
@@ -242,7 +251,7 @@
          id="path91" />
     </g>
     <circle
-       style="fill:none;stroke:currentColor"
+       style="fill:#ffeca4;stroke:currentColor"
        id="pipe"
        cx="160.87129"
        cy="398.09106"
@@ -261,7 +270,7 @@
        cx="607.21271"
        id="pinhole"
        transform="rotate(-8.2972976)"
-       style="fill:none;stroke:currentColor" />
+       style="fill:#ffeca4;stroke:currentColor" />
     <ellipse
        class="aura"
        style="fill:currentColor"
@@ -507,7 +516,9 @@
          sodipodi:nodetypes="cccc"
          inkscape:connector-curvature="0"
          id="rect4317"
-         d="m 78.788872,47.071705 h 8.481805 v 9.948806 h -8.481805" />
+         d="m 78.788872,47.071705 h 8.481805 v 9.948806 h -8.481805"
+         class="solid"
+         style="fill:#a78452" />
       <path
          sodipodi:nodetypes="cccccccc"
          style="stroke-linecap:round;stroke-linejoin:round"
@@ -670,7 +681,8 @@
            id="rect4267"
            d="m 166.06023,-10.062489 c 0,0 0.58286,6.1259406 0.58286,6.1259406 0,0 -27.46864,2.6135531 -27.46864,2.6135531 0,0 -0.58286,-6.1259402 -0.58286,-6.1259402"
            style="stroke-linejoin:round"
-           inkscape:connector-curvature="0" />
+           inkscape:connector-curvature="0"
+           class="rail" />
         <rect
            style="stroke-width:0.99959207;stroke-linejoin:round"
            transform="matrix(0.99324296,-0.11605355,0.12890046,0.99165754,0,0)"
