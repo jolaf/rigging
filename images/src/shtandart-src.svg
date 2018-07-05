@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="276.72893"
-     inkscape:cy="64.872507"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="483.75766"
+     inkscape:cy="194.93556"
      inkscape:document-units="px"
      showgrid="false"
      inkscape:window-width="2560"
@@ -44,7 +44,7 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="portDrawing"
      inkscape:measure-start="320.703,74.4141"
      inkscape:measure-end="335.547,74.4141"
      viewbox-y="-11"
@@ -329,8 +329,8 @@
        class="aura"
        y="40.705849"
        x="287.15738"
-       height="8"
-       width="8"
+       height="7.0799999"
+       width="7.0799999"
        id="fist" />
     <g
        style="fill:currentColor"
@@ -455,24 +455,28 @@
          id="path4294"
          class="rail"
          inkscape:connector-curvature="0" />
-      <path
-         style="stroke-linecap:round;stroke-linejoin:round"
-         d="m 603.73443,15.377712 c 0,0 7.9082,0 7.9082,0 0,0 -0.21655,73.962851 -0.21655,73.962851 0,0 -7.79992,0 -7.79992,0 0,0 0.10827,-73.962851 0.10827,-73.962851"
-         id="rect4333"
-         class="rail"
-         inkscape:connector-curvature="0" />
+      <rect
+         style="stroke-linejoin:round"
+         id="rect6475"
+         width="8.0799999"
+         height="72.673477"
+         x="603.71814"
+         y="15.852023"
+         class="rail" />
       <circle
          id="path4330"
          cx="578.35858"
          cy="52.237816"
          r="14.805359"
          class="solid" />
-      <path
-         style="stroke-linecap:round;stroke-linejoin:round"
-         d="m 545.59119,15.428476 c 0,0 8.04692,0 8.04692,0 0,0 0,73.736167 0,73.736167 0,0 -7.95537,-0.0915 -7.95537,-0.0915 0,0 -0.0915,-73.644667 -0.0915,-73.644667"
-         id="rect4326"
+      <rect
          class="rail"
-         inkscape:connector-curvature="0" />
+         y="15.852023"
+         x="545.58557"
+         height="72.673477"
+         width="8.0799999"
+         id="rect6856"
+         style="fill:#e5cd8c;stroke-linejoin:round" />
       <path
          class="solid"
          inkscape:connector-curvature="0"
@@ -487,9 +491,9 @@
          id="circle327"
          class="solid " />
       <path
-         style="stroke-linejoin:round"
+         style="fill:#e5cd8c;stroke-width:0.99999994;stroke-linejoin:round"
          id="path4336"
-         d="m 302.85966,88.463853 c 0,0 -8.07466,0 -8.07466,0 0,0 0,-72.720184 0,-72.720184 0,0 8.07466,0 8.07466,0 0,0 0,72.720184 0,72.720184"
+         d="m 302.85966,88.631823 c 0,0 -8.07466,0 -8.07466,0 0,0 0,-72.888154 0,-72.888154 0,0 8.07466,0 8.07466,0 0,0 0,72.888154 0,72.888154"
          class="rail"
          inkscape:connector-curvature="0" />
       <path
@@ -574,11 +578,18 @@
            style="fill-rule:evenodd;stroke-width:1.00157464;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:0"
            class="rail" />
         <rect
-           style="stroke-linejoin:round"
+           id="rect6450"
+           width="8.0799999"
+           height="8.0799999"
+           x="603.71814"
+           y="23.930151"
+           style="fill:currentColor;stroke-width:0.99999994;stroke-linejoin:round" />
+        <rect
+           style="fill:#a78452;stroke-width:0.99999994;stroke-linejoin:round"
            y="23.95225"
-           x="545.68146"
-           height="8.0121279"
-           width="7.895206"
+           x="545.60419"
+           height="8.0333118"
+           width="8.0333118"
            id="rect4212"
            class="solid" />
         <path
@@ -606,21 +617,28 @@
              inkscape:connector-curvature="0" />
         </g>
         <rect
-           style="stroke-linejoin:round"
-           id="rect4227"
-           width="8.1090002"
-           height="8.1089563"
-           x="363.75101"
-           y="15.79491"
-           class="solid" />
-        <rect
-           style="stroke-linejoin:round"
+           style="fill:#e5cd8c;stroke-linejoin:round"
            id="rect4231"
            width="77.184006"
-           height="8.348403"
-           x="294.88373"
-           y="15.71483"
+           height="8.0799999"
+           x="294.78217"
+           y="15.742174"
            class="rail" />
+        <rect
+           style="fill:#a78452;stroke-linejoin:round"
+           id="rect4227"
+           width="8.0799999"
+           height="8.0799999"
+           x="363.88358"
+           y="15.739668"
+           class="solid" />
+        <rect
+           y="15.739668"
+           x="294.78516"
+           height="8.0799999"
+           width="8.0799999"
+           id="rect6858"
+           style="fill:currentColor;stroke-linejoin:round" />
         <path
            style="stroke-linecap:round;stroke-linejoin:round"
            d="m 281.0034,-12.862527 c 0,0 50.1014,-2.04461 50.1014,-2.04461 0,0 0.26193,6.64295 0.26193,6.64295 0,0 -50.10685,1.90661 -50.10685,1.90661 0,0 -0.25648,-6.50495 -0.25648,-6.50495"
@@ -1346,7 +1364,7 @@
          id="g5002"
          rigging:side="port">
         <use
-           transform="translate(-13.185795,-2.106348)"
+           transform="translate(-13.060795,-2.106348)"
            height="100%"
            width="100%"
            id="use4991"
@@ -1354,7 +1372,7 @@
            y="0"
            x="0" />
         <use
-           transform="translate(-13.185795,-11.266302)"
+           transform="translate(-13.060795,-11.266302)"
            height="100%"
            width="100%"
            id="use4989"
@@ -1362,7 +1380,7 @@
            y="0"
            x="0" />
         <use
-           transform="translate(-13.185795,-29.938379)"
+           transform="translate(-13.060795,-29.938379)"
            height="100%"
            width="100%"
            id="use4987"
@@ -1374,7 +1392,7 @@
          id="g424"
          rigging:side="starboard">
         <use
-           transform="matrix(1,0,0,-1,-13.185795,106.41219)"
+           transform="matrix(1,0,0,-1,-13.060795,106.41219)"
            x="0"
            y="0"
            xlink:href="#pinhole"
@@ -1382,7 +1400,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="matrix(1,0,0,-1,-13.185795,115.57214)"
+           transform="matrix(1,0,0,-1,-13.060795,115.57214)"
            x="0"
            y="0"
            xlink:href="#pinhole"
@@ -1390,7 +1408,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="matrix(1,0,0,-1,-13.185795,134.24422)"
+           transform="matrix(1,0,0,-1,-13.060795,134.24422)"
            x="0"
            y="0"
            xlink:href="#pinhole"
@@ -1404,7 +1422,7 @@
          id="g1149"
          rigging:side="port">
         <use
-           transform="translate(316.38391,-16.92513)"
+           transform="translate(317.05579,-16.26888)"
            height="100%"
            width="100%"
            id="use10664"
@@ -1418,7 +1436,7 @@
          rigging:deck="fore"
          rigging:side="starboard">
         <use
-           transform="matrix(1,0,0,-1,316.38391,121.23097)"
+           transform="translate(317.05579,32.16862)"
            x="0"
            y="0"
            xlink:href="#fist"
@@ -1898,12 +1916,12 @@
            x="0" />
       </g>
       <g
+         id="g6436"
          rigging:deck="main"
          rigging:rail="backFists"
-         id="g1158"
          rigging:side="port">
         <use
-           transform="translate(7.726347,-24.751574)"
+           transform="translate(8.1233092,-24.46354)"
            x="0"
            y="0"
            xlink:href="#fist"
@@ -1917,7 +1935,7 @@
          rigging:deck="main"
          rigging:side="starboard">
         <use
-           transform="matrix(1,0,0,-1,7.726347,129.05741)"
+           transform="matrix(1,0,0,-1,8.1233092,128.8421)"
            height="100%"
            width="100%"
            id="use480"
@@ -2219,10 +2237,9 @@
          rigging:deck="stern"
          rigging:rail="atFront"
          rigging:side="center"
-         id="g4276"
-         transform="translate(0.26516506)">
+         id="g4276">
         <use
-           transform="translate(-428.89734,-300.9818)"
+           transform="translate(-428.63217,-300.9818)"
            x="0"
            y="0"
            xlink:href="#knot"
@@ -2234,10 +2251,9 @@
          id="g346"
          rigging:side="starboard"
          rigging:rail="aboveLadder"
-         rigging:deck="stern"
-         transform="translate(0.26516506)">
+         rigging:deck="stern">
         <use
-           transform="translate(-428.89734,-272.9818)"
+           transform="translate(-428.63217,-272.9818)"
            height="100%"
            width="100%"
            id="use344"
