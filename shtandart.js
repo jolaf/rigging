@@ -199,8 +199,8 @@ var LINES = [
             [STERN_DECK, 'poopBulwark',    2,  ,     SHEET],
             [STERN_DECK, 'atFront',         , 2,     TACK,            ,                    CENTER],
             [STERN_DECK, 'bulwark',       -2, 2,     TACK],
-            [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    PORT],
-            [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    STARBOARD],
+            [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    PORT],
+            [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    STARBOARD],
         ]],
         [MIZZEN_TOPSAIL, [
             [MAIN_DECK,  'sideRail',       2,  ,     BRACE],
@@ -218,8 +218,9 @@ var LINES = [
             [STERN_DECK, 'bulwark',       -3, 2,     SHEET],
         ]],
         [, [
-            [STERN_DECK, 'shroudsRail',    3,  ,     FLAG_HALYARD,    ,                    PORT],
+            [STERN_DECK, 'shroudsRail',    1,  ,     FLAG_HALYARD,    ,                    PORT],
             [STERN_DECK, 'poopFlagstaff',   ,  ,     FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
+            [STERN_DECK, 'bulwark',        2,  ,     FLAG_HALYARD,    CROSS_JACK,          PORT,      LINE_DETAIL],
         ]],
     ]],
     [FLAG_STAFF,, [
@@ -235,7 +236,8 @@ var LINES = [
             [MAIN_DECK,  'bulwark',        1, 5,     FENDER],
             [MAIN_DECK,  'bulwark',        3,  ,     OF_DINGHY,       OF_BOW,              ,          DETAIL_LINE,                  SINGULAR],
             [MAIN_DECK,  'bulwark',       -2, 5,     FENDER],
-            [STERN_DECK, 'bulwark',        2, 5,     FENDER,          ,                    PORT],
+            [STERN_DECK, 'bulwark',        2,10,     FENDER,          ,                    PORT],
+            [STERN_DECK, 'bulwark',       -2,10,     FENDER,          ,                    STARBOARD],
             [STERN_DECK, 'bulwark',       -2, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
             [STERN_DECK, 'bulwark',       -3, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
             [STERN_DECK, 'poopBulwark',    2, 3,     MOORING,         OF_TAFF,             ,          DETAIL_LINE],

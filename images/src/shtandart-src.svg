@@ -2225,6 +2225,14 @@
            width="100%"
            height="100%" />
         <use
+           transform="matrix(0.04967477,-0.88267278,-0.88267278,-0.04967477,173.58319,611.55987)"
+           height="100%"
+           width="100%"
+           id="use4335-5"
+           xlink:href="#cleat"
+           y="0"
+           x="0" />
+        <use
            transform="matrix(0.997349,0.072772,0.072772,-0.997349,-216.24582,121.26855)"
            x="0"
            y="0"
@@ -2359,13 +2367,13 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(-0.70000021,4038.2984,37611.086)"
-           x="0"
-           y="0"
-           xlink:href="#pin"
-           id="use1123"
+           height="100%"
            width="100%"
-           height="100%" />
+           id="use4095"
+           xlink:href="#pinhole"
+           y="0"
+           x="0"
+           transform="rotate(-0.70000021,-4422.7814,42182.477)" />
         <use
            transform="rotate(-0.70000021,3956.5832,36886.801)"
            x="0"
