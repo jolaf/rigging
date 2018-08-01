@@ -75,9 +75,9 @@ var CENTER = 'center';
 
 // Decks
 var DECKS = [
-  // Name        ID      Title
-    [FORE_DECK, 'fore', 'На баке'],
-    [MAIN_DECK, 'main', 'На главной палубе'],
+  // Name         ID       Title
+    [FORE_DECK,  'fore',  'На баке'],
+    [MAIN_DECK,  'main',  'На главной палубе'],
     [STERN_DECK, 'stern', 'На полуюте'],
 ];
 
