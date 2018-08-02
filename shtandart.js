@@ -54,7 +54,7 @@ var BUNTLINE = 'Бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
-var FENDER = 'Кранец';
+var FENDER = 'Пушпорт / Кранец';
 var MOORING = 'Швартов';
 
 var OF_BOW = 'Носовой';
@@ -198,7 +198,8 @@ var LINES = [
             [STERN_DECK, 'poopBulwark',    1,  ,     VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    2,  ,     SHEET],
             [STERN_DECK, 'atFront',         , 2,     TACK,            ,                    CENTER],
-            [STERN_DECK, 'bulwark',       -2, 2,     TACK],
+            [STERN_DECK, 'bulwark',       -2, 4,     TACK,            ,                    PORT],
+            [STERN_DECK, 'bulwark',       -3, 4,     TACK,            ,                    STARBOARD],
             [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    PORT],
             [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    STARBOARD],
         ]],
@@ -214,8 +215,9 @@ var LINES = [
         ]],
         [MIZZEN_STAYSAIL, [
             [STERN_DECK, 'atMast',        -1,  ,     HALYARD,         ,                    PORT],
-            [STERN_DECK, 'atFront',         , 2,     SHEET,            ,                   CENTER],
-            [STERN_DECK, 'bulwark',       -3, 2,     SHEET],
+            [STERN_DECK, 'atFront',         , 2,     SHEET,           ,                    CENTER],
+            [STERN_DECK, 'bulwark',       -3, 4,     SHEET,           ,                    PORT],
+            [STERN_DECK, 'bulwark',       -4, 4,     SHEET,           ,                    STARBOARD],
         ]],
         [, [
             [STERN_DECK, 'shroudsRail',    1,  ,     FLAG_HALYARD,    ,                    PORT],
@@ -238,8 +240,10 @@ var LINES = [
             [MAIN_DECK,  'bulwark',       -2, 5,     FENDER],
             [STERN_DECK, 'bulwark',        2,10,     FENDER,          ,                    PORT],
             [STERN_DECK, 'bulwark',       -2,10,     FENDER,          ,                    STARBOARD],
-            [STERN_DECK, 'bulwark',       -2, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
-            [STERN_DECK, 'bulwark',       -3, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -2,12,     MOORING,         OF_STERN,            PORT,      DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -3,12,     MOORING,         OF_STERN,            STARBOARD, DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -3,12,     MOORING,         OF_STERN,            PORT,      DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -4,12,     MOORING,         OF_STERN,            STARBOARD, DETAIL_LINE],
             [STERN_DECK, 'poopBulwark',    2, 3,     MOORING,         OF_TAFF,             ,          DETAIL_LINE],
             [STERN_DECK, 'poopBulwark',   -1, 5,     FENDER],
             [STERN_DECK, 'poopBulwark',   -2, 5,     FENDER,          ,                    STARBOARD],
