@@ -1557,17 +1557,14 @@
          rigging:rail="backPillars"
          rigging:deck="fore"
          rigging:side="port">
-        <g
-           id="doubleCleat">
-          <use
-             xlink:href="#cleat"
-             id="use374"
-             transform="rotate(0.03827358,-43238.598,-31825.989)" />
-          <use
-             transform="rotate(0.03827358,-43243.126,-45390.189)"
-             id="use380"
-             xlink:href="#cleat" />
-        </g>
+        <use
+           height="100%"
+           width="100%"
+           y="0"
+           x="0"
+           transform="rotate(0.03827358,-43238.598,-31826.025)"
+           id="use374"
+           xlink:href="#cleat" />
       </g>
       <g
          rigging:deck="fore"

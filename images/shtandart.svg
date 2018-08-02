@@ -228,10 +228,7 @@
       <use transform="matrix(1 0 0 -1 -15.985 30.603)" xlink:href="#pin"/>
     </g>
     <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
-      <g id="doubleCleat">
-        <use transform="rotate(.038274 -43239 -31826)" xlink:href="#cleat"/>
-        <use transform="rotate(.038274 -43243 -45390)" xlink:href="#cleat"/>
-      </g>
+      <use transform="rotate(.038274 -43239 -31826)" xlink:href="#cleat"/>
     </g>
     <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
       <use transform="rotate(.038274 -115492 -31800)" xlink:href="#cleat"/>
@@ -340,6 +337,7 @@
       <use transform="matrix(.86039 .50964 .50964 -.86039 -256.75 -32.473)" xlink:href="#lcleat"/>
       <use transform="matrix(.99644 .084334 .084334 -.99644 130.94 116.67)" xlink:href="#xcleat"/>
       <use transform="matrix(.99614 .087812 .087812 -.99614 149.72 118.26)" xlink:href="#xcleat"/>
+      <use transform="matrix(.049675 -.88267 -.88267 -.049675 173.58 611.56)" xlink:href="#cleat"/>
       <use transform="matrix(.99735 .072772 .072772 -.99735 -216.25 121.27)" xlink:href="#kevel"/>
     </g>
     <g rigging:deck="stern" rigging:rail="atFront" rigging:side="center">
@@ -363,7 +361,7 @@
     <g rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="port">
       <use transform="rotate(-.7 4203.3 39058)" xlink:href="#pin"/>
       <use transform="rotate(-.7 4121.7 38341)" xlink:href="#pin"/>
-      <use transform="rotate(-.7 4038.3 37611)" xlink:href="#pin"/>
+      <use transform="rotate(-.7 -4422.8 42182)" xlink:href="#pinhole"/>
       <use transform="rotate(-.7 3956.6 36887)" xlink:href="#pin"/>
       <use transform="rotate(-.7 3890.7 36227)" xlink:href="#pin"/>
     </g>
