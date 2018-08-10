@@ -158,7 +158,7 @@ var LINES = [
             [STERN_DECK, 'bulwark',       -1,  ,     SHEET],
             [MAIN_DECK,  'bulwark',       -1,  ,     TACK],
             [FORE_DECK,  'shroudsRail',    2,  ,     BOWLINE],
-            [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,         ,                              PLURAL],
+            [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,          ,                             PLURAL],
             [MAIN_DECK,  'sideMastRail',   3,  ,     CLEWLINE],
             [MAIN_DECK,  'sideMastRail',   2,  ,     LEECHLINE],
             [MAIN_DECK,  'sideMastRail',   1,  ,     BUNTLINE],

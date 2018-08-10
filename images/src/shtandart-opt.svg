@@ -3,19 +3,15 @@
     #background, #pinhole, #pipe {
       fill: #ffeca4;
     }
-
     #drawing, #wood g {
       color: #aa5f28;
     }
-
     #wood g {
       opacity: 0.3;
     }
-
     .solid {
       fill: #a78452;
     }
-
     .rail {
       fill: #e5cd8c;
     }

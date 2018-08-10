@@ -886,10 +886,7 @@ body, button, #drawing, #wood {
             <use transform="matrix(1 0 0 -1 -15.985 30.603)" xlink:href="#pin"/>
           </g>
           <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="port">
-            <g id="doubleCleat">
-              <use transform="rotate(.038274 -43239 -31826)" xlink:href="#cleat"/>
-              <use transform="rotate(.038274 -43243 -45390)" xlink:href="#cleat"/>
-            </g>
+            <use transform="rotate(.038274 -43239 -31826)" xlink:href="#cleat"/>
           </g>
           <g rigging:deck="fore" rigging:rail="backPillars" rigging:side="starboard">
             <use transform="rotate(.038274 -115492 -31800)" xlink:href="#cleat"/>
@@ -998,6 +995,7 @@ body, button, #drawing, #wood {
             <use transform="matrix(.86039 .50964 .50964 -.86039 -256.75 -32.473)" xlink:href="#lcleat"/>
             <use transform="matrix(.99644 .084334 .084334 -.99644 130.94 116.67)" xlink:href="#xcleat"/>
             <use transform="matrix(.99614 .087812 .087812 -.99614 149.72 118.26)" xlink:href="#xcleat"/>
+            <use transform="matrix(.049675 -.88267 -.88267 -.049675 173.58 611.56)" xlink:href="#cleat"/>
             <use transform="matrix(.99735 .072772 .072772 -.99735 -216.25 121.27)" xlink:href="#kevel"/>
           </g>
           <g rigging:deck="stern" rigging:rail="atFront" rigging:side="center">
@@ -1021,7 +1019,7 @@ body, button, #drawing, #wood {
           <g rigging:deck="stern" rigging:rail="shroudsRail" rigging:side="port">
             <use transform="rotate(-.7 4203.3 39058)" xlink:href="#pin"/>
             <use transform="rotate(-.7 4121.7 38341)" xlink:href="#pin"/>
-            <use transform="rotate(-.7 4038.3 37611)" xlink:href="#pin"/>
+            <use transform="rotate(-.7 -4422.8 42182)" xlink:href="#pinhole"/>
             <use transform="rotate(-.7 3956.6 36887)" xlink:href="#pin"/>
             <use transform="rotate(-.7 3890.7 36227)" xlink:href="#pin"/>
           </g>
@@ -1152,7 +1150,7 @@ body, button, #drawing, #wood {
           <h2 class="category otherLine tackle mooring flagHalyard">Прочие снасти</h2>
           <ul>
             <li class="subline otherLine">Носовой шлюпки</li>
-            <li class="subline otherLine">Кранец</li>
+            <li class="subline otherLine">Пушпорт / Кранец</li>
           </ul>
           <h3 class="category tackle">Талёвы</h3>
           <ul>
@@ -1176,6 +1174,7 @@ body, button, #drawing, #wood {
             <li class="subline flagHalyard">Грота</li>
             <li class="subline flagHalyard">Бизани</li>
             <li class="subline flagHalyard">Рю</li>
+            <li class="subline flagHalyard">Бегин-рея</li>
             <li class="subline flagHalyard">Флагштока</li>
           </ul>
         </div></td>
@@ -1386,7 +1385,7 @@ body, button, #drawing, #wood {
       для <a href="https://www.shtandart.ru/frigate/"><img class="icon" alt="" src="data:image/ico;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////ANhFAADYRQBI2EUAdNhFAHrYRQAw2EUAAthFAADYRQAA2EUAANhFAADYRQAA////AP///wD///8A////AP///wDYRQAk2EUA39hFAA3YRQCj2EUAo9hFAIfYRQAq2EUAANhFAADYRQAA2EUAAP///wD///8A////AP///wD///8A2EUAKdhFANnYRQBm2EUAuthFAK7YRQDQ2EUA39hFAJjYRQAg2EUAANhFAAD///8A////AP///wD///8A////ANhFADbYRQBJ2EUAQ9hFAIzYRQCI2EUAxthFAK3YRQCg2EUAxthFAAbYRQAA////AP///wD///8A////AP///wDYRQAH2EUAkthFABDYRQBu2EUAlthFAIPYRQCt2EUAEthFAGzYRQCG2EUAAP///wD///8A////AP///wD///8A2EUAANhFAInYRQAw2EUAkNhFAI7YRQCu2EUAMthFAFTYRQAW2EUA1NhFAAX///8A////AP///wD///8A////ANhFAADYRQBg2EUAY9hFAJDYRQCZ2EUAn9hFAADYRQBQ2EUAG9hFAKnYRQBV////AP///wD///8A////AP///wDYRQAA2EUAWthFAHvYRQCd2EUAsthFAJbYRQAA2EUATdhFAFzYRQBQ2EUAjP///wD///8A////AP///wD///8A2EUAANhFAJnYRQBH2EUAEdhFABjYRQAq2EUAANhFAFvYRQBX2EUAJ9hFAKD///8A////AP///wD///8A////ANhFAALYRQDS2EUADNhFAADYRQAE2EUAANhFAADYRQCd2EUADNhFAD/YRQCb////AP///wD///8A////AP///wDYRQAr2EUAuNhFAHDYRQCM2EUAgNhFAIbYRQCO2EUAeNhFAADYRQCZ2EUAgP///wD///8A////AP///wD///8A2EUAANhFAADYRQAb2EUAXNhFAADYRQAA2EUAANhFAADYRQAG2EUA39hFACH///8A////AP///wD///8A////ANhFAADYRQAA2EUAeNhFALrYRQBq2EUAadhFAG7YRQBY2EUArdhFAHPYRQAA////AP///wD///8A////AP///wDYRQAA2EUAANhFAArYRQAb2EUAGNhFAEzYRQAd2EUAZdhFAD7YRQAA2EUAAP///wD///8A////AP///wD///8A2EUAANhFAADYRQAA2EUAANhFAA7YRQD02EUA/NhFAP/YRQBW2EUAANhFAAD///8A////AP///wD///8A////ANhFAADYRQAA2EUAANhFAADYRQAi2EUA7NhFAKLYRQCk2EUACthFAADYRQAA////AP///wD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==">Проекта &laquo;Штандарт&raquo;</a> 2016&ndash;2018
     </p></td>
     <td>
-      <p id="build">b20180705-0105G</p>
+      <p id="build">b20180810-1726G</p>
     </td>
   </tr></table></td></tr>
 </table>
@@ -1739,7 +1738,7 @@ var BUNTLINE = 'Бык-гордень';
 
 var FLAG_HALYARD = 'Флаг-фал';
 var TACKLE = 'Талёва';
-var FENDER = 'Кранец';
+var FENDER = 'Пушпорт / Кранец';
 var MOORING = 'Швартов';
 
 var OF_BOW = 'Носовой';
@@ -1760,9 +1759,9 @@ var CENTER = 'center';
 
 // Decks
 var DECKS = [
-  // Name        ID      Title
-    [FORE_DECK, 'fore', 'На баке'],
-    [MAIN_DECK, 'main', 'На главной палубе'],
+  // Name         ID       Title
+    [FORE_DECK,  'fore',  'На баке'],
+    [MAIN_DECK,  'main',  'На главной палубе'],
     [STERN_DECK, 'stern', 'На полуюте'],
 ];
 
@@ -1843,7 +1842,7 @@ var LINES = [
             [STERN_DECK, 'bulwark',       -1,  ,     SHEET],
             [MAIN_DECK,  'bulwark',       -1,  ,     TACK],
             [FORE_DECK,  'shroudsRail',    2,  ,     BOWLINE],
-            [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,         ,                              PLURAL],
+            [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,          ,                             PLURAL],
             [MAIN_DECK,  'sideMastRail',   3,  ,     CLEWLINE],
             [MAIN_DECK,  'sideMastRail',   2,  ,     LEECHLINE],
             [MAIN_DECK,  'sideMastRail',   1,  ,     BUNTLINE],
@@ -1883,9 +1882,11 @@ var LINES = [
             [STERN_DECK, 'poopBulwark',    1,  ,     VANG,            ,                    ,          LINE_DETAIL],
             [STERN_DECK, 'poopBulwark',    2,  ,     SHEET],
             [STERN_DECK, 'atFront',         , 2,     TACK,            ,                    CENTER],
-            [STERN_DECK, 'bulwark',       -2, 2,     TACK],
-            [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    PORT],
-            [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    STARBOARD],
+            [STERN_DECK, 'bulwark',       -2, 4,     TACK,            ,                    PORT],
+            [STERN_DECK, 'bulwark',       -3, 4,     TACK,            ,                    STARBOARD],
+            [STERN_DECK, 'atMast',         1,  ,     CLEWLINE,        ,                    PORT],
+            [STERN_DECK, 'atMast',         1,  ,     LEECHLINE,       ,                    PORT,      ,                             PLURAL],
+            [STERN_DECK, 'atMast',         1,  ,     BUNTLINE,        ,                    STARBOARD, ,                             PLURAL],
         ]],
         [MIZZEN_TOPSAIL, [
             [MAIN_DECK,  'sideRail',       2,  ,     BRACE],
@@ -1899,12 +1900,14 @@ var LINES = [
         ]],
         [MIZZEN_STAYSAIL, [
             [STERN_DECK, 'atMast',        -1,  ,     HALYARD,         ,                    PORT],
-            [STERN_DECK, 'atFront',         , 2,     SHEET,            ,                   CENTER],
-            [STERN_DECK, 'bulwark',       -3, 2,     SHEET],
+            [STERN_DECK, 'atFront',         , 2,     SHEET,           ,                    CENTER],
+            [STERN_DECK, 'bulwark',       -3, 4,     SHEET,           ,                    PORT],
+            [STERN_DECK, 'bulwark',       -4, 4,     SHEET,           ,                    STARBOARD],
         ]],
         [, [
-            [STERN_DECK, 'shroudsRail',    3,  ,     FLAG_HALYARD,    ,                    PORT],
+            [STERN_DECK, 'bulwark',        2,  ,     FLAG_HALYARD,    ,                    PORT],
             [STERN_DECK, 'poopFlagstaff',   ,  ,     FLAG_HALYARD,    MIZZEN_YARD,         PORT,      LINE_DETAIL],
+            [STERN_DECK, 'bulwark',        2,  ,     FLAG_HALYARD,    CROSS_JACK,          PORT,      LINE_DETAIL],
         ]],
     ]],
     [FLAG_STAFF,, [
@@ -1915,17 +1918,19 @@ var LINES = [
     [/*NO_MAST*/,, [
         [, [
             [FORE_DECK,  'sideRail',      -3,  ,     TACKLE,          'Якорная',           ,          DETAIL_LINE],
-            [FORE_DECK,  'onDeckFront',     , 6,     MOORING,         OF_BOW,              ,          DETAIL_LINE],
+            [FORE_DECK,  'onDeckFront',     ,12,     MOORING,         OF_BOW,              ,          DETAIL_LINE],
             [FORE_DECK,  'onDeckFront',     , 6,     MOORING,         OF_BOW,              CENTER,    DETAIL_LINE],
-            [MAIN_DECK,  'bulwark',        1, 5,     FENDER],
+            [MAIN_DECK,  'bulwark',        1, 4,     FENDER],
             [MAIN_DECK,  'bulwark',        3,  ,     OF_DINGHY,       OF_BOW,              ,          DETAIL_LINE,                  SINGULAR],
-            [MAIN_DECK,  'bulwark',       -2, 5,     FENDER],
-            [STERN_DECK, 'bulwark',        2, 5,     FENDER,          ,                    PORT],
-            [STERN_DECK, 'bulwark',       -2, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
-            [STERN_DECK, 'bulwark',       -3, 6,     MOORING,         OF_STERN,            ,          DETAIL_LINE],
+            [MAIN_DECK,  'bulwark',       -2, 4,     FENDER],
+            [STERN_DECK, 'bulwark',       -2, 8,     FENDER,          ,                    STARBOARD],
+            [STERN_DECK, 'bulwark',       -2,12,     MOORING,         OF_STERN,            PORT,      DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -3,12,     MOORING,         OF_STERN,            STARBOARD, DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -3,12,     MOORING,         OF_STERN,            PORT,      DETAIL_LINE],
+            [STERN_DECK, 'bulwark',       -4,12,     MOORING,         OF_STERN,            STARBOARD, DETAIL_LINE],
             [STERN_DECK, 'poopBulwark',    2, 3,     MOORING,         OF_TAFF,             ,          DETAIL_LINE],
-            [STERN_DECK, 'poopBulwark',   -1, 5,     FENDER],
-            [STERN_DECK, 'poopBulwark',   -2, 5,     FENDER,          ,                    STARBOARD],
+            [STERN_DECK, 'poopBulwark',   -1, 4,     FENDER],
+            [STERN_DECK, 'poopBulwark',   -2, 8,     FENDER,          ,                    STARBOARD],
         ]],
     ]],
 ];
@@ -2391,7 +2396,10 @@ function Line(mastName, mastID, sailName, deckName, railName, number, invWeight,
             pluralWords = pluralName.split(' ');
     }
     assert(pluralWords, "Empty pluralWords for a Line");
-    this.name = fullNameWords.join(' ').capitalize();
+    this.name = fullNameWords.join(' ');
+    if (this.name.indexOf('/') < 0) {
+        this.name = this.name.capitalize();
+    }
     this.pluralName = (pluralName === SINGULAR) ? this.name : pluralWords.join(' ').capitalize();
     this.name = (pluralName === PLURAL) ? this.pluralName : this.name;
     if (assym) {
