@@ -463,7 +463,10 @@ function Line(mastName, mastID, sailName, deckName, railName, number, invWeight,
             pluralWords = pluralName.split(' ');
     }
     assert(pluralWords, "Empty pluralWords for a Line");
-    this.name = fullNameWords.join(' ').capitalize();
+    this.name = fullNameWords.join(' ');
+    if (this.name.indexOf('/') < 0) {
+        this.name = this.name.capitalize();
+    }
     this.pluralName = (pluralName === SINGULAR) ? this.name : pluralWords.join(' ').capitalize();
     this.name = (pluralName === PLURAL) ? this.pluralName : this.name;
     if (assym) {
