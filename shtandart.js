@@ -158,7 +158,7 @@ var LINES = [
             [MAIN_DECK,  'bulwark',       -1,  ,     TACK],
             [FORE_DECK,  'shroudsRail',    2,  ,     BOWLINE],
             [MAIN_DECK,  'frontPillars',    ,  ,     DOWNHAULER,      ,                    ,          ,                             PLURAL],
-            [MAIN_DECK,  'sideMastRail',   3,  ,     CLEWLINE],
+            [MAIN_DECK,  'sideMastRail',  -2,  ,     CLEWLINE],
             [MAIN_DECK,  'sideMastRail',   2,  ,     LEECHLINE],
             [MAIN_DECK,  'sideMastRail',   1,  ,     BUNTLINE],
         ]],
@@ -174,9 +174,9 @@ var LINES = [
         [MAIN_GALLANT, [
             [STERN_DECK, 'sideRail',      -2,  ,     BRACE],
             [MAIN_DECK,  'behindMastRail', 1,  ,     LIFT],
-            [MAIN_DECK,  'sideMastRail',  -2,  ,     SHEET],
-            [MAIN_DECK,  'sideMastRail',  -3, 2,     CLEWLINE],
-            [MAIN_DECK,  'sideMastRail',  -3, 2,     BUNTLINE],
+            [MAIN_DECK,  'sideMastRail',   4,  ,     SHEET],
+            [MAIN_DECK,  'sideMastRail',   3, 2,     CLEWLINE],
+            [MAIN_DECK,  'sideMastRail',   3, 2,     BUNTLINE],
         ]],
         [STAY_SAIL, [
             [MAIN_DECK,  'atMastFront',     ,  ,     HALYARD,         ,                    CENTER],
