@@ -6,6 +6,7 @@ from itertools import chain
 from os.path import dirname, join
 from re import sub
 from sys import argv
+from typing import Callable, Iterable, Mapping, Match, Optional, Sequence, Tuple, Union
 from urllib.request import urlopen
 from zipfile import ZipFile, ZIP_DEFLATED
 
@@ -27,7 +28,7 @@ ZIP_TARGET = 'shtandart.zip'
 BASE64 = 'BASE64'
 NO_INDENT = ''
 
-SCOUR_OPTIONS = {
+SCOUR_OPTIONS: Mapping[str, Union[bool, int, str]] = {
     'verbose': True,
     'digits': 5,
     'renderer_workaround': True,
@@ -46,7 +47,7 @@ SCOUR_OPTIONS = {
     'error_on_flowtext': True
 }
 
-SVG_PATTERNS = (
+SVG_PATTERNS: Sequence[Tuple[str, str]] = (
     (r'(?ms)\s*<style>.*?</style>(\n*)',
         r'\1'),
     (r'(?ms)\s*<g [^>]*id="(?:background|markup)"[^>]*>.*?</g>(\n*)',
@@ -63,7 +64,9 @@ SVG_PATTERNS = (
         ''),
 )
 
-HTML_PATTERNS = (
+SubPattern = Union[str, Callable[[Match[str]], str]]
+
+HTML_PATTERNS: Sequence[Tuple[str, SubPattern]] = (
     (r'([ \t]*)<link rel="stylesheet" href="(\S+)">',
         lambda match: loadFile(match, r'\1<style>\n%s\1</style>', 2)),
     (r'([ \t]*)<script src="(\S+)"></script>',
@@ -82,17 +85,17 @@ HTML_PATTERNS = (
         lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG')))
 )
 
-def getFileName(fileName):
+def getFileName(fileName: str) -> str:
     return join(DIRNAME, fileName)
 
-def scourSVG():
+def scourSVG() -> None:
     options = scourSanitizeOptions()
     for (option, value) in chain(SCOUR_OPTIONS.items(), {'infilename': getFileName(SVG_SOURCE), 'outfilename': getFileName(SVG_OPTIMIZED)}.items()):
         setattr(options, option, value)
     (inputFile, outputFile) = scourGetInOut(scourSanitizeOptions(options))
     scourStart(options, inputFile, outputFile)
 
-def loadFile(match, replacePattern, fileNamePos, mode = None):
+def loadFile(match: Match[str], replacePattern: str, fileNamePos: int, mode: Optional[str] = None) -> str:
     fileName = match.group(fileNamePos)
     print('F', fileName)
     if fileName.startswith('http'):
@@ -112,12 +115,12 @@ def loadFile(match, replacePattern, fileNamePos, mode = None):
             data = ''.join(((linePattern if line.startswith('\t') else indentedPattern) % line) if line.strip() else '\n' for line in data.splitlines())
     return match.expand(replacePattern % data)
 
-def loadImage(match, pattern, fileNamePos = 1):
+def loadImage(match: Match[str], pattern: str, fileNamePos: int = 1) -> str:
     fileName = match.group(fileNamePos)
     print('I', fileName)
     return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(getFileName(fileName), 'rb').read()).decode())))
 
-def cleanupFile(source, target, patterns):
+def cleanupFile(source: str, target: str, patterns: Iterable[Tuple[str, SubPattern]]) -> None:
     with open(getFileName(source), 'rb') as f:
         data = f.read().decode()
     for (pattern, replace) in patterns:
@@ -131,11 +134,11 @@ def cleanupFile(source, target, patterns):
     with open(getFileName(target), 'wb') as f:
         f.write(data.encode())
 
-def createZip():
+def createZip() -> None:
     with ZipFile(getFileName(ZIP_TARGET), 'w', ZIP_DEFLATED) as f:
         f.write(getFileName(HTML_TARGET))
 
-def main():
+def main() -> None:
     print("\nOptimizing SVG...")
     scourSVG()
     print("\nCleaning SVG...")
