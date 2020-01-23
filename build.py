@@ -13,7 +13,7 @@ from zipfile import ZipFile, ZIP_DEFLATED
 try:
     from scour.scour import getInOut as scourGetInOut, sanitizeOptions as scourSanitizeOptions, start as scourStart
 except ImportError as ex:
-    raise ImportError("%s: %s\n\nPlease install scour 0.36 or later: https://pypi.org/project/scour/\n" % (ex.__class__.__name__, ex))
+    raise ImportError(f"{type(ex).__name__}: {ex}\n\nPlease install scour 0.36 or later: https://pypi.org/project/scour/\n")
 
 DIRNAME = dirname(argv[0])
 
@@ -82,7 +82,7 @@ HTML_PATTERNS: Sequence[Tuple[str, SubPattern]] = (
     (r' url\("((\S+)\.(\S+))"\)',
         lambda match: loadImage(match, r' url("%s")')),
     (r'(\sid="build">)\S+?(</)',
-        lambda match: match.expand(r'\1%s\2' % datetime.utcnow().strftime('b%Y%m%d-%H%MG')))
+        lambda match: match.expand(rf'\1{datetime.utcnow().strftime("B%Y%m%d-%H%MG")}\2'))
 )
 
 def getFileName(fileName: str) -> str:
@@ -118,7 +118,7 @@ def loadFile(match: Match[str], replacePattern: str, fileNamePos: int, mode: Opt
 def loadImage(match: Match[str], pattern: str, fileNamePos: int = 1) -> str:
     fileName = match.group(fileNamePos)
     print('I', fileName)
-    return match.expand(pattern % ('data:image/%s;base64,%s' % (match.group(fileNamePos + 2).lower(), b64encode(open(getFileName(fileName), 'rb').read()).decode())))
+    return match.expand(pattern % (f'data:image/{match.group(fileNamePos + 2).lower()};base64,{b64encode(open(getFileName(fileName), "rb").read()).decode()}'))
 
 def cleanupFile(source: str, target: str, patterns: Iterable[Tuple[str, SubPattern]]) -> None:
     with open(getFileName(source), 'rb') as f:
