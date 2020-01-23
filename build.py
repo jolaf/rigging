@@ -149,4 +149,5 @@ def main() -> None:
     createZip()
     print("\nDONE")
 
-main()
+if __name__ == '__main__':
+    main()
