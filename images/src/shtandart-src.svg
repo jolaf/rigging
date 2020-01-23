@@ -1010,15 +1010,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,1456.6963,-1201.1364)"
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4834"
-           width="100%"
-           height="100%" />
-        <use
-           transform="rotate(3.8684539,-108.57253,-318.72458)"
+           transform="rotate(3.8684539,-104.69826,-436.76599)"
            x="0"
            y="0"
            xlink:href="#pin"
@@ -1026,7 +1018,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,1448.6854,-965.02519)"
+           transform="rotate(3.8684539,1452.5597,-1083.0666)"
            x="0"
            y="0"
            xlink:href="#pinhole"
@@ -1034,7 +1026,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,-118.21309,-83.961871)"
+           transform="rotate(3.8684539,-114.33882,-202.00328)"
            x="0"
            y="0"
            xlink:href="#pin"
@@ -1042,7 +1034,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,1440.7923,-730.36313)"
+           transform="rotate(3.8684539,1444.6666,-848.40454)"
            x="0"
            y="0"
            xlink:href="#pinhole"
@@ -1050,11 +1042,19 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,-127.53928,153.52774)"
+           transform="rotate(3.8684539,-123.66501,35.486332)"
            x="0"
            y="0"
            xlink:href="#pin"
            id="use4824"
+           width="100%"
+           height="100%" />
+        <use
+           transform="rotate(3.8684539,1434.5309,-616.07547)"
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4834"
            width="100%"
            height="100%" />
         <use
@@ -1082,19 +1082,19 @@
            width="100%"
            height="100%" />
         <use
-           transform="rotate(3.8684539,1417.0156,-138.77742)"
-           x="0"
-           y="0"
-           xlink:href="#pinhole"
-           id="use4818"
-           width="100%"
-           height="100%" />
-        <use
-           transform="rotate(3.8684539,-150.43101,743.74959)"
+           transform="rotate(3.8684539,-143.93949,625.61979)"
            x="0"
            y="0"
            xlink:href="#pin"
            id="use4814"
+           width="100%"
+           height="100%" />
+        <use
+           transform="rotate(3.8684539,1413.053,-23.353262)"
+           x="0"
+           y="0"
+           xlink:href="#pinhole"
+           id="use4818"
            width="100%"
            height="100%" />
         <use
@@ -1192,11 +1192,11 @@
            y="0"
            x="0" />
         <use
-           transform="matrix(0.997722,-0.067466,-0.067466,-0.997722,17.927486,94.734791)"
+           transform="matrix(0.997722,-0.067466,-0.067466,-0.997722,-30.180067,202.10668)"
            height="100%"
            width="100%"
            id="use387"
-           xlink:href="#pin"
+           xlink:href="#pinhole"
            y="0"
            x="0" />
         <use
@@ -1208,11 +1208,11 @@
            y="0"
            x="0" />
         <use
-           transform="matrix(0.997722,-0.067466,-0.067466,-0.997722,-14.083192,200.88419)"
+           transform="matrix(0.997722,-0.067466,-0.067466,-0.997722,33.92686,93.597603)"
            height="100%"
            width="100%"
            id="use391"
-           xlink:href="#pinhole"
+           xlink:href="#pin"
            y="0"
            x="0" />
         <use
