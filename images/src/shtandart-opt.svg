@@ -3,15 +3,19 @@
     #background, #pinhole, #pipe {
       fill: #ffeca4;
     }
+
     #drawing, #wood g {
       color: #aa5f28;
     }
+
     #wood g {
       opacity: 0.3;
     }
+
     .solid {
       fill: #a78452;
     }
+
     .rail {
       fill: #e5cd8c;
     }
@@ -131,18 +135,12 @@
     </g>
   </g>
   <g id="points">
-    <g rigging:deck="fore" rigging:rail="behindFront" rigging:side="port">
-      <use transform="rotate(-89.1 631.84 -18.644)" width="100%" height="100%" xlink:href="#cleat"/>
-    </g>
-    <g rigging:deck="fore" rigging:rail="behindFront" rigging:side="starboard">
-      <use transform="matrix(.015714 .99988 .99988 -.015714 640.56 -509.11)" width="100%" height="100%" xlink:href="#cleat"/>
-    </g>
     <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="port">
       <use transform="translate(75.849 98.833)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="translate(75.849 89.64)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="translate(75.849 80.915)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="translate(75.849 72.283)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="translate(20.7 -39.787)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="translate(75.849 64.127)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="translate(75.849 55.97)" width="100%" height="100%" xlink:href="#pin"/>
     </g>
     <g rigging:deck="fore" rigging:isAcross="true" rigging:rail="frontRail" rigging:side="starboard">
@@ -150,7 +148,7 @@
       <use transform="matrix(1 0 0 -1 75.849 14.666)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(1 0 0 -1 75.849 23.391)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(1 0 0 -1 75.849 32.023)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="matrix(1 0 0 -1 20.7 144.09)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(1 0 0 -1 75.849 40.179)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(1 0 0 -1 75.849 48.335)" width="100%" height="100%" xlink:href="#pin"/>
     </g>
     <g rigging:deck="fore" rigging:rail="onDeckFront" rigging:side="port">
@@ -167,17 +165,17 @@
       <use transform="rotate(3.8685 1466.9 -1553.8)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="rotate(3.8685 -99.963 -671.32)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="rotate(3.8685 1459.2 -1319.1)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 1456.7 -1201.1)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 -108.57 -318.72)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="rotate(3.8685 1448.7 -965.03)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 -118.21 -83.962)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="rotate(3.8685 1440.8 -730.36)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 -127.54 153.53)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 -104.7 -436.77)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1452.6 -1083.1)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -114.34 -202)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1444.7 -848.4)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="rotate(3.8685 -123.67 35.486)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1434.5 -616.08)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="rotate(3.8685 -132.74 270.21)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="rotate(3.8685 -136.38 389.63)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="rotate(3.8685 1422.8 -256.77)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 1417 -138.78)" width="100%" height="100%" xlink:href="#pinhole"/>
-      <use transform="rotate(3.8685 -150.43 743.75)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 -143.94 625.62)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="rotate(3.8685 1413.1 -23.353)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="rotate(3.8685 1407.8 96.012)" width="100%" height="100%" xlink:href="#pinhole"/>
     </g>
     <g rigging:deck="fore" rigging:rail="sideRail" rigging:side="starboard">
@@ -191,9 +189,9 @@
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 -5.9338 96.522)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 -45.994 203.17)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 10.067 95.352)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="matrix(.99772 -.067466 -.067466 -.99772 17.927 94.735)" width="100%" height="100%" xlink:href="#pin"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -30.18 202.11)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 25.976 94.217)" width="100%" height="100%" xlink:href="#pin"/>
-      <use transform="matrix(.99772 -.067466 -.067466 -.99772 -14.083 200.88)" width="100%" height="100%" xlink:href="#pinhole"/>
+      <use transform="matrix(.99772 -.067466 -.067466 -.99772 33.927 93.598)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 -6.136 200.22)" width="100%" height="100%" xlink:href="#pinhole"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 49.835 92.463)" width="100%" height="100%" xlink:href="#pin"/>
       <use transform="matrix(.99772 -.067466 -.067466 -.99772 9.6834 199.07)" width="100%" height="100%" xlink:href="#pinhole"/>

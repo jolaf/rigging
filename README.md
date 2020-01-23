@@ -6,7 +6,7 @@ For now the only supported tallship is Russian frigate [Shtandart](https://www.s
 
 The software is written in HTML5/CSS3/JavaScript/ES5.1/jQuery3 and is supposed to be compiled into a single HTML file (including images) to be easily deployable and run offline, including onboard a tall ship at sea. :)
 
-The software thus is easily run from the repository without any installation, here's the [**current version for Shtandart**](https://jolaf.github.io/rigging/shtandart.html), now updated for the new rigging setup as of 2019.
+The software thus is easily run from the repository without any installation, here's the [**current version for Shtandart**](https://jolaf.github.io/rigging/shtandart.html), now updated for the new rigging setup as of fall 2019.
 
 You can use download link on the front page or just use the `Save As...` command of your browser to make your own fully-operational offline copy consisting of one file only.
 
@@ -27,7 +27,7 @@ python3 build.py
 
 Программа написана на HTML5/CSS3/JavaScript/ES5.1/jQuery3 и собирается в единый HTML-файл (вместе с картинками), чтобы её было легко копировать и использовать в отсутствии Интернета, в том числе на борту парусника в море. :)
 
-Программа может быть запущена прямо из репозитория без всякой инсталляции, например, вот [**актуальная версия для «Штандарта»**](https://jolaf.github.io/rigging/shtandart.html), теперь обновлённая с учётом новой разводки такелажа образца 2019 года.
+Программа может быть запущена прямо из репозитория без всякой инсталляции, например, вот [**актуальная версия для «Штандарта»**](https://jolaf.github.io/rigging/shtandart.html), теперь обновлённая с учётом разводки такелажа по состоянию на осень 2019 года.
 
 Также вы можете скачать программу по ссылке на главной странице, или использовать команду `Сохранить как...` вашего браузера, чтобы получить полностью-функциональную оффлайновую копию, состоящую из одного файла.
 
