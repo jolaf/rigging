@@ -96,7 +96,6 @@ var RAILS = {
             atMast: 'на мачте',
        atMastFront: 'на мачте спереди',
            atFront: 'на релинге спереди',
-       behindFront: 'за планкой спереди',
            bulwark: 'на фальшборту',
          aboveRail: 'над планкой у борта',
        onDeckFront: 'перед мачтой, на палубе',
@@ -109,11 +108,11 @@ var LINES = [
   // Mast ID/Sail/Deck    Rail        Point#  1/rnd  Line             Detail               Assym      Full Name                     Plural
     [BOWSPRIT,, [
         [SPRIT_SAIL, [
-            [FORE_DECK,  'frontRail',      4,  ,     BRACE],
+            [FORE_DECK,  'frontRail',      5,  ,     BRACE],
             [FORE_DECK,  'frontRail',      3,  ,     LIFT],
             [FORE_DECK,  'sideRail',      -1,  ,     SHEET],
-            [FORE_DECK,  'behindFront',     , 2,     CLEWLINE],
-            [FORE_DECK,  'behindFront',     , 2,     BUNTLINE],
+            [FORE_DECK,  'frontRail',      4, 2,     CLEWLINE],
+            [FORE_DECK,  'frontRail',      4, 2,     BUNTLINE],
         ]],
     ]],
     [FORE_MAST, 'fore', [

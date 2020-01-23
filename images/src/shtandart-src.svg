@@ -13,7 +13,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    viewBox="1 -24 659 152"
    version="1.1"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
    sodipodi:docname="shtandart-src.svg"
    id="svg1"
    height="100%"
@@ -822,34 +822,6 @@
        id="points">
       <g
          rigging:deck="fore"
-         rigging:rail="behindFront"
-         id="g1143"
-         rigging:side="port">
-        <use
-           transform="rotate(-89.099617,631.84307,-18.644284)"
-           x="0"
-           y="0"
-           xlink:href="#cleat"
-           id="use4877"
-           width="100%"
-           height="100%" />
-      </g>
-      <g
-         id="g347"
-         rigging:rail="behindFront"
-         rigging:deck="fore"
-         rigging:side="starboard">
-        <use
-           transform="matrix(0.015714,0.999877,0.999877,-0.015714,640.55631,-509.10881)"
-           height="100%"
-           width="100%"
-           id="use345"
-           xlink:href="#cleat"
-           y="0"
-           x="0" />
-      </g>
-      <g
-         rigging:deck="fore"
          rigging:rail="frontRail"
          id="g4296"
          rigging:isAcross="true"
@@ -879,7 +851,7 @@
            width="100%"
            height="100%" />
         <use
-           transform="translate(75.848624,72.282953)"
+           transform="translate(75.848664,72.282953)"
            x="0"
            y="0"
            xlink:href="#pin"
@@ -887,15 +859,15 @@
            width="100%"
            height="100%" />
         <use
-           transform="translate(20.700353,-39.786923)"
+           transform="translate(75.848664,64.126703)"
            x="0"
            y="0"
-           xlink:href="#pinhole"
+           xlink:href="#pin"
            id="use4884"
            width="100%"
            height="100%" />
         <use
-           transform="translate(75.848624,55.970453)"
+           transform="translate(75.848664,55.970453)"
            x="0"
            y="0"
            xlink:href="#pin"
@@ -942,11 +914,11 @@
            y="0"
            x="0" />
         <use
-           transform="matrix(1,0,0,-1,20.700353,144.09276)"
+           transform="matrix(1,0,0,-1,75.848624,40.179138)"
            height="100%"
            width="100%"
            id="use357"
-           xlink:href="#pinhole"
+           xlink:href="#pin"
            y="0"
            x="0" />
         <use
