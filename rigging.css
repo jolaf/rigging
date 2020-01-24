@@ -1,27 +1,23 @@
+/* Box sizing reset */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
 /* Widths and heights */
 
-html, body, table, #schemeBlock svg {
+html, body, table, #schemeBlock svg, #selectFill, #selectMasts, #selectDecks  {
 	width: 100%;
 }
 
 html, body, #mainTable, #mainRow, .choiceBlock {
 	height: 100%;
-}
-
-#selectModes {
-	width: 47%;
-}
-
-#selectMasts, #selectDecks {
-	width: 38%;
-}
-
-#options {
-	width: 15%;
-}
-
-#selectFill {
-	width: 53%;
 }
 
 /* Margins and paddings */
@@ -120,7 +116,7 @@ span.selector {
 	text-align: justify;
 }
 
-h1, .questionBlock, #question, #infoBlock, #infoIntro p, #infoQuestions p {
+h1, #selectMasts, #selectDecks, .questionBlock, #question, #infoBlock, #infoIntro p, #infoQuestions p {
 	text-align: center;
 }
 
