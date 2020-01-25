@@ -739,7 +739,8 @@
      style="display:none"
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="deckMasks">
+     inkscape:label="deckMasks"
+     class="modeDependent which">
     <g
        id="deckMasks">
       <use
@@ -781,7 +782,8 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="mastMasks"
-     style="display:none">
+     style="display:none"
+     class="modeDependent where">
     <g
        style="color:#ff0000"
        id="mastMasks">

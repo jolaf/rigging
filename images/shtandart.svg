@@ -96,14 +96,14 @@
     </g>
     <use id="starboardDrawing" transform="matrix(1 0 0 -1 0 104.38)" xlink:href="#portDrawing"/>
   </g>
-  <g display="none">
+  <g class="modeDependent which" display="none">
     <g id="deckMasks">
       <use class="deckMask" transform="matrix(.71785 0 0 1 299.43 -20.6)" rigging:deck="fore" xlink:href="#deckMask"/>
       <use class="deckMask" transform="matrix(1.0033 0 0 1 -1.1 -20.6)" rigging:deck="main" xlink:href="#deckMask"/>
       <use class="deckMask" transform="matrix(1.2311 0 0 1 -335.88 -20.6)" rigging:deck="stern" xlink:href="#deckMask"/>
     </g>
   </g>
-  <g display="none">
+  <g class="modeDependent where" display="none">
     <g id="mastMasks">
       <use class="mastMask" x="140" y="-20.599997" rigging:mast="fore" xlink:href="#mastMask"/>
       <use class="mastMask" x="-104.88988" y="-20.599997" rigging:mast="main" xlink:href="#mastMask"/>
